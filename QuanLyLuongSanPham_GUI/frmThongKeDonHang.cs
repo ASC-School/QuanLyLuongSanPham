@@ -32,5 +32,10 @@ namespace QuanLyLuongSanPham_GUI
         {
 
         }
+
+        private void btnLocDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

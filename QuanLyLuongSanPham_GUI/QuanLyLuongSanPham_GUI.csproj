@@ -54,11 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevExpress\XtraBars\BarButtonItem.cs" />
-    <Compile Include="DevExpress\XtraBars\BarItem.cs" />
-    <Compile Include="DevExpress\XtraBars\ItemClickEventArgs.cs" />
-    <Compile Include="DevExpress\XtraBars\Ribbon.cs" />
-    <Compile Include="DevExpress\XtraTabbedMdi.cs" />
     <Compile Include="frmGDQLDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,24 +108,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuanLyLuongSanPham_BUS\QuanLyLuongSanPham_BUS.csproj">
-      <Project>{eba996e4-43da-474f-b772-9fc3546f102e}</Project>
-      <Name>QuanLyLuongSanPham_BUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QuanLyLuongSanPham_DTO\QuanLyLuongSanPham_DTO.csproj">
-      <Project>{cdacdbb9-b8f4-4ff7-9c0d-25278c7cea99}</Project>
-      <Name>QuanLyLuongSanPham_DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\logo.png" />
+    <None Include="Resources\logo1.png" />
     <Content Include="Resources\Picture1.png" />
     <Content Include="Resources\Picture11.png" />
+    <None Include="Resources\Picture12.png" />
+    <None Include="Resources\Picture13.png" />
     <Content Include="Resources\Picture2.png" />
+    <None Include="Resources\Picture21.png" />
     <Content Include="Resources\Picture3.png" />
+    <None Include="Resources\Picture31.png" />
     <Content Include="Resources\Picture4.png" />
+    <None Include="Resources\Picture41.png" />
     <Content Include="Resources\Picture5.png" />
+    <None Include="Resources\Picture51.png" />
     <Content Include="Resources\Picture6.png" />
+    <None Include="Resources\Picture61.png" />
     <Content Include="Resources\statistic-icon.png" />
     <Content Include="Resources\User-Interface-Menu-icon.png" />
   </ItemGroup>
