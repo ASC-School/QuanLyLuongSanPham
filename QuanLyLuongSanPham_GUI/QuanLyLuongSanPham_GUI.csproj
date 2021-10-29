@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmGDQLDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +76,23 @@
     <Compile Include="frmGiaoDienQuanLyHoaDon.Designer.cs">
       <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThongKeDonHang.designer.cs">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXemThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXemThongTin.Designer.cs">
+      <DependentUpon>frmXemThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +105,14 @@
     <EmbeddedResource Include="frmGiaoDienQuanLyHoaDon.resx">
       <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDonHang.resx">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXemThongTin.resx">
+      <DependentUpon>frmXemThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
