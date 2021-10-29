@@ -8,17 +8,18 @@ namespace QuanLyLuongSanPham_DTO
 {
     public class DTO_DonHang
     {
-        string maDonHang,maNhanVien,noiDung;
+        string maDonHang,tenKhachHang,maNhanVien,noiDung;
         DateTime ngayBatDau, ngayKetThuc;
 
         public DTO_DonHang() { }
-        public DTO_DonHang(string maDonHang, string maNhanVien, string noiDung, DateTime ngayBatDau, DateTime ngayKetThuc)
+        public DTO_DonHang(string maDonHang, string maNhanVien,string tenKhachHang, string noiDung, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
             this.MaDonHang = maDonHang;
             this.MaNhanVien = maNhanVien;
             this.NoiDung = noiDung;
             this.NgayBatDau = ngayBatDau;
             this.NgayKetThuc = ngayKetThuc;
+            this.tenKhachHang = tenKhachHang;
         }
 
         public string MaDonHang { get => maDonHang; set => maDonHang = value; }

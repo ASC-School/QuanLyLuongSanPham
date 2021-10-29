@@ -33,29 +33,30 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lvwThongKeDonHang = new System.Windows.Forms.ListView();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnInDonHang = new System.Windows.Forms.Button();
             this.btnLocDonHang = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgLon = new System.Windows.Forms.ImageList(this.components);
+            this.imgNho = new System.Windows.Forms.ImageList(this.components);
+            this.cboThongKeDonGia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -93,21 +94,33 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.Text = "THỐNG KÊ ĐƠN HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.cboThongKeDonGia);
             this.panelControl2.Controls.Add(this.lvwThongKeDonHang);
             this.panelControl2.Controls.Add(this.btnDong);
             this.panelControl2.Controls.Add(this.btnInDonHang);
             this.panelControl2.Controls.Add(this.btnLocDonHang);
-            this.panelControl2.Controls.Add(this.textBox1);
             this.panelControl2.Controls.Add(this.dateEdit2);
             this.panelControl2.Controls.Add(this.dateEdit1);
             this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label2);
+            this.panelControl2.FireScrollEventOnMouseWheel = true;
             this.panelControl2.Location = new System.Drawing.Point(27, 61);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(973, 520);
@@ -167,14 +180,6 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLocDonHang.UseVisualStyleBackColor = false;
             this.btnLocDonHang.Click += new System.EventHandler(this.btnLocDonHang_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(266, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 33);
-            this.textBox1.TabIndex = 2;
-            // 
             // dateEdit2
             // 
             this.dateEdit2.EditValue = null;
@@ -232,26 +237,30 @@ namespace QuanLyLuongSanPham_GUI
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 29);
+            this.label2.Size = new System.Drawing.Size(213, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Đơn giá sản phẩm:";
+            this.label2.Text = "Đơn giá đơn hàng:";
             // 
-            // imageList1
+            // imgLon
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLon.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgLon.ImageSize = new System.Drawing.Size(48, 48);
+            this.imgLon.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // pictureBox1
+            // imgNho
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imgNho.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgNho.ImageSize = new System.Drawing.Size(16, 16);
+            this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // cboThongKeDonGia
+            // 
+            this.cboThongKeDonGia.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboThongKeDonGia.FormattingEnabled = true;
+            this.cboThongKeDonGia.Location = new System.Drawing.Point(266, 87);
+            this.cboThongKeDonGia.Name = "cboThongKeDonGia";
+            this.cboThongKeDonGia.Size = new System.Drawing.Size(219, 33);
+            this.cboThongKeDonGia.TabIndex = 5;
             // 
             // frmThongKeDonHang
             // 
@@ -269,6 +278,7 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -276,7 +286,6 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,13 +300,14 @@ namespace QuanLyLuongSanPham_GUI
         public System.Windows.Forms.ListView lvwThongKeDonHang;
         public System.Windows.Forms.Button btnInDonHang;
         public System.Windows.Forms.Button btnLocDonHang;
-        public System.Windows.Forms.TextBox textBox1;
         public DevExpress.XtraEditors.DateEdit dateEdit2;
         public DevExpress.XtraEditors.DateEdit dateEdit1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imgLon;
         public System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.ImageList imgNho;
+        private System.Windows.Forms.ComboBox cboThongKeDonGia;
     }
 }

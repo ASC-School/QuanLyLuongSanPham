@@ -21,6 +21,36 @@ namespace QuanLyLuongSanPham_GUI
 
         private void frmGDQLDonHang_Load(object sender, EventArgs e)
         {
+            // ẩn nút
+            btnLuuDonHang.Enabled = false;
+            btnHuyDonHang.Enabled = false;
+            btnInDonHang.Enabled = false;
+
+            lvwDSDonHang.LargeImageList = imgLon;
+            lvwDSDonHang.SmallImageList = imgNho;
+
+            taoTieuDeCot(lvwDSDonHang);
+
+            
+        }
+
+        public void taoTieuDeCot(ListView lvw)
+        {
+            lvw.Columns.Add("Mã đơn hàng", 100);
+            lvw.Columns.Add("Tên khách hàng", 200);
+            lvw.Columns.Add("Ngày bắt đầu", 200);
+            lvw.Columns.Add("Ngày kết thúc", 200);
+            lvw.Columns.Add("Tên sản phẩm", 300);
+            lvw.Columns.Add("Số lượng", 100);
+            lvw.Columns.Add("Đơn giá", 120);
+            lvw.Columns.Add("Nội dung", 200);
+            lvw.Columns.Add("Mã nhân viên", 100);
+            lvw.Columns.Add("Tên nhân viên", 200);
+            lvw.Columns.Add("Thành tiền", 120);
+
+            lvw.View = View.Details;
+            lvw.GridLines = true;
+            lvw.FullRowSelect = true;
 
         }
 
@@ -29,19 +59,23 @@ namespace QuanLyLuongSanPham_GUI
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void svgImageBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnThemDonHang_Click(object sender, EventArgs e)
         {
-
+            if(!btnThemDonHang.Text.Equals("Hủy thêm"))
+            {
+                btnLuuDonHang.Enabled = true;
+                btnThemDonHang.Text = "Hủy thêm";
+            }
+            else
+            {
+                btnLuuDonHang.Enabled = false;
+                btnThemDonHang.Text = "Thêm đơn hàng";
+            }
         }
+
+
+
+
     }
 }
