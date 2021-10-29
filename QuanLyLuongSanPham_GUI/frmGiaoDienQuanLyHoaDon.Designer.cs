@@ -50,6 +50,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnQuanLyDonhang,
             this.btnThongKeDonHang});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ribbon.MaxItemId = 3;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -57,7 +58,7 @@ namespace QuanLyLuongSanPham_GUI
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbon.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbon.Size = new System.Drawing.Size(1229, 84);
+            this.ribbon.Size = new System.Drawing.Size(1434, 102);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnQuanLyDonhang
@@ -92,10 +93,11 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 471);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 579);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1229, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1434, 29);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -103,12 +105,13 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // frmGiaoDienQuanLyHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 494);
+            this.ClientSize = new System.Drawing.Size(1434, 608);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmGiaoDienQuanLyHoaDon";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
