@@ -33,5 +33,15 @@ namespace QuanLyLuongSanPham_GUI
         {
 
         }
+
+        private void svgImageBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

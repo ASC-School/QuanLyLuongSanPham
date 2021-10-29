@@ -38,6 +38,7 @@
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -66,6 +67,12 @@
     <Compile Include="frmGiaoDienPhanQuyen.designer.cs">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGiaoDienQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiaoDienQuanLyHoaDon.Designer.cs">
+      <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoDienPhanQuyen.resx">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiaoDienQuanLyHoaDon.resx">
+      <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDonHang.resx">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
@@ -109,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\logo.png" />
+    <None Include="Resources\User-Interface-Menu-icon1.png" />
     <None Include="Resources\logo1.png" />
     <Content Include="Resources\Picture1.png" />
     <Content Include="Resources\Picture11.png" />
@@ -125,6 +136,7 @@
     <Content Include="Resources\Picture6.png" />
     <None Include="Resources\Picture61.png" />
     <Content Include="Resources\statistic-icon.png" />
+    <None Include="Resources\statistic-icon1.png" />
     <Content Include="Resources\User-Interface-Menu-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
