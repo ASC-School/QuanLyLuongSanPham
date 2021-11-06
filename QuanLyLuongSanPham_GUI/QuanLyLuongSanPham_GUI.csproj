@@ -70,12 +70,6 @@
     <Compile Include="frmGiaoDienPhanQuyen.designer.cs">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGiaoDienQuanLyHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGiaoDienQuanLyHoaDon.Designer.cs">
-      <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +81,12 @@
     </Compile>
     <Compile Include="frmThongKeDonHang.designer.cs">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimKiemDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimKiemDonHang.Designer.cs">
+      <DependentUpon>frmTimKiemDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmXemThongTin.cs">
       <SubType>Form</SubType>
@@ -102,14 +102,14 @@
     <EmbeddedResource Include="frmGiaoDienPhanQuyen.resx">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoDienQuanLyHoaDon.resx">
-      <DependentUpon>frmGiaoDienQuanLyHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDonHang.resx">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiemDonHang.resx">
+      <DependentUpon>frmTimKiemDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXemThongTin.resx">
       <DependentUpon>frmXemThongTin.cs</DependentUpon>
@@ -139,6 +139,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\2089195.png" />
+    <None Include="Resources\a78abc0784354c6b1524.jpg" />
+    <None Include="Resources\e5f84f0f743dbc63e52c.jpg" />
+    <None Include="Resources\8bc19fffaacd62933bdc.jpg" />
+    <None Include="Resources\b5bd7edf44ed8cb3d5fc.jpg" />
+    <None Include="Resources\ec607bb2418089ded091.jpg" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\User-Interface-Menu-icon1.png" />
     <None Include="Resources\logo1.png" />
@@ -146,6 +152,7 @@
     <Content Include="Resources\Picture11.png" />
     <None Include="Resources\Picture12.png" />
     <None Include="Resources\Picture13.png" />
+    <None Include="Resources\Picture111.png" />
     <Content Include="Resources\Picture2.png" />
     <None Include="Resources\Picture21.png" />
     <Content Include="Resources\Picture3.png" />

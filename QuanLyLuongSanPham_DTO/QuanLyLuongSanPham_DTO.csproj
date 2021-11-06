@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO_BangLuong.cs" />
     <Compile Include="DTO_CaLamViec.cs" />
     <Compile Include="DTO_ChiTietDonHang.cs" />
     <Compile Include="DTO_ChiTietModel.cs" />
@@ -58,7 +57,6 @@
     <Compile Include="DTO_CongDoanSanXuat.cs" />
     <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_DonViQuanLy.cs" />
-    <Compile Include="DTO_LoaiBangLuong.cs" />
     <Compile Include="DTO_LoaiNhanVien.cs" />
     <Compile Include="DTO_LuongNhanVien.cs" />
     <Compile Include="DTO_Model.cs" />

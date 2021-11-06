@@ -63,6 +63,66 @@ namespace QuanLyLuongSanPham_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2089195 {
+            get {
+                object obj = ResourceManager.GetObject("2089195", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8bc19fffaacd62933bdc {
+            get {
+                object obj = ResourceManager.GetObject("8bc19fffaacd62933bdc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap a78abc0784354c6b1524 {
+            get {
+                object obj = ResourceManager.GetObject("a78abc0784354c6b1524", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b5bd7edf44ed8cb3d5fc {
+            get {
+                object obj = ResourceManager.GetObject("b5bd7edf44ed8cb3d5fc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e5f84f0f743dbc63e52c {
+            get {
+                object obj = ResourceManager.GetObject("e5f84f0f743dbc63e52c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ec607bb2418089ded091 {
+            get {
+                object obj = ResourceManager.GetObject("ec607bb2418089ded091", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -86,6 +146,16 @@ namespace QuanLyLuongSanPham_GUI.Properties {
         internal static System.Drawing.Bitmap Picture11 {
             get {
                 object obj = ResourceManager.GetObject("Picture11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Picture111 {
+            get {
+                object obj = ResourceManager.GetObject("Picture111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

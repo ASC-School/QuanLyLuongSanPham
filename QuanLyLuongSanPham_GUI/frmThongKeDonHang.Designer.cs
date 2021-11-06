@@ -35,41 +35,49 @@ namespace QuanLyLuongSanPham_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cboThongKeDonGia = new System.Windows.Forms.ComboBox();
             this.lvwThongKeDonHang = new System.Windows.Forms.ListView();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnInDonHang = new System.Windows.Forms.Button();
             this.btnLocDonHang = new System.Windows.Forms.Button();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateNgayKetThuc = new DevExpress.XtraEditors.DateEdit();
+            this.dateNgayBatDau = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
-            this.cboThongKeDonGia = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuXemThongTin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPhanQuyen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLyLuong = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLyNhanSu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLyDonHang = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(7)))), ((int)(((byte)(21)))));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.panel1);
             this.panelControl1.Controls.Add(this.panelControl2);
+            this.panelControl1.Controls.Add(this.menuStrip1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1026, 590);
+            this.panelControl1.Size = new System.Drawing.Size(1024, 666);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -77,7 +85,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(27, 9);
+            this.panel1.Location = new System.Drawing.Point(27, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(389, 46);
             this.panel1.TabIndex = 1;
@@ -87,9 +95,9 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(100, 0);
+            this.label1.Location = new System.Drawing.Point(72, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 46);
+            this.label1.Size = new System.Drawing.Size(317, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "THỐNG KÊ ĐƠN HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,14 +108,14 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(72, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panelControl2
             // 
-            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.cboThongKeDonGia);
@@ -115,16 +123,25 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.btnDong);
             this.panelControl2.Controls.Add(this.btnInDonHang);
             this.panelControl2.Controls.Add(this.btnLocDonHang);
-            this.panelControl2.Controls.Add(this.dateEdit2);
-            this.panelControl2.Controls.Add(this.dateEdit1);
+            this.panelControl2.Controls.Add(this.dateNgayKetThuc);
+            this.panelControl2.Controls.Add(this.dateNgayBatDau);
             this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.FireScrollEventOnMouseWheel = true;
-            this.panelControl2.Location = new System.Drawing.Point(27, 61);
+            this.panelControl2.Location = new System.Drawing.Point(27, 134);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(973, 520);
             this.panelControl2.TabIndex = 0;
+            // 
+            // cboThongKeDonGia
+            // 
+            this.cboThongKeDonGia.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboThongKeDonGia.FormattingEnabled = true;
+            this.cboThongKeDonGia.Location = new System.Drawing.Point(266, 87);
+            this.cboThongKeDonGia.Name = "cboThongKeDonGia";
+            this.cboThongKeDonGia.Size = new System.Drawing.Size(219, 33);
+            this.cboThongKeDonGia.TabIndex = 5;
             // 
             // lvwThongKeDonHang
             // 
@@ -172,7 +189,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLocDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLocDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnLocDonHang.Location = new System.Drawing.Point(722, 73);
+            this.btnLocDonHang.Location = new System.Drawing.Point(716, 79);
             this.btnLocDonHang.Name = "btnLocDonHang";
             this.btnLocDonHang.Size = new System.Drawing.Size(230, 47);
             this.btnLocDonHang.TabIndex = 3;
@@ -180,39 +197,39 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLocDonHang.UseVisualStyleBackColor = false;
             this.btnLocDonHang.Click += new System.EventHandler(this.btnLocDonHang_Click);
             // 
-            // dateEdit2
+            // dateNgayKetThuc
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(716, 22);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dateEdit2.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateNgayKetThuc.EditValue = null;
+            this.dateNgayKetThuc.Location = new System.Drawing.Point(716, 22);
+            this.dateNgayKetThuc.Name = "dateNgayKetThuc";
+            this.dateNgayKetThuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateNgayKetThuc.Properties.Appearance.Options.UseFont = true;
+            this.dateNgayKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(236, 32);
-            this.dateEdit2.TabIndex = 1;
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(236, 32);
+            this.dateNgayKetThuc.TabIndex = 1;
             // 
-            // dateEdit1
+            // dateNgayBatDau
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(266, 23);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateNgayBatDau.EditValue = null;
+            this.dateNgayBatDau.Location = new System.Drawing.Point(266, 23);
+            this.dateNgayBatDau.Name = "dateNgayBatDau";
+            this.dateNgayBatDau.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateNgayBatDau.Properties.Appearance.Options.UseFont = true;
+            this.dateNgayBatDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(219, 32);
-            this.dateEdit1.TabIndex = 1;
+            this.dateNgayBatDau.Size = new System.Drawing.Size(219, 32);
+            this.dateNgayBatDau.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(34, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 29);
@@ -223,7 +240,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(543, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 29);
@@ -234,7 +251,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(34, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 29);
@@ -253,14 +270,55 @@ namespace QuanLyLuongSanPham_GUI
             this.imgNho.ImageSize = new System.Drawing.Size(16, 16);
             this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // cboThongKeDonGia
+            // menuStrip1
             // 
-            this.cboThongKeDonGia.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cboThongKeDonGia.FormattingEnabled = true;
-            this.cboThongKeDonGia.Location = new System.Drawing.Point(266, 87);
-            this.cboThongKeDonGia.Name = "cboThongKeDonGia";
-            this.cboThongKeDonGia.Size = new System.Drawing.Size(219, 33);
-            this.cboThongKeDonGia.TabIndex = 5;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuXemThongTin,
+            this.mnuPhanQuyen,
+            this.mnuQuanLyLuong,
+            this.mnuQuanLyNhanSu,
+            this.mnuQuanLyDonHang});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 56);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuXemThongTin
+            // 
+            this.mnuXemThongTin.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.a78abc0784354c6b1524;
+            this.mnuXemThongTin.Name = "mnuXemThongTin";
+            this.mnuXemThongTin.Size = new System.Drawing.Size(143, 52);
+            this.mnuXemThongTin.Text = "Xem thông tin";
+            // 
+            // mnuPhanQuyen
+            // 
+            this.mnuPhanQuyen.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.e5f84f0f743dbc63e52c;
+            this.mnuPhanQuyen.Name = "mnuPhanQuyen";
+            this.mnuPhanQuyen.Size = new System.Drawing.Size(130, 52);
+            this.mnuPhanQuyen.Text = "Phân quyền";
+            // 
+            // mnuQuanLyLuong
+            // 
+            this.mnuQuanLyLuong.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources._8bc19fffaacd62933bdc;
+            this.mnuQuanLyLuong.Name = "mnuQuanLyLuong";
+            this.mnuQuanLyLuong.Size = new System.Drawing.Size(142, 52);
+            this.mnuQuanLyLuong.Text = "Quản lý lương";
+            // 
+            // mnuQuanLyNhanSu
+            // 
+            this.mnuQuanLyNhanSu.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.b5bd7edf44ed8cb3d5fc;
+            this.mnuQuanLyNhanSu.Name = "mnuQuanLyNhanSu";
+            this.mnuQuanLyNhanSu.Size = new System.Drawing.Size(153, 52);
+            this.mnuQuanLyNhanSu.Text = "Quản lý nhân sự";
+            // 
+            // mnuQuanLyDonHang
+            // 
+            this.mnuQuanLyDonHang.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.ec607bb2418089ded091;
+            this.mnuQuanLyDonHang.Name = "mnuQuanLyDonHang";
+            this.mnuQuanLyDonHang.Size = new System.Drawing.Size(162, 52);
+            this.mnuQuanLyDonHang.Text = "Quản lý đơn hàng";
             // 
             // frmThongKeDonHang
             // 
@@ -268,24 +326,29 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1026, 590);
+            this.ClientSize = new System.Drawing.Size(1024, 666);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.IconOptions.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmThongKeDonHang";
             this.Text = "Thống kê đơn hàng";
             this.Load += new System.EventHandler(this.frmThongKeDonHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -300,8 +363,8 @@ namespace QuanLyLuongSanPham_GUI
         public System.Windows.Forms.ListView lvwThongKeDonHang;
         public System.Windows.Forms.Button btnInDonHang;
         public System.Windows.Forms.Button btnLocDonHang;
-        public DevExpress.XtraEditors.DateEdit dateEdit2;
-        public DevExpress.XtraEditors.DateEdit dateEdit1;
+        public DevExpress.XtraEditors.DateEdit dateNgayKetThuc;
+        public DevExpress.XtraEditors.DateEdit dateNgayBatDau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -309,5 +372,11 @@ namespace QuanLyLuongSanPham_GUI
         public System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.ImageList imgNho;
         private System.Windows.Forms.ComboBox cboThongKeDonGia;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuXemThongTin;
+        private System.Windows.Forms.ToolStripMenuItem mnuPhanQuyen;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyLuong;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanSu;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyDonHang;
     }
 }

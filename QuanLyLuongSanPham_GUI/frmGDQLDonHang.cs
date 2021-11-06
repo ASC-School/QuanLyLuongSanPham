@@ -74,8 +74,9 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+        private void radMaDonHang_CheckedChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
