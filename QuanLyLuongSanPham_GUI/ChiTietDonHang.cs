@@ -11,21 +11,11 @@ using System.Windows.Forms;
 
 namespace QuanLyLuongSanPham_GUI
 {
-    public partial class frmTimKiemDonHang : DevExpress.XtraEditors.XtraForm
+    public partial class frmChiTietDonHang : DevExpress.XtraEditors.XtraForm
     {
-        public frmTimKiemDonHang()
+        public frmChiTietDonHang()
         {
             InitializeComponent();
-        }
-
-        private void frmTimKiemDonHang_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

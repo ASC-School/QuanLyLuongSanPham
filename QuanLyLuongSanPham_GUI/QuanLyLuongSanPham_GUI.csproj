@@ -58,6 +58,12 @@
     <Compile Include="ButtonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDonHang.Designer.cs">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGDQLDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChiTietDonHang.resx">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGDQLDonHang.resx">
       <DependentUpon>frmGDQLDonHang.cs</DependentUpon>
     </EmbeddedResource>

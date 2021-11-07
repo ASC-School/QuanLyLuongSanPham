@@ -69,7 +69,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1024, 601);
+            this.panelControl1.Size = new System.Drawing.Size(1254, 601);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -123,7 +123,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.FireScrollEventOnMouseWheel = true;
             this.panelControl2.Location = new System.Drawing.Point(27, 71);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(973, 520);
+            this.panelControl2.Size = new System.Drawing.Size(1215, 520);
             this.panelControl2.TabIndex = 0;
             // 
             // cboThongKeDonGia
@@ -132,7 +132,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboThongKeDonGia.FormattingEnabled = true;
             this.cboThongKeDonGia.Location = new System.Drawing.Point(266, 87);
             this.cboThongKeDonGia.Name = "cboThongKeDonGia";
-            this.cboThongKeDonGia.Size = new System.Drawing.Size(219, 33);
+            this.cboThongKeDonGia.Size = new System.Drawing.Size(305, 33);
             this.cboThongKeDonGia.TabIndex = 5;
             // 
             // lvwThongKeDonHang
@@ -140,7 +140,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lvwThongKeDonHang.HideSelection = false;
             this.lvwThongKeDonHang.Location = new System.Drawing.Point(19, 158);
             this.lvwThongKeDonHang.Name = "lvwThongKeDonHang";
-            this.lvwThongKeDonHang.Size = new System.Drawing.Size(933, 268);
+            this.lvwThongKeDonHang.Size = new System.Drawing.Size(1179, 268);
             this.lvwThongKeDonHang.TabIndex = 4;
             this.lvwThongKeDonHang.UseCompatibleStateImageBehavior = false;
             // 
@@ -181,9 +181,9 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLocDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLocDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnLocDonHang.Location = new System.Drawing.Point(716, 79);
+            this.btnLocDonHang.Location = new System.Drawing.Point(1019, 80);
             this.btnLocDonHang.Name = "btnLocDonHang";
-            this.btnLocDonHang.Size = new System.Drawing.Size(230, 47);
+            this.btnLocDonHang.Size = new System.Drawing.Size(151, 47);
             this.btnLocDonHang.TabIndex = 3;
             this.btnLocDonHang.Text = "Lọc";
             this.btnLocDonHang.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@ namespace QuanLyLuongSanPham_GUI
             // dateNgayKetThuc
             // 
             this.dateNgayKetThuc.EditValue = null;
-            this.dateNgayKetThuc.Location = new System.Drawing.Point(716, 22);
+            this.dateNgayKetThuc.Location = new System.Drawing.Point(891, 23);
             this.dateNgayKetThuc.Name = "dateNgayKetThuc";
             this.dateNgayKetThuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateNgayKetThuc.Properties.Appearance.Options.UseFont = true;
@@ -200,7 +200,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayKetThuc.Size = new System.Drawing.Size(236, 32);
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(285, 32);
             this.dateNgayKetThuc.TabIndex = 1;
             // 
             // dateNgayBatDau
@@ -214,7 +214,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(219, 32);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(305, 32);
             this.dateNgayBatDau.TabIndex = 1;
             // 
             // label3
@@ -233,7 +233,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(543, 26);
+            this.label4.Location = new System.Drawing.Point(718, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 29);
             this.label4.TabIndex = 0;
@@ -268,7 +268,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1024, 601);
+            this.ClientSize = new System.Drawing.Size(1254, 601);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.IconOptions.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;

@@ -11,7 +11,7 @@ namespace QuanLyLuongSanPham_DAO
         QuanLyLuongSanPhamDataContext dataBase;
         public DAO_DonViQuanLy()
         {
-
+            
         }
     }
 }
