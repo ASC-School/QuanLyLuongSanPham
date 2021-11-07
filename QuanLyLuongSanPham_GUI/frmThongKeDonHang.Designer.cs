@@ -47,12 +47,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnuXemThongTin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPhanQuyen = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQuanLyLuong = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQuanLyNhanSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQuanLyDonHang = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,7 +57,6 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -73,11 +66,10 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.panel1);
             this.panelControl1.Controls.Add(this.panelControl2);
-            this.panelControl1.Controls.Add(this.menuStrip1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1024, 666);
+            this.panelControl1.Size = new System.Drawing.Size(1024, 601);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -85,7 +77,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(27, 82);
+            this.panel1.Location = new System.Drawing.Point(27, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(389, 46);
             this.panel1.TabIndex = 1;
@@ -129,7 +121,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.FireScrollEventOnMouseWheel = true;
-            this.panelControl2.Location = new System.Drawing.Point(27, 134);
+            this.panelControl2.Location = new System.Drawing.Point(27, 71);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(973, 520);
             this.panelControl2.TabIndex = 0;
@@ -270,74 +262,22 @@ namespace QuanLyLuongSanPham_GUI
             this.imgNho.ImageSize = new System.Drawing.Size(16, 16);
             this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuXemThongTin,
-            this.mnuPhanQuyen,
-            this.mnuQuanLyLuong,
-            this.mnuQuanLyNhanSu,
-            this.mnuQuanLyDonHang});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 56);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnuXemThongTin
-            // 
-            this.mnuXemThongTin.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.a78abc0784354c6b1524;
-            this.mnuXemThongTin.Name = "mnuXemThongTin";
-            this.mnuXemThongTin.Size = new System.Drawing.Size(143, 52);
-            this.mnuXemThongTin.Text = "Xem thông tin";
-            // 
-            // mnuPhanQuyen
-            // 
-            this.mnuPhanQuyen.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.e5f84f0f743dbc63e52c;
-            this.mnuPhanQuyen.Name = "mnuPhanQuyen";
-            this.mnuPhanQuyen.Size = new System.Drawing.Size(130, 52);
-            this.mnuPhanQuyen.Text = "Phân quyền";
-            // 
-            // mnuQuanLyLuong
-            // 
-            this.mnuQuanLyLuong.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources._8bc19fffaacd62933bdc;
-            this.mnuQuanLyLuong.Name = "mnuQuanLyLuong";
-            this.mnuQuanLyLuong.Size = new System.Drawing.Size(142, 52);
-            this.mnuQuanLyLuong.Text = "Quản lý lương";
-            // 
-            // mnuQuanLyNhanSu
-            // 
-            this.mnuQuanLyNhanSu.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.b5bd7edf44ed8cb3d5fc;
-            this.mnuQuanLyNhanSu.Name = "mnuQuanLyNhanSu";
-            this.mnuQuanLyNhanSu.Size = new System.Drawing.Size(153, 52);
-            this.mnuQuanLyNhanSu.Text = "Quản lý nhân sự";
-            // 
-            // mnuQuanLyDonHang
-            // 
-            this.mnuQuanLyDonHang.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.ec607bb2418089ded091;
-            this.mnuQuanLyDonHang.Name = "mnuQuanLyDonHang";
-            this.mnuQuanLyDonHang.Size = new System.Drawing.Size(162, 52);
-            this.mnuQuanLyDonHang.Text = "Quản lý đơn hàng";
-            // 
             // frmThongKeDonHang
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1024, 666);
+            this.ClientSize = new System.Drawing.Size(1024, 601);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.IconOptions.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmThongKeDonHang";
             this.Text = "Thống kê đơn hàng";
             this.Load += new System.EventHandler(this.frmThongKeDonHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -347,8 +287,6 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,11 +310,5 @@ namespace QuanLyLuongSanPham_GUI
         public System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.ImageList imgNho;
         private System.Windows.Forms.ComboBox cboThongKeDonGia;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuXemThongTin;
-        private System.Windows.Forms.ToolStripMenuItem mnuPhanQuyen;
-        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyLuong;
-        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanSu;
-        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyDonHang;
     }
 }

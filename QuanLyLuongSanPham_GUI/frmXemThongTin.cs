@@ -17,5 +17,6 @@ namespace QuanLyLuongSanPham_GUI
         {
             InitializeComponent();
         }
+
     }
 }

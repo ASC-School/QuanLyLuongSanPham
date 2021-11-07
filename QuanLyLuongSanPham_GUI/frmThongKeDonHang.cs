@@ -60,5 +60,10 @@ namespace QuanLyLuongSanPham_GUI
         {
 
         }
+
+        private void mnuXemThongTin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

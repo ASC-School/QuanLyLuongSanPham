@@ -32,6 +32,7 @@ namespace QuanLyLuongSanPham_GUI
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
@@ -49,15 +50,13 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaDonHang = new System.Windows.Forms.ComboBox();
             this.dateNgayBatDau = new DevExpress.XtraEditors.DateEdit();
             this.dateNgayKetThuc = new DevExpress.XtraEditors.DateEdit();
-            this.btnLoadListView = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +77,17 @@ namespace QuanLyLuongSanPham_GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(99, 50);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -245,27 +255,6 @@ namespace QuanLyLuongSanPham_GUI
             this.dateNgayKetThuc.Size = new System.Drawing.Size(257, 20);
             this.dateNgayKetThuc.TabIndex = 9;
             // 
-            // btnLoadListView
-            // 
-            this.btnLoadListView.BackColor = System.Drawing.Color.Crimson;
-            this.btnLoadListView.ImageList = this.imgNho;
-            this.btnLoadListView.Location = new System.Drawing.Point(915, 196);
-            this.btnLoadListView.Name = "btnLoadListView";
-            this.btnLoadListView.Size = new System.Drawing.Size(106, 51);
-            this.btnLoadListView.TabIndex = 10;
-            this.btnLoadListView.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // imgNho
             // 
             this.imgNho.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -279,8 +268,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 417);
-            this.Controls.Add(this.btnLoadListView);
+            this.ClientSize = new System.Drawing.Size(1067, 423);
             this.Controls.Add(this.dateNgayKetThuc);
             this.Controls.Add(this.dateNgayBatDau);
             this.Controls.Add(this.cboMaDonHang);
@@ -306,11 +294,11 @@ namespace QuanLyLuongSanPham_GUI
             this.Name = "frmTimKiemDonHang";
             this.Text = "Tìm Kiếm Đơn Hàng";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +326,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.ComboBox cboMaDonHang;
         private DevExpress.XtraEditors.DateEdit dateNgayBatDau;
         private DevExpress.XtraEditors.DateEdit dateNgayKetThuc;
-        private System.Windows.Forms.Button btnLoadListView;
         private System.Windows.Forms.ImageList imgNho;
     }
 }
