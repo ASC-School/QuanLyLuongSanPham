@@ -8,10 +8,10 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
-    public class DAL_NhanVien
+    public class DAO_NhanVien
     {
         QuanLyLuongSanPhamDataContext dataBase;
-        public DAL_NhanVien()
+        public DAO_NhanVien()
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
@@ -25,6 +25,8 @@ namespace QuanLyLuongSanPham_DAO
             {
                 DTO_NhanVien tmp = new DTO_NhanVien();
                 tmp.MaNhanVien = nv.maNhanVien;
+                tmp.TenNhanVien = nv.tenNhanVien;
+
             }
             return lst;
         }

@@ -8,5 +8,10 @@ namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_ChiTietDonHang
     {
+        QuanLyLuongSanPhamDataContext dataBase;
+        public DAO_ChiTietDonHang()
+        {
+            dataBase = new QuanLyLuongSanPhamDataContext();
+        }
     }
 }

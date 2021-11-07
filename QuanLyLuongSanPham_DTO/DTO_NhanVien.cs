@@ -8,20 +8,25 @@ namespace QuanLyLuongSanPham_DTO
 {
     public class DTO_NhanVien
     {
-        string maNhanVien, tenNhanVien, gioiTinh, loaiNhanVien,soDienThoai;
+        string maNhanVien, tenNhanVien, gioiTinh, loaiNhanVien,soDienThoai,diaChi, maLoai;
         DateTime ngaySinh, ngayBatDauCongTac;
         bool trangThai;
+        byte avatar;                                                                                                                                                                                                                         
         public DTO_NhanVien() { }
-        public DTO_NhanVien(string maNhanVien, string tenNhanVien, string gioiTinh,string soDienThoai, string loaiNhanVien, DateTime ngaySinh, DateTime ngayBatDauCongTac,bool trangThai)
+
+        public DTO_NhanVien(string maNhanVien, string tenNhanVien, string gioiTinh, string loaiNhanVien, string soDienThoai, string diaChi, string maLoai, DateTime ngaySinh, DateTime ngayBatDauCongTac, bool trangThai, byte avatar)
         {
-            this.MaNhanVien = maNhanVien;
-            this.TenNhanVien = tenNhanVien;
-            this.GioiTinh = gioiTinh;
+            this.maNhanVien = maNhanVien;
+            this.tenNhanVien = tenNhanVien;
+            this.gioiTinh = gioiTinh;
+            this.loaiNhanVien = loaiNhanVien;
             this.soDienThoai = soDienThoai;
-            this.LoaiNhanVien = loaiNhanVien;
-            this.NgaySinh = ngaySinh;
-            this.NgayBatDauCongTac = ngayBatDauCongTac;
-            this.TrangThai = trangThai;
+            this.DiaChi = diaChi;
+            this.MaLoai = maLoai;
+            this.ngaySinh = ngaySinh;
+            this.ngayBatDauCongTac = ngayBatDauCongTac;
+            this.trangThai = trangThai;
+            this.Avatar = avatar;
         }
 
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
@@ -32,5 +37,8 @@ namespace QuanLyLuongSanPham_DTO
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public DateTime NgayBatDauCongTac { get => ngayBatDauCongTac; set => ngayBatDauCongTac = value; }
         public bool TrangThai { get => trangThai; set => trangThai = value; }
+        public byte Avatar { get => avatar; set => avatar = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string MaLoai { get => maLoai; set => maLoai = value; }
     }
 }

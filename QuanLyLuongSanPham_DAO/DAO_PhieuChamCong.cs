@@ -8,5 +8,10 @@ namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_PhieuChamCong
     {
+        QuanLyLuongSanPhamDataContext dataBase;
+        public DAO_PhieuChamCong()
+        {
+            dataBase = new QuanLyLuongSanPhamDataContext();
+        }
     }
 }

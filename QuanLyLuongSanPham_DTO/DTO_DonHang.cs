@@ -8,24 +8,28 @@ namespace QuanLyLuongSanPham_DTO
 {
     public class DTO_DonHang
     {
-        string maDonHang,tenKhachHang,maNhanVien,noiDung;
+        string maDonHang,tenKhachHang,maNhanVien,noiDung,soDienThoaiKhachHang;
         DateTime ngayBatDau, ngayKetThuc;
 
         public DTO_DonHang() { }
-        public DTO_DonHang(string maDonHang, string maNhanVien,string tenKhachHang, string noiDung, DateTime ngayBatDau, DateTime ngayKetThuc)
+
+        public DTO_DonHang(string maDonHang, string tenKhachHang, string maNhanVien, string noiDung, string soDienThoaiKhachHang, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
             this.MaDonHang = maDonHang;
-            this.MaNhanVien = maNhanVien;
-            this.NoiDung = noiDung;
-            this.NgayBatDau = ngayBatDau;
-            this.NgayKetThuc = ngayKetThuc;
-            this.tenKhachHang = tenKhachHang;
+            this.TenKhachHang = tenKhachHang;
+            this.maNhanVien = maNhanVien;
+            this.noiDung = noiDung;
+            this.SoDienThoaiKhachHang = soDienThoaiKhachHang;
+            this.ngayBatDau = ngayBatDau;
+            this.ngayKetThuc = ngayKetThuc;
         }
 
-        public string MaDonHang { get => maDonHang; set => maDonHang = value; }
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
         public string NoiDung { get => noiDung; set => noiDung = value; }
         public DateTime NgayBatDau { get => ngayBatDau; set => ngayBatDau = value; }
         public DateTime NgayKetThuc { get => ngayKetThuc; set => ngayKetThuc = value; }
+        public string TenKhachHang { get => tenKhachHang; set => tenKhachHang = value; }
+        public string MaDonHang { get => maDonHang; set => maDonHang = value; }
+        public string SoDienThoaiKhachHang { get => soDienThoaiKhachHang; set => soDienThoaiKhachHang = value; }
     }
 }

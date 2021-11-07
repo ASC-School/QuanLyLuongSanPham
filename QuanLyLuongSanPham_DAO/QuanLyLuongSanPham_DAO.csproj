@@ -63,7 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO_BangLuong.cs" />
     <Compile Include="DAO_CaLamViec.cs" />
     <Compile Include="DAO_ChiTietDonHang.cs" />
     <Compile Include="DAO_ChiTietModel.cs" />
@@ -72,14 +71,13 @@
     <Compile Include="DAO_DonHang.cs" />
     <Compile Include="DAO_DonViQuanLy.cs" />
     <Compile Include="DAO_KetNoi.cs" />
-    <Compile Include="DAO_LoaiBangLuong.cs" />
     <Compile Include="DAO_LoaiNhanVien.cs" />
-    <Compile Include="DAO_LuongNhanVien.cs" />
+    <Compile Include="DAO_LuongCongNhan.cs" />
+    <Compile Include="DAO_LuongHanhChanh.cs" />
     <Compile Include="DAO_Model.cs" />
     <Compile Include="DAO_NhanVien.cs" />
     <Compile Include="DAO_PhanQuyen.cs" />
     <Compile Include="DAO_PhieuChamCong.cs" />
-    <Compile Include="DAO_PhieuLuong.cs" />
     <Compile Include="DAO_SanPham.cs" />
     <Compile Include="DAO_SanPhamSanXuat.cs" />
     <Compile Include="DAO_TaiKhoan.cs" />

@@ -8,5 +8,10 @@ namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_DonViQuanLy
     {
+        QuanLyLuongSanPhamDataContext dataBase;
+        public DAO_DonViQuanLy()
+        {
+
+        }
     }
 }

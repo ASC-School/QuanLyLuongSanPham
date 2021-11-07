@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
-    public class DAO_PhieuLuong
+   public class DAO_LuongCongNhan
     {
         QuanLyLuongSanPhamDataContext dataBase;
-        public DAO_PhieuLuong()
+        public DAO_LuongCongNhan()
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
-
     }
 }

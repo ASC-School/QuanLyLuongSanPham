@@ -58,12 +58,12 @@
     <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_DonViQuanLy.cs" />
     <Compile Include="DTO_LoaiNhanVien.cs" />
-    <Compile Include="DTO_LuongNhanVien.cs" />
+    <Compile Include="DTO_LuongCongNhan.cs" />
+    <Compile Include="DTO_LuongHanhChanh.cs" />
     <Compile Include="DTO_Model.cs" />
     <Compile Include="DTO_NhanVien.cs" />
     <Compile Include="DTO_PhanQuyen.cs" />
     <Compile Include="DTO_PhieuChamCong.cs" />
-    <Compile Include="DTO_PhieuLuong.cs" />
     <Compile Include="DTO_SanPham.cs" />
     <Compile Include="DTO_SanPhamSanXuat.cs" />
     <Compile Include="DTO_TaiKhoan.cs" />

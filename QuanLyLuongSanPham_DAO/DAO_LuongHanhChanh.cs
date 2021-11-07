@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
-    public class DAO_CongDoanSanXuat
+    public class DAO_LuongHanhChanh
     {
         QuanLyLuongSanPhamDataContext dataBase;
-        public DAO_CongDoanSanXuat()
+        public DAO_LuongHanhChanh()
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
