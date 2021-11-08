@@ -54,6 +54,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnChiTietDonHang = new System.Windows.Forms.Button();
             this.lvwDSDonHang = new System.Windows.Forms.ListView();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.dateNgayKetThuc = new DevExpress.XtraEditors.DateEdit();
@@ -137,7 +138,7 @@ namespace QuanLyLuongSanPham_GUI
             this.sidePanel1.Controls.Add(this.btnHuyDonHang);
             this.sidePanel1.Controls.Add(this.btnLuuDonHang);
             this.sidePanel1.Controls.Add(this.btnThemDonHang);
-            this.sidePanel1.Location = new System.Drawing.Point(0, 178);
+            this.sidePanel1.Location = new System.Drawing.Point(0, 102);
             this.sidePanel1.Name = "sidePanel1";
             this.sidePanel1.Size = new System.Drawing.Size(274, 407);
             this.sidePanel1.TabIndex = 2;
@@ -149,7 +150,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Location = new System.Drawing.Point(4, 323);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(91, 49);
+            this.panel7.Size = new System.Drawing.Size(91, 43);
             this.panel7.TabIndex = 2;
             // 
             // pictureBox2
@@ -158,7 +159,7 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox2.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture4;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(91, 49);
+            this.pictureBox2.Size = new System.Drawing.Size(91, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -181,10 +182,11 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Location = new System.Drawing.Point(4, 262);
+            this.panel6.Location = new System.Drawing.Point(4, 266);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(91, 49);
+            this.panel6.Size = new System.Drawing.Size(91, 43);
             this.panel6.TabIndex = 11;
             // 
             // pictureBox7
@@ -194,17 +196,18 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox7.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources._2089195;
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(91, 49);
+            this.pictureBox7.Size = new System.Drawing.Size(91, 43);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.panel5.Controls.Add(this.pictureBox6);
-            this.panel5.Location = new System.Drawing.Point(4, 197);
+            this.panel5.Location = new System.Drawing.Point(4, 203);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(91, 53);
+            this.panel5.Size = new System.Drawing.Size(91, 43);
             this.panel5.TabIndex = 10;
             // 
             // pictureBox6
@@ -214,7 +217,7 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox6.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture5;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(91, 53);
+            this.pictureBox6.Size = new System.Drawing.Size(91, 43);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 7;
             this.pictureBox6.TabStop = false;
@@ -222,9 +225,10 @@ namespace QuanLyLuongSanPham_GUI
             // panel4
             // 
             this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Location = new System.Drawing.Point(4, 134);
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
+            this.panel4.Location = new System.Drawing.Point(4, 139);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(91, 57);
+            this.panel4.Size = new System.Drawing.Size(91, 43);
             this.panel4.TabIndex = 9;
             // 
             // pictureBox5
@@ -234,17 +238,18 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox5.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture3;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(91, 57);
+            this.pictureBox5.Size = new System.Drawing.Size(91, 43);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(4, 68);
+            this.panel3.Location = new System.Drawing.Point(4, 74);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(91, 54);
+            this.panel3.Size = new System.Drawing.Size(91, 43);
             this.panel3.TabIndex = 8;
             // 
             // pictureBox3
@@ -254,17 +259,18 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox3.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture2;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(91, 54);
+            this.pictureBox3.Size = new System.Drawing.Size(91, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Location = new System.Drawing.Point(4, 5);
+            this.panel2.Location = new System.Drawing.Point(4, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(91, 55);
+            this.panel2.Size = new System.Drawing.Size(91, 43);
             this.panel2.TabIndex = 7;
             // 
             // pictureBox4
@@ -274,7 +280,7 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox4.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture1;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(91, 55);
+            this.pictureBox4.Size = new System.Drawing.Size(91, 43);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -372,7 +378,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(925, 740);
+            this.panelControl1.Size = new System.Drawing.Size(925, 576);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -390,6 +396,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl2.Appearance.Options.UseBorderColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl2.Controls.Add(this.btnChiTietDonHang);
             this.panelControl2.Controls.Add(this.lvwDSDonHang);
             this.panelControl2.Controls.Add(this.dateNgayKetThuc);
             this.panelControl2.Controls.Add(this.dateNgayBatDau);
@@ -412,8 +419,22 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Location = new System.Drawing.Point(11, 44);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(894, 495);
+            this.panelControl2.Size = new System.Drawing.Size(894, 491);
             this.panelControl2.TabIndex = 0;
+            // 
+            // btnChiTietDonHang
+            // 
+            this.btnChiTietDonHang.BackColor = System.Drawing.Color.Crimson;
+            this.btnChiTietDonHang.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnChiTietDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiTietDonHang.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChiTietDonHang.ForeColor = System.Drawing.Color.White;
+            this.btnChiTietDonHang.Location = new System.Drawing.Point(12, 450);
+            this.btnChiTietDonHang.Name = "btnChiTietDonHang";
+            this.btnChiTietDonHang.Size = new System.Drawing.Size(192, 33);
+            this.btnChiTietDonHang.TabIndex = 4;
+            this.btnChiTietDonHang.Text = "Chi tiết đơn hàng";
+            this.btnChiTietDonHang.UseVisualStyleBackColor = false;
             // 
             // lvwDSDonHang
             // 
@@ -422,7 +443,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lvwDSDonHang.LargeImageList = this.imgLon;
             this.lvwDSDonHang.Location = new System.Drawing.Point(12, 262);
             this.lvwDSDonHang.Name = "lvwDSDonHang";
-            this.lvwDSDonHang.Size = new System.Drawing.Size(867, 223);
+            this.lvwDSDonHang.Size = new System.Drawing.Size(867, 182);
             this.lvwDSDonHang.TabIndex = 3;
             this.lvwDSDonHang.UseCompatibleStateImageBehavior = false;
             // 
@@ -651,7 +672,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1198, 757);
+            this.ClientSize = new System.Drawing.Size(1198, 593);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
@@ -739,5 +760,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnChiTietDonHang;
     }
 }

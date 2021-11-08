@@ -30,7 +30,7 @@ namespace QuanLyLuongSanPham_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163))));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -114,7 +114,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(291, 691);
+            this.panelControl1.Size = new System.Drawing.Size(291, 623);
             this.panelControl1.TabIndex = 0;
             // 
             // panel3
@@ -129,7 +129,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel3.Controls.Add(this.btnHuyPhanQuyen);
             this.panel3.Controls.Add(this.btnLuu);
             this.panel3.Controls.Add(this.btnPhanQuyen);
-            this.panel3.Location = new System.Drawing.Point(0, 136);
+            this.panel3.Location = new System.Drawing.Point(0, 90);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(291, 325);
             this.panel3.TabIndex = 2;
@@ -138,9 +138,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(12, 258);
+            this.panel2.Location = new System.Drawing.Point(12, 264);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 49);
+            this.panel2.Size = new System.Drawing.Size(82, 42);
             this.panel2.TabIndex = 6;
             // 
             // pictureBox2
@@ -149,7 +149,7 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox2.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture4;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 49);
+            this.pictureBox2.Size = new System.Drawing.Size(82, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -175,9 +175,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.pictureBox6.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources._2089195;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 195);
+            this.pictureBox6.Location = new System.Drawing.Point(12, 202);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox6.Size = new System.Drawing.Size(82, 42);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 4;
             this.pictureBox6.TabStop = false;
@@ -186,9 +186,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.pictureBox5.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture3;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 132);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 139);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox5.Size = new System.Drawing.Size(82, 42);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
@@ -197,9 +197,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.pictureBox4.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture2;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 76);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 74);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox4.Size = new System.Drawing.Size(82, 42);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
@@ -208,9 +208,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.pictureBox3.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.Picture1;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(82, 42);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -328,7 +328,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(910, 691);
+            this.panelControl2.Size = new System.Drawing.Size(910, 623);
             this.panelControl2.TabIndex = 6;
             // 
             // panelControl4
@@ -344,7 +344,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl4.Controls.Add(this.label15);
             this.panelControl4.Controls.Add(this.label14);
             this.panelControl4.Controls.Add(this.label10);
-            this.panelControl4.Location = new System.Drawing.Point(10, 482);
+            this.panelControl4.Location = new System.Drawing.Point(10, 420);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(888, 186);
             this.panelControl4.TabIndex = 4;
@@ -443,7 +443,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl3.Controls.Add(this.label7);
             this.panelControl3.Controls.Add(this.label13);
             this.panelControl3.Controls.Add(this.label16);
-            this.panelControl3.Location = new System.Drawing.Point(10, 347);
+            this.panelControl3.Location = new System.Drawing.Point(10, 285);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(888, 129);
             this.panelControl3.TabIndex = 2;
@@ -556,24 +556,24 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Controls.Add(this.label3);
             this.panelControl5.Location = new System.Drawing.Point(10, 49);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(888, 292);
+            this.panelControl5.Size = new System.Drawing.Size(888, 230);
             this.panelControl5.TabIndex = 0;
             // 
             // lvwDanhSachTaiKhoan
             // 
             this.lvwDanhSachTaiKhoan.HideSelection = false;
             this.lvwDanhSachTaiKhoan.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem3});
             this.lvwDanhSachTaiKhoan.Location = new System.Drawing.Point(499, 37);
             this.lvwDanhSachTaiKhoan.Name = "lvwDanhSachTaiKhoan";
-            this.lvwDanhSachTaiKhoan.Size = new System.Drawing.Size(379, 238);
+            this.lvwDanhSachTaiKhoan.Size = new System.Drawing.Size(379, 161);
             this.lvwDanhSachTaiKhoan.TabIndex = 3;
             this.lvwDanhSachTaiKhoan.UseCompatibleStateImageBehavior = false;
             // 
             // txtQuyenHan
             // 
             this.txtQuyenHan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtQuyenHan.Location = new System.Drawing.Point(152, 201);
+            this.txtQuyenHan.Location = new System.Drawing.Point(152, 171);
             this.txtQuyenHan.Name = "txtQuyenHan";
             this.txtQuyenHan.Size = new System.Drawing.Size(265, 27);
             this.txtQuyenHan.TabIndex = 2;
@@ -581,15 +581,16 @@ namespace QuanLyLuongSanPham_GUI
             // txtTenTaiKhoan
             // 
             this.txtTenTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenTaiKhoan.Location = new System.Drawing.Point(152, 163);
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(152, 138);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(265, 27);
             this.txtTenTaiKhoan.TabIndex = 2;
+            this.txtTenTaiKhoan.TextChanged += new System.EventHandler(this.txtTenTaiKhoan_TextChanged);
             // 
             // txtLoaiNhanVien
             // 
             this.txtLoaiNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLoaiNhanVien.Location = new System.Drawing.Point(152, 121);
+            this.txtLoaiNhanVien.Location = new System.Drawing.Point(152, 107);
             this.txtLoaiNhanVien.Name = "txtLoaiNhanVien";
             this.txtLoaiNhanVien.Size = new System.Drawing.Size(265, 27);
             this.txtLoaiNhanVien.TabIndex = 2;
@@ -597,7 +598,7 @@ namespace QuanLyLuongSanPham_GUI
             // txtTenNhanVien
             // 
             this.txtTenNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenNhanVien.Location = new System.Drawing.Point(152, 82);
+            this.txtTenNhanVien.Location = new System.Drawing.Point(152, 74);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(265, 27);
             this.txtTenNhanVien.TabIndex = 2;
@@ -615,7 +616,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(31, 123);
+            this.label6.Location = new System.Drawing.Point(31, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 19);
             this.label6.TabIndex = 1;
@@ -626,7 +627,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(31, 85);
+            this.label5.Location = new System.Drawing.Point(31, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 1;
@@ -637,7 +638,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(31, 204);
+            this.label9.Location = new System.Drawing.Point(31, 174);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 19);
             this.label9.TabIndex = 1;
@@ -648,7 +649,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(31, 166);
+            this.label8.Location = new System.Drawing.Point(31, 141);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 19);
             this.label8.TabIndex = 1;
@@ -705,13 +706,14 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1198, 708);
+            this.ClientSize = new System.Drawing.Size(1198, 640);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.IconOptions.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmGiaoDienPhanQuyen";
-            this.Text = "frmGiaoDienPhanQuyen";
+            this.Text = "Giao Diện Phân Quyền";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
