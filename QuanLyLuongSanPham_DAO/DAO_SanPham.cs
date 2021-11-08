@@ -32,5 +32,7 @@ namespace QuanLyLuongSanPham_DAO
             }
             return lst;
         }
+
+
     }
 }
