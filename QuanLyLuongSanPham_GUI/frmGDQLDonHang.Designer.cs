@@ -374,13 +374,13 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(347, 0);
+            this.panelControl1.Location = new System.Drawing.Point(334, 0);
             this.panelControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.panelControl1.LookAndFeel.SkinName = "Office 2019 Colorful";
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(925, 871);
+            this.panelControl1.Size = new System.Drawing.Size(925, 538);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -477,7 +477,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayKetThuc.Size = new System.Drawing.Size(262, 32);
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(262, 28);
             this.dateNgayKetThuc.TabIndex = 3;
             // 
             // dateNgayBatDau
@@ -491,7 +491,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(262, 32);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(262, 28);
             this.dateNgayBatDau.TabIndex = 3;
             // 
             // txtNoiDung
@@ -499,7 +499,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtNoiDung.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNoiDung.Location = new System.Drawing.Point(630, 110);
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(249, 32);
+            this.txtNoiDung.Size = new System.Drawing.Size(249, 27);
             this.txtNoiDung.TabIndex = 2;
             // 
             // txtTenNhanVien
@@ -507,7 +507,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenNhanVien.Location = new System.Drawing.Point(630, 72);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(249, 32);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(249, 27);
             this.txtTenNhanVien.TabIndex = 2;
             // 
             // txtSoDienKhachHang
@@ -515,7 +515,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtSoDienKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoDienKhachHang.Location = new System.Drawing.Point(630, 151);
             this.txtSoDienKhachHang.Name = "txtSoDienKhachHang";
-            this.txtSoDienKhachHang.Size = new System.Drawing.Size(250, 32);
+            this.txtSoDienKhachHang.Size = new System.Drawing.Size(250, 27);
             this.txtSoDienKhachHang.TabIndex = 2;
             // 
             // txtMaNhanVien
@@ -523,7 +523,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtMaNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaNhanVien.Location = new System.Drawing.Point(630, 33);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(249, 32);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(249, 27);
             this.txtMaNhanVien.TabIndex = 2;
             // 
             // txtTongTien
@@ -531,7 +531,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTongTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTongTien.Location = new System.Drawing.Point(144, 200);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(262, 32);
+            this.txtTongTien.Size = new System.Drawing.Size(262, 27);
             this.txtTongTien.TabIndex = 2;
             // 
             // txtTenKhachHang
@@ -539,7 +539,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(144, 160);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(262, 32);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(262, 27);
             this.txtTenKhachHang.TabIndex = 2;
             // 
             // txtMaDonHang
@@ -547,7 +547,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtMaDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaDonHang.Location = new System.Drawing.Point(144, 43);
             this.txtMaDonHang.Name = "txtMaDonHang";
-            this.txtMaDonHang.Size = new System.Drawing.Size(262, 32);
+            this.txtMaDonHang.Size = new System.Drawing.Size(262, 27);
             this.txtMaDonHang.TabIndex = 2;
             // 
             // label6
@@ -557,7 +557,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(8, 123);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 24);
+            this.label6.Size = new System.Drawing.Size(112, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "Ngày kết thúc:";
             // 
@@ -568,7 +568,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(8, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 24);
+            this.label5.Size = new System.Drawing.Size(109, 19);
             this.label5.TabIndex = 1;
             this.label5.Text = "Ngày bắt đầu:";
             // 
@@ -579,7 +579,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(429, 118);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 24);
+            this.label9.Size = new System.Drawing.Size(80, 19);
             this.label9.TabIndex = 1;
             this.label9.Text = "Nội dung:";
             // 
@@ -590,7 +590,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(430, 159);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(242, 24);
+            this.label17.Size = new System.Drawing.Size(194, 19);
             this.label17.TabIndex = 1;
             this.label17.Text = "Số điện thoại khách hàng:";
             // 
@@ -601,7 +601,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(429, 80);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 24);
+            this.label8.Size = new System.Drawing.Size(116, 19);
             this.label8.TabIndex = 1;
             this.label8.Text = "Tên nhân viên:";
             // 
@@ -612,7 +612,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(429, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 24);
+            this.label7.Size = new System.Drawing.Size(109, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mã nhân viên:";
             // 
@@ -623,7 +623,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(8, 208);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 24);
+            this.label10.Size = new System.Drawing.Size(83, 19);
             this.label10.TabIndex = 1;
             this.label10.Text = "Tổng tiền:";
             // 
@@ -634,7 +634,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(8, 168);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(164, 24);
+            this.label11.Size = new System.Drawing.Size(131, 19);
             this.label11.TabIndex = 1;
             this.label11.Text = "Tên Khách Hàng:";
             // 
@@ -645,7 +645,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(8, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 24);
+            this.label4.Size = new System.Drawing.Size(107, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Mã đơn hàng:";
             // 
@@ -656,7 +656,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.ForeColor = System.Drawing.Color.Crimson;
             this.label3.Location = new System.Drawing.Point(26, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 29);
+            this.label3.Size = new System.Drawing.Size(178, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Thông tin đơn hàng";
             // 
@@ -667,7 +667,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(8, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 41);
+            this.label1.Size = new System.Drawing.Size(266, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ ĐƠN HÀNG";
             // 
@@ -682,10 +682,10 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 892);
+            this.ClientSize = new System.Drawing.Size(1259, 538);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
