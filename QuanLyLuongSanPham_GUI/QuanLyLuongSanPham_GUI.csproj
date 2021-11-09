@@ -97,7 +97,7 @@
     <Compile Include="frmXemThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmXemThongTin.Designer.cs">
+    <Compile Include="frmXemThongTin.designer.cs">
       <DependentUpon>frmXemThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
