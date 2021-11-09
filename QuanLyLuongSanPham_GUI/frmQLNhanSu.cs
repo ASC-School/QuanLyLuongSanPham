@@ -17,9 +17,10 @@ namespace QuanLyLuongSanPham_GUI
         {
             InitializeComponent();
         }
+
+
         BUS_NhanVien busNV= new BUS_NhanVien();
-
-
+        private static string ImageLocation;
 
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
@@ -29,6 +30,52 @@ namespace QuanLyLuongSanPham_GUI
         {
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
+        }
+
+
+        private void dtgvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSNV.Rows[e.RowIndex];
+                txtMaNv.Text = row.Cells[0].Value.ToString();
+                txtTenNv.Text = row.Cells[1].Value.ToString();
+                if (row.Cells[2].Value.ToString().Equals("True"))
+                {
+                    cboGioiTinh.Text = "Nữ";
+                }
+                else
+                    cboGioiTinh.Text = "Nam";
+                txtSDT.Text = row.Cells[3].Value.ToString();
+                txtDiaChi.Text = row.Cells[4].Value.ToString();
+                dateTimeDayofBirth.Text = row.Cells[5].Value.ToString();
+                dateTimeNgayVaoLam.Text = row.Cells[6].Value.ToString();
+                cboLoaiNhanVien.Text = row.Cells[7].Value.ToString();
+                cboDonViQuanLy.Text = row.Cells[8].Value.ToString();
+            }
+        }
+
+        private void btnThemAvata_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                imageLocation(ref ImageLocation, ref Avata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void imageLocation(ref string ImageLocation, ref PictureBox picture)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|PNG Files (*.png)|*.png|All Files (*.*)|*.*";
+            dlg.Title = "Select Student Picture";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                ImageLocation = dlg.FileName.ToString();
+                picture.ImageLocation = ImageLocation;
+            }
         }
     }
 }

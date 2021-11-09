@@ -49,6 +49,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -59,28 +60,27 @@ namespace QuanLyLuongSanPham_GUI
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimeNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeDayofBirth = new System.Windows.Forms.DateTimePicker();
+            this.cboLoaiNhanVien = new System.Windows.Forms.ComboBox();
+            this.cboDonViQuanLy = new System.Windows.Forms.ComboBox();
+            this.cboGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtTenNv = new System.Windows.Forms.TextBox();
+            this.txtMaNv = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
+            this.Avata = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
-            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
-            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,7 +96,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Avata)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -286,15 +286,15 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Controls.Add(this.btnReset);
             this.panelControl5.Controls.Add(this.dtgvDSNV);
             this.panelControl5.Controls.Add(this.panelControl2);
-            this.panelControl5.Controls.Add(this.dateTimePicker2);
-            this.panelControl5.Controls.Add(this.dateTimePicker1);
-            this.panelControl5.Controls.Add(this.comboBox3);
-            this.panelControl5.Controls.Add(this.comboBox2);
-            this.panelControl5.Controls.Add(this.comboBox1);
-            this.panelControl5.Controls.Add(this.textBox4);
-            this.panelControl5.Controls.Add(this.textBox3);
-            this.panelControl5.Controls.Add(this.textBox2);
-            this.panelControl5.Controls.Add(this.textBox1);
+            this.panelControl5.Controls.Add(this.dateTimeNgayVaoLam);
+            this.panelControl5.Controls.Add(this.dateTimeDayofBirth);
+            this.panelControl5.Controls.Add(this.cboLoaiNhanVien);
+            this.panelControl5.Controls.Add(this.cboDonViQuanLy);
+            this.panelControl5.Controls.Add(this.cboGioiTinh);
+            this.panelControl5.Controls.Add(this.txtSDT);
+            this.panelControl5.Controls.Add(this.txtDiaChi);
+            this.panelControl5.Controls.Add(this.txtTenNv);
+            this.panelControl5.Controls.Add(this.txtMaNv);
             this.panelControl5.Controls.Add(this.label5);
             this.panelControl5.Controls.Add(this.label4);
             this.panelControl5.Controls.Add(this.label3);
@@ -334,8 +334,10 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.RowHeadersWidth = 51;
             this.dtgvDSNV.RowTemplate.Height = 24;
+            this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(1072, 294);
             this.dtgvDSNV.TabIndex = 42;
+            this.dtgvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
             // 
             // panelControl2
             // 
@@ -364,6 +366,24 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(359, 221);
             this.panelControl2.TabIndex = 30;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThongKe.BorderRadius = 5;
+            this.btnThongKe.BorderSize = 1;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
+            this.btnThongKe.TabIndex = 30;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextColor = System.Drawing.Color.Black;
+            this.btnThongKe.UseVisualStyleBackColor = false;
             // 
             // radioButton3
             // 
@@ -467,75 +487,78 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.TabIndex = 42;
             this.label6.Text = "Đơn vị quản lý:";
             // 
-            // dateTimePicker2
+            // dateTimeNgayVaoLam
             // 
-            this.dateTimePicker2.CustomFormat = "dd,MM,yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(595, 156);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(117, 23);
-            this.dateTimePicker2.TabIndex = 41;
+            this.dateTimeNgayVaoLam.CustomFormat = "dd,MM,yyyy";
+            this.dateTimeNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(595, 156);
+            this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
+            this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
+            this.dateTimeNgayVaoLam.TabIndex = 41;
             // 
-            // dateTimePicker1
+            // dateTimeDayofBirth
             // 
-            this.dateTimePicker1.CustomFormat = "dd,MM,yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(595, 127);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 23);
-            this.dateTimePicker1.TabIndex = 40;
+            this.dateTimeDayofBirth.CustomFormat = "dd,MM,yyyy";
+            this.dateTimeDayofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeDayofBirth.Location = new System.Drawing.Point(595, 127);
+            this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
+            this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
+            this.dateTimeDayofBirth.TabIndex = 40;
             // 
-            // comboBox3
+            // cboLoaiNhanVien
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(380, 216);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(332, 24);
-            this.comboBox3.TabIndex = 39;
+            this.cboLoaiNhanVien.FormattingEnabled = true;
+            this.cboLoaiNhanVien.Location = new System.Drawing.Point(380, 216);
+            this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
+            this.cboLoaiNhanVien.Size = new System.Drawing.Size(332, 24);
+            this.cboLoaiNhanVien.TabIndex = 39;
             // 
-            // comboBox2
+            // cboDonViQuanLy
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(380, 187);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(332, 24);
-            this.comboBox2.TabIndex = 38;
+            this.cboDonViQuanLy.FormattingEnabled = true;
+            this.cboDonViQuanLy.Location = new System.Drawing.Point(380, 187);
+            this.cboDonViQuanLy.Name = "cboDonViQuanLy";
+            this.cboDonViQuanLy.Size = new System.Drawing.Size(332, 24);
+            this.cboDonViQuanLy.TabIndex = 38;
             // 
-            // comboBox1
+            // cboGioiTinh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(380, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 24);
-            this.comboBox1.TabIndex = 37;
+            this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboGioiTinh.Location = new System.Drawing.Point(380, 156);
+            this.cboGioiTinh.Name = "cboGioiTinh";
+            this.cboGioiTinh.Size = new System.Drawing.Size(75, 24);
+            this.cboGioiTinh.TabIndex = 37;
             // 
-            // textBox4
+            // txtSDT
             // 
-            this.textBox4.Location = new System.Drawing.Point(380, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 23);
-            this.textBox4.TabIndex = 36;
+            this.txtSDT.Location = new System.Drawing.Point(380, 127);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(112, 23);
+            this.txtSDT.TabIndex = 36;
             // 
-            // textBox3
+            // txtDiaChi
             // 
-            this.textBox3.Location = new System.Drawing.Point(380, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(332, 23);
-            this.textBox3.TabIndex = 35;
+            this.txtDiaChi.Location = new System.Drawing.Point(380, 100);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(332, 23);
+            this.txtDiaChi.TabIndex = 35;
             // 
-            // textBox2
+            // txtTenNv
             // 
-            this.textBox2.Location = new System.Drawing.Point(380, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(332, 23);
-            this.textBox2.TabIndex = 34;
+            this.txtTenNv.Location = new System.Drawing.Point(380, 73);
+            this.txtTenNv.Name = "txtTenNv";
+            this.txtTenNv.Size = new System.Drawing.Size(332, 23);
+            this.txtTenNv.TabIndex = 34;
             // 
-            // textBox1
+            // txtMaNv
             // 
-            this.textBox1.Location = new System.Drawing.Point(380, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(332, 23);
-            this.textBox1.TabIndex = 33;
+            this.txtMaNv.Location = new System.Drawing.Point(380, 46);
+            this.txtMaNv.Name = "txtMaNv";
+            this.txtMaNv.Size = new System.Drawing.Size(332, 23);
+            this.txtMaNv.TabIndex = 33;
             // 
             // label5
             // 
@@ -585,7 +608,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.Controls.Add(this.btnThemAvata);
-            this.panelControl1.Controls.Add(this.pictureBox8);
+            this.panelControl1.Controls.Add(this.Avata);
             this.panelControl1.Location = new System.Drawing.Point(26, 27);
             this.panelControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
@@ -596,16 +619,35 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Size = new System.Drawing.Size(181, 240);
             this.panelControl1.TabIndex = 28;
             // 
-            // pictureBox8
+            // btnThemAvata
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox8.Location = new System.Drawing.Point(21, 21);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(139, 160);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
+            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThemAvata.BorderRadius = 5;
+            this.btnThemAvata.BorderSize = 1;
+            this.btnThemAvata.FlatAppearance.BorderSize = 0;
+            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAvata.Location = new System.Drawing.Point(21, 191);
+            this.btnThemAvata.Name = "btnThemAvata";
+            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
+            this.btnThemAvata.TabIndex = 29;
+            this.btnThemAvata.Text = "Chọn ảnh";
+            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
+            this.btnThemAvata.UseVisualStyleBackColor = false;
+            this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
+            // 
+            // Avata
+            // 
+            this.Avata.BackColor = System.Drawing.Color.Silver;
+            this.Avata.Location = new System.Drawing.Point(21, 21);
+            this.Avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Avata.Name = "Avata";
+            this.Avata.Size = new System.Drawing.Size(139, 160);
+            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Avata.TabIndex = 4;
+            this.Avata.TabStop = false;
             // 
             // label15
             // 
@@ -657,42 +699,6 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
             // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThongKe.BorderRadius = 5;
-            this.btnThongKe.BorderSize = 1;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
-            this.btnThongKe.TabIndex = 30;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextColor = System.Drawing.Color.Black;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            // 
-            // btnThemAvata
-            // 
-            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThemAvata.BorderRadius = 5;
-            this.btnThemAvata.BorderSize = 1;
-            this.btnThemAvata.FlatAppearance.BorderSize = 0;
-            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
-            this.btnThemAvata.Location = new System.Drawing.Point(21, 191);
-            this.btnThemAvata.Name = "btnThemAvata";
-            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
-            this.btnThemAvata.TabIndex = 29;
-            this.btnThemAvata.Text = "Chọn ảnh";
-            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
-            this.btnThemAvata.UseVisualStyleBackColor = false;
-            // 
             // frmQLNhanSu
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -735,7 +741,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Avata)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,21 +766,21 @@ namespace QuanLyLuongSanPham_GUI
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private ButtonCustom btnThemAvata;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox Avata;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblLuong;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateTimeNgayVaoLam;
+        private System.Windows.Forms.DateTimePicker dateTimeDayofBirth;
+        private System.Windows.Forms.ComboBox cboLoaiNhanVien;
+        private System.Windows.Forms.ComboBox cboDonViQuanLy;
+        private System.Windows.Forms.ComboBox cboGioiTinh;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtTenNv;
+        private System.Windows.Forms.TextBox txtMaNv;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
