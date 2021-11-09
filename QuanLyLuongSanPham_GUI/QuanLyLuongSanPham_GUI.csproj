@@ -185,5 +185,19 @@
     <None Include="Resources\statistic-icon1.png" />
     <Content Include="Resources\User-Interface-Menu-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyLuongSanPham_BUS\QuanLyLuongSanPham_BUS.csproj">
+      <Project>{267a102c-a376-44e1-b8d1-86c5b5ac1a9c}</Project>
+      <Name>QuanLyLuongSanPham_BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyLuongSanPham_DAO\QuanLyLuongSanPham_DAO.csproj">
+      <Project>{da2f25f3-21ae-4603-a663-98397c748cb4}</Project>
+      <Name>QuanLyLuongSanPham_DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyLuongSanPham_DTO\QuanLyLuongSanPham_DTO.csproj">
+      <Project>{299caf4b-fcd3-4c3e-839c-23af9ad7b2e2}</Project>
+      <Name>QuanLyLuongSanPham_DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

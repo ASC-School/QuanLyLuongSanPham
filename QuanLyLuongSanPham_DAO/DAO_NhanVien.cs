@@ -30,5 +30,14 @@ namespace QuanLyLuongSanPham_DAO
             }
             return lst;
         }
+        public IEnumerable<dynamic> getDanhSachNVToQLNS()
+        {
+            IEnumerable<dynamic> q;
+            q = (from dsnv in dataBase.NhanViens
+                 join loaiNV in dataBase.LoaiNhanViens on dsnv.maLoai equals loaiNV.maLoai
+                 join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                 select new { Mã_nhân_viên = dsnv.maNhanVien , Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan });
+            return q;
+        }
     }
 }

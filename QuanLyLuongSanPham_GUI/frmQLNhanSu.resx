@@ -117,31 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="maNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tenNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="diaChiNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="sodienthoaiNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ngaySinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="gioiTinh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ngayVaoLam.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="donViQuanLy.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="loaiNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAWCAYAAADeiIy1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAhNJREFUSEu9lUtPGzEQgPkVlDutOEMQ6oF/wIH8AsSJE9yR+AMNUrkkghtIvBGI
+        oCYtFEQE4S1EABHejw0bNgkFFkFBTQPS4Gllx3ZmYZUDh++w67E/z9g7W/J8ZsB7UJTo8TQB9uE5OeZE
+        UaLghgkVgT/QF/lFjlMUJRpYN6H0aw5Kfc/gC92QMTquRfZRArpWTWiYseBTMC1EyOfOLBjxJDmP40rU
+        uZL8t/iHsYxAFiGV/r9MZpLzkVdFuVMDmmYtReAk8nY/FC9qmy+U1ITS4J1KKaL279dizh0rsbwGx1E0
+        wW6WLKhgpQvF/u+YX4YqfxYW1lJizt7WBXhYCVtG7sQ7jqOobjKliM4O8jv9sWmCt/deKVV4MQPlHU8i
+        S/tQzYwUGfsJRdIavSiI0YmyzLgE6fp5pYyTItyxLNrepeuu4wlkhUgvHynCM5BFVAxFffejEOEtlMdc
+        iexjdxkpoh4Xolj8XBENMTEVJ2PumlDWnr8MbeO3yjgpejgxlE5QG07Bb/aOiuV8CdlCgkwv5689QooQ
+        31JSyao5YjnKAlPXigQvhR7jKMJzqfqm9rdq9tzPyrgdT4Cxk4TRuYxyLpzByGXBeo4iBBfUmylH73Uc
+        X5j+bbwqQk7Yx+vRMnMS6R+pzJsixGLtxM9+FbKQiz525KBx4B52WJ+j5nJciWSwS8xumTA8zzpGzCro
+        aTQGvADBkqr0sdpn0QAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
