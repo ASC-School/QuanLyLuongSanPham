@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DAO;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
@@ -17,12 +18,17 @@ namespace QuanLyLuongSanPham_BUS
             chiTietDHDAO = new DAO_ChiTietDonHang();
         }
 
-        public List<object> getAllDonHang()
+        public List<DTO_DonHang > getAllDonHang()
         {
             return donHangDAO.layDSDonHang();
         }
 
+        public IEnumerable<dynamic> getAllChiTietDonHang()
+        {
+            return chiTietDHDAO.layChiTietDHThuocDH();
+        }
         
+
 
     }
 }

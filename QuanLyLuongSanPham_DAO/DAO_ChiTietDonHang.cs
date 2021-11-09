@@ -18,6 +18,7 @@ namespace QuanLyLuongSanPham_DAO
         public IEnumerable<dynamic> layChiTietDHThuocDH()
         {
             IEnumerable<dynamic> q;
+         
             q = (from donHang in dataBase.DonHangs
                  join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
                  join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham

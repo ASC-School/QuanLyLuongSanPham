@@ -79,6 +79,10 @@
       <Project>{da2f25f3-21ae-4603-a663-98397c748cb4}</Project>
       <Name>QuanLyLuongSanPham_DAO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QuanLyLuongSanPham_DTO\QuanLyLuongSanPham_DTO.csproj">
+      <Project>{299caf4b-fcd3-4c3e-839c-23af9ad7b2e2}</Project>
+      <Name>QuanLyLuongSanPham_DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

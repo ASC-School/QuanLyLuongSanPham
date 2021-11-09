@@ -114,7 +114,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(291, 741);
+            this.panelControl1.Size = new System.Drawing.Size(291, 646);
             this.panelControl1.TabIndex = 0;
             // 
             // panel3
@@ -328,7 +328,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(910, 741);
+            this.panelControl2.Size = new System.Drawing.Size(910, 646);
             this.panelControl2.TabIndex = 6;
             // 
             // panelControl4
@@ -706,7 +706,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1198, 758);
+            this.ClientSize = new System.Drawing.Size(1198, 663);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
