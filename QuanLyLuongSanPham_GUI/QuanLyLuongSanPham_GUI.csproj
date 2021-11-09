@@ -76,6 +76,12 @@
     <Compile Include="frmGiaoDienPhanQuyen.designer.cs">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoDienPhanQuyen.resx">
       <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
