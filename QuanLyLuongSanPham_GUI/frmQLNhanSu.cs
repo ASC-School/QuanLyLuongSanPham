@@ -28,6 +28,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void loadDSNVtoDTGV()
         {
+            offTextbox();
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
@@ -54,7 +55,19 @@ namespace QuanLyLuongSanPham_GUI
                 cboDonViQuanLy.Text = row.Cells[8].Value.ToString();
             }
         }
-
+        private void offTextbox()
+        {
+            txtMaNv.Enabled = false;
+            txtTenNv.Enabled = false;
+            cboGioiTinh.Enabled = false;
+            txtSDT.Enabled = false;
+            txtDiaChi.Enabled = false;
+            dateTimeDayofBirth.Enabled = false;
+            dateTimeNgayVaoLam.Enabled = false;
+            cboDonViQuanLy.Enabled = false;
+            cboLoaiNhanVien.Enabled = false;
+            btnThemAvata.Enabled = false;
+        }
         private void btnThemAvata_Click(object sender, EventArgs e)
         {
             try

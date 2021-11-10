@@ -645,7 +645,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Avata.Name = "Avata";
             this.Avata.Size = new System.Drawing.Size(139, 160);
-            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Avata.TabIndex = 4;
             this.Avata.TabStop = false;
             // 
