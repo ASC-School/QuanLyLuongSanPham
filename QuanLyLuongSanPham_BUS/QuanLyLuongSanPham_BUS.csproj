@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_DonHang.cs" />
+    <Compile Include="BUS_LoaiNhanVien.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

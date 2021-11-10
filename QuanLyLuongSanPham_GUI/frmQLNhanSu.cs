@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyLuongSanPham_BUS;
+using QuanLyLuongSanPham_DTO;
+using QuanLyLuongSanPham_DAO;
 namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmQLNhanSu : DevExpress.XtraEditors.XtraForm
@@ -21,14 +23,15 @@ namespace QuanLyLuongSanPham_GUI
 
         BUS_NhanVien busNV= new BUS_NhanVien();
         private static string ImageLocation;
-
+        BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
             loadDSNVtoDTGV();
+            loadDataToCbo();
         }
         private void loadDSNVtoDTGV()
         {
-            offTextbox();
+            //offTextbox();
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
@@ -88,6 +91,15 @@ namespace QuanLyLuongSanPham_GUI
             {
                 ImageLocation = dlg.FileName.ToString();
                 picture.ImageLocation = ImageLocation;
+            }
+        }
+        public void loadDataToCbo()
+        {
+            IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
+            cboLoaiNhanVien.Items.Clear();
+            foreach(LoaiNhanVien lnv in dsLoaiNV)
+            {
+                cboLoaiNhanVien.Items.Add(lnv.loaiNhanVien1);
             }
         }
     }

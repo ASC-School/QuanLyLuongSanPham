@@ -15,17 +15,10 @@ namespace QuanLyLuongSanPham_DAO
         {
             dt = new QuanLyLuongSanPhamDataContext();
         }
-        public List<DTO_LoaiNhanVien> layDanhSachLoaiNV()
+        public IEnumerable<LoaiNhanVien> layDanhSachLoaiNV()
         {
-            var dataLst = dt.LoaiNhanViens.Select(p => p).OrderBy(p => p.maLoai);
-
-            List<DTO_LoaiNhanVien> lst = new List<DTO_LoaiNhanVien>();
-            foreach (LoaiNhanVien nv in dataLst)
-            {
-                DTO_LoaiNhanVien tmp = new DTO_LoaiNhanVien();
-                tmp.LoaiNhanVien = nv.loaiNhanVien1;
-            }
-            return lst;
+            IEnumerable<LoaiNhanVien> q = from n in dt.LoaiNhanViens select n;
+            return q;
         }
     }
 }
