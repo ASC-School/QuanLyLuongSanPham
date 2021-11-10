@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,29 @@ namespace QuanLyLuongSanPham_DAO
             q = (from dsnv in dataBase.NhanViens
                  join loaiNV in dataBase.LoaiNhanViens on dsnv.maLoai equals loaiNV.maLoai
                  join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                 select new { Mã_nhân_viên = dsnv.maNhanVien , Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan });
+                 select new { Mã_nhân_viên = dsnv.maNhanVien ,Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan,Trạng_thái=dsnv.trangThai });
             return q;
+        }
+        //public bool themNhanVien(DTO_NhanVien nv)
+        //{
+        //    string str = nv.MaNhanVien;
+        //    if (checkIfExist(str) != null)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        MemoryStream stream = new MemoryStream();
+
+        //    }
+        //}
+
+        public NhanVien checkIfExist(string strMaNhanVien)
+        {
+            NhanVien nvTemp = (from n in dataBase.NhanViens where n.maNhanVien.Equals(strMaNhanVien) select n).FirstOrDefault();
+            if (nvTemp != null)
+                return nvTemp;
+            return null;
         }
     }
 }

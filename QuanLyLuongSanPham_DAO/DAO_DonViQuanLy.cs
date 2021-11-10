@@ -11,7 +11,12 @@ namespace QuanLyLuongSanPham_DAO
         QuanLyLuongSanPhamDataContext dataBase;
         public DAO_DonViQuanLy()
         {
-            
+            dataBase = new QuanLyLuongSanPhamDataContext();
+        }
+        public IEnumerable<DonViQuanLy> layDanhSachDonViQUanLy()
+        {
+            IEnumerable<DonViQuanLy> q = from n in dataBase.DonViQuanLies select n;
+            return q;
         }
     }
 }

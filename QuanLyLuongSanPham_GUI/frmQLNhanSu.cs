@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using QuanLyLuongSanPham_BUS;
 using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_DAO;
+using System.IO;
+using System.Drawing.Imaging;
+
 namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmQLNhanSu : DevExpress.XtraEditors.XtraForm
@@ -24,6 +27,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien busNV= new BUS_NhanVien();
         private static string ImageLocation;
         BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
+        BUS_DonViQuanLy busDonVi = new BUS_DonViQuanLy();
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
             loadDSNVtoDTGV();
@@ -31,7 +35,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void loadDSNVtoDTGV()
         {
-            //offTextbox();
+            offTextbox();
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
@@ -56,6 +60,12 @@ namespace QuanLyLuongSanPham_GUI
                 dateTimeNgayVaoLam.Text = row.Cells[6].Value.ToString();
                 cboLoaiNhanVien.Text = row.Cells[7].Value.ToString();
                 cboDonViQuanLy.Text = row.Cells[8].Value.ToString();
+                if (row.Cells[9].Value.ToString().Equals("True"))
+                {
+                    cboTrangThai.Text = "Đi làm";
+                }
+                else
+                    cboTrangThai.Text = "Nghỉ làm";
             }
         }
         private void offTextbox()
@@ -70,6 +80,7 @@ namespace QuanLyLuongSanPham_GUI
             cboDonViQuanLy.Enabled = false;
             cboLoaiNhanVien.Enabled = false;
             btnThemAvata.Enabled = false;
+            cboTrangThai.Enabled = false;
         }
         private void btnThemAvata_Click(object sender, EventArgs e)
         {
@@ -96,11 +107,40 @@ namespace QuanLyLuongSanPham_GUI
         public void loadDataToCbo()
         {
             IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
+            IEnumerable<DonViQuanLy> dsDonVi = busDonVi.getDSDonVi();
+            cboDonViQuanLy.Items.Clear();
             cboLoaiNhanVien.Items.Clear();
             foreach(LoaiNhanVien lnv in dsLoaiNV)
             {
                 cboLoaiNhanVien.Items.Add(lnv.loaiNhanVien1);
             }
+            foreach(DonViQuanLy tenDonVi in dsDonVi)
+            {
+                cboDonViQuanLy.Items.Add(tenDonVi.tenBoPhan);
+            }
+        }
+
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {            
+            //MemoryStream stream = new MemoryStream();
+            //if (Avata != null)
+            //{
+            //    Avata.Image.Save(stream, ImageFormat.Jpeg);
+            //}
+            //else
+            //    stream = null;
+            
+            //DTO_NhanVien nv = new DTO_NhanVien();
+            //nv.MaNhanVien = txtMaNv.Text;
+            //nv.TenNhanVien = txtTenNv.Text;
+            //nv.GioiTinh = cboGioiTinh.Text;
+            //nv.SoDienThoai = txtSDT.Text;
+            //nv.NgaySinh = dateTimeDayofBirth.Value;
+            //nv.NgayBatDauCongTac = dateTimeNgayVaoLam.Value;
+            //nv.TrangThai = true;
+            //nv.Avatar =Convert.ToByte(stream.ToArray());
+            //nv.DiaChi = txtDiaChi.Text;
+
         }
     }
 }

@@ -114,7 +114,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(291, 646);
+            this.panelControl1.Size = new System.Drawing.Size(291, 684);
             this.panelControl1.TabIndex = 0;
             // 
             // panel3
@@ -328,7 +328,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(910, 646);
+            this.panelControl2.Size = new System.Drawing.Size(910, 684);
             this.panelControl2.TabIndex = 6;
             // 
             // panelControl4
@@ -368,7 +368,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(498, 77);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(379, 33);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(379, 39);
             this.txtMatKhauMoi.TabIndex = 2;
             // 
             // txtXacNhanMKMoi
@@ -376,7 +376,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtXacNhanMKMoi.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtXacNhanMKMoi.Location = new System.Drawing.Point(498, 135);
             this.txtXacNhanMKMoi.Name = "txtXacNhanMKMoi";
-            this.txtXacNhanMKMoi.Size = new System.Drawing.Size(379, 33);
+            this.txtXacNhanMKMoi.Size = new System.Drawing.Size(379, 39);
             this.txtXacNhanMKMoi.TabIndex = 2;
             // 
             // txtTentaiKhoanDoiMK
@@ -384,7 +384,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTentaiKhoanDoiMK.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTentaiKhoanDoiMK.Location = new System.Drawing.Point(30, 77);
             this.txtTentaiKhoanDoiMK.Name = "txtTentaiKhoanDoiMK";
-            this.txtTentaiKhoanDoiMK.Size = new System.Drawing.Size(388, 33);
+            this.txtTentaiKhoanDoiMK.Size = new System.Drawing.Size(388, 39);
             this.txtTentaiKhoanDoiMK.TabIndex = 2;
             // 
             // label12
@@ -394,7 +394,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(26, 55);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 19);
+            this.label12.Size = new System.Drawing.Size(140, 24);
             this.label12.TabIndex = 1;
             this.label12.Text = "Tên tài khoản:";
             // 
@@ -405,7 +405,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(496, 55);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 19);
+            this.label15.Size = new System.Drawing.Size(138, 24);
             this.label15.TabIndex = 1;
             this.label15.Text = "Mật khẩu mới:";
             // 
@@ -416,7 +416,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(496, 113);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(182, 19);
+            this.label14.Size = new System.Drawing.Size(228, 24);
             this.label14.TabIndex = 1;
             this.label14.Text = "Xác nhận mật khẩu mới:";
             // 
@@ -427,7 +427,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.ForeColor = System.Drawing.Color.Crimson;
             this.label10.Location = new System.Drawing.Point(26, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 23);
+            this.label10.Size = new System.Drawing.Size(156, 29);
             this.label10.TabIndex = 0;
             this.label10.Text = "Đổi mật khẩu";
             // 
@@ -454,7 +454,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboPhanQuyen.FormattingEnabled = true;
             this.cboPhanQuyen.Location = new System.Drawing.Point(148, 84);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
-            this.cboPhanQuyen.Size = new System.Drawing.Size(270, 27);
+            this.cboPhanQuyen.Size = new System.Drawing.Size(270, 32);
             this.cboPhanQuyen.TabIndex = 7;
             // 
             // radFullCN
@@ -464,7 +464,7 @@ namespace QuanLyLuongSanPham_GUI
             this.radFullCN.ForeColor = System.Drawing.Color.Black;
             this.radFullCN.Location = new System.Drawing.Point(492, 29);
             this.radFullCN.Name = "radFullCN";
-            this.radFullCN.Size = new System.Drawing.Size(148, 27);
+            this.radFullCN.Size = new System.Drawing.Size(182, 33);
             this.radFullCN.TabIndex = 6;
             this.radFullCN.TabStop = true;
             this.radFullCN.Text = "Đủ chức năng";
@@ -477,7 +477,7 @@ namespace QuanLyLuongSanPham_GUI
             this.radXemThongTin.ForeColor = System.Drawing.Color.Black;
             this.radXemThongTin.Location = new System.Drawing.Point(680, 29);
             this.radXemThongTin.Name = "radXemThongTin";
-            this.radXemThongTin.Size = new System.Drawing.Size(147, 27);
+            this.radXemThongTin.Size = new System.Drawing.Size(183, 33);
             this.radXemThongTin.TabIndex = 6;
             this.radXemThongTin.TabStop = true;
             this.radXemThongTin.Text = "Xem thông tin";
@@ -488,7 +488,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenTaiKhoanPhanQuyen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenTaiKhoanPhanQuyen.Location = new System.Drawing.Point(148, 43);
             this.txtTenTaiKhoanPhanQuyen.Name = "txtTenTaiKhoanPhanQuyen";
-            this.txtTenTaiKhoanPhanQuyen.Size = new System.Drawing.Size(270, 27);
+            this.txtTenTaiKhoanPhanQuyen.Size = new System.Drawing.Size(270, 32);
             this.txtTenTaiKhoanPhanQuyen.TabIndex = 2;
             // 
             // label7
@@ -498,7 +498,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(26, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 19);
+            this.label7.Size = new System.Drawing.Size(140, 24);
             this.label7.TabIndex = 1;
             this.label7.Text = "Tên tài khoản:";
             // 
@@ -509,7 +509,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(26, 84);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 19);
+            this.label13.Size = new System.Drawing.Size(74, 24);
             this.label13.TabIndex = 1;
             this.label13.Text = "Quyền:";
             // 
@@ -520,7 +520,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label16.ForeColor = System.Drawing.Color.Crimson;
             this.label16.Location = new System.Drawing.Point(26, 10);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 23);
+            this.label16.Size = new System.Drawing.Size(137, 29);
             this.label16.TabIndex = 0;
             this.label16.Text = "Phân quyền";
             // 
@@ -575,7 +575,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtQuyenHan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtQuyenHan.Location = new System.Drawing.Point(152, 171);
             this.txtQuyenHan.Name = "txtQuyenHan";
-            this.txtQuyenHan.Size = new System.Drawing.Size(265, 27);
+            this.txtQuyenHan.Size = new System.Drawing.Size(265, 32);
             this.txtQuyenHan.TabIndex = 2;
             // 
             // txtTenTaiKhoan
@@ -583,7 +583,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenTaiKhoan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(152, 138);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(265, 27);
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(265, 32);
             this.txtTenTaiKhoan.TabIndex = 2;
             this.txtTenTaiKhoan.TextChanged += new System.EventHandler(this.txtTenTaiKhoan_TextChanged);
             // 
@@ -592,7 +592,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtLoaiNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtLoaiNhanVien.Location = new System.Drawing.Point(152, 107);
             this.txtLoaiNhanVien.Name = "txtLoaiNhanVien";
-            this.txtLoaiNhanVien.Size = new System.Drawing.Size(265, 27);
+            this.txtLoaiNhanVien.Size = new System.Drawing.Size(265, 32);
             this.txtLoaiNhanVien.TabIndex = 2;
             // 
             // txtTenNhanVien
@@ -600,7 +600,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenNhanVien.Location = new System.Drawing.Point(152, 74);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(265, 27);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(265, 32);
             this.txtTenNhanVien.TabIndex = 2;
             // 
             // txtMaNV
@@ -608,7 +608,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaNV.Location = new System.Drawing.Point(152, 41);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(265, 27);
+            this.txtMaNV.Size = new System.Drawing.Size(265, 32);
             this.txtMaNV.TabIndex = 2;
             // 
             // label6
@@ -618,7 +618,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(31, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 19);
+            this.label6.Size = new System.Drawing.Size(147, 24);
             this.label6.TabIndex = 1;
             this.label6.Text = "Loại nhân viên:";
             // 
@@ -629,7 +629,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(31, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 19);
+            this.label5.Size = new System.Drawing.Size(144, 24);
             this.label5.TabIndex = 1;
             this.label5.Text = "Tên nhân viên:";
             // 
@@ -640,7 +640,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(31, 174);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 19);
+            this.label9.Size = new System.Drawing.Size(113, 24);
             this.label9.TabIndex = 1;
             this.label9.Text = "Quyền hạn:";
             // 
@@ -651,7 +651,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(31, 141);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 19);
+            this.label8.Size = new System.Drawing.Size(140, 24);
             this.label8.TabIndex = 1;
             this.label8.Text = "Tên tài khoản:";
             // 
@@ -662,7 +662,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(31, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 19);
+            this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 1;
             this.label4.Text = "Mã nhân viên:";
             // 
@@ -673,7 +673,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.ForeColor = System.Drawing.Color.Crimson;
             this.label11.Location = new System.Drawing.Point(495, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(182, 23);
+            this.label11.Size = new System.Drawing.Size(230, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Danh sách tài khoản";
             // 
@@ -684,7 +684,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.ForeColor = System.Drawing.Color.Crimson;
             this.label3.Location = new System.Drawing.Point(31, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 23);
+            this.label3.Size = new System.Drawing.Size(219, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Thông tin tài khoản";
             // 
@@ -703,10 +703,10 @@ namespace QuanLyLuongSanPham_GUI
             // frmGiaoDienPhanQuyen
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1198, 663);
+            this.ClientSize = new System.Drawing.Size(1198, 705);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

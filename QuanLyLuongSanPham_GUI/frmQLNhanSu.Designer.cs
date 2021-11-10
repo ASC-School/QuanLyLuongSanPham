@@ -49,7 +49,6 @@ namespace QuanLyLuongSanPham_GUI
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -74,13 +73,16 @@ namespace QuanLyLuongSanPham_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.Avata = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
+            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,6 +145,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemNV.Text = "Thêm nhân viên";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.UseVisualStyleBackColor = false;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // pictureBox1
             // 
@@ -283,6 +286,8 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Appearance.Options.UseBackColor = true;
             this.panelControl5.Appearance.Options.UseBorderColor = true;
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl5.Controls.Add(this.cboTrangThai);
+            this.panelControl5.Controls.Add(this.label10);
             this.panelControl5.Controls.Add(this.btnReset);
             this.panelControl5.Controls.Add(this.dtgvDSNV);
             this.panelControl5.Controls.Add(this.panelControl2);
@@ -305,7 +310,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Controls.Add(this.label13);
             this.panelControl5.Controls.Add(this.label12);
             this.panelControl5.Controls.Add(this.lblLuong);
-            this.panelControl5.Location = new System.Drawing.Point(199, 67);
+            this.panelControl5.Location = new System.Drawing.Point(199, 64);
             this.panelControl5.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl5.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -366,24 +371,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(359, 221);
             this.panelControl2.TabIndex = 30;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThongKe.BorderRadius = 5;
-            this.btnThongKe.BorderSize = 1;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
-            this.btnThongKe.TabIndex = 30;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextColor = System.Drawing.Color.Black;
-            this.btnThongKe.UseVisualStyleBackColor = false;
             // 
             // radioButton3
             // 
@@ -491,7 +478,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateTimeNgayVaoLam.CustomFormat = "dd,MM,yyyy";
             this.dateTimeNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(595, 156);
+            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(595, 151);
             this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
             this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
             this.dateTimeNgayVaoLam.TabIndex = 41;
@@ -500,7 +487,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateTimeDayofBirth.CustomFormat = "dd,MM,yyyy";
             this.dateTimeDayofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDayofBirth.Location = new System.Drawing.Point(595, 127);
+            this.dateTimeDayofBirth.Location = new System.Drawing.Point(595, 122);
             this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
             this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
             this.dateTimeDayofBirth.TabIndex = 40;
@@ -508,7 +495,7 @@ namespace QuanLyLuongSanPham_GUI
             // cboLoaiNhanVien
             // 
             this.cboLoaiNhanVien.FormattingEnabled = true;
-            this.cboLoaiNhanVien.Location = new System.Drawing.Point(380, 216);
+            this.cboLoaiNhanVien.Location = new System.Drawing.Point(380, 211);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
             this.cboLoaiNhanVien.Size = new System.Drawing.Size(332, 24);
             this.cboLoaiNhanVien.TabIndex = 39;
@@ -516,7 +503,7 @@ namespace QuanLyLuongSanPham_GUI
             // cboDonViQuanLy
             // 
             this.cboDonViQuanLy.FormattingEnabled = true;
-            this.cboDonViQuanLy.Location = new System.Drawing.Point(380, 187);
+            this.cboDonViQuanLy.Location = new System.Drawing.Point(380, 182);
             this.cboDonViQuanLy.Name = "cboDonViQuanLy";
             this.cboDonViQuanLy.Size = new System.Drawing.Size(332, 24);
             this.cboDonViQuanLy.TabIndex = 38;
@@ -527,35 +514,35 @@ namespace QuanLyLuongSanPham_GUI
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cboGioiTinh.Location = new System.Drawing.Point(380, 156);
+            this.cboGioiTinh.Location = new System.Drawing.Point(380, 151);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(75, 24);
             this.cboGioiTinh.TabIndex = 37;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(380, 127);
+            this.txtSDT.Location = new System.Drawing.Point(380, 122);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(112, 23);
             this.txtSDT.TabIndex = 36;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(380, 100);
+            this.txtDiaChi.Location = new System.Drawing.Point(380, 95);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(332, 23);
             this.txtDiaChi.TabIndex = 35;
             // 
             // txtTenNv
             // 
-            this.txtTenNv.Location = new System.Drawing.Point(380, 73);
+            this.txtTenNv.Location = new System.Drawing.Point(380, 68);
             this.txtTenNv.Name = "txtTenNv";
             this.txtTenNv.Size = new System.Drawing.Size(332, 23);
             this.txtTenNv.TabIndex = 34;
             // 
             // txtMaNv
             // 
-            this.txtMaNv.Location = new System.Drawing.Point(380, 46);
+            this.txtMaNv.Location = new System.Drawing.Point(380, 41);
             this.txtMaNv.Name = "txtMaNv";
             this.txtMaNv.Size = new System.Drawing.Size(332, 23);
             this.txtMaNv.TabIndex = 33;
@@ -564,7 +551,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(461, 157);
+            this.label5.Location = new System.Drawing.Point(461, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 23);
             this.label5.TabIndex = 32;
@@ -574,7 +561,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(244, 188);
+            this.label4.Location = new System.Drawing.Point(244, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 23);
             this.label4.TabIndex = 31;
@@ -584,7 +571,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(244, 217);
+            this.label3.Location = new System.Drawing.Point(244, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 23);
             this.label3.TabIndex = 30;
@@ -594,7 +581,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(244, 159);
+            this.label2.Location = new System.Drawing.Point(244, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 23);
             this.label2.TabIndex = 29;
@@ -619,6 +606,106 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Size = new System.Drawing.Size(181, 240);
             this.panelControl1.TabIndex = 28;
             // 
+            // Avata
+            // 
+            this.Avata.BackColor = System.Drawing.Color.Silver;
+            this.Avata.Location = new System.Drawing.Point(21, 21);
+            this.Avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Avata.Name = "Avata";
+            this.Avata.Size = new System.Drawing.Size(139, 160);
+            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Avata.TabIndex = 4;
+            this.Avata.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(498, 125);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 23);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Ngày sinh:";
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(244, 125);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(170, 23);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Số điện thoại:";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(244, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(170, 23);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Địa chỉ:";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(244, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(170, 23);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Tên nhân viên:";
+            // 
+            // lblLuong
+            // 
+            this.lblLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLuong.ForeColor = System.Drawing.Color.Black;
+            this.lblLuong.Location = new System.Drawing.Point(244, 42);
+            this.lblLuong.Name = "lblLuong";
+            this.lblLuong.Size = new System.Drawing.Size(170, 23);
+            this.lblLuong.TabIndex = 22;
+            this.lblLuong.Text = "Mã nhân viên:";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(244, 240);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(170, 23);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Trạng thái:";
+            // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.Items.AddRange(new object[] {
+            "Đi làm",
+            "Nghỉ làm"});
+            this.cboTrangThai.Location = new System.Drawing.Point(380, 239);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(124, 24);
+            this.cboTrangThai.TabIndex = 45;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThongKe.BorderRadius = 5;
+            this.btnThongKe.BorderSize = 1;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
+            this.btnThongKe.TabIndex = 30;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextColor = System.Drawing.Color.Black;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            // 
             // btnThemAvata
             // 
             this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -637,67 +724,6 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemAvata.TextColor = System.Drawing.Color.Black;
             this.btnThemAvata.UseVisualStyleBackColor = false;
             this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
-            // 
-            // Avata
-            // 
-            this.Avata.BackColor = System.Drawing.Color.Silver;
-            this.Avata.Location = new System.Drawing.Point(21, 21);
-            this.Avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Avata.Name = "Avata";
-            this.Avata.Size = new System.Drawing.Size(139, 160);
-            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Avata.TabIndex = 4;
-            this.Avata.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(498, 130);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(170, 23);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Ngày sinh:";
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(244, 130);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(170, 23);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Số điện thoại:";
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(244, 101);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(170, 23);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Địa chỉ:";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(244, 74);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 23);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Tên nhân viên:";
-            // 
-            // lblLuong
-            // 
-            this.lblLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLuong.ForeColor = System.Drawing.Color.Black;
-            this.lblLuong.Location = new System.Drawing.Point(244, 47);
-            this.lblLuong.Name = "lblLuong";
-            this.lblLuong.Size = new System.Drawing.Size(170, 23);
-            this.lblLuong.TabIndex = 22;
-            this.lblLuong.Text = "Mã nhân viên:";
             // 
             // frmQLNhanSu
             // 
@@ -799,5 +825,7 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox cboTrangThai;
+        private System.Windows.Forms.Label label10;
     }
 }
