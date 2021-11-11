@@ -35,7 +35,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void loadDSNVtoDTGV()
         {
-            offTextbox();
+            //offTextbox();
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
@@ -121,26 +121,45 @@ namespace QuanLyLuongSanPham_GUI
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
-        {            
-            //MemoryStream stream = new MemoryStream();
-            //if (Avata != null)
-            //{
-            //    Avata.Image.Save(stream, ImageFormat.Jpeg);
-            //}
-            //else
-            //    stream = null;
+        {
+            if(btnThemNV.Text.Equals("Thêm nhân viên"))
+            {
+                btnThemNV.Text = "Lưu";
+            }
+            else
+            {
+                MemoryStream stream = new MemoryStream();
+                DTO_NhanVien nv = new DTO_NhanVien();
+                nv.MaNhanVien = txtMaNv.Text;
+                nv.TenNhanVien = txtTenNv.Text;
+                nv.GioiTinh = cboGioiTinh.Text;
+                nv.SoDienThoai = txtSDT.Text;
+                nv.NgaySinh = dateTimeDayofBirth.Value;
+                nv.NgayBatDauCongTac = dateTimeNgayVaoLam.Value;
+                nv.TrangThai = true;
+                if (Avata.Image == null)
+                {
+                    nv.Avatar = null;
+                }
+                else
+                {
+                    Avata.Image.Save(stream, ImageFormat.Jpeg);
+                    nv.Avatar = stream.ToArray();
+                }
+                nv.DiaChi = txtDiaChi.Text;
+                nv.MaLoai = "LNV001";
+                if (busNV.themNhanVien(nv) == true)
+                {
+                    MessageBox.Show("successful!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    busNV.themNhanVien(nv);
+                }
+                else
+                {
+                    MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                btnThemNV.Text = "Thêm nhân viên";
+            }    
             
-            //DTO_NhanVien nv = new DTO_NhanVien();
-            //nv.MaNhanVien = txtMaNv.Text;
-            //nv.TenNhanVien = txtTenNv.Text;
-            //nv.GioiTinh = cboGioiTinh.Text;
-            //nv.SoDienThoai = txtSDT.Text;
-            //nv.NgaySinh = dateTimeDayofBirth.Value;
-            //nv.NgayBatDauCongTac = dateTimeNgayVaoLam.Value;
-            //nv.TrangThai = true;
-            //nv.Avatar =Convert.ToByte(stream.ToArray());
-            //nv.DiaChi = txtDiaChi.Text;
-
         }
     }
 }

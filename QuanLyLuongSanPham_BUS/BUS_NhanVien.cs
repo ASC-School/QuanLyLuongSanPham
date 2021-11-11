@@ -19,5 +19,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.getDanhSachNVToQLNS();
         }
+        public bool themNhanVien(QuanLyLuongSanPham_DTO.DTO_NhanVien nvNew)
+        {
+            return nv.themNhanVien(nvNew);
+        }
     }
 }

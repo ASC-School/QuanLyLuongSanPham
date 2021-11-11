@@ -40,19 +40,34 @@ namespace QuanLyLuongSanPham_DAO
                  select new { Mã_nhân_viên = dsnv.maNhanVien ,Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan,Trạng_thái=dsnv.trangThai });
             return q;
         }
-        //public bool themNhanVien(DTO_NhanVien nv)
-        //{
-        //    string str = nv.MaNhanVien;
-        //    if (checkIfExist(str) != null)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        MemoryStream stream = new MemoryStream();
-
-        //    }
-        //}
+        public bool themNhanVien(DTO_NhanVien nv)
+        {
+            string str = nv.MaNhanVien;
+            if (checkIfExist(str) != null)
+            {
+                return false;
+            }
+            else
+            {
+                NhanVien temp = new NhanVien();
+                temp.maNhanVien = nv.MaNhanVien;
+                temp.tenNhanVien = nv.TenNhanVien;
+                if (nv.GioiTinh.Equals("Nam"))
+                    temp.gioiTinh = false;
+                else
+                    temp.gioiTinh = true;
+                temp.soDienThoai = nv.SoDienThoai;
+                temp.ngaySinh = nv.NgaySinh;
+                temp.ngayBatDauCongTac = nv.NgayBatDauCongTac;
+                temp.trangThai = nv.TrangThai;
+                temp.avatar =nv.Avatar;
+                temp.diaChi = nv.DiaChi;
+                temp.maLoai = nv.MaLoai;
+                dataBase.NhanViens.InsertOnSubmit(temp);
+                dataBase.SubmitChanges();
+                return true;
+            }
+        }
 
         public NhanVien checkIfExist(string strMaNhanVien)
         {

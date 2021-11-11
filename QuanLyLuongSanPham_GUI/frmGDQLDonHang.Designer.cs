@@ -380,7 +380,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(925, 559);
+            this.panelControl1.Size = new System.Drawing.Size(925, 601);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -685,7 +685,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 580);
+            this.ClientSize = new System.Drawing.Size(1259, 622);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
