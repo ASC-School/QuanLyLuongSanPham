@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DAO;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
@@ -18,6 +19,11 @@ namespace QuanLyLuongSanPham_BUS
         public IEnumerable<dynamic> getNhanVienForQLNS()
         {
             return nv.getDanhSachNVToQLNS();
+        }
+
+        public List<DTO_NhanVien> getDSNhanVienForDonHang()
+        {
+            return nv.layToanBoDanhSachNhanVien();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-        List<DTO_NhanVien> layToanBoDanhSachNhanVien()
+        public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
             var dataLst = dataBase.NhanViens.Select(p => p).OrderBy(p => p.maNhanVien);
 
@@ -26,7 +26,15 @@ namespace QuanLyLuongSanPham_DAO
                 DTO_NhanVien tmp = new DTO_NhanVien();
                 tmp.MaNhanVien = nv.maNhanVien;
                 tmp.TenNhanVien = nv.tenNhanVien;
-
+                tmp.DiaChi = nv.diaChi;
+                tmp.SoDienThoai = nv.soDienThoai;
+                tmp.NgayBatDauCongTac = nv.ngayBatDauCongTac;
+                tmp.NgaySinh = nv.ngaySinh;
+                if (nv.gioiTinh == true)
+                    tmp.GioiTinh = "nam";
+                else
+                    tmp.GioiTinh = "nữ";
+              //  tmp.Avatar =byte.Parse(nv.avatar);
             }
             return lst;
         }

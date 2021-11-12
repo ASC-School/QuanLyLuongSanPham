@@ -25,26 +25,24 @@ namespace QuanLyLuongSanPham_DAO
             return false;
         }
 
-        public List<DTO_DonHang> layDSDonHang()
+        public IEnumerable<dynamic> layDSDonHang()
         {
-            var dataLst = dataBase.DonHangs.Select(p => p).OrderBy(p => p.maDonHang);
-
-            List<DTO_DonHang> lstDonHang = new List<DTO_DonHang>();
-            foreach(DonHang dh in dataLst)
-            {
-                DTO_DonHang tmp = new DTO_DonHang();
-                tmp.MaDonHang = dh.maDonHang;
-                tmp.NgayBatDau = (DateTime)dh.ngayBatDau;
-                tmp.NgayKetThuc = (DateTime)dh.ngayKetThuc;
-                tmp.TenKhachHang = dh.tenKhachHang;
-                tmp.SoDienThoaiKhachHang = dh.soDienThoaiKhachHang;
-                tmp.NoiDung = dh.noiDung;
-                tmp.MaNhanVien = dh.maNhanVien;
-                lstDonHang.Add(tmp);
-            }
-            return lstDonHang;
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                           select new {
+                               maDonHang = donHang.maDonHang,
+                               ngayBatDau = donHang.ngayBatDau,
+                               ngayKetThuc = donHang.ngayKetThuc,
+                               tenKhachHang = donHang.tenKhachHang,
+                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                               noiDung = donHang.noiDung,
+                               maNhanVien = donHang.maNhanVien,
+                               tenNhanVien = nhanVien.tenNhanVien
+                           }).OrderBy(p => p.maDonHang);
+            return dataLst;
         }
 
+     
         public bool suaDonhang(DTO_DonHang newDonHang)
         {
             IQueryable<DonHang> donHang = dataBase.DonHangs.Where(p => p.maDonHang == newDonHang.MaDonHang);

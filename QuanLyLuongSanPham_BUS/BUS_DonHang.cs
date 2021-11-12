@@ -18,7 +18,7 @@ namespace QuanLyLuongSanPham_BUS
             chiTietDHDAO = new DAO_ChiTietDonHang();
         }
 
-        public List<DTO_DonHang > getAllDonHang()
+        public IEnumerable<dynamic> getAllDonHang()
         {
             return donHangDAO.layDSDonHang();
         }
