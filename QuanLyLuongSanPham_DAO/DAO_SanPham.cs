@@ -16,7 +16,7 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-        List<DTO_SanPham> layToanBoDanhSachSanPham()
+        public List<DTO_SanPham> layToanBoDanhSachSanPham()
         {
             var dataLst = dataBase.SanPhams.Select(p => p).OrderBy(p => p.maSanPham);
 
@@ -27,7 +27,8 @@ namespace QuanLyLuongSanPham_DAO
                 tmp.MaSanPham = sp.maSanPham;
                 tmp.TenSanPham = sp.tenSanPham;
                 tmp.NamSanXuat = sp.namSanXuat.Value;
-                tmp.TrangThai = sp.trangThai.Value;
+                tmp.TrangThai =sp.trangThai.Value;
+                tmp.GiaBan = sp.giaBan.Value;
                 lst.Add(tmp);
             }
             return lst;

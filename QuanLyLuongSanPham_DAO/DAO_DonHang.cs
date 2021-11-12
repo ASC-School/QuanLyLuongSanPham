@@ -15,7 +15,7 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-        private bool checkExist(string maDonHang)
+        public bool checkExist(string maDonHang)
         {
             DonHang donHang = dataBase.DonHangs.Where(p => p.maDonHang == maDonHang).FirstOrDefault();
             if(donHang != null)
@@ -42,7 +42,19 @@ namespace QuanLyLuongSanPham_DAO
             return dataLst;
         }
 
-     
+        public DTO_DonHang timKiemDonHang(string maDonHang)
+        {
+            DonHang tmp = dataBase.DonHangs.Where(p => p.maDonHang == maDonHang).FirstOrDefault();
+            DTO_DonHang donHang = new DTO_DonHang();
+            donHang.MaDonHang = tmp.maDonHang;
+            donHang.NgayBatDau = DateTime.Parse(tmp.ngayBatDau.ToString());
+            donHang.NgayKetThuc = DateTime.Parse(tmp.ngayKetThuc.ToString());
+            donHang.TenKhachHang = tmp.tenKhachHang;
+            donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
+            donHang.NoiDung = tmp.noiDung;
+            donHang.MaNhanVien = tmp.maNhanVien;
+            return donHang;
+        }
         public bool suaDonhang(DTO_DonHang newDonHang)
         {
             IQueryable<DonHang> donHang = dataBase.DonHangs.Where(p => p.maDonHang == newDonHang.MaDonHang);

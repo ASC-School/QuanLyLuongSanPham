@@ -12,10 +12,12 @@ namespace QuanLyLuongSanPham_BUS
     {
         DAO_DonHang donHangDAO;
         DAO_ChiTietDonHang chiTietDHDAO;
+        DAO_SanPham sanPhamDAO;
         public BUS_DonHang()
         {
             donHangDAO = new DAO_DonHang();
             chiTietDHDAO = new DAO_ChiTietDonHang();
+            sanPhamDAO = new DAO_SanPham();
         }
 
         public IEnumerable<dynamic> getAllDonHang()
@@ -23,11 +25,25 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.layDSDonHang();
         }
 
-        public IEnumerable<dynamic> getAllChiTietDonHang()
+        public IEnumerable<object> getAllChiTietDonHang(string maDonHang)
         {
-            return chiTietDHDAO.layChiTietDHThuocDH();
+            return chiTietDHDAO.layDanhSachTimKiemCTDH(maDonHang);
+        }
+
+        public bool checkTonTaiDonHang(string maDonHang)
+        {
+            return donHangDAO.checkExist(maDonHang);
         }
         
+        public DTO_DonHang getDonHang(string maDonHang)
+        {
+            return donHangDAO.timKiemDonHang(maDonHang);
+        }
+
+        public List<DTO_SanPham> getDSSanPham()
+        {
+            return sanPhamDAO.layToanBoDanhSachSanPham();
+        }
 
 
     }

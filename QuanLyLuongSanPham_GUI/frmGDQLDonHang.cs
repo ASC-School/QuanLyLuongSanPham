@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using QuanLyLuongSanPham_DAO;
 using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_BUS;
+using System.Text.RegularExpressions;
+using QuanLyLuongSanPham_GUI.Regular_Expression;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -19,6 +21,7 @@ namespace QuanLyLuongSanPham_GUI
         BindingSource bsPH;
         BUS_DonHang donHangBUS;
         BUS_NhanVien nhanVienBUS;
+        checkFrmDonHang checkDH = new checkFrmDonHang();
         public frmGDQLDonHang()
         {
             InitializeComponent();
@@ -35,7 +38,6 @@ namespace QuanLyLuongSanPham_GUI
             btnInDonHang.Enabled = false;
 
             loadDonHangToDataGridView();
-            FormatLuoi(dgvDSDonHang);
             loadComBoBox();
         }
         private void loadDonHangToDataGridView()
@@ -104,8 +106,9 @@ namespace QuanLyLuongSanPham_GUI
             donHang.MaDonHang = txtMaDonHang.Text;
             donHang.TenKhachHang = txtTenKhachHang.Text;
             donHang.SoDienThoaiKhachHang = txtSoDienKhachHang.Text;
-            donHang.NgayBatDau = DateTime.Parse(dateNgayBatDau.Text);
-            donHang.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
+            //DateTime date = Convert.ToDateTime(dateNgayBatDau.Text, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+            //donHang.NgayBatDau = date;
+            //donHang.NgayKetThuc = DateTime.ParseExact(dateNgayKetThuc.Text, "dd/MM/yyyy HH:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
             donHang.NoiDung = txtNoiDung.Text;
             donHang.MaNhanVien = cboMaNhanVien.Text;
             return donHang;
@@ -126,11 +129,107 @@ namespace QuanLyLuongSanPham_GUI
                               
         }
        
+        private bool chechEmptyDonHang()
+        {
+            if(txtMaDonHang.Text.Equals(""))
+            {
+                errLoi.SetError(txtMaDonHang, "Bạn phải nhập mã đơn hàng");
+                txtMaDonHang.Focus();
+                return false;
+            }
+            else
+            {
+                errLoi.Clear();
+                if(dateNgayBatDau.Text.Equals(""))
+                {
+                    errLoi.SetError(dateNgayBatDau, "Bạn phải chọn ngày bắt đầu!!");
+                    dateNgayBatDau.Focus();
+                    return false;
+                }
+                else
+                {
+                    errLoi.Clear();
+                    if (dateNgayKetThuc.Text.Equals(""))
+                    {
+                        errLoi.SetError(dateNgayKetThuc, "Bạn phải chọn ngày kết thúc!!");
+                        dateNgayKetThuc.Focus();
+                        return false;
+                    }
+                    else
+                    {
+                        errLoi.Clear();
+                        if (txtTenKhachHang.Text.Equals(""))
+                        {
+                            errLoi.SetError(txtTenKhachHang, "Bạn phải nhập tên khách hàng!!");
+                            txtTenKhachHang.Focus();
+                            return false;
+                        }
+                        else
+                        {
+                            errLoi.Clear();
+                            if(cboMaNhanVien.Text.Equals(""))
+                            {
+                                errLoi.SetError(cboMaNhanVien, "Mã nhân viên không được để trống!!");
+                                cboMaNhanVien.Focus();
+                                return false;
+                            }
+                            else
+                            {
+                                errLoi.Clear();
+                                if (cboTenNhanVien.Text.Equals(""))
+                                {
+                                    errLoi.SetError(cboTenNhanVien, "Tên nhân viên không được để trống!");
+                                    cboTenNhanVien.Focus();
+                                    return false;
+                                }
+                                else
+                                {
+                                    errLoi.Clear();
+                                    if (txtNoiDung.Text.Equals(""))
+                                    {
+                                        errLoi.SetError(txtNoiDung, "Bạn phải nhập nội dung cho đơn hàng!!");
+                                        txtNoiDung.Focus();
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        errLoi.Clear();
+                                        if (txtSoDienKhachHang.Text.Equals(""))
+                                        {
+                                            errLoi.SetError(txtSoDienKhachHang, "Bạn phải nhập số điện thoại khách hàng!!");
+                                            txtSoDienKhachHang.Focus();
+                                            return false;
+                                        }
+                                    }
+
+                                }
+                            }   
+                        }
+                    }
+                }    
+            }
+            return true;
+        }
         private void btnDongGD_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog;
+            dialog = MessageBox.Show("Bạn có muốn thoát?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if(dialog == DialogResult.Yes)
+                this.Close();
         }
 
+        private bool checkMaDonHang(string maDonHang)
+        {
+            if (checkDH.checkMaDonHang(maDonHang))
+            {
+                if(donHangBUS.checkTonTaiDonHang(maDonHang))
+                {
+                    MessageBox.Show("Đơn hàng này đã tồn tại!!");
+                    return false;
+                }
+            }
+            return true;
+        }
 
         private void btnThemDonHang_Click(object sender, EventArgs e)
         {
@@ -183,6 +282,8 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+
+
         private void cboTenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboTenNhanVien.SelectedIndex == -1)
@@ -195,9 +296,23 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+       
+
         private void btnLuuDonHang_Click(object sender, EventArgs e)
         {
+            if (chechEmptyDonHang())
+            {
+                errLoi.Clear();
+                if(checkMaDonHang(txtMaDonHang.Text))
+                {
+                    
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Bạn vui lòng nhập đầy đủ thông tin!!");
+            }
         }
 
         private void btnHuyDonHang_Click(object sender, EventArgs e)
@@ -211,6 +326,33 @@ namespace QuanLyLuongSanPham_GUI
         }
 
         private void btnSuaDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool KiemTraTonTaiForm(string frmTenForm)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name.Equals(frm))
+                {
+                    frm.Activate();//sang len
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnChiTietDonHang_Click(object sender, EventArgs e)
+        {
+            if (KiemTraTonTaiForm("frmChiTietDonHang") == false)
+            {
+                DTO_DonHang donHang = donHangBUS.getDonHang(txtMaDonHang.Text);
+                frmChiTietDonHang frm = new frmChiTietDonHang(donHang);
+                frm.ShowDialog();
+            }
+        }
+
+        private void dateNgayBatDau_EditValueChanged(object sender, EventArgs e)
         {
 
         }
