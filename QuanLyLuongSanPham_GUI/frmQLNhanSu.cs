@@ -189,6 +189,7 @@ namespace QuanLyLuongSanPham_GUI
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 btnThemNV.Text = "Thêm nhân viên";
                 offTextbox();
+                clearText();
             }
             else
             {
@@ -226,7 +227,7 @@ namespace QuanLyLuongSanPham_GUI
                 nv.MaLoai = maLoaiNV;
                 if (busNV.themNhanVien(nv) == true)
                 {
-                    MessageBox.Show("successful!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     busNV.themNhanVien(nv);
                     dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
                 }
@@ -234,10 +235,15 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
-                btnThemNV.Text = "Thêm nhân viên";
+                btnThemNV.Text = "Thêm thất bại";
                 offTextbox();
             }    
             
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
     }
 }
