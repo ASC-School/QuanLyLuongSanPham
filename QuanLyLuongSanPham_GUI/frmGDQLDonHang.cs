@@ -70,7 +70,6 @@ namespace QuanLyLuongSanPham_GUI
             cboMaNhanVien.Text = "";
             cboTenNhanVien.Text = "";
             txtNoiDung.Clear();
-            txtTongTien.Clear();
             txtSoDienKhachHang.Clear();
         }
 
@@ -84,7 +83,7 @@ namespace QuanLyLuongSanPham_GUI
             cboTenNhanVien.Enabled = false;
             txtNoiDung.Enabled = false;
             txtSoDienKhachHang.Enabled = false;
-            txtTongTien.Enabled = false;
+            
         }
         private void hienThongTin()
         {
@@ -96,7 +95,7 @@ namespace QuanLyLuongSanPham_GUI
             cboTenNhanVien.Enabled = true;
             txtNoiDung.Enabled = true;
             txtSoDienKhachHang.Enabled = true;
-            txtTongTien.Enabled = true;
+          
         }
 
         private DTO_DonHang taoDonHang()
@@ -114,7 +113,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void loadComBoBox()
         {
-            List<DTO_NhanVien> lstNhanVien = new List<DTO_NhanVien>();
+            List<DTO_NhanVien> lstNhanVien = nhanVienBUS.getDSNhanVienForDonHang();
             List<string> maNhanVien = new List<string>();
             List<string> tenNhanVien = new List<string>();
             foreach(DTO_NhanVien nhanVien in lstNhanVien)
@@ -124,7 +123,7 @@ namespace QuanLyLuongSanPham_GUI
             }
             cboMaNhanVien.DataSource = maNhanVien;
             cboTenNhanVien.DataSource = tenNhanVien;
-                    
+                              
         }
        
         private void btnDongGD_Click(object sender, EventArgs e)
@@ -139,6 +138,8 @@ namespace QuanLyLuongSanPham_GUI
             {
                 btnLuuDonHang.Enabled = true;
                 btnThemDonHang.Text = "Hủy thêm";
+                formatTextBox();
+                hienThongTin();
             }
             else
             {
@@ -147,7 +148,69 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-        private void radMaDonHang_CheckedChanged(object sender, EventArgs e)
+        private void dgvDSDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnLuuDonHang.Enabled = true;
+            btnHuyDonHang.Enabled = true;
+            btnInDonHang.Enabled = true;
+            hienThongTin();
+            DataGridViewRow row = this.dgvDSDonHang.Rows[e.RowIndex];
+            txtMaDonHang.Text = row.Cells[0].Value.ToString();
+            dateNgayBatDau.Text = row.Cells[1].Value.ToString();
+            dateNgayKetThuc.Text = row.Cells[2].Value.ToString();
+            txtTenKhachHang.Text = row.Cells[3].Value.ToString();
+            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();
+            txtNoiDung.Text = row.Cells[5].Value.ToString();
+            cboMaNhanVien.Text = row.Cells[6].Value.ToString();
+            cboTenNhanVien.Text = row.Cells[7].Value.ToString();
+        }
+
+        private void btnLoadDSDonHang_Click(object sender, EventArgs e)
+        {
+            loadDonHangToDataGridView();
+            FormatLuoi(dgvDSDonHang);
+        }
+
+        private void cboMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboMaNhanVien.SelectedIndex == -1)
+                return;
+            else
+            {
+                if (cboTenNhanVien.DataSource == null)
+                    return;
+                cboTenNhanVien.SelectedIndex = cboMaNhanVien.SelectedIndex;
+            }
+        }
+
+        private void cboTenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTenNhanVien.SelectedIndex == -1)
+                return;
+            else
+            {
+                if (cboMaNhanVien.DataSource == null)
+                    return;
+                cboMaNhanVien.SelectedIndex = cboTenNhanVien.SelectedIndex;
+            }
+        }
+
+        private void btnLuuDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuyDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInDonHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSuaDonHang_Click(object sender, EventArgs e)
         {
 
         }

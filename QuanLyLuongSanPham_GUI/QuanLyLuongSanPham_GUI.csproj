@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regular Expression\checkFrmDonHang.cs" />
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="ChiTietDonHang.resx">
       <DependentUpon>ChiTietDonHang.cs</DependentUpon>
@@ -195,6 +196,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wrench_head_fix_icon_145915.png" />
     <None Include="Resources\2089195.png" />
     <None Include="Resources\a78abc0784354c6b1524.jpg" />
     <None Include="Resources\e5f84f0f743dbc63e52c.jpg" />

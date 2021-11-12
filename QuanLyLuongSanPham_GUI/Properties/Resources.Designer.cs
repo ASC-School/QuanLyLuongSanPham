@@ -229,5 +229,15 @@ namespace QuanLyLuongSanPham_GUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wrench_head_fix_icon_145915 {
+            get {
+                object obj = ResourceManager.GetObject("wrench_head_fix_icon_145915", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

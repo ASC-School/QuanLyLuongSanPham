@@ -20,8 +20,7 @@ namespace QuanLyLuongSanPham_DAO
 
         public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
-            var dataLst = dataBase.NhanViens.Select(p => p).OrderBy(p => p.maNhanVien);
-
+            var dataLst = (from nv in dataBase.NhanViens where (nv.maLoai.Equals("LNV001")) select nv);
             List<DTO_NhanVien> lst = new List<DTO_NhanVien>();
             foreach (NhanVien nv in dataLst)
             {
@@ -36,7 +35,8 @@ namespace QuanLyLuongSanPham_DAO
                     tmp.GioiTinh = "nam";
                 else
                     tmp.GioiTinh = "nữ";
-                tmp.Avatar = nv.avatar.ToArray();
+                tmp.TrangThai = (bool)nv.trangThai;
+                tmp.LoaiNhanVien = nv.LoaiNhanVien.ToString();
                 lst.Add(tmp);
             }
             return lst;
