@@ -11,10 +11,10 @@ namespace QuanLyLuongSanPham_DTO
         string maNhanVien, tenNhanVien, gioiTinh, loaiNhanVien,soDienThoai,diaChi, maLoai;
         DateTime ngaySinh, ngayBatDauCongTac;
         bool trangThai;
-        byte avatar;                                                                                                                                                                                                                         
+        byte[] avatar;                                                                                                                                                                                                                         
         public DTO_NhanVien() { }
 
-        public DTO_NhanVien(string maNhanVien, string tenNhanVien, string gioiTinh, string loaiNhanVien, string soDienThoai, string diaChi, string maLoai, DateTime ngaySinh, DateTime ngayBatDauCongTac, bool trangThai, byte avatar)
+        public DTO_NhanVien(string maNhanVien, string tenNhanVien, string gioiTinh, string loaiNhanVien, string soDienThoai, string diaChi, string maLoai, DateTime ngaySinh, DateTime ngayBatDauCongTac, bool trangThai, byte[] avatar)
         {
             this.maNhanVien = maNhanVien;
             this.tenNhanVien = tenNhanVien;
@@ -37,7 +37,7 @@ namespace QuanLyLuongSanPham_DTO
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public DateTime NgayBatDauCongTac { get => ngayBatDauCongTac; set => ngayBatDauCongTac = value; }
         public bool TrangThai { get => trangThai; set => trangThai = value; }
-        public byte Avatar { get => avatar; set => avatar = value; }
+        public byte[] Avatar { get => avatar; set => avatar = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string MaLoai { get => maLoai; set => maLoai = value; }
     }

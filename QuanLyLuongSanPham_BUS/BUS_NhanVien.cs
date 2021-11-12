@@ -25,5 +25,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.layToanBoDanhSachNhanVien();
         }
+        public bool themNhanVien(QuanLyLuongSanPham_DTO.DTO_NhanVien nvNew)
+        {
+            return nv.themNhanVien(nvNew);
+        }
+        public IEnumerable<NhanVien> getNhanVienTheoMa(string maNV)
+        {
+            return nv.layNvTheoMa(maNV);
+        }
     }
 }

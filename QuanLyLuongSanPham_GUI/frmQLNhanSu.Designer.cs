@@ -46,6 +46,8 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -63,7 +65,6 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimeNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.dateTimeDayofBirth = new System.Windows.Forms.DateTimePicker();
             this.cboLoaiNhanVien = new System.Windows.Forms.ComboBox();
-            this.cboDonViQuanLy = new System.Windows.Forms.ComboBox();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -81,6 +82,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
+            this.txtDonViQuanLy = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,10 +141,11 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemNV.Location = new System.Drawing.Point(0, 175);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(193, 50);
-            this.btnThemNV.TabIndex = 1;
+            this.btnThemNV.TabIndex = 0;
             this.btnThemNV.Text = "Thêm nhân viên";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.UseVisualStyleBackColor = false;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // pictureBox1
             // 
@@ -175,7 +178,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSuaTTNV.Location = new System.Drawing.Point(0, 225);
             this.btnSuaTTNV.Name = "btnSuaTTNV";
             this.btnSuaTTNV.Size = new System.Drawing.Size(193, 50);
-            this.btnSuaTTNV.TabIndex = 5;
+            this.btnSuaTTNV.TabIndex = 1;
             this.btnSuaTTNV.Text = "Sửa thông tin";
             this.btnSuaTTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaTTNV.UseVisualStyleBackColor = false;
@@ -199,7 +202,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXoaNV.Location = new System.Drawing.Point(0, 275);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(193, 50);
-            this.btnXoaNV.TabIndex = 7;
+            this.btnXoaNV.TabIndex = 2;
             this.btnXoaNV.Text = "Xóa nhân viên";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.UseVisualStyleBackColor = false;
@@ -223,7 +226,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnInThongTin.Location = new System.Drawing.Point(0, 325);
             this.btnInThongTin.Name = "btnInThongTin";
             this.btnInThongTin.Size = new System.Drawing.Size(193, 50);
-            this.btnInThongTin.TabIndex = 9;
+            this.btnInThongTin.TabIndex = 3;
             this.btnInThongTin.Text = "In thông tin";
             this.btnInThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInThongTin.UseVisualStyleBackColor = false;
@@ -247,7 +250,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Location = new System.Drawing.Point(0, 375);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(193, 50);
-            this.btnTimKiem.TabIndex = 11;
+            this.btnTimKiem.TabIndex = 4;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -271,7 +274,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.Location = new System.Drawing.Point(0, 425);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(193, 50);
-            this.btnThoat.TabIndex = 13;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Đóng";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -283,13 +286,15 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Appearance.Options.UseBackColor = true;
             this.panelControl5.Appearance.Options.UseBorderColor = true;
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl5.Controls.Add(this.txtDonViQuanLy);
+            this.panelControl5.Controls.Add(this.cboTrangThai);
+            this.panelControl5.Controls.Add(this.label10);
             this.panelControl5.Controls.Add(this.btnReset);
             this.panelControl5.Controls.Add(this.dtgvDSNV);
             this.panelControl5.Controls.Add(this.panelControl2);
             this.panelControl5.Controls.Add(this.dateTimeNgayVaoLam);
             this.panelControl5.Controls.Add(this.dateTimeDayofBirth);
             this.panelControl5.Controls.Add(this.cboLoaiNhanVien);
-            this.panelControl5.Controls.Add(this.cboDonViQuanLy);
             this.panelControl5.Controls.Add(this.cboGioiTinh);
             this.panelControl5.Controls.Add(this.txtSDT);
             this.panelControl5.Controls.Add(this.txtDiaChi);
@@ -305,7 +310,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Controls.Add(this.label13);
             this.panelControl5.Controls.Add(this.label12);
             this.panelControl5.Controls.Add(this.lblLuong);
-            this.panelControl5.Location = new System.Drawing.Point(199, 67);
+            this.panelControl5.Location = new System.Drawing.Point(199, 64);
             this.panelControl5.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl5.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -314,6 +319,27 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1094, 612);
             this.panelControl5.TabIndex = 22;
+            // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.Items.AddRange(new object[] {
+            "Đi làm",
+            "Nghỉ làm"});
+            this.cboTrangThai.Location = new System.Drawing.Point(380, 211);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(124, 24);
+            this.cboTrangThai.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(244, 212);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(170, 23);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Trạng thái:";
             // 
             // btnReset
             // 
@@ -324,6 +350,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnReset.Size = new System.Drawing.Size(41, 36);
             this.btnReset.TabIndex = 43;
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dtgvDSNV
             // 
@@ -380,7 +407,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThongKe.Location = new System.Drawing.Point(129, 170);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(139, 40);
-            this.btnThongKe.TabIndex = 30;
+            this.btnThongKe.TabIndex = 6;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.TextColor = System.Drawing.Color.Black;
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -392,7 +419,7 @@ namespace QuanLyLuongSanPham_GUI
             this.radioButton3.Location = new System.Drawing.Point(273, 56);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(81, 21);
-            this.radioButton3.TabIndex = 47;
+            this.radioButton3.TabIndex = 3;
             this.radioButton3.Text = "Nghỉ làm";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
@@ -403,7 +430,7 @@ namespace QuanLyLuongSanPham_GUI
             this.radioButton2.Location = new System.Drawing.Point(202, 56);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(66, 21);
-            this.radioButton2.TabIndex = 46;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.Text = "Đi làm";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -415,7 +442,7 @@ namespace QuanLyLuongSanPham_GUI
             this.radioButton1.Location = new System.Drawing.Point(129, 56);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(67, 21);
-            this.radioButton1.TabIndex = 45;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tất cả";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -427,7 +454,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimePicker4.Location = new System.Drawing.Point(129, 136);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePicker4.TabIndex = 44;
+            this.dateTimePicker4.TabIndex = 5;
             // 
             // dateTimePicker3
             // 
@@ -436,7 +463,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimePicker3.Location = new System.Drawing.Point(129, 94);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePicker3.TabIndex = 42;
+            this.dateTimePicker3.TabIndex = 4;
             // 
             // comboBox4
             // 
@@ -444,7 +471,7 @@ namespace QuanLyLuongSanPham_GUI
             this.comboBox4.Location = new System.Drawing.Point(129, 20);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(225, 24);
-            this.comboBox4.TabIndex = 42;
+            this.comboBox4.TabIndex = 0;
             this.comboBox4.Text = "** Tất cả phòng ban **";
             // 
             // label9
@@ -491,35 +518,27 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateTimeNgayVaoLam.CustomFormat = "dd,MM,yyyy";
             this.dateTimeNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(595, 156);
+            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(595, 151);
             this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
             this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeNgayVaoLam.TabIndex = 41;
+            this.dateTimeNgayVaoLam.TabIndex = 7;
             // 
             // dateTimeDayofBirth
             // 
             this.dateTimeDayofBirth.CustomFormat = "dd,MM,yyyy";
             this.dateTimeDayofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDayofBirth.Location = new System.Drawing.Point(595, 127);
+            this.dateTimeDayofBirth.Location = new System.Drawing.Point(595, 122);
             this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
             this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeDayofBirth.TabIndex = 40;
+            this.dateTimeDayofBirth.TabIndex = 5;
             // 
             // cboLoaiNhanVien
             // 
             this.cboLoaiNhanVien.FormattingEnabled = true;
-            this.cboLoaiNhanVien.Location = new System.Drawing.Point(380, 216);
+            this.cboLoaiNhanVien.Location = new System.Drawing.Point(380, 182);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
             this.cboLoaiNhanVien.Size = new System.Drawing.Size(332, 24);
-            this.cboLoaiNhanVien.TabIndex = 39;
-            // 
-            // cboDonViQuanLy
-            // 
-            this.cboDonViQuanLy.FormattingEnabled = true;
-            this.cboDonViQuanLy.Location = new System.Drawing.Point(380, 187);
-            this.cboDonViQuanLy.Name = "cboDonViQuanLy";
-            this.cboDonViQuanLy.Size = new System.Drawing.Size(332, 24);
-            this.cboDonViQuanLy.TabIndex = 38;
+            this.cboLoaiNhanVien.TabIndex = 8;
             // 
             // cboGioiTinh
             // 
@@ -527,44 +546,44 @@ namespace QuanLyLuongSanPham_GUI
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cboGioiTinh.Location = new System.Drawing.Point(380, 156);
+            this.cboGioiTinh.Location = new System.Drawing.Point(380, 151);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(75, 24);
-            this.cboGioiTinh.TabIndex = 37;
+            this.cboGioiTinh.TabIndex = 6;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(380, 127);
+            this.txtSDT.Location = new System.Drawing.Point(380, 122);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(112, 23);
-            this.txtSDT.TabIndex = 36;
+            this.txtSDT.TabIndex = 3;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(380, 100);
+            this.txtDiaChi.Location = new System.Drawing.Point(380, 95);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(332, 23);
-            this.txtDiaChi.TabIndex = 35;
+            this.txtDiaChi.TabIndex = 2;
             // 
             // txtTenNv
             // 
-            this.txtTenNv.Location = new System.Drawing.Point(380, 73);
+            this.txtTenNv.Location = new System.Drawing.Point(380, 68);
             this.txtTenNv.Name = "txtTenNv";
             this.txtTenNv.Size = new System.Drawing.Size(332, 23);
-            this.txtTenNv.TabIndex = 34;
+            this.txtTenNv.TabIndex = 1;
             // 
             // txtMaNv
             // 
-            this.txtMaNv.Location = new System.Drawing.Point(380, 46);
+            this.txtMaNv.Location = new System.Drawing.Point(380, 41);
             this.txtMaNv.Name = "txtMaNv";
             this.txtMaNv.Size = new System.Drawing.Size(332, 23);
-            this.txtMaNv.TabIndex = 33;
+            this.txtMaNv.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(461, 157);
+            this.label5.Location = new System.Drawing.Point(461, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 23);
             this.label5.TabIndex = 32;
@@ -574,7 +593,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(244, 188);
+            this.label4.Location = new System.Drawing.Point(244, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 23);
             this.label4.TabIndex = 31;
@@ -584,7 +603,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(244, 217);
+            this.label3.Location = new System.Drawing.Point(244, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 23);
             this.label3.TabIndex = 30;
@@ -594,7 +613,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(244, 159);
+            this.label2.Location = new System.Drawing.Point(244, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 23);
             this.label2.TabIndex = 29;
@@ -621,8 +640,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnThemAvata
             // 
-            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThemAvata.BorderRadius = 5;
             this.btnThemAvata.BorderSize = 1;
@@ -632,7 +651,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemAvata.Location = new System.Drawing.Point(21, 191);
             this.btnThemAvata.Name = "btnThemAvata";
             this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
-            this.btnThemAvata.TabIndex = 29;
+            this.btnThemAvata.TabIndex = 0;
             this.btnThemAvata.Text = "Chọn ảnh";
             this.btnThemAvata.TextColor = System.Drawing.Color.Black;
             this.btnThemAvata.UseVisualStyleBackColor = false;
@@ -645,7 +664,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Avata.Name = "Avata";
             this.Avata.Size = new System.Drawing.Size(139, 160);
-            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Avata.TabIndex = 4;
             this.Avata.TabStop = false;
             // 
@@ -653,7 +672,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(498, 130);
+            this.label15.Location = new System.Drawing.Point(498, 125);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(170, 23);
             this.label15.TabIndex = 26;
@@ -663,7 +682,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(244, 130);
+            this.label14.Location = new System.Drawing.Point(244, 125);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(170, 23);
             this.label14.TabIndex = 25;
@@ -673,7 +692,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(244, 101);
+            this.label13.Location = new System.Drawing.Point(244, 96);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(170, 23);
             this.label13.TabIndex = 24;
@@ -683,7 +702,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(244, 74);
+            this.label12.Location = new System.Drawing.Point(244, 69);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(170, 23);
             this.label12.TabIndex = 23;
@@ -693,11 +712,19 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.lblLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLuong.ForeColor = System.Drawing.Color.Black;
-            this.lblLuong.Location = new System.Drawing.Point(244, 47);
+            this.lblLuong.Location = new System.Drawing.Point(244, 42);
             this.lblLuong.Name = "lblLuong";
             this.lblLuong.Size = new System.Drawing.Size(170, 23);
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
+            // 
+            // txtDonViQuanLy
+            // 
+            this.txtDonViQuanLy.Enabled = false;
+            this.txtDonViQuanLy.Location = new System.Drawing.Point(380, 243);
+            this.txtDonViQuanLy.Name = "txtDonViQuanLy";
+            this.txtDonViQuanLy.Size = new System.Drawing.Size(332, 23);
+            this.txtDonViQuanLy.TabIndex = 10;
             // 
             // frmQLNhanSu
             // 
@@ -775,7 +802,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DateTimePicker dateTimeNgayVaoLam;
         private System.Windows.Forms.DateTimePicker dateTimeDayofBirth;
         private System.Windows.Forms.ComboBox cboLoaiNhanVien;
-        private System.Windows.Forms.ComboBox cboDonViQuanLy;
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -799,5 +825,8 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox cboTrangThai;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDonViQuanLy;
     }
 }
