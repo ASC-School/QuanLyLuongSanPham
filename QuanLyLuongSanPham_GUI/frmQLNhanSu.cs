@@ -28,19 +28,21 @@ namespace QuanLyLuongSanPham_GUI
         private static string ImageLocation;
         BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
         BUS_DonViQuanLy busDonVi = new BUS_DonViQuanLy();
+        string maLoaiNV;
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
             loadDSNVtoDTGV();
             loadDataToCbo();
         }
+        // Load data từ database lên datagrid view
         private void loadDSNVtoDTGV()
         {
-            //offTextbox();
+            offTextbox();
             this.dtgvDSNV.DefaultCellStyle.ForeColor = Color.Black;
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
         }
 
-
+        // Đưa dữ liệu từ datagird view lên textbox
         private void dtgvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -59,7 +61,7 @@ namespace QuanLyLuongSanPham_GUI
                 dateTimeDayofBirth.Text = row.Cells[5].Value.ToString();
                 dateTimeNgayVaoLam.Text = row.Cells[6].Value.ToString();
                 cboLoaiNhanVien.Text = row.Cells[7].Value.ToString();
-                cboDonViQuanLy.Text = row.Cells[8].Value.ToString();
+                txtDonViQuanLy.Text = row.Cells[8].Value.ToString();
                 if (row.Cells[9].Value.ToString().Equals("True"))
                 {
                     cboTrangThai.Text = "Đi làm";
@@ -68,6 +70,7 @@ namespace QuanLyLuongSanPham_GUI
                     cboTrangThai.Text = "Nghỉ làm";
             }
         }
+        // ẩn các textbox và combo box
         private void offTextbox()
         {
             txtMaNv.Enabled = false;
@@ -77,10 +80,30 @@ namespace QuanLyLuongSanPham_GUI
             txtDiaChi.Enabled = false;
             dateTimeDayofBirth.Enabled = false;
             dateTimeNgayVaoLam.Enabled = false;
-            cboDonViQuanLy.Enabled = false;
             cboLoaiNhanVien.Enabled = false;
             btnThemAvata.Enabled = false;
             cboTrangThai.Enabled = false;
+        }
+        // hiện các textbox và combo box
+        private void onTextbox()
+        {
+            txtMaNv.Enabled = true;
+            txtTenNv.Enabled = true;
+            cboGioiTinh.Enabled = true;
+            txtSDT.Enabled = true;
+            txtDiaChi.Enabled = true;
+            dateTimeDayofBirth.Enabled = true;
+            dateTimeNgayVaoLam.Enabled = true;
+            cboLoaiNhanVien.Enabled = true;
+            btnThemAvata.Enabled = true;
+            cboTrangThai.Enabled = true;
+        }
+        // kiểm tra dữ liệu null trong textbox và combo box
+        private bool kiemTraNull()
+        {
+            if (txtMaNv.Text.Length == 0 | txtTenNv.Text.Length == 0 | cboGioiTinh.SelectedIndex == null | txtSDT.Text.Length == 0 | txtDiaChi.Text.Length == 0 | dateTimeDayofBirth.Value == null | dateTimeNgayVaoLam.Value == null | cboLoaiNhanVien.SelectedIndex == null)
+                return true;
+            return false;
         }
         private void btnThemAvata_Click(object sender, EventArgs e)
         {
@@ -93,6 +116,7 @@ namespace QuanLyLuongSanPham_GUI
                 MessageBox.Show(ex.Message);
             }
         }
+        //Mở hộ thoại chọn ảnh từ thiết bị
         public static void imageLocation(ref string ImageLocation, ref PictureBox picture)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -104,30 +128,41 @@ namespace QuanLyLuongSanPham_GUI
                 picture.ImageLocation = ImageLocation;
             }
         }
+        // Load danh sách loại nhân viên lên cbo
         public void loadDataToCbo()
         {
             IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
-            IEnumerable<DonViQuanLy> dsDonVi = busDonVi.getDSDonVi();
-            cboDonViQuanLy.Items.Clear();
             cboLoaiNhanVien.Items.Clear();
             foreach(LoaiNhanVien lnv in dsLoaiNV)
             {
                 cboLoaiNhanVien.Items.Add(lnv.loaiNhanVien1);
             }
-            foreach(DonViQuanLy tenDonVi in dsDonVi)
-            {
-                cboDonViQuanLy.Items.Add(tenDonVi.tenBoPhan);
-            }
         }
-
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            if(btnThemNV.Text.Equals("Thêm nhân viên"))
+            
+            IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
+            IEnumerable<DonViQuanLy> dsDonVi = busDonVi.getDSDonVi();
+            if (btnThemNV.Text.Equals("Thêm nhân viên"))
             {
                 btnThemNV.Text = "Lưu";
+                onTextbox();
+            }
+            else if (kiemTraNull() == true)
+            {
+                MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                btnThemNV.Text = "Thêm nhân viên";
+                offTextbox();
             }
             else
             {
+                foreach(LoaiNhanVien lnv in dsLoaiNV)
+                {
+                    if (cboLoaiNhanVien.Text.Equals(lnv.loaiNhanVien1))
+                    {
+                        maLoaiNV = lnv.maLoai;
+                    }
+                }
                 MemoryStream stream = new MemoryStream();
                 DTO_NhanVien nv = new DTO_NhanVien();
                 nv.MaNhanVien = txtMaNv.Text;
@@ -136,7 +171,12 @@ namespace QuanLyLuongSanPham_GUI
                 nv.SoDienThoai = txtSDT.Text;
                 nv.NgaySinh = dateTimeDayofBirth.Value;
                 nv.NgayBatDauCongTac = dateTimeNgayVaoLam.Value;
-                nv.TrangThai = true;
+                if (cboTrangThai.SelectedIndex == 0)
+                {
+                    nv.TrangThai = true;
+                }
+                else
+                    nv.TrangThai = false;
                 if (Avata.Image == null)
                 {
                     nv.Avatar = null;
@@ -147,17 +187,19 @@ namespace QuanLyLuongSanPham_GUI
                     nv.Avatar = stream.ToArray();
                 }
                 nv.DiaChi = txtDiaChi.Text;
-                nv.MaLoai = "LNV001";
+                nv.MaLoai = maLoaiNV;
                 if (busNV.themNhanVien(nv) == true)
                 {
                     MessageBox.Show("successful!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     busNV.themNhanVien(nv);
+                    dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
                 }
                 else
                 {
                     MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 btnThemNV.Text = "Thêm nhân viên";
+                offTextbox();
             }    
             
         }
