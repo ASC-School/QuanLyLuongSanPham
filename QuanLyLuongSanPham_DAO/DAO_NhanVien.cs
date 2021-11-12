@@ -41,7 +41,12 @@ namespace QuanLyLuongSanPham_DAO
                  select new { Mã_nhân_viên = dsnv.maNhanVien ,Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan,Trạng_thái=dsnv.trangThai });
             return q;
         }
-        //public void loadImageFromDatabase(Image)
+        public IEnumerable<NhanVien> layNvTheoMa(string maNV)
+        {
+            IEnumerable<NhanVien> q;
+            q= from n in dataBase.NhanViens where(n.maNhanVien.Equals(maNV)) select n;
+            return q;
+        }
         public bool themNhanVien(DTO_NhanVien nv)
         {
             string str = nv.MaNhanVien;

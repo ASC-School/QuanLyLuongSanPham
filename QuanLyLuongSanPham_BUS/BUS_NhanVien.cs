@@ -23,5 +23,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.themNhanVien(nvNew);
         }
+        public IEnumerable<NhanVien> getNhanVienTheoMa(string maNV)
+        {
+            return nv.layNvTheoMa(maNV);
+        }
     }
 }

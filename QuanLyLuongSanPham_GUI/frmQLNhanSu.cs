@@ -68,6 +68,24 @@ namespace QuanLyLuongSanPham_GUI
                 }
                 else
                     cboTrangThai.Text = "Nghỉ làm";
+                IEnumerable<NhanVien> dsNVTheoMa = busNV.getNhanVienTheoMa(txtMaNv.Text);
+                foreach (NhanVien nv in dsNVTheoMa)
+                {
+                    if (nv.avatar != null)
+                    {
+                        MemoryStream memoryStream = new MemoryStream(nv.avatar.ToArray());
+                        Image img = Image.FromStream(memoryStream);
+                        if(img != null)
+                        {
+                            Avata.Image = img;
+                        }
+                    } 
+                    else
+                    {
+                        Avata.Image = null;
+                    }
+                }
+
             }
         }
         // ẩn các textbox và combo box
@@ -98,6 +116,23 @@ namespace QuanLyLuongSanPham_GUI
             btnThemAvata.Enabled = true;
             cboTrangThai.Enabled = true;
         }
+        // Xóa dữ liệu trong textbox 
+        private void clearText()
+        {
+            txtMaNv.Text = null;
+            txtTenNv.Text = null;
+            cboGioiTinh.Text = null;
+            txtSDT.Text = null;
+            txtDiaChi.Text = null;
+            dateTimeDayofBirth.Text = null;
+            dateTimeNgayVaoLam.Text = null;
+            cboLoaiNhanVien.Text = null;
+            cboTrangThai.Text = null;
+            Avata.Image = null;
+            txtDonViQuanLy.Text = null;
+            txtMaNv.Focus();
+        }
+
         // kiểm tra dữ liệu null trong textbox và combo box
         private bool kiemTraNull()
         {
@@ -147,6 +182,7 @@ namespace QuanLyLuongSanPham_GUI
             {
                 btnThemNV.Text = "Lưu";
                 onTextbox();
+                clearText();
             }
             else if (kiemTraNull() == true)
             {
