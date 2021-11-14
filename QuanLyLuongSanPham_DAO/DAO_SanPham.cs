@@ -44,49 +44,75 @@ namespace QuanLyLuongSanPham_DAO
             return lst;
         }
 
-        public bool themSanPham(DTO_SanPham sp)
+        public List<object> layDSChiTietSanPham()
         {
-            if (checkExist(sp.MaSanPham))
-                return false;
-            SanPham sanPham = new SanPham();
-            sanPham.maSanPham = sp.MaSanPham;
-            sanPham.tenSanPham = sp.TenSanPham;
-            sanPham.namSanXuat = (short)sp.NamSanXuat;
-            sanPham.trangThai = sp.TrangThai;
-            sanPham.giaBan = sp.GiaBan;
-            dataBase.SanPhams.InsertOnSubmit(sanPham);
-            dataBase.SubmitChanges();
-            return true;
+            List<object> lstChiTietSanPham = new List<object>();
+            var dataLst = (from model in dataBase.Models
+                           join ctModel in dataBase.ChiTietModels on model.maModel equals ctModel.maModel
+                           join sanPham in dataBase.SanPhams on ctModel.maSanPham equals sanPham.maSanPham
+                           select new
+                           {
+                               maSanPham = sanPham.maSanPham,
+                               tenSanPham = sanPham.tenSanPham,
+                               namSanXuat = sanPham.namSanXuat,
+                               trangThai = sanPham.trangThai,
+                               giaBan = sanPham.giaBan,
+                               thongSoKyThuat = ctModel.thongSoKiThuat,
+                               moTa = ctModel.moTa,
+                               maModel = model.maModel,
+                               tenModel = model.tenModel,
+                           }
+                    ).OrderBy(p => p.maSanPham);
+            foreach (var item in dataLst)
+            {
+                lstChiTietSanPham.Add(item);
+            }
+            return lstChiTietSanPham;
         }
 
-        public bool suaThongTinSanPham(DTO_SanPham sp)
-        {
-            IQueryable<SanPham> sanPham = dataBase.SanPhams.Where(p => p.maSanPham == sp.MaSanPham);
-            if (sanPham.Count() >= 0)
-            {
-                sanPham.First().tenSanPham = sp.TenSanPham;
-                sanPham.First().namSanXuat = (short)sp.NamSanXuat;
-                sanPham.First().trangThai = sp.TrangThai;
-                sanPham.First().giaBan = sp.GiaBan;
-                dataBase.SubmitChanges();
-                return true;
-            }
-            return false;
-        }
+public bool themSanPham(DTO_SanPham sp)
+{
+    if (checkExist(sp.MaSanPham))
+        return false;
+    SanPham sanPham = new SanPham();
+    sanPham.maSanPham = sp.MaSanPham;
+    sanPham.tenSanPham = sp.TenSanPham;
+    sanPham.namSanXuat = (short)sp.NamSanXuat;
+    sanPham.trangThai = sp.TrangThai;
+    sanPham.giaBan = sp.GiaBan;
+    dataBase.SanPhams.InsertOnSubmit(sanPham);
+    dataBase.SubmitChanges();
+    return true;
+}
 
-        public bool xoaSanPham(string maSanPham)
-        {
-            if (!checkExist(maSanPham))
-                return false;
-            SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
-            if (sanPham! null)
-            {
-                dataBase.SanPhams.DeleteOnSubmit(sanPham);
-                dataBase.SubmitChanges();
-                return true;
-            }
-            return false;
-        }
+public bool suaThongTinSanPham(DTO_SanPham sp)
+{
+    IQueryable<SanPham> sanPham = dataBase.SanPhams.Where(p => p.maSanPham == sp.MaSanPham);
+    if (sanPham.Count() >= 0)
+    {
+        sanPham.First().tenSanPham = sp.TenSanPham;
+        sanPham.First().namSanXuat = (short)sp.NamSanXuat;
+        sanPham.First().trangThai = sp.TrangThai;
+        sanPham.First().giaBan = sp.GiaBan;
+        dataBase.SubmitChanges();
+        return true;
+    }
+    return false;
+}
+
+public bool xoaSanPham(string maSanPham)
+{
+    if (!checkExist(maSanPham))
+        return false;
+    SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+    if (sanPham != null)
+    {
+        dataBase.SanPhams.DeleteOnSubmit(sanPham);
+        dataBase.SubmitChanges();
+        return true;
+    }
+    return false;
+}
 
 
     }

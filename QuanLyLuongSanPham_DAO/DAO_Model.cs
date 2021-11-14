@@ -34,7 +34,7 @@ namespace QuanLyLuongSanPham_DAO
             {
                 DTO_Model model = new DTO_Model();
                 model.MaModel = item.maModel;
-                model.MaModel = item.tenModel;
+                model.TenModel = item.tenModel;
                 model.TrangThai = item.trangThai.Value;
                 lstModel.Add(model);
             }
