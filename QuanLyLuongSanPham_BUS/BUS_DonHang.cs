@@ -45,6 +45,10 @@ namespace QuanLyLuongSanPham_BUS
             return sanPhamDAO.layToanBoDanhSachSanPham();
         }
 
+        public decimal tongTienDonHang(string maDonHang)
+        {
+            return chiTietDHDAO.tongTienDonHang(maDonHang);
+        }
 
     }
 }

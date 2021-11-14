@@ -258,7 +258,7 @@ namespace QuanLyLuongSanPham_GUI
             dateNgayBatDau.Text = row.Cells[1].Value.ToString();
             dateNgayKetThuc.Text = row.Cells[2].Value.ToString();
             txtTenKhachHang.Text = row.Cells[3].Value.ToString();
-            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();
+            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();                                                                                                                                                                                                                                                                            
             txtNoiDung.Text = row.Cells[5].Value.ToString();
             cboMaNhanVien.Text = row.Cells[6].Value.ToString();
             cboTenNhanVien.Text = row.Cells[7].Value.ToString();

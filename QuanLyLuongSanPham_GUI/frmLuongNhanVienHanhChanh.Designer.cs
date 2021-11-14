@@ -168,49 +168,49 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.textEdit6.Location = new System.Drawing.Point(81, 94);
             this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(177, 20);
+            this.textEdit6.Size = new System.Drawing.Size(177, 22);
             this.textEdit6.TabIndex = 1;
             // 
             // textEdit3
             // 
             this.textEdit3.Location = new System.Drawing.Point(363, 94);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(177, 20);
+            this.textEdit3.Size = new System.Drawing.Size(177, 22);
             this.textEdit3.TabIndex = 1;
             // 
             // textEdit9
             // 
             this.textEdit9.Location = new System.Drawing.Point(643, 94);
             this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(177, 20);
+            this.textEdit9.Size = new System.Drawing.Size(177, 22);
             this.textEdit9.TabIndex = 1;
             // 
             // textEdit11
             // 
             this.textEdit11.Location = new System.Drawing.Point(991, 58);
             this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Size = new System.Drawing.Size(140, 20);
+            this.textEdit11.Size = new System.Drawing.Size(140, 22);
             this.textEdit11.TabIndex = 1;
             // 
             // textEdit5
             // 
             this.textEdit5.Location = new System.Drawing.Point(81, 58);
             this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(177, 20);
+            this.textEdit5.Size = new System.Drawing.Size(177, 22);
             this.textEdit5.TabIndex = 1;
             // 
             // textEdit2
             // 
             this.textEdit2.Location = new System.Drawing.Point(363, 58);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(177, 20);
+            this.textEdit2.Size = new System.Drawing.Size(177, 22);
             this.textEdit2.TabIndex = 1;
             // 
             // textEdit8
             // 
             this.textEdit8.Location = new System.Drawing.Point(643, 58);
             this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(177, 20);
+            this.textEdit8.Size = new System.Drawing.Size(177, 22);
             this.textEdit8.TabIndex = 1;
             // 
             // labelControl16
@@ -269,28 +269,28 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.textEdit10.Location = new System.Drawing.Point(991, 20);
             this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(140, 20);
+            this.textEdit10.Size = new System.Drawing.Size(140, 22);
             this.textEdit10.TabIndex = 1;
             // 
             // textEdit4
             // 
             this.textEdit4.Location = new System.Drawing.Point(81, 20);
             this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(177, 20);
+            this.textEdit4.Size = new System.Drawing.Size(177, 22);
             this.textEdit4.TabIndex = 1;
             // 
             // textEdit1
             // 
             this.textEdit1.Location = new System.Drawing.Point(363, 20);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(177, 20);
+            this.textEdit1.Size = new System.Drawing.Size(177, 22);
             this.textEdit1.TabIndex = 1;
             // 
             // textEdit7
             // 
             this.textEdit7.Location = new System.Drawing.Point(643, 20);
             this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(177, 20);
+            this.textEdit7.Size = new System.Drawing.Size(177, 22);
             this.textEdit7.TabIndex = 1;
             // 
             // labelControl9
@@ -358,7 +358,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(110, 20);
+            this.dateEdit2.Size = new System.Drawing.Size(110, 22);
             this.dateEdit2.TabIndex = 3;
             // 
             // dateEdit1
@@ -370,7 +370,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(110, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(110, 22);
             this.dateEdit1.TabIndex = 3;
             // 
             // comboBoxEdit1
@@ -379,7 +379,7 @@ namespace QuanLyLuongSanPham_GUI
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(308, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(308, 22);
             this.comboBoxEdit1.TabIndex = 2;
             // 
             // labelControl4
@@ -425,6 +425,8 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Location = new System.Drawing.Point(25, 35);
+            this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1219, 674);
             this.panelControl1.TabIndex = 6;
@@ -499,7 +501,7 @@ namespace QuanLyLuongSanPham_GUI
             this.textEdit13.Enabled = false;
             this.textEdit13.Location = new System.Drawing.Point(422, 7);
             this.textEdit13.Name = "textEdit13";
-            this.textEdit13.Size = new System.Drawing.Size(41, 20);
+            this.textEdit13.Size = new System.Drawing.Size(41, 22);
             this.textEdit13.TabIndex = 2;
             // 
             // labelControl17
@@ -572,7 +574,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // gvLuongNVHC
             // 
-            this.gvLuongNVHC.Appearance.GroupPanel.BackColor = System.Drawing.Color.Black;
+            this.gvLuongNVHC.Appearance.GroupPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gvLuongNVHC.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvLuongNVHC.Appearance.GroupPanel.Options.UseBackColor = true;
             this.gvLuongNVHC.Appearance.GroupPanel.Options.UseFont = true;

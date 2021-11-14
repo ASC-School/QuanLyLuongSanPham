@@ -156,9 +156,9 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnCapNhat_DonHang_Click(object sender, EventArgs e)
         {
-            frmGDQLDonHang frm = new frmGDQLDonHang();
-            frm.ShowDialog();
-            hideSubmenu();
+            //frmGDQLDonHang frm = new frmGDQLDonHang();
+            //frm.ShowDialog();
+           //hideSubmenu();
         }
 
         private void btnCapNhat_DonViQuanLy_Click(object sender, EventArgs e)
@@ -246,6 +246,13 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnDanhMuc_SanPham_Click(object sender, EventArgs e)
         {
+            hideSubmenu();
+        }
+
+        private void tileItem5_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            frmGDQLDonHang frm = new frmGDQLDonHang();
+            frm.ShowDialog();
             hideSubmenu();
         }
     }

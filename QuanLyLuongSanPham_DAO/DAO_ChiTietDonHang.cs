@@ -81,6 +81,38 @@ namespace QuanLyLuongSanPham_DAO
             }
         }
 
+        public decimal tongTienDonHang(string maDonHang)
+        {
+            decimal tien = 0;
+            if(!maDonHang.Equals(""))
+            {
+                var dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.maDonHang.Equals(maDonHang)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   maSanPham = chiTietDonHang.maSanPham,
+                                   tenSanPham = sanPham.tenSanPham,
+                                   soLuong = chiTietDonHang.soLuongBan,
+                                   donGiaSanPham = sanPham.giaBan,
+                                   thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
+                                   maNhanVien = nhanVien.maNhanVien
+                               }
+                 ).OrderBy(p => p.maDonHang);
+                List<object> lst = new List<object>();
+                foreach (var item in dataLst)
+                {
+                    tien = (decimal)(tien + item.thanhTien);
+                }
+            }
+            return tien;
+        }
+
         //public bool themCTDonHang() {
 
         //}

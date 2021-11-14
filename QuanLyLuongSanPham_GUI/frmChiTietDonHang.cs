@@ -39,6 +39,10 @@ namespace QuanLyLuongSanPham_GUI
 
         private void loadChiTietDonHangToDataGridView()
         {
+            txtMaDonHang.Enabled = false;
+            txtMaNhanVien.Enabled = false;
+            txtTenKhachHang.Enabled = false;
+            txtSoDienThoaiKhachHang.Enabled = false;
             bsPH.DataSource = donHangBUS.getAllChiTietDonHang(donHangDTO.MaDonHang);
             dgvChiTietDonHang.DataSource = bsPH;
             bindingNavigatorCTDH.BindingSource = bsPH;
@@ -99,6 +103,32 @@ namespace QuanLyLuongSanPham_GUI
                 txtGiaTien.Text = sanPham.GiaBan.ToString();
                 txtSoLuongSanPham.Text = "1";
             }
+        }
+        
+        private DTO_ChiTietDonHang taoChiTietDonHang()
+        {
+            DTO_SanPham sp = getSanPham(cboTenSanPham.Text);
+            DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang();
+            ctdh.MaDonHang = txtMaDonHang.Text;
+            ctdh.MaSanPham = sp.MaSanPham;
+            ctdh.SoLuong = int.Parse(txtSoLuongSanPham.Text);
+            ctdh.DonGia = decimal.Parse(txtGiaTien.Text);
+            return ctdh;
+        }
+
+
+
+        private void btnThemSanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChiTietDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgvChiTietDonHang.Rows[e.RowIndex];
+            cboTenSanPham.Text = row.Cells[4].Value.ToString();
+            txtSoLuongSanPham.Text = row.Cells[5].Value.ToString();
+            txtGiaTien.Text = row.Cells[6].Value.ToString();
         }
     }
 }
