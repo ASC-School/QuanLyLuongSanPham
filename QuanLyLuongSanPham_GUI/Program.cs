@@ -16,7 +16,11 @@ namespace QuanLyLuongSanPham_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmGDQLDonHang());
+=======
+            Application.Run(new frmMucTienPhat());
+>>>>>>> 37504ffd58136ff394fae7c126db076a03c98b0e
         }
     }
 }

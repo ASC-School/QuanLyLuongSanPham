@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyLuongSanPham" Class="QuanLyLuongSanPhamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+<<<<<<< HEAD
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-50F1KAT\PEGUIN;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString2" Provider="System.Data.SqlClient" />
+=======
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-27HK0FFM\SQLEXPRESS;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString1" Provider="System.Data.SqlClient" />
+>>>>>>> 37504ffd58136ff394fae7c126db076a03c98b0e
   <Table Name="dbo.CaLamViec" Member="CaLamViecs">
     <Type Name="CaLamViec">
       <Column Name="maCa" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,6 +11,7 @@
       <Association Name="CaLamViec_PhieuChamCong" Member="PhieuChamCongs" ThisKey="maCa" OtherKey="maCa" Type="PhieuChamCong" />
     </Type>
   </Table>
+<<<<<<< HEAD
   <Table Name="dbo.CongDoanSanXuat" Member="CongDoanSanXuats">
     <Type Name="CongDoanSanXuat">
       <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -15,6 +20,16 @@
       <Column Name="maModel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Association Name="CongDoanSanXuat_LuongCongNhan" Member="LuongCongNhans" ThisKey="soThuTu" OtherKey="maCongDoan" Type="LuongCongNhan" />
       <Association Name="Model_CongDoanSanXuat" Member="Model" ThisKey="maModel" OtherKey="maModel" Type="Model" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+=======
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="username" Type="System.String" DbType="Char(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="passwords" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="quyen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PhanQuyen_TaiKhoan" Member="PhanQuyen" ThisKey="quyen" OtherKey="tenPhanQuyen" Type="PhanQuyen" IsForeignKey="true" />
+>>>>>>> 37504ffd58136ff394fae7c126db076a03c98b0e
     </Type>
   </Table>
   <Table Name="dbo.ChiTietDonHang" Member="ChiTietDonHangs">
@@ -42,6 +57,16 @@
       <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenChungChi" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="ChungChi_LuongHanhChanh" Member="LuongHanhChanhs" ThisKey="soThuTu" OtherKey="maChungChi" Type="LuongHanhChanh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CongDoanSanXuat" Member="CongDoanSanXuats">
+    <Type Name="CongDoanSanXuat">
+      <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenCongDoan" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="donGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="maModel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="CongDoanSanXuat_LuongCongNhan" Member="LuongCongNhans" ThisKey="soThuTu" OtherKey="maCongDoan" Type="LuongCongNhan" />
+      <Association Name="Model_CongDoanSanXuat" Member="Model" ThisKey="maModel" OtherKey="maModel" Type="Model" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
@@ -114,8 +139,12 @@
       <Column Name="maModel" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenModel" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="trangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Model_CongDoanSanXuat" Member="CongDoanSanXuats" ThisKey="maModel" OtherKey="maModel" Type="CongDoanSanXuat" />
       <Association Name="Model_ChiTietModel" Member="ChiTietModels" ThisKey="maModel" OtherKey="maModel" Type="ChiTietModel" />
+      <Association Name="Model_CongDoanSanXuat" Member="CongDoanSanXuats" ThisKey="maModel" OtherKey="maModel" Type="CongDoanSanXuat" />
+<<<<<<< HEAD
+      <Association Name="Model_ChiTietModel" Member="ChiTietModels" ThisKey="maModel" OtherKey="maModel" Type="ChiTietModel" />
+=======
+>>>>>>> 37504ffd58136ff394fae7c126db076a03c98b0e
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
