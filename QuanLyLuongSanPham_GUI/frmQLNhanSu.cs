@@ -71,18 +71,26 @@ namespace QuanLyLuongSanPham_GUI
                 IEnumerable<NhanVien> dsNVTheoMa = busNV.getNhanVienTheoMa(txtMaNv.Text);
                 foreach (NhanVien nv in dsNVTheoMa)
                 {
-                    if (nv.avatar != null)
+                    if (nv.avatar == null)
                     {
+                        Avata.Image = null;
+                        
+                    } 
+                    else
+                    {
+                        try {
                         MemoryStream memoryStream = new MemoryStream(nv.avatar.ToArray());
                         Image img = Image.FromStream(memoryStream);
                         if(img != null)
                         {
                             Avata.Image = img;
+                        } 
                         }
-                    } 
-                    else
-                    {
-                        Avata.Image = null;
+                        catch(Exception ex)
+                        {
+                            Avata.Image = null;
+                        }
+                        
                     }
                 }
 
@@ -233,9 +241,9 @@ namespace QuanLyLuongSanPham_GUI
                 }
                 else
                 {
-                    MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Thêm thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
-                btnThemNV.Text = "Thêm thất bại";
+                btnThemNV.Text = "Thêm nhân viên";
                 offTextbox();
             }    
             
@@ -244,6 +252,95 @@ namespace QuanLyLuongSanPham_GUI
         private void btnReset_Click(object sender, EventArgs e)
         {
             dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
+        }
+
+        private void btnSuaTTNV_Click(object sender, EventArgs e)
+        {
+            if (btnSuaTTNV.Text.Equals("Sửa thông tin"))
+            {
+                btnSuaTTNV.Text = "Lưu";
+                onTextbox();
+                txtMaNv.Enabled = false;
+            }
+            else if (kiemTraNull() == true)
+            {
+                MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                btnThemNV.Text = "Sửa thông tin";
+                offTextbox();
+                clearText();
+            }
+            else
+            {
+                IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
+                IEnumerable<DonViQuanLy> dsDonVi = busDonVi.getDSDonVi();
+                foreach (LoaiNhanVien lnv in dsLoaiNV)
+                {
+                    if (cboLoaiNhanVien.Text.Equals(lnv.loaiNhanVien1))
+                    {
+                        maLoaiNV = lnv.maLoai;
+                    }
+                }
+                MemoryStream stream = new MemoryStream();
+                DTO_NhanVien nv = new DTO_NhanVien();
+                nv.MaNhanVien = txtMaNv.Text;
+                nv.TenNhanVien = txtTenNv.Text;
+                nv.GioiTinh = cboGioiTinh.Text;
+                nv.SoDienThoai = txtSDT.Text;
+                nv.NgaySinh = dateTimeDayofBirth.Value;
+                nv.NgayBatDauCongTac = dateTimeNgayVaoLam.Value;
+                if (cboTrangThai.SelectedIndex == 0)
+                {
+                    nv.TrangThai = true;
+                }
+                else
+                    nv.TrangThai = false;
+                if (Avata.Image == null)
+                {
+                    nv.Avatar = null;
+                }
+                else
+                {
+                    Avata.Image.Save(stream, ImageFormat.Jpeg);
+                    nv.Avatar = stream.ToArray();
+                }
+                nv.DiaChi = txtDiaChi.Text;
+                nv.MaLoai = maLoaiNV;
+                if (busNV.suaThongTin(nv) == true)
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    busNV.suaThongTin(nv);
+                    dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
+                }
+                else
+                {
+                    MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                btnSuaTTNV.Text = "Sửa thông tin";
+                offTextbox();
+            }
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg;
+            if (dtgvDSNV.SelectedRows.Count > 0)
+            {
+                dlg = MessageBox.Show("Are you sure delete?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dlg == DialogResult.Yes)
+                {
+                    bool xoa = busNV.xoaNhanVien(txtMaNv.Text);
+                    if (xoa == true)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        dtgvDSNV.DataSource = busNV.getNhanVienForQLNS();
+                    }
+                    else
+                    {
+                        MessageBox.Show("fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    }
+                }
+            }           
+            
         }
     }
 }

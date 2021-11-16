@@ -33,5 +33,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.layNvTheoMa(maNV);
         }
+        public bool suaThongTin(DTO_NhanVien nvSelect)
+        {
+            return nv.suaThongTinNhanVien(nvSelect);
+        }
+        public bool xoaNhanVien(string maNv)
+        {
+            return nv.delNhanVien(maNv);
+        }
     }
 }

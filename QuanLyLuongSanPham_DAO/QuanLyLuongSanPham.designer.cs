@@ -36,9 +36,6 @@ namespace QuanLyLuongSanPham_DAO
     partial void InsertTaiKhoan(TaiKhoan instance);
     partial void UpdateTaiKhoan(TaiKhoan instance);
     partial void DeleteTaiKhoan(TaiKhoan instance);
-    partial void InsertCongDoanSanXuat(CongDoanSanXuat instance);
-    partial void UpdateCongDoanSanXuat(CongDoanSanXuat instance);
-    partial void DeleteCongDoanSanXuat(CongDoanSanXuat instance);
     partial void InsertChiTietDonHang(ChiTietDonHang instance);
     partial void UpdateChiTietDonHang(ChiTietDonHang instance);
     partial void DeleteChiTietDonHang(ChiTietDonHang instance);
@@ -48,6 +45,9 @@ namespace QuanLyLuongSanPham_DAO
     partial void InsertChungChi(ChungChi instance);
     partial void UpdateChungChi(ChungChi instance);
     partial void DeleteChungChi(ChungChi instance);
+    partial void InsertCongDoanSanXuat(CongDoanSanXuat instance);
+    partial void UpdateCongDoanSanXuat(CongDoanSanXuat instance);
+    partial void DeleteCongDoanSanXuat(CongDoanSanXuat instance);
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
@@ -81,7 +81,7 @@ namespace QuanLyLuongSanPham_DAO
     #endregion
 		
 		public QuanLyLuongSanPhamDataContext() : 
-				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString, mappingSource)
+				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -126,14 +126,6 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<CongDoanSanXuat> CongDoanSanXuats
-		{
-			get
-			{
-				return this.GetTable<CongDoanSanXuat>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ChiTietDonHang> ChiTietDonHangs
 		{
 			get
@@ -155,6 +147,14 @@ namespace QuanLyLuongSanPham_DAO
 			get
 			{
 				return this.GetTable<ChungChi>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CongDoanSanXuat> CongDoanSanXuats
+		{
+			get
+			{
+				return this.GetTable<CongDoanSanXuat>();
 			}
 		}
 		
@@ -569,209 +569,6 @@ namespace QuanLyLuongSanPham_DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CongDoanSanXuat")]
-	public partial class CongDoanSanXuat : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _soThuTu;
-		
-		private string _tenCongDoan;
-		
-		private System.Nullable<decimal> _donGia;
-		
-		private string _maModel;
-		
-		private EntitySet<LuongCongNhan> _LuongCongNhans;
-		
-		private EntityRef<Model> _Model;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnsoThuTuChanging(int value);
-    partial void OnsoThuTuChanged();
-    partial void OntenCongDoanChanging(string value);
-    partial void OntenCongDoanChanged();
-    partial void OndonGiaChanging(System.Nullable<decimal> value);
-    partial void OndonGiaChanged();
-    partial void OnmaModelChanging(string value);
-    partial void OnmaModelChanged();
-    #endregion
-		
-		public CongDoanSanXuat()
-		{
-			this._LuongCongNhans = new EntitySet<LuongCongNhan>(new Action<LuongCongNhan>(this.attach_LuongCongNhans), new Action<LuongCongNhan>(this.detach_LuongCongNhans));
-			this._Model = default(EntityRef<Model>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soThuTu", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int soThuTu
-		{
-			get
-			{
-				return this._soThuTu;
-			}
-			set
-			{
-				if ((this._soThuTu != value))
-				{
-					this.OnsoThuTuChanging(value);
-					this.SendPropertyChanging();
-					this._soThuTu = value;
-					this.SendPropertyChanged("soThuTu");
-					this.OnsoThuTuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenCongDoan", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string tenCongDoan
-		{
-			get
-			{
-				return this._tenCongDoan;
-			}
-			set
-			{
-				if ((this._tenCongDoan != value))
-				{
-					this.OntenCongDoanChanging(value);
-					this.SendPropertyChanging();
-					this._tenCongDoan = value;
-					this.SendPropertyChanged("tenCongDoan");
-					this.OntenCongDoanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donGia", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> donGia
-		{
-			get
-			{
-				return this._donGia;
-			}
-			set
-			{
-				if ((this._donGia != value))
-				{
-					this.OndonGiaChanging(value);
-					this.SendPropertyChanging();
-					this._donGia = value;
-					this.SendPropertyChanged("donGia");
-					this.OndonGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maModel", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string maModel
-		{
-			get
-			{
-				return this._maModel;
-			}
-			set
-			{
-				if ((this._maModel != value))
-				{
-					if (this._Model.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaModelChanging(value);
-					this.SendPropertyChanging();
-					this._maModel = value;
-					this.SendPropertyChanged("maModel");
-					this.OnmaModelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CongDoanSanXuat_LuongCongNhan", Storage="_LuongCongNhans", ThisKey="soThuTu", OtherKey="maCongDoan")]
-		public EntitySet<LuongCongNhan> LuongCongNhans
-		{
-			get
-			{
-				return this._LuongCongNhans;
-			}
-			set
-			{
-				this._LuongCongNhans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_CongDoanSanXuat", Storage="_Model", ThisKey="maModel", OtherKey="maModel", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Model Model
-		{
-			get
-			{
-				return this._Model.Entity;
-			}
-			set
-			{
-				Model previousValue = this._Model.Entity;
-				if (((previousValue != value) 
-							|| (this._Model.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Model.Entity = null;
-						previousValue.CongDoanSanXuats.Remove(this);
-					}
-					this._Model.Entity = value;
-					if ((value != null))
-					{
-						value.CongDoanSanXuats.Add(this);
-						this._maModel = value.maModel;
-					}
-					else
-					{
-						this._maModel = default(string);
-					}
-					this.SendPropertyChanged("Model");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LuongCongNhans(LuongCongNhan entity)
-		{
-			this.SendPropertyChanging();
-			entity.CongDoanSanXuat = this;
-		}
-		
-		private void detach_LuongCongNhans(LuongCongNhan entity)
-		{
-			this.SendPropertyChanging();
-			entity.CongDoanSanXuat = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDonHang")]
 	public partial class ChiTietDonHang : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1067,7 +864,7 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSanPham", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSanPham", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maSanPham
 		{
 			get
@@ -1132,12 +929,12 @@ namespace QuanLyLuongSanPham_DAO
 					if ((previousValue != null))
 					{
 						this._Model.Entity = null;
-						previousValue.ChiTietModel = null;
+						previousValue.ChiTietModels.Remove(this);
 					}
 					this._Model.Entity = value;
 					if ((value != null))
 					{
-						value.ChiTietModel = this;
+						value.ChiTietModels.Add(this);
 						this._maModel = value.maModel;
 					}
 					else
@@ -1315,6 +1112,209 @@ namespace QuanLyLuongSanPham_DAO
 		{
 			this.SendPropertyChanging();
 			entity.ChungChi = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CongDoanSanXuat")]
+	public partial class CongDoanSanXuat : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _soThuTu;
+		
+		private string _tenCongDoan;
+		
+		private System.Nullable<decimal> _donGia;
+		
+		private string _maModel;
+		
+		private EntitySet<LuongCongNhan> _LuongCongNhans;
+		
+		private EntityRef<Model> _Model;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnsoThuTuChanging(int value);
+    partial void OnsoThuTuChanged();
+    partial void OntenCongDoanChanging(string value);
+    partial void OntenCongDoanChanged();
+    partial void OndonGiaChanging(System.Nullable<decimal> value);
+    partial void OndonGiaChanged();
+    partial void OnmaModelChanging(string value);
+    partial void OnmaModelChanged();
+    #endregion
+		
+		public CongDoanSanXuat()
+		{
+			this._LuongCongNhans = new EntitySet<LuongCongNhan>(new Action<LuongCongNhan>(this.attach_LuongCongNhans), new Action<LuongCongNhan>(this.detach_LuongCongNhans));
+			this._Model = default(EntityRef<Model>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soThuTu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int soThuTu
+		{
+			get
+			{
+				return this._soThuTu;
+			}
+			set
+			{
+				if ((this._soThuTu != value))
+				{
+					this.OnsoThuTuChanging(value);
+					this.SendPropertyChanging();
+					this._soThuTu = value;
+					this.SendPropertyChanged("soThuTu");
+					this.OnsoThuTuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenCongDoan", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string tenCongDoan
+		{
+			get
+			{
+				return this._tenCongDoan;
+			}
+			set
+			{
+				if ((this._tenCongDoan != value))
+				{
+					this.OntenCongDoanChanging(value);
+					this.SendPropertyChanging();
+					this._tenCongDoan = value;
+					this.SendPropertyChanged("tenCongDoan");
+					this.OntenCongDoanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donGia", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> donGia
+		{
+			get
+			{
+				return this._donGia;
+			}
+			set
+			{
+				if ((this._donGia != value))
+				{
+					this.OndonGiaChanging(value);
+					this.SendPropertyChanging();
+					this._donGia = value;
+					this.SendPropertyChanged("donGia");
+					this.OndonGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maModel", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string maModel
+		{
+			get
+			{
+				return this._maModel;
+			}
+			set
+			{
+				if ((this._maModel != value))
+				{
+					if (this._Model.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaModelChanging(value);
+					this.SendPropertyChanging();
+					this._maModel = value;
+					this.SendPropertyChanged("maModel");
+					this.OnmaModelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CongDoanSanXuat_LuongCongNhan", Storage="_LuongCongNhans", ThisKey="soThuTu", OtherKey="maCongDoan")]
+		public EntitySet<LuongCongNhan> LuongCongNhans
+		{
+			get
+			{
+				return this._LuongCongNhans;
+			}
+			set
+			{
+				this._LuongCongNhans.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_CongDoanSanXuat", Storage="_Model", ThisKey="maModel", OtherKey="maModel", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Model Model
+		{
+			get
+			{
+				return this._Model.Entity;
+			}
+			set
+			{
+				Model previousValue = this._Model.Entity;
+				if (((previousValue != value) 
+							|| (this._Model.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Model.Entity = null;
+						previousValue.CongDoanSanXuats.Remove(this);
+					}
+					this._Model.Entity = value;
+					if ((value != null))
+					{
+						value.CongDoanSanXuats.Add(this);
+						this._maModel = value.maModel;
+					}
+					else
+					{
+						this._maModel = default(string);
+					}
+					this.SendPropertyChanged("Model");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LuongCongNhans(LuongCongNhan entity)
+		{
+			this.SendPropertyChanging();
+			entity.CongDoanSanXuat = this;
+		}
+		
+		private void detach_LuongCongNhans(LuongCongNhan entity)
+		{
+			this.SendPropertyChanging();
+			entity.CongDoanSanXuat = null;
 		}
 	}
 	
@@ -2752,9 +2752,9 @@ namespace QuanLyLuongSanPham_DAO
 		
 		private System.Nullable<bool> _trangThai;
 		
-		private EntitySet<CongDoanSanXuat> _CongDoanSanXuats;
+		private EntitySet<ChiTietModel> _ChiTietModels;
 		
-		private EntityRef<ChiTietModel> _ChiTietModel;
+		private EntitySet<CongDoanSanXuat> _CongDoanSanXuats;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2770,8 +2770,8 @@ namespace QuanLyLuongSanPham_DAO
 		
 		public Model()
 		{
+			this._ChiTietModels = new EntitySet<ChiTietModel>(new Action<ChiTietModel>(this.attach_ChiTietModels), new Action<ChiTietModel>(this.detach_ChiTietModels));
 			this._CongDoanSanXuats = new EntitySet<CongDoanSanXuat>(new Action<CongDoanSanXuat>(this.attach_CongDoanSanXuats), new Action<CongDoanSanXuat>(this.detach_CongDoanSanXuats));
-			this._ChiTietModel = default(EntityRef<ChiTietModel>);
 			OnCreated();
 		}
 		
@@ -2835,6 +2835,19 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_ChiTietModel", Storage="_ChiTietModels", ThisKey="maModel", OtherKey="maModel")]
+		public EntitySet<ChiTietModel> ChiTietModels
+		{
+			get
+			{
+				return this._ChiTietModels;
+			}
+			set
+			{
+				this._ChiTietModels.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_CongDoanSanXuat", Storage="_CongDoanSanXuats", ThisKey="maModel", OtherKey="maModel")]
 		public EntitySet<CongDoanSanXuat> CongDoanSanXuats
 		{
@@ -2845,35 +2858,6 @@ namespace QuanLyLuongSanPham_DAO
 			set
 			{
 				this._CongDoanSanXuats.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_ChiTietModel", Storage="_ChiTietModel", ThisKey="maModel", OtherKey="maModel", IsUnique=true, IsForeignKey=false)]
-		public ChiTietModel ChiTietModel
-		{
-			get
-			{
-				return this._ChiTietModel.Entity;
-			}
-			set
-			{
-				ChiTietModel previousValue = this._ChiTietModel.Entity;
-				if (((previousValue != value) 
-							|| (this._ChiTietModel.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ChiTietModel.Entity = null;
-						previousValue.Model = null;
-					}
-					this._ChiTietModel.Entity = value;
-					if ((value != null))
-					{
-						value.Model = this;
-					}
-					this.SendPropertyChanged("ChiTietModel");
-				}
 			}
 		}
 		
@@ -2895,6 +2879,18 @@ namespace QuanLyLuongSanPham_DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ChiTietModels(ChiTietModel entity)
+		{
+			this.SendPropertyChanging();
+			entity.Model = this;
+		}
+		
+		private void detach_ChiTietModels(ChiTietModel entity)
+		{
+			this.SendPropertyChanging();
+			entity.Model = null;
 		}
 		
 		private void attach_CongDoanSanXuats(CongDoanSanXuat entity)
