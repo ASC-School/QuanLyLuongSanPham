@@ -50,5 +50,44 @@ namespace QuanLyLuongSanPham_BUS
             return chiTietDHDAO.tongTienDonHang(maDonHang);
         }
 
+        public bool themDonHang(DTO_DonHang donHang)
+        {
+            return donHangDAO.themDonHang(donHang);
+        }
+
+        public bool suaDonHang(DTO_DonHang donHang)
+        {
+            return donHangDAO.suaDonhang(donHang);
+        }
+
+        public bool xoaDonHang(string maDonHang)
+        {
+            return donHangDAO.xoaDonHang(maDonHang);
+        }
+
+        public bool themChiTietDonHang(string maDonHang, DTO_ChiTietDonHang ctdh)
+        {
+            return chiTietDHDAO.themChiTietDonHang(maDonHang, ctdh);
+        }
+
+        public bool suaChiTietDonHang( DTO_ChiTietDonHang ctdh)
+        {
+            return chiTietDHDAO.suaChiTietDonHang(ctdh);
+        }
+
+        public bool xoaChiTietDonHang(string maSanPham)
+        {
+            return chiTietDHDAO.xoaChiTietDonHang(maSanPham);
+        }
+
+        public bool checkExistChiTietDonHang(string maSanPham)
+        {
+            return chiTietDHDAO.timKiemChiTietDonHang(maSanPham);
+        }
+
+        public bool tangSoLuongSanPham(DTO_ChiTietDonHang chiTiet)
+        {
+            return chiTietDHDAO.tangSoLuongSanPPham(chiTiet);
+        }
     }
 }

@@ -30,12 +30,17 @@ namespace QuanLyLuongSanPham_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietDonHang));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaDonHang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,6 +81,19 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongTien = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSuaChiTietDonHang = new System.Windows.Forms.Button();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvSanPham = new System.Windows.Forms.DataGridView();
+            this.btnOpenFrmSanPham = new System.Windows.Forms.Button();
+            this.btnLoadChiTietDonHang = new System.Windows.Forms.Button();
+            this.btnLoadDSSanPham = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.bindingSourceSanPham = new System.Windows.Forms.BindingSource(this.components);
+            this.errLoi = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,6 +103,15 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorCTDH.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errLoi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -200,11 +227,11 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemSanPham.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnThemSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemSanPham.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemSanPham.Location = new System.Drawing.Point(21, 320);
+            this.btnThemSanPham.Location = new System.Drawing.Point(12, 320);
             this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(152, 47);
+            this.btnThemSanPham.Size = new System.Drawing.Size(186, 47);
             this.btnThemSanPham.TabIndex = 4;
-            this.btnThemSanPham.Text = "Thêm";
+            this.btnThemSanPham.Text = "Thêm sản phẩm";
             this.btnThemSanPham.UseVisualStyleBackColor = false;
             this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
             // 
@@ -214,7 +241,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnHoanTat.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnHoanTat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoanTat.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHoanTat.Location = new System.Drawing.Point(12, 408);
+            this.btnHoanTat.Location = new System.Drawing.Point(12, 620);
             this.btnHoanTat.Name = "btnHoanTat";
             this.btnHoanTat.Size = new System.Drawing.Size(152, 47);
             this.btnHoanTat.TabIndex = 4;
@@ -228,7 +255,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnInDonHang.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnInDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInDonHang.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnInDonHang.Location = new System.Drawing.Point(1034, 408);
+            this.btnInDonHang.Location = new System.Drawing.Point(654, 320);
             this.btnInDonHang.Name = "btnInDonHang";
             this.btnInDonHang.Size = new System.Drawing.Size(152, 47);
             this.btnInDonHang.TabIndex = 4;
@@ -241,12 +268,13 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXoaSanPham.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnXoaSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaSanPham.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoaSanPham.Location = new System.Drawing.Point(383, 317);
+            this.btnXoaSanPham.Location = new System.Drawing.Point(434, 320);
             this.btnXoaSanPham.Name = "btnXoaSanPham";
-            this.btnXoaSanPham.Size = new System.Drawing.Size(152, 47);
+            this.btnXoaSanPham.Size = new System.Drawing.Size(214, 47);
             this.btnXoaSanPham.TabIndex = 4;
-            this.btnXoaSanPham.Text = "Xóa";
+            this.btnXoaSanPham.Text = "Xóa chi tiết đơn hàng";
             this.btnXoaSanPham.UseVisualStyleBackColor = false;
+            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
             // 
             // label7
             // 
@@ -290,56 +318,56 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dgvChiTietDonHang);
-            this.panel2.Location = new System.Drawing.Point(563, 60);
+            this.panel2.Controls.Add(this.dgvSanPham);
+            this.panel2.Location = new System.Drawing.Point(639, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(623, 215);
+            this.panel2.Size = new System.Drawing.Size(547, 215);
             this.panel2.TabIndex = 6;
             // 
             // dgvChiTietDonHang
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvChiTietDonHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietDonHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvChiTietDonHang.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietDonHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietDonHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvChiTietDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietDonHang.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietDonHang.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvChiTietDonHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietDonHang.GridColor = System.Drawing.Color.Black;
             this.dgvChiTietDonHang.Location = new System.Drawing.Point(0, 0);
             this.dgvChiTietDonHang.Name = "dgvChiTietDonHang";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietDonHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvChiTietDonHang.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietDonHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietDonHang.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvChiTietDonHang.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvChiTietDonHang.Size = new System.Drawing.Size(623, 215);
+            this.dgvChiTietDonHang.Size = new System.Drawing.Size(1156, 176);
             this.dgvChiTietDonHang.TabIndex = 0;
             this.dgvChiTietDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietDonHang_CellClick);
             // 
@@ -368,7 +396,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorCTDH.AutoSize = false;
             this.bindingNavigatorCTDH.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigatorCTDH.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigatorCTDH.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigatorCTDH.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bindingNavigatorCTDH.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -381,14 +409,14 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigatorCTDH.Location = new System.Drawing.Point(563, 277);
+            this.bindingNavigatorCTDH.Location = new System.Drawing.Point(3, 197);
             this.bindingNavigatorCTDH.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorCTDH.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigatorCTDH.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigatorCTDH.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorCTDH.Name = "bindingNavigatorCTDH";
             this.bindingNavigatorCTDH.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorCTDH.Size = new System.Drawing.Size(285, 25);
+            this.bindingNavigatorCTDH.Size = new System.Drawing.Size(1168, 25);
             this.bindingNavigatorCTDH.TabIndex = 1;
             this.bindingNavigatorCTDH.Text = "bindingNavigator1";
             // 
@@ -497,24 +525,185 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongTien.ForeColor = System.Drawing.Color.Black;
             this.lblTongTien.Location = new System.Drawing.Point(0, 0);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(218, 33);
+            this.lblTongTien.Size = new System.Drawing.Size(252, 33);
             this.lblTongTien.TabIndex = 10;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.lblTongTien);
-            this.panel3.Location = new System.Drawing.Point(967, 275);
+            this.panel3.Location = new System.Drawing.Point(934, 334);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(218, 33);
+            this.panel3.Size = new System.Drawing.Size(252, 33);
             this.panel3.TabIndex = 11;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(850, 275);
+            this.panel4.Location = new System.Drawing.Point(812, 334);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(116, 33);
             this.panel4.TabIndex = 12;
+            // 
+            // btnSuaChiTietDonHang
+            // 
+            this.btnSuaChiTietDonHang.BackColor = System.Drawing.Color.Crimson;
+            this.btnSuaChiTietDonHang.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnSuaChiTietDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaChiTietDonHang.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSuaChiTietDonHang.Location = new System.Drawing.Point(216, 320);
+            this.btnSuaChiTietDonHang.Name = "btnSuaChiTietDonHang";
+            this.btnSuaChiTietDonHang.Size = new System.Drawing.Size(212, 47);
+            this.btnSuaChiTietDonHang.TabIndex = 4;
+            this.btnSuaChiTietDonHang.Text = "Sửa chi tiết đơn hàng";
+            this.btnSuaChiTietDonHang.UseVisualStyleBackColor = false;
+            this.btnSuaChiTietDonHang.Click += new System.EventHandler(this.btnSuaChiTietDonHang_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Appearance.Options.UseBorderColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.panelControl1.Controls.Add(this.btnLoadChiTietDonHang);
+            this.panelControl1.Controls.Add(this.panel5);
+            this.panelControl1.Controls.Add(this.bindingNavigatorCTDH);
+            this.panelControl1.Location = new System.Drawing.Point(12, 389);
+            this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1174, 225);
+            this.panelControl1.TabIndex = 13;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dgvChiTietDonHang);
+            this.panel5.Location = new System.Drawing.Point(12, 22);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1156, 176);
+            this.panel5.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.ForeColor = System.Drawing.Color.Crimson;
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(256, 32);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Thông tin chi tiết đơn hàng";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Location = new System.Drawing.Point(24, 373);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(256, 32);
+            this.panel6.TabIndex = 14;
+            // 
+            // dgvSanPham
+            // 
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvSanPham.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSanPham.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvSanPham.Location = new System.Drawing.Point(0, 0);
+            this.dgvSanPham.Name = "dgvSanPham";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvSanPham.Size = new System.Drawing.Size(547, 215);
+            this.dgvSanPham.TabIndex = 0;
+            this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
+            // 
+            // btnOpenFrmSanPham
+            // 
+            this.btnOpenFrmSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOpenFrmSanPham.BackgroundImage")));
+            this.btnOpenFrmSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenFrmSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpenFrmSanPham.Location = new System.Drawing.Point(0, 0);
+            this.btnOpenFrmSanPham.Name = "btnOpenFrmSanPham";
+            this.btnOpenFrmSanPham.Size = new System.Drawing.Size(44, 37);
+            this.btnOpenFrmSanPham.TabIndex = 7;
+            this.btnOpenFrmSanPham.UseVisualStyleBackColor = true;
+            this.btnOpenFrmSanPham.Click += new System.EventHandler(this.btnOpenFrmSanPham_Click);
+            // 
+            // btnLoadChiTietDonHang
+            // 
+            this.btnLoadChiTietDonHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadChiTietDonHang.BackgroundImage")));
+            this.btnLoadChiTietDonHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadChiTietDonHang.Location = new System.Drawing.Point(1133, 0);
+            this.btnLoadChiTietDonHang.Name = "btnLoadChiTietDonHang";
+            this.btnLoadChiTietDonHang.Size = new System.Drawing.Size(32, 27);
+            this.btnLoadChiTietDonHang.TabIndex = 15;
+            this.btnLoadChiTietDonHang.UseVisualStyleBackColor = true;
+            this.btnLoadChiTietDonHang.Click += new System.EventHandler(this.btnLoadChiTietDonHang_Click);
+            // 
+            // btnLoadDSSanPham
+            // 
+            this.btnLoadDSSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSSanPham.BackgroundImage")));
+            this.btnLoadDSSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadDSSanPham.Location = new System.Drawing.Point(0, 0);
+            this.btnLoadDSSanPham.Name = "btnLoadDSSanPham";
+            this.btnLoadDSSanPham.Size = new System.Drawing.Size(36, 30);
+            this.btnLoadDSSanPham.TabIndex = 15;
+            this.btnLoadDSSanPham.UseVisualStyleBackColor = true;
+            this.btnLoadDSSanPham.Click += new System.EventHandler(this.btnLoadDSSanPham_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnOpenFrmSanPham);
+            this.panel7.Location = new System.Drawing.Point(546, 204);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(44, 37);
+            this.panel7.TabIndex = 16;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btnLoadDSSanPham);
+            this.panel8.Location = new System.Drawing.Point(1149, 23);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(36, 30);
+            this.panel8.TabIndex = 17;
+            // 
+            // errLoi
+            // 
+            this.errLoi.ContainerControl = this;
             // 
             // frmChiTietDonHang
             // 
@@ -523,14 +712,18 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 460);
+            this.ClientSize = new System.Drawing.Size(1199, 668);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.bindingNavigatorCTDH);
             this.Controls.Add(this.txtMaNhanVien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cboTenSanPham);
+            this.Controls.Add(this.btnSuaChiTietDonHang);
             this.Controls.Add(this.btnXoaSanPham);
             this.Controls.Add(this.btnInDonHang);
             this.Controls.Add(this.btnHoanTat);
@@ -564,6 +757,15 @@ namespace QuanLyLuongSanPham_GUI
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errLoi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,5 +813,18 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Button btnSuaChiTietDonHang;
+        private System.Windows.Forms.DataGridView dgvSanPham;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnOpenFrmSanPham;
+        private System.Windows.Forms.Button btnLoadChiTietDonHang;
+        private System.Windows.Forms.Button btnLoadDSSanPham;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.BindingSource bindingSourceSanPham;
+        private System.Windows.Forms.ErrorProvider errLoi;
     }
 }

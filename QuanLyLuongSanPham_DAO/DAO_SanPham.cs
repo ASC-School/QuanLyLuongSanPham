@@ -70,49 +70,64 @@ namespace QuanLyLuongSanPham_DAO
             return lstChiTietSanPham;
         }
 
-public bool themSanPham(DTO_SanPham sp)
-{
-    if (checkExist(sp.MaSanPham))
-        return false;
-    SanPham sanPham = new SanPham();
-    sanPham.maSanPham = sp.MaSanPham;
-    sanPham.tenSanPham = sp.TenSanPham;
-    sanPham.namSanXuat = (short)sp.NamSanXuat;
-    sanPham.trangThai = sp.TrangThai;
-    sanPham.giaBan = sp.GiaBan;
-    dataBase.SanPhams.InsertOnSubmit(sanPham);
-    dataBase.SubmitChanges();
-    return true;
-}
+        public bool themSanPham(DTO_SanPham sp, DTO_ChiTietModel ct)
+        {
+            if (checkExist(sp.MaSanPham))
+                return false;
 
-public bool suaThongTinSanPham(DTO_SanPham sp)
-{
-    IQueryable<SanPham> sanPham = dataBase.SanPhams.Where(p => p.maSanPham == sp.MaSanPham);
-    if (sanPham.Count() >= 0)
-    {
-        sanPham.First().tenSanPham = sp.TenSanPham;
-        sanPham.First().namSanXuat = (short)sp.NamSanXuat;
-        sanPham.First().trangThai = sp.TrangThai;
-        sanPham.First().giaBan = sp.GiaBan;
-        dataBase.SubmitChanges();
-        return true;
-    }
-    return false;
-}
+            SanPham sanPham = new SanPham();
+            ChiTietModel chiTiet = new ChiTietModel();
+            sanPham.maSanPham = sp.MaSanPham;
+            sanPham.tenSanPham = sp.TenSanPham;
+            sanPham.namSanXuat = (short)sp.NamSanXuat;
+            sanPham.trangThai = sp.TrangThai;
+            sanPham.giaBan = sp.GiaBan;
 
-public bool xoaSanPham(string maSanPham)
-{
-    if (!checkExist(maSanPham))
-        return false;
-    SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
-    if (sanPham != null)
-    {
-        dataBase.SanPhams.DeleteOnSubmit(sanPham);
-        dataBase.SubmitChanges();
-        return true;
-    }
-    return false;
-}
+            chiTiet.maModel = ct.MaModel;
+            chiTiet.maSanPham = ct.MaSanPham;
+            chiTiet.thongSoKiThuat = ct.ThongSoKyThuat;
+            chiTiet.moTa = ct.MoTa;
+            dataBase.SanPhams.InsertOnSubmit(sanPham);
+            dataBase.ChiTietModels.InsertOnSubmit(chiTiet);
+            dataBase.SubmitChanges();
+            return true;
+        }
+
+        public bool suaThongTinSanPham(DTO_SanPham sp, DTO_ChiTietModel chiTiet)
+        {
+            IQueryable<SanPham> sanPham = dataBase.SanPhams.Where(p => p.maSanPham == sp.MaSanPham);
+            IQueryable<ChiTietModel> ctModel = dataBase.ChiTietModels.Where(p => p.maSanPham == sp.MaSanPham);
+            if (sanPham.Count() >= 0)
+            {
+                sanPham.First().tenSanPham = sp.TenSanPham;
+                sanPham.First().namSanXuat = (short)sp.NamSanXuat;
+                sanPham.First().trangThai = sp.TrangThai;
+                sanPham.First().giaBan = sp.GiaBan;
+
+                ctModel.First().maModel = chiTiet.MaModel;
+                ctModel.First().thongSoKiThuat = chiTiet.ThongSoKyThuat;
+                ctModel.First().moTa = chiTiet.MoTa;
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool xoaSanPham(string maSanPham)
+        {
+            if (!checkExist(maSanPham))
+                return false;
+            SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+            ChiTietModel chiTiet = dataBase.ChiTietModels.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+            if (sanPham != null)
+            {
+                dataBase.SanPhams.DeleteOnSubmit(sanPham);
+                dataBase.ChiTietModels.DeleteOnSubmit(chiTiet);
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
 
 
     }

@@ -1,20 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyLuongSanPham" Class="QuanLyLuongSanPhamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-50F1KAT;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-50F1KAT\PEGUIN;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CaLamViec" Member="CaLamViecs">
     <Type Name="CaLamViec">
       <Column Name="maCa" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ca" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="CaLamViec_PhieuChamCong" Member="PhieuChamCongs" ThisKey="maCa" OtherKey="maCa" Type="PhieuChamCong" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
-    <Type Name="TaiKhoan">
-      <Column Name="username" Type="System.String" DbType="Char(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="passwords" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
-      <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="quyen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="PhanQuyen_TaiKhoan" Member="PhanQuyen" ThisKey="quyen" OtherKey="tenPhanQuyen" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CongDoanSanXuat" Member="CongDoanSanXuats">
@@ -41,7 +31,7 @@
     <Type Name="ChiTietModel">
       <Column Name="thongSoKiThuat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="moTa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="maSanPham" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maSanPham" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maModel" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Model_ChiTietModel" Member="Model" ThisKey="maModel" OtherKey="maModel" Type="Model" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="SanPham_ChiTietModel" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
@@ -125,7 +115,7 @@
       <Column Name="tenModel" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="trangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Model_CongDoanSanXuat" Member="CongDoanSanXuats" ThisKey="maModel" OtherKey="maModel" Type="CongDoanSanXuat" />
-      <Association Name="Model_ChiTietModel" Member="ChiTietModel" ThisKey="maModel" OtherKey="maModel" Type="ChiTietModel" Cardinality="One" />
+      <Association Name="Model_ChiTietModel" Member="ChiTietModels" ThisKey="maModel" OtherKey="maModel" Type="ChiTietModel" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -140,11 +130,11 @@
       <Column Name="avatar" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="diaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="maLoai" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="TaiKhoan" />
       <Association Name="NhanVien_DonHang" Member="DonHangs" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="DonHang" />
       <Association Name="NhanVien_LuongCongNhan" Member="LuongCongNhans" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="LuongCongNhan" />
       <Association Name="NhanVien_LuongHanhChanh" Member="LuongHanhChanhs" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="LuongHanhChanh" />
       <Association Name="NhanVien_PhieuChamCong" Member="PhieuChamCongs" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="PhieuChamCong" />
+      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="TaiKhoan" />
       <Association Name="LoaiNhanVien_NhanVien" Member="LoaiNhanVien" ThisKey="maLoai" OtherKey="maLoai" Type="LoaiNhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
@@ -185,6 +175,16 @@
       <Column Name="trangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="SanPham_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="maSanPham" OtherKey="maSanPham" Type="ChiTietDonHang" />
       <Association Name="SanPham_ChiTietModel" Member="ChiTietModels" ThisKey="maSanPham" OtherKey="maSanPham" Type="ChiTietModel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="username" Type="System.String" DbType="Char(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="passwords" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="quyen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PhanQuyen_TaiKhoan" Member="PhanQuyen" ThisKey="quyen" OtherKey="tenPhanQuyen" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

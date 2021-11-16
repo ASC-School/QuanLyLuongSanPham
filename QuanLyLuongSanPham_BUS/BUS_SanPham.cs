@@ -35,14 +35,19 @@ namespace QuanLyLuongSanPham_BUS
             return sanPhamDAO.layDSChiTietSanPham();
         }
 
-        public bool themSanPham(DTO_SanPham sanPham)
+        public bool themSanPham(DTO_SanPham sp, DTO_ChiTietModel ct)
         {
-            return sanPhamDAO.themSanPham(sanPham);
+            return sanPhamDAO.themSanPham(sp,ct);
         }
 
-        public bool suaSanPham(DTO_SanPham sanPham)
+        public bool suaSanPham(DTO_SanPham sp, DTO_ChiTietModel chiTiet)
         {
-            return sanPhamDAO.suaThongTinSanPham(sanPham);
+            return sanPhamDAO.suaThongTinSanPham(sp,chiTiet);
+        }
+
+        public bool xoaSanPham(string maSanPham)
+        {
+            return sanPhamDAO.xoaSanPham(maSanPham);
         }
 
     }

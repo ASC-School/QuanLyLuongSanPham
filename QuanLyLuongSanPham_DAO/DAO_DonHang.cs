@@ -72,12 +72,12 @@ namespace QuanLyLuongSanPham_DAO
             return false;
         }
 
-        public bool themDonHang(DTO_DonHang donHang,DTO_ChiTietDonHang chiTietDonHang)
+        public bool themDonHang(DTO_DonHang donHang)
         {
             if (checkExist(donHang.MaDonHang))
                 return false;
             DonHang donHangTMP = new DonHang();
-            ChiTietDonHang chiTietDHTMP = new ChiTietDonHang();
+           
             donHangTMP.maDonHang = donHang.MaDonHang;
             donHangTMP.ngayBatDau = donHang.NgayBatDau;
             donHangTMP.ngayKetThuc = donHang.NgayKetThuc;
@@ -86,13 +86,7 @@ namespace QuanLyLuongSanPham_DAO
             donHangTMP.noiDung = donHang.NoiDung;
             donHangTMP.maNhanVien = donHang.MaNhanVien;
 
-            chiTietDHTMP.maDonHang = chiTietDonHang.MaDonHang;
-            chiTietDHTMP.maSanPham = chiTietDonHang.MaSanPham;
-            chiTietDHTMP.soLuongBan = chiTietDonHang.SoLuong;
-            chiTietDHTMP.donGia = chiTietDonHang.DonGia;
-
             dataBase.DonHangs.InsertOnSubmit(donHangTMP);
-            dataBase.ChiTietDonHangs.InsertOnSubmit(chiTietDHTMP);
             dataBase.SubmitChanges();
             return true;
 
@@ -101,10 +95,20 @@ namespace QuanLyLuongSanPham_DAO
         public bool xoaDonHang(string maDonHang)
         {
             DonHang donHangTmp = dataBase.DonHangs.Where(p => p.maDonHang == maDonHang).FirstOrDefault();
+            IQueryable<ChiTietDonHang> lstChiTietDonHang = dataBase.ChiTietDonHangs.Where(p => p.maDonHang == maDonHang);
             if(donHangTmp != null)
             {
                 dataBase.DonHangs.DeleteOnSubmit(donHangTmp);
                 dataBase.SubmitChanges();
+                if(lstChiTietDonHang.Count() > 0)
+                {
+                    foreach(ChiTietDonHang item in lstChiTietDonHang )
+                    {
+                        dataBase.ChiTietDonHangs.DeleteOnSubmit(item);
+                        dataBase.SubmitChanges();
+                    }
+                    return true;
+                }
                 return true;
             }
             return false;

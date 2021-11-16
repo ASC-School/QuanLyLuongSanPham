@@ -14,6 +14,15 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+        public bool checkExist(string maDonHang)
+        {
+            DonHang donHang = dataBase.DonHangs.Where(p => p.maDonHang == maDonHang).FirstOrDefault();
+            if (donHang != null)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public IEnumerable<dynamic> layChiTietDHThuocDH()
         {
@@ -112,10 +121,79 @@ namespace QuanLyLuongSanPham_DAO
             }
             return tien;
         }
+        public bool timKiemChiTietDonHang(string maSanPham)
+        {
+            ChiTietDonHang chiTiet = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+            if (chiTiet != null)
+                return true;
+            return false;
+        }
+        public bool themChiTietDonHang(string maDonHang, DTO_ChiTietDonHang chiTietDonHang)
+        {
+            if (!checkExist(maDonHang))
+                return false;
+            ChiTietDonHang chiTietDHTMP = new ChiTietDonHang();
 
-        //public bool themCTDonHang() {
+            chiTietDHTMP.maDonHang = maDonHang;
+            chiTietDHTMP.maSanPham = chiTietDonHang.MaSanPham;
+            chiTietDHTMP.soLuongBan = chiTietDonHang.SoLuong;
+            chiTietDHTMP.donGia = chiTietDonHang.DonGia;
 
-        //}
+            dataBase.ChiTietDonHangs.InsertOnSubmit(chiTietDHTMP);
+            dataBase.SubmitChanges();
+            return true;
+
+        }
+
+       public bool suaChiTietDonHang(DTO_ChiTietDonHang chiTiet)
+        {
+            if (!checkExist(chiTiet.MaDonHang))
+                return false;
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == chiTiet.MaSanPham);
+            if(ctDonHang.Count() >= 0)
+            {
+                ctDonHang.First().maSanPham = chiTiet.MaSanPham;
+                ctDonHang.First().soLuongBan = chiTiet.SoLuong;
+                ctDonHang.First().donGia = chiTiet.DonGia;
+
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public ChiTietDonHang getChiTietDonHang(string maSanPham)
+        {
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham);
+            return ctDonHang.First();
+        }
+
+        public bool tangSoLuongSanPPham(DTO_ChiTietDonHang chiTiet)
+        {
+            if (!checkExist(chiTiet.MaDonHang))
+                return false;
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == chiTiet.MaSanPham);
+            if (ctDonHang.Count() >= 0)
+            {
+                int soLuong =ctDonHang.First().soLuongBan.Value + chiTiet.SoLuong;
+                ctDonHang.First().soLuongBan = soLuong;
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool xoaChiTietDonHang(string maSanPham)
+        {
+            ChiTietDonHang ctDonHang = getChiTietDonHang(maSanPham);
+            if (ctDonHang != null)
+            {
+                dataBase.ChiTietDonHangs.DeleteOnSubmit(ctDonHang);
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
 
     }
 }

@@ -22,6 +22,8 @@ namespace QuanLyLuongSanPham_GUI
         BUS_DonHang donHangBUS;
         BUS_NhanVien nhanVienBUS;
         checkFrmDonHang checkDH = new checkFrmDonHang();
+        DTO_DonHang newDonHang;
+        
         public frmGDQLDonHang()
         {
             InitializeComponent();
@@ -89,7 +91,6 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void hienThongTin()
         {
-            txtMaDonHang.Enabled = true;
             dateNgayBatDau.Enabled = true;
             dateNgayKetThuc.Enabled = true;
             txtTenKhachHang.Enabled = true;
@@ -106,9 +107,8 @@ namespace QuanLyLuongSanPham_GUI
             donHang.MaDonHang = txtMaDonHang.Text;
             donHang.TenKhachHang = txtTenKhachHang.Text;
             donHang.SoDienThoaiKhachHang = txtSoDienKhachHang.Text;
-            //DateTime date = Convert.ToDateTime(dateNgayBatDau.Text, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-            //donHang.NgayBatDau = date;
-            //donHang.NgayKetThuc = DateTime.ParseExact(dateNgayKetThuc.Text, "dd/MM/yyyy HH:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
+            donHang.NgayBatDau = DateTime.Parse(dateNgayBatDau.Text);
+            donHang.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
             donHang.NoiDung = txtNoiDung.Text;
             donHang.MaNhanVien = cboMaNhanVien.Text;
             return donHang;
@@ -239,11 +239,13 @@ namespace QuanLyLuongSanPham_GUI
                 btnThemDonHang.Text = "Hủy thêm";
                 formatTextBox();
                 hienThongTin();
+                txtMaDonHang.Enabled = true;
             }
             else
             {
                 btnLuuDonHang.Enabled = false;
                 btnThemDonHang.Text = "Thêm đơn hàng";
+                khoaThongTin();
             }
         }
 
@@ -302,12 +304,27 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (chechEmptyDonHang())
             {
-                errLoi.Clear();
-                if(checkMaDonHang(txtMaDonHang.Text))
+                if (btnThemDonHang.Text.Equals("Hủy thêm"))
                 {
-                    
-                }
-
+                    newDonHang = taoDonHang();
+                    if (newDonHang == null) MessageBox.Show("Don hang khong co thong tin!!");
+                    donHangBUS.themDonHang(newDonHang);
+                    newDonHang = null;
+                    formatTextBox();
+                    btnLuuDonHang.Enabled = false;
+                    btnThemDonHang.Text = "Thêm đơn hàng";
+                    khoaThongTin();
+                }else if(btnSuaDonHang.Text.Equals("Hủy sửa"))
+                {
+                    newDonHang = taoDonHang();
+                    if (newDonHang == null) MessageBox.Show("Don hang khong co thong tin!!");
+                    donHangBUS.suaDonHang(newDonHang);
+                    newDonHang = null;
+                    formatTextBox();
+                    btnLuuDonHang.Enabled = false;
+                    btnSuaDonHang.Text = "Sửa đơn hàng";
+                    khoaThongTin();
+                }    
             }
             else
             {
@@ -327,7 +344,20 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnSuaDonHang_Click(object sender, EventArgs e)
         {
-
+            if (!btnSuaDonHang.Text.Equals("Hủy sửa"))
+            {
+                btnLuuDonHang.Enabled = true;
+                btnSuaDonHang.Text = "Hủy sửa";
+                hienThongTin();
+                //n = taoSanPham();
+                //newChiTiet = taoChiTietModel();
+            }
+            else
+            {
+                btnLuuDonHang.Enabled = false;
+                btnSuaDonHang.Text = "Sửa đơn hàng";
+                khoaThongTin();
+            }
         }
         bool KiemTraTonTaiForm(string frmTenForm)
         {
@@ -352,9 +382,5 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-        private void dateNgayBatDau_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

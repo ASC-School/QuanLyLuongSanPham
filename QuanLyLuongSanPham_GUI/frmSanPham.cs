@@ -23,6 +23,7 @@ namespace QuanLyLuongSanPham_GUI
         BindingSource bsPHSanPham;
         BindingSource bsPHModel;
         DTO_SanPham newSanPham;
+        DTO_ChiTietModel newChiTiet;
         private void frmSanPham_Load(object sender, EventArgs e)
         { 
             btnSuaSanPham.Enabled = false;
@@ -141,6 +142,16 @@ namespace QuanLyLuongSanPham_GUI
             sanPham.GiaBan = decimal.Parse(txtGiaBan.Text);
             return sanPham;
         }
+
+        private DTO_ChiTietModel taoChiTietModel()
+        {
+            DTO_ChiTietModel chiTiet = new DTO_ChiTietModel();
+            chiTiet.MaModel = cboMaModel.Text;
+            chiTiet.MaSanPham = txtMaSanPham.Text;
+            chiTiet.ThongSoKyThuat = txtThongSoKyThuat.Text;
+            chiTiet.MoTa = txtMoTa.Text;
+            return chiTiet;
+        }
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnThemSanPham.Enabled = true;
@@ -175,6 +186,8 @@ namespace QuanLyLuongSanPham_GUI
             if (!btnThemSanPham.Text.Equals("Hủy thêm"))
             {
                 btnLuuSanPham.Enabled = true;
+                btnXoaSanPham.Enabled = false;
+                btnSuaSanPham.Enabled = false;
                 btnThemSanPham.Text = "Hủy thêm";
                 formatTextBox();
                 hienThongTin();
@@ -194,10 +207,12 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (!btnSuaSanPham.Text.Equals("Hủy sửa"))
             {
+                btnThemSanPham.Enabled = false;
                 btnLuuSanPham.Enabled = true;
+                btnXoaSanPham.Enabled = false;
                 btnSuaSanPham.Text = "Hủy sửa";
                 hienThongTin();
-                newSanPham = taoSanPham();
+                cboMaModel.Enabled = true;
             }
             else
             {
@@ -241,15 +256,18 @@ namespace QuanLyLuongSanPham_GUI
                 if (hoiThem == DialogResult.Yes)
                 {
                     newSanPham = taoSanPham();
-                    sanPhamBUS.themSanPham(newSanPham);
+                    newChiTiet = taoChiTietModel();
+                    if (newSanPham == null) MessageBox.Show("San pham bij null");
+                    sanPhamBUS.themSanPham(newSanPham,newChiTiet);
                     formatTextBox();
                     btnLuuSanPham.Enabled = false;
                     btnThemSanPham.Text = "Thêm sản phảm";
                     newSanPham = null;
+                    newChiTiet = null;
                     anThongTin();
                     loadChiTietSanPham();
                 }
-                else
+                else 
                 {
                     MessageBox.Show("Thêm sản phẩm không thành công!!");
                 }
@@ -258,11 +276,12 @@ namespace QuanLyLuongSanPham_GUI
                 if (btnSuaSanPham.Text.Equals("Hủy sửa"))
             {
                 newSanPham = taoSanPham();
+                newChiTiet = taoChiTietModel();
                 DialogResult hoiSua;
                 hoiSua = MessageBox.Show("Bạn có muốn sửa thông tin?", "Hỏi sửa thông tin sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (hoiSua == DialogResult.Yes)
                 {
-                    sanPhamBUS.suaSanPham(newSanPham);
+                    sanPhamBUS.suaSanPham(newSanPham,newChiTiet);
                     formatTextBox();
                     newSanPham = null;
                     btnLuuSanPham.Enabled = false;
@@ -273,6 +292,7 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+
         private void btnLoadModel_Click(object sender, EventArgs e)
         {
             loadModel();
@@ -280,7 +300,41 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnLoadDSSanPham_Click(object sender, EventArgs e)
         {
+            btnLuuSanPham.Enabled = false;
+            btnSuaSanPham.Enabled = false;
+            btnXoaSanPham.Enabled = false;
             loadChiTietSanPham();
+
+        }
+
+        private void btnXoaSanPham_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult hoiXoa;
+                if(dgvSanPham.SelectedCells.Count > 0)
+                {
+                    hoiXoa = MessageBox.Show("Bạn có muốn xóa?", "Hỏi xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if(hoiXoa == DialogResult.Yes)
+                    {
+                        errorLoi.Clear();
+                        bool sanPham = sanPhamBUS.xoaSanPham(txtMaSanPham.Text);
+                        if(sanPham)
+                        {
+                            MessageBox.Show("Xóa thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadChiTietSanPham();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }    
+                    }    
+                }    
+
+            }catch(Exception)
+            {
+                MessageBox.Show("Xóa thất bại!!!");
+            }
         }
     }
 }
