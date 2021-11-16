@@ -85,6 +85,41 @@ namespace QuanLyLuongSanPham_DAO
             }
         }
 
+        public bool suaThongTinNhanVien(DTO_NhanVien nvUpdate)
+        {
+            IQueryable<NhanVien> nv = dataBase.NhanViens.Where(x => x.maNhanVien.Equals(nvUpdate.MaNhanVien));
+            if (nv.Count() > 0)
+            {
+                nv.First().tenNhanVien = nvUpdate.TenNhanVien;
+                if (nvUpdate.GioiTinh.Equals("Nam"))
+                    nv.First().gioiTinh = false;
+                else
+                    nv.First().gioiTinh = true;
+                nv.First().soDienThoai = nvUpdate.SoDienThoai;
+                nv.First().ngaySinh = nvUpdate.NgaySinh;
+                nv.First().ngayBatDauCongTac = nvUpdate.NgayBatDauCongTac;
+                nv.First().trangThai = nvUpdate.TrangThai;
+                nv.First().avatar = nvUpdate.Avatar;
+                nv.First().diaChi = nvUpdate.DiaChi;
+                nv.First().maLoai = nvUpdate.MaLoai;
+                dataBase.SubmitChanges();
+                return true;
+
+            }
+            return false;
+        }
+        public bool delNhanVien(string maNv)
+        {
+            NhanVien nvTemp = dataBase.NhanViens.Where(x => x.maNhanVien.Equals(maNv)).FirstOrDefault();
+            if(nvTemp!= null)
+            {
+                dataBase.NhanViens.DeleteOnSubmit(nvTemp);
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
         public NhanVien checkIfExist(string strMaNhanVien)
         {
             NhanVien nvTemp = (from n in dataBase.NhanViens where n.maNhanVien.Equals(strMaNhanVien) select n).FirstOrDefault();
