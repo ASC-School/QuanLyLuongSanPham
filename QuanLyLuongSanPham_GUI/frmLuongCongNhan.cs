@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyLuongSanPham_GUI
 {
-    public partial class frmLuongCongNhan : Form
+    public partial class frmLuongCongNhan : DevExpress.XtraEditors.XtraForm
     {
         public frmLuongCongNhan()
         {
