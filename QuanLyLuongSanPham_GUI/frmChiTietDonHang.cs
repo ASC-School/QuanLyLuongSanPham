@@ -132,7 +132,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void cboTenSanPham_SelectedIndexChanged(object sender, EventArgs e)
