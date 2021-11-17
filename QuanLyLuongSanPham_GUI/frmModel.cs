@@ -87,7 +87,10 @@ namespace QuanLyLuongSanPham_GUI
             DataGridViewRow row = this.dgvModel.Rows[e.RowIndex];
             cboMaModel.Text = row.Cells[0].Value.ToString();
             cboTenModel.Text = row.Cells[1].Value.ToString();
-            if(row.Cells[2].Value.ToString().Equals("True"))
+            if (row.Cells[2].Value.ToString().Equals("True"))
+            {
+
+            }
 
             //txtTrangThai.Text = 
         }
