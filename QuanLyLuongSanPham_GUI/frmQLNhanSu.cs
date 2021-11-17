@@ -179,6 +179,7 @@ namespace QuanLyLuongSanPham_GUI
             foreach(LoaiNhanVien lnv in dsLoaiNV)
             {
                 cboLoaiNhanVien.Items.Add(lnv.loaiNhanVien1);
+                cboLocNhanVien.Items.Add(lnv.loaiNhanVien1);
             }
         }
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -341,6 +342,36 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }           
             
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            string trangThai;
+            IEnumerable<LoaiNhanVien> dsLoaiNV = busLoaiNV.getNhanVienForQLNS();
+            foreach (LoaiNhanVien lnv in dsLoaiNV)
+            {
+                if (cboLocNhanVien.Text.Equals(lnv.loaiNhanVien1))
+                {
+                    maLoaiNV = lnv.maLoai;
+                }
+                else if (cboLocNhanVien.SelectedIndex == 0)
+                {
+                    maLoaiNV = null;
+                }
+                    
+                if (radTatCa.Checked)
+                    trangThai = radTatCa.Text;
+                else if (radDiLam.Checked)
+                    trangThai = radDiLam.Text;
+                else
+                    trangThai = radNghiLam.Text;
+                dtgvDSNV.DataSource = busNV.getNhanVienForLoc(maLoaiNV,trangThai, dtpStartDate.Value, dtpEndDate.Value);
+            }
         }
     }
 }

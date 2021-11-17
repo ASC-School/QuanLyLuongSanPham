@@ -17,7 +17,11 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
-
+        public IEnumerable<NhanVien> layAllDSNV()
+        {
+            IEnumerable<NhanVien> q = from n in dataBase.NhanViens select n;
+            return q;
+        }
         public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
             var dataLst = (from nv in dataBase.NhanViens where (nv.maLoai.Equals("LNV001")) select nv);
@@ -48,6 +52,179 @@ namespace QuanLyLuongSanPham_DAO
                  join loaiNV in dataBase.LoaiNhanViens on dsnv.maLoai equals loaiNV.maLoai
                  join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
                  select new { Mã_nhân_viên = dsnv.maNhanVien ,Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan,Trạng_thái=dsnv.trangThai });
+            return q;
+        }
+        public IEnumerable<dynamic> getDanhSachNvSauLoc(string maLoai, string trangThai, DateTime starDate, DateTime endDate)
+        {
+            IEnumerable<dynamic> q;
+            if (maLoai == null && trangThai.Equals("Tất cả"))
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate)
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
+            else if (maLoai == null && trangThai.Equals("Đi làm"))
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && pChamCong.diLam == true)
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
+            else if (maLoai == null && trangThai.Equals("Nghỉ làm"))
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && pChamCong.diLam == false)
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
+            else if (maLoai != null && trangThai.Equals("Tất cả"))
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai))
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
+            else if (maLoai != null && trangThai.Equals("Đi làm"))
+            {
+                {
+                    q = (from nv in dataBase.NhanViens
+                         join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                         join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
+                         select new
+                         {
+                             Mã_nhân_viên = nv.maNhanVien,
+                             Tên_nhân_viên = nv.tenNhanVien,
+                             Giới_tính = nv.gioiTinh,
+                             SDT = nv.soDienThoai,
+                             Địa_chỉ = nv.diaChi,
+                             Ngày_sinh = nv.ngaySinh,
+                             Ngày_vào_làm = nv.ngayBatDauCongTac,
+                             Loại_Nv = loaiNV.loaiNhanVien1,
+                             Đơn_vị_quản_lí = donvi.tenBoPhan,
+                             Trạng_thái = nv.trangThai
+                         });
+                }
+                {
+                    q = (from nv in dataBase.NhanViens
+                         join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                         join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
+                         select new
+                         {
+                             Mã_nhân_viên = nv.maNhanVien,
+                             Tên_nhân_viên = nv.tenNhanVien,
+                             Giới_tính = nv.gioiTinh,
+                             SDT = nv.soDienThoai,
+                             Địa_chỉ = nv.diaChi,
+                             Ngày_sinh = nv.ngaySinh,
+                             Ngày_vào_làm = nv.ngayBatDauCongTac,
+                             Loại_Nv = loaiNV.loaiNhanVien1,
+                             Đơn_vị_quản_lí = donvi.tenBoPhan,
+                             Trạng_thái = nv.trangThai
+                         });
+                }
+                {
+                    q = (from nv in dataBase.NhanViens
+                         join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                         join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
+                         select new
+                         {
+                             Mã_nhân_viên = nv.maNhanVien,
+                             Tên_nhân_viên = nv.tenNhanVien,
+                             Giới_tính = nv.gioiTinh,
+                             SDT = nv.soDienThoai,
+                             Địa_chỉ = nv.diaChi,
+                             Ngày_sinh = nv.ngaySinh,
+                             Ngày_vào_làm = nv.ngayBatDauCongTac,
+                             Loại_Nv = loaiNV.loaiNhanVien1,
+                             Đơn_vị_quản_lí = donvi.tenBoPhan,
+                             Trạng_thái = nv.trangThai
+                         });
+                }
+            }
+            else
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == false)
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
             return q;
         }
         public IEnumerable<NhanVien> layNvTheoMa(string maNV)
