@@ -41,7 +41,7 @@ namespace QuanLyLuongSanPham_DAO
             return lstModel;
         }
 
-        public bool themModel(DTO_Model model, DTO_ChiTietModel ctModel)
+        public bool themModel(DTO_Model model)
         {
             if (checkExist(model.MaModel))
                 return false;
@@ -52,13 +52,7 @@ namespace QuanLyLuongSanPham_DAO
             newModel.tenModel = model.TenModel;
             newModel.trangThai = model.TrangThai;
 
-            newCTModel.maSanPham = ctModel.MaModel;
-            newCTModel.maModel = ctModel.MaModel;
-            newCTModel.thongSoKiThuat = ctModel.ThongSoKyThuat;
-            newCTModel.moTa = ctModel.MoTa;
-
             dataBase.Models.InsertOnSubmit(newModel);
-            dataBase.ChiTietModels.InsertOnSubmit(newCTModel);
             dataBase.SubmitChanges();
             return true;
         }
@@ -83,6 +77,11 @@ namespace QuanLyLuongSanPham_DAO
             Model tmp = dataBase.Models.Where(p => p.maModel == maModel).FirstOrDefault();
             if(tmp != null)
             {
+                IQueryable<ChiTietModel> chitTiet = dataBase.ChiTietModels.Where(p => p.maModel == maModel); 
+                if(chitTiet.Count() > 0)
+                {
+                    dataBase.ChiTietModels.DeleteAllOnSubmit(chitTiet);
+                }    
                 dataBase.Models.DeleteOnSubmit(tmp);
                 dataBase.SubmitChanges();
                 return true;

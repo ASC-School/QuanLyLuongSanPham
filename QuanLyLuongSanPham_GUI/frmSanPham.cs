@@ -35,6 +35,7 @@ namespace QuanLyLuongSanPham_GUI
             loadChiTietSanPham();
             loadModel();
             loadCbo();
+            toolTipOpenFrmModel.SetToolTip(btnOpenFrmModel, "Thêm model mới");
         }
 
         private void loadChiTietSanPham()
@@ -335,6 +336,12 @@ namespace QuanLyLuongSanPham_GUI
             {
                 MessageBox.Show("Xóa thất bại!!!");
             }
+        }
+
+        private void btnOpenFrmModel_Click(object sender, EventArgs e)
+        {
+            frmModel frm = new frmModel();
+            frm.ShowDialog();
         }
     }
 }

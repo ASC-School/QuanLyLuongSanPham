@@ -18,6 +18,7 @@ namespace QuanLyLuongSanPham_GUI
         BindingSource bsModel;
         BUS_SanPham sanPhamBUS;
         DTO_Model newModel;
+        
         public frmModel()
         {
             InitializeComponent();
@@ -68,6 +69,28 @@ namespace QuanLyLuongSanPham_GUI
         {
             this.Close();
         }
+
+        private DTO_Model taoModel()
+        {
+            DTO_Model model = new DTO_Model();
+            model.MaModel = cboMaModel.Text;
+            model.TenModel = cboTenModel.Text;
+            if (txtTrangThai.Text.Equals("Còn sản xuất"))
+                model.TrangThai = true;
+            else
+                model.TrangThai = false;
+            return model;
+        }
+        private string trangThaiModel(string maModel)
+        {
+            List<DTO_Model> lstModel = sanPhamBUS.getDSModel();
+            foreach(DTO_Model item in lstModel)
+            {
+                if (item.TrangThai == true)
+                    return "Còn sản xuất";
+            }
+            return "Không còn sản xuất";
+        }
         private void loadCbo()
         {
             List<DTO_Model> lstModel = sanPhamBUS.getDSModel();
@@ -89,10 +112,13 @@ namespace QuanLyLuongSanPham_GUI
             cboTenModel.Text = row.Cells[1].Value.ToString();
             if (row.Cells[2].Value.ToString().Equals("True"))
             {
-
+                txtTrangThai.Text = "Còn sản xuất";
+            }
+            else
+            {
+                txtTrangThai.Text = "Không còn sản xuất";
             }
 
-            //txtTrangThai.Text = 
         }
 
         private void cboMaModel_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,7 +130,7 @@ namespace QuanLyLuongSanPham_GUI
                 if (cboTenModel.DataSource == null)
                     return;
                 cboTenModel.SelectedIndex = cboMaModel.SelectedIndex;
-
+                txtTrangThai.Text = trangThaiModel(cboMaModel.Text);
             }
         }
 
@@ -117,7 +143,117 @@ namespace QuanLyLuongSanPham_GUI
                 if (cboMaModel.DataSource == null)
                     return;
                 cboMaModel.SelectedIndex = cboTenModel.SelectedIndex;
+                txtTrangThai.Text = trangThaiModel(cboMaModel.Text);
             }
+        }
+
+        private void btnThemModel_Click(object sender, EventArgs e)
+        {
+            if (!btnThemModel.Text.Equals("Lưu"))
+            {
+                btnSuaModel.Enabled = false;
+                btnXoaModel.Enabled = false;
+                btnThemModel.Text = "Lưu";
+                hienThongTin();
+                cboMaModel.Enabled = true;
+            }
+            else
+            {
+                btnThemModel.Text = "Thêm sản phảm";
+                btnSuaModel.Enabled = true;
+                btnXoaModel.Enabled = true;
+                DialogResult hoiThem;
+                hoiThem = MessageBox.Show("Bạn có muốn thêm?", "Hỏi thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (hoiThem == DialogResult.Yes)
+                {
+                    newModel = taoModel();
+                    if (sanPhamBUS.checkExistModel(newModel.MaModel))
+                    {
+                        MessageBox.Show("Model đã tồn tại!!");
+                    }
+                    else
+                    {
+                        sanPhamBUS.themModel(newModel);
+                    }
+                    formatTextBox();
+                    anThongTin();
+                    loadDSModelToDataGridView();
+                    MessageBox.Show("Thêm thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                }
+            }
+        }
+
+        private void btnSuaModel_Click(object sender, EventArgs e)
+        {
+            if (!btnSuaModel.Text.Equals("Lưu"))
+            {
+                btnThemModel.Enabled = false;
+                btnXoaModel.Enabled = false;
+                btnSuaModel.Text = "Lưu";
+                hienThongTin();
+            }
+            else
+            {
+                btnSuaModel.Text = "Sửa model";
+                btnThemModel.Enabled = true;
+                btnXoaModel.Enabled = true;
+                DialogResult hoiThem;
+                hoiThem = MessageBox.Show("Bạn có muốn sửa?", "Hỏi sửa thông tin model", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (hoiThem == DialogResult.Yes)
+                {
+                    newModel = taoModel();
+                    sanPhamBUS.suaThongTinModel(newModel);
+                    formatTextBox();
+                    anThongTin();
+                    loadDSModelToDataGridView();
+                    MessageBox.Show("Sửa thông tin thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thông tin không thành công!");
+                }
+            }
+        }
+
+        private void btnXoaModel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult hoiXoa;
+                if (dgvModel.SelectedCells.Count > 0)
+                {
+                    hoiXoa = MessageBox.Show("Bạn có muốn xóa?", "Hỏi xóa chi tiết đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (hoiXoa == DialogResult.Yes)
+                    {
+                        errLoi.Clear();
+                        DTO_Model model = taoModel();
+                        bool tmp = sanPhamBUS.xoaModel(model.MaModel);
+                        if (tmp)
+                        {
+                            MessageBox.Show("Xóa thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadDSModelToDataGridView();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa thất bại!!!");
+            }
+        }
+
+        private void btnLoadModel_Click(object sender, EventArgs e)
+        {
+            loadDSModelToDataGridView();
         }
     }
 }
