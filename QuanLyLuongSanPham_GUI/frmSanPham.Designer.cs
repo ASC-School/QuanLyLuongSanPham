@@ -85,6 +85,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingSourceModel = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceSanPham = new System.Windows.Forms.BindingSource(this.components);
             this.errorLoi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -690,5 +691,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.BindingSource bindingSourceModel;
         private System.Windows.Forms.BindingSource bindingSourceSanPham;
         private System.Windows.Forms.ErrorProvider errorLoi;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
