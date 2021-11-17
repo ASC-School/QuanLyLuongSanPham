@@ -41,5 +41,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.delNhanVien(maNv);
         }
+        public IEnumerable<dynamic> getNhanVienForLoc(string maLoai,string trangThai,DateTime startDate,DateTime endDate)
+        {
+            return nv.getDanhSachNvSauLoc(maLoai, trangThai, startDate, endDate);
+        }
     }
 }
