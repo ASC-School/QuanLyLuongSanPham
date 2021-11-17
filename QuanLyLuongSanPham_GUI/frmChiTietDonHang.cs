@@ -181,13 +181,14 @@ namespace QuanLyLuongSanPham_GUI
                 if (hoiThem == DialogResult.Yes)
                 {
                     newCTDH = taoChiTietDonHang();
-                    if(donHangBUS.checkExistChiTietDonHang(newCTDH.MaSanPham))
+                    if (!donHangBUS.checkExistChiTietDonHang(newCTDH.MaSanPham,txtMaDonHang.Text))
                     {
-                        donHangBUS.tangSoLuongSanPham(newCTDH);
+                        donHangBUS.themChiTietDonHang(txtMaDonHang.Text, newCTDH);
                     }
                     else
                     {
-                        donHangBUS.themChiTietDonHang(txtMaDonHang.Text, newCTDH);
+                        donHangBUS.tangSoLuongSanPham(newCTDH);
+
                     }
                     formatTextBox();
                     anThongTin();
@@ -273,7 +274,7 @@ namespace QuanLyLuongSanPham_GUI
                     {
                         errLoi.Clear();
                         DTO_SanPham tmp = getSanPham(cboTenSanPham.Text);
-                        bool sanPham = donHangBUS.xoaChiTietDonHang(tmp.MaSanPham);
+                        bool sanPham = donHangBUS.xoaChiTietDonHang(tmp.MaSanPham,txtMaDonHang.Text);
                         if (sanPham)
                         {
                             MessageBox.Show("Xóa thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

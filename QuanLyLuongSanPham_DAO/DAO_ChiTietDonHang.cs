@@ -121,11 +121,35 @@ namespace QuanLyLuongSanPham_DAO
             }
             return tien;
         }
-        public bool timKiemChiTietDonHang(string maSanPham)
+        public bool timKiemChiTietDonHang(string maSanPham, string maDonHang)
         {
-            ChiTietDonHang chiTiet = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
-            if (chiTiet != null)
-                return true;
+            if (!maDonHang.Equals(""))
+            {
+                var dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.maDonHang.Equals(maDonHang)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   maSanPham = chiTietDonHang.maSanPham,
+                                   tenSanPham = sanPham.tenSanPham,
+                                   soLuong = chiTietDonHang.soLuongBan,
+                                   donGiaSanPham = sanPham.giaBan,
+                                   thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
+                                   maNhanVien = nhanVien.maNhanVien
+                               }
+                 ).OrderBy(p => p.maDonHang);
+                List<object> lst = new List<object>();
+                foreach (var item in dataLst)
+                {
+                    if (item.maSanPham.Equals(maSanPham))
+                        return true;
+                }
+            }
             return false;
         }
         public bool themChiTietDonHang(string maDonHang, DTO_ChiTietDonHang chiTietDonHang)
@@ -149,45 +173,44 @@ namespace QuanLyLuongSanPham_DAO
         {
             if (!checkExist(chiTiet.MaDonHang))
                 return false;
-            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == chiTiet.MaSanPham);
-            if(ctDonHang.Count() >= 0)
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maDonHang == chiTiet.MaDonHang);
+            IQueryable<ChiTietDonHang> chiTietDH = ctDonHang.Where(p => p.maSanPham == chiTiet.MaSanPham);
+            if (chiTietDH.Count() >= 0)
             {
-                ctDonHang.First().maSanPham = chiTiet.MaSanPham;
-                ctDonHang.First().soLuongBan = chiTiet.SoLuong;
-                ctDonHang.First().donGia = chiTiet.DonGia;
-
+                chiTietDH.First().maSanPham = chiTiet.MaSanPham;
+                chiTietDH.First().soLuongBan = chiTiet.SoLuong;
+                chiTietDH.First().donGia = chiTiet.DonGia;
+              
                 dataBase.SubmitChanges();
                 return true;
             }
             return false;
         }
 
-        public ChiTietDonHang getChiTietDonHang(string maSanPham)
-        {
-            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham);
-            return ctDonHang.First();
-        }
 
         public bool tangSoLuongSanPPham(DTO_ChiTietDonHang chiTiet)
         {
             if (!checkExist(chiTiet.MaDonHang))
                 return false;
-            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == chiTiet.MaSanPham);
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maDonHang == chiTiet.MaDonHang);
+            
             if (ctDonHang.Count() >= 0)
             {
-                int soLuong =ctDonHang.First().soLuongBan.Value + chiTiet.SoLuong;
-                ctDonHang.First().soLuongBan = soLuong;
+                ChiTietDonHang chitTietDH = ctDonHang.Where(p => p.maSanPham == chiTiet.MaSanPham).FirstOrDefault();
+                int soLuong =chitTietDH.soLuongBan.Value + chiTiet.SoLuong;
+                chitTietDH.soLuongBan = soLuong;
                 dataBase.SubmitChanges();
                 return true;
             }
             return false;
         }
-        public bool xoaChiTietDonHang(string maSanPham)
+        public bool xoaChiTietDonHang(string maDonHang,string maSanPham)
         {
-            ChiTietDonHang ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
-            if (ctDonHang != null)
+            IQueryable<ChiTietDonHang> ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maDonHang == maDonHang);
+            ChiTietDonHang chiTiet = ctDonHang.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+            if (chiTiet != null)
             {
-                dataBase.ChiTietDonHangs.DeleteOnSubmit(ctDonHang);
+                dataBase.ChiTietDonHangs.DeleteOnSubmit(chiTiet);
                 dataBase.SubmitChanges();
                 return true;
             }

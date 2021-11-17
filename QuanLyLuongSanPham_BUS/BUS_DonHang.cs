@@ -75,14 +75,14 @@ namespace QuanLyLuongSanPham_BUS
             return chiTietDHDAO.suaChiTietDonHang(ctdh);
         }
 
-        public bool xoaChiTietDonHang(string maSanPham)
+        public bool xoaChiTietDonHang(string maSanPham, string maDonHang)
         {
-            return chiTietDHDAO.xoaChiTietDonHang(maSanPham);
+            return chiTietDHDAO.xoaChiTietDonHang(maSanPham, maDonHang);
         }
 
-        public bool checkExistChiTietDonHang(string maSanPham)
+        public bool checkExistChiTietDonHang(string maSanPham, string maDonHang)
         {
-            return chiTietDHDAO.timKiemChiTietDonHang(maSanPham);
+            return chiTietDHDAO.timKiemChiTietDonHang(maSanPham, maDonHang);
         }
 
         public bool tangSoLuongSanPham(DTO_ChiTietDonHang chiTiet)
