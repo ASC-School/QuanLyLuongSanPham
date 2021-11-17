@@ -184,7 +184,7 @@ namespace QuanLyLuongSanPham_DAO
         }
         public bool xoaChiTietDonHang(string maSanPham)
         {
-            ChiTietDonHang ctDonHang = getChiTietDonHang(maSanPham);
+            ChiTietDonHang ctDonHang = dataBase.ChiTietDonHangs.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
             if (ctDonHang != null)
             {
                 dataBase.ChiTietDonHangs.DeleteOnSubmit(ctDonHang);

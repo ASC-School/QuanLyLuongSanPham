@@ -272,7 +272,8 @@ namespace QuanLyLuongSanPham_GUI
                     if (hoiXoa == DialogResult.Yes)
                     {
                         errLoi.Clear();
-                        bool sanPham = donHangBUS.xoaChiTietDonHang(cboTenSanPham.Text);
+                        DTO_SanPham tmp = getSanPham(cboTenSanPham.Text);
+                        bool sanPham = donHangBUS.xoaChiTietDonHang(tmp.MaSanPham);
                         if (sanPham)
                         {
                             MessageBox.Show("Xóa thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
