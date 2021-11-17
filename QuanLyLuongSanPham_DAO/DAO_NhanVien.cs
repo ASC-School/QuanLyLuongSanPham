@@ -17,7 +17,11 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
-
+        public IEnumerable<NhanVien> layAllDSNV()
+        {
+            IEnumerable<NhanVien> q = from n in dataBase.NhanViens select n;
+            return q;
+        }
         public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
             var dataLst = (from nv in dataBase.NhanViens where (nv.maLoai.Equals("LNV001")) select nv);
