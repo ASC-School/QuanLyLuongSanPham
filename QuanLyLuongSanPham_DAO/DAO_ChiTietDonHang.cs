@@ -85,8 +85,7 @@ namespace QuanLyLuongSanPham_DAO
             }
             else
             {
-                List<object> lst = new List<object>();
-                return lst;
+                return null;
             }
         }
 

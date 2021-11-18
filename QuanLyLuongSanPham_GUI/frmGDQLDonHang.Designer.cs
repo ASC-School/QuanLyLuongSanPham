@@ -34,6 +34,8 @@ namespace QuanLyLuongSanPham_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
@@ -200,7 +202,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnDongGD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnDongGD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDongGD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDongGD.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDongGD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDongGD.ForeColor = System.Drawing.Color.Black;
             this.btnDongGD.Location = new System.Drawing.Point(0, 381);
             this.btnDongGD.Name = "btnDongGD";
@@ -341,7 +343,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTimKiem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
             this.btnTimKiem.Location = new System.Drawing.Point(0, 320);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -350,13 +352,14 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnInDonHang
             // 
             this.btnInDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnInDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnInDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnInDonHang.ForeColor = System.Drawing.Color.Black;
             this.btnInDonHang.Location = new System.Drawing.Point(0, 256);
             this.btnInDonHang.Name = "btnInDonHang";
@@ -372,13 +375,13 @@ namespace QuanLyLuongSanPham_GUI
             this.btnHuyDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnHuyDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHuyDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHuyDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuyDonHang.ForeColor = System.Drawing.Color.Black;
             this.btnHuyDonHang.Location = new System.Drawing.Point(0, 192);
             this.btnHuyDonHang.Name = "btnHuyDonHang";
             this.btnHuyDonHang.Size = new System.Drawing.Size(274, 64);
             this.btnHuyDonHang.TabIndex = 4;
-            this.btnHuyDonHang.Text = "Hủy  đơn hàng";
+            this.btnHuyDonHang.Text = "Xóa đơn hàng";
             this.btnHuyDonHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuyDonHang.UseVisualStyleBackColor = false;
             this.btnHuyDonHang.Click += new System.EventHandler(this.btnHuyDonHang_Click);
@@ -388,7 +391,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLuuDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnLuuDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLuuDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuuDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLuuDonHang.ForeColor = System.Drawing.Color.Black;
             this.btnLuuDonHang.Location = new System.Drawing.Point(0, 128);
             this.btnLuuDonHang.Name = "btnLuuDonHang";
@@ -405,7 +408,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnThemDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThemDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemDonHang.ForeColor = System.Drawing.Color.Black;
             this.btnThemDonHang.Location = new System.Drawing.Point(0, 64);
             this.btnThemDonHang.Name = "btnThemDonHang";
@@ -421,7 +424,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSuaDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
             this.btnSuaDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSuaDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSuaDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSuaDonHang.ForeColor = System.Drawing.Color.Black;
             this.btnSuaDonHang.Location = new System.Drawing.Point(0, 0);
             this.btnSuaDonHang.Name = "btnSuaDonHang";
@@ -449,7 +452,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(979, 765);
+            this.panelControl1.Size = new System.Drawing.Size(979, 761);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -659,7 +662,20 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDonHang.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvDSDonHang.Location = new System.Drawing.Point(18, 262);
             this.dgvDSDonHang.Name = "dgvDSDonHang";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSDonHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSDonHang.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDSDonHang.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSDonHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDonHang.Size = new System.Drawing.Size(933, 182);
             this.dgvDSDonHang.TabIndex = 6;
@@ -885,7 +901,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 786);
+            this.ClientSize = new System.Drawing.Size(1259, 782);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);

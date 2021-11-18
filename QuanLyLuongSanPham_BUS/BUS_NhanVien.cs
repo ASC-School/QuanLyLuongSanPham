@@ -45,5 +45,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.getDanhSachNvSauLoc(maLoai, trangThai, startDate, endDate);
         }
+        public IEnumerable<NhanVien> layAllDSNV()
+        {
+            return nv.layAllDSNV();
+        }
+        public IEnumerable<dynamic> searchNhanVien(string maNV, string tenNV, string loaiNv,DateTime time)
+        {
+            return nv.serchNhanVien(maNV, tenNV, loaiNv, time);
+        }
     }
 }

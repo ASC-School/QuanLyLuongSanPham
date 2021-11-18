@@ -38,17 +38,26 @@ namespace QuanLyLuongSanPham_GUI
             bsPH = new BindingSource();
             bsPHSanPham = new BindingSource();
             lstSanPham = donHangBUS.getDSSanPham();
+            toolTipOpenFrmSanPham.SetToolTip(btnOpenFrmSanPham,"Thêm sản phẩm");
         }
 
         private void loadChiTietDonHangToDataGridView()
         {
             anThongTin();
-            bsPH.DataSource = donHangBUS.getAllChiTietDonHang(donHangDTO.MaDonHang);
-            dgvChiTietDonHang.DataSource = bsPH;
-            bindingNavigatorCTDH.BindingSource = bsPH;
-            FormatLuoi(dgvChiTietDonHang);
-            loadCboSanPham();
-            lblTongTien.Text = donHangBUS.tongTienDonHang(txtMaDonHang.Text).ToString();
+            if (donHangBUS.getAllChiTietDonHang(donHangDTO.MaDonHang) == null)
+            {
+                bsPH.DataSource = null;
+            }
+            else
+            {
+                bsPH.DataSource = donHangBUS.getAllChiTietDonHang(donHangDTO.MaDonHang);
+                dgvChiTietDonHang.DataSource = bsPH;
+                bindingNavigatorCTDH.BindingSource = bsPH;
+                //FormatLuoi(dgvChiTietDonHang);
+                loadCboSanPham();
+                lblTongTien.Text = donHangBUS.tongTienDonHang(txtMaDonHang.Text).ToString();
+            }
+            
         }
         private void loadDSSanPhamToDataGridView()
         {
@@ -300,5 +309,6 @@ namespace QuanLyLuongSanPham_GUI
             frmSanPham frm = new frmSanPham();
             frm.ShowDialog();
         }
+
     }
 }

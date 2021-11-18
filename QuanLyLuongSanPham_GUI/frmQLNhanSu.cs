@@ -373,5 +373,11 @@ namespace QuanLyLuongSanPham_GUI
                 dtgvDSNV.DataSource = busNV.getNhanVienForLoc(maLoaiNV,trangThai, dtpStartDate.Value, dtpEndDate.Value);
             }
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemNhanVien frm = new frmTimKiemNhanVien();
+            frm.ShowDialog();
+        }
     }
 }

@@ -49,7 +49,6 @@ namespace QuanLyLuongSanPham_GUI
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.radNghiLam = new System.Windows.Forms.RadioButton();
             this.radDiLam = new System.Windows.Forms.RadioButton();
             this.radTatCa = new System.Windows.Forms.RadioButton();
@@ -73,13 +72,14 @@ namespace QuanLyLuongSanPham_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.Avata = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
+            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
+            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -240,6 +240,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panelControl5
             // 
@@ -295,7 +296,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtDonViQuanLy.Enabled = false;
             this.txtDonViQuanLy.Location = new System.Drawing.Point(381, 229);
             this.txtDonViQuanLy.Name = "txtDonViQuanLy";
-            this.txtDonViQuanLy.Size = new System.Drawing.Size(332, 23);
+            this.txtDonViQuanLy.Size = new System.Drawing.Size(357, 23);
             this.txtDonViQuanLy.TabIndex = 10;
             // 
             // cboTrangThai
@@ -306,7 +307,7 @@ namespace QuanLyLuongSanPham_GUI
             "Nghỉ làm"});
             this.cboTrangThai.Location = new System.Drawing.Point(381, 197);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(124, 24);
+            this.cboTrangThai.Size = new System.Drawing.Size(130, 24);
             this.cboTrangThai.TabIndex = 9;
             // 
             // label10
@@ -371,25 +372,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(359, 221);
             this.panelControl2.TabIndex = 30;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThongKe.BorderRadius = 5;
-            this.btnThongKe.BorderSize = 1;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
-            this.btnThongKe.TabIndex = 6;
-            this.btnThongKe.Text = "Lọc";
-            this.btnThongKe.TextColor = System.Drawing.Color.Black;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // radNghiLam
             // 
@@ -499,7 +481,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateTimeNgayVaoLam.CustomFormat = "dd,MM,yyyy";
             this.dateTimeNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(596, 137);
+            this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(621, 137);
             this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
             this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
             this.dateTimeNgayVaoLam.TabIndex = 7;
@@ -508,7 +490,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateTimeDayofBirth.CustomFormat = "dd,MM,yyyy";
             this.dateTimeDayofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeDayofBirth.Location = new System.Drawing.Point(596, 108);
+            this.dateTimeDayofBirth.Location = new System.Drawing.Point(621, 108);
             this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
             this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
             this.dateTimeDayofBirth.TabIndex = 5;
@@ -518,7 +500,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboLoaiNhanVien.FormattingEnabled = true;
             this.cboLoaiNhanVien.Location = new System.Drawing.Point(381, 168);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
-            this.cboLoaiNhanVien.Size = new System.Drawing.Size(332, 24);
+            this.cboLoaiNhanVien.Size = new System.Drawing.Size(357, 24);
             this.cboLoaiNhanVien.TabIndex = 8;
             // 
             // cboGioiTinh
@@ -529,42 +511,42 @@ namespace QuanLyLuongSanPham_GUI
             "Nữ"});
             this.cboGioiTinh.Location = new System.Drawing.Point(381, 137);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(75, 24);
+            this.cboGioiTinh.Size = new System.Drawing.Size(112, 24);
             this.cboGioiTinh.TabIndex = 6;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(381, 108);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(112, 23);
+            this.txtSDT.Size = new System.Drawing.Size(130, 23);
             this.txtSDT.TabIndex = 3;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(381, 81);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(332, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(357, 23);
             this.txtDiaChi.TabIndex = 2;
             // 
             // txtTenNv
             // 
             this.txtTenNv.Location = new System.Drawing.Point(381, 54);
             this.txtTenNv.Name = "txtTenNv";
-            this.txtTenNv.Size = new System.Drawing.Size(332, 23);
+            this.txtTenNv.Size = new System.Drawing.Size(357, 23);
             this.txtTenNv.TabIndex = 1;
             // 
             // txtMaNv
             // 
             this.txtMaNv.Location = new System.Drawing.Point(381, 27);
             this.txtMaNv.Name = "txtMaNv";
-            this.txtMaNv.Size = new System.Drawing.Size(332, 23);
+            this.txtMaNv.Size = new System.Drawing.Size(357, 23);
             this.txtMaNv.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(462, 138);
+            this.label5.Location = new System.Drawing.Point(502, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 23);
             this.label5.TabIndex = 32;
@@ -619,25 +601,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Size = new System.Drawing.Size(213, 283);
             this.panelControl1.TabIndex = 28;
             // 
-            // btnThemAvata
-            // 
-            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThemAvata.BorderRadius = 5;
-            this.btnThemAvata.BorderSize = 1;
-            this.btnThemAvata.FlatAppearance.BorderSize = 0;
-            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
-            this.btnThemAvata.Location = new System.Drawing.Point(35, 238);
-            this.btnThemAvata.Name = "btnThemAvata";
-            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
-            this.btnThemAvata.TabIndex = 0;
-            this.btnThemAvata.Text = "Chọn ảnh";
-            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
-            this.btnThemAvata.UseVisualStyleBackColor = false;
-            this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
-            // 
             // Avata
             // 
             this.Avata.BackColor = System.Drawing.Color.Silver;
@@ -653,7 +616,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(499, 111);
+            this.label15.Location = new System.Drawing.Point(532, 108);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(170, 23);
             this.label15.TabIndex = 26;
@@ -699,6 +662,44 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThongKe.BorderRadius = 5;
+            this.btnThongKe.BorderSize = 1;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
+            this.btnThongKe.TabIndex = 6;
+            this.btnThongKe.Text = "Lọc";
+            this.btnThongKe.TextColor = System.Drawing.Color.Black;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnThemAvata
+            // 
+            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThemAvata.BorderRadius = 5;
+            this.btnThemAvata.BorderSize = 1;
+            this.btnThemAvata.FlatAppearance.BorderSize = 0;
+            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAvata.Location = new System.Drawing.Point(35, 238);
+            this.btnThemAvata.Name = "btnThemAvata";
+            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
+            this.btnThemAvata.TabIndex = 0;
+            this.btnThemAvata.Text = "Chọn ảnh";
+            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
+            this.btnThemAvata.UseVisualStyleBackColor = false;
+            this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
+            // 
             // frmQLNhanSu
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -708,6 +709,7 @@ namespace QuanLyLuongSanPham_GUI
             this.ClientSize = new System.Drawing.Size(1299, 690);
             this.Controls.Add(this.panelControl5);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.Name = "frmQLNhanSu";
             this.Text = "frmQLNhanSu";

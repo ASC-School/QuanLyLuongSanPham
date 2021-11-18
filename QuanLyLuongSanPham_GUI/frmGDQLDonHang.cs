@@ -23,7 +23,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien nhanVienBUS;
         checkFrmDonHang checkDH = new checkFrmDonHang();
         DTO_DonHang newDonHang;
-        
+
         public frmGDQLDonHang()
         {
             InitializeComponent();
@@ -87,7 +87,7 @@ namespace QuanLyLuongSanPham_GUI
             cboTenNhanVien.Enabled = false;
             txtNoiDung.Enabled = false;
             txtSoDienKhachHang.Enabled = false;
-            
+
         }
         private void hienThongTin()
         {
@@ -98,7 +98,7 @@ namespace QuanLyLuongSanPham_GUI
             cboTenNhanVien.Enabled = true;
             txtNoiDung.Enabled = true;
             txtSoDienKhachHang.Enabled = true;
-          
+
         }
 
         private DTO_DonHang taoDonHang()
@@ -119,19 +119,19 @@ namespace QuanLyLuongSanPham_GUI
             List<DTO_NhanVien> lstNhanVien = nhanVienBUS.getDSNhanVienForDonHang();
             List<string> maNhanVien = new List<string>();
             List<string> tenNhanVien = new List<string>();
-            foreach(DTO_NhanVien nhanVien in lstNhanVien)
+            foreach (DTO_NhanVien nhanVien in lstNhanVien)
             {
                 maNhanVien.Add(nhanVien.MaNhanVien);
                 tenNhanVien.Add(nhanVien.TenNhanVien);
             }
             cboMaNhanVien.DataSource = maNhanVien;
             cboTenNhanVien.DataSource = tenNhanVien;
-                              
+
         }
-       
+
         private bool chechEmptyDonHang()
         {
-            if(txtMaDonHang.Text.Equals(""))
+            if (txtMaDonHang.Text.Equals(""))
             {
                 errLoi.SetError(txtMaDonHang, "Bạn phải nhập mã đơn hàng");
                 txtMaDonHang.Focus();
@@ -140,7 +140,7 @@ namespace QuanLyLuongSanPham_GUI
             else
             {
                 errLoi.Clear();
-                if(dateNgayBatDau.Text.Equals(""))
+                if (dateNgayBatDau.Text.Equals(""))
                 {
                     errLoi.SetError(dateNgayBatDau, "Bạn phải chọn ngày bắt đầu!!");
                     dateNgayBatDau.Focus();
@@ -167,7 +167,7 @@ namespace QuanLyLuongSanPham_GUI
                         else
                         {
                             errLoi.Clear();
-                            if(cboMaNhanVien.Text.Equals(""))
+                            if (cboMaNhanVien.Text.Equals(""))
                             {
                                 errLoi.SetError(cboMaNhanVien, "Mã nhân viên không được để trống!!");
                                 cboMaNhanVien.Focus();
@@ -203,10 +203,10 @@ namespace QuanLyLuongSanPham_GUI
                                     }
 
                                 }
-                            }   
+                            }
                         }
                     }
-                }    
+                }
             }
             return true;
         }
@@ -214,7 +214,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             DialogResult dialog;
             dialog = MessageBox.Show("Bạn có muốn thoát?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if(dialog == DialogResult.Yes)
+            if (dialog == DialogResult.Yes)
                 this.Close();
         }
 
@@ -222,7 +222,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (checkDH.checkMaDonHang(maDonHang))
             {
-                if(donHangBUS.checkTonTaiDonHang(maDonHang))
+                if (donHangBUS.checkTonTaiDonHang(maDonHang))
                 {
                     MessageBox.Show("Đơn hàng này đã tồn tại!!");
                     return false;
@@ -233,9 +233,14 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnThemDonHang_Click(object sender, EventArgs e)
         {
-            if(!btnThemDonHang.Text.Equals("Hủy thêm"))
+            if (!btnThemDonHang.Text.Equals("Hủy thêm"))
             {
                 btnLuuDonHang.Enabled = true;
+                btnSuaDonHang.Enabled = false;
+                btnHuyDonHang.Enabled = false;
+                btnTimKiem.Enabled = false;
+                btnDongGD.Enabled = false;
+                btnChiTietDonHang.Enabled = false;
                 btnThemDonHang.Text = "Hủy thêm";
                 formatTextBox();
                 hienThongTin();
@@ -244,6 +249,10 @@ namespace QuanLyLuongSanPham_GUI
             else
             {
                 btnLuuDonHang.Enabled = false;
+                btnSuaDonHang.Enabled = true;
+                btnHuyDonHang.Enabled = true;
+                btnTimKiem.Enabled = true;
+                btnDongGD.Enabled = true;
                 btnThemDonHang.Text = "Thêm đơn hàng";
                 khoaThongTin();
             }
@@ -260,7 +269,7 @@ namespace QuanLyLuongSanPham_GUI
             dateNgayBatDau.Text = row.Cells[1].Value.ToString();
             dateNgayKetThuc.Text = row.Cells[2].Value.ToString();
             txtTenKhachHang.Text = row.Cells[3].Value.ToString();
-            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();                                                                                                                                                                                                                                                                            
+            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();
             txtNoiDung.Text = row.Cells[5].Value.ToString();
             cboMaNhanVien.Text = row.Cells[6].Value.ToString();
             cboTenNhanVien.Text = row.Cells[7].Value.ToString();
@@ -298,7 +307,7 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-       
+
 
         private void btnLuuDonHang_Click(object sender, EventArgs e)
         {
@@ -306,25 +315,54 @@ namespace QuanLyLuongSanPham_GUI
             {
                 if (btnThemDonHang.Text.Equals("Hủy thêm"))
                 {
-                    newDonHang = taoDonHang();
-                    if (newDonHang == null) MessageBox.Show("Don hang khong co thong tin!!");
-                    donHangBUS.themDonHang(newDonHang);
-                    newDonHang = null;
-                    formatTextBox();
-                    btnLuuDonHang.Enabled = false;
-                    btnThemDonHang.Text = "Thêm đơn hàng";
-                    khoaThongTin();
-                }else if(btnSuaDonHang.Text.Equals("Hủy sửa"))
+                    DialogResult hoiThem;
+                    hoiThem = MessageBox.Show("Bạn có muốn thêm?", "Hỏi thêm đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (hoiThem == DialogResult.Yes)
+                    {
+                        newDonHang = taoDonHang();
+                        if (donHangBUS.checkTonTaiDonHang(newDonHang.MaDonHang)) MessageBox.Show("Đơn hàng đã tồn tại!!");
+                        else
+                        {
+                            donHangBUS.themDonHang(newDonHang);
+                            newDonHang = null;
+                            formatTextBox();
+                            btnLuuDonHang.Enabled = false;
+                            btnThemDonHang.Text = "Thêm đơn hàng";
+                            khoaThongTin();
+                            loadDonHangToDataGridView();
+                            MessageBox.Show("Thêm đơn hàng thành công!!");
+                        }
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm đơn hàng không thành công!!");
+                    }
+
+                }
+                else if (btnSuaDonHang.Text.Equals("Hủy sửa"))
                 {
                     newDonHang = taoDonHang();
-                    if (newDonHang == null) MessageBox.Show("Don hang khong co thong tin!!");
-                    donHangBUS.suaDonHang(newDonHang);
-                    newDonHang = null;
-                    formatTextBox();
-                    btnLuuDonHang.Enabled = false;
-                    btnSuaDonHang.Text = "Sửa đơn hàng";
-                    khoaThongTin();
-                }    
+                    DialogResult hoiThem;
+                    hoiThem = MessageBox.Show("Bạn có muốn sửa thông tin đơn hàng?", "Hỏi sửa thông tin đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (hoiThem == DialogResult.Yes)
+                    {
+                        donHangBUS.suaDonHang(newDonHang);
+                        newDonHang = null;
+                        formatTextBox();
+                        btnLuuDonHang.Enabled = false;
+                        btnSuaDonHang.Text = "Sửa đơn hàng";
+                        khoaThongTin();
+                        MessageBox.Show("Sửa thông tin đơn hàng thành công!!");
+                        loadDonHangToDataGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thông tin đơn hàng không thành công!!");
+                    }
+
+                }
             }
             else
             {
@@ -334,7 +372,33 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnHuyDonHang_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult hoiXoa;
+                if (dgvDSDonHang.SelectedCells.Count > 0)
+                {
+                    hoiXoa = MessageBox.Show("Bạn có muốn xóa?", "Hỏi xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (hoiXoa == DialogResult.Yes)
+                    {
+                        errLoi.Clear();
+                        bool donHang = donHangBUS.xoaDonHang(txtMaDonHang.Text);
+                        if (donHang)
+                        {
+                            MessageBox.Show("Xóa thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadDonHangToDataGridView();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa thất bại!!!");
+            }
         }
 
         private void btnInDonHang_Click(object sender, EventArgs e)
@@ -347,13 +411,18 @@ namespace QuanLyLuongSanPham_GUI
             if (!btnSuaDonHang.Text.Equals("Hủy sửa"))
             {
                 btnLuuDonHang.Enabled = true;
+                btnHuyDonHang.Enabled = false;
+                btnThemDonHang.Enabled = false;
+                btnTimKiem.Enabled = false;
                 btnSuaDonHang.Text = "Hủy sửa";
                 hienThongTin();
-                //n = taoSanPham();
-                //newChiTiet = taoChiTietModel();
+
             }
             else
             {
+                btnHuyDonHang.Enabled = true;
+                btnThemDonHang.Enabled = true;
+                btnTimKiem.Enabled = true;
                 btnLuuDonHang.Enabled = false;
                 btnSuaDonHang.Text = "Sửa đơn hàng";
                 khoaThongTin();
@@ -382,5 +451,10 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemDonHang frm = new frmTimKiemDonHang();
+            frm.ShowDialog();
+        }
     }
 }

@@ -30,6 +30,25 @@ namespace QuanLyLuongSanPham_BUS
             return modelDAO.layDSModel();
         }
 
+        public bool checkExistModel(string model)
+        {
+            return modelDAO.checkExist(model);
+        }
+
+        public bool themModel(DTO_Model model)
+        {
+            return modelDAO.themModel(model);
+        }
+
+        public bool suaThongTinModel(DTO_Model model)
+        {
+            return modelDAO.suaModel(model);
+        }
+
+        public bool xoaModel(string maModel)
+        {
+            return modelDAO.xoaModel(maModel);
+        }
         public List<object> getAllChiTietSanPham()
         {
             return sanPhamDAO.layDSChiTietSanPham();

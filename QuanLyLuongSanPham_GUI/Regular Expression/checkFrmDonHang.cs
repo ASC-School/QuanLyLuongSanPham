@@ -18,6 +18,10 @@ namespace QuanLyLuongSanPham_GUI.Regular_Expression
         {
             return Regex.Match(maNhanVien, @"^NV\d{3}$").Success;
         }
+        //public bool checkTEnNhanVien(string tenNhanVien)
+        //{
+        //    return Regex.Match(tenNhanVien,);
+        //}
 
 
 

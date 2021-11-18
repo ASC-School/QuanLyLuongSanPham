@@ -94,6 +94,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel8 = new System.Windows.Forms.Panel();
             this.bindingSourceSanPham = new System.Windows.Forms.BindingSource(this.components);
             this.errLoi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTipOpenFrmSanPham = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -708,6 +709,10 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.errLoi.ContainerControl = this;
             // 
+            // toolTipOpenFrmSanPham
+            // 
+            this.toolTipOpenFrmSanPham.ToolTipTitle = "Thêm sản phẩm";
+            // 
             // frmChiTietDonHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -829,5 +834,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.BindingSource bindingSourceSanPham;
         private System.Windows.Forms.ErrorProvider errLoi;
+        private System.Windows.Forms.ToolTip toolTipOpenFrmSanPham;
     }
 }
