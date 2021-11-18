@@ -199,6 +199,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenNhanVien.Size = new System.Drawing.Size(348, 24);
             this.cboTenNhanVien.TabIndex = 31;
             this.cboTenNhanVien.Text = "Tất cả nhân viên";
+            this.cboTenNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboTenNhanVien_SelectedIndexChanged);
             // 
             // cboMaNhanVien
             // 
@@ -208,6 +209,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaNhanVien.Size = new System.Drawing.Size(348, 24);
             this.cboMaNhanVien.TabIndex = 32;
             this.cboMaNhanVien.Text = "Mã nhân viên";
+            this.cboMaNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboMaNhanVien_SelectedIndexChanged);
             // 
             // frmTimKiemNhanVien
             // 

@@ -17,6 +17,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
         BUS_DonViQuanLy busDonVi = new BUS_DonViQuanLy();
+        string maLoai;
         public frmTimKiemNhanVien()
         {
             InitializeComponent();
@@ -67,6 +68,33 @@ namespace QuanLyLuongSanPham_GUI
         {
             Util.EndAnimate(this, Util.Effect.Center, 150, 30);
             this.Close();
+        }
+
+        private void cboMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<NhanVien> dsNV = busNV.layAllDSNV();
+            foreach(NhanVien n in dsNV)
+            {
+                if (cboMaNhanVien.Text.Equals(n.maNhanVien))
+                {
+                    cboTenNhanVien.Text = n.tenNhanVien;
+                    maLoai = n.maLoai;
+                    cboDonVi.Text = maLoai;
+                }
+            }
+        }
+
+        private void cboTenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<NhanVien> dsNV = busNV.layAllDSNV();
+            foreach (NhanVien n in dsNV)
+            {
+                if (cboTenNhanVien.Text.Equals(n.tenNhanVien))
+                {
+                    cboMaNhanVien.Text = n.maNhanVien;
+                    maLoai = n.maLoai;
+                }
+            }
         }
     }
 }
