@@ -35,6 +35,8 @@ namespace QuanLyLuongSanPham_GUI
         private void frmHome_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            frmLogin fLogin = new frmLogin();
+            fLogin.ShowDialog();
         }
 
         private void msTaiKhoan_Thoat_Click(object sender, EventArgs e)
