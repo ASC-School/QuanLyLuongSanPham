@@ -31,13 +31,15 @@ namespace QuanLyLuongSanPham_GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCongDoan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgvDSModel = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.dgvCongDoan = new System.Windows.Forms.DataGridView();
@@ -56,16 +58,15 @@ namespace QuanLyLuongSanPham_GUI
             this.button2 = new System.Windows.Forms.Button();
             this.toolTipOpenFrmModel = new System.Windows.Forms.ToolTip(this.components);
             this.btnOpenFrmModel = new System.Windows.Forms.Button();
-            this.dtgvDSModel = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongDoan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -100,7 +101,7 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.Location = new System.Drawing.Point(71, 11);
+            this.labelControl1.Location = new System.Drawing.Point(71, 15);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(265, 29);
@@ -117,6 +118,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.TabIndex = 33;
             this.btnThoat.Text = "          ";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label6
             // 
@@ -138,6 +140,27 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(454, 253);
             this.panelControl2.TabIndex = 34;
+            // 
+            // dtgvDSModel
+            // 
+            this.dtgvDSModel.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvDSModel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvDSModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvDSModel.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvDSModel.Location = new System.Drawing.Point(10, 25);
+            this.dtgvDSModel.Name = "dtgvDSModel";
+            this.dtgvDSModel.RowHeadersWidth = 51;
+            this.dtgvDSModel.RowTemplate.Height = 24;
+            this.dtgvDSModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvDSModel.Size = new System.Drawing.Size(438, 222);
+            this.dtgvDSModel.TabIndex = 45;
             // 
             // label1
             // 
@@ -164,19 +187,19 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dgvCongDoan.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCongDoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCongDoan.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCongDoan.Location = new System.Drawing.Point(10, 29);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCongDoan.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvCongDoan.Location = new System.Drawing.Point(10, 25);
             this.dgvCongDoan.Name = "dgvCongDoan";
             this.dgvCongDoan.RowHeadersWidth = 51;
             this.dgvCongDoan.RowTemplate.Height = 24;
-            this.dgvCongDoan.Size = new System.Drawing.Size(435, 218);
+            this.dgvCongDoan.Size = new System.Drawing.Size(435, 222);
             this.dgvCongDoan.TabIndex = 45;
             // 
             // label2
@@ -252,6 +275,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // cboMaModel
             // 
+            this.cboMaModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaModel.FormattingEnabled = true;
             this.cboMaModel.Location = new System.Drawing.Point(193, 176);
             this.cboMaModel.Name = "cboMaModel";
@@ -260,6 +284,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(193, 205);
             this.comboBox1.Name = "comboBox1";
@@ -317,19 +342,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnOpenFrmModel.Size = new System.Drawing.Size(32, 27);
             this.btnOpenFrmModel.TabIndex = 59;
             this.btnOpenFrmModel.UseVisualStyleBackColor = true;
-            // 
-            // dtgvDSModel
-            // 
-            this.dtgvDSModel.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgvDSModel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvDSModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSModel.Location = new System.Drawing.Point(10, 25);
-            this.dtgvDSModel.Name = "dtgvDSModel";
-            this.dtgvDSModel.RowHeadersWidth = 51;
-            this.dtgvDSModel.RowTemplate.Height = 24;
-            this.dtgvDSModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSModel.Size = new System.Drawing.Size(438, 222);
-            this.dtgvDSModel.TabIndex = 45;
+            this.btnOpenFrmModel.Click += new System.EventHandler(this.btnOpenFrmModel_Click);
             // 
             // frmCongDoan
             // 
@@ -367,10 +380,10 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongDoan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

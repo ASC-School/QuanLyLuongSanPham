@@ -19,9 +19,23 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
         }
         BUS_Model busModel = new BUS_Model();
+        BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
         private void frmCongDoan_Load(object sender, EventArgs e)
         {
             dtgvDSModel.DataSource = busModel.layDSModel();
+            dgvCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            toolTipOpenFrmModel.SetToolTip(btnOpenFrmModel, "Thêm model mới");
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnOpenFrmModel_Click(object sender, EventArgs e)
+        {
+            frmModel frm = new frmModel();
+            frm.ShowDialog();
         }
 
 

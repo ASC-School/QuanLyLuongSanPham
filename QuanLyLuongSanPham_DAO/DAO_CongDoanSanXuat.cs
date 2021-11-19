@@ -13,5 +13,10 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+        public IEnumerable<CongDoanSanXuat> layDSCongDoan()
+        {
+            IEnumerable<CongDoanSanXuat> q = from n in dataBase.CongDoanSanXuats select n;
+            return q;
+        }
     }
 }
