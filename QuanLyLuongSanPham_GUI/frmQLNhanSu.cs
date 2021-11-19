@@ -32,6 +32,7 @@ namespace QuanLyLuongSanPham_GUI
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
             loadDSNVtoDTGV();
+            DataGridViewRow row = new DataGridViewRow();
             loadDataToCbo();
         }
         // Load data từ database lên datagrid view

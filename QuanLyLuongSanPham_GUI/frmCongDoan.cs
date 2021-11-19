@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyLuongSanPham_BUS;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -17,19 +18,28 @@ namespace QuanLyLuongSanPham_GUI
         {
             InitializeComponent();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        BUS_Model busModel = new BUS_Model();
+        private void frmCongDoan_Load(object sender, EventArgs e)
         {
-
+            dtgvDSModel.DataSource = busModel.layDSModel();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+        //private void loadModel()
+        //{
+        //    bsPHModel.DataSource = sanPhamBUS.getDSModel();
+        //    dgvModel.DataSource = bsPHModel;
+        //    formatLuoiModel(dgvModel);
+        //}
 
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-        }
+        //private void formatLuoiModel(DataGridView dgr)
+        //{
+        //    dgr.Columns["maModel"].HeaderText = "Mã model";
+        //    dgr.Columns["tenModel"].HeaderText = "Tên model";
+        //    dgr.Columns["tenModel"].Width = 120;
+        //    dgr.Columns["trangThai"].HeaderText = "Trạng Thái";
+        //}
+
+
     }
 }

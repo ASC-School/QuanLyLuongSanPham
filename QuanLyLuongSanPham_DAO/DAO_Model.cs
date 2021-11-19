@@ -15,6 +15,11 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+        public IEnumerable<Model> layDanhSacModel()
+        {
+            IEnumerable<Model> q = from n in dataBase.Models select n;
+            return q;
+        }
 
         public bool checkExist(string maModel)
         {

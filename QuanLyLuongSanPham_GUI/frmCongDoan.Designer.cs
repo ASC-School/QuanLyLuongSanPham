@@ -31,18 +31,16 @@ namespace QuanLyLuongSanPham_GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCongDoan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvCongDoan = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,15 +56,16 @@ namespace QuanLyLuongSanPham_GUI
             this.button2 = new System.Windows.Forms.Button();
             this.toolTipOpenFrmModel = new System.Windows.Forms.ToolTip(this.components);
             this.btnOpenFrmModel = new System.Windows.Forms.Button();
+            this.dtgvDSModel = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongDoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -110,12 +109,11 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnThoat
             // 
-            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(888, 3);
+            this.btnThoat.Location = new System.Drawing.Point(886, 7);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(40, 48);
+            this.btnThoat.Size = new System.Drawing.Size(40, 37);
             this.btnThoat.TabIndex = 33;
             this.btnThoat.Text = "          ";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -134,31 +132,12 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panelControl2.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl2.Appearance.Options.UseBorderColor = true;
-            this.panelControl2.Controls.Add(this.dataGridView1);
+            this.panelControl2.Controls.Add(this.dtgvDSModel);
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Location = new System.Drawing.Point(12, 277);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(454, 253);
             this.panelControl2.TabIndex = 34;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(438, 218);
-            this.dataGridView1.TabIndex = 45;
             // 
             // label1
             // 
@@ -174,31 +153,31 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panelControl3.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl3.Appearance.Options.UseBorderColor = true;
-            this.panelControl3.Controls.Add(this.dataGridView2);
+            this.panelControl3.Controls.Add(this.dgvCongDoan);
             this.panelControl3.Controls.Add(this.label2);
             this.panelControl3.Location = new System.Drawing.Point(472, 277);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(454, 253);
             this.panelControl3.TabIndex = 46;
             // 
-            // dataGridView2
+            // dgvCongDoan
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 29);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(435, 218);
-            this.dataGridView2.TabIndex = 45;
+            this.dgvCongDoan.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvCongDoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCongDoan.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCongDoan.Location = new System.Drawing.Point(10, 29);
+            this.dgvCongDoan.Name = "dgvCongDoan";
+            this.dgvCongDoan.RowHeadersWidth = 51;
+            this.dgvCongDoan.RowTemplate.Height = 24;
+            this.dgvCongDoan.Size = new System.Drawing.Size(435, 218);
+            this.dgvCongDoan.TabIndex = 45;
             // 
             // label2
             // 
@@ -209,7 +188,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label2.Size = new System.Drawing.Size(199, 23);
             this.label2.TabIndex = 44;
             this.label2.Text = "Thông tin công đoạn";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -257,7 +235,6 @@ namespace QuanLyLuongSanPham_GUI
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(273, 23);
             this.textBox1.TabIndex = 51;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -341,6 +318,19 @@ namespace QuanLyLuongSanPham_GUI
             this.btnOpenFrmModel.TabIndex = 59;
             this.btnOpenFrmModel.UseVisualStyleBackColor = true;
             // 
+            // dtgvDSModel
+            // 
+            this.dtgvDSModel.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvDSModel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvDSModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSModel.Location = new System.Drawing.Point(10, 25);
+            this.dtgvDSModel.Name = "dtgvDSModel";
+            this.dtgvDSModel.RowHeadersWidth = 51;
+            this.dtgvDSModel.RowTemplate.Height = 24;
+            this.dtgvDSModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvDSModel.Size = new System.Drawing.Size(438, 222);
+            this.dtgvDSModel.TabIndex = 45;
+            // 
             // frmCongDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -362,24 +352,25 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelControl3);
-            this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmCongDoan";
             this.Text = "frmCongDoan";
+            this.Load += new System.EventHandler(this.frmCongDoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongDoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,9 +385,8 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvCongDoan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -412,5 +402,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTipOpenFrmModel;
         private System.Windows.Forms.Button btnOpenFrmModel;
+        private System.Windows.Forms.DataGridView dtgvDSModel;
     }
 }
