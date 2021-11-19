@@ -301,6 +301,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // cboTrangThai
             // 
+            this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Items.AddRange(new object[] {
             "Đi làm",
@@ -497,7 +498,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // cboLoaiNhanVien
             // 
+            this.cboLoaiNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiNhanVien.FormattingEnabled = true;
+            this.cboLoaiNhanVien.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboLoaiNhanVien.Location = new System.Drawing.Point(381, 168);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
             this.cboLoaiNhanVien.Size = new System.Drawing.Size(357, 24);
@@ -505,6 +508,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // cboGioiTinh
             // 
+            this.cboGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGioiTinh.FormattingEnabled = true;
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
