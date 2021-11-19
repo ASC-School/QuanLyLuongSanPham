@@ -227,7 +227,7 @@ namespace QuanLyLuongSanPham_DAO
             }
             return q;
         }
-        public IEnumerable<dynamic> serchNhanVien (string maNV, string tenNhanVien, string loaiNhanVien, DateTime time)
+        public IEnumerable<dynamic> serchNhanVien (string maNV, string tenNhanVien, string loaiNhanVien)
         {
             IEnumerable<dynamic> q;
             if (maNV == "" && tenNhanVien == "")
@@ -318,7 +318,6 @@ namespace QuanLyLuongSanPham_DAO
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
                      join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
-                     where (nv.ngayBatDauCongTac==time)
                      select new
                      {
                          Mã_nhân_viên = nv.maNhanVien,

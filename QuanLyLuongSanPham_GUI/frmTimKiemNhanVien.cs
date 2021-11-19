@@ -79,7 +79,6 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     cboTenNhanVien.Text = n.tenNhanVien;
                     maLoai = n.maLoai;
-                    dtpTime.Value = n.ngayBatDauCongTac;
                     
                 }
                 foreach (LoaiNhanVien lnv in dsLoai)
@@ -116,7 +115,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            dtgvDanhSachTimKiem.DataSource = busNV.searchNhanVien(cboMaNhanVien.Text,cboTenNhanVien.Text, cboDonVi.Text, dtpTime.Value);
+            dtgvDanhSachTimKiem.DataSource = busNV.searchNhanVien(cboMaNhanVien.Text,cboTenNhanVien.Text, cboDonVi.Text);
         }
     }
 }
