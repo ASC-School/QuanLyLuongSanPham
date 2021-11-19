@@ -400,6 +400,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvChiTietDonHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietDonHang.GridColor = System.Drawing.Color.Black;
             this.dgvChiTietDonHang.Location = new System.Drawing.Point(0, 0);
+            this.dgvChiTietDonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvChiTietDonHang.Name = "dgvChiTietDonHang";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -416,7 +417,7 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvChiTietDonHang.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvChiTietDonHang.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvChiTietDonHang.Size = new System.Drawing.Size(1156, 176);
+            this.dgvChiTietDonHang.Size = new System.Drawing.Size(1445, 220);
             this.dgvChiTietDonHang.TabIndex = 0;
             this.dgvChiTietDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietDonHang_CellClick);
             // 
@@ -459,14 +460,14 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigatorCTDH.Location = new System.Drawing.Point(3, 197);
+            this.bindingNavigatorCTDH.Location = new System.Drawing.Point(3, 247);
             this.bindingNavigatorCTDH.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorCTDH.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigatorCTDH.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigatorCTDH.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorCTDH.Name = "bindingNavigatorCTDH";
             this.bindingNavigatorCTDH.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorCTDH.Size = new System.Drawing.Size(1168, 25);
+            this.bindingNavigatorCTDH.Size = new System.Drawing.Size(1462, 31);
             this.bindingNavigatorCTDH.TabIndex = 1;
             this.bindingNavigatorCTDH.Text = "bindingNavigator1";
             // 
@@ -476,13 +477,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -492,7 +493,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -501,7 +502,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -510,13 +511,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -524,14 +525,14 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(62, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -539,7 +540,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -548,13 +549,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // label9
             // 
@@ -618,20 +619,22 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.btnLoadChiTietDonHang);
             this.panelControl1.Controls.Add(this.panel5);
             this.panelControl1.Controls.Add(this.bindingNavigatorCTDH);
-            this.panelControl1.Location = new System.Drawing.Point(12, 389);
+            this.panelControl1.Location = new System.Drawing.Point(15, 486);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1174, 225);
+            this.panelControl1.Size = new System.Drawing.Size(1468, 281);
             this.panelControl1.TabIndex = 13;
             // 
             // btnLoadChiTietDonHang
             // 
             this.btnLoadChiTietDonHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadChiTietDonHang.BackgroundImage")));
             this.btnLoadChiTietDonHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadChiTietDonHang.Location = new System.Drawing.Point(1133, 0);
+            this.btnLoadChiTietDonHang.Location = new System.Drawing.Point(1416, 0);
+            this.btnLoadChiTietDonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoadChiTietDonHang.Name = "btnLoadChiTietDonHang";
-            this.btnLoadChiTietDonHang.Size = new System.Drawing.Size(32, 27);
+            this.btnLoadChiTietDonHang.Size = new System.Drawing.Size(40, 34);
             this.btnLoadChiTietDonHang.TabIndex = 15;
             this.btnLoadChiTietDonHang.UseVisualStyleBackColor = true;
             this.btnLoadChiTietDonHang.Click += new System.EventHandler(this.btnLoadChiTietDonHang_Click);
@@ -639,9 +642,10 @@ namespace QuanLyLuongSanPham_GUI
             // panel5
             // 
             this.panel5.Controls.Add(this.dgvChiTietDonHang);
-            this.panel5.Location = new System.Drawing.Point(12, 22);
+            this.panel5.Location = new System.Drawing.Point(15, 28);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1156, 176);
+            this.panel5.Size = new System.Drawing.Size(1445, 220);
             this.panel5.TabIndex = 0;
             // 
             // label10

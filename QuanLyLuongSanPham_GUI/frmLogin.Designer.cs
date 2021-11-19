@@ -30,28 +30,30 @@ namespace QuanLyLuongSanPham_GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDangNhap = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnThoat = new QuanLyLuongSanPham_GUI.ButtonCustom();
-            this.buttonCustom1 = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.btnCheckViewPass = new System.Windows.Forms.Button();
+            this.lblError1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblError2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnThoat = new QuanLyLuongSanPham_GUI.ButtonCustom();
+            this.btnLogin = new QuanLyLuongSanPham_GUI.ButtonCustom();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblDangNhap
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(149, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 51);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
+            this.lblDangNhap.AutoSize = true;
+            this.lblDangNhap.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangNhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDangNhap.Location = new System.Drawing.Point(127, 66);
+            this.lblDangNhap.Name = "lblDangNhap";
+            this.lblDangNhap.Size = new System.Drawing.Size(221, 40);
+            this.lblDangNhap.TabIndex = 1;
+            this.lblDangNhap.Text = "ĐĂNG NHẬP";
             // 
             // txtUsername
             // 
@@ -64,7 +66,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(359, 34);
             this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "Username";
+            this.txtUsername.Text = "Ten Tai Khoan";
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
@@ -79,7 +81,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(359, 34);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "Password";
+            this.txtPassword.Text = "Mat Khau";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -111,11 +113,52 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(89, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 51);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnCheckViewPass
+            // 
+            this.btnCheckViewPass.BackColor = System.Drawing.Color.White;
+            this.btnCheckViewPass.FlatAppearance.BorderSize = 0;
+            this.btnCheckViewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckViewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckViewPass.Image")));
+            this.btnCheckViewPass.Location = new System.Drawing.Point(340, 246);
+            this.btnCheckViewPass.Name = "btnCheckViewPass";
+            this.btnCheckViewPass.Size = new System.Drawing.Size(37, 25);
+            this.btnCheckViewPass.TabIndex = 29;
+            this.btnCheckViewPass.UseVisualStyleBackColor = false;
+            this.btnCheckViewPass.Click += new System.EventHandler(this.btnCheckViewPass_Click);
+            // 
+            // lblError1
+            // 
+            this.lblError1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblError1.Appearance.Options.UseFont = true;
+            this.lblError1.Appearance.Options.UseForeColor = true;
+            this.lblError1.Location = new System.Drawing.Point(381, 161);
+            this.lblError1.Margin = new System.Windows.Forms.Padding(4);
+            this.lblError1.Name = "lblError1";
+            this.lblError1.Size = new System.Drawing.Size(13, 24);
+            this.lblError1.TabIndex = 30;
+            this.lblError1.Text = "*";
+            this.lblError1.Visible = false;
+            // 
+            // lblError2
+            // 
+            this.lblError2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblError2.Appearance.Options.UseFont = true;
+            this.lblError2.Appearance.Options.UseForeColor = true;
+            this.lblError2.Location = new System.Drawing.Point(381, 216);
+            this.lblError2.Margin = new System.Windows.Forms.Padding(4);
+            this.lblError2.Name = "lblError2";
+            this.lblError2.Size = new System.Drawing.Size(13, 24);
+            this.lblError2.TabIndex = 30;
+            this.lblError2.Text = "*";
+            this.lblError2.Visible = false;
             // 
             // btnThoat
             // 
@@ -137,37 +180,25 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // buttonCustom1
+            // btnLogin
             // 
-            this.buttonCustom1.BackColor = System.Drawing.Color.DimGray;
-            this.buttonCustom1.BackgroundColor = System.Drawing.Color.DimGray;
-            this.buttonCustom1.BorderColor = System.Drawing.Color.SpringGreen;
-            this.buttonCustom1.BorderRadius = 20;
-            this.buttonCustom1.BorderSize = 2;
-            this.buttonCustom1.FlatAppearance.BorderSize = 0;
-            this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCustom1.ForeColor = System.Drawing.Color.White;
-            this.buttonCustom1.Location = new System.Drawing.Point(119, 311);
-            this.buttonCustom1.Name = "buttonCustom1";
-            this.buttonCustom1.Size = new System.Drawing.Size(168, 46);
-            this.buttonCustom1.TabIndex = 7;
-            this.buttonCustom1.Text = "Login";
-            this.buttonCustom1.TextColor = System.Drawing.Color.White;
-            this.buttonCustom1.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckViewPass
-            // 
-            this.btnCheckViewPass.BackColor = System.Drawing.Color.White;
-            this.btnCheckViewPass.FlatAppearance.BorderSize = 0;
-            this.btnCheckViewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckViewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckViewPass.Image")));
-            this.btnCheckViewPass.Location = new System.Drawing.Point(340, 246);
-            this.btnCheckViewPass.Name = "btnCheckViewPass";
-            this.btnCheckViewPass.Size = new System.Drawing.Size(37, 25);
-            this.btnCheckViewPass.TabIndex = 29;
-            this.btnCheckViewPass.UseVisualStyleBackColor = false;
-            this.btnCheckViewPass.Click += new System.EventHandler(this.btnCheckViewPass_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.DimGray;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.DimGray;
+            this.btnLogin.BorderColor = System.Drawing.Color.SpringGreen;
+            this.btnLogin.BorderRadius = 20;
+            this.btnLogin.BorderSize = 2;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(119, 311);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(168, 46);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmLogin
             // 
@@ -175,15 +206,17 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(407, 432);
+            this.Controls.Add(this.lblError2);
+            this.Controls.Add(this.lblError1);
             this.Controls.Add(this.btnCheckViewPass);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.buttonCustom1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDangNhap);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
@@ -201,14 +234,16 @@ namespace QuanLyLuongSanPham_GUI
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDangNhap;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ButtonCustom buttonCustom1;
+        private ButtonCustom btnLogin;
         private ButtonCustom btnThoat;
         private System.Windows.Forms.Button btnCheckViewPass;
+        private DevExpress.XtraEditors.LabelControl lblError1;
+        private DevExpress.XtraEditors.LabelControl lblError2;
     }
 }

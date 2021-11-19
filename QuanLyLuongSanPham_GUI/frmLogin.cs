@@ -23,6 +23,8 @@ namespace QuanLyLuongSanPham_GUI
         private void frmLogin_Load(object sender, EventArgs e)
         {
             Util.Animate(this, Util.Effect.Center, 150, 180);
+            lblError1.Visible = false;
+            lblError2.Visible = false;
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "Username")
+            if(txtUsername.Text == "Ten Tai Khoan")
             {
                 txtUsername.Text = "";
             }      
@@ -69,13 +71,18 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (txtUsername.Text == "")
             {
-                txtUsername.Text = "Username";
+                txtUsername.Text = "Ten Tai Khoan";
+                lblError1.Visible = true;
             }
+            else
+            {
+                lblError1.Visible = false;
+            }    
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Password")
+            if (txtPassword.Text == "Mat Khau")
             {
                 txtPassword.Text = "";
             }
@@ -85,8 +92,13 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (txtPassword.Text == "")
             {
-                txtPassword.Text = "Password";
+                txtPassword.Text = "Mat Khau";
+                lblError2.Visible = true;
             }
+            else
+            {
+                lblError2.Visible = false;
+            }    
         }
 
         private void btnCheckViewPass_Click(object sender, EventArgs e)
@@ -103,16 +115,23 @@ namespace QuanLyLuongSanPham_GUI
             }    
         }
 
-        //private void btnCheckViewPass_Click(object sender, EventArgs e)
-        //{
-        //    if (checkViewPass.Checked == true)
-        //    {
-        //        txtPassword.UseSystemPasswordChar = false;
-        //    }
-        //    else
-        //    {
-        //        txtPassword.UseSystemPasswordChar = true;
-        //    }
-        //}
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(txtUsername.Text == string.Empty || txtUsername.Text == "Ten Tai Khoan")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtUsername.Focus();
+            }    
+            else if(txtPassword.Text == string.Empty || txtPassword.Text == "Mat Khau")
+            {
+                XtraMessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtPassword.Focus();
+            }  
+            else
+            {
+                lblError1.Visible = lblError2.Visible = false;
+
+            }    
+        }
     }
 }
