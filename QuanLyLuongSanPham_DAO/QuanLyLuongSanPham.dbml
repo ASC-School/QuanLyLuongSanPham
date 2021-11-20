@@ -50,6 +50,7 @@
       <Column Name="tenCongDoan" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="donGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="maSanPham" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="CongDoanSanXuat_LuongCongNhan" Member="LuongCongNhans" ThisKey="soThuTu" OtherKey="maCongDoan" Type="LuongCongNhan" />
       <Association Name="CongDoanSanXuat_PhanCong" Member="PhanCongs" ThisKey="soThuTu" OtherKey="maCongDoan" Type="PhanCong" />
       <Association Name="SanPham_CongDoanSanXuat" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
@@ -98,6 +99,7 @@
       <Column Name="maNhanVien" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="maPhieu" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="maCongDoan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CongDoanSanXuat_LuongCongNhan" Member="CongDoanSanXuat" ThisKey="maCongDoan" OtherKey="soThuTu" Type="CongDoanSanXuat" IsForeignKey="true" />
       <Association Name="MucTienPhat_LuongCongNhan" Member="MucTienPhat" ThisKey="maTienPhat" OtherKey="soThuTu" Type="MucTienPhat" IsForeignKey="true" />
       <Association Name="NhanVien_LuongCongNhan" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="PhieuChamCongCongNhan_LuongCongNhan" Member="PhieuChamCongCongNhan" ThisKey="maPhieu" OtherKey="maPhieu" Type="PhieuChamCongCongNhan" IsForeignKey="true" />

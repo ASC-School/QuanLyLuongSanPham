@@ -55,7 +55,7 @@ namespace QuanLyLuongSanPham_GUI
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tileControl1 = new DevExpress.XtraEditors.TileControl();
+            this.tlMain = new DevExpress.XtraEditors.TileControl();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             this.tiSlide = new DevExpress.XtraEditors.TileItem();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
@@ -111,20 +111,20 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tileControl1
+            // tlMain
             // 
-            this.tileControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileControl1.BackgroundImage")));
-            this.tileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl1.Groups.Add(this.tileGroup3);
-            this.tileControl1.Groups.Add(this.tileGroup1);
-            this.tileControl1.Groups.Add(this.tileGroup4);
-            this.tileControl1.Location = new System.Drawing.Point(0, 28);
-            this.tileControl1.MaxId = 23;
-            this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Size = new System.Drawing.Size(1300, 722);
-            this.tileControl1.TabIndex = 1;
-            this.tileControl1.Text = "tileControl1";
+            this.tlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tlMain.BackgroundImage")));
+            this.tlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlMain.Groups.Add(this.tileGroup3);
+            this.tlMain.Groups.Add(this.tileGroup1);
+            this.tlMain.Groups.Add(this.tileGroup4);
+            this.tlMain.Location = new System.Drawing.Point(0, 28);
+            this.tlMain.MaxId = 23;
+            this.tlMain.Name = "tlMain";
+            this.tlMain.Size = new System.Drawing.Size(1300, 722);
+            this.tlMain.TabIndex = 1;
+            this.tlMain.Text = "tileControl1";
             // 
             // tileGroup3
             // 
@@ -138,7 +138,7 @@ namespace QuanLyLuongSanPham_GUI
             this.tiSlide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tiSlide.BackgroundImage")));
             this.tiSlide.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
             this.tiSlide.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollLeft;
-            this.tiSlide.CurrentFrameIndex = 2;
+            this.tiSlide.CurrentFrameIndex = 4;
             tileItemFrame1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame1.BackgroundImage")));
             tileItemFrame2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame2.BackgroundImage")));
             tileItemFrame3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame3.BackgroundImage")));
@@ -193,10 +193,14 @@ namespace QuanLyLuongSanPham_GUI
             tileItemElement4.TextLocation = new System.Drawing.Point(20, -15);
             tileItemElement5.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileItemElement5.Appearance.Normal.Options.UseFont = true;
+            tileItemElement5.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement5.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             tileItemElement5.Text = "";
-            tileItemElement5.TextLocation = new System.Drawing.Point(55, -60);
+            tileItemElement5.TextLocation = new System.Drawing.Point(75, -60);
             tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileItemElement6.Appearance.Normal.Options.UseFont = true;
+            tileItemElement6.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement6.Appearance.Normal.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             tileItemElement6.Text = "";
             tileItemElement6.TextLocation = new System.Drawing.Point(0, -15);
             this.tiTTNV.Elements.Add(tileItemElement3);
@@ -643,7 +647,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1300, 750);
-            this.Controls.Add(this.tileControl1);
+            this.Controls.Add(this.tlMain);
             this.Controls.Add(this.menuStripHome);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -661,7 +665,7 @@ namespace QuanLyLuongSanPham_GUI
         }
 
         #endregion
-        private DevExpress.XtraEditors.TileControl tileControl1;
+        private DevExpress.XtraEditors.TileControl tlMain;
         private DevExpress.XtraEditors.TileItem tiSlide;
         private DevExpress.XtraEditors.TileItem tiDateTime;
         private System.Windows.Forms.Timer timer1;

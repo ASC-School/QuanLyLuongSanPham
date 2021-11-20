@@ -164,7 +164,6 @@ namespace QuanLyLuongSanPham_GUI
 
                 if (bCheckTK && bCheckMK)
                 {
-                    XtraMessageBox.Show("Đăng nhập thành công", "Thông Báo");
                     string hoTenNVLoad = "";
                     string loaiNVLoad = "";
                     string maLoai = "";

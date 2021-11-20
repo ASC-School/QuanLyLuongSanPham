@@ -162,41 +162,41 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.DimGray;
-            this.btnThoat.BackgroundColor = System.Drawing.Color.DimGray;
+            this.btnThoat.BackColor = System.Drawing.Color.Black;
+            this.btnThoat.BackgroundColor = System.Drawing.Color.Black;
             this.btnThoat.BorderColor = System.Drawing.Color.SpringGreen;
             this.btnThoat.BorderRadius = 20;
             this.btnThoat.BorderSize = 2;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.ForeColor = System.Drawing.Color.Transparent;
             this.btnThoat.Location = new System.Drawing.Point(119, 363);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(168, 46);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextColor = System.Drawing.Color.White;
+            this.btnThoat.TextColor = System.Drawing.Color.Transparent;
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.DimGray;
-            this.btnLogin.BackgroundColor = System.Drawing.Color.DimGray;
+            this.btnLogin.BackColor = System.Drawing.Color.Black;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.Black;
             this.btnLogin.BorderColor = System.Drawing.Color.SpringGreen;
             this.btnLogin.BorderRadius = 20;
             this.btnLogin.BorderSize = 2;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.ForeColor = System.Drawing.Color.Transparent;
             this.btnLogin.Location = new System.Drawing.Point(119, 311);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(168, 46);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.TextColor = System.Drawing.Color.Transparent;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
