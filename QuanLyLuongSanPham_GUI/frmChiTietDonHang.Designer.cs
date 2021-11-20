@@ -400,7 +400,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvChiTietDonHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietDonHang.GridColor = System.Drawing.Color.Black;
             this.dgvChiTietDonHang.Location = new System.Drawing.Point(0, 0);
-            this.dgvChiTietDonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvChiTietDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvChiTietDonHang.Name = "dgvChiTietDonHang";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -622,7 +622,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Location = new System.Drawing.Point(15, 486);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1468, 281);
             this.panelControl1.TabIndex = 13;
@@ -632,7 +632,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLoadChiTietDonHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadChiTietDonHang.BackgroundImage")));
             this.btnLoadChiTietDonHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadChiTietDonHang.Location = new System.Drawing.Point(1416, 0);
-            this.btnLoadChiTietDonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadChiTietDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadChiTietDonHang.Name = "btnLoadChiTietDonHang";
             this.btnLoadChiTietDonHang.Size = new System.Drawing.Size(40, 34);
             this.btnLoadChiTietDonHang.TabIndex = 15;
@@ -643,7 +643,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.panel5.Controls.Add(this.dgvChiTietDonHang);
             this.panel5.Location = new System.Drawing.Point(15, 28);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1445, 220);
             this.panel5.TabIndex = 0;

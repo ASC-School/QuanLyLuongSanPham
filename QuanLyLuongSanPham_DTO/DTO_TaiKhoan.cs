@@ -8,19 +8,19 @@ namespace QuanLyLuongSanPham_DTO
 {
     public class DTO_TaiKhoan
     {
-        string maNhanVien, tenTaiKhoan, maKhau, quyen;
+        string maNhanVien, tenTaiKhoan, matKhau, quyen;
         public DTO_TaiKhoan() { }
-        public DTO_TaiKhoan(string maNhanVien, string tenTaiKhoan, string maKhau, string quyen)
+        public DTO_TaiKhoan(string maNhanVien, string tenTaiKhoan, string matKhau, string quyen)
         {
             this.maNhanVien = maNhanVien;
             this.TenTaiKhoan = tenTaiKhoan;
-            this.MaKhau = maKhau;
+            this.MatKhau = matKhau;
             this.Quyen = quyen;
         }
 
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
         public string TenTaiKhoan { get => tenTaiKhoan; set => tenTaiKhoan = value; }
-        public string MaKhau { get => maKhau; set => maKhau = value; }
+        public string MatKhau { get => matKhau; set => matKhau = value; }
         public string Quyen { get => quyen; set => quyen = value; }
     }
 }

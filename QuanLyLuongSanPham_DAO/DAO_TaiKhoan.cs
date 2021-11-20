@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,17 +28,36 @@ namespace QuanLyLuongSanPham_DAO
                 DTO_TaiKhoan tmp = new DTO_TaiKhoan();
                 tmp.MaNhanVien = tai_khoan.maNhanVien;
                 tmp.TenTaiKhoan = tai_khoan.username;
-                tmp.MaKhau = tai_khoan.passwords;
+                tmp.MatKhau = tai_khoan.passwords;
                 tmp.Quyen = tai_khoan.quyen;
                 lst.Add(tmp);
             }
             return lst;
         }
 
-        //List<DTO_TaiKhoan> layDanhSachTaiKhoanTheoLoaiNhanVien()
-        //{
+        public IEnumerable<LoaiNhanVien> layLoaiNVTheoMa(string maNV)
+        {
+            IEnumerable<LoaiNhanVien> loaiNVTheoMa = from lnv in dataBase.LoaiNhanViens
+                                                     join nv in dataBase.NhanViens
+                                                     on lnv.maLoai equals nv.maLoai
+                                                    where nv.maNhanVien.Equals(maNV)
+                                                    select lnv;
+            return loaiNVTheoMa;
+        }
 
-        //}
+        public IEnumerable<NhanVien> layNVTheoMa(string maNV)
+        {
+            IEnumerable<NhanVien> nvTheoMa = from nv in dataBase.NhanViens
+                                               where nv.maNhanVien.Equals(maNV)
+                                               select nv;
+            return nvTheoMa;
+        }
 
+        public IEnumerable<TaiKhoan> layDSTK()
+        {
+            IEnumerable<TaiKhoan> dsTKNV = from tk in dataBase.TaiKhoans
+                                            select tk;
+            return dsTKNV;
+        }
     }
 }

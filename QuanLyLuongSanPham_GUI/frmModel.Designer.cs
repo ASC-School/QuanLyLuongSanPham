@@ -96,7 +96,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Location = new System.Drawing.Point(15, 52);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(475, 184);
             this.panelControl1.TabIndex = 0;
@@ -104,7 +104,7 @@ namespace QuanLyLuongSanPham_GUI
             // txtTrangThai
             // 
             this.txtTrangThai.Location = new System.Drawing.Point(140, 141);
-            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(302, 23);
             this.txtTrangThai.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace QuanLyLuongSanPham_GUI
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(32, 145);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 17);
             this.labelControl4.TabIndex = 0;
@@ -122,7 +122,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.cboTenModel.FormattingEnabled = true;
             this.cboTenModel.Location = new System.Drawing.Point(140, 92);
-            this.cboTenModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTenModel.Margin = new System.Windows.Forms.Padding(4);
             this.cboTenModel.Name = "cboTenModel";
             this.cboTenModel.Size = new System.Drawing.Size(302, 24);
             this.cboTenModel.TabIndex = 1;
@@ -131,7 +131,7 @@ namespace QuanLyLuongSanPham_GUI
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(32, 102);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(65, 16);
             this.labelControl2.TabIndex = 0;
@@ -141,7 +141,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.cboMaModel.FormattingEnabled = true;
             this.cboMaModel.Location = new System.Drawing.Point(140, 50);
-            this.cboMaModel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboMaModel.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaModel.Name = "cboMaModel";
             this.cboMaModel.Size = new System.Drawing.Size(302, 24);
             this.cboMaModel.TabIndex = 1;
@@ -150,7 +150,7 @@ namespace QuanLyLuongSanPham_GUI
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(32, 60);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 16);
             this.labelControl1.TabIndex = 0;
