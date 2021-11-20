@@ -31,8 +31,8 @@ namespace QuanLyLuongSanPham_GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCongDoan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -58,6 +58,12 @@ namespace QuanLyLuongSanPham_GUI
             this.button2 = new System.Windows.Forms.Button();
             this.toolTipOpenFrmModel = new System.Windows.Forms.ToolTip(this.components);
             this.btnOpenFrmModel = new System.Windows.Forms.Button();
+            this.tenCongDoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maModel1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -146,14 +152,18 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSModel.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvDSModel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvDSModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvDSModel.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvDSModel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maModel,
+            this.tenModel,
+            this.trangThai});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvDSModel.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDSModel.Location = new System.Drawing.Point(10, 25);
             this.dtgvDSModel.Name = "dtgvDSModel";
             this.dtgvDSModel.RowHeadersWidth = 51;
@@ -187,14 +197,18 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dgvCongDoan.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCongDoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCongDoan.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvCongDoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tenCongDoan,
+            this.donGia,
+            this.maModel1});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCongDoan.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCongDoan.Location = new System.Drawing.Point(10, 25);
             this.dgvCongDoan.Name = "dgvCongDoan";
             this.dgvCongDoan.RowHeadersWidth = 51;
@@ -344,6 +358,51 @@ namespace QuanLyLuongSanPham_GUI
             this.btnOpenFrmModel.UseVisualStyleBackColor = true;
             this.btnOpenFrmModel.Click += new System.EventHandler(this.btnOpenFrmModel_Click);
             // 
+            // tenCongDoan
+            // 
+            this.tenCongDoan.HeaderText = "Tên công đoạn";
+            this.tenCongDoan.MinimumWidth = 6;
+            this.tenCongDoan.Name = "tenCongDoan";
+            this.tenCongDoan.Width = 125;
+            // 
+            // donGia
+            // 
+            this.donGia.HeaderText = "Đơn giá";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.Width = 125;
+            // 
+            // maModel1
+            // 
+            this.maModel1.HeaderText = "Mã model";
+            this.maModel1.MinimumWidth = 6;
+            this.maModel1.Name = "maModel1";
+            this.maModel1.Width = 125;
+            // 
+            // maModel
+            // 
+            this.maModel.DataPropertyName = "maModel";
+            this.maModel.HeaderText = "Mã model";
+            this.maModel.MinimumWidth = 6;
+            this.maModel.Name = "maModel";
+            this.maModel.Width = 125;
+            // 
+            // tenModel
+            // 
+            this.tenModel.DataPropertyName = "tenModel";
+            this.tenModel.HeaderText = "Tên model";
+            this.tenModel.MinimumWidth = 6;
+            this.tenModel.Name = "tenModel";
+            this.tenModel.Width = 125;
+            // 
+            // trangThai
+            // 
+            this.trangThai.DataPropertyName = "trangThai";
+            this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.MinimumWidth = 6;
+            this.trangThai.Name = "trangThai";
+            this.trangThai.Width = 125;
+            // 
             // frmCongDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -416,5 +475,11 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.ToolTip toolTipOpenFrmModel;
         private System.Windows.Forms.Button btnOpenFrmModel;
         private System.Windows.Forms.DataGridView dtgvDSModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenCongDoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maModel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
     }
 }

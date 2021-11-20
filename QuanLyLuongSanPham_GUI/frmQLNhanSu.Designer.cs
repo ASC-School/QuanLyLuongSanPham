@@ -48,6 +48,16 @@ namespace QuanLyLuongSanPham_GUI
             this.label10 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
+            this.Mã_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tên_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giới_tính = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Địa_chỉ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngày_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngày_vào_làm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loại_Nv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Đơn_vị_quản_lí = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trạng_thái = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.radNghiLam = new System.Windows.Forms.RadioButton();
@@ -80,16 +90,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
-            this.Mã_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tên_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Giới_tính = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Địa_chỉ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngày_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngày_vào_làm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loại_Nv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Đơn_vị_quản_lí = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Trạng_thái = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -365,7 +365,88 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(1269, 261);
             this.dtgvDSNV.TabIndex = 42;
+            this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
             this.dtgvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
+            // 
+            // Mã_nhân_viên
+            // 
+            this.Mã_nhân_viên.DataPropertyName = "Mã_nhân_viên";
+            this.Mã_nhân_viên.HeaderText = "Mã nhân viên";
+            this.Mã_nhân_viên.MinimumWidth = 6;
+            this.Mã_nhân_viên.Name = "Mã_nhân_viên";
+            this.Mã_nhân_viên.Width = 125;
+            // 
+            // Tên_nhân_viên
+            // 
+            this.Tên_nhân_viên.DataPropertyName = "Tên_nhân_viên";
+            this.Tên_nhân_viên.HeaderText = "Tên nhân viên";
+            this.Tên_nhân_viên.MinimumWidth = 6;
+            this.Tên_nhân_viên.Name = "Tên_nhân_viên";
+            this.Tên_nhân_viên.Width = 125;
+            // 
+            // Giới_tính
+            // 
+            this.Giới_tính.DataPropertyName = "Giới_tính";
+            this.Giới_tính.HeaderText = "Giới tính";
+            this.Giới_tính.MinimumWidth = 6;
+            this.Giới_tính.Name = "Giới_tính";
+            this.Giới_tính.Width = 125;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 125;
+            // 
+            // Địa_chỉ
+            // 
+            this.Địa_chỉ.DataPropertyName = "Địa_chỉ";
+            this.Địa_chỉ.HeaderText = "Địa chỉ";
+            this.Địa_chỉ.MinimumWidth = 6;
+            this.Địa_chỉ.Name = "Địa_chỉ";
+            this.Địa_chỉ.Width = 125;
+            // 
+            // Ngày_sinh
+            // 
+            this.Ngày_sinh.DataPropertyName = "Ngày_sinh";
+            this.Ngày_sinh.HeaderText = "Ngày sinh";
+            this.Ngày_sinh.MinimumWidth = 6;
+            this.Ngày_sinh.Name = "Ngày_sinh";
+            this.Ngày_sinh.Width = 125;
+            // 
+            // Ngày_vào_làm
+            // 
+            this.Ngày_vào_làm.DataPropertyName = "Ngày_vào_làm";
+            this.Ngày_vào_làm.HeaderText = "Ngày vào làm";
+            this.Ngày_vào_làm.MinimumWidth = 6;
+            this.Ngày_vào_làm.Name = "Ngày_vào_làm";
+            this.Ngày_vào_làm.Width = 125;
+            // 
+            // Loại_Nv
+            // 
+            this.Loại_Nv.DataPropertyName = "Loại_Nv";
+            this.Loại_Nv.HeaderText = "Loại nhân viên";
+            this.Loại_Nv.MinimumWidth = 6;
+            this.Loại_Nv.Name = "Loại_Nv";
+            this.Loại_Nv.Width = 125;
+            // 
+            // Đơn_vị_quản_lí
+            // 
+            this.Đơn_vị_quản_lí.DataPropertyName = "Đơn_vị_quản_lí";
+            this.Đơn_vị_quản_lí.HeaderText = "Đơn vị quản lí";
+            this.Đơn_vị_quản_lí.MinimumWidth = 6;
+            this.Đơn_vị_quản_lí.Name = "Đơn_vị_quản_lí";
+            this.Đơn_vị_quản_lí.Width = 125;
+            // 
+            // Trạng_thái
+            // 
+            this.Trạng_thái.DataPropertyName = "Trạng_thái";
+            this.Trạng_thái.HeaderText = "Trạng thái";
+            this.Trạng_thái.MinimumWidth = 6;
+            this.Trạng_thái.Name = "Trạng_thái";
+            this.Trạng_thái.Width = 125;
             // 
             // panelControl2
             // 
@@ -724,86 +805,6 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuong.Size = new System.Drawing.Size(170, 23);
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
-            // 
-            // Mã_nhân_viên
-            // 
-            this.Mã_nhân_viên.DataPropertyName = "Mã_nhân_viên";
-            this.Mã_nhân_viên.HeaderText = "Mã nhân viên";
-            this.Mã_nhân_viên.MinimumWidth = 6;
-            this.Mã_nhân_viên.Name = "Mã_nhân_viên";
-            this.Mã_nhân_viên.Width = 125;
-            // 
-            // Tên_nhân_viên
-            // 
-            this.Tên_nhân_viên.DataPropertyName = "Tên_nhân_viên";
-            this.Tên_nhân_viên.HeaderText = "Tên nhân viên";
-            this.Tên_nhân_viên.MinimumWidth = 6;
-            this.Tên_nhân_viên.Name = "Tên_nhân_viên";
-            this.Tên_nhân_viên.Width = 125;
-            // 
-            // Giới_tính
-            // 
-            this.Giới_tính.DataPropertyName = "Giới_tính";
-            this.Giới_tính.HeaderText = "Giới tính";
-            this.Giới_tính.MinimumWidth = 6;
-            this.Giới_tính.Name = "Giới_tính";
-            this.Giới_tính.Width = 125;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 125;
-            // 
-            // Địa_chỉ
-            // 
-            this.Địa_chỉ.DataPropertyName = "Địa_chỉ";
-            this.Địa_chỉ.HeaderText = "Địa chỉ";
-            this.Địa_chỉ.MinimumWidth = 6;
-            this.Địa_chỉ.Name = "Địa_chỉ";
-            this.Địa_chỉ.Width = 125;
-            // 
-            // Ngày_sinh
-            // 
-            this.Ngày_sinh.DataPropertyName = "Ngày_sinh";
-            this.Ngày_sinh.HeaderText = "Ngày sinh";
-            this.Ngày_sinh.MinimumWidth = 6;
-            this.Ngày_sinh.Name = "Ngày_sinh";
-            this.Ngày_sinh.Width = 125;
-            // 
-            // Ngày_vào_làm
-            // 
-            this.Ngày_vào_làm.DataPropertyName = "Ngày_vào_làm";
-            this.Ngày_vào_làm.HeaderText = "Ngày vào làm";
-            this.Ngày_vào_làm.MinimumWidth = 6;
-            this.Ngày_vào_làm.Name = "Ngày_vào_làm";
-            this.Ngày_vào_làm.Width = 125;
-            // 
-            // Loại_Nv
-            // 
-            this.Loại_Nv.DataPropertyName = "Loại_Nv";
-            this.Loại_Nv.HeaderText = "Loại nhân viên";
-            this.Loại_Nv.MinimumWidth = 6;
-            this.Loại_Nv.Name = "Loại_Nv";
-            this.Loại_Nv.Width = 125;
-            // 
-            // Đơn_vị_quản_lí
-            // 
-            this.Đơn_vị_quản_lí.DataPropertyName = "Đơn_vị_quản_lí";
-            this.Đơn_vị_quản_lí.HeaderText = "Đơn vị quản lí";
-            this.Đơn_vị_quản_lí.MinimumWidth = 6;
-            this.Đơn_vị_quản_lí.Name = "Đơn_vị_quản_lí";
-            this.Đơn_vị_quản_lí.Width = 125;
-            // 
-            // Trạng_thái
-            // 
-            this.Trạng_thái.DataPropertyName = "Trạng_thái";
-            this.Trạng_thái.HeaderText = "Trạng thái";
-            this.Trạng_thái.MinimumWidth = 6;
-            this.Trạng_thái.Name = "Trạng_thái";
-            this.Trạng_thái.Width = 125;
             // 
             // frmQLNhanSu
             // 
