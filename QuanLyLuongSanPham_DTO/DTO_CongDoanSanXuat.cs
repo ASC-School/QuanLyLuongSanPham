@@ -9,7 +9,8 @@ namespace QuanLyLuongSanPham_DTO
     public class DTO_CongDoanSanXuat
     {
         int soThuTu;
-        string tenCongDoan, maSanPham;
+        string tenCongDoan;
+        string maSanPham;
         decimal donGia;
 
         public DTO_CongDoanSanXuat() { }

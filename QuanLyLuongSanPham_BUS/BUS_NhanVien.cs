@@ -49,9 +49,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.layAllDSNV();
         }
-        //public IEnumerable<dynamic> searchNhanVien(string maNV, string tenNV, string loaiNv)
-        //{
-        //    return nv.serchNhanVien(maNV, tenNV, loaiNv);
-        //}
+        public IEnumerable<dynamic> searchNhanVien(string maNV, string tenNV, string loaiNv)
+        {
+            return nv.serchNhanVien(maNV, tenNV, loaiNv);
+        }
     }
 }

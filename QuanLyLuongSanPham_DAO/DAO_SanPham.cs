@@ -15,6 +15,11 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+        public IEnumerable<SanPham> getSanPhams()
+        {
+            IEnumerable<SanPham> q = from n in dataBase.SanPhams select n;
+            return q;
+        }
 
         public bool checkExist(string maSanPham)
         {
