@@ -30,14 +30,14 @@ namespace QuanLyLuongSanPham_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             DevExpress.XtraEditors.TileItemFrame tileItemFrame1 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame2 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame3 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame4 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame5 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame5 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
@@ -93,6 +93,15 @@ namespace QuanLyLuongSanPham_GUI
             this.msTienIch_QuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.msHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.msHeThong_PhanQuyen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
+            this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
+            this.tileControl1 = new DevExpress.XtraEditors.TileControl();
+            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
+            this.tiSlide = new DevExpress.XtraEditors.TileItem();
+            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
+            this.tileGroup4 = new DevExpress.XtraEditors.TileGroup();
+            this.titleItemDateTime = new DevExpress.XtraEditors.TileItem();
             this.tileItem4 = new DevExpress.XtraEditors.TileItem();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
@@ -292,20 +301,20 @@ namespace QuanLyLuongSanPham_GUI
             // msNhanSu_PhanCong
             // 
             this.msNhanSu_PhanCong.Name = "msNhanSu_PhanCong";
-            this.msNhanSu_PhanCong.Size = new System.Drawing.Size(224, 26);
+            this.msNhanSu_PhanCong.Size = new System.Drawing.Size(222, 26);
             this.msNhanSu_PhanCong.Text = "PHÂN CÔNG";
             // 
             // msNhanSu_QuanLyNhanSu
             // 
             this.msNhanSu_QuanLyNhanSu.Name = "msNhanSu_QuanLyNhanSu";
-            this.msNhanSu_QuanLyNhanSu.Size = new System.Drawing.Size(224, 26);
+            this.msNhanSu_QuanLyNhanSu.Size = new System.Drawing.Size(222, 26);
             this.msNhanSu_QuanLyNhanSu.Text = "QUẢN LÝ NHÂN SỰ";
             this.msNhanSu_QuanLyNhanSu.Click += new System.EventHandler(this.msNhanSu_QuanLyNhanSu_Click);
             // 
             // msNhanSu_DonViQuanLy
             // 
             this.msNhanSu_DonViQuanLy.Name = "msNhanSu_DonViQuanLy";
-            this.msNhanSu_DonViQuanLy.Size = new System.Drawing.Size(224, 26);
+            this.msNhanSu_DonViQuanLy.Size = new System.Drawing.Size(222, 26);
             this.msNhanSu_DonViQuanLy.Text = "ĐƠN VỊ QUẢN LÝ";
             // 
             // msDonHang
@@ -473,6 +482,125 @@ namespace QuanLyLuongSanPham_GUI
             this.msHeThong_PhanQuyen.Size = new System.Drawing.Size(234, 26);
             this.msHeThong_PhanQuyen.Text = "PHÂN QUYỀN";
             this.msHeThong_PhanQuyen.Click += new System.EventHandler(this.msHeThong_PhanQuyen_Click);
+            // 
+            // tileItem2
+            // 
+            tileItemElement1.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement1);
+            this.tileItem2.Id = 19;
+            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem2.Name = "tileItem2";
+            // 
+            // tileGroup2
+            // 
+            this.tileGroup2.Name = "tileGroup2";
+            // 
+            // tileControl1
+            // 
+            this.tileControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileControl1.BackgroundImage")));
+            this.tileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tileControl1.Groups.Add(this.tileGroup3);
+            this.tileControl1.Groups.Add(this.tileGroup1);
+            this.tileControl1.Groups.Add(this.tileGroup4);
+            this.tileControl1.Location = new System.Drawing.Point(0, 28);
+            this.tileControl1.MaxId = 23;
+            this.tileControl1.Name = "tileControl1";
+            this.tileControl1.Size = new System.Drawing.Size(1300, 722);
+            this.tileControl1.TabIndex = 1;
+            this.tileControl1.Text = "tileControl1";
+            // 
+            // tileGroup3
+            // 
+            this.tileGroup3.Items.Add(this.tiSlide);
+            this.tileGroup3.Name = "tileGroup3";
+            // 
+            // tiSlide
+            // 
+            this.tiSlide.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
+            this.tiSlide.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tiSlide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tiSlide.BackgroundImage")));
+            this.tiSlide.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            this.tiSlide.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollLeft;
+            tileItemFrame1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame1.BackgroundImage")));
+            tileItemFrame2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame2.BackgroundImage")));
+            tileItemFrame3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame3.BackgroundImage")));
+            tileItemFrame4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame4.BackgroundImage")));
+            tileItemElement2.Text = "tileItem2";
+            tileItemFrame4.Elements.Add(tileItemElement2);
+            tileItemFrame4.UseText = false;
+            tileItemFrame5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame5.BackgroundImage")));
+            this.tiSlide.Frames.Add(tileItemFrame1);
+            this.tiSlide.Frames.Add(tileItemFrame2);
+            this.tiSlide.Frames.Add(tileItemFrame3);
+            this.tiSlide.Frames.Add(tileItemFrame4);
+            this.tiSlide.Frames.Add(tileItemFrame5);
+            this.tiSlide.Id = 3;
+            this.tiSlide.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tiSlide.Name = "tiSlide";
+            // 
+            // tileGroup1
+            // 
+            this.tileGroup1.Items.Add(this.tileItem7);
+            this.tileGroup1.Name = "tileGroup1";
+            // 
+            // tileItem7
+            // 
+            this.tileItem7.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
+            this.tileItem7.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileItem7.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(62)))), ((int)(((byte)(53)))));
+            this.tileItem7.AppearanceItem.Pressed.Options.UseBackColor = true;
+            tileItemElement3.Text = "";
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement4.ImageOptions.ImageLocation = new System.Drawing.Point(20, -60);
+            tileItemElement4.Text = "";
+            tileItemElement4.TextLocation = new System.Drawing.Point(20, -60);
+            tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement5.ImageOptions.ImageLocation = new System.Drawing.Point(20, -15);
+            tileItemElement5.Text = "";
+            tileItemElement5.TextLocation = new System.Drawing.Point(20, -15);
+            this.tileItem7.Elements.Add(tileItemElement3);
+            this.tileItem7.Elements.Add(tileItemElement4);
+            this.tileItem7.Elements.Add(tileItemElement5);
+            this.tileItem7.Id = 22;
+            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem7.Name = "tileItem7";
+            // 
+            // tileGroup4
+            // 
+            this.tileGroup4.Items.Add(this.titleItemDateTime);
+            this.tileGroup4.Name = "tileGroup4";
+            // 
+            // titleItemDateTime
+            // 
+            this.titleItemDateTime.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
+            this.titleItemDateTime.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.titleItemDateTime.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(62)))), ((int)(((byte)(53)))));
+            this.titleItemDateTime.AppearanceItem.Pressed.Options.UseBackColor = true;
+            tileItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement6.Appearance.Normal.Options.UseFont = true;
+            tileItemElement6.Text = "Time";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
+            tileItemElement6.TextLocation = new System.Drawing.Point(0, -5);
+            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement7.Appearance.Normal.Options.UseFont = true;
+            tileItemElement7.Text = "Thứ";
+            tileItemElement7.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement8.Appearance.Normal.Options.UseFont = true;
+            tileItemElement8.Text = "MM/yyyy";
+            tileItemElement8.TextLocation = new System.Drawing.Point(142, 0);
+            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement9.Appearance.Normal.Options.UseFont = true;
+            tileItemElement9.Text = "dd";
+            tileItemElement9.TextLocation = new System.Drawing.Point(0, -22);
+            this.titleItemDateTime.Elements.Add(tileItemElement6);
+            this.titleItemDateTime.Elements.Add(tileItemElement7);
+            this.titleItemDateTime.Elements.Add(tileItemElement8);
+            this.titleItemDateTime.Elements.Add(tileItemElement9);
+            this.titleItemDateTime.Id = 11;
+            this.titleItemDateTime.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.titleItemDateTime.Name = "titleItemDateTime";
             // 
             // tileItem4
             // 

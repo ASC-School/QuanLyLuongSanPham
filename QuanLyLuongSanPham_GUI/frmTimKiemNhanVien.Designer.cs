@@ -36,11 +36,9 @@ namespace QuanLyLuongSanPham_GUI
             this.lblMaNV = new DevExpress.XtraEditors.LabelControl();
             this.lblTenNV = new DevExpress.XtraEditors.LabelControl();
             this.lblLoaiNV = new DevExpress.XtraEditors.LabelControl();
-            this.lblNgayBatDau = new DevExpress.XtraEditors.LabelControl();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dtgvDanhSachTimKiem = new System.Windows.Forms.DataGridView();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.cboDonVi = new System.Windows.Forms.ComboBox();
             this.cboTenNhanVien = new System.Windows.Forms.ComboBox();
             this.cboMaNhanVien = new System.Windows.Forms.ComboBox();
@@ -97,7 +95,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.lblMaNV.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNV.Appearance.Options.UseFont = true;
-            this.lblMaNV.Location = new System.Drawing.Point(95, 80);
+            this.lblMaNV.Location = new System.Drawing.Point(95, 92);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(113, 21);
             this.lblMaNV.TabIndex = 24;
@@ -107,7 +105,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.lblTenNV.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNV.Appearance.Options.UseFont = true;
-            this.lblTenNV.Location = new System.Drawing.Point(86, 124);
+            this.lblTenNV.Location = new System.Drawing.Point(86, 136);
             this.lblTenNV.Name = "lblTenNV";
             this.lblTenNV.Size = new System.Drawing.Size(119, 21);
             this.lblTenNV.TabIndex = 24;
@@ -117,21 +115,11 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.lblLoaiNV.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiNV.Appearance.Options.UseFont = true;
-            this.lblLoaiNV.Location = new System.Drawing.Point(96, 165);
+            this.lblLoaiNV.Location = new System.Drawing.Point(96, 177);
             this.lblLoaiNV.Name = "lblLoaiNV";
             this.lblLoaiNV.Size = new System.Drawing.Size(112, 21);
             this.lblLoaiNV.TabIndex = 24;
             this.lblLoaiNV.Text = "Loại nhân viên:";
-            // 
-            // lblNgayBatDau
-            // 
-            this.lblNgayBatDau.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayBatDau.Appearance.Options.UseFont = true;
-            this.lblNgayBatDau.Location = new System.Drawing.Point(95, 207);
-            this.lblNgayBatDau.Name = "lblNgayBatDau";
-            this.lblNgayBatDau.Size = new System.Drawing.Size(110, 21);
-            this.lblNgayBatDau.TabIndex = 24;
-            this.lblNgayBatDau.Text = "Ngày bắt đầu :";
             // 
             // btnTimKiem
             // 
@@ -171,19 +159,10 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDanhSachTimKiem.Size = new System.Drawing.Size(907, 184);
             this.dtgvDanhSachTimKiem.TabIndex = 28;
             // 
-            // dtpTime
-            // 
-            this.dtpTime.CustomFormat = "dd,MM,yyyy";
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(223, 206);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(348, 22);
-            this.dtpTime.TabIndex = 29;
-            // 
             // cboDonVi
             // 
             this.cboDonVi.FormattingEnabled = true;
-            this.cboDonVi.Location = new System.Drawing.Point(223, 166);
+            this.cboDonVi.Location = new System.Drawing.Point(223, 178);
             this.cboDonVi.Name = "cboDonVi";
             this.cboDonVi.Size = new System.Drawing.Size(348, 24);
             this.cboDonVi.TabIndex = 30;
@@ -191,7 +170,7 @@ namespace QuanLyLuongSanPham_GUI
             // cboTenNhanVien
             // 
             this.cboTenNhanVien.FormattingEnabled = true;
-            this.cboTenNhanVien.Location = new System.Drawing.Point(223, 125);
+            this.cboTenNhanVien.Location = new System.Drawing.Point(223, 137);
             this.cboTenNhanVien.Name = "cboTenNhanVien";
             this.cboTenNhanVien.Size = new System.Drawing.Size(348, 24);
             this.cboTenNhanVien.TabIndex = 31;
@@ -200,7 +179,7 @@ namespace QuanLyLuongSanPham_GUI
             // cboMaNhanVien
             // 
             this.cboMaNhanVien.FormattingEnabled = true;
-            this.cboMaNhanVien.Location = new System.Drawing.Point(223, 81);
+            this.cboMaNhanVien.Location = new System.Drawing.Point(223, 93);
             this.cboMaNhanVien.Name = "cboMaNhanVien";
             this.cboMaNhanVien.Size = new System.Drawing.Size(348, 24);
             this.cboMaNhanVien.TabIndex = 32;
@@ -215,11 +194,9 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.cboMaNhanVien);
             this.Controls.Add(this.cboTenNhanVien);
             this.Controls.Add(this.cboDonVi);
-            this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.dtgvDanhSachTimKiem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.lblNgayBatDau);
             this.Controls.Add(this.lblLoaiNV);
             this.Controls.Add(this.lblTenNV);
             this.Controls.Add(this.lblMaNV);
@@ -248,11 +225,9 @@ namespace QuanLyLuongSanPham_GUI
         private DevExpress.XtraEditors.LabelControl lblMaNV;
         private DevExpress.XtraEditors.LabelControl lblTenNV;
         private DevExpress.XtraEditors.LabelControl lblLoaiNV;
-        private DevExpress.XtraEditors.LabelControl lblNgayBatDau;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dtgvDanhSachTimKiem;
-        private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.ComboBox cboDonVi;
         private System.Windows.Forms.ComboBox cboTenNhanVien;
         private System.Windows.Forms.ComboBox cboMaNhanVien;
