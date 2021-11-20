@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyLuongSanPham_BUS;
+using QuanLyLuongSanPham_DAO;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -18,13 +20,17 @@ namespace QuanLyLuongSanPham_GUI
         {
             InitializeComponent();
         }
-        BUS_Model busModel = new BUS_Model();
+        BUS_SanPham busSanPHam = new BUS_SanPham();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
         private void frmCongDoan_Load(object sender, EventArgs e)
         {
-            dtgvDSModel.DataSource = busModel.layDSModel();
-            dgvCongDoan.DataSource = busCongDoan.layDSCongDoan();
-            toolTipOpenFrmModel.SetToolTip(btnOpenFrmModel, "Thêm model mới");
+            offControlInput();
+            this.dtgvDSCongDoan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvDSSanPham.DefaultCellStyle.ForeColor = Color.Black;
+            loadCbo();
+            toolTipOpenFrmModel.SetToolTip(btnOpenFrmSanPham, "Thêm sản phẩm mới");
+            loadDataSanPham();
+            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -34,9 +40,148 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnOpenFrmModel_Click(object sender, EventArgs e)
         {
-            frmModel frm = new frmModel();
+            frmSanPham frm = new frmSanPham();
             frm.ShowDialog();
         }
+
+        private void loadDataSanPham()
+        {
+            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
+            foreach(var item in listSP)
+            {
+                dtgvDSSanPham.Rows.Add(item.maSanPham, item.tenSanPham, item.giaBan);
+                dtgvDSSanPham.Rows[dtgvDSSanPham.RowCount - 1].Tag = item;
+            }
+        }
+        private void tatBtn()
+        {
+            if (dtgvDSCongDoan.SelectedRows.Count > 0)
+            {
+                btnSuaCongDoan.Enabled = true;
+                btnXoaCongDoan.Enabled = true;
+            }
+            else
+            {
+                btnSuaCongDoan.Enabled = false;
+                btnXoaCongDoan.Enabled = false;
+            }    
+        }
+        private void dtgvDSCongDoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tatBtn();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSCongDoan.Rows[e.RowIndex];
+                txtMaCongDoan.Text = row.Cells[0].Value.ToString();
+                txtTenCongDoan.Text = row.Cells[1].Value.ToString();
+                txtDonGia.Text = row.Cells[2].Value.ToString();
+                cboMaSanPham.Text = row.Cells[3].Value.ToString();
+                cboTenSanPhamm.Text = row.Cells[4].Value.ToString();
+            }
+        }
+        private void offControlInput()
+        {
+            txtMaCongDoan.Enabled = false;
+            txtTenCongDoan.Enabled = false;
+            txtDonGia.Enabled = false;
+            cboMaSanPham.Enabled = false;
+            cboTenSanPhamm.Enabled = false;
+        }
+        private void onControlInput()
+        {
+            txtMaCongDoan.Enabled = true;
+            txtTenCongDoan.Enabled = true;
+            txtDonGia.Enabled = true;
+            cboMaSanPham.Enabled = true;
+            cboTenSanPhamm.Enabled = true;
+        }
+        private void clearControlInput()
+        {
+            txtMaCongDoan.Text = "";
+            txtTenCongDoan.Text = "";
+            txtDonGia.Text = "";
+            cboMaSanPham.Text = "";
+            cboTenSanPhamm.Text = "";
+        }
+        private void loadCbo()
+        {
+            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
+            foreach(var item in listSP)
+            {
+                cboMaSanPham.Items.Add(item.maSanPham);
+                cboTenSanPhamm.Items.Add(item.tenSanPham);
+            }
+        }
+
+        private void cboMaSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
+            foreach (SanPham n in listSP)
+            {
+                if (cboMaSanPham.Text.Equals(n.maSanPham))
+                {
+                    cboTenSanPhamm.Text = n.tenSanPham;
+                }
+            }
+        }
+        private void cboTenSanPhamm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
+            foreach (SanPham n in listSP)
+            {
+                if (cboTenSanPhamm.Text.Equals(n.tenSanPham))
+                {
+                    cboMaSanPham.Text = n.maSanPham;
+                }
+            }
+        }
+        private bool kiemTraNull()
+        {
+            if (txtMaCongDoan.Text == "" || txtTenCongDoan.Text == "" || txtDonGia.Text == "" || cboMaSanPham.Text == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void btnThemCongDoan_Click(object sender, EventArgs e)
+        {
+            if(btnThemCongDoan.Text.Equals("Thêm công đoạn"))
+            {
+                onControlInput();
+                clearControlInput();
+                txtMaCongDoan.Focus();
+                btnThemCongDoan.Text = "Lưu";
+            }
+            else if (kiemTraNull() == true)
+            {
+                MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                btnThemCongDoan.Text = "Thêm công đoạn";
+                offControlInput();
+            }
+            else
+            {
+                DTO_CongDoanSanXuat cd = new DTO_CongDoanSanXuat();
+                cd.SoThuTu = Convert.ToInt32(txtMaCongDoan.Text);
+                cd.TenCongDoan = txtTenCongDoan.Text;
+                cd.DonGia =Convert.ToInt32( txtDonGia.Text);
+                cd.MaSanPham = cboMaSanPham.Text;
+                if (busCongDoan.addCongDoan(cd) == true)
+                {
+                    MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    busCongDoan.addCongDoan(cd);
+                    dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                btnThemCongDoan.Text = "Thêm công đoạn";
+                offControlInput();
+            }
+        }
+
+
 
 
         //private void loadModel()

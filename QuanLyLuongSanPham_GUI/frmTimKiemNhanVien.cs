@@ -115,7 +115,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            //dtgvDanhSachTimKiem.DataSource = busNV.searchNhanVien(cboMaNhanVien.Text,cboTenNhanVien.Text, cboDonVi.Text);
+            dtgvDanhSachTimKiem.DataSource = busNV.searchNhanVien(cboMaNhanVien.Text, cboTenNhanVien.Text, cboDonVi.Text);
         }
     }
 }

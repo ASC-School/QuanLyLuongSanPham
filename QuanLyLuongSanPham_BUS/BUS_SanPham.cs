@@ -24,6 +24,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return sanPhamDAO.layToanBoDanhSachSanPham();
         }
+        public IEnumerable<SanPham> GetSanPhams()
+        {
+            return sanPhamDAO.getSanPhams();
+        }
 
         public List<DTO_Model> getDSModel()
         {

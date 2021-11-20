@@ -159,7 +159,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemNV.Location = new System.Drawing.Point(247, 290);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(193, 50);
-            this.btnThemNV.TabIndex = 0;
+            this.btnThemNV.TabIndex = 10;
             this.btnThemNV.Text = "Thêm nhân viên";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSuaTTNV.Location = new System.Drawing.Point(479, 290);
             this.btnSuaTTNV.Name = "btnSuaTTNV";
             this.btnSuaTTNV.Size = new System.Drawing.Size(193, 50);
-            this.btnSuaTTNV.TabIndex = 1;
+            this.btnSuaTTNV.TabIndex = 11;
             this.btnSuaTTNV.Text = "Sửa thông tin";
             this.btnSuaTTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaTTNV.UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXoaNV.Location = new System.Drawing.Point(710, 290);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(193, 50);
-            this.btnXoaNV.TabIndex = 2;
+            this.btnXoaNV.TabIndex = 12;
             this.btnXoaNV.Text = "Xóa nhân viên";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.UseVisualStyleBackColor = false;
@@ -246,7 +246,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Location = new System.Drawing.Point(943, 290);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(193, 50);
-            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -307,7 +307,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtDonViQuanLy.Location = new System.Drawing.Point(381, 229);
             this.txtDonViQuanLy.Name = "txtDonViQuanLy";
             this.txtDonViQuanLy.Size = new System.Drawing.Size(357, 23);
-            this.txtDonViQuanLy.TabIndex = 10;
+            this.txtDonViQuanLy.TabIndex = 9;
             // 
             // cboTrangThai
             // 
@@ -319,7 +319,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTrangThai.Location = new System.Drawing.Point(381, 197);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(130, 24);
-            this.cboTrangThai.TabIndex = 9;
+            this.cboTrangThai.TabIndex = 8;
             // 
             // label10
             // 
@@ -364,7 +364,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSNV.RowTemplate.Height = 24;
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(1269, 261);
-            this.dtgvDSNV.TabIndex = 42;
+            this.dtgvDSNV.TabIndex = 14;
             this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
             this.dtgvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
             // 
@@ -606,7 +606,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(621, 137);
             this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
             this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeNgayVaoLam.TabIndex = 7;
+            this.dateTimeNgayVaoLam.TabIndex = 6;
             // 
             // dateTimeDayofBirth
             // 
@@ -615,7 +615,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimeDayofBirth.Location = new System.Drawing.Point(621, 108);
             this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
             this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeDayofBirth.TabIndex = 5;
+            this.dateTimeDayofBirth.TabIndex = 4;
             // 
             // cboLoaiNhanVien
             // 
@@ -625,7 +625,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboLoaiNhanVien.Location = new System.Drawing.Point(381, 168);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
             this.cboLoaiNhanVien.Size = new System.Drawing.Size(357, 24);
-            this.cboLoaiNhanVien.TabIndex = 8;
+            this.cboLoaiNhanVien.TabIndex = 7;
             // 
             // cboGioiTinh
             // 
@@ -637,7 +637,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboGioiTinh.Location = new System.Drawing.Point(381, 137);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(112, 24);
-            this.cboGioiTinh.TabIndex = 6;
+            this.cboGioiTinh.TabIndex = 5;
             // 
             // txtSDT
             // 
