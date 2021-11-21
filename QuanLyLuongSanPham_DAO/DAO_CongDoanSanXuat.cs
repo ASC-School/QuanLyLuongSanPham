@@ -63,5 +63,16 @@ namespace QuanLyLuongSanPham_DAO
             }
             return false;
         }
+        public bool xoaCongDoan(int maCongDoan)
+        {
+            CongDoanSanXuat cdTemp = dataBase.CongDoanSanXuats.Where(x => x.soThuTu == maCongDoan).FirstOrDefault();
+            if(cdTemp!= null)
+            {
+                dataBase.CongDoanSanXuats.DeleteOnSubmit(cdTemp);
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

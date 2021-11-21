@@ -181,6 +181,66 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+        private void btnSuaCongDoan_Click(object sender, EventArgs e)
+        {
+            if (btnSuaCongDoan.Text.Equals("Sửa công đoạn"))
+            {
+                onControlInput();
+                txtMaCongDoan.Enabled = false;
+                btnSuaCongDoan.Text = "Lưu";
+            }
+            else if (kiemTraNull() == true)
+            {
+                MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                btnThemCongDoan.Text = "Sửa công đoạn";
+                offControlInput();
+            }
+            else
+            {
+                DTO_CongDoanSanXuat cd = new DTO_CongDoanSanXuat();
+                cd.SoThuTu = Convert.ToInt32(txtMaCongDoan.Text);
+                cd.TenCongDoan = txtTenCongDoan.Text;
+                cd.DonGia = Convert.ToInt32(txtDonGia.Text);
+                cd.MaSanPham = cboMaSanPham.Text;
+                if (busCongDoan.upDateCongDoan(cd) == true)
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    busCongDoan.upDateCongDoan(cd);
+                    dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+                }
+                else
+                {
+                    MessageBox.Show("Fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    Close();
+                }
+                offControlInput();
+                btnSuaCongDoan.Text = "Thêm công đoạn";
+            }
+
+        }
+
+        private void btnXoaCongDoan_Click(object sender, EventArgs e)
+        {
+            DialogResult dlgAnswer;
+            if (dtgvDSCongDoan.SelectedRows.Count > 0)
+            {
+                dlgAnswer = MessageBox.Show("Bạn có muốn xóa ???", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (dlgAnswer == DialogResult.Yes)
+                {
+                    bool cd = busCongDoan.delCongDoan(Convert.ToInt32(txtMaCongDoan.Text));
+                    if (cd == true)
+                    {
+                        MessageBox.Show("successful!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+                    }
+                    else
+                    {
+                        MessageBox.Show("fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    }
+                }
+            }
+        }
+
 
 
 

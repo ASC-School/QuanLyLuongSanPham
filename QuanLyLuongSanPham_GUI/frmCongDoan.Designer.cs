@@ -416,6 +416,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSuaCongDoan.TabIndex = 6;
             this.btnSuaCongDoan.Text = "Sửa công đoạn";
             this.btnSuaCongDoan.UseVisualStyleBackColor = false;
+            this.btnSuaCongDoan.Click += new System.EventHandler(this.btnSuaCongDoan_Click);
             // 
             // btnXoaCongDoan
             // 
@@ -431,6 +432,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXoaCongDoan.TabIndex = 7;
             this.btnXoaCongDoan.Text = "Xóa công đoạn";
             this.btnXoaCongDoan.UseVisualStyleBackColor = false;
+            this.btnXoaCongDoan.Click += new System.EventHandler(this.btnXoaCongDoan_Click);
             // 
             // btnOpenFrmSanPham
             // 

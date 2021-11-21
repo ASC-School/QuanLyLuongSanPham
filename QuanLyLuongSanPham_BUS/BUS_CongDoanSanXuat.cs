@@ -26,5 +26,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.suaThongTinCongDoan(cdUpdate);
         }
+        public bool delCongDoan(int maCongDoan)
+        {
+            return cd.xoaCongDoan(maCongDoan);
+        }
     }
 }
