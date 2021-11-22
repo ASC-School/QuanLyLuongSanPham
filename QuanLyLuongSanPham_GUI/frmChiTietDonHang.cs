@@ -39,6 +39,7 @@ namespace QuanLyLuongSanPham_GUI
             bsPHSanPham = new BindingSource();
             lstSanPham = donHangBUS.getDSSanPham();
             toolTipOpenFrmSanPham.SetToolTip(btnOpenFrmSanPham,"Thêm sản phẩm");
+            addLuoiChiTietDonHang(dgvChiTietDonHang);
         }
 
         private void loadChiTietDonHangToDataGridView()
@@ -74,6 +75,83 @@ namespace QuanLyLuongSanPham_GUI
             dgr.Columns["namSanXuat"].HeaderText = "Năm sản xuất";
             dgr.Columns["giaBan"].HeaderText = "Giá bán";
             dgr.Columns["trangThai"].HeaderText = "Trạng thái";
+        }
+
+        private void addLuoiChiTietDonHang(DataGridView dgr)
+        {
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maDonHang";
+            dc.HeaderText = "Mã đơn hàng";
+            dc.Name = "maDonHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenKhachHang";
+            dc.HeaderText = "Tên Khách Hàng";
+            dc.Name = "tenKhachHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soDienThoaiKhachHang";
+            dc.HeaderText = "Số điện thoại khách hàng";
+            dc.Name = "soDienThoaiKhachHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maSanPham";
+            dc.HeaderText = "Mã sản phẩm";
+            dc.Name = "maSanPham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenSanPham";
+            dc.HeaderText = "Tên sản phẩm";
+            dc.Name = "tenSanPham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soLuong";
+            dc.HeaderText = "Số lượng";
+            dc.Name = "soLuong";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "donGiaSanPham";
+            dc.HeaderText = "Đơn giá sản phẩm";
+            dc.Name = "donGiaSanPham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "thanhTien";
+            dc.HeaderText = "Thành tiền";
+            dc.Name = "thanhTien";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maNhanVien";
+            dc.HeaderText = "Mã nhân viên";
+            dc.Name = "maNhanVien";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+
         }
         private void FormatLuoi(DataGridView dgr)
         {
@@ -113,6 +191,8 @@ namespace QuanLyLuongSanPham_GUI
         {
             loadChiTietDonHangToDataGridView();
             loadDSSanPhamToDataGridView();
+            this.dgvChiTietDonHang.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvSanPham.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void hienThongTin()

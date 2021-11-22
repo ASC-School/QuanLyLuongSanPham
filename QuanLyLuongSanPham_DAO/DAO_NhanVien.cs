@@ -35,10 +35,7 @@ namespace QuanLyLuongSanPham_DAO
                 tmp.SoDienThoai = nv.soDienThoai;
                 tmp.NgayBatDauCongTac = nv.ngayBatDauCongTac;
                 tmp.NgaySinh = nv.ngaySinh;
-                if (nv.gioiTinh == true)
-                    tmp.GioiTinh = "nam";
-                else
-                    tmp.GioiTinh = "nữ";
+                tmp.GioiTinh = nv.gioiTinh;
                 tmp.TrangThai = (bool)nv.trangThai;
                 tmp.LoaiNhanVien = nv.LoaiNhanVien.ToString();
                 lst.Add(tmp);
@@ -62,7 +59,7 @@ namespace QuanLyLuongSanPham_DAO
                 q = (from nv in dataBase.NhanViens
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                      where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate)
                      select new
                      {
@@ -83,7 +80,7 @@ namespace QuanLyLuongSanPham_DAO
                 q = (from nv in dataBase.NhanViens
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                      where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && pChamCong.diLam == true)
                      select new
                      {
@@ -104,7 +101,7 @@ namespace QuanLyLuongSanPham_DAO
                 q = (from nv in dataBase.NhanViens
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                      where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && pChamCong.diLam == false)
                      select new
                      {
@@ -125,7 +122,7 @@ namespace QuanLyLuongSanPham_DAO
                 q = (from nv in dataBase.NhanViens
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                      where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai))
                      select new
                      {
@@ -147,7 +144,7 @@ namespace QuanLyLuongSanPham_DAO
                     q = (from nv in dataBase.NhanViens
                          join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                          join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                          where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
                          select new
                          {
@@ -167,7 +164,7 @@ namespace QuanLyLuongSanPham_DAO
                     q = (from nv in dataBase.NhanViens
                          join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                          join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                          where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
                          select new
                          {
@@ -187,7 +184,7 @@ namespace QuanLyLuongSanPham_DAO
                     q = (from nv in dataBase.NhanViens
                          join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                          join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                         join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                         join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                          where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == true)
                          select new
                          {
@@ -209,7 +206,7 @@ namespace QuanLyLuongSanPham_DAO
                 q = (from nv in dataBase.NhanViens
                      join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
                      join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                     join pChamCong in dataBase.PhieuChamCongs on nv.maNhanVien equals pChamCong.maNhanVien
+                     join pChamCong in dataBase.PhieuChamCongNhanVienHanhChanhs on nv.maNhanVien equals pChamCong.maNhanVien
                      where (pChamCong.ngayChamCong >= starDate && pChamCong.ngayChamCong <= endDate && loaiNV.maLoai.Equals(maLoai) && pChamCong.diLam == false)
                      select new
                      {
@@ -245,10 +242,7 @@ namespace QuanLyLuongSanPham_DAO
                 NhanVien temp = new NhanVien();
                 temp.maNhanVien = nv.MaNhanVien;
                 temp.tenNhanVien = nv.TenNhanVien;
-                if (nv.GioiTinh.Equals("Nam"))
-                    temp.gioiTinh = false;
-                else
-                    temp.gioiTinh = true;
+                temp.gioiTinh = nv.GioiTinh;
                 temp.soDienThoai = nv.SoDienThoai;
                 temp.ngaySinh = nv.NgaySinh;
                 temp.ngayBatDauCongTac = nv.NgayBatDauCongTac;
@@ -268,10 +262,7 @@ namespace QuanLyLuongSanPham_DAO
             if (nv.Count() > 0)
             {
                 nv.First().tenNhanVien = nvUpdate.TenNhanVien;
-                if (nvUpdate.GioiTinh.Equals("Nam"))
-                    nv.First().gioiTinh = false;
-                else
-                    nv.First().gioiTinh = true;
+                nv.First().gioiTinh = nvUpdate.GioiTinh;
                 nv.First().soDienThoai = nvUpdate.SoDienThoai;
                 nv.First().ngaySinh = nvUpdate.NgaySinh;
                 nv.First().ngayBatDauCongTac = nvUpdate.NgayBatDauCongTac;

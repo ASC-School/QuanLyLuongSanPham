@@ -23,7 +23,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien nhanVienBUS;
         checkFrmDonHang checkDH = new checkFrmDonHang();
         DTO_DonHang newDonHang;
-
+        IEnumerable<dynamic> lstTimKiemToDataGrid = null;
         public frmGDQLDonHang()
         {
             InitializeComponent();
@@ -32,20 +32,45 @@ namespace QuanLyLuongSanPham_GUI
             nhanVienBUS = new BUS_NhanVien();
         }
 
+        public frmGDQLDonHang(IEnumerable<dynamic> lstTimKiem)
+        {
+            InitializeComponent();
+            donHangBUS = new BUS_DonHang();
+            bsPH = new BindingSource();
+            nhanVienBUS = new BUS_NhanVien();
+            lstTimKiemToDataGrid = lstTimKiem;
+        }
+
         private void frmGDQLDonHang_Load(object sender, EventArgs e)
         {
             // ẩn nút
             btnLuuDonHang.Enabled = false;
             btnHuyDonHang.Enabled = false;
             btnInDonHang.Enabled = false;
-
-            loadDonHangToDataGridView();
+            this.dgvDSDonHang.DefaultCellStyle.ForeColor = Color.Black;
+            if (lstTimKiemToDataGrid != null)
+            {
+                loadDonHangToDataGridView(lstTimKiemToDataGrid);
+            }
+            else
+            {
+                loadDonHangToDataGridView();
+            }
             loadComBoBox();
         }
         private void loadDonHangToDataGridView()
         {
             // load data
             bsPH.DataSource = donHangBUS.getAllDonHang();
+            dgvDSDonHang.DataSource = bsPH;
+            bindingNavigatorDonHang.BindingSource = bsPH;
+            FormatLuoi(dgvDSDonHang);
+        }
+
+        private void loadDonHangToDataGridView(IEnumerable<dynamic> lst)
+        {
+            // load data
+            bsPH.DataSource = lst;
             dgvDSDonHang.DataSource = bsPH;
             bindingNavigatorDonHang.BindingSource = bsPH;
             FormatLuoi(dgvDSDonHang);
