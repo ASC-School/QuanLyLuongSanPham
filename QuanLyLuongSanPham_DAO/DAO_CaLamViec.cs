@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DTO;
-
+using QuanLyLuongSanPham_DAO;
 namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_CaLamViec
@@ -29,6 +29,11 @@ namespace QuanLyLuongSanPham_DAO
                 lstCaLamViec.Add(tmp);
             }
             return lstCaLamViec;
+        }
+        public IEnumerable<CaLamViec> layCaLamViec()
+        {
+            IEnumerable <CaLamViec> q = from n in dataBase.CaLamViecs select n;
+            return q;
         }
 
 
