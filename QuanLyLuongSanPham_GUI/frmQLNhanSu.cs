@@ -32,6 +32,7 @@ namespace QuanLyLuongSanPham_GUI
         private void frmQLNhanSu_Load(object sender, EventArgs e)
         {
             loadDSNVtoDTGV();
+            DataGridViewRow row = new DataGridViewRow();
             loadDataToCbo();
         }
         // Load data từ database lên datagrid view
@@ -50,12 +51,7 @@ namespace QuanLyLuongSanPham_GUI
                 DataGridViewRow row = this.dtgvDSNV.Rows[e.RowIndex];
                 txtMaNv.Text = row.Cells[0].Value.ToString();
                 txtTenNv.Text = row.Cells[1].Value.ToString();
-                if (row.Cells[2].Value.ToString().Equals("True"))
-                {
-                    cboGioiTinh.Text = "Nữ";
-                }
-                else
-                    cboGioiTinh.Text = "Nam";
+                cboGioiTinh.Text = row.Cells[2].Value.ToString();
                 txtSDT.Text = row.Cells[3].Value.ToString();
                 txtDiaChi.Text = row.Cells[4].Value.ToString();
                 dateTimeDayofBirth.Text = row.Cells[5].Value.ToString();
@@ -363,15 +359,22 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     maLoaiNV = null;
                 }
-                    
+
                 if (radTatCa.Checked)
                     trangThai = radTatCa.Text;
                 else if (radDiLam.Checked)
                     trangThai = radDiLam.Text;
                 else
                     trangThai = radNghiLam.Text;
-                dtgvDSNV.DataSource = busNV.getNhanVienForLoc(maLoaiNV,trangThai, dtpStartDate.Value, dtpEndDate.Value);
+                dtgvDSNV.DataSource = busNV.getNhanVienForLoc(maLoaiNV, trangThai, dtpStartDate.Value, dtpEndDate.Value);
             }
+            //dtgvDSNV.DataSource = busNV.getNhanVienForLoc(maLoaiNV,trangThai, dtpStartDate.Value, dtpEndDate.Value);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemNhanVien frm = new frmTimKiemNhanVien();
+            frm.ShowDialog();
         }
     }
 }

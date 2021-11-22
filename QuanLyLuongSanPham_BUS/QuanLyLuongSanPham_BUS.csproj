@@ -48,11 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_CongDoanSanXuat.cs" />
     <Compile Include="BUS_DonHang.cs" />
     <Compile Include="BUS_DonViQuanLy.cs" />
     <Compile Include="BUS_LoaiNhanVien.cs" />
+    <Compile Include="BUS_LuongCongNhan.cs" />
+    <Compile Include="BUS_LuongNhanVienHanhChanh.cs" />
+    <Compile Include="BUS_Model.cs" />
     <Compile Include="BUS_NhanVien.cs" />
+    <Compile Include="BUS_PhanQuyen.cs" />
     <Compile Include="BUS_SanPham.cs" />
+    <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

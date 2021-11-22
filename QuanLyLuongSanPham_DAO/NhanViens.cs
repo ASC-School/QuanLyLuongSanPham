@@ -1,0 +1,3 @@
+﻿namespace QuanLyLuongSanPham_DAO
+{
+}

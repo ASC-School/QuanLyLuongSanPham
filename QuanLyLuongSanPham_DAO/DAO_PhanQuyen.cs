@@ -14,6 +14,14 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-
+        public IEnumerable<PhanQuyen> layQuyenNVTheoMa(string strMaLoai)
+        {
+            IEnumerable<PhanQuyen> pqNV = from pq in dataBase.PhanQuyens
+                                          join ml in dataBase.LoaiNhanViens
+                                          on pq.maLoai equals ml.maLoai
+                                          where pq.maLoai.Equals(strMaLoai)
+                                          select pq;
+            return pqNV;                               
+        }
     }
 }

@@ -63,6 +63,12 @@
     <Compile Include="ButtonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frmCongDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCongDoan.Designer.cs">
+      <DependentUpon>frmCongDoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +98,6 @@
     </Compile>
     <Compile Include="frmPhat.Designer.cs">
       <DependentUpon>frmPhat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSanPham.Designer.cs">
-      <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietDonHang.cs">
       <SubType>Form</SubType>
@@ -147,6 +147,12 @@
     <Compile Include="frmQLNhanSu.Designer.cs">
       <DependentUpon>frmQLNhanSu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanPham.designer.cs">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regular Expression\checkFrmDonHang.cs" />
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="frmCongDoan.resx">
+      <DependentUpon>frmCongDoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModel.resx">
       <DependentUpon>frmModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhat.resx">
       <DependentUpon>frmPhat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSanPham.resx">
-      <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietDonHang.resx">
       <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="frmQLNhanSu.resx">
       <DependentUpon>frmQLNhanSu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSanPham.resx">
+      <DependentUpon>frmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDonHang.resx">
       <DependentUpon>frmThongKeDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +255,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\QuanLyLuongSanPham_BUS.BUS_LuongCongNhan.datasource" />
+    <None Include="Properties\DataSources\QuanLyLuongSanPham_DAO.DAO_LuongCongNhan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

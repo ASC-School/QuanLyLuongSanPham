@@ -48,7 +48,18 @@ namespace QuanLyLuongSanPham_GUI
             this.label10 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
+            this.Mã_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tên_nhân_viên = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giới_tính = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Địa_chỉ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngày_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngày_vào_làm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loại_Nv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Đơn_vị_quản_lí = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trạng_thái = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.radNghiLam = new System.Windows.Forms.RadioButton();
             this.radDiLam = new System.Windows.Forms.RadioButton();
             this.radTatCa = new System.Windows.Forms.RadioButton();
@@ -72,14 +83,13 @@ namespace QuanLyLuongSanPham_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.Avata = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
-            this.btnThongKe = new QuanLyLuongSanPham_GUI.ButtonCustom();
-            this.btnThemAvata = new QuanLyLuongSanPham_GUI.ButtonCustom();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,7 +159,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemNV.Location = new System.Drawing.Point(247, 290);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(193, 50);
-            this.btnThemNV.TabIndex = 0;
+            this.btnThemNV.TabIndex = 10;
             this.btnThemNV.Text = "Thêm nhân viên";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.UseVisualStyleBackColor = false;
@@ -186,7 +196,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSuaTTNV.Location = new System.Drawing.Point(479, 290);
             this.btnSuaTTNV.Name = "btnSuaTTNV";
             this.btnSuaTTNV.Size = new System.Drawing.Size(193, 50);
-            this.btnSuaTTNV.TabIndex = 1;
+            this.btnSuaTTNV.TabIndex = 11;
             this.btnSuaTTNV.Text = "Sửa thông tin";
             this.btnSuaTTNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaTTNV.UseVisualStyleBackColor = false;
@@ -211,7 +221,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXoaNV.Location = new System.Drawing.Point(710, 290);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(193, 50);
-            this.btnXoaNV.TabIndex = 2;
+            this.btnXoaNV.TabIndex = 12;
             this.btnXoaNV.Text = "Xóa nhân viên";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.UseVisualStyleBackColor = false;
@@ -236,10 +246,11 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Location = new System.Drawing.Point(943, 290);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(193, 50);
-            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panelControl5
             // 
@@ -296,10 +307,11 @@ namespace QuanLyLuongSanPham_GUI
             this.txtDonViQuanLy.Location = new System.Drawing.Point(381, 229);
             this.txtDonViQuanLy.Name = "txtDonViQuanLy";
             this.txtDonViQuanLy.Size = new System.Drawing.Size(357, 23);
-            this.txtDonViQuanLy.TabIndex = 10;
+            this.txtDonViQuanLy.TabIndex = 9;
             // 
             // cboTrangThai
             // 
+            this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Items.AddRange(new object[] {
             "Đi làm",
@@ -307,7 +319,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTrangThai.Location = new System.Drawing.Point(381, 197);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(130, 24);
-            this.cboTrangThai.TabIndex = 9;
+            this.cboTrangThai.TabIndex = 8;
             // 
             // label10
             // 
@@ -335,14 +347,106 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSNV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvDSNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Mã_nhân_viên,
+            this.Tên_nhân_viên,
+            this.Giới_tính,
+            this.SDT,
+            this.Địa_chỉ,
+            this.Ngày_sinh,
+            this.Ngày_vào_làm,
+            this.Loại_Nv,
+            this.Đơn_vị_quản_lí,
+            this.Trạng_thái});
             this.dtgvDSNV.Location = new System.Drawing.Point(5, 346);
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.RowHeadersWidth = 51;
             this.dtgvDSNV.RowTemplate.Height = 24;
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(1269, 261);
-            this.dtgvDSNV.TabIndex = 42;
+            this.dtgvDSNV.TabIndex = 14;
+            this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
             this.dtgvDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellContentClick);
+            // 
+            // Mã_nhân_viên
+            // 
+            this.Mã_nhân_viên.DataPropertyName = "Mã_nhân_viên";
+            this.Mã_nhân_viên.HeaderText = "Mã nhân viên";
+            this.Mã_nhân_viên.MinimumWidth = 6;
+            this.Mã_nhân_viên.Name = "Mã_nhân_viên";
+            this.Mã_nhân_viên.Width = 125;
+            // 
+            // Tên_nhân_viên
+            // 
+            this.Tên_nhân_viên.DataPropertyName = "Tên_nhân_viên";
+            this.Tên_nhân_viên.HeaderText = "Tên nhân viên";
+            this.Tên_nhân_viên.MinimumWidth = 6;
+            this.Tên_nhân_viên.Name = "Tên_nhân_viên";
+            this.Tên_nhân_viên.Width = 125;
+            // 
+            // Giới_tính
+            // 
+            this.Giới_tính.DataPropertyName = "Giới_tính";
+            this.Giới_tính.HeaderText = "Giới tính";
+            this.Giới_tính.MinimumWidth = 6;
+            this.Giới_tính.Name = "Giới_tính";
+            this.Giới_tính.Width = 125;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 125;
+            // 
+            // Địa_chỉ
+            // 
+            this.Địa_chỉ.DataPropertyName = "Địa_chỉ";
+            this.Địa_chỉ.HeaderText = "Địa chỉ";
+            this.Địa_chỉ.MinimumWidth = 6;
+            this.Địa_chỉ.Name = "Địa_chỉ";
+            this.Địa_chỉ.Width = 125;
+            // 
+            // Ngày_sinh
+            // 
+            this.Ngày_sinh.DataPropertyName = "Ngày_sinh";
+            this.Ngày_sinh.HeaderText = "Ngày sinh";
+            this.Ngày_sinh.MinimumWidth = 6;
+            this.Ngày_sinh.Name = "Ngày_sinh";
+            this.Ngày_sinh.Width = 125;
+            // 
+            // Ngày_vào_làm
+            // 
+            this.Ngày_vào_làm.DataPropertyName = "Ngày_vào_làm";
+            this.Ngày_vào_làm.HeaderText = "Ngày vào làm";
+            this.Ngày_vào_làm.MinimumWidth = 6;
+            this.Ngày_vào_làm.Name = "Ngày_vào_làm";
+            this.Ngày_vào_làm.Width = 125;
+            // 
+            // Loại_Nv
+            // 
+            this.Loại_Nv.DataPropertyName = "Loại_Nv";
+            this.Loại_Nv.HeaderText = "Loại nhân viên";
+            this.Loại_Nv.MinimumWidth = 6;
+            this.Loại_Nv.Name = "Loại_Nv";
+            this.Loại_Nv.Width = 125;
+            // 
+            // Đơn_vị_quản_lí
+            // 
+            this.Đơn_vị_quản_lí.DataPropertyName = "Đơn_vị_quản_lí";
+            this.Đơn_vị_quản_lí.HeaderText = "Đơn vị quản lí";
+            this.Đơn_vị_quản_lí.MinimumWidth = 6;
+            this.Đơn_vị_quản_lí.Name = "Đơn_vị_quản_lí";
+            this.Đơn_vị_quản_lí.Width = 125;
+            // 
+            // Trạng_thái
+            // 
+            this.Trạng_thái.DataPropertyName = "Trạng_thái";
+            this.Trạng_thái.HeaderText = "Trạng thái";
+            this.Trạng_thái.MinimumWidth = 6;
+            this.Trạng_thái.Name = "Trạng_thái";
+            this.Trạng_thái.Width = 125;
             // 
             // panelControl2
             // 
@@ -371,6 +475,25 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(359, 221);
             this.panelControl2.TabIndex = 30;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThongKe.BorderRadius = 5;
+            this.btnThongKe.BorderSize = 1;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
+            this.btnThongKe.TabIndex = 6;
+            this.btnThongKe.Text = "Lọc";
+            this.btnThongKe.TextColor = System.Drawing.Color.Black;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // radNghiLam
             // 
@@ -483,7 +606,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimeNgayVaoLam.Location = new System.Drawing.Point(621, 137);
             this.dateTimeNgayVaoLam.Name = "dateTimeNgayVaoLam";
             this.dateTimeNgayVaoLam.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeNgayVaoLam.TabIndex = 7;
+            this.dateTimeNgayVaoLam.TabIndex = 6;
             // 
             // dateTimeDayofBirth
             // 
@@ -492,18 +615,21 @@ namespace QuanLyLuongSanPham_GUI
             this.dateTimeDayofBirth.Location = new System.Drawing.Point(621, 108);
             this.dateTimeDayofBirth.Name = "dateTimeDayofBirth";
             this.dateTimeDayofBirth.Size = new System.Drawing.Size(117, 23);
-            this.dateTimeDayofBirth.TabIndex = 5;
+            this.dateTimeDayofBirth.TabIndex = 4;
             // 
             // cboLoaiNhanVien
             // 
+            this.cboLoaiNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiNhanVien.FormattingEnabled = true;
+            this.cboLoaiNhanVien.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboLoaiNhanVien.Location = new System.Drawing.Point(381, 168);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
             this.cboLoaiNhanVien.Size = new System.Drawing.Size(357, 24);
-            this.cboLoaiNhanVien.TabIndex = 8;
+            this.cboLoaiNhanVien.TabIndex = 7;
             // 
             // cboGioiTinh
             // 
+            this.cboGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGioiTinh.FormattingEnabled = true;
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
@@ -511,7 +637,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboGioiTinh.Location = new System.Drawing.Point(381, 137);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(112, 24);
-            this.cboGioiTinh.TabIndex = 6;
+            this.cboGioiTinh.TabIndex = 5;
             // 
             // txtSDT
             // 
@@ -600,6 +726,25 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Size = new System.Drawing.Size(213, 283);
             this.panelControl1.TabIndex = 28;
             // 
+            // btnThemAvata
+            // 
+            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThemAvata.BorderRadius = 5;
+            this.btnThemAvata.BorderSize = 1;
+            this.btnThemAvata.FlatAppearance.BorderSize = 0;
+            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
+            this.btnThemAvata.Location = new System.Drawing.Point(35, 238);
+            this.btnThemAvata.Name = "btnThemAvata";
+            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
+            this.btnThemAvata.TabIndex = 0;
+            this.btnThemAvata.Text = "Chọn ảnh";
+            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
+            this.btnThemAvata.UseVisualStyleBackColor = false;
+            this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
+            // 
             // Avata
             // 
             this.Avata.BackColor = System.Drawing.Color.Silver;
@@ -660,44 +805,6 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuong.Size = new System.Drawing.Size(170, 23);
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.btnThongKe.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThongKe.BorderRadius = 5;
-            this.btnThongKe.BorderSize = 1;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.Location = new System.Drawing.Point(129, 170);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(139, 40);
-            this.btnThongKe.TabIndex = 6;
-            this.btnThongKe.Text = "Lọc";
-            this.btnThongKe.TextColor = System.Drawing.Color.Black;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnThemAvata
-            // 
-            this.btnThemAvata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.btnThemAvata.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.btnThemAvata.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThemAvata.BorderRadius = 5;
-            this.btnThemAvata.BorderSize = 1;
-            this.btnThemAvata.FlatAppearance.BorderSize = 0;
-            this.btnThemAvata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemAvata.ForeColor = System.Drawing.Color.Black;
-            this.btnThemAvata.Location = new System.Drawing.Point(35, 238);
-            this.btnThemAvata.Name = "btnThemAvata";
-            this.btnThemAvata.Size = new System.Drawing.Size(139, 40);
-            this.btnThemAvata.TabIndex = 0;
-            this.btnThemAvata.Text = "Chọn ảnh";
-            this.btnThemAvata.TextColor = System.Drawing.Color.Black;
-            this.btnThemAvata.UseVisualStyleBackColor = false;
-            this.btnThemAvata.Click += new System.EventHandler(this.btnThemAvata_Click);
             // 
             // frmQLNhanSu
             // 
@@ -785,5 +892,15 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDonViQuanLy;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mã_nhân_viên;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tên_nhân_viên;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Giới_tính;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Địa_chỉ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngày_sinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngày_vào_làm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loại_Nv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Đơn_vị_quản_lí;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trạng_thái;
     }
 }

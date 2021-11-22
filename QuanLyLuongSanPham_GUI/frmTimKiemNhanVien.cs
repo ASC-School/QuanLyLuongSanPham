@@ -16,7 +16,7 @@ namespace QuanLyLuongSanPham_GUI
     {
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
-        BUS_DonViQuanLy busDonVi = new BUS_DonViQuanLy();
+        string maLoai;
         public frmTimKiemNhanVien()
         {
             InitializeComponent();
@@ -49,11 +49,11 @@ namespace QuanLyLuongSanPham_GUI
         }
         public void loadDataToCbo()
         {
-            IEnumerable<DonViQuanLy> dsDonVi = busDonVi.getDSDonVi();
+            IEnumerable<LoaiNhanVien> dsLoai = busLoaiNV.getNhanVienForQLNS();
             IEnumerable<NhanVien> dsNV = busNV.layAllDSNV();
-            foreach (DonViQuanLy lnv in dsDonVi)
+            foreach (LoaiNhanVien lnv in dsLoai)
             {
-                cboDonVi.Items.Add(lnv.tenBoPhan);
+                cboDonVi.Items.Add(lnv.loaiNhanVien1);
                 
             }
             foreach(NhanVien nv in dsNV)
@@ -67,6 +67,55 @@ namespace QuanLyLuongSanPham_GUI
         {
             Util.EndAnimate(this, Util.Effect.Center, 150, 30);
             this.Close();
+        }
+
+        private void cboMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<NhanVien> dsNV = busNV.layAllDSNV();
+            IEnumerable<LoaiNhanVien> dsLoai = busLoaiNV.getNhanVienForQLNS();
+            foreach (NhanVien n in dsNV)
+            {
+                if (cboMaNhanVien.Text.Equals(n.maNhanVien))
+                {
+                    cboTenNhanVien.Text = n.tenNhanVien;
+                    maLoai = n.maLoai;
+                    
+                }
+                foreach (LoaiNhanVien lnv in dsLoai)
+                {
+                    if (lnv.maLoai.Equals(maLoai))
+                    {
+                        cboDonVi.Text = lnv.loaiNhanVien1;
+                    }
+                }
+            }
+        }
+
+        private void cboTenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<NhanVien> dsNV = busNV.layAllDSNV();
+            foreach (NhanVien n in dsNV)
+            {
+                if (cboTenNhanVien.Text.Equals(n.tenNhanVien))
+                {
+                    cboMaNhanVien.Text = n.maNhanVien;
+                    maLoai = n.maLoai;
+                }
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cboMaNhanVien.Text = null;
+            cboDonVi.Text = null;
+            cboTenNhanVien.Text = null;
+            cboMaNhanVien.Focus();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            dtgvDanhSachTimKiem.DataSource = busNV.searchNhanVien(cboMaNhanVien.Text, cboTenNhanVien.Text, cboDonVi.Text);
         }
     }
 }
