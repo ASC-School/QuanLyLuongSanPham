@@ -33,6 +33,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.cboThongKeDonGia = new System.Windows.Forms.ComboBox();
             this.lvwThongKeDonHang = new System.Windows.Forms.ListView();
@@ -46,17 +47,16 @@ namespace QuanLyLuongSanPham_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.imgLon = new System.Windows.Forms.ImageList(this.components);
             this.imgNho = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -94,11 +94,24 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.Text = "THỐNG KÊ ĐƠN HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
+            this.panelControl2.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Appearance.Options.UseBorderColor = true;
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.panelControl2.Controls.Add(this.cboThongKeDonGia);
             this.panelControl2.Controls.Add(this.lvwThongKeDonHang);
             this.panelControl2.Controls.Add(this.btnDong);
@@ -111,6 +124,8 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.FireScrollEventOnMouseWheel = true;
             this.panelControl2.Location = new System.Drawing.Point(27, 71);
+            this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1215, 520);
             this.panelControl2.TabIndex = 0;
@@ -156,7 +171,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnInDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInDonHang.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnInDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnInDonHang.Location = new System.Drawing.Point(722, 454);
+            this.btnInDonHang.Location = new System.Drawing.Point(968, 454);
             this.btnInDonHang.Name = "btnInDonHang";
             this.btnInDonHang.Size = new System.Drawing.Size(230, 47);
             this.btnInDonHang.TabIndex = 3;
@@ -193,7 +208,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayKetThuc.Size = new System.Drawing.Size(285, 32);
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(285, 34);
             this.dateNgayKetThuc.TabIndex = 1;
             // 
             // dateNgayBatDau
@@ -211,7 +226,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(305, 32);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(305, 34);
             this.dateNgayBatDau.TabIndex = 1;
             // 
             // label3
@@ -259,17 +274,6 @@ namespace QuanLyLuongSanPham_GUI
             this.imgNho.ImageSize = new System.Drawing.Size(16, 16);
             this.imgNho.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmThongKeDonHang
             // 
             this.Appearance.Options.UseFont = true;
@@ -287,6 +291,7 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -294,7 +299,6 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayBatDau.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

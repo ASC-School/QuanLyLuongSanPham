@@ -30,15 +30,15 @@ namespace QuanLyLuongSanPham_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham));
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.dgvModel = new System.Windows.Forms.DataGridView();
@@ -99,85 +99,89 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // dgvSanPham
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSanPham.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSanPham.Location = new System.Drawing.Point(9, 277);
             this.dgvSanPham.Name = "dgvSanPham";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSanPham.Size = new System.Drawing.Size(1077, 140);
             this.dgvSanPham.TabIndex = 0;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
             // dgvModel
             // 
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvModel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvModel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvModel.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvModel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvModel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvModel.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvModel.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvModel.GridColor = System.Drawing.Color.Black;
             this.dgvModel.Location = new System.Drawing.Point(637, 34);
             this.dgvModel.Name = "dgvModel";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvModel.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvModel.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvModel.RowHeadersWidth = 51;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvModel.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvModel.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvModel.Size = new System.Drawing.Size(440, 155);
             this.dgvModel.TabIndex = 0;
             this.dgvModel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModel_CellClick);
@@ -188,7 +192,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã sản phẩm:";
             // 
@@ -196,7 +200,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtMaSanPham.Location = new System.Drawing.Point(105, 10);
             this.txtMaSanPham.Name = "txtMaSanPham";
-            this.txtMaSanPham.Size = new System.Drawing.Size(229, 23);
+            this.txtMaSanPham.Size = new System.Drawing.Size(229, 21);
             this.txtMaSanPham.TabIndex = 2;
             // 
             // panelControl1
@@ -269,7 +273,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorSanPham.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigatorSanPham.Name = "bindingNavigatorSanPham";
             this.bindingNavigatorSanPham.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigatorSanPham.Size = new System.Drawing.Size(302, 27);
+            this.bindingNavigatorSanPham.Size = new System.Drawing.Size(261, 27);
             this.bindingNavigatorSanPham.TabIndex = 9;
             this.bindingNavigatorSanPham.Text = "bindingNavigator1";
             // 
@@ -279,13 +283,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
             this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
             this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem1.Text = "Add new";
             // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
             // 
@@ -295,7 +299,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
             this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
             this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem1.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem1
@@ -304,7 +308,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
             this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
             this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem1.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem1
@@ -313,19 +317,18 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
             this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
             this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
             // 
             // bindingNavigatorSeparator3
             // 
             this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem1
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Position";
             this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -334,7 +337,7 @@ namespace QuanLyLuongSanPham_GUI
             // bindingNavigatorSeparator4
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem1
             // 
@@ -342,7 +345,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
             this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
             this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem1.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem1
@@ -351,13 +354,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
             this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
             this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem1.Text = "Move last";
             // 
             // bindingNavigatorSeparator5
             // 
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
-            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
             // btnLuuSanPham
             // 
@@ -432,6 +435,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnLoadModel
             // 
+            this.btnLoadModel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadModel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadModel.BackgroundImage")));
             this.btnLoadModel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadModel.Location = new System.Drawing.Point(1045, 4);
@@ -443,6 +447,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnLoadDSSanPham
             // 
+            this.btnLoadDSSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDSSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSSanPham.BackgroundImage")));
             this.btnLoadDSSanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadDSSanPham.Location = new System.Drawing.Point(1054, 248);
@@ -457,7 +462,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenModel.FormattingEnabled = true;
             this.cboTenModel.Location = new System.Drawing.Point(105, 159);
             this.cboTenModel.Name = "cboTenModel";
-            this.cboTenModel.Size = new System.Drawing.Size(229, 24);
+            this.cboTenModel.Size = new System.Drawing.Size(229, 21);
             this.cboTenModel.TabIndex = 4;
             this.cboTenModel.SelectedIndexChanged += new System.EventHandler(this.cboTenModel_SelectedIndexChanged);
             // 
@@ -466,18 +471,20 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaModel.FormattingEnabled = true;
             this.cboMaModel.Location = new System.Drawing.Point(105, 134);
             this.cboMaModel.Name = "cboMaModel";
-            this.cboMaModel.Size = new System.Drawing.Size(229, 24);
+            this.cboMaModel.Size = new System.Drawing.Size(229, 21);
             this.cboMaModel.TabIndex = 4;
             this.cboMaModel.SelectedIndexChanged += new System.EventHandler(this.cboMaModel_SelectedIndexChanged);
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.ForeColor = System.Drawing.Color.Crimson;
             this.label11.Location = new System.Drawing.Point(724, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(326, 33);
+            this.label11.Size = new System.Drawing.Size(257, 25);
             this.label11.TabIndex = 3;
             this.label11.Text = "BẢNG THÔNG TIN MODEL";
             // 
@@ -488,7 +495,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.ForeColor = System.Drawing.Color.Crimson;
             this.label8.Location = new System.Drawing.Point(414, 248);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(367, 33);
+            this.label8.Size = new System.Drawing.Size(291, 25);
             this.label8.TabIndex = 3;
             this.label8.Text = "BẢNG THÔNG TIN SẢN PHẨM";
             // 
@@ -498,7 +505,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(6, 188);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 17);
+            this.label10.Size = new System.Drawing.Size(98, 13);
             this.label10.TabIndex = 1;
             this.label10.Text = "Thông số kỹ thuật:";
             // 
@@ -508,7 +515,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(6, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 17);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Trạng thái:";
             // 
@@ -516,7 +523,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtThongSoKyThuat.Location = new System.Drawing.Point(105, 183);
             this.txtThongSoKyThuat.Name = "txtThongSoKyThuat";
-            this.txtThongSoKyThuat.Size = new System.Drawing.Size(229, 23);
+            this.txtThongSoKyThuat.Size = new System.Drawing.Size(229, 21);
             this.txtThongSoKyThuat.TabIndex = 2;
             // 
             // label9
@@ -525,7 +532,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(6, 163);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Tên model:";
             // 
@@ -535,7 +542,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(6, 213);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mô tả:";
             // 
@@ -543,14 +550,14 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtTrangThai.Location = new System.Drawing.Point(105, 110);
             this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(229, 23);
+            this.txtTrangThai.Size = new System.Drawing.Size(229, 21);
             this.txtTrangThai.TabIndex = 2;
             // 
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(105, 208);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(229, 23);
+            this.txtMoTa.Size = new System.Drawing.Size(229, 21);
             this.txtMoTa.TabIndex = 2;
             // 
             // label4
@@ -559,7 +566,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(6, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Giá bán:";
             // 
@@ -569,7 +576,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(6, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Mã model:";
             // 
@@ -577,7 +584,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(105, 85);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(229, 23);
+            this.txtGiaBan.Size = new System.Drawing.Size(229, 21);
             this.txtGiaBan.TabIndex = 2;
             // 
             // label3
@@ -586,7 +593,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(6, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Năm sản xuất:";
             // 
@@ -594,7 +601,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtNamSanXuat.Location = new System.Drawing.Point(105, 60);
             this.txtNamSanXuat.Name = "txtNamSanXuat";
-            this.txtNamSanXuat.Size = new System.Drawing.Size(229, 23);
+            this.txtNamSanXuat.Size = new System.Drawing.Size(229, 21);
             this.txtNamSanXuat.TabIndex = 2;
             // 
             // label2
@@ -603,7 +610,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(6, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 17);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên sản phẩm:";
             // 
@@ -611,7 +618,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtTenSanPham.Location = new System.Drawing.Point(105, 35);
             this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(229, 23);
+            this.txtTenSanPham.Size = new System.Drawing.Size(229, 21);
             this.txtTenSanPham.TabIndex = 2;
             // 
             // errorLoi
@@ -623,7 +630,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 451);
             this.Controls.Add(this.panelControl1);

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using QuanLyLuongSanPham_DAO;
 using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_BUS;
+using System.Drawing.Printing;
+using System.Globalization;
+using QuanLyLuongSanPham_GUI.Properties;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -27,6 +30,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien nhanVienBUS;
         List<DTO_SanPham> lstSanPham;
         DTO_ChiTietDonHang newCTDH;
+        List<DTO_ChiTietDonHang> lstChiTietThuocDonHang = null;
         public frmChiTietDonHang(DTO_DonHang donHang): this()
         {
             donHangDTO = donHang;
@@ -37,6 +41,7 @@ namespace QuanLyLuongSanPham_GUI
             donHangBUS = new BUS_DonHang();
             bsPH = new BindingSource();
             bsPHSanPham = new BindingSource();
+            nhanVienBUS = new BUS_NhanVien();
             lstSanPham = donHangBUS.getDSSanPham();
             toolTipOpenFrmSanPham.SetToolTip(btnOpenFrmSanPham,"Thêm sản phẩm");
             addLuoiChiTietDonHang(dgvChiTietDonHang);
@@ -189,6 +194,9 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void frmChiTietDonHang_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             loadChiTietDonHangToDataGridView();
             loadDSSanPhamToDataGridView();
             this.dgvChiTietDonHang.DefaultCellStyle.ForeColor = Color.Black;
@@ -390,5 +398,88 @@ namespace QuanLyLuongSanPham_GUI
             frm.ShowDialog();
         }
 
+        private void btnInDonHang_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;//                                chieu rong,chieucao
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Hợp đồng sản xuất", 900, 1700);
+            printDocument1.DefaultPageSettings.Landscape = true;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // them logo cho don hang
+            Image img = Resources.logo;
+
+            // ve logo vaof toa do 0 0 den het chiu dai chiu ong anh
+            e.Graphics.DrawImage(img, 0, 0, img.Width, img.Height);
+            // them ngay thang
+            DTO_DonHang buffer = donHangBUS.getDonHang(txtMaDonHang.Text);
+            DTO_NhanVien nvTmp = nhanVienBUS.getMotNhanVien(txtMaNhanVien.Text);
+            e.Graphics.DrawString("Ngày: " + DateTime.Now, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Red, new Point(25, 200));
+            e.Graphics.DrawString("HỢP ĐỒNG SẢN XUẤT SẢN PHẨM", new Font("Tahoma", 40, FontStyle.Bold), Brushes.Red, new Point(500, 50));
+            // in phan thong itn don hang
+            e.Graphics.DrawString("Mã đơn hàng: " + txtMaDonHang.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 230));
+            e.Graphics.DrawString("Mã nhân viên: " + txtMaNhanVien.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 230));
+            e.Graphics.DrawString("Ngày bắt đầu: " + buffer.NgayBatDau, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 260));
+            e.Graphics.DrawString("Tên nhân viên: " + nvTmp.TenNhanVien, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 260));
+            e.Graphics.DrawString("Ngày kết thúc: " + buffer.NgayKetThuc, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 290));
+            e.Graphics.DrawString("Nội dung: " + buffer.NoiDung, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 290));
+            e.Graphics.DrawString("Tên khách hàng: " + txtTenKhachHang.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 320));
+            e.Graphics.DrawString("Số điện thoại khách hàng: " + buffer.SoDienThoaiKhachHang, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 320));
+            Pen pen1 = new Pen(Color.Black, 1);
+            e.Graphics.DrawLine(pen1, 25, 350, 1600, 350);
+            try
+            {
+                lstChiTietThuocDonHang = donHangBUS.getCTDH(txtMaDonHang.Text);
+                if (lstChiTietThuocDonHang != null)
+                {
+                    e.Graphics.DrawString("SẢN PHẨM", new Font("Tahoma", 24, FontStyle.Bold), Brushes.Black, new Point(700, 380));
+                    Pen pen = new Pen(Color.Black, 1);
+                    e.Graphics.DrawLine(pen, 25, 430, 1600, 430);
+                    //header của dơn hàng
+                    e.Graphics.DrawString("|STT", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(30, 460));
+                    e.Graphics.DrawString("|Mã sản phảm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(70, 460));
+                    e.Graphics.DrawString("|Tên sản phẩm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(270, 460));
+                    e.Graphics.DrawString("|Số lượng", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(670, 460));
+                    e.Graphics.DrawString("|Đơn giá sản phẩm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(870, 460));
+                    e.Graphics.DrawString("|Thành tiền      |", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(1070, 460));
+                    e.Graphics.DrawLine(pen, 25, 490, 1600, 490);
+
+                    int STT = 1;
+                    int xCu = 470;
+                    int khoangCach = 30;
+                    decimal tongTien = 0;
+                    foreach (var item in lstChiTietThuocDonHang)
+                    {
+                        xCu += khoangCach;
+                        decimal thanhTien = item.SoLuong * item.DonGia;
+                        DTO_SanPham sp = donHangBUS.getMotSanPham(item.MaSanPham);
+                        e.Graphics.DrawString("|" + STT, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(30, xCu));
+                        e.Graphics.DrawString("|" + item.MaSanPham, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(70, xCu));
+                        e.Graphics.DrawString("|" + sp.TenSanPham, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(270, xCu));
+                        e.Graphics.DrawString("|" + item.SoLuong, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(670, xCu));
+                        e.Graphics.DrawString("|" + item.DonGia, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(870, xCu));
+                        e.Graphics.DrawString("|" + thanhTien.ToString() + "    |", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(1070, xCu));
+
+                        STT++;
+                        tongTien += thanhTien;
+                    }
+                    e.Graphics.DrawString("TỔNG TIỀN:  " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", tongTien) + "VNĐ", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(1200, xCu + 100));
+                    e.Graphics.DrawString("Chữ ký nhân viên", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(100, xCu + 200));
+                    e.Graphics.DrawString("Chữ ký khách hàng", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(1120, xCu + 200));
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng thêm chi tiết đơn hàng!!!");
+                }
+            }
+            catch
+            {
+
+            }
+
+
+        }
     }
 }

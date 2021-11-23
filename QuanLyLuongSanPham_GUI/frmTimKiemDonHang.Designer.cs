@@ -124,6 +124,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.lblLoi);
             this.panel2.Controls.Add(this.bindingNavigatorDonHang);
             this.panel2.Controls.Add(this.panel3);
@@ -145,7 +147,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1067, 394);
@@ -295,7 +296,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDomHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;

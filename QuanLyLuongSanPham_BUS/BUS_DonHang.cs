@@ -30,6 +30,11 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.layToanBoDSDonHang();
         }
 
+        public List<DTO_ChiTietDonHang> getCTDH(string maDonHang)
+        {
+            return chiTietDHDAO.lstCTDH(maDonHang);
+        }
+
         public IEnumerable<object> getAllChiTietDonHang(string maDonHang)
         {
             return chiTietDHDAO.layDanhSachTimKiemCTDH(maDonHang);
@@ -48,6 +53,11 @@ namespace QuanLyLuongSanPham_BUS
         public List<DTO_SanPham> getDSSanPham()
         {
             return sanPhamDAO.layToanBoDanhSachSanPham();
+        }
+
+        public DTO_SanPham getMotSanPham(string maSanPham)
+        {
+            return sanPhamDAO.getSP(maSanPham);
         }
 
         public decimal tongTienDonHang(string maDonHang)

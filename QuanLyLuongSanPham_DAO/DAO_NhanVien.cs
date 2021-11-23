@@ -22,6 +22,27 @@ namespace QuanLyLuongSanPham_DAO
             IEnumerable<NhanVien> q = from n in dataBase.NhanViens select n;
             return q;
         }
+
+        public DTO_NhanVien layMotNhanVien(string maNhanVien)
+        {
+            NhanVien nvTemp = dataBase.NhanViens.Where(p => p.maNhanVien == maNhanVien).FirstOrDefault();
+            if (nvTemp != null)
+            {
+                DTO_NhanVien nhanVien = new DTO_NhanVien();
+                nhanVien.MaNhanVien = nvTemp.maNhanVien;
+                nhanVien.MaLoai = nvTemp.maLoai;
+                nhanVien.NgayBatDauCongTac = nvTemp.ngayBatDauCongTac;
+                nhanVien.TenNhanVien = nvTemp.tenNhanVien;
+                nhanVien.GioiTinh = nvTemp.gioiTinh;
+                nhanVien.SoDienThoai = nvTemp.soDienThoai;
+                nhanVien.DiaChi = nvTemp.diaChi;
+                nhanVien.NgaySinh = nvTemp.ngaySinh;
+                nhanVien.TrangThai = nvTemp.trangThai.Value;
+                
+                return nhanVien;
+            }
+            return null;
+        }
         public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
             var dataLst = (from nv in dataBase.NhanViens where (nv.maLoai.Equals("LNV001")) select nv);

@@ -29,6 +29,7 @@ namespace QuanLyLuongSanPham_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -82,6 +83,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panelControl1
             // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl1.Appearance.Options.UseBackColor = true;
@@ -98,7 +101,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(475, 184);
+            this.panelControl1.Size = new System.Drawing.Size(383, 136);
             this.panelControl1.TabIndex = 0;
             // 
             // txtTrangThai
@@ -106,7 +109,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTrangThai.Location = new System.Drawing.Point(140, 141);
             this.txtTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(302, 23);
+            this.txtTrangThai.Size = new System.Drawing.Size(302, 21);
             this.txtTrangThai.TabIndex = 2;
             // 
             // labelControl4
@@ -114,77 +117,90 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl4.Location = new System.Drawing.Point(32, 145);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(67, 17);
+            this.labelControl4.Size = new System.Drawing.Size(53, 13);
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "Trạng thái:";
             // 
             // cboTenModel
             // 
+            this.cboTenModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTenModel.FormattingEnabled = true;
-            this.cboTenModel.Location = new System.Drawing.Point(140, 92);
+            this.cboTenModel.Location = new System.Drawing.Point(115, 88);
             this.cboTenModel.Margin = new System.Windows.Forms.Padding(4);
             this.cboTenModel.Name = "cboTenModel";
-            this.cboTenModel.Size = new System.Drawing.Size(302, 24);
+            this.cboTenModel.Size = new System.Drawing.Size(247, 21);
             this.cboTenModel.TabIndex = 1;
             this.cboTenModel.SelectedIndexChanged += new System.EventHandler(this.cboTenModel_SelectedIndexChanged);
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(32, 102);
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(7, 91);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(65, 16);
+            this.labelControl2.Size = new System.Drawing.Size(53, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Tên Model:";
             // 
             // cboMaModel
             // 
+            this.cboMaModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMaModel.FormattingEnabled = true;
-            this.cboMaModel.Location = new System.Drawing.Point(140, 50);
+            this.cboMaModel.Location = new System.Drawing.Point(115, 46);
             this.cboMaModel.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaModel.Name = "cboMaModel";
-            this.cboMaModel.Size = new System.Drawing.Size(302, 24);
+            this.cboMaModel.Size = new System.Drawing.Size(247, 21);
             this.cboMaModel.TabIndex = 1;
             this.cboMaModel.SelectedIndexChanged += new System.EventHandler(this.cboMaModel_SelectedIndexChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(32, 60);
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(7, 49);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(60, 16);
+            this.labelControl1.Size = new System.Drawing.Size(49, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Mã Model:";
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(38, 29);
+            this.panel1.Location = new System.Drawing.Point(22, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(138, 22);
             this.panel1.TabIndex = 3;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(125, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Thông tin Model";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
             this.label2.Location = new System.Drawing.Point(594, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 24);
+            this.label2.Size = new System.Drawing.Size(203, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "BẢNG DANH SÁCH MODEL";
             // 
@@ -195,6 +211,8 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvModel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvModel.BackgroundColor = System.Drawing.Color.White;
             this.dgvModel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -214,7 +232,6 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvModel.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvModel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvModel.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvModel.Location = new System.Drawing.Point(0, 0);
             this.dgvModel.Name = "dgvModel";
@@ -238,6 +255,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnThemModel
             // 
+            this.btnThemModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemModel.BackColor = System.Drawing.Color.Crimson;
             this.btnThemModel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnThemModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -253,6 +272,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnSuaModel
             // 
+            this.btnSuaModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSuaModel.BackColor = System.Drawing.Color.Crimson;
             this.btnSuaModel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnSuaModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,6 +289,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnXoaModel
             // 
+            this.btnXoaModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoaModel.BackColor = System.Drawing.Color.Crimson;
             this.btnXoaModel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnXoaModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -283,6 +306,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnDong
             // 
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDong.BackColor = System.Drawing.Color.Crimson;
             this.btnDong.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -307,6 +332,8 @@ namespace QuanLyLuongSanPham_GUI
             // bindingNavigatorModel
             // 
             this.bindingNavigatorModel.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigatorModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bindingNavigatorModel.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigatorModel.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigatorModel.Dock = System.Windows.Forms.DockStyle.None;
@@ -330,7 +357,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorModel.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorModel.Name = "bindingNavigatorModel";
             this.bindingNavigatorModel.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorModel.Size = new System.Drawing.Size(302, 27);
+            this.bindingNavigatorModel.Size = new System.Drawing.Size(261, 27);
             this.bindingNavigatorModel.TabIndex = 8;
             this.bindingNavigatorModel.Text = "bindingNavigator1";
             // 
@@ -340,13 +367,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -356,7 +383,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -365,7 +392,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -374,7 +401,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -403,7 +430,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -412,7 +439,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -451,7 +478,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 235);
             this.Controls.Add(this.panel3);

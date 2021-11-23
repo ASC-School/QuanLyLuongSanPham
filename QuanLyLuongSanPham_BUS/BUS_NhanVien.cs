@@ -21,6 +21,11 @@ namespace QuanLyLuongSanPham_BUS
             return nv.getDanhSachNVToQLNS();
         }
 
+        public DTO_NhanVien getMotNhanVien(string maNhanVien)
+        {
+            return nv.layMotNhanVien(maNhanVien);
+        }
+
         public List<DTO_NhanVien> getDSNhanVienForDonHang()
         {
             return nv.layToanBoDanhSachNhanVien();

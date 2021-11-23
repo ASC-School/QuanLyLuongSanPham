@@ -20,6 +20,10 @@ namespace QuanLyLuongSanPham_GUI
 
         private void frmThongKeDonHang_Load(object sender, EventArgs e)
         {
+            // chan resize
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             lvwThongKeDonHang.LargeImageList = imgLon;
             lvwThongKeDonHang.SmallImageList = imgNho;
 

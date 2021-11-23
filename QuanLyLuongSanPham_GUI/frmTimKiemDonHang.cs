@@ -32,6 +32,10 @@ namespace QuanLyLuongSanPham_GUI
 
         private void frmTimKiemDonHang_Load(object sender, EventArgs e)
         {
+            // chan resize form
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             loadCbo();
             loadDSDonHangToDataGridView();
             this.dgvDSDomHang.DefaultCellStyle.ForeColor = Color.Black;
