@@ -77,6 +77,7 @@
     <Compile Include="DAO_LuongHanhChanh.cs" />
     <Compile Include="DAO_Model.cs" />
     <Compile Include="DAO_NhanVien.cs" />
+    <Compile Include="DAO_PhanCong.cs" />
     <Compile Include="DAO_PhanQuyen.cs" />
     <Compile Include="DAO_PhieuChamCong.cs" />
     <Compile Include="DAO_SanPham.cs" />

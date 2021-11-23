@@ -20,6 +20,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             InitializeComponent();
         }
+        BUS_PhanCong busPC = new BUS_PhanCong();
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
         BUS_CaLamViec busCaLamViec = new BUS_CaLamViec();
@@ -30,7 +31,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSCongDoan.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDSCN.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvCaLamViec.DefaultCellStyle.ForeColor = Color.Black;
-            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            this.dtgvDSPhanCong.DefaultCellStyle.ForeColor = Color.Black;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -50,12 +51,14 @@ namespace QuanLyLuongSanPham_GUI
                 dtgvCaLamViec.Rows.Add(n.maCa, n.ca);
                 dtgvCaLamViec.Rows[dtgvCaLamViec.RowCount - 1].Tag = n;
             }
+            dtgvDSPhanCong.DataSource = busPC.layDSPhanCong();
+            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
         }
         private void loadCbo()
         {
             IEnumerable<NhanVien> listCongNhan = busNV.layDanhSachCongNhan();
             IEnumerable<CaLamViec> listCa = busCaLamViec.layDSCa();
-            IEnumerable<dynamic> listCD = busCongDoan.layDSCongDoan();
+            IEnumerable<CongDoanSanXuat> listCD = busCongDoan.layAllDsCD();
             foreach (var n in listCongNhan)
             {
                 cboMaCongNhan.Items.Add(n.maNhanVien);
@@ -68,8 +71,24 @@ namespace QuanLyLuongSanPham_GUI
             }
             foreach(var n in listCD)
             {
-                //cboMaCongDoan.Items.Add(n.maCongDoan);
+                cboMaCongDoan.Items.Add(n.soThuTu);
+                cboTenCongDoan.Items.Add(n.tenCongDoan);
+            }
+        }
 
+        private void dtgvDSPhanCong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSPhanCong.Rows[e.RowIndex];
+                txtMsPhanCong.Text = row.Cells[0].Value.ToString();
+                cboMaCongNhan.Text = row.Cells[1].Value.ToString();
+                cboTenCongNhan.Text = row.Cells[2].Value.ToString();
+                cboMaCongDoan.Text = row.Cells[3].Value.ToString();
+                cboTenCongDoan.Text = row.Cells[4].Value.ToString();
+                cboMaCa.Text = row.Cells[5].Value.ToString();
+                cboTenCa.Text = row.Cells[6].Value.ToString();
+                dtpNgayPhanCong.Text = row.Cells[7].Value.ToString();
             }
         }
     }
