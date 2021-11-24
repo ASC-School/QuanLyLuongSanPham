@@ -18,5 +18,17 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhanCong.layDSPhanCong();
         }
+        public bool phanCong(QuanLyLuongSanPham_DTO.DTO_PhanCong list)
+        {
+            return daoPhanCong.phanCong(list);
+        }
+        public bool suaPhanCong(QuanLyLuongSanPham_DTO.DTO_PhanCong pcUpdate)
+        {
+            return daoPhanCong.suaThongTinPhanCong(pcUpdate);
+        }
+        public bool xoaPhanCong(string maPhanCong)
+        {
+            return daoPhanCong.xoaPhanCong(maPhanCong);
+        }
     }
 }
