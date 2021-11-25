@@ -23,7 +23,7 @@ namespace QuanLyLuongSanPham_GUI
         }
 
         private bool bCheckViewPass = false;
-        public delegate void Login(bool bTrangThai, string strHoTen, string strChucVu, string strMaLoai);
+        public delegate void Login(bool bTrangThai, string strHoTen, string strChucVu, string strMaLoai,string strMaNhanVien);
         public Login login;
         //public static DTO_TaiKhoan tkDangNhap_ToanCuc = null;
 
@@ -167,10 +167,12 @@ namespace QuanLyLuongSanPham_GUI
                     string hoTenNVLoad = "";
                     string loaiNVLoad = "";
                     string maLoai = "";
+                    string maNVLoad = "";
                     IEnumerable<NhanVien> nvTheoMa = busTK.loadNVTheoMa(tkSelected.maNhanVien);
                     IEnumerable<LoaiNhanVien> loaiNVTheoMa = busTK.loadLoaiNVTheoMa(tkSelected.maNhanVien);
                     foreach (NhanVien nv in nvTheoMa)
                     {
+                        maNVLoad = nv.maNhanVien;
                         hoTenNVLoad = nv.tenNhanVien;
                         foreach(LoaiNhanVien loainv in loaiNVTheoMa)
                         {
@@ -178,7 +180,7 @@ namespace QuanLyLuongSanPham_GUI
                             maLoai = loainv.maLoai;
                         }
                     }
-                        login(true, hoTenNVLoad, loaiNVLoad, maLoai);
+                        login(true, hoTenNVLoad, loaiNVLoad, maLoai,maNVLoad);
                         this.Close();
                 }
                 else if (!bCheckTK)
