@@ -10,11 +10,32 @@ namespace QuanLyLuongSanPham_DAO
     public class DAO_DonHang
     {
         QuanLyLuongSanPhamDataContext dataBase;
+        DAO_ChiTietDonHang chiTietDAO;
         public DAO_DonHang()
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
+            chiTietDAO = new DAO_ChiTietDonHang();
         }
 
+        public string ngayLonNhat()
+        {
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien
+                                            }).OrderByDescending(p => p.ngayBatDau);
+
+            string ngay = dataLst.First().ngayBatDau;
+            return ngay;
+        }
         public bool checkExist(string maDonHang)
         {
             DonHang donHang = dataBase.DonHangs.Where(p => p.maDonHang == maDonHang).FirstOrDefault();
@@ -39,6 +60,25 @@ namespace QuanLyLuongSanPham_DAO
                                maNhanVien = donHang.maNhanVien,
                                tenNhanVien = nhanVien.tenNhanVien
                            }).OrderBy(p => p.maDonHang);
+            return dataLst;
+        }
+
+        public IEnumerable<dynamic> layDSDonHangCoThanhTien()
+        {
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                            }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
 
@@ -134,8 +174,22 @@ namespace QuanLyLuongSanPham_DAO
             return false;
         }
 
+        public string timTenKHTheoSDT(string soDienThoai)
+        {
+            DonHang tmp = dataBase.DonHangs.Where(p => p.soDienThoaiKhachHang == soDienThoai).FirstOrDefault();
+            if (tmp == null) return null;
+            DTO_DonHang donHang = new DTO_DonHang();
+            donHang.MaDonHang = tmp.maDonHang;
+            donHang.NgayBatDau = DateTime.Parse(tmp.ngayBatDau.ToString());
+            donHang.NgayKetThuc = DateTime.Parse(tmp.ngayKetThuc.ToString());
+            donHang.TenKhachHang = tmp.tenKhachHang;
+            donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
+            donHang.NoiDung = tmp.noiDung;
+            donHang.MaNhanVien = tmp.maNhanVien;
+            return donHang.TenKhachHang;
+        }
         //================== loc tim don hang
-      
+
 
         public IEnumerable<dynamic> timKiemDHTheoNhanVienVaKhachHang(string maNhanVien, string tenKhachHang, string soDienThoaiKhachHang)
         {
@@ -1844,6 +1898,25 @@ namespace QuanLyLuongSanPham_DAO
             return dataLst;
         }
 
+        public IEnumerable<dynamic> timKiemDonHangTheoTenKhachHangCoThanhTien(string tenKhachHang)
+        {
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            where donHang.tenKhachHang.Equals(tenKhachHang)
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                            }).OrderBy(p => p.maDonHang);
+            return dataLst;
+        }
 
         //==== sodienthoai khach hang
         // get don hang theo ngaybat dau
@@ -2525,6 +2598,25 @@ namespace QuanLyLuongSanPham_DAO
             return dataLst;
         }
 
+        public IEnumerable<dynamic> timKiemDonHangTheoKhachHangCoThanhTien(string tenKhachHang, string soDienThoai)
+        {
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            where donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoai)
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                            }).OrderBy(p => p.maDonHang);
+            return dataLst;
+        }
         //======================================================================
 
         public IEnumerable<dynamic> timKiemDonHangTheoNhanVien(string maNhanVien)
@@ -2545,7 +2637,27 @@ namespace QuanLyLuongSanPham_DAO
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
-       
+
+        public IEnumerable<dynamic> timKiemDonHangTheoNhanVienCoThanhTien(string maNhanVien)
+        {
+            IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            where donHang.maNhanVien.Equals(maNhanVien)
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                            }).OrderBy(p => p.maDonHang);
+            return dataLst;
+        }
+
         //=========== tim khiem don hang theo thoi gian
 
         public IEnumerable<dynamic> timKiemDhTheoNgayBatDau_SanPham(string ngayBatDau, string tenSanPham)
@@ -2844,6 +2956,29 @@ namespace QuanLyLuongSanPham_DAO
             return dataLst;
         }
 
+        public IEnumerable<dynamic> timKiemDonHangTheoSanPhamCoThanhTien(string tenSanPham)
+        {
+            IEnumerable<dynamic> dataLst = dataLst = (from donHang in dataBase.DonHangs
+                                                      join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                                                      join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                                                      join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                                      where sanPham.tenSanPham.Equals(tenSanPham)
+                                                      select new
+                                                      {
+                                                          maDonHang = donHang.maDonHang,
+                                                          ngayBatDau = donHang.ngayBatDau,
+                                                          ngayKetThuc = donHang.ngayKetThuc,
+                                                          tenKhachHang = donHang.tenKhachHang,
+                                                          soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                          noiDung = donHang.noiDung,
+                                                          maNhanVien = donHang.maNhanVien,
+                                                          tenNhanVien = nhanVien.tenNhanVien,
+                                                          thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                                      }
+                ).OrderBy(p => p.maDonHang);
+
+            return dataLst;
+        }
 
         public IEnumerable<dynamic> timKiemDhTheoMaDonHang(string maDonHang)
         {
@@ -2889,5 +3024,584 @@ namespace QuanLyLuongSanPham_DAO
             return dataLst;
         }
         //================================
+        public IEnumerable<dynamic> thongKeDonHangTheoNhanVien(string ngayBatDau,string ngayCuoi,string maNhanVien)
+        {
+            IEnumerable<dynamic> dataLst = null;
+            if(!ngayBatDau.Equals("") && ngayCuoi.Equals("")) // thong ke theo ngay bat dau den ngay hien tai
+            {
+                try
+                {
+                    DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau >= ngayBD && donHang.maNhanVien.Equals(maNhanVien)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                ).OrderBy(p => p.maDonHang);
+                }
+                catch
+                {
+
+                }
+
+            }
+            else if(ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo ngay cuoi tro ve truoc
+            {
+                DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                dataLst = (from donHang in dataBase.DonHangs
+                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                           where donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien)
+                           select new
+                           {
+                               maDonHang = donHang.maDonHang,
+                               ngayBatDau = donHang.ngayBatDau,
+                               ngayKetThuc = donHang.ngayKetThuc,
+                               tenKhachHang = donHang.tenKhachHang,
+                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                               noiDung = donHang.noiDung,
+                               maNhanVien = donHang.maNhanVien,
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                           }
+                ).OrderBy(p => p.maDonHang);
+            }
+            else // thong ke don hang tu ngay bat dau den ngay ket thuc
+            {
+                try
+                {
+                    DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderBy(p => p.maDonHang);
+                }
+                catch
+                {
+                    
+                }
+                
+            }
+            return dataLst;
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoKhachHang(string ngayBatDau, string ngayCuoi, string tenKhachHang,string soDienThoaiKhachHang)
+        {
+            IEnumerable<dynamic> dataLst = null;
+            if(!tenKhachHang.Equals("") && soDienThoaiKhachHang.Equals(""))// thong ke  theo ten khach hang ngay bat dau den ngay hien tai 
+            {
+                if (!ngayBatDau.Equals("") && ngayCuoi.Equals("")) 
+                {
+                    //DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang)
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                    ).OrderBy(p => p.maDonHang);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+                else if (ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo tenkhachhang tu ngay cuoi tro ve truoc
+                {
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderBy(p => p.maDonHang);
+                }
+                else // thong ke don hang theo tenkh tu ngay bat dau den ngay ket thuc
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                        if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang)
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                        ).OrderBy(p => p.maDonHang);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+            else // thong ke  theo khach hang(ten + so dien thoai) ngay bat dau den ngay hien tai 
+            {
+                if (!ngayBatDau.Equals("") && ngayCuoi.Equals("")) // thong ke theo ngay bat dau den ngay hien tai
+                {
+                    //DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang)
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                    ).OrderBy(p => p.maDonHang);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+                else if (ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo ngay cuoi tro ve truoc
+                {
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderBy(p => p.maDonHang);
+                }
+                else // thong ke don hang tu ngay bat dau den ngay ket thuc
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                        if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang)
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                        ).OrderBy(p => p.maDonHang);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+            
+
+            return dataLst;
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoDonGia(string ngayBatDau, string ngayCuoi, string donGia)
+        {
+            IEnumerable<dynamic> dataLst = null;
+            if(donGia.Equals("Từ thấp đến cao"))
+            {
+                if (!ngayBatDau.Equals("") && ngayCuoi.Equals("")) // thong ke theo dongia tu thap den cao ngay bat dau den ngay hien tai
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                                   join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD 
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+
+                                   }
+                    ).OrderBy(p => p.thanhTien);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+                else if (ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo sanpham ngay cuoi tro ve truoc
+                {
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau <= ngayKT
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderBy(p => p.thanhTien);
+                }
+                else // thong ke don hang theo sanpham tu ngay bat dau den ngay ket thuc
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                        if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                                   join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT 
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                        ).OrderBy(p => p.thanhTien);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+            else
+            {
+                if (!ngayBatDau.Equals("") && ngayCuoi.Equals("")) // thong ke theo dongia tu thap den cao ngay bat dau den ngay hien tai
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                                   join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+
+                                   }
+                    ).OrderByDescending(p => p.thanhTien);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+                else if (ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo sanpham ngay cuoi tro ve truoc
+                {
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau <= ngayKT
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderByDescending(p => p.thanhTien);
+                }
+                else // thong ke don hang theo sanpham tu ngay bat dau den ngay ket thuc
+                {
+                    try
+                    {
+                        DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                        DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                        if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                        dataLst = (from donHang in dataBase.DonHangs
+                                   join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                                   join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                                   join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT
+                                   select new
+                                   {
+                                       maDonHang = donHang.maDonHang,
+                                       ngayBatDau = donHang.ngayBatDau,
+                                       ngayKetThuc = donHang.ngayKetThuc,
+                                       tenKhachHang = donHang.tenKhachHang,
+                                       soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                       noiDung = donHang.noiDung,
+                                       maNhanVien = donHang.maNhanVien,
+                                       tenNhanVien = nhanVien.tenNhanVien,
+                                       thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                   }
+                        ).OrderByDescending(p => p.thanhTien);
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
+            }
+            
+            return dataLst;
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoDonGia( string donGia)
+        {
+            IEnumerable<dynamic> dataLst = null;
+            if (donGia.Equals("Từ thấp đến cao"))
+            {
+                dataLst = (from donHang in dataBase.DonHangs
+                           join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                           join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                           
+                           select new
+                           {
+                               maDonHang = donHang.maDonHang,
+                               ngayBatDau = donHang.ngayBatDau,
+                               ngayKetThuc = donHang.ngayKetThuc,
+                               tenKhachHang = donHang.tenKhachHang,
+                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                               noiDung = donHang.noiDung,
+                               maNhanVien = donHang.maNhanVien,
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                           }
+
+                      ).OrderBy(p => p.maDonHang);
+            }
+            else
+            {
+                dataLst = (from donHang in dataBase.DonHangs
+                           join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                           join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                           
+                           select new
+                           {
+                               maDonHang = donHang.maDonHang,
+                               ngayBatDau = donHang.ngayBatDau,
+                               ngayKetThuc = donHang.ngayKetThuc,
+                               tenKhachHang = donHang.tenKhachHang,
+                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                               noiDung = donHang.noiDung,
+                               maNhanVien = donHang.maNhanVien,
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+
+                           }
+                     ).OrderBy(p => p.maDonHang);
+            }
+
+            return dataLst;
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoSanPham(string ngayBatDau, string ngayCuoi, string maSanPham)
+        {
+            IEnumerable<dynamic> dataLst = null;
+            if (!ngayBatDau.Equals("") && ngayCuoi.Equals("")) // thong ke theo sanpham ngay bat dau den ngay hien tai
+            {
+                try
+                {
+                    DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau >= ngayBD && sanPham.tenSanPham.Equals(maSanPham)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                ).OrderBy(p => p.maDonHang);
+                }
+                catch
+                {
+
+                }
+
+            }
+            else if (ngayBatDau.Equals("") && !ngayCuoi.Equals("")) // thong ke theo sanpham ngay cuoi tro ve truoc
+            {
+                DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                dataLst = (from donHang in dataBase.DonHangs
+                           join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                           join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                           where donHang.ngayBatDau <= ngayKT && sanPham.tenSanPham.Equals(maSanPham)
+                           select new
+                           {
+                               maDonHang = donHang.maDonHang,
+                               ngayBatDau = donHang.ngayBatDau,
+                               ngayKetThuc = donHang.ngayKetThuc,
+                               tenKhachHang = donHang.tenKhachHang,
+                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                               noiDung = donHang.noiDung,
+                               maNhanVien = donHang.maNhanVien,
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                           }
+                ).OrderBy(p => p.maDonHang);
+            }
+            else // thong ke don hang theo sanpham tu ngay bat dau den ngay ket thuc
+            {
+                try
+                {
+                    DateTime ngayBD = DateTime.Parse(ngayBatDau);
+                    DateTime ngayKT = DateTime.Parse(ngayCuoi);
+                    if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
+                    dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && sanPham.tenSanPham.Equals(maSanPham)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   ngayBatDau = donHang.ngayBatDau,
+                                   ngayKetThuc = donHang.ngayKetThuc,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   noiDung = donHang.noiDung,
+                                   maNhanVien = donHang.maNhanVien,
+                                   tenNhanVien = nhanVien.tenNhanVien,
+                                   thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                               }
+                    ).OrderBy(p => p.maDonHang);
+                }
+                catch
+                {
+
+                }
+
+            }
+            return dataLst;
+        }
     }
 }

@@ -69,12 +69,6 @@
     <Compile Include="frmCongDoan.Designer.cs">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmXuatBaoCao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmXuatBaoCao.Designer.cs">
-      <DependentUpon>frmXuatBaoCao.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,9 +195,6 @@
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="frmCongDoan.resx">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmXuatBaoCao.resx">
-      <DependentUpon>frmXuatBaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModel.resx">
       <DependentUpon>frmModel.cs</DependentUpon>

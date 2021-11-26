@@ -703,7 +703,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.btnLoadDSDonHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSDonHang.BackgroundImage")));
             this.btnLoadDSDonHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadDSDonHang.Location = new System.Drawing.Point(1138, 275);
+            this.btnLoadDSDonHang.Location = new System.Drawing.Point(940, 279);
             this.btnLoadDSDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadDSDonHang.Name = "btnLoadDSDonHang";
             this.btnLoadDSDonHang.Size = new System.Drawing.Size(51, 45);

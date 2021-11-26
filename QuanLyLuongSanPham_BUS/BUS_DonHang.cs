@@ -20,9 +20,18 @@ namespace QuanLyLuongSanPham_BUS
             sanPhamDAO = new DAO_SanPham();
         }
 
+        public string layNgayLonNhat()
+        {
+            return donHangDAO.ngayLonNhat();
+        }
         public IEnumerable<dynamic> getAllDonHang()
         {
             return donHangDAO.layDSDonHang();
+        }
+
+        public IEnumerable<dynamic> getAllDonHangCoThanhTien()
+        {
+            return donHangDAO.layDSDonHangCoThanhTien();
         }
 
         public List<DTO_DonHang> getDSDonHang()
@@ -33,6 +42,11 @@ namespace QuanLyLuongSanPham_BUS
         public List<DTO_ChiTietDonHang> getCTDH(string maDonHang)
         {
             return chiTietDHDAO.lstCTDH(maDonHang);
+        }
+
+        public string getTenKhTheoSoDienThoai(string soDienThoai)
+        {
+            return donHangDAO.timTenKHTheoSDT(soDienThoai);
         }
 
         public IEnumerable<object> getAllChiTietDonHang(string maDonHang)
@@ -117,6 +131,10 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.timKiemDonHangTheoNhanVien(maNhanVien);
         }
 
+        public IEnumerable<dynamic> getDHTheoNhanVienCoThanhTien(string maNhanVien)
+        {
+            return donHangDAO.timKiemDonHangTheoNhanVienCoThanhTien(maNhanVien);
+        }
         public IEnumerable<dynamic> getDHTheoNhanVien_TenKH_NgayBatDau_SanPham(string maNhanVien,string tenKhachHang, string ngayBatDau, string tenSanPham) 
         {
             return donHangDAO.timKiemDhTheoNhanVien_TenKH_NgayBatDau_SanPham(maNhanVien, tenKhachHang, ngayBatDau, tenSanPham);
@@ -491,6 +509,10 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.timKiemDonHangTheoTenKhachHang(tenKhachHang);
         }
 
+        public IEnumerable<dynamic> getDHTheoTenKHCoThanhTien(string tenKhachHang)
+        {
+            return donHangDAO.timKiemDonHangTheoTenKhachHangCoThanhTien(tenKhachHang);
+        }
 
         //==== so dien thoai KH
         //timdon hang theo ten khach hang + ngay bat dau
@@ -652,6 +674,11 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.timKiemDonHangTheoKhachHang(tenKhachHang,soDienThoai);
         }
 
+        public IEnumerable<dynamic> getDHKhachHangCoThanhTien(string tenKhachHang, string soDienThoai)
+        {
+            return donHangDAO.timKiemDonHangTheoKhachHangCoThanhTien(tenKhachHang, soDienThoai);
+        }
+
         //===================== THEO THOIGIAN =============================
         //NGAYBATDAU
         public IEnumerable<dynamic> getDHTheoNgayBatDau_SanPham(string ngayBatDau, string tenSanPham)
@@ -722,6 +749,11 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.timKiemDonHangTheoSanPham(tenSanPham);
         }
 
+        public IEnumerable<dynamic> getDHTheoSanPhamCoThanhTien(string tenSanPham)
+        {
+            return donHangDAO.timKiemDonHangTheoSanPhamCoThanhTien(tenSanPham);
+        }
+
         public IEnumerable<dynamic> getDHTheoMaDonHang(string maDonHang)
         {
             return donHangDAO.timKiemDhTheoMaDonHang(maDonHang);
@@ -732,5 +764,30 @@ namespace QuanLyLuongSanPham_BUS
             return donHangDAO.timKiemDhTheoSanPham_MaDonHang(sanPham, maDonHang);
         }
 
+        //============================== thong ke don hang
+        public IEnumerable<dynamic> thongKeDonHangTheoNhanVien(string ngayBatDau, string ngayKetThuc,string maNhanVien)
+        {
+            return donHangDAO.thongKeDonHangTheoNhanVien(ngayBatDau, ngayKetThuc,maNhanVien);
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoKhachHang(string ngayBatDau, string ngayKetThuc, string tenKhachHang, string soDienThoai)
+        {
+            return donHangDAO.thongKeDonHangTheoKhachHang(ngayBatDau, ngayKetThuc, tenKhachHang,soDienThoai);
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoSanPham(string ngayBatDau, string ngayKetThuc, string sanPham)
+        {
+            return donHangDAO.thongKeDonHangTheoSanPham(ngayBatDau, ngayKetThuc, sanPham);
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoDonGia(string ngayBatDau, string ngayKetThuc, string donGia)
+        {
+            return donHangDAO.thongKeDonHangTheoDonGia(ngayBatDau, ngayKetThuc, donGia);
+        }
+
+        public IEnumerable<dynamic> thongKeDonHangTheoDonGia( string donGia)
+        {
+            return donHangDAO.thongKeDonHangTheoDonGia(donGia);
+        }
     }
 }
