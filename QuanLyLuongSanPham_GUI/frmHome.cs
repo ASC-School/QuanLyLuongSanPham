@@ -19,7 +19,9 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
             //customizeMenu();
         }
-
+        public delegate void Home(string strMaNhanVien);
+        public Home home;
+        string maNhanVien = "";
         #region Properties
         bool bTrangThaiDangNhap = false;
         BUS_PhanQuyen busPQNV = new BUS_PhanQuyen();
@@ -85,7 +87,7 @@ namespace QuanLyLuongSanPham_GUI
             }    
         }
 
-        void SetStatusLogin(bool BStatus, string strHoTen, string strChucVu, string strMaLoai)
+        void SetStatusLogin(bool BStatus, string strHoTen, string strChucVu, string strMaLoai,string strMaNhanVien)
         {
             bTrangThaiDangNhap = BStatus;
             if (bTrangThaiDangNhap)
@@ -98,7 +100,8 @@ namespace QuanLyLuongSanPham_GUI
             {
                 tiTTNV.Elements[2].Text = "";
                 tiTTNV.Elements[3].Text = "";
-            }    
+            }
+            maNhanVien = strMaNhanVien;
         }
         #endregion
 
@@ -148,7 +151,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void msTienIch_TTNV_Click(object sender, EventArgs e)
         {
-            frmXemThongTin frmXemTT = new frmXemThongTin();
+            frmXemThongTin frmXemTT = new frmXemThongTin(maNhanVien);
             _ = frmXemTT.ShowDialog();
         }
 
@@ -179,7 +182,7 @@ namespace QuanLyLuongSanPham_GUI
         private void msTaiKhoan_DangXuat_Click(object sender, EventArgs e)
         {
             bTrangThaiDangNhap = false;
-            SetStatusLogin(false, "", "", "");
+            SetStatusLogin(false, "", "", "","");
             frmHome_Load(sender, e);
         }
         #endregion

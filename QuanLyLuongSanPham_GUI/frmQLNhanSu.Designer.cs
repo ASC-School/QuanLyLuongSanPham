@@ -32,7 +32,6 @@ namespace QuanLyLuongSanPham_GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLNhanSu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnThemNV = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -90,6 +89,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblLuong = new System.Windows.Forms.Label();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,8 +108,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Controls.Add(this.btnThoat);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -130,24 +130,13 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(76, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 46);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "QUẢN LÝ NHÂN SỰ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 13);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 51);
+            this.pictureBox2.Size = new System.Drawing.Size(66, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -806,6 +795,21 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuong.TabIndex = 22;
             this.lblLuong.Text = "Mã nhân viên:";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.Location = new System.Drawing.Point(73, 23);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(228, 29);
+            this.labelControl1.TabIndex = 33;
+            this.labelControl1.Text = "QUẢN LÝ NHÂN SỰ";
+            // 
             // frmQLNhanSu
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -821,6 +825,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Text = "frmQLNhanSu";
             this.Load += new System.EventHandler(this.frmQLNhanSu_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -844,7 +849,6 @@ namespace QuanLyLuongSanPham_GUI
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -902,5 +906,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Loại_Nv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Đơn_vị_quản_lí;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trạng_thái;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

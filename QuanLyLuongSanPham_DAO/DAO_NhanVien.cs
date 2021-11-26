@@ -22,6 +22,11 @@ namespace QuanLyLuongSanPham_DAO
             IEnumerable<NhanVien> q = from n in dataBase.NhanViens select n;
             return q;
         }
+        public IEnumerable<NhanVien> layTTNhanVienTheoMa(string maNhanVien)
+        {
+            IEnumerable<NhanVien> q = from n in dataBase.NhanViens where n.maNhanVien.Equals(maNhanVien) select n;
+            return q;
+        }
 
         public DTO_NhanVien layMotNhanVien(string maNhanVien)
         {
