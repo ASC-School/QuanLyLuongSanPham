@@ -20,5 +20,13 @@ namespace QuanLyLuongSanPham_DAO
                                              select phatNV;
             return phat;
         }
+
+        public IEnumerable<PhatNhanVien> laySoLuongViPhamNVNghiKhongPhep(string strMaNV, int iPhatNghiKhongPhep)
+        {
+            IEnumerable<PhatNhanVien> phatNghi = from phatNV in dataBase.PhatNhanViens
+                                             where phatNV.maNhanVien.Equals(strMaNV) && phatNV.maMucPhat == iPhatNghiKhongPhep
+                                                 select phatNV;
+            return phatNghi;
+        }
     }
 }

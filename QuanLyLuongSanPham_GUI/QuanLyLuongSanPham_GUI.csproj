@@ -149,11 +149,11 @@
     <Compile Include="frmLuongNhanVienHanhChanh.Designer.cs">
       <DependentUpon>frmLuongNhanVienHanhChanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieuLuongCongNhan.cs">
+    <Compile Include="frmPhieuLuongNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieuLuongCongNhan.Designer.cs">
-      <DependentUpon>frmPhieuLuongCongNhan.cs</DependentUpon>
+    <Compile Include="frmPhieuLuongNhanVien.Designer.cs">
+      <DependentUpon>frmPhieuLuongNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLNhanSu.cs">
       <SubType>Form</SubType>
@@ -243,8 +243,8 @@
     <EmbeddedResource Include="frmLuongNhanVienHanhChanh.resx">
       <DependentUpon>frmLuongNhanVienHanhChanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuLuongCongNhan.resx">
-      <DependentUpon>frmPhieuLuongCongNhan.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuLuongNhanVien.resx">
+      <DependentUpon>frmPhieuLuongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanSu.resx">
       <DependentUpon>frmQLNhanSu.cs</DependentUpon>

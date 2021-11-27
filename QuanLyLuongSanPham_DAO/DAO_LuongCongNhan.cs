@@ -28,6 +28,7 @@ namespace QuanLyLuongSanPham_DAO
                                            on lcn.maTienPhat equals mtp.soThuTu
                                            join cdsx in dataBase.CongDoanSanXuats
                                            on lcn.maCongDoan equals cdsx.soThuTu
+                                           where lnv.maLoai == "LNV002"
                                            select new
                                            {
                                                maNV = nv.maNhanVien,
@@ -80,7 +81,7 @@ namespace QuanLyLuongSanPham_DAO
                                                       on lcn.maTienPhat equals mtp.soThuTu
                                                       join cdsx in dataBase.CongDoanSanXuats
                                                       on lcn.maCongDoan equals cdsx.soThuTu
-                                                      where lcn.maNhanVien.Equals(maNVTK)
+                                                      where lcn.maNhanVien.Equals(maNVTK) && lnv.maLoai == "LNV002"
                                                       select new
                                                       {
                                                           maNV = nv.maNhanVien,
@@ -111,7 +112,7 @@ namespace QuanLyLuongSanPham_DAO
                                                     on lcn.maTienPhat equals mtp.soThuTu
                                                     join cdsx in dataBase.CongDoanSanXuats
                                                     on lcn.maCongDoan equals cdsx.soThuTu
-                                                    where lcn.thangLuong.Equals(iMonth) && lcn.namLuong.Equals(iYear)
+                                                    where lcn.thangLuong.Equals(iMonth) && lcn.namLuong.Equals(iYear) && lnv.maLoai == "LNV002"
                                                     select new
                                                     {
                                                         maNV = nv.maNhanVien,

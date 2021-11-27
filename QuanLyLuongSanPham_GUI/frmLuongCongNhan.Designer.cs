@@ -76,20 +76,10 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btnChiTietLuong = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnReLoad = new System.Windows.Forms.Button();
-            this.ccbThang = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvLuongCongNhan = new System.Windows.Forms.DataGridView();
-            this.lblBangLuongCN = new DevExpress.XtraEditors.LabelControl();
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExcelBC = new DevExpress.XtraEditors.SimpleButton();
-            this.btnImportExcel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ccbNam = new System.Windows.Forms.ComboBox();
-            this.pCLuongCNS = new DevExpress.XtraEditors.PanelControl();
-            this.label3 = new System.Windows.Forms.Label();
             this.maNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +91,16 @@ namespace QuanLyLuongSanPham_GUI
             this.tongLuongTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tamUng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thucNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccbThang = new System.Windows.Forms.ComboBox();
+            this.lblBangLuongCN = new DevExpress.XtraEditors.LabelControl();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExcelBC = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ccbNam = new System.Windows.Forms.ComboBox();
+            this.pCLuongCNS = new DevExpress.XtraEditors.PanelControl();
             this.dAOLuongCongNhanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -147,7 +147,7 @@ namespace QuanLyLuongSanPham_GUI
             this.button1.TabIndex = 11;
             this.button1.Text = "          ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // pictureBox1
             // 
@@ -170,7 +170,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.TabIndex = 12;
             this.btnThoat.Text = "          ";
             this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.button1_Click);
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panelControl2
             // 
@@ -475,6 +475,19 @@ namespace QuanLyLuongSanPham_GUI
             this.btnChiTietLuong.UseVisualStyleBackColor = true;
             this.btnChiTietLuong.Click += new System.EventHandler(this.btnChiTietLuong_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Silver;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(1115, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 21);
+            this.label3.TabIndex = 111;
+            this.label3.Text = "Tháng";
+            // 
             // btnReLoad
             // 
             this.btnReLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnReLoad.Image")));
@@ -485,18 +498,6 @@ namespace QuanLyLuongSanPham_GUI
             this.btnReLoad.TabIndex = 113;
             this.btnReLoad.UseVisualStyleBackColor = true;
             this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
-            // 
-            // ccbThang
-            // 
-            this.ccbThang.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ccbThang.FormattingEnabled = true;
-            this.ccbThang.Location = new System.Drawing.Point(1186, 9);
-            this.ccbThang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ccbThang.Name = "ccbThang";
-            this.ccbThang.Size = new System.Drawing.Size(90, 29);
-            this.ccbThang.TabIndex = 112;
-            this.ccbThang.Text = "9";
-            this.ccbThang.TextChanged += new System.EventHandler(this.ccbThang_TextChanged);
             // 
             // label1
             // 
@@ -520,7 +521,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvLuongCongNhan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -541,7 +542,7 @@ namespace QuanLyLuongSanPham_GUI
             this.thucNhan});
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -568,6 +569,136 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvLuongCongNhan.Size = new System.Drawing.Size(1289, 486);
             this.dtgvLuongCongNhan.TabIndex = 110;
             this.dtgvLuongCongNhan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLuongCongNhan_CellContentClick);
+            // 
+            // maNV
+            // 
+            this.maNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.maNV.DataPropertyName = "maNV";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maNV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.maNV.FillWeight = 30F;
+            this.maNV.HeaderText = "Mã Nhân Viên";
+            this.maNV.MinimumWidth = 6;
+            this.maNV.Name = "maNV";
+            this.maNV.ReadOnly = true;
+            this.maNV.Width = 109;
+            // 
+            // tenNV
+            // 
+            this.tenNV.DataPropertyName = "tenNV";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tenNV.DefaultCellStyle = dataGridViewCellStyle4;
+            this.tenNV.HeaderText = "Họ Tên";
+            this.tenNV.MinimumWidth = 6;
+            this.tenNV.Name = "tenNV";
+            this.tenNV.ReadOnly = true;
+            // 
+            // donVi
+            // 
+            this.donVi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.donVi.DataPropertyName = "donVi";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.donVi.DefaultCellStyle = dataGridViewCellStyle5;
+            this.donVi.HeaderText = "Đơn Vị";
+            this.donVi.MinimumWidth = 6;
+            this.donVi.Name = "donVi";
+            this.donVi.ReadOnly = true;
+            this.donVi.Width = 63;
+            // 
+            // congDoan
+            // 
+            this.congDoan.DataPropertyName = "congDoan";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.congDoan.DefaultCellStyle = dataGridViewCellStyle6;
+            this.congDoan.HeaderText = "Công Đoạn";
+            this.congDoan.MinimumWidth = 6;
+            this.congDoan.Name = "congDoan";
+            this.congDoan.ReadOnly = true;
+            // 
+            // soLuongSPLamDuoc
+            // 
+            this.soLuongSPLamDuoc.DataPropertyName = "soLuongSPLamDuoc";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.soLuongSPLamDuoc.DefaultCellStyle = dataGridViewCellStyle7;
+            this.soLuongSPLamDuoc.HeaderText = "SLSP Làm Được";
+            this.soLuongSPLamDuoc.MinimumWidth = 6;
+            this.soLuongSPLamDuoc.Name = "soLuongSPLamDuoc";
+            // 
+            // phuCap
+            // 
+            this.phuCap.DataPropertyName = "phuCap";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.phuCap.DefaultCellStyle = dataGridViewCellStyle8;
+            this.phuCap.HeaderText = "Phụ Cấp";
+            this.phuCap.MinimumWidth = 6;
+            this.phuCap.Name = "phuCap";
+            // 
+            // tienPhat
+            // 
+            this.tienPhat.DataPropertyName = "tienPhat";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tienPhat.DefaultCellStyle = dataGridViewCellStyle9;
+            this.tienPhat.HeaderText = "Tiền Phạt";
+            this.tienPhat.MinimumWidth = 6;
+            this.tienPhat.Name = "tienPhat";
+            // 
+            // thue
+            // 
+            this.thue.DataPropertyName = "thue";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thue.DefaultCellStyle = dataGridViewCellStyle10;
+            this.thue.HeaderText = "Thuế (%)";
+            this.thue.MinimumWidth = 6;
+            this.thue.Name = "thue";
+            // 
+            // tongLuongTT
+            // 
+            this.tongLuongTT.DataPropertyName = "tongLuongTT";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = null;
+            this.tongLuongTT.DefaultCellStyle = dataGridViewCellStyle11;
+            this.tongLuongTT.HeaderText = "Tổng Lương TT";
+            this.tongLuongTT.MinimumWidth = 6;
+            this.tongLuongTT.Name = "tongLuongTT";
+            // 
+            // tamUng
+            // 
+            this.tamUng.DataPropertyName = "tamUng";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = null;
+            this.tamUng.DefaultCellStyle = dataGridViewCellStyle12;
+            this.tamUng.HeaderText = "Tạm Ứng";
+            this.tamUng.MinimumWidth = 6;
+            this.tamUng.Name = "tamUng";
+            // 
+            // thucNhan
+            // 
+            this.thucNhan.DataPropertyName = "thucNhan";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = null;
+            this.thucNhan.DefaultCellStyle = dataGridViewCellStyle13;
+            this.thucNhan.HeaderText = "Thực Nhận";
+            this.thucNhan.MinimumWidth = 6;
+            this.thucNhan.Name = "thucNhan";
+            // 
+            // ccbThang
+            // 
+            this.ccbThang.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccbThang.FormattingEnabled = true;
+            this.ccbThang.Location = new System.Drawing.Point(1186, 9);
+            this.ccbThang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ccbThang.Name = "ccbThang";
+            this.ccbThang.Size = new System.Drawing.Size(90, 29);
+            this.ccbThang.TabIndex = 112;
+            this.ccbThang.Text = "9";
+            this.ccbThang.TextChanged += new System.EventHandler(this.ccbThang_TextChanged);
             // 
             // lblBangLuongCN
             // 
@@ -711,137 +842,6 @@ namespace QuanLyLuongSanPham_GUI
             this.pCLuongCNS.Name = "pCLuongCNS";
             this.pCLuongCNS.Size = new System.Drawing.Size(1533, 830);
             this.pCLuongCNS.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Silver;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1115, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 21);
-            this.label3.TabIndex = 111;
-            this.label3.Text = "Tháng";
-            // 
-            // maNV
-            // 
-            this.maNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.maNV.DataPropertyName = "maNV";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maNV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.maNV.FillWeight = 30F;
-            this.maNV.HeaderText = "Mã Nhân Viên";
-            this.maNV.MinimumWidth = 6;
-            this.maNV.Name = "maNV";
-            this.maNV.ReadOnly = true;
-            this.maNV.Width = 127;
-            // 
-            // tenNV
-            // 
-            this.tenNV.DataPropertyName = "tenNV";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tenNV.DefaultCellStyle = dataGridViewCellStyle4;
-            this.tenNV.HeaderText = "Họ Tên";
-            this.tenNV.MinimumWidth = 6;
-            this.tenNV.Name = "tenNV";
-            this.tenNV.ReadOnly = true;
-            // 
-            // donVi
-            // 
-            this.donVi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.donVi.DataPropertyName = "donVi";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.donVi.DefaultCellStyle = dataGridViewCellStyle5;
-            this.donVi.HeaderText = "Đơn Vị";
-            this.donVi.MinimumWidth = 6;
-            this.donVi.Name = "donVi";
-            this.donVi.ReadOnly = true;
-            this.donVi.Width = 80;
-            // 
-            // congDoan
-            // 
-            this.congDoan.DataPropertyName = "congDoan";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.congDoan.DefaultCellStyle = dataGridViewCellStyle6;
-            this.congDoan.HeaderText = "Công Đoạn";
-            this.congDoan.MinimumWidth = 6;
-            this.congDoan.Name = "congDoan";
-            this.congDoan.ReadOnly = true;
-            // 
-            // soLuongSPLamDuoc
-            // 
-            this.soLuongSPLamDuoc.DataPropertyName = "soLuongSPLamDuoc";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.soLuongSPLamDuoc.DefaultCellStyle = dataGridViewCellStyle7;
-            this.soLuongSPLamDuoc.HeaderText = "SLSP Làm Được";
-            this.soLuongSPLamDuoc.MinimumWidth = 6;
-            this.soLuongSPLamDuoc.Name = "soLuongSPLamDuoc";
-            // 
-            // phuCap
-            // 
-            this.phuCap.DataPropertyName = "phuCap";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.phuCap.DefaultCellStyle = dataGridViewCellStyle8;
-            this.phuCap.HeaderText = "Phụ Cấp";
-            this.phuCap.MinimumWidth = 6;
-            this.phuCap.Name = "phuCap";
-            // 
-            // tienPhat
-            // 
-            this.tienPhat.DataPropertyName = "tienPhat";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tienPhat.DefaultCellStyle = dataGridViewCellStyle9;
-            this.tienPhat.HeaderText = "Tiền Phạt";
-            this.tienPhat.MinimumWidth = 6;
-            this.tienPhat.Name = "tienPhat";
-            // 
-            // thue
-            // 
-            this.thue.DataPropertyName = "thue";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thue.DefaultCellStyle = dataGridViewCellStyle10;
-            this.thue.HeaderText = "Thuế (%)";
-            this.thue.MinimumWidth = 6;
-            this.thue.Name = "thue";
-            // 
-            // tongLuongTT
-            // 
-            this.tongLuongTT.DataPropertyName = "tongLuongTT";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.tongLuongTT.DefaultCellStyle = dataGridViewCellStyle11;
-            this.tongLuongTT.HeaderText = "Tổng Lương TT";
-            this.tongLuongTT.MinimumWidth = 6;
-            this.tongLuongTT.Name = "tongLuongTT";
-            // 
-            // tamUng
-            // 
-            this.tamUng.DataPropertyName = "tamUng";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.tamUng.DefaultCellStyle = dataGridViewCellStyle12;
-            this.tamUng.HeaderText = "Tạm Ứng";
-            this.tamUng.MinimumWidth = 6;
-            this.tamUng.Name = "tamUng";
-            // 
-            // thucNhan
-            // 
-            this.thucNhan.DataPropertyName = "thucNhan";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Format = "N0";
-            dataGridViewCellStyle13.NullValue = null;
-            this.thucNhan.DefaultCellStyle = dataGridViewCellStyle13;
-            this.thucNhan.HeaderText = "Thực Nhận";
-            this.thucNhan.MinimumWidth = 6;
-            this.thucNhan.Name = "thucNhan";
             // 
             // dAOLuongCongNhanBindingSource
             // 
