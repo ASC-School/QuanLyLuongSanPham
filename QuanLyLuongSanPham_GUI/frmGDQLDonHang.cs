@@ -68,6 +68,13 @@ namespace QuanLyLuongSanPham_GUI
                 loadDonHangToDataGridView();
             }
             loadComBoBox();
+
+            // xủ lý autocomplet
+            txtTenKhachHang.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTenKhachHang.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //===
+            txtSoDienKhachHang.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSoDienKhachHang.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         private void loadDonHangToDataGridView()
         {
@@ -619,6 +626,36 @@ namespace QuanLyLuongSanPham_GUI
             }
 
 
+        }
+        private void XuLyHoTroAutocomletTenKH()
+        {
+            string buffer;
+            List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
+            txtTenKhachHang.AutoCompleteCustomSource.Clear();
+            foreach (DTO_DonHang item in lstDonHang)
+            {
+                txtTenKhachHang.AutoCompleteCustomSource.Add(item.TenKhachHang);
+            }
+        }
+        private void XuLyHoTroAutocomletoDienThoaiKH()
+        {
+            List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
+            txtSoDienKhachHang.AutoCompleteCustomSource.Clear();
+            foreach (DTO_DonHang item in lstDonHang)
+            {
+                txtSoDienKhachHang.AutoCompleteCustomSource.Add(item.SoDienThoaiKhachHang);
+            }
+        }
+
+
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            XuLyHoTroAutocomletTenKH();
+        }
+
+        private void txtSoDienKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            XuLyHoTroAutocomletoDienThoaiKH();
         }
     }
 }
