@@ -40,6 +40,11 @@ namespace QuanLyLuongSanPham_GUI
             loadDSDonHangToDataGridView();
             this.dgvDSDomHang.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvDSDomHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold);
+            txtTenKhachHang.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTenKhachHang.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //===
+            txtSoDienThoaiKhachHang.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSoDienThoaiKhachHang.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void loadDSDonHangToDataGridView()
@@ -191,6 +196,25 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
+        private void XuLyHoTroAutocomletTenKH()
+        {
+            string buffer;
+            List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
+            txtTenKhachHang.AutoCompleteCustomSource.Clear();
+            foreach (DTO_DonHang item in lstDonHang)
+            {
+                txtTenKhachHang.AutoCompleteCustomSource.Add(item.TenKhachHang);
+            }
+        }
+        private void XuLyHoTroAutocomletoDienThoaiKH()
+        {
+            List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
+            txtSoDienThoaiKhachHang.AutoCompleteCustomSource.Clear();
+            foreach (DTO_DonHang item in lstDonHang)
+            {
+                txtSoDienThoaiKhachHang.AutoCompleteCustomSource.Add(item.SoDienThoaiKhachHang);
+            }
+        }
         private void btnTimKimDonHang_Click(object sender, EventArgs e)
         {
             try
@@ -1699,6 +1723,16 @@ namespace QuanLyLuongSanPham_GUI
             frmGDQLDonHang frm = new frmGDQLDonHang(lstTimKiem);
             frm.ShowDialog();
             this.Close();
+        }
+
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            XuLyHoTroAutocomletTenKH();
+        }
+
+        private void txtSoDienThoaiKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            XuLyHoTroAutocomletoDienThoaiKH();
         }
     }
 }
