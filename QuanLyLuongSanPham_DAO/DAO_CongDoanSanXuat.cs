@@ -85,5 +85,10 @@ namespace QuanLyLuongSanPham_DAO
             }
             return false;
         }
+        public IEnumerable<CongDoanSanXuat> layAllDsCongDoan()
+        {
+            IEnumerable<CongDoanSanXuat> q = from n in dataBase.CongDoanSanXuats select n;
+            return q;
+        }
     }
 }

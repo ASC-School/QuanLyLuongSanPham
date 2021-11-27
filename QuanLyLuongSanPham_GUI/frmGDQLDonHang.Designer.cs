@@ -55,7 +55,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnInDonHang = new System.Windows.Forms.Button();
+            this.btnXuatDonHang = new System.Windows.Forms.Button();
             this.btnHuyDonHang = new System.Windows.Forms.Button();
             this.btnLuuDonHang = new System.Windows.Forms.Button();
             this.btnThemDonHang = new System.Windows.Forms.Button();
@@ -101,6 +101,8 @@ namespace QuanLyLuongSanPham_GUI
             this.errLoi = new System.Windows.Forms.ErrorProvider(this.components);
             this.dateTimeChartRangeControlClient1 = new DevExpress.XtraEditors.DateTimeChartRangeControlClient();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sidePanel1.SuspendLayout();
@@ -144,7 +146,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -166,7 +169,7 @@ namespace QuanLyLuongSanPham_GUI
             this.sidePanel1.Controls.Add(this.panel3);
             this.sidePanel1.Controls.Add(this.panel2);
             this.sidePanel1.Controls.Add(this.btnTimKiem);
-            this.sidePanel1.Controls.Add(this.btnInDonHang);
+            this.sidePanel1.Controls.Add(this.btnXuatDonHang);
             this.sidePanel1.Controls.Add(this.btnHuyDonHang);
             this.sidePanel1.Controls.Add(this.btnLuuDonHang);
             this.sidePanel1.Controls.Add(this.btnThemDonHang);
@@ -199,8 +202,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnDongGD
             // 
+            this.btnDongGD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDongGD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnDongGD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDongGD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDongGD.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDongGD.ForeColor = System.Drawing.Color.Black;
@@ -340,8 +344,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
@@ -354,26 +359,28 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnInDonHang
+            // btnXuatDonHang
             // 
-            this.btnInDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnInDonHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnInDonHang.ForeColor = System.Drawing.Color.Black;
-            this.btnInDonHang.Location = new System.Drawing.Point(0, 256);
-            this.btnInDonHang.Name = "btnInDonHang";
-            this.btnInDonHang.Size = new System.Drawing.Size(274, 64);
-            this.btnInDonHang.TabIndex = 5;
-            this.btnInDonHang.Text = "In  đơn hàng";
-            this.btnInDonHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInDonHang.UseVisualStyleBackColor = false;
-            this.btnInDonHang.Click += new System.EventHandler(this.btnInDonHang_Click);
+            this.btnXuatDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXuatDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
+            this.btnXuatDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatDonHang.ForeColor = System.Drawing.Color.Black;
+            this.btnXuatDonHang.Location = new System.Drawing.Point(0, 256);
+            this.btnXuatDonHang.Name = "btnXuatDonHang";
+            this.btnXuatDonHang.Size = new System.Drawing.Size(274, 64);
+            this.btnXuatDonHang.TabIndex = 5;
+            this.btnXuatDonHang.Text = "In đơn hàng";
+            this.btnXuatDonHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatDonHang.UseVisualStyleBackColor = false;
+            this.btnXuatDonHang.Click += new System.EventHandler(this.btnXuatDonHang_Click);
             // 
             // btnHuyDonHang
             // 
+            this.btnHuyDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuyDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnHuyDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHuyDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuyDonHang.ForeColor = System.Drawing.Color.Black;
@@ -388,8 +395,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnLuuDonHang
             // 
+            this.btnLuuDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuuDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnLuuDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLuuDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLuuDonHang.ForeColor = System.Drawing.Color.Black;
@@ -405,8 +413,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnThemDonHang
             // 
+            this.btnThemDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnThemDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThemDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemDonHang.ForeColor = System.Drawing.Color.Black;
@@ -421,8 +430,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // btnSuaDonHang
             // 
+            this.btnSuaDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSuaDonHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnSuaDonHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSuaDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSuaDonHang.ForeColor = System.Drawing.Color.Black;
@@ -446,14 +456,14 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(347, 0);
+            this.panelControl1.Location = new System.Drawing.Point(274, 0);
             this.panelControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.panelControl1.LookAndFeel.SkinName = "Office 2019 Colorful";
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1224, 971);
+            this.panelControl1.Size = new System.Drawing.Size(1198, 740);
             this.panelControl1.TabIndex = 5;
             // 
             // label2
@@ -469,6 +479,8 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panelControl2
             // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl2.Appearance.Options.UseBorderColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -493,20 +505,20 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.label11);
             this.panelControl2.Controls.Add(this.label4);
             this.panelControl2.Controls.Add(this.label3);
-            this.panelControl2.Location = new System.Drawing.Point(14, 55);
+            this.panelControl2.Location = new System.Drawing.Point(7, 55);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1195, 614);
+            this.panelControl2.Size = new System.Drawing.Size(1005, 614);
             this.panelControl2.TabIndex = 0;
             // 
             // cboTenNhanVien
             // 
             this.cboTenNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboTenNhanVien.FormattingEnabled = true;
-            this.cboTenNhanVien.Location = new System.Drawing.Point(858, 98);
+            this.cboTenNhanVien.Location = new System.Drawing.Point(701, 97);
             this.cboTenNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.cboTenNhanVien.Name = "cboTenNhanVien";
-            this.cboTenNhanVien.Size = new System.Drawing.Size(310, 32);
+            this.cboTenNhanVien.Size = new System.Drawing.Size(288, 27);
             this.cboTenNhanVien.TabIndex = 8;
             this.cboTenNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboTenNhanVien_SelectedIndexChanged);
             // 
@@ -514,10 +526,10 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.cboMaNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboMaNhanVien.FormattingEnabled = true;
-            this.cboMaNhanVien.Location = new System.Drawing.Point(858, 49);
+            this.cboMaNhanVien.Location = new System.Drawing.Point(701, 48);
             this.cboMaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaNhanVien.Name = "cboMaNhanVien";
-            this.cboMaNhanVien.Size = new System.Drawing.Size(310, 32);
+            this.cboMaNhanVien.Size = new System.Drawing.Size(288, 27);
             this.cboMaNhanVien.TabIndex = 2;
             this.cboMaNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboMaNhanVien_SelectedIndexChanged);
             // 
@@ -558,13 +570,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 32);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 32);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -574,7 +586,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -583,7 +595,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -592,7 +604,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -621,7 +633,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -630,7 +642,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 32);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 32);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -649,7 +661,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDonHang.CausesValidation = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -658,7 +670,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -670,7 +682,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDonHang.Name = "dgvDSDonHang";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -683,7 +695,7 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDSDonHang.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSDonHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSDonHang.Size = new System.Drawing.Size(1166, 228);
+            this.dgvDSDonHang.Size = new System.Drawing.Size(969, 228);
             this.dgvDSDonHang.TabIndex = 6;
             this.dgvDSDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDonHang_CellClick);
             // 
@@ -691,7 +703,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.btnLoadDSDonHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSDonHang.BackgroundImage")));
             this.btnLoadDSDonHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadDSDonHang.Location = new System.Drawing.Point(1138, 275);
+            this.btnLoadDSDonHang.Location = new System.Drawing.Point(940, 279);
             this.btnLoadDSDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadDSDonHang.Name = "btnLoadDSDonHang";
             this.btnLoadDSDonHang.Size = new System.Drawing.Size(51, 45);
@@ -718,7 +730,7 @@ namespace QuanLyLuongSanPham_GUI
             // dateNgayKetThuc
             // 
             this.dateNgayKetThuc.EditValue = null;
-            this.dateNgayKetThuc.Location = new System.Drawing.Point(180, 149);
+            this.dateNgayKetThuc.Location = new System.Drawing.Point(147, 151);
             this.dateNgayKetThuc.Margin = new System.Windows.Forms.Padding(4);
             this.dateNgayKetThuc.Name = "dateNgayKetThuc";
             this.dateNgayKetThuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -727,13 +739,13 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayKetThuc.Size = new System.Drawing.Size(328, 32);
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(295, 28);
             this.dateNgayKetThuc.TabIndex = 3;
             // 
             // dateNgayBatDau
             // 
             this.dateNgayBatDau.EditValue = null;
-            this.dateNgayBatDau.Location = new System.Drawing.Point(180, 98);
+            this.dateNgayBatDau.Location = new System.Drawing.Point(147, 100);
             this.dateNgayBatDau.Margin = new System.Windows.Forms.Padding(4);
             this.dateNgayBatDau.Name = "dateNgayBatDau";
             this.dateNgayBatDau.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -742,43 +754,43 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(328, 32);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(295, 28);
             this.dateNgayBatDau.TabIndex = 3;
             // 
             // txtNoiDung
             // 
             this.txtNoiDung.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNoiDung.Location = new System.Drawing.Point(858, 145);
+            this.txtNoiDung.Location = new System.Drawing.Point(701, 144);
             this.txtNoiDung.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(310, 32);
+            this.txtNoiDung.Size = new System.Drawing.Size(288, 27);
             this.txtNoiDung.TabIndex = 2;
             // 
             // txtSoDienKhachHang
             // 
             this.txtSoDienKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSoDienKhachHang.Location = new System.Drawing.Point(858, 196);
+            this.txtSoDienKhachHang.Location = new System.Drawing.Point(701, 195);
             this.txtSoDienKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienKhachHang.Name = "txtSoDienKhachHang";
-            this.txtSoDienKhachHang.Size = new System.Drawing.Size(312, 32);
+            this.txtSoDienKhachHang.Size = new System.Drawing.Size(290, 27);
             this.txtSoDienKhachHang.TabIndex = 2;
             // 
             // txtTenKhachHang
             // 
             this.txtTenKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenKhachHang.Location = new System.Drawing.Point(180, 200);
+            this.txtTenKhachHang.Location = new System.Drawing.Point(147, 202);
             this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(326, 32);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(293, 27);
             this.txtTenKhachHang.TabIndex = 2;
             // 
             // txtMaDonHang
             // 
             this.txtMaDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaDonHang.Location = new System.Drawing.Point(180, 54);
+            this.txtMaDonHang.Location = new System.Drawing.Point(147, 56);
             this.txtMaDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaDonHang.Name = "txtMaDonHang";
-            this.txtMaDonHang.Size = new System.Drawing.Size(326, 32);
+            this.txtMaDonHang.Size = new System.Drawing.Size(293, 27);
             this.txtMaDonHang.TabIndex = 2;
             // 
             // label6
@@ -789,7 +801,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.Location = new System.Drawing.Point(10, 154);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 24);
+            this.label6.Size = new System.Drawing.Size(112, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "Ngày kết thúc:";
             // 
@@ -801,7 +813,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.Location = new System.Drawing.Point(10, 106);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 24);
+            this.label5.Size = new System.Drawing.Size(109, 19);
             this.label5.TabIndex = 1;
             this.label5.Text = "Ngày bắt đầu:";
             // 
@@ -810,10 +822,10 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(606, 155);
+            this.label9.Location = new System.Drawing.Point(472, 152);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 24);
+            this.label9.Size = new System.Drawing.Size(80, 19);
             this.label9.TabIndex = 1;
             this.label9.Text = "Nội dung:";
             // 
@@ -822,10 +834,10 @@ namespace QuanLyLuongSanPham_GUI
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(608, 206);
+            this.label17.Location = new System.Drawing.Point(474, 203);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(242, 24);
+            this.label17.Size = new System.Drawing.Size(194, 19);
             this.label17.TabIndex = 1;
             this.label17.Text = "Số điện thoại khách hàng:";
             // 
@@ -834,10 +846,10 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(606, 108);
+            this.label8.Location = new System.Drawing.Point(472, 105);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 24);
+            this.label8.Size = new System.Drawing.Size(116, 19);
             this.label8.TabIndex = 1;
             this.label8.Text = "Tên nhân viên:";
             // 
@@ -846,10 +858,10 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(606, 59);
+            this.label7.Location = new System.Drawing.Point(472, 56);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 24);
+            this.label7.Size = new System.Drawing.Size(109, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mã nhân viên:";
             // 
@@ -861,7 +873,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.Location = new System.Drawing.Point(10, 210);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(164, 24);
+            this.label11.Size = new System.Drawing.Size(131, 19);
             this.label11.TabIndex = 1;
             this.label11.Text = "Tên Khách Hàng:";
             // 
@@ -873,7 +885,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.Location = new System.Drawing.Point(10, 51);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 24);
+            this.label4.Size = new System.Drawing.Size(107, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Mã đơn hàng:";
             // 
@@ -885,7 +897,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.Location = new System.Drawing.Point(32, 12);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 29);
+            this.label3.Size = new System.Drawing.Size(178, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Thông tin đơn hàng";
             // 
@@ -897,12 +909,14 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(8, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 41);
+            this.label1.Size = new System.Drawing.Size(266, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ ĐƠN HÀNG";
             // 
@@ -916,15 +930,29 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.errLoi.ContainerControl = this;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // frmGDQLDonHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1259, 992);
+            this.ClientSize = new System.Drawing.Size(1299, 757);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
@@ -978,7 +1006,7 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SidePanel sidePanel1;
         public System.Windows.Forms.Button btnTimKiem;
-        public System.Windows.Forms.Button btnInDonHang;
+        public System.Windows.Forms.Button btnXuatDonHang;
         public System.Windows.Forms.Button btnHuyDonHang;
         public System.Windows.Forms.Button btnLuuDonHang;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -1040,5 +1068,7 @@ namespace QuanLyLuongSanPham_GUI
         public DevExpress.XtraEditors.DateEdit dateNgayKetThuc;
         public DevExpress.XtraEditors.DateEdit dateNgayBatDau;
         private DevExpress.XtraEditors.DateTimeChartRangeControlClient dateTimeChartRangeControlClient1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

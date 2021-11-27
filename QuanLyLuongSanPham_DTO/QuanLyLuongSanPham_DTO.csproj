@@ -63,6 +63,7 @@
     <Compile Include="DTO_LuongHanhChanh.cs" />
     <Compile Include="DTO_Model.cs" />
     <Compile Include="DTO_NhanVien.cs" />
+    <Compile Include="DTO_PhanCong.cs" />
     <Compile Include="DTO_PhanQuyen.cs" />
     <Compile Include="DTO_PhieuChamCong.cs" />
     <Compile Include="DTO_SanPham.cs" />

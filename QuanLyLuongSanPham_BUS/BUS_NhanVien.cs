@@ -21,6 +21,11 @@ namespace QuanLyLuongSanPham_BUS
             return nv.getDanhSachNVToQLNS();
         }
 
+        public DTO_NhanVien getMotNhanVien(string maNhanVien)
+        {
+            return nv.layMotNhanVien(maNhanVien);
+        }
+
         public List<DTO_NhanVien> getDSNhanVienForDonHang()
         {
             return nv.layToanBoDanhSachNhanVien();
@@ -52,6 +57,14 @@ namespace QuanLyLuongSanPham_BUS
         public IEnumerable<dynamic> searchNhanVien(string maNV, string tenNV, string loaiNv)
         {
             return nv.serchNhanVien(maNV, tenNV, loaiNv);
+        }
+        public IEnumerable<NhanVien> layDanhSachCongNhan()
+        {
+            return nv.layDSCongNhan();
+        }
+        public IEnumerable<NhanVien> layNhanVienTheoMa(string strMaNhanVien)
+        {
+            return nv.layTTNhanVienTheoMa(strMaNhanVien);
         }
 
         public IEnumerable<NhanVien> layTenNVLuongCN()

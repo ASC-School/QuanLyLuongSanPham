@@ -24,10 +24,14 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
             bsModel = new BindingSource();
             sanPhamBUS = new BUS_SanPham();
+            
         }
-
+       
         private void frmModel_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             loadDSModelToDataGridView();
         }
         private void loadDSModelToDataGridView()
@@ -155,6 +159,7 @@ namespace QuanLyLuongSanPham_GUI
                 btnXoaModel.Enabled = false;
                 btnThemModel.Text = "Lưu";
                 hienThongTin();
+                formatTextBox();
                 cboMaModel.Enabled = true;
             }
             else

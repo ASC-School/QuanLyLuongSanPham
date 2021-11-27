@@ -25,7 +25,10 @@ namespace QuanLyLuongSanPham_GUI
         DTO_SanPham newSanPham;
         DTO_ChiTietModel newChiTiet;
         private void frmSanPham_Load(object sender, EventArgs e)
-        { 
+        {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             btnSuaSanPham.Enabled = false;
             btnXoaSanPham.Enabled = false;
             btnLuuSanPham.Enabled = false;

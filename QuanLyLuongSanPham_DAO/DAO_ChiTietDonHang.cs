@@ -24,28 +24,41 @@ namespace QuanLyLuongSanPham_DAO
             return false;
         }
 
-        public IEnumerable<dynamic> layChiTietDHThuocDH()
+        public List<DTO_ChiTietDonHang> lstCTDH(string maDonHang)
         {
-            IEnumerable<dynamic> q;
-         
-            q = (from donHang in dataBase.DonHangs
-                 join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
-                 join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
-                 join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                 select new
-                 {
-                     maDonHang = donHang.maDonHang,
-                     tenKhachHang = donHang.tenKhachHang,
-                     soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
-                     maSanPham = chiTietDonHang.maSanPham,
-                     tenSanPham = sanPham.tenSanPham,
-                     soLuong = chiTietDonHang.soLuongBan,
-                     donGiaSanPham = sanPham.giaBan,
-                     thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
-                     maNhanVien = nhanVien.maNhanVien
-                 }
+            if (!maDonHang.Equals(""))
+            {
+                var dataLst = (from donHang in dataBase.DonHangs
+                               join chiTietDonHang in dataBase.ChiTietDonHangs on donHang.maDonHang equals chiTietDonHang.maDonHang
+                               join sanPham in dataBase.SanPhams on chiTietDonHang.maSanPham equals sanPham.maSanPham
+                               join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                               where donHang.maDonHang.Equals(maDonHang)
+                               select new
+                               {
+                                   maDonHang = donHang.maDonHang,
+                                   tenKhachHang = donHang.tenKhachHang,
+                                   soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                   maSanPham = chiTietDonHang.maSanPham,
+                                   tenSanPham = sanPham.tenSanPham,
+                                   soLuong = chiTietDonHang.soLuongBan,
+                                   donGiaSanPham = sanPham.giaBan,
+                                   thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
+                                   maNhanVien = nhanVien.maNhanVien
+                               }
                 ).OrderBy(p => p.maDonHang);
-            return q;
+                List<DTO_ChiTietDonHang> lst = new List<DTO_ChiTietDonHang>();
+                foreach (var item in dataLst)
+                {
+                    DTO_ChiTietDonHang tmp = new DTO_ChiTietDonHang();
+                    tmp.MaDonHang = item.maDonHang;
+                    tmp.MaSanPham = item.maSanPham;
+                    tmp.SoLuong = item.soLuong.Value;
+                    tmp.DonGia = item.donGiaSanPham.Value;
+                    lst.Add(tmp);
+                }
+                return lst;
+            }
+            return null;
         }
 
         public IEnumerable<ChiTietDonHang> layThongTinCTDonHang()

@@ -21,6 +21,23 @@ namespace QuanLyLuongSanPham_DAO
             return q;
         }
 
+        public DTO_SanPham getSP(string maSanPham)
+        {
+            SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();
+            if (sanPham != null)
+            {
+                DTO_SanPham tmp = new DTO_SanPham();
+                tmp.MaSanPham = sanPham.maSanPham;
+                tmp.TenSanPham = sanPham.tenSanPham;
+                tmp.TrangThai = sanPham.trangThai.Value;
+                tmp.NamSanXuat = sanPham.namSanXuat.Value;
+                tmp.GiaBan = sanPham.giaBan.Value;
+                
+                return tmp;
+            }
+            return null;
+        }
+
         public bool checkExist(string maSanPham)
         {
             SanPham sanPham = dataBase.SanPhams.Where(p => p.maSanPham == maSanPham).FirstOrDefault();

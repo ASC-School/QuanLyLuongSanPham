@@ -13,6 +13,9 @@ using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_BUS;
 using System.Text.RegularExpressions;
 using QuanLyLuongSanPham_GUI.Regular_Expression;
+using QuanLyLuongSanPham_GUI.Properties;
+using System.Drawing.Printing;
+using System.Globalization;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -23,23 +26,47 @@ namespace QuanLyLuongSanPham_GUI
         BUS_NhanVien nhanVienBUS;
         checkFrmDonHang checkDH = new checkFrmDonHang();
         DTO_DonHang newDonHang;
-
+        IEnumerable<dynamic> lstTimKiemToDataGrid = null;
+        List<DTO_ChiTietDonHang> lstChiTietThuocDonHang = null;
         public frmGDQLDonHang()
         {
             InitializeComponent();
             donHangBUS = new BUS_DonHang();
             bsPH = new BindingSource();
             nhanVienBUS = new BUS_NhanVien();
+            addLuoiDonHang(dgvDSDonHang);
         }
+
+        public frmGDQLDonHang(IEnumerable<dynamic> lstTimKiem)
+        {
+            InitializeComponent();
+            donHangBUS = new BUS_DonHang();
+            bsPH = new BindingSource();
+            nhanVienBUS = new BUS_NhanVien();
+            addLuoiDonHang(dgvDSDonHang);
+            lstTimKiemToDataGrid = lstTimKiem;
+        }
+
 
         private void frmGDQLDonHang_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             // ẩn nút
             btnLuuDonHang.Enabled = false;
             btnHuyDonHang.Enabled = false;
-            btnInDonHang.Enabled = false;
-
-            loadDonHangToDataGridView();
+            btnXuatDonHang.Enabled = false;
+            this.dgvDSDonHang.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvDSDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold);
+            if (lstTimKiemToDataGrid != null)
+            {
+                loadDonHangToDataGridView(lstTimKiemToDataGrid);
+            }
+            else
+            {
+                loadDonHangToDataGridView();
+            }
             loadComBoBox();
         }
         private void loadDonHangToDataGridView()
@@ -48,21 +75,82 @@ namespace QuanLyLuongSanPham_GUI
             bsPH.DataSource = donHangBUS.getAllDonHang();
             dgvDSDonHang.DataSource = bsPH;
             bindingNavigatorDonHang.BindingSource = bsPH;
-            FormatLuoi(dgvDSDonHang);
         }
 
-        void FormatLuoi(DataGridView dgr)
+        private void loadDonHangToDataGridView(IEnumerable<dynamic> lst)
         {
-            dgr.Columns["maDonHang"].HeaderText = "Mã đơn hàng";
-            dgr.Columns["tenKhachHang"].HeaderText = "Tên khách hàng";
-            dgr.Columns["tenKhachHang"].Width = 200;
-            dgr.Columns["soDienThoaiKhachHang"].HeaderText = "Số điện thoại khách hàng";
-            dgr.Columns["ngayBatDau"].HeaderText = "Ngày bắt đầu";
-            dgr.Columns["ngayKetThuc"].HeaderText = "Ngày kết thúc";
-            dgr.Columns["noiDung"].HeaderText = "Nội dung";
-            dgr.Columns["maNhanVien"].HeaderText = "Mã Nhân Viên";
-            dgr.Columns["tenNhanVien"].HeaderText = "Tên Nhân Viên";
-            dgr.Columns["tenNhanVien"].Width = 200;
+            // load data
+            bsPH.DataSource = lst;
+            dgvDSDonHang.DataSource = bsPH;
+            bindingNavigatorDonHang.BindingSource = bsPH;
+        }
+
+        private void addLuoiDonHang(DataGridView dgr)
+        {
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maDonHang";
+            dc.HeaderText = "Mã đơn hàng";
+            dc.Name = "maDonHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayBatDau";
+            dc.HeaderText = "Ngày bắt đầu";
+            dc.Name = "ngayBatDau";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayKetThuc";
+            dc.HeaderText = "Ngày kết thúc";
+            dc.Name = "ngayKetThuc";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenKhachHang";
+            dc.HeaderText = "Tên Khách Hàng";
+            dc.Name = "tenKhachHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soDienThoaiKhachHang";
+            dc.HeaderText = "Số điện thoại khách hàng";
+            dc.Name = "soDienThoaiKhachHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "noiDung";
+            dc.HeaderText = "Nội dung";
+            dc.Name = "noiDung";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maNhanVien";
+            dc.HeaderText = "Mã nhân viên";
+            dc.Name = "maNhanVien";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenNhanVien";
+            dc.HeaderText = "Tên nhân viên";
+            dc.Name = "tenNhanVien";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
         }
 
         public void formatTextBox()
@@ -262,7 +350,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             btnLuuDonHang.Enabled = true;
             btnHuyDonHang.Enabled = true;
-            btnInDonHang.Enabled = true;
+            btnXuatDonHang.Enabled = true;
             hienThongTin();
             DataGridViewRow row = this.dgvDSDonHang.Rows[e.RowIndex];
             txtMaDonHang.Text = row.Cells[0].Value.ToString();
@@ -278,7 +366,6 @@ namespace QuanLyLuongSanPham_GUI
         private void btnLoadDSDonHang_Click(object sender, EventArgs e)
         {
             loadDonHangToDataGridView();
-            FormatLuoi(dgvDSDonHang);
         }
 
         private void cboMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
@@ -401,11 +488,6 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-        private void btnInDonHang_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSuaDonHang_Click(object sender, EventArgs e)
         {
             if (!btnSuaDonHang.Text.Equals("Hủy sửa"))
@@ -455,6 +537,88 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmTimKiemDonHang frm = new frmTimKiemDonHang();
             frm.ShowDialog();
+        }
+
+        private void btnXuatDonHang_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;//                                chieu rong,chieucao
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Hợp đồng sản xuất",900, 1700);
+            printDocument1.DefaultPageSettings.Landscape = true;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // them logo cho don hang
+            Image img = Resources.logo;
+
+            // ve logo vaof toa do 0 0 den het chiu dai chiu ong anh
+            e.Graphics.DrawImage(img, 0, 0, img.Width,img.Height);
+            // them ngay thang
+            e.Graphics.DrawString("Ngày: " + DateTime.Now, new Font("Tahoma", 12, FontStyle.Bold),Brushes.Red,new Point(25,200));
+            e.Graphics.DrawString("HỢP ĐỒNG SẢN XUẤT SẢN PHẨM", new Font("Tahoma", 40, FontStyle.Bold),Brushes.Red, new Point(500,50));
+            // in phan thong itn don hang
+            e.Graphics.DrawString("Mã đơn hàng: " + txtMaDonHang.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 230));
+            e.Graphics.DrawString("Mã nhân viên: " + cboMaNhanVien.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 230));
+            e.Graphics.DrawString("Ngày bắt đầu: " + dateNgayBatDau.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 260));
+            e.Graphics.DrawString("Tên nhân viên: " + dateNgayKetThuc.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 260));
+            e.Graphics.DrawString("Ngày kết thúc: " + dateNgayKetThuc.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 290));
+            e.Graphics.DrawString("Nội dung: " + txtNoiDung.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 290));
+            e.Graphics.DrawString("Tên khách hàng: " + txtTenKhachHang.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(25, 320));
+            e.Graphics.DrawString("Số điện thoại khách hàng: " + txtSoDienKhachHang.Text.Trim(), new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(450, 320));
+            Pen pen1 = new Pen(Color.Black, 1);
+            e.Graphics.DrawLine(pen1, 25, 350, 1600, 350);
+            try
+            {
+                lstChiTietThuocDonHang = donHangBUS.getCTDH(txtMaDonHang.Text);
+                if(lstChiTietThuocDonHang != null)
+                {
+                    e.Graphics.DrawString("SẢN PHẨM", new Font("Tahoma", 24, FontStyle.Bold), Brushes.Black, new Point(700, 380));
+                    Pen pen = new Pen(Color.Black, 1);
+                    e.Graphics.DrawLine(pen, 25,430, 1600, 430);
+                    //header của dơn hàng
+                    e.Graphics.DrawString("|STT", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(30, 460));
+                    e.Graphics.DrawString("|Mã sản phảm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(70, 460));
+                    e.Graphics.DrawString("|Tên sản phẩm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(270, 460));
+                    e.Graphics.DrawString("|Số lượng", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(670, 460));
+                    e.Graphics.DrawString("|Đơn giá sản phẩm", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(870, 460));
+                    e.Graphics.DrawString("|Thành tiền      |", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(1070, 460));
+                    e.Graphics.DrawLine(pen, 25, 490, 1600, 490);
+
+                    int STT = 1;
+                    int xCu = 470;
+                    int khoangCach = 30;
+                    decimal tongTien = 0;
+                    foreach(var item in lstChiTietThuocDonHang)
+                    {
+                        xCu += khoangCach;
+                        decimal thanhTien = item.SoLuong * item.DonGia;
+                        DTO_SanPham sp = donHangBUS.getMotSanPham(item.MaSanPham);
+                        e.Graphics.DrawString("|" + STT, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(30, xCu));
+                        e.Graphics.DrawString("|" + item.MaSanPham, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(70, xCu));
+                        e.Graphics.DrawString("|" + sp.TenSanPham, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(270, xCu));
+                        e.Graphics.DrawString("|" + item.SoLuong, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(670, xCu));
+                        e.Graphics.DrawString("|" + item.DonGia, new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(870, xCu));
+                        e.Graphics.DrawString("|" + thanhTien.ToString() + "    |", new Font("Tahoma", 12, FontStyle.Bold), Brushes.Black, new Point(1070, xCu));
+                        
+                        STT++;
+                        tongTien += thanhTien;
+                    }
+                    e.Graphics.DrawString("TỔNG TIỀN:  " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", tongTien) + "VNĐ", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(1200, xCu + 100));
+                    e.Graphics.DrawString("Chữ ký nhân viên", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(100, xCu + 200));
+                    e.Graphics.DrawString("Chữ ký khách hàng", new Font("Tahoma", 18, FontStyle.Bold), Brushes.Black, new Point(1120, xCu + 200));
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng thêm chi tiết đơn hàng!!!");
+                }  
+            }
+            catch
+            {
+
+            }
+
+
         }
     }
 }
