@@ -30,6 +30,17 @@ namespace QuanLyLuongSanPham_DAO
                 return temp;
             return null;
         }
+
+        public IEnumerable<CongDoanSanXuat> layDonGia(string strmaNV)
+        {
+            IEnumerable<CongDoanSanXuat> cdsx = from lcn in dataBase.LuongCongNhans
+                                                join cd in dataBase.CongDoanSanXuats
+                                                on lcn.maCongDoan equals cd.soThuTu
+                                                where lcn.maNhanVien.Equals(strmaNV)
+                                                select cd;
+            return cdsx;
+        }
+
         public bool themCongDoan(DTO_CongDoanSanXuat cd)
         {
             string str = cd.SoThuTu.ToString();

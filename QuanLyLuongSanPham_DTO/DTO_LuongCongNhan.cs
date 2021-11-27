@@ -11,9 +11,10 @@ namespace QuanLyLuongSanPham_DTO
         string maLuong, maNhanVien, maPhieuChamCong;
         float thue;
         int phuCap, tienUng, tienPhat, soLuongSanPhamLamDuoc, maCongDoan;
+        int thangLuong, namLuong;
 
         public DTO_LuongCongNhan() { }
-        public DTO_LuongCongNhan(string maLuong, string maNhanVien, string maPhieuChamCong, float thue, int phuCap, int tienUng, int tienPhat, int soLuongSanPhamLamDuoc, int maCongDoan)
+        public DTO_LuongCongNhan(string maLuong, string maNhanVien, string maPhieuChamCong, float thue, int phuCap, int tienUng, int tienPhat, int soLuongSanPhamLamDuoc, int maCongDoan, int thangLuong, int namLuong)
         {
             this.MaLuong = maLuong;
             this.MaNhanVien = maNhanVien;
@@ -24,6 +25,8 @@ namespace QuanLyLuongSanPham_DTO
             this.TienPhat = tienPhat;
             this.SoLuongSanPhamLamDuoc = soLuongSanPhamLamDuoc;
             this.MaCongDoan = maCongDoan;
+            this.thangLuong = thangLuong;
+            this.namLuong = namLuong;
         }
 
         public string MaLuong { get => maLuong; set => maLuong = value; }
@@ -35,5 +38,7 @@ namespace QuanLyLuongSanPham_DTO
         public int TienPhat { get => tienPhat; set => tienPhat = value; }
         public int SoLuongSanPhamLamDuoc { get => soLuongSanPhamLamDuoc; set => soLuongSanPhamLamDuoc = value; }
         public int MaCongDoan { get => maCongDoan; set => maCongDoan = value; }
+        public int ThangLuong { get => thangLuong; set => thangLuong = value; }
+        public int NamLuong { get => namLuong; set => namLuong = value; }
     }
 }

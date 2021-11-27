@@ -27,7 +27,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             Util.Animate(this, Util.Effect.Center, 150, 180);
             loadDataToCbo();
-        }
+        }   
 
         private void FrmTimKiemNhanVien_MouseDown(object sender, MouseEventArgs e)
         {
@@ -43,10 +43,6 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-        private void cbDonVi_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         public void loadDataToCbo()
         {
             IEnumerable<LoaiNhanVien> dsLoai = busLoaiNV.getNhanVienForQLNS();

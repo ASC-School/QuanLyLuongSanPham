@@ -98,8 +98,10 @@
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_PhanCong.cs" />
     <Compile Include="BUS_PhanQuyen.cs" />
+    <Compile Include="BUS_PhatNhanVien.cs" />
     <Compile Include="BUS_SanPham.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
+    <Compile Include="BUS_TimKiemNhanVienTheoLuong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -34,5 +34,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.layAllDsCongDoan();
         }
+
+        public IEnumerable<CongDoanSanXuat> layDonGiaCD(string strMaNV)
+        {
+            return cd.layDonGia(strMaNV);
+        }
     }
 }

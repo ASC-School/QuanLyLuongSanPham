@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyLuongSanPham" Class="QuanLyLuongSanPhamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-50F1KAT\Peguin;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HUYDINH;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CaLamViec" Member="CaLamViecs">
     <Type Name="CaLamViec">
       <Column Name="maCa" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -91,11 +91,13 @@
   <Table Name="dbo.LuongCongNhan" Member="LuongCongNhans">
     <Type Name="LuongCongNhan">
       <Column Name="maLuong" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thangLuong" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="namLuong" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="soLuongSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thue" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="phuCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tienUng" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maTienPhat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="soLuongSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maNhanVien" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="maPhieu" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="maCongDoan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -109,9 +111,12 @@
     <Type Name="LuongHanhChanh">
       <Column Name="maLuong" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="luongCoBan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="thangLuong" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="namLuong" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="thue" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="phuCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tienUng" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tienTangCa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maTienPhat" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soNgayLamDuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maNhanVien" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />

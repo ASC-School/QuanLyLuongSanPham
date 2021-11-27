@@ -96,26 +96,26 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.cboMaModel);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(15, 52);
+            this.panelControl1.Location = new System.Drawing.Point(19, 65);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(383, 136);
             this.panelControl1.TabIndex = 0;
             // 
             // txtTrangThai
             // 
-            this.txtTrangThai.Location = new System.Drawing.Point(140, 141);
-            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTrangThai.Location = new System.Drawing.Point(175, 176);
+            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(302, 21);
             this.txtTrangThai.TabIndex = 2;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(32, 145);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl4.Location = new System.Drawing.Point(40, 181);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 13);
             this.labelControl4.TabIndex = 0;

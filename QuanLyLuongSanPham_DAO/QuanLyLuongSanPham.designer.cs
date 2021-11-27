@@ -93,7 +93,7 @@ namespace QuanLyLuongSanPham_DAO
     #endregion
 		
 		public QuanLyLuongSanPhamDataContext() : 
-				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString4, mappingSource)
+				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2070,6 +2070,12 @@ namespace QuanLyLuongSanPham_DAO
 		
 		private string _maLuong;
 		
+		private System.Nullable<short> _thangLuong;
+		
+		private System.Nullable<short> _namLuong;
+		
+		private System.Nullable<int> _soLuongSanPham;
+		
 		private System.Nullable<double> _thue;
 		
 		private System.Nullable<int> _phuCap;
@@ -2077,8 +2083,6 @@ namespace QuanLyLuongSanPham_DAO
 		private System.Nullable<int> _tienUng;
 		
 		private System.Nullable<int> _maTienPhat;
-		
-		private System.Nullable<int> _soLuongSanPham;
 		
 		private string _maNhanVien;
 		
@@ -2100,6 +2104,12 @@ namespace QuanLyLuongSanPham_DAO
     partial void OnCreated();
     partial void OnmaLuongChanging(string value);
     partial void OnmaLuongChanged();
+    partial void OnthangLuongChanging(System.Nullable<short> value);
+    partial void OnthangLuongChanged();
+    partial void OnnamLuongChanging(System.Nullable<short> value);
+    partial void OnnamLuongChanged();
+    partial void OnsoLuongSanPhamChanging(System.Nullable<int> value);
+    partial void OnsoLuongSanPhamChanged();
     partial void OnthueChanging(System.Nullable<double> value);
     partial void OnthueChanged();
     partial void OnphuCapChanging(System.Nullable<int> value);
@@ -2108,8 +2118,6 @@ namespace QuanLyLuongSanPham_DAO
     partial void OntienUngChanged();
     partial void OnmaTienPhatChanging(System.Nullable<int> value);
     partial void OnmaTienPhatChanged();
-    partial void OnsoLuongSanPhamChanging(System.Nullable<int> value);
-    partial void OnsoLuongSanPhamChanged();
     partial void OnmaNhanVienChanging(string value);
     partial void OnmaNhanVienChanged();
     partial void OnmaPhieuChanging(string value);
@@ -2143,6 +2151,66 @@ namespace QuanLyLuongSanPham_DAO
 					this._maLuong = value;
 					this.SendPropertyChanged("maLuong");
 					this.OnmaLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thangLuong", DbType="SmallInt")]
+		public System.Nullable<short> thangLuong
+		{
+			get
+			{
+				return this._thangLuong;
+			}
+			set
+			{
+				if ((this._thangLuong != value))
+				{
+					this.OnthangLuongChanging(value);
+					this.SendPropertyChanging();
+					this._thangLuong = value;
+					this.SendPropertyChanged("thangLuong");
+					this.OnthangLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_namLuong", DbType="SmallInt")]
+		public System.Nullable<short> namLuong
+		{
+			get
+			{
+				return this._namLuong;
+			}
+			set
+			{
+				if ((this._namLuong != value))
+				{
+					this.OnnamLuongChanging(value);
+					this.SendPropertyChanging();
+					this._namLuong = value;
+					this.SendPropertyChanged("namLuong");
+					this.OnnamLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soLuongSanPham", DbType="Int")]
+		public System.Nullable<int> soLuongSanPham
+		{
+			get
+			{
+				return this._soLuongSanPham;
+			}
+			set
+			{
+				if ((this._soLuongSanPham != value))
+				{
+					this.OnsoLuongSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._soLuongSanPham = value;
+					this.SendPropertyChanged("soLuongSanPham");
+					this.OnsoLuongSanPhamChanged();
 				}
 			}
 		}
@@ -2227,26 +2295,6 @@ namespace QuanLyLuongSanPham_DAO
 					this._maTienPhat = value;
 					this.SendPropertyChanged("maTienPhat");
 					this.OnmaTienPhatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soLuongSanPham", DbType="Int")]
-		public System.Nullable<int> soLuongSanPham
-		{
-			get
-			{
-				return this._soLuongSanPham;
-			}
-			set
-			{
-				if ((this._soLuongSanPham != value))
-				{
-					this.OnsoLuongSanPhamChanging(value);
-					this.SendPropertyChanging();
-					this._soLuongSanPham = value;
-					this.SendPropertyChanged("soLuongSanPham");
-					this.OnsoLuongSanPhamChanged();
 				}
 			}
 		}
@@ -2490,11 +2538,17 @@ namespace QuanLyLuongSanPham_DAO
 		
 		private System.Nullable<decimal> _luongCoBan;
 		
+		private System.Nullable<short> _thangLuong;
+		
+		private System.Nullable<short> _namLuong;
+		
 		private System.Nullable<double> _thue;
 		
 		private System.Nullable<int> _phuCap;
 		
 		private System.Nullable<int> _tienUng;
+		
+		private System.Nullable<int> _tienTangCa;
 		
 		private System.Nullable<int> _maTienPhat;
 		
@@ -2522,12 +2576,18 @@ namespace QuanLyLuongSanPham_DAO
     partial void OnmaLuongChanged();
     partial void OnluongCoBanChanging(System.Nullable<decimal> value);
     partial void OnluongCoBanChanged();
+    partial void OnthangLuongChanging(System.Nullable<short> value);
+    partial void OnthangLuongChanged();
+    partial void OnnamLuongChanging(System.Nullable<short> value);
+    partial void OnnamLuongChanged();
     partial void OnthueChanging(System.Nullable<double> value);
     partial void OnthueChanged();
     partial void OnphuCapChanging(System.Nullable<int> value);
     partial void OnphuCapChanged();
     partial void OntienUngChanging(System.Nullable<int> value);
     partial void OntienUngChanged();
+    partial void OntienTangCaChanging(System.Nullable<int> value);
+    partial void OntienTangCaChanged();
     partial void OnmaTienPhatChanging(System.Nullable<int> value);
     partial void OnmaTienPhatChanged();
     partial void OnsoNgayLamDuocChanging(System.Nullable<int> value);
@@ -2589,6 +2649,46 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thangLuong", DbType="SmallInt")]
+		public System.Nullable<short> thangLuong
+		{
+			get
+			{
+				return this._thangLuong;
+			}
+			set
+			{
+				if ((this._thangLuong != value))
+				{
+					this.OnthangLuongChanging(value);
+					this.SendPropertyChanging();
+					this._thangLuong = value;
+					this.SendPropertyChanged("thangLuong");
+					this.OnthangLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_namLuong", DbType="SmallInt")]
+		public System.Nullable<short> namLuong
+		{
+			get
+			{
+				return this._namLuong;
+			}
+			set
+			{
+				if ((this._namLuong != value))
+				{
+					this.OnnamLuongChanging(value);
+					this.SendPropertyChanging();
+					this._namLuong = value;
+					this.SendPropertyChanged("namLuong");
+					this.OnnamLuongChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thue", DbType="Float")]
 		public System.Nullable<double> thue
 		{
@@ -2645,6 +2745,26 @@ namespace QuanLyLuongSanPham_DAO
 					this._tienUng = value;
 					this.SendPropertyChanged("tienUng");
 					this.OntienUngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienTangCa", DbType="Int")]
+		public System.Nullable<int> tienTangCa
+		{
+			get
+			{
+				return this._tienTangCa;
+			}
+			set
+			{
+				if ((this._tienTangCa != value))
+				{
+					this.OntienTangCaChanging(value);
+					this.SendPropertyChanging();
+					this._tienTangCa = value;
+					this.SendPropertyChanged("tienTangCa");
+					this.OntienTangCaChanged();
 				}
 			}
 		}
