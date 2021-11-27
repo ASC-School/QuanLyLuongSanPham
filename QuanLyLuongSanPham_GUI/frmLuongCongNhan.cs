@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyLuongSanPham_BUS;
-using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_DAO;
+using QuanLyLuongSanPham_DTO;
 using DevExpress.XtraEditors.Mask;
 using System.Data.OleDb;
 

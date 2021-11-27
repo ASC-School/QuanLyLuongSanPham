@@ -5254,8 +5254,6 @@ namespace QuanLyLuongSanPham_DAO
 		
 		private EntitySet<ChiTietModel> _ChiTietModels;
 		
-		private EntitySet<CongDoanSanXuat> _CongDoanSanXuats;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5277,7 +5275,6 @@ namespace QuanLyLuongSanPham_DAO
 			this._CongDoanSanXuats = new EntitySet<CongDoanSanXuat>(new Action<CongDoanSanXuat>(this.attach_CongDoanSanXuats), new Action<CongDoanSanXuat>(this.detach_CongDoanSanXuats));
 			this._ChiTietDonHangs = new EntitySet<ChiTietDonHang>(new Action<ChiTietDonHang>(this.attach_ChiTietDonHangs), new Action<ChiTietDonHang>(this.detach_ChiTietDonHangs));
 			this._ChiTietModels = new EntitySet<ChiTietModel>(new Action<ChiTietModel>(this.attach_ChiTietModels), new Action<ChiTietModel>(this.detach_ChiTietModels));
-			this._CongDoanSanXuats = new EntitySet<CongDoanSanXuat>(new Action<CongDoanSanXuat>(this.attach_CongDoanSanXuats), new Action<CongDoanSanXuat>(this.detach_CongDoanSanXuats));
 			OnCreated();
 		}
 		
@@ -5407,6 +5404,19 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham_ChiTietModel", Storage="_ChiTietModels", ThisKey="maSanPham", OtherKey="maSanPham")]
+		public EntitySet<ChiTietModel> ChiTietModels
+		{
+			get
+			{
+				return this._ChiTietModels;
+			}
+			set
+			{
+				this._ChiTietModels.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5446,6 +5456,18 @@ namespace QuanLyLuongSanPham_DAO
 		}
 		
 		private void detach_ChiTietDonHangs(ChiTietDonHang entity)
+		{
+			this.SendPropertyChanging();
+			entity.SanPham = null;
+		}
+		
+		private void attach_ChiTietModels(ChiTietModel entity)
+		{
+			this.SendPropertyChanging();
+			entity.SanPham = this;
+		}
+		
+		private void detach_ChiTietModels(ChiTietModel entity)
 		{
 			this.SendPropertyChanging();
 			entity.SanPham = null;

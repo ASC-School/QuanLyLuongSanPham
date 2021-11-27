@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 32.5" name="QuanLyLuongSanPham">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 32.375" name="QuanLyLuongSanPham">
   <DataContextMoniker Name="/QuanLyLuongSanPhamDataContext" />
   <nestedChildShapes>
     <classShape Id="205897ad-d7ab-4f9c-91ff-fbc29af4f9d1" absoluteBounds="6.5, 10.5, 2, 1.1939925130208344">
@@ -20,10 +20,10 @@
         <elementListCompartment Id="1874b563-b67d-44d4-97af-83a0e1d3737b" absoluteBounds="9.015, 21.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3187449b-e8dc-4efd-9132-9ce2fa1564cc" absoluteBounds="6.5, 30.625, 2, 1.5785953776041701">
+    <classShape Id="3187449b-e8dc-4efd-9132-9ce2fa1564cc" absoluteBounds="7.125, 29.875, 2, 1.5785953776041701">
       <DataClassMoniker Name="/QuanLyLuongSanPhamDataContext/ChiTietModel" />
       <nestedChildShapes>
-        <elementListCompartment Id="e1d8a595-de5e-4af8-90a9-5f87904df92d" absoluteBounds="6.515, 31.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e1d8a595-de5e-4af8-90a9-5f87904df92d" absoluteBounds="7.14, 30.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="3ace5f7a-3292-402b-b577-1aa3632f5b9d" absoluteBounds="9.25, 14.5, 2, 1.1939925130208344">
@@ -122,154 +122,154 @@
         <elementListCompartment Id="6a8386cc-976f-450b-ac9f-e2a5baa7637b" absoluteBounds="3.765, 27.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 22.0392976888021); (8.32291666666667 : 22.0392976888021 : JumpStart); (8.52083583333333 : 22.0392976888021 : JumpEnd); (9 : 22.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 22.0392976888021); (9 : 22.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/DonHang/DonHang_ChiTietDonHang" />
       <nodes>
         <classShapeMoniker Id="f8f5ed83-da1e-484e-b17c-3eae11f6274d" />
         <classShapeMoniker Id="22a5794b-14d7-41d9-9a49-ff4022c61bfa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 14.125); (1.75 : 9.16429768880208); (3.5 : 9.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 14.125); (1.75 : 9.16429768880208); (3.5 : 9.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/LoaiNhanVien/LoaiNhanVien_DonViQuanLy" />
       <nodes>
         <classShapeMoniker Id="b233a5ec-9c70-4255-b4a2-6845edf70506" />
         <classShapeMoniker Id="c1e034eb-d1f1-4452-875e-60cd2d6c2b6a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 27.625); (8.40625 : 20.6354484049479); (12 : 20.6354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 27.625); (8.40625 : 20.6354484049479); (12 : 20.6354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/CongDoanSanXuat/CongDoanSanXuat_LuongCongNhan" />
       <nodes>
         <classShapeMoniker Id="6e9ad954-4411-437d-8130-80a9aefa283d" />
         <classShapeMoniker Id="2e5041da-6bf9-43c1-9c94-09d672d14fcb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 14.9999995); (12.3854141666667 : 14.9999995 : JumpStart); (12.5520808333333 : 14.9999995 : JumpEnd); (13 : 14.9999995); (13 : 15.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 14.9999995); (13 : 14.9999995); (13 : 15.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/ChungChi/ChungChi_LuongHanhChanh" />
       <nodes>
         <classShapeMoniker Id="3ace5f7a-3292-402b-b577-1aa3632f5b9d" />
         <classShapeMoniker Id="7af8a0e9-3803-4423-bbb1-d0fcb43d281b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 31.4431469726563); (6.5 : 31.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 31.1017976888021); (7.125 : 31.1017976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/Model/Model_ChiTietModel" />
       <nodes>
         <classShapeMoniker Id="d107f3fd-7adc-4dda-b3ad-11281e9ac07d" />
         <classShapeMoniker Id="3187449b-e8dc-4efd-9132-9ce2fa1564cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.8261941614583); (5.79166666666667 : 14.8261941614583 : JumpStart); (5.95833333333333 : 14.8261941614583 : JumpEnd); (5.97916666666667 : 14.8261941614583 : JumpStart); (6.14583333333333 : 14.8261941614583 : JumpEnd); (8.32291666666667 : 14.8261941614583 : JumpStart); (8.48958333333333 : 14.8261941614583 : JumpEnd); (9 : 14.8261941614583); (9 : 19.0593082682292); (11.6666666666667 : 19.0593082682292 : JumpStart); (11.8333333333333 : 19.0593082682292 : JumpEnd); (13 : 19.0593082682292); (13 : 19.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 14.8261941614583); (5.79166666666667 : 14.8261941614583 : JumpStart); (5.95833333333333 : 14.8261941614583 : JumpEnd); (5.97916666666667 : 14.8261941614583 : JumpStart); (6.14583333333333 : 14.8261941614583 : JumpEnd); (8.32291666666667 : 14.8261941614583 : JumpStart); (8.48958333333333 : 14.8261941614583 : JumpEnd); (9 : 14.8261941614583); (9 : 19.0593082682292); (13 : 19.0593082682292); (13 : 19.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/MucTienPhat/MucTienPhat_LuongCongNhan" />
       <nodes>
         <classShapeMoniker Id="8122c375-7133-4dd4-af3e-6d3f17a493ca" />
         <classShapeMoniker Id="2e5041da-6bf9-43c1-9c94-09d672d14fcb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.4142976888021); (5.79166666666667 : 14.4142976888021 : JumpStart); (5.95833333333333 : 14.4142976888021 : JumpEnd); (5.97916666666667 : 14.4142976888021 : JumpStart); (6.14583333333333 : 14.4142976888021 : JumpEnd); (8.32291666666667 : 14.4142976888021 : JumpStart); (8.48958333333333 : 14.4142976888021 : JumpEnd); (12.4687475 : 14.4142976888021); (12.4687475 : 15.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 14.4142976888021); (5.79166666666667 : 14.4142976888021 : JumpStart); (5.95833333333333 : 14.4142976888021 : JumpEnd); (5.97916666666667 : 14.4142976888021 : JumpStart); (6.14583333333333 : 14.4142976888021 : JumpEnd); (8.32291666666667 : 14.4142976888021 : JumpStart); (8.48958333333333 : 14.4142976888021 : JumpEnd); (12.4687475 : 14.4142976888021); (12.4687475 : 15.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/MucTienPhat/MucTienPhat_LuongHanhChanh" />
       <nodes>
         <classShapeMoniker Id="8122c375-7133-4dd4-af3e-6d3f17a493ca" />
         <classShapeMoniker Id="7af8a0e9-3803-4423-bbb1-d0fcb43d281b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.7892976888021); (6.25 : 16.7892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 16.7892976888021); (6.25 : 16.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_TaiKhoan" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="9690bdc5-0a19-473f-a117-cd59e50c1783" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 18.7324039713542); (4.5 : 22.0777498372396); (6.25 : 22.0777498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 18.7324039713542); (4.5 : 22.0777498372396); (6.25 : 22.0777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_DonHang" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="f8f5ed83-da1e-484e-b17c-3eae11f6274d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.0312525 : 18.7324039713542); (5.0312525 : 20.4531701074219); (8.35416916666667 : 20.4531701074219 : JumpStart); (8.52083583333333 : 20.4531701074219 : JumpEnd); (12 : 20.4531701074219)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.0312525 : 18.7324039713542); (5.0312525 : 20.4531701074219); (12 : 20.4531701074219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_LuongCongNhan" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="2e5041da-6bf9-43c1-9c94-09d672d14fcb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 18.3854484049479); (8.28121826171875 : 18.3854484049479 : JumpStart); (8.52083583333333 : 18.3854484049479 : JumpEnd); (8.54166666666667 : 18.3854484049479 : JumpStart); (8.70833333333333 : 18.3854484049479 : JumpEnd); (8.91666666666667 : 18.3854484049479 : JumpStart); (9.08333333333333 : 18.3854484049479 : JumpEnd); (12 : 18.3854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 18.3854484049479); (12 : 18.3854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_LuongHanhChanh" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="7af8a0e9-3803-4423-bbb1-d0fcb43d281b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 15.5112939453125); (1.75 : 17.3662019856771); (3.5 : 17.3662019856771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 15.5112939453125); (1.75 : 17.3662019856771); (3.5 : 17.3662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/LoaiNhanVien/LoaiNhanVien_NhanVien" />
       <nodes>
         <classShapeMoniker Id="b233a5ec-9c70-4255-b4a2-6845edf70506" />
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 11.6939925130208); (8.40625 : 17.95599609375); (8.91666666666667 : 17.95599609375 : JumpStart); (9.08333333333333 : 17.95599609375 : JumpEnd); (9.25 : 17.95599609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 11.6939925130208); (8.40625 : 17.95599609375); (9.25 : 17.95599609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/CaLamViec/CaLamViec_PhanCong" />
       <nodes>
         <classShapeMoniker Id="205897ad-d7ab-4f9c-91ff-fbc29af4f9d1" />
         <classShapeMoniker Id="b69f6bcc-4c8a-4de3-abfd-8dfdda11bf5f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.4375025 : 27.625); (8.4375025 : 18.1446989518229); (8.91666666666667 : 18.1446989518229 : JumpStart); (9.08333333333333 : 18.1446989518229 : JumpEnd); (9.25 : 18.1446989518229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.4375025 : 27.625); (8.4375025 : 18.1446989518229); (8.91666666666667 : 18.1446989518229 : JumpStart); (9.08333333333333 : 18.1446989518229 : JumpEnd); (9.25 : 18.1446989518229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/CongDoanSanXuat/CongDoanSanXuat_PhanCong" />
       <nodes>
         <classShapeMoniker Id="6e9ad954-4411-437d-8130-80a9aefa283d" />
         <classShapeMoniker Id="b69f6bcc-4c8a-4de3-abfd-8dfdda11bf5f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 17.7360457356771); (8.32291666666667 : 17.7360457356771 : JumpStart); (8.48958333333333 : 17.7360457356771 : JumpEnd); (8.91666666666667 : 17.7360457356771 : JumpStart); (9.08333333333333 : 17.7360457356771 : JumpEnd); (9.25 : 17.7360457356771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 17.7360457356771); (8.32291666666667 : 17.7360457356771 : JumpStart); (8.48958333333333 : 17.7360457356771 : JumpEnd); (9.25 : 17.7360457356771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_PhanCong" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="b69f6bcc-4c8a-4de3-abfd-8dfdda11bf5f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 12.9054996744792); (5.875 : 13.2804996744792); (5.875 : 16.363396844401); (6.25 : 16.363396844401)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 12.9054996744792); (5.875 : 13.2804996744792); (5.875 : 16.363396844401); (6.25 : 16.363396844401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/PhanQuyen/PhanQuyen_TaiKhoan" />
       <nodes>
         <classShapeMoniker Id="19561ef4-b465-45bb-bf3c-684644168ddb" />
         <classShapeMoniker Id="9690bdc5-0a19-473f-a117-cd59e50c1783" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.2812525 : 14.125); (2.2812525 : 11.8277498372396); (3.5 : 11.8277498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.2812525 : 14.125); (2.2812525 : 11.8277498372396); (3.5 : 11.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/LoaiNhanVien/LoaiNhanVien_PhanQuyen" />
       <nodes>
         <classShapeMoniker Id="b233a5ec-9c70-4255-b4a2-6845edf70506" />
         <classShapeMoniker Id="19561ef4-b465-45bb-bf3c-684644168ddb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.16429768880208); (6.34375 : 9.16429768880208); (6.34375 : 12.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 9.16429768880208); (6.34375 : 9.16429768880208); (6.34375 : 12.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/DonViQuanLy/DonViQuanLy_PhatNhanVien" />
       <nodes>
         <classShapeMoniker Id="c1e034eb-d1f1-4452-875e-60cd2d6c2b6a" />
         <classShapeMoniker Id="cca73a6c-4187-4beb-a9cf-fa4a0d2d4d6f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.1017976888021); (5.79166666666667 : 14.1017976888021 : JumpStart); (5.95833333333333 : 14.1017976888021 : JumpEnd); (5.97916666666667 : 14.1017976888021 : JumpStart); (6.14583333333333 : 14.1017976888021 : JumpEnd); (6.25 : 14.1017976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 14.1017976888021); (5.79166666666667 : 14.1017976888021 : JumpStart); (5.95833333333333 : 14.1017976888021 : JumpEnd); (5.97916666666667 : 14.1017976888021 : JumpStart); (6.14583333333333 : 14.1017976888021 : JumpEnd); (6.25 : 14.1017976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/MucTienPhat/MucTienPhat_PhatNhanVien" />
       <nodes>
         <classShapeMoniker Id="8122c375-7133-4dd4-af3e-6d3f17a493ca" />
         <classShapeMoniker Id="cca73a6c-4187-4beb-a9cf-fa4a0d2d4d6f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.0615374615385); (5.81607443490112 : 15.7454630266373 : JumpStart); (5.93392556509888 : 15.6276118964396 : JumpEnd); (6.0625 : 15.4990374615385); (6.0625 : 13.394646844401); (6.25 : 13.394646844401)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 16.0615374615385); (6.0625 : 15.4990374615385); (6.0625 : 13.394646844401); (6.25 : 13.394646844401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_PhatNhanVien" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="cca73a6c-4187-4beb-a9cf-fa4a0d2d4d6f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 24.9527498372396); (8.32291666666667 : 24.9527498372396 : JumpStart); (8.52083583333333 : 24.9527498372396 : JumpEnd); (9.91666666666667 : 24.9527498372396 : JumpStart); (10.0833333333333 : 24.9527498372396 : JumpEnd); (13 : 24.9527498372396); (13 : 22.5497054036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 24.9527498372396); (13 : 24.9527498372396); (13 : 22.5497054036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/PhieuChamCongCongNhan/PhieuChamCongCongNhan_LuongCongNhan" />
       <nodes>
         <classShapeMoniker Id="2e37cee2-c82d-4a8a-b8e9-7dd1a20c86c8" />
         <classShapeMoniker Id="2e5041da-6bf9-43c1-9c94-09d672d14fcb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.9687475 : 18.7324039713542); (3.9687475 : 24.9527498372396); (6.25 : 24.9527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.9687475 : 18.7324039713542); (3.9687475 : 24.9527498372396); (6.25 : 24.9527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_PhieuChamCongCongNhan" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
@@ -283,28 +283,28 @@
         <classShapeMoniker Id="7af8a0e9-3803-4423-bbb1-d0fcb43d281b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.29687875 : 18.7324039713542); (5.29687875 : 19.532902890625); (6.25 : 19.532902890625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.29687875 : 18.7324039713542); (5.29687875 : 19.532902890625); (6.25 : 19.532902890625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/NhanVien/NhanVien_PhieuChamCongNhanVienHanhChanh" />
       <nodes>
         <classShapeMoniker Id="5511b4f9-b72e-499e-b147-c73b0d2baeb7" />
         <classShapeMoniker Id="316e4281-6b0b-4687-af86-28e9a8e8564b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 27.53125); (8.32291666666667 : 27.53125 : JumpStart); (8.52083583333333 : 27.53125 : JumpEnd); (10 : 27.53125); (10 : 22.8285953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 27.53125); (10 : 27.53125); (10 : 22.8285953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/SanPham/SanPham_ChiTietDonHang" />
       <nodes>
         <classShapeMoniker Id="4d4f4647-ac8b-40b4-9477-ac502c075940" />
         <classShapeMoniker Id="22a5794b-14d7-41d9-9a49-ff4022c61bfa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 29.2708968098958); (6.125 : 29.6458968098958); (6.125 : 31.0028214863281); (6.5 : 31.0028214863281)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 27.546875); (8.84375 : 27.546875); (8.84375 : 29.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/SanPham/SanPham_ChiTietModel" />
       <nodes>
         <classShapeMoniker Id="4d4f4647-ac8b-40b4-9477-ac502c075940" />
         <classShapeMoniker Id="3187449b-e8dc-4efd-9132-9ce2fa1564cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 28.4142976888021); (6.5 : 28.4142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 28.4142976888021); (6.5 : 28.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyLuongSanPhamDataContext/SanPham/SanPham_CongDoanSanXuat" />
       <nodes>
         <classShapeMoniker Id="4d4f4647-ac8b-40b4-9477-ac502c075940" />
