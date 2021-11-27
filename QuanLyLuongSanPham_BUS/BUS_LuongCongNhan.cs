@@ -20,5 +20,25 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongCongNhan.loadLuongCN();
         }
+
+        public bool suaThongTin(DTO_LuongCongNhan LCN)
+        {
+            return luongCongNhan.suaTTNV(LCN);
+        }
+
+        public IEnumerable<dynamic> luongCNTheoThang(int iMonth, int iYear)
+        {
+            return luongCongNhan.loadLuongCNTheoThang(iMonth, iYear);
+        }
+
+        public object layNVTheoTimKiem(string maNVTK)
+        {
+            return luongCongNhan.layLuongNVTheoTimKiem(maNVTK);
+        }
+
+        public IEnumerable<LuongCongNhan> layNVTheoMa(string strMaNV)
+        {
+            return luongCongNhan.layNVTheoMa(strMaNV);
+        }
     }
 }

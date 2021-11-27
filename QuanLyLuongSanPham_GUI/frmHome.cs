@@ -35,16 +35,7 @@ namespace QuanLyLuongSanPham_GUI
         }
 
         private void phanQuyenNV(string strMaLoai)
-        {
-            //IEnumerable<PhanQuyen> pqNV = busPQNV.layQuyenSuDungNV(strMaLoai);
-            //foreach(PhanQuyen pq in pqNV)
-            //{
-            //    if(pq.fullChucNang == true)
-            //    {
-
-            //    }    
-            //}    
-
+        { 
             if(strMaLoai.Trim().Equals("LNV001"))
             {
                 msNhanSu.Enabled = false;
@@ -126,12 +117,6 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmLuongCongNhan frmLuongCN = new frmLuongCongNhan();
             _ = frmLuongCN.ShowDialog();
-        }
-
-        private void msTienLuong_Thuong_Click(object sender, EventArgs e)
-        {
-            frmThuong fThuong = new frmThuong();
-            _ = fThuong.ShowDialog();
         }
 
         private void msTienLuong_Phat_Click(object sender, EventArgs e)

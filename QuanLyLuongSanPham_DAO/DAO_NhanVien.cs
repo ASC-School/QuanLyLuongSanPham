@@ -48,9 +48,165 @@ namespace QuanLyLuongSanPham_DAO
             q = (from dsnv in dataBase.NhanViens
                  join loaiNV in dataBase.LoaiNhanViens on dsnv.maLoai equals loaiNV.maLoai
                  join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                 select new { Mã_nhân_viên = dsnv.maNhanVien ,Tên_nhân_viên = dsnv.tenNhanVien ,Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan,Trạng_thái=dsnv.trangThai });
+                 select new { Mã_nhân_viên = dsnv.maNhanVien, Tên_nhân_viên = dsnv.tenNhanVien, Giới_tính = dsnv.gioiTinh, SDT = dsnv.soDienThoai, Địa_chỉ = dsnv.diaChi, Ngày_sinh = dsnv.ngaySinh, Ngày_vào_làm = dsnv.ngayBatDauCongTac, Loại_Nv = loaiNV.loaiNhanVien1, Đơn_vị_quản_lí = donvi.tenBoPhan, Trạng_thái = dsnv.trangThai });
             return q;
         }
+        public IEnumerable<dynamic> serchNhanVienLuongCN(string maNV, string tenNV, string strThang)
+        {
+            if (maNV != "" && tenNV != "dataSearchOne")
+            {
+                IEnumerable<dynamic> luongCNTheoThang = from dv in dataBase.DonViQuanLies
+                                                        join lnv in dataBase.LoaiNhanViens
+                                                        on dv.maLoai equals lnv.maLoai
+                                                        join nv in dataBase.NhanViens
+                                                        on lnv.maLoai equals nv.maLoai
+                                                        join lcn in dataBase.LuongCongNhans
+                                                        on nv.maNhanVien equals lcn.maNhanVien
+                                                        join mtp in dataBase.MucTienPhats
+                                                        on lcn.maTienPhat equals mtp.soThuTu
+                                                        join cdsx in dataBase.CongDoanSanXuats
+                                                        on lcn.maCongDoan equals cdsx.soThuTu
+                                                        where nv.maNhanVien.Contains(maNV) && lcn.thangLuong.Equals(strThang)
+                                                        select new
+                                                        {
+                                                            maNV = nv.maNhanVien,
+                                                            tenNV = nv.tenNhanVien,
+                                                            donVi = dv.tenBoPhan,
+                                                            thang = lcn.thangLuong,
+                                                            nam = lcn.namLuong,
+                                                            congDoan = cdsx.tenCongDoan,
+                                                            soLuongSPLamDuoc = lcn.soLuongSanPham,
+                                                            phuCap = lcn.phuCap,
+                                                            tienPhat = mtp.mucTienPhat1,
+                                                            thue = lcn.thue,
+                                                            tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
+                                                            tamUng = lcn.tienUng,
+                                                            thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                        };
+                return luongCNTheoThang;
+            }
+            else if (maNV == "" && tenNV != "DataSearchOne")
+            {
+                IEnumerable<dynamic> luongCNTheoThang = from dv in dataBase.DonViQuanLies
+                                                        join lnv in dataBase.LoaiNhanViens
+                                                        on dv.maLoai equals lnv.maLoai
+                                                        join nv in dataBase.NhanViens
+                                                        on lnv.maLoai equals nv.maLoai
+                                                        join lcn in dataBase.LuongCongNhans
+                                                        on nv.maNhanVien equals lcn.maNhanVien
+                                                        join mtp in dataBase.MucTienPhats
+                                           on lcn.maTienPhat equals mtp.soThuTu
+                                                        join cdsx in dataBase.CongDoanSanXuats
+                                                        on lcn.maCongDoan equals cdsx.soThuTu
+                                                        where nv.tenNhanVien.Contains(tenNV)
+                                                        select new
+                                                        {
+                                                            maNV = nv.maNhanVien,
+                                                            tenNV = nv.tenNhanVien,
+                                                            donVi = dv.tenBoPhan,
+                                                            thang = lcn.thangLuong,
+                                                            nam = lcn.namLuong,
+                                                            congDoan = cdsx.tenCongDoan,
+                                                            soLuongSPLamDuoc = lcn.soLuongSanPham,
+                                                            phuCap = lcn.phuCap,
+                                                            tienPhat = mtp.mucTienPhat1,
+                                                            thue = lcn.thue,
+                                                            tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
+                                                            tamUng = lcn.tienUng,
+                                                            thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                        };
+                return luongCNTheoThang;
+            }
+            else if (maNV != "" && tenNV != "dataSearchOne")
+            {
+                IEnumerable<dynamic> luongCNTheoThang = from dv in dataBase.DonViQuanLies
+                                                        join lnv in dataBase.LoaiNhanViens
+                                                        on dv.maLoai equals lnv.maLoai
+                                                        join nv in dataBase.NhanViens
+                                                        on lnv.maLoai equals nv.maLoai
+                                                        join lcn in dataBase.LuongCongNhans
+                                                        on nv.maNhanVien equals lcn.maNhanVien
+                                                        join mtp in dataBase.MucTienPhats
+                                                        on lcn.maTienPhat equals mtp.soThuTu
+                                                        join cdsx in dataBase.CongDoanSanXuats
+                                                        on lcn.maCongDoan equals cdsx.soThuTu
+                                                        where nv.tenNhanVien.Equals(maNV)
+                                                        select new
+                                                        {
+                                                            maNV = nv.maNhanVien,
+                                                            tenNV = nv.tenNhanVien,
+                                                            donVi = dv.tenBoPhan,
+                                                            thang = lcn.thangLuong,
+                                                            nam = lcn.namLuong,
+                                                            congDoan = cdsx.tenCongDoan,
+                                                            soLuongSPLamDuoc = lcn.soLuongSanPham,
+                                                            phuCap = lcn.phuCap,
+                                                            tienPhat = mtp.mucTienPhat1,
+                                                            thue = lcn.thue,
+                                                            tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
+                                                            tamUng = lcn.tienUng,
+                                                            thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                        };
+                return luongCNTheoThang;
+            }
+            else if (maNV != "" && tenNV == "dataSearchOne" && strThang == "dataSearchSecond")
+            {
+                IEnumerable<dynamic> luongCNTheoThang = from dv in dataBase.DonViQuanLies
+                                                        join lnv in dataBase.LoaiNhanViens
+                                                        on dv.maLoai equals lnv.maLoai
+                                                        join nv in dataBase.NhanViens
+                                                        on lnv.maLoai equals nv.maLoai
+                                                        join lcn in dataBase.LuongCongNhans
+                                                        on nv.maNhanVien equals lcn.maNhanVien
+                                                        join mtp in dataBase.MucTienPhats
+                                           on lcn.maTienPhat equals mtp.soThuTu
+                                                        join cdsx in dataBase.CongDoanSanXuats
+                                                        on lcn.maCongDoan equals cdsx.soThuTu
+                                                        where nv.maNhanVien.Equals(maNV)
+                                                        select new
+                                                        {
+                                                            maNV = nv.maNhanVien,
+                                                            tenNV = nv.tenNhanVien,
+                                                            donVi = dv.tenBoPhan,
+                                                            thang = lcn.thangLuong,
+                                                            nam = lcn.namLuong,
+                                                            congDoan = cdsx.tenCongDoan,
+                                                            soLuongSPLamDuoc = lcn.soLuongSanPham,
+                                                            phuCap = lcn.phuCap,
+                                                            tienPhat = mtp.mucTienPhat1,
+                                                            thue = lcn.thue,
+                                                            tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
+                                                            tamUng = lcn.tienUng,
+                                                            thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                        };
+                return luongCNTheoThang;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public IEnumerable<NhanVien> layTenNhanVien()
+        {
+            IEnumerable<NhanVien> tenNV = (IEnumerable<NhanVien>)(from nv in dataBase.NhanViens
+                                                                  join lcn in dataBase.LuongCongNhans
+                                                                  on nv.maNhanVien equals lcn.maNhanVien
+                                                                  where nv.maNhanVien.Contains(lcn.maNhanVien)
+                                                                  select new
+                                                                  {
+                                                                      Mã_nhân_viên = nv.maNhanVien,
+                                                                      Tên_nhân_viên = nv.tenNhanVien,
+                                                                      Giới_tính = nv.gioiTinh,
+                                                                      SDT = nv.soDienThoai,
+                                                                      Địa_chỉ = nv.diaChi,
+                                                                      Ngày_sinh = nv.ngaySinh,
+                                                                      Ngày_vào_làm = nv.ngayBatDauCongTac,
+                                                                      Trạng_thái = nv.trangThai
+                                                                  }); ;
+            return tenNV;
+        }
+
         public IEnumerable<dynamic> getDanhSachNvSauLoc(string maLoai, string trangThai, DateTime starDate, DateTime endDate)
         {
             IEnumerable<dynamic> q;
@@ -228,25 +384,25 @@ namespace QuanLyLuongSanPham_DAO
                 }
             }
             else
-                    {
-                        q = (from nv in dataBase.NhanViens
-                             join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
-                             join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
-                             select new
-                             {
-                                 Mã_nhân_viên = nv.maNhanVien,
-                                 Tên_nhân_viên = nv.tenNhanVien,
-                                 Giới_tính = nv.gioiTinh,
-                                 SDT = nv.soDienThoai,
-                                 Địa_chỉ = nv.diaChi,
-                                 Ngày_sinh = nv.ngaySinh,
-                                 Ngày_vào_làm = nv.ngayBatDauCongTac,
-                                 Loại_Nv = loaiNV.loaiNhanVien1,
-                                 Đơn_vị_quản_lí = donvi.tenBoPhan,
-                                 Trạng_thái = nv.trangThai
-                             });
-                    }
-                    return q;
+            {
+                q = (from nv in dataBase.NhanViens
+                     join loaiNV in dataBase.LoaiNhanViens on nv.maLoai equals loaiNV.maLoai
+                     join donvi in dataBase.DonViQuanLies on loaiNV.maLoai equals donvi.maLoai
+                     select new
+                     {
+                         Mã_nhân_viên = nv.maNhanVien,
+                         Tên_nhân_viên = nv.tenNhanVien,
+                         Giới_tính = nv.gioiTinh,
+                         SDT = nv.soDienThoai,
+                         Địa_chỉ = nv.diaChi,
+                         Ngày_sinh = nv.ngaySinh,
+                         Ngày_vào_làm = nv.ngayBatDauCongTac,
+                         Loại_Nv = loaiNV.loaiNhanVien1,
+                         Đơn_vị_quản_lí = donvi.tenBoPhan,
+                         Trạng_thái = nv.trangThai
+                     });
+            }
+            return q;
         }
         public IEnumerable<dynamic> serchNhanVien(string maNV, string tenNhanVien, string loaiNhanVien)
         {
@@ -353,7 +509,7 @@ namespace QuanLyLuongSanPham_DAO
         public IEnumerable<NhanVien> layNvTheoMa(string maNV)
         {
             IEnumerable<NhanVien> q;
-            q= from n in dataBase.NhanViens where(n.maNhanVien.Equals(maNV)) select n;
+            q = from n in dataBase.NhanViens where (n.maNhanVien.Equals(maNV)) select n;
             return q;
         }
         public bool themNhanVien(DTO_NhanVien nv)
@@ -373,7 +529,7 @@ namespace QuanLyLuongSanPham_DAO
                 temp.ngaySinh = nv.NgaySinh;
                 temp.ngayBatDauCongTac = nv.NgayBatDauCongTac;
                 temp.trangThai = nv.TrangThai;
-                temp.avatar = nv.Avatar ;
+                temp.avatar = nv.Avatar;
                 temp.diaChi = nv.DiaChi;
                 temp.maLoai = nv.MaLoai;
                 dataBase.NhanViens.InsertOnSubmit(temp);
@@ -405,7 +561,7 @@ namespace QuanLyLuongSanPham_DAO
         public bool delNhanVien(string maNv)
         {
             NhanVien nvTemp = dataBase.NhanViens.Where(x => x.maNhanVien.Equals(maNv)).FirstOrDefault();
-            if(nvTemp!= null)
+            if (nvTemp != null)
             {
                 dataBase.NhanViens.DeleteOnSubmit(nvTemp);
                 dataBase.SubmitChanges();

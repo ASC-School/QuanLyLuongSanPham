@@ -53,5 +53,15 @@ namespace QuanLyLuongSanPham_BUS
         {
             return nv.serchNhanVien(maNV, tenNV, loaiNv);
         }
+
+        public IEnumerable<NhanVien> layTenNVLuongCN()
+        {
+            return nv.layTenNhanVien();
+        }
+
+        public object serchNhanVienLuong(string strMaNV, string strTenNV, string strThang)
+        {
+            return nv.serchNhanVienLuongCN(strMaNV, strTenNV, strThang);
+        }
     }
 }
