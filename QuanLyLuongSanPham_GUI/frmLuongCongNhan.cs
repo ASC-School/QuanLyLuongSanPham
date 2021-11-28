@@ -32,18 +32,33 @@ namespace QuanLyLuongSanPham_GUI
         #endregion
 
         #region Methos
-        private void anTextBox()
+        private void statusTextBox(bool bStatus)
         {
-            txtMaNV.Enabled = false;
-            txtHoTen.Enabled = false;
-            txtCongDoan.Enabled = false;
-            txtDonVi.Enabled = false;
-            txtPhuCap.Enabled = false;
-            txtSLSPLamDuoc.Enabled = false;
-            txtTienPhat.Enabled = false;
-            txtThue.Enabled = false;
-            txtTongLuongTT.Enabled = false;
-            txtTamUng.Enabled = false;
+            txtMaNV.Enabled = bStatus;
+            txtHoTen.Enabled = bStatus;
+            txtCongDoan.Enabled = bStatus;
+            txtDonVi.Enabled = bStatus;
+            txtPhuCap.Enabled = bStatus;
+            txtSLSPLamDuoc.Enabled = bStatus;
+            txtTienPhat.Enabled = bStatus;
+            txtThue.Enabled = bStatus;
+            txtTongLuongTT.Enabled = bStatus;
+            txtTamUng.Enabled = bStatus;
+        }
+
+        private void clearTextBox()
+        {
+            txtMaNV.Text = "";
+            txtHoTen.Text = "";
+            txtCongDoan.Text = "";
+            txtDonVi.Text = "";
+            txtPhuCap.Text = "";
+            txtSLSPLamDuoc.Text = "";
+            txtTienPhat.Text = "";
+            txtThue.Text = "";
+            txtTongLuongTT.Text = "";
+            txtTamUng.Text = "";
+            txtThucNhan.Text = "";
         }
         private void moTextBox()
         {
@@ -87,11 +102,18 @@ namespace QuanLyLuongSanPham_GUI
             this.Close();
         }
 
-        
+        private void toolTip()
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnChiTietLuong, "Xem chi tiết lương");
+            ToolTip2.SetToolTip(this.btnReLoad, "Tải lại trang");
+        }
         private void FrmLuongCongNhan_Load(object sender, EventArgs e)
         {
             Util.Animate(this, Util.Effect.Center, 150, 180);
-            anTextBox();
+            statusTextBox(false);
+            toolTip();
             loadCBBThangNam();
             loadLuongCongNhan();
         }
@@ -175,6 +197,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_TextChanged(object sender, EventArgs e)
         {
+            clearTextBox();
             int iMonth = Convert.ToInt32(ccbThang.Text);
             int iYear = Convert.ToInt32(ccbNam.Text);
             this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
@@ -199,9 +222,17 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void btnChiTietLuong_Click(object sender, EventArgs e)
         {
-            frmPhieuLuongNhanVien fPhieuLuong = new frmPhieuLuongNhanVien();
-            fPhieuLuong.phieuLuongCN(2,txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, "", "", txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text,txtThue.Text, ccbThang.Text, ccbNam.Text, txtThucNhan.Text);
-            fPhieuLuong.ShowDialog();
+            if(txtMaNV.Text != "")
+            {
+                frmPhieuLuongNhanVien fPhieuLuong = new frmPhieuLuongNhanVien();
+                fPhieuLuong.phieuLuongCN(2, txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, "", "", txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text, txtThue.Text, ccbThang.Text, ccbNam.Text, txtThucNhan.Text);
+                fPhieuLuong.ShowDialog();
+            }   
+            else
+            {
+                MessageBox.Show("Bạn cần phải chọn một nhân viên để xem chi tiết lương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
+            
         }
 
         private void btnImportExcel_Click(object sender, EventArgs e)

@@ -46,6 +46,28 @@ namespace QuanLyLuongSanPham_GUI
             dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC();
         }
 
+        private void clearTextBox()
+        {
+            txtMaNV.Text = "";
+            txtHoTen.Text = "";
+            txtLuongCoBan.Text = "";
+            txtDonVi.Text = "";
+            txtPhuCap.Text = "";
+            txtSoNgayCongTT.Text = "";
+            txtTienPhat.Text = "";
+            txtThue.Text = "";
+            txtTongLuongTT.Text = "";
+            txtTamUng.Text = "";
+            txtThucNhan.Text = "";
+        }
+        private void toolTip()
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnChiTietLuong, "Xem chi tiết lương");
+            ToolTip2.SetToolTip(this.btnReLoad, "Tải lại trang");
+        }
+
         private void offEnTextBox(bool bCheck)
         {
             txtMaNV.Enabled = bCheck;
@@ -74,6 +96,7 @@ namespace QuanLyLuongSanPham_GUI
             Util.Animate(this, Util.Effect.Center, 150, 180);
             loadLuongNVHanhChanh();
             offEnTextBox(false);
+            toolTip();
             loadCBBThangNam();
         }
 
@@ -149,6 +172,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
+            clearTextBox();
             int iMonth = Convert.ToInt32(ccbThang.Text);
             int iYear = Convert.ToInt32(ccbNam.Text);
             this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;

@@ -45,12 +45,12 @@ namespace QuanLyLuongSanPham_GUI
             this.label22 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblTongTien1 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblsoLuongSPPLD = new System.Windows.Forms.Label();
             this.lblTongTienLuongPC = new System.Windows.Forms.Label();
             this.lblLuongCD = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.lbldonViSP = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.lblSoLuongSPLD = new System.Windows.Forms.Label();
             this.lblPhuCap = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label21 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbldonViLuong = new System.Windows.Forms.Label();
             this.lblLuongCongDoan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,13 +93,13 @@ namespace QuanLyLuongSanPham_GUI
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.lblTongTatCa = new System.Windows.Forms.Label();
-            this.lblNguoiLap = new System.Windows.Forms.Label();
             this.lblNguoiNhan = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblMaNV = new System.Windows.Forms.Label();
+            this.lblNguoiTao = new System.Windows.Forms.Label();
             this.tlpPhieuLuong.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -180,10 +180,10 @@ namespace QuanLyLuongSanPham_GUI
             // lblNgayXuat
             // 
             this.lblNgayXuat.AutoSize = true;
-            this.lblNgayXuat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayXuat.Location = new System.Drawing.Point(521, 9);
+            this.lblNgayXuat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayXuat.Location = new System.Drawing.Point(510, 7);
             this.lblNgayXuat.Name = "lblNgayXuat";
-            this.lblNgayXuat.Size = new System.Drawing.Size(97, 21);
+            this.lblNgayXuat.Size = new System.Drawing.Size(110, 21);
             this.lblNgayXuat.TabIndex = 3;
             this.lblNgayXuat.Text = "Ngày Xuất :";
             // 
@@ -214,17 +214,17 @@ namespace QuanLyLuongSanPham_GUI
             this.tlpPhieuLuong.ColumnCount = 3;
             this.tlpPhieuLuong.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.26629F));
             this.tlpPhieuLuong.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.73371F));
-            this.tlpPhieuLuong.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
+            this.tlpPhieuLuong.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 224F));
             this.tlpPhieuLuong.Controls.Add(this.label14, 0, 1);
             this.tlpPhieuLuong.Controls.Add(this.label22, 2, 5);
             this.tlpPhieuLuong.Controls.Add(this.label11, 0, 0);
             this.tlpPhieuLuong.Controls.Add(this.lblTongTien1, 0, 5);
-            this.tlpPhieuLuong.Controls.Add(this.label23, 0, 3);
+            this.tlpPhieuLuong.Controls.Add(this.lblsoLuongSPPLD, 0, 3);
             this.tlpPhieuLuong.Controls.Add(this.lblTongTienLuongPC, 1, 5);
             this.tlpPhieuLuong.Controls.Add(this.lblLuongCD, 0, 2);
             this.tlpPhieuLuong.Controls.Add(this.label15, 1, 1);
             this.tlpPhieuLuong.Controls.Add(this.label17, 2, 1);
-            this.tlpPhieuLuong.Controls.Add(this.label27, 2, 3);
+            this.tlpPhieuLuong.Controls.Add(this.lbldonViSP, 2, 3);
             this.tlpPhieuLuong.Controls.Add(this.label28, 2, 4);
             this.tlpPhieuLuong.Controls.Add(this.lblSoLuongSPLD, 1, 3);
             this.tlpPhieuLuong.Controls.Add(this.lblPhuCap, 1, 4);
@@ -232,7 +232,7 @@ namespace QuanLyLuongSanPham_GUI
             this.tlpPhieuLuong.Controls.Add(this.label21, 1, 6);
             this.tlpPhieuLuong.Controls.Add(this.label39, 1, 7);
             this.tlpPhieuLuong.Controls.Add(this.label40, 2, 7);
-            this.tlpPhieuLuong.Controls.Add(this.label4, 2, 2);
+            this.tlpPhieuLuong.Controls.Add(this.lbldonViLuong, 2, 2);
             this.tlpPhieuLuong.Controls.Add(this.lblLuongCongDoan, 1, 2);
             this.tlpPhieuLuong.Location = new System.Drawing.Point(32, 206);
             this.tlpPhieuLuong.Name = "tlpPhieuLuong";
@@ -255,7 +255,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(5, 30);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(308, 30);
+            this.label14.Size = new System.Drawing.Size(299, 30);
             this.label14.TabIndex = 0;
             this.label14.Text = "Nội Dung";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,27 +290,27 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongTien1.ForeColor = System.Drawing.Color.Red;
             this.lblTongTien1.Location = new System.Drawing.Point(5, 163);
             this.lblTongTien1.Name = "lblTongTien1";
-            this.lblTongTien1.Size = new System.Drawing.Size(308, 25);
+            this.lblTongTien1.Size = new System.Drawing.Size(299, 25);
             this.lblTongTien1.TabIndex = 0;
             this.lblTongTien1.Text = "Thành Tiền (1)";
             this.lblTongTien1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // lblsoLuongSPPLD
             // 
-            this.label23.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(5, 97);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(308, 32);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Số lượng sản phẩm làm được";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblsoLuongSPPLD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsoLuongSPPLD.Location = new System.Drawing.Point(5, 97);
+            this.lblsoLuongSPPLD.Name = "lblsoLuongSPPLD";
+            this.lblsoLuongSPPLD.Size = new System.Drawing.Size(299, 32);
+            this.lblsoLuongSPPLD.TabIndex = 1;
+            this.lblsoLuongSPPLD.Text = "Số lượng sản phẩm làm được";
+            this.lblsoLuongSPPLD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTongTienLuongPC
             // 
             this.tlpPhieuLuong.SetColumnSpan(this.lblTongTienLuongPC, 2);
             this.lblTongTienLuongPC.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTienLuongPC.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTienLuongPC.Location = new System.Drawing.Point(321, 163);
+            this.lblTongTienLuongPC.Location = new System.Drawing.Point(312, 163);
             this.lblTongTienLuongPC.Name = "lblTongTienLuongPC";
             this.lblTongTienLuongPC.Size = new System.Drawing.Size(399, 27);
             this.lblTongTienLuongPC.TabIndex = 2;
@@ -322,7 +322,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lblLuongCD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLuongCD.Location = new System.Drawing.Point(5, 62);
             this.lblLuongCD.Name = "lblLuongCD";
-            this.lblLuongCD.Size = new System.Drawing.Size(308, 33);
+            this.lblLuongCD.Size = new System.Drawing.Size(299, 33);
             this.lblLuongCD.TabIndex = 1;
             this.lblLuongCD.Text = "Lương công đoạn";
             this.lblLuongCD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -331,9 +331,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label15.BackColor = System.Drawing.Color.BurlyWood;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(321, 30);
+            this.label15.Location = new System.Drawing.Point(312, 30);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(192, 30);
+            this.label15.Size = new System.Drawing.Size(186, 30);
             this.label15.TabIndex = 0;
             this.label15.Text = "Đơn giá _Số Lượng";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -342,27 +342,27 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label17.BackColor = System.Drawing.Color.BurlyWood;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(521, 30);
+            this.label17.Location = new System.Drawing.Point(506, 30);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(198, 30);
             this.label17.TabIndex = 0;
             this.label17.Text = "Đơn Vị";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // lbldonViSP
             // 
-            this.label27.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(521, 97);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(195, 32);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Sản phẩm";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbldonViSP.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldonViSP.Location = new System.Drawing.Point(506, 97);
+            this.lbldonViSP.Name = "lbldonViSP";
+            this.lbldonViSP.Size = new System.Drawing.Size(195, 32);
+            this.lbldonViSP.TabIndex = 1;
+            this.lbldonViSP.Text = "Sản phẩm";
+            this.lbldonViSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
             this.label28.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(521, 131);
+            this.label28.Location = new System.Drawing.Point(506, 131);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(195, 30);
             this.label28.TabIndex = 1;
@@ -372,9 +372,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblSoLuongSPLD
             // 
             this.lblSoLuongSPLD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLuongSPLD.Location = new System.Drawing.Point(321, 97);
+            this.lblSoLuongSPLD.Location = new System.Drawing.Point(312, 97);
             this.lblSoLuongSPLD.Name = "lblSoLuongSPLD";
-            this.lblSoLuongSPLD.Size = new System.Drawing.Size(192, 32);
+            this.lblSoLuongSPLD.Size = new System.Drawing.Size(186, 32);
             this.lblSoLuongSPLD.TabIndex = 1;
             this.lblSoLuongSPLD.Text = "lblDVCD";
             this.lblSoLuongSPLD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -382,9 +382,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblPhuCap
             // 
             this.lblPhuCap.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhuCap.Location = new System.Drawing.Point(321, 131);
+            this.lblPhuCap.Location = new System.Drawing.Point(312, 131);
             this.lblPhuCap.Name = "lblPhuCap";
-            this.lblPhuCap.Size = new System.Drawing.Size(192, 30);
+            this.lblPhuCap.Size = new System.Drawing.Size(186, 30);
             this.lblPhuCap.TabIndex = 1;
             this.lblPhuCap.Text = "lblDVCD";
             this.lblPhuCap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -394,7 +394,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label25.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(5, 131);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(308, 30);
+            this.label25.Size = new System.Drawing.Size(299, 30);
             this.label25.TabIndex = 1;
             this.label25.Text = "Phụ Cấp";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -405,7 +405,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label21.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(5, 224);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(308, 26);
+            this.label21.Size = new System.Drawing.Size(299, 26);
             this.label21.TabIndex = 14;
             this.label21.Text = "   2.1 Khấu trừ";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,9 +414,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label39.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(321, 224);
+            this.label39.Location = new System.Drawing.Point(312, 224);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(192, 26);
+            this.label39.Size = new System.Drawing.Size(186, 26);
             this.label39.TabIndex = 14;
             this.label39.Text = " Mức Khấu trừ";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,29 +425,29 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label40.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(521, 224);
+            this.label40.Location = new System.Drawing.Point(506, 224);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(198, 26);
             this.label40.TabIndex = 14;
             this.label40.Text = " Thành Tiền";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbldonViLuong
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(521, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 33);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "/Sản phẩm";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbldonViLuong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldonViLuong.Location = new System.Drawing.Point(506, 62);
+            this.lbldonViLuong.Name = "lbldonViLuong";
+            this.lbldonViLuong.Size = new System.Drawing.Size(195, 33);
+            this.lbldonViLuong.TabIndex = 1;
+            this.lbldonViLuong.Text = "/Sản phẩm";
+            this.lbldonViLuong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLuongCongDoan
             // 
             this.lblLuongCongDoan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLuongCongDoan.Location = new System.Drawing.Point(321, 62);
+            this.lblLuongCongDoan.Location = new System.Drawing.Point(312, 62);
             this.lblLuongCongDoan.Name = "lblLuongCongDoan";
-            this.lblLuongCongDoan.Size = new System.Drawing.Size(192, 32);
+            this.lblLuongCongDoan.Size = new System.Drawing.Size(186, 32);
             this.lblLuongCongDoan.TabIndex = 1;
             this.lblLuongCongDoan.Text = "lblDVCD";
             this.lblLuongCongDoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,10 +503,10 @@ namespace QuanLyLuongSanPham_GUI
             // lblDonVi
             // 
             this.lblDonVi.AutoSize = true;
-            this.lblDonVi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDonVi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonVi.Location = new System.Drawing.Point(546, 34);
             this.lblDonVi.Name = "lblDonVi";
-            this.lblDonVi.Size = new System.Drawing.Size(68, 21);
+            this.lblDonVi.Size = new System.Drawing.Size(76, 21);
             this.lblDonVi.TabIndex = 3;
             this.lblDonVi.Text = "Đơn vị :";
             // 
@@ -537,7 +537,7 @@ namespace QuanLyLuongSanPham_GUI
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.15242F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.84758F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel2.Controls.Add(this.label32, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label38, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblThue, 1, 0);
@@ -572,7 +572,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label32.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(5, 2);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(308, 29);
+            this.label32.Size = new System.Drawing.Size(299, 29);
             this.label32.TabIndex = 1;
             this.label32.Text = "Thuế";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,7 +582,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label38.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(5, 33);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(308, 28);
+            this.label38.Size = new System.Drawing.Size(299, 28);
             this.label38.TabIndex = 1;
             this.label38.Text = "Tiền Ứng";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -590,9 +590,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblThue
             // 
             this.lblThue.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThue.Location = new System.Drawing.Point(321, 2);
+            this.lblThue.Location = new System.Drawing.Point(312, 2);
             this.lblThue.Name = "lblThue";
-            this.lblThue.Size = new System.Drawing.Size(193, 29);
+            this.lblThue.Size = new System.Drawing.Size(187, 29);
             this.lblThue.TabIndex = 1;
             this.lblThue.Text = "lblDVCD";
             this.lblThue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -600,9 +600,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblTienUng
             // 
             this.lblTienUng.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienUng.Location = new System.Drawing.Point(321, 33);
+            this.lblTienUng.Location = new System.Drawing.Point(312, 33);
             this.lblTienUng.Name = "lblTienUng";
-            this.lblTienUng.Size = new System.Drawing.Size(193, 28);
+            this.lblTienUng.Size = new System.Drawing.Size(187, 28);
             this.lblTienUng.TabIndex = 1;
             this.lblTienUng.Text = "lblDVCD";
             this.lblTienUng.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -613,7 +613,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label19.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(5, 63);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(308, 26);
+            this.label19.Size = new System.Drawing.Size(299, 26);
             this.label19.TabIndex = 14;
             this.label19.Text = "   2.2 Phạt";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -623,7 +623,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label29.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(5, 92);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(308, 33);
+            this.label29.Size = new System.Drawing.Size(299, 33);
             this.label29.TabIndex = 1;
             this.label29.Text = "Đi làm trễ";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -631,9 +631,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblSLDiLamTre
             // 
             this.lblSLDiLamTre.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSLDiLamTre.Location = new System.Drawing.Point(321, 92);
+            this.lblSLDiLamTre.Location = new System.Drawing.Point(312, 92);
             this.lblSLDiLamTre.Name = "lblSLDiLamTre";
-            this.lblSLDiLamTre.Size = new System.Drawing.Size(193, 33);
+            this.lblSLDiLamTre.Size = new System.Drawing.Size(187, 33);
             this.lblSLDiLamTre.TabIndex = 1;
             this.lblSLDiLamTre.Text = "lblDVCD";
             this.lblSLDiLamTre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -641,7 +641,7 @@ namespace QuanLyLuongSanPham_GUI
             // lblThanhTienDiTre
             // 
             this.lblThanhTienDiTre.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhTienDiTre.Location = new System.Drawing.Point(522, 92);
+            this.lblThanhTienDiTre.Location = new System.Drawing.Point(507, 92);
             this.lblThanhTienDiTre.Name = "lblThanhTienDiTre";
             this.lblThanhTienDiTre.Size = new System.Drawing.Size(194, 33);
             this.lblThanhTienDiTre.TabIndex = 1;
@@ -651,7 +651,7 @@ namespace QuanLyLuongSanPham_GUI
             // lblNghiKhongPhep
             // 
             this.lblNghiKhongPhep.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNghiKhongPhep.Location = new System.Drawing.Point(522, 127);
+            this.lblNghiKhongPhep.Location = new System.Drawing.Point(507, 127);
             this.lblNghiKhongPhep.Name = "lblNghiKhongPhep";
             this.lblNghiKhongPhep.Size = new System.Drawing.Size(194, 32);
             this.lblNghiKhongPhep.TabIndex = 1;
@@ -661,9 +661,9 @@ namespace QuanLyLuongSanPham_GUI
             // lblSLNghiKhongPhep
             // 
             this.lblSLNghiKhongPhep.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSLNghiKhongPhep.Location = new System.Drawing.Point(321, 127);
+            this.lblSLNghiKhongPhep.Location = new System.Drawing.Point(312, 127);
             this.lblSLNghiKhongPhep.Name = "lblSLNghiKhongPhep";
-            this.lblSLNghiKhongPhep.Size = new System.Drawing.Size(193, 32);
+            this.lblSLNghiKhongPhep.Size = new System.Drawing.Size(187, 32);
             this.lblSLNghiKhongPhep.TabIndex = 1;
             this.lblSLNghiKhongPhep.Text = "lblDVCD";
             this.lblSLNghiKhongPhep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -673,7 +673,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label30.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(5, 127);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(308, 32);
+            this.label30.Size = new System.Drawing.Size(299, 32);
             this.label30.TabIndex = 1;
             this.label30.Text = "Nghỉ không phép";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -684,7 +684,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongTien2.ForeColor = System.Drawing.Color.Red;
             this.lblTongTien2.Location = new System.Drawing.Point(5, 161);
             this.lblTongTien2.Name = "lblTongTien2";
-            this.lblTongTien2.Size = new System.Drawing.Size(308, 30);
+            this.lblTongTien2.Size = new System.Drawing.Size(299, 30);
             this.lblTongTien2.TabIndex = 0;
             this.lblTongTien2.Text = "Thành Tiền (2)";
             this.lblTongTien2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -694,7 +694,7 @@ namespace QuanLyLuongSanPham_GUI
             this.tableLayoutPanel2.SetColumnSpan(this.lblTongTienKhauTru_Phat, 2);
             this.lblTongTienKhauTru_Phat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTienKhauTru_Phat.ForeColor = System.Drawing.Color.Red;
-            this.lblTongTienKhauTru_Phat.Location = new System.Drawing.Point(321, 161);
+            this.lblTongTienKhauTru_Phat.Location = new System.Drawing.Point(312, 161);
             this.lblTongTienKhauTru_Phat.Name = "lblTongTienKhauTru_Phat";
             this.lblTongTienKhauTru_Phat.Size = new System.Drawing.Size(399, 30);
             this.lblTongTienKhauTru_Phat.TabIndex = 2;
@@ -705,9 +705,9 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label41.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(321, 63);
+            this.label41.Location = new System.Drawing.Point(312, 63);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(193, 27);
+            this.label41.Size = new System.Drawing.Size(187, 27);
             this.label41.TabIndex = 14;
             this.label41.Text = "Số Lượng";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -716,7 +716,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label42.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(522, 63);
+            this.label42.Location = new System.Drawing.Point(507, 63);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(197, 27);
             this.label42.TabIndex = 14;
@@ -726,7 +726,7 @@ namespace QuanLyLuongSanPham_GUI
             // lblThanhTienThue
             // 
             this.lblThanhTienThue.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhTienThue.Location = new System.Drawing.Point(522, 2);
+            this.lblThanhTienThue.Location = new System.Drawing.Point(507, 2);
             this.lblThanhTienThue.Name = "lblThanhTienThue";
             this.lblThanhTienThue.Size = new System.Drawing.Size(194, 29);
             this.lblThanhTienThue.TabIndex = 1;
@@ -736,7 +736,7 @@ namespace QuanLyLuongSanPham_GUI
             // lblThanhTienTienUng
             // 
             this.lblThanhTienTienUng.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhTienTienUng.Location = new System.Drawing.Point(522, 33);
+            this.lblThanhTienTienUng.Location = new System.Drawing.Point(507, 33);
             this.lblThanhTienTienUng.Name = "lblThanhTienTienUng";
             this.lblThanhTienTienUng.Size = new System.Drawing.Size(194, 28);
             this.lblThanhTienTienUng.TabIndex = 1;
@@ -819,16 +819,6 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongTatCa.Text = "lblDVCD";
             this.lblTongTatCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNguoiLap
-            // 
-            this.lblNguoiLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNguoiLap.Location = new System.Drawing.Point(75, 753);
-            this.lblNguoiLap.Name = "lblNguoiLap";
-            this.lblNguoiLap.Size = new System.Drawing.Size(181, 34);
-            this.lblNguoiLap.TabIndex = 0;
-            this.lblNguoiLap.Text = "Người Lập";
-            this.lblNguoiLap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblNguoiNhan
             // 
             this.lblNguoiNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -868,6 +858,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXuatExcel.TabIndex = 16;
             this.btnXuatExcel.Text = "Export Excel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // label5
             // 
@@ -888,6 +879,16 @@ namespace QuanLyLuongSanPham_GUI
             this.lblMaNV.TabIndex = 3;
             this.lblMaNV.Text = "lbl";
             // 
+            // lblNguoiTao
+            // 
+            this.lblNguoiTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNguoiTao.Location = new System.Drawing.Point(85, 753);
+            this.lblNguoiTao.Name = "lblNguoiTao";
+            this.lblNguoiTao.Size = new System.Drawing.Size(181, 34);
+            this.lblNguoiTao.TabIndex = 0;
+            this.lblNguoiTao.Text = "Người Tạo";
+            this.lblNguoiTao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPhieuLuongNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -895,10 +896,10 @@ namespace QuanLyLuongSanPham_GUI
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 906);
             this.Controls.Add(this.btnXuatExcel);
+            this.Controls.Add(this.lblNguoiTao);
             this.Controls.Add(this.lblNguoiNhan);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.lblNguoiLap);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label34);
@@ -967,10 +968,10 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblsoLuongSPPLD;
         private System.Windows.Forms.Label lblLuongCD;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lbldonViSP;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lblSoLuongSPLD;
         private System.Windows.Forms.Label lblPhuCap;
@@ -990,7 +991,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label lblTongTatCa;
         private System.Windows.Forms.Label lblTongTien1;
-        private System.Windows.Forms.Label lblNguoiLap;
         private System.Windows.Forms.Label lblNguoiNhan;
         private System.Windows.Forms.Label lblTongTienKhauTru_Phat;
         private System.Windows.Forms.Label label21;
@@ -1008,9 +1008,10 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnXuatExcel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbldonViLuong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblMaNV;
         private System.Windows.Forms.Label lblLuongCongDoan;
+        private System.Windows.Forms.Label lblNguoiTao;
     }
 }
