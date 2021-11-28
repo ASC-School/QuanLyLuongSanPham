@@ -17,5 +17,17 @@ namespace QuanLyLuongSanPham_BUS
         {
             return donVi.layDanhSachDonViQUanLy();
         }
+        public bool themDonVi(QuanLyLuongSanPham_DTO.DTO_DonViQuanLy dv)
+        {
+            return donVi.themDonVi(dv);
+        }
+        public bool suaDonVi(QuanLyLuongSanPham_DTO.DTO_DonViQuanLy dv)
+        {
+            return donVi.suaDonVi(dv);
+        }
+        public bool xoaDonVi(string str)
+        {
+            return donVi.xoaDonVi(str);
+        }
     }
 }
