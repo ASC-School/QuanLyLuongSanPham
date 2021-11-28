@@ -72,9 +72,19 @@ namespace QuanLyLuongSanPham_BUS
             return nv.layTenNhanVien();
         }
 
-        public object serchNhanVienLuong(string strMaNV, string strTenNV, string strThang)
+        public object serchNhanVienLuongCNhan(string strMaNV, string strTenNV, string strThang, string strNam)
         {
-            return nv.serchNhanVienLuongCN(strMaNV, strTenNV, strThang);
+            return nv.serchNhanVienLuongCN(strMaNV, strTenNV, strThang, strNam);
+        }
+
+        public object serchNhanVienLuongHChanh(string strMaNV, string strTenNV, string strThang, string strNam)
+        {
+            return nv.serchNhanVienLuongHC(strMaNV, strTenNV, strThang, strNam);
+        }
+
+        public IEnumerable<LoaiNhanVien> getLoaiNhanVienTheoMa(string strMaNV)
+        {
+            return nv.layLoaiNhanVienTheoMa(strMaNV);
         }
     }
 }

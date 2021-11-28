@@ -22,18 +22,72 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
         }
 
+        #region
+        Point LastPoint;
         BUS_LuongCongNhan busLuongCongNhan = new BUS_LuongCongNhan();
         BUS_DonViQuanLy busDVQL = new BUS_DonViQuanLy();
         BUS_NhanVien busNV = new BUS_NhanVien();
 
         bool bCheckNVTimKiem = false;
-        private void button1_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Methos
+        private void anTextBox()
+        {
+            txtMaNV.Enabled = false;
+            txtHoTen.Enabled = false;
+            txtCongDoan.Enabled = false;
+            txtDonVi.Enabled = false;
+            txtPhuCap.Enabled = false;
+            txtSLSPLamDuoc.Enabled = false;
+            txtTienPhat.Enabled = false;
+            txtThue.Enabled = false;
+            txtTongLuongTT.Enabled = false;
+            txtTamUng.Enabled = false;
+        }
+        private void moTextBox()
+        {
+            txtSLSPLamDuoc.Enabled = true;
+        }
+        void loadNVTimKiem(bool bCheck, string maNVTK, string strThang, string strNam)
+        {
+            bCheckNVTimKiem = bCheck;
+            if (bCheckNVTimKiem)
+            {
+                dtgvLuongCongNhan.DataSource = busLuongCongNhan.layNVTheoTimKiem(maNVTK);
+                this.dtgvLuongCongNhan.SelectionMode = DataGridViewSelectionMode.CellSelect;
+                ccbThang.Text = strThang;
+                ccbNam.Text = strNam;
+            }
+        }
+        private void loadCBBThangNam()
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                _ = ccbThang.Items.Add(i);
+            }
+            ccbNam.Items.Add(2021);
+            ccbNam.Items.Add(2020);
+        }
+
+        private void loadLuongCongNhan()
+        {
+            btnHuy.Enabled = false;
+            this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLuongCongNhan.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
+        }
+        #endregion
+
+        #region
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             Util.EndAnimate(this, Util.Effect.Center, 150, 30);
             this.Close();
         }
 
-        Point LastPoint;
+        
         private void FrmLuongCongNhan_Load(object sender, EventArgs e)
         {
             Util.Animate(this, Util.Effect.Center, 150, 180);
@@ -41,36 +95,6 @@ namespace QuanLyLuongSanPham_GUI
             loadCBBThangNam();
             loadLuongCongNhan();
         }
-
-
-         void loadNVTimKiem(bool bCheck, string maNVTK, string strThang, string strNam)
-        {
-            bCheckNVTimKiem = bCheck;
-            if(bCheckNVTimKiem)
-            {
-                dtgvLuongCongNhan.DataSource = busLuongCongNhan.layNVTheoTimKiem(maNVTK);
-                this.dtgvLuongCongNhan.SelectionMode = DataGridViewSelectionMode.CellSelect;
-                ccbThang.Text = strThang;
-                ccbNam.Text = strNam;
-            }    
-        }
-        private void loadCBBThangNam()
-        {
-            for(int i = 1; i <= 12; i++)
-            {
-                _ = ccbThang.Items.Add(i);
-            }
-            ccbNam.Items.Add(2021);
-            ccbNam.Items.Add(2022);
-        }
-
-        private void loadLuongCongNhan()
-        {
-            btnHuy.Enabled = false;
-            this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
-            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
-        }
-
         private void FrmLuongCongNhan_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
@@ -103,26 +127,6 @@ namespace QuanLyLuongSanPham_GUI
                 txtThucNhan.Text = row.Cells[10].Value.ToString();
             }
         }
-
-        private void anTextBox()
-        {
-            txtMaNV.Enabled = false;
-            txtHoTen.Enabled = false;   
-            txtCongDoan.Enabled = false;
-            txtDonVi.Enabled = false;
-            txtPhuCap.Enabled = false;
-            txtSLSPLamDuoc.Enabled = false;
-            txtTienPhat.Enabled = false;
-            txtThue.Enabled = false;
-            txtTongLuongTT.Enabled = false;
-            txtTamUng.Enabled = false;
-        }
-
-        private void moTextBox()
-        { 
-            txtSLSPLamDuoc.Enabled = true;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             moTextBox();
@@ -149,7 +153,7 @@ namespace QuanLyLuongSanPham_GUI
                         if(dtgvLuongCongNhan.Rows.Count == 1)
                         {
                             string strMaNV = txtMaNV.Text.Trim();
-                            dtgvLuongCongNhan.DataSource = busNV.serchNhanVienLuong(strMaNV, "dataSearchOne", "dataSearchSecond");
+                            dtgvLuongCongNhan.DataSource = busNV.serchNhanVienLuongCNhan(strMaNV, "dataSearchOne", "dataSearchSecond", "dataSearchThirst");
                         }   
                         else
                         {
@@ -174,16 +178,17 @@ namespace QuanLyLuongSanPham_GUI
             int iMonth = Convert.ToInt32(ccbThang.Text);
             int iYear = Convert.ToInt32(ccbNam.Text);
             this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThang(iMonth, iYear);         
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
                 frmTimKiemLuongTheoLoai fTimKiemNV = new frmTimKiemLuongTheoLoai();
                 fTimKiemNV.nvTimKiemLuongCN = loadNVTimKiem;
-                fTimKiemNV.ShowDialog();
+            try
+            {
+                    fTimKiemNV.ShowDialog();
             }
             catch (Exception) {}
         }
@@ -194,8 +199,8 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void btnChiTietLuong_Click(object sender, EventArgs e)
         {
-            frmPhieuLuongCongNhan fPhieuLuong = new frmPhieuLuongCongNhan();
-            fPhieuLuong.phieuLuongCN(txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text,txtThue.Text, ccbThang.Text, ccbNam.Text);
+            frmPhieuLuongNhanVien fPhieuLuong = new frmPhieuLuongNhanVien();
+            fPhieuLuong.phieuLuongCN(2,txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, "", "", txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text,txtThue.Text, ccbThang.Text, ccbNam.Text, txtThucNhan.Text);
             fPhieuLuong.ShowDialog();
         }
 
@@ -258,6 +263,8 @@ namespace QuanLyLuongSanPham_GUI
             //        }
             //    }
             //}
+
+            #endregion
         }
     }
 }
