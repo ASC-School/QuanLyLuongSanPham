@@ -30,6 +30,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void loadData()
         {
+            dtgvDonVi.Rows.Clear();
             IEnumerable<LoaiNhanVien> listLNV = busLNV.getNhanVienForQLNS();
             IEnumerable<DonViQuanLy> listDOnVi = busDVQL.getDSDonVi();
             foreach (var item in listLNV)
@@ -117,6 +118,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                 }
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
