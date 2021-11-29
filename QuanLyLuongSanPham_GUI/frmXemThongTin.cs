@@ -37,6 +37,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             loadThongTinNhanVien();
             dtgvTienPhat.DefaultCellStyle.ForeColor = Color.Black;
+            dtgvTienUng.DefaultCellStyle.ForeColor = Color.Black;
             loadData();
         }
         private void loadData()
@@ -44,7 +45,9 @@ namespace QuanLyLuongSanPham_GUI
             dtgvTienPhat.Rows.Clear();
             IEnumerable<PhatNhanVien> listP = busPhat.layThongTinPhat(maNhanVien);
             IEnumerable<MucTienPhat> listMP = busMucPhat.layThongTinPhat();
+            IEnumerable<LuongHanhChanh> lhc = busLuongHC.layThongTinLuongCaNhan(maNhanVien);
             double tongPhat = 0;
+            double tongUng = 0;
             foreach (var item in listP)
             {
                 foreach (var n in listMP)
@@ -57,6 +60,14 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
             lblTienPhat.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongPhat).ToString() + " VNĐ";
+            foreach(var item in lhc)
+            {
+                string ngayUng = "25/" + item.thangLuong.ToString() + "/" + item.namLuong.ToString();
+                dtgvTienUng.Rows.Add(ngayUng, item.tienUng);
+                tongUng = tongUng + Convert.ToDouble(item.tienUng);
+            }
+            lblLuongUng.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongUng).ToString() + " VNĐ";
+
         }
         public void loadThongTinNhanVien()
         {
@@ -134,17 +145,22 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     foreach(var m in lcn)
                     {
+                        double LuongCoBan = 0;
+                        double thucnhan = 0;
                         foreach(var k in cd)
                         {
                             if (m.maCongDoan == k.soThuTu)
                             {
                                 lblLuong.Text = "Lương: " + k.donGia.ToString() + "VNĐ/1 sản phảm";
+                                LuongCoBan = Convert.ToDouble(k.donGia * m.soLuongSanPham);
+                                thucnhan = Convert.ToDouble(LuongCoBan * (1.0 - m.thue) + m.phuCap);
                             }
                         }
                         lblPhuCap.Text= "Phụ cấp: " + String.Format("{0:#,##0.0}", m.phuCap).ToString() + " VNĐ";
                         lblThue.Text= "Thuế: " + (m.thue * 100).ToString() + " %";
                         lblTienThuong.Text = "Tiền thưởng: 0 VNĐ";
                         lblSoNgayCong.Text = "Số lượng sản phẩm: " + m.soLuongSanPham.ToString() + " cái";
+                        lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucnhan).ToString() + " VNĐ";
                     }
                 }
             }
