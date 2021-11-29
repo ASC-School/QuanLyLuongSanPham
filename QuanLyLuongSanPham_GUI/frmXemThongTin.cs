@@ -54,11 +54,9 @@ namespace QuanLyLuongSanPham_GUI
                         dtgvTienPhat.Rows.Add(item.ngayPhat,n.tenKhoanPhat,Convert.ToDouble( n.mucTienPhat1));
                         tongPhat = tongPhat + Convert.ToDouble(n.mucTienPhat1);
                     }
-                    
-                    lblTienPhat.Text ="Tổng trừ: "+ String.Format("{0:#,##0.0}", tongPhat).ToString() + " VNĐ";
                 }
-
             }
+            lblTienPhat.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongPhat).ToString() + " VNĐ";
         }
         public void loadThongTinNhanVien()
         {
