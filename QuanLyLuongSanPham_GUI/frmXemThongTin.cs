@@ -44,16 +44,17 @@ namespace QuanLyLuongSanPham_GUI
             dtgvTienPhat.Rows.Clear();
             IEnumerable<PhatNhanVien> listP = busPhat.layThongTinPhat(maNhanVien);
             IEnumerable<MucTienPhat> listMP = busMucPhat.layThongTinPhat();
+            double tongPhat = 0;
             foreach (var item in listP)
             {
-                double tongPhat = 0;
-                foreach(var n in listMP)
+                foreach (var n in listMP)
                 {
                     if (n.soThuTu == item.maMucPhat)
                     {
                         dtgvTienPhat.Rows.Add(item.ngayPhat,n.tenKhoanPhat,Convert.ToDouble( n.mucTienPhat1));
+                        tongPhat = tongPhat + Convert.ToDouble(n.mucTienPhat1);
                     }
-                    tongPhat = tongPhat + Convert.ToDouble(n.mucTienPhat1);
+                    
                     lblTienPhat.Text ="Tổng trừ: "+ String.Format("{0:#,##0.0}", tongPhat).ToString() + " VNĐ";
                 }
 
