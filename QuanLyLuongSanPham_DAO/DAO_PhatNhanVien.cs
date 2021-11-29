@@ -28,5 +28,12 @@ namespace QuanLyLuongSanPham_DAO
                                                  select phatNV;
             return phatNghi;
         }
+        public IEnumerable<PhatNhanVien> layThongTinPhat(string maNhanVien)
+        {
+            IEnumerable<PhatNhanVien> phat = from n in dataBase.PhatNhanViens
+                                             where n.maNhanVien.Equals(maNhanVien)
+                                             select n;
+            return phat;
+        }
     }
 }

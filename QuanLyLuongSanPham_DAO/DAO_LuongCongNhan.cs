@@ -141,5 +141,12 @@ namespace QuanLyLuongSanPham_DAO
             }
             return false;
         }
+        public IEnumerable<LuongCongNhan> layThongTinLuong(string maNhanVien)
+        {
+            IEnumerable<LuongCongNhan> q = from lcn in dataBase.LuongCongNhans
+                                           where lcn.maNhanVien.Equals(maNhanVien)
+                                           select lcn;
+            return q;
+        }
     }
 }

@@ -42,5 +42,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongCongNhan.layNVTheoMa(strMaNV);
         }
+        public IEnumerable<LuongCongNhan> layThongTinLuong(string maNhanVien)
+        {
+            return luongCongNhan.layThongTinLuong(maNhanVien);
+        }
     }
 }
