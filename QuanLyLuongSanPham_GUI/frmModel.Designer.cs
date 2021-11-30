@@ -29,7 +29,6 @@ namespace QuanLyLuongSanPham_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -96,10 +95,10 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.cboMaModel);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(19, 65);
+            this.panelControl1.Location = new System.Drawing.Point(16, 44);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(383, 136);
             this.panelControl1.TabIndex = 0;
@@ -107,7 +106,7 @@ namespace QuanLyLuongSanPham_GUI
             // txtTrangThai
             // 
             this.txtTrangThai.Location = new System.Drawing.Point(175, 176);
-            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(5);
             this.txtTrangThai.Name = "txtTrangThai";
             this.txtTrangThai.Size = new System.Drawing.Size(302, 21);
             this.txtTrangThai.TabIndex = 2;
@@ -115,7 +114,7 @@ namespace QuanLyLuongSanPham_GUI
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(40, 181);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 13);
             this.labelControl4.TabIndex = 0;
@@ -137,10 +136,12 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(7, 91);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(7, 88);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(53, 13);
+            this.labelControl2.Size = new System.Drawing.Size(80, 19);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Tên Model:";
             // 
@@ -160,10 +161,12 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(7, 49);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(7, 46);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(49, 13);
+            this.labelControl1.Size = new System.Drawing.Size(73, 19);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Mã Model:";
             // 
@@ -172,16 +175,15 @@ namespace QuanLyLuongSanPham_GUI
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(22, 44);
+            this.panel1.Location = new System.Drawing.Point(23, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(138, 22);
             this.panel1.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(0, 0);
@@ -211,8 +213,6 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvModel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvModel.BackgroundColor = System.Drawing.Color.White;
             this.dgvModel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -232,6 +232,7 @@ namespace QuanLyLuongSanPham_GUI
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvModel.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvModel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvModel.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvModel.Location = new System.Drawing.Point(0, 0);
             this.dgvModel.Name = "dgvModel";
@@ -492,6 +493,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmModel";
             this.Text = "Model";
             this.Load += new System.EventHandler(this.frmModel_Load);

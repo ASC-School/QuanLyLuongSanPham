@@ -170,6 +170,33 @@ namespace QuanLyLuongSanPham_GUI
             SetStatusLogin(false, "", "", "","");
             frmHome_Load(sender, e);
         }
+
+        private void tHỐNGKÊĐƠNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKeDonHang frm = new frmThongKeDonHang();
+            _ = frm.ShowDialog();
+        }
+
+        private void tÌMKIẾMĐƠNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemDonHang frm = new frmTimKiemDonHang();
+            _ = frm.ShowDialog();
+        }
+
+        private void msSanPham_QuanLySP_Click(object sender, EventArgs e)
+        {
+            frmSanPham frm = new frmSanPham();
+            _ = frm.ShowDialog();
+        }
+
+
+        private void msNhanSu_TimKiemNhanVien_Click(object sender, EventArgs e)
+        {
+            frmTimKiemNhanVien frm = new frmTimKiemNhanVien();
+            _ = frm.ShowDialog();
+        }
+
         #endregion
+
     }
 }

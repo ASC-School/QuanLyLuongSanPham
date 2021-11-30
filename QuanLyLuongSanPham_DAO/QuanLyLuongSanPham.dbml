@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyLuongSanPham" Class="QuanLyLuongSanPhamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HUYDINH;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-50F1KAT\Peguin;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True" SettingsObjectName="QuanLyLuongSanPham_DAO.Properties.Settings" SettingsPropertyName="QuanLyLuongSanPhamConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CaLamViec" Member="CaLamViecs">
     <Type Name="CaLamViec">
       <Column Name="maCa" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -196,13 +196,13 @@
   </Table>
   <Table Name="dbo.PhatNhanVien" Member="PhatNhanViens">
     <Type Name="PhatNhanVien">
-      <Column Name="maNhanVien" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maMucPhat" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="maMucPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="maDonVi" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="ngayPhat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="DonViQuanLy_PhatNhanVien" Member="DonViQuanLy" ThisKey="maDonVi" OtherKey="maDonVi" Type="DonViQuanLy" IsForeignKey="true" />
       <Association Name="MucTienPhat_PhatNhanVien" Member="MucTienPhat" ThisKey="maMucPhat" OtherKey="soThuTu" Type="MucTienPhat" IsForeignKey="true" />
-      <Association Name="NhanVien_PhatNhanVien" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="NhanVien_PhatNhanVien" Member="NhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.PhieuChamCongCongNhan" Member="PhieuChamCongCongNhans">

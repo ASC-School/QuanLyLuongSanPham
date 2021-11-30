@@ -32,6 +32,7 @@ namespace QuanLyLuongSanPham_GUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.dgvModel.DefaultCellStyle.Font = new Font("Tahoma", 12);
             loadDSModelToDataGridView();
         }
         private void loadDSModelToDataGridView()

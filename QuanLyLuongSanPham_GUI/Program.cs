@@ -14,16 +14,17 @@ namespace QuanLyLuongSanPham_GUI
         [STAThread]
         static void Main()
         {
-            try
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmHome());
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Server có vấn đề - Nên chạy lại!!!");
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmHome());
+            //try
+            //{
+                
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Server có vấn đề - Nên chạy lại!!!");
+            //}
         }
     }
 }

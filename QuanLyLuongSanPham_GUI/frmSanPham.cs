@@ -15,15 +15,21 @@ namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmSanPham : DevExpress.XtraEditors.XtraForm
     {
-        public frmSanPham()
-        {
-            InitializeComponent();
-        }
         BUS_SanPham sanPhamBUS;
         BindingSource bsPHSanPham;
         BindingSource bsPHModel;
         DTO_SanPham newSanPham;
         DTO_ChiTietModel newChiTiet;
+        public frmSanPham()
+        {
+            InitializeComponent();
+            sanPhamBUS = new BUS_SanPham();
+            bsPHSanPham = new BindingSource();
+            bsPHModel = new BindingSource();
+            addLuoiSanPham(dgvSanPham);
+            addLuoiModel(dgvModel);
+        }
+       
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
@@ -32,9 +38,7 @@ namespace QuanLyLuongSanPham_GUI
             btnSuaSanPham.Enabled = false;
             btnXoaSanPham.Enabled = false;
             btnLuuSanPham.Enabled = false;
-            sanPhamBUS = new BUS_SanPham();
-            bsPHSanPham = new BindingSource();
-            bsPHModel = new BindingSource();
+           
             loadChiTietSanPham();
             loadModel();
             loadCbo();
@@ -46,40 +50,118 @@ namespace QuanLyLuongSanPham_GUI
             bsPHSanPham.DataSource = sanPhamBUS.getAllChiTietSanPham();
             dgvSanPham.DataSource = bsPHSanPham;
             bindingNavigatorSanPham.BindingSource = bsPHSanPham;
-            formatLuoiSanPham(dgvSanPham);
         }
 
-        private void formatLuoiSanPham(DataGridView dgr)
+
+        private void addLuoiSanPham(DataGridView dgr)
         {
-            dgr.Columns["maSanPham"].HeaderText = "Mã sản phẩm";
-            dgr.Columns["tenSanPham"].HeaderText = "Tên sản phẩm";
-            dgr.Columns["tenSanPham"].Width = 200;
-            dgr.Columns["namSanXuat"].HeaderText = "Năm sản xuất";
-            dgr.Columns["trangThai"].HeaderText = "Trạng Thái";
-            dgr.Columns["giaBan"].HeaderText = "Đơn giá sản phẩm";
-            dgr.Columns["thongSoKyThuat"].HeaderText = "Thông số kỹ thuật";
-            dgr.Columns["thongSoKyThuat"].Width = 200;
-            dgr.Columns["moTa"].HeaderText = "Mô tả";
-            dgr.Columns["moTa"].Width = 200;
-            dgr.Columns["maModel"].HeaderText = "Mã model";
-            dgr.Columns["tenModel"].HeaderText = "Tên model";
-            dgr.Columns["tenModel"].Width = 200;
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maSanPham";
+            dc.HeaderText = "Mã sản phẩm";
+            dc.Name = "maSanPaham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenSanPham";
+            dc.HeaderText = "Tên sản phẩm";
+            dc.Name = "tenSanPham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "namSanXuat";
+            dc.HeaderText = "Năm sản phẩm";
+            dc.Name = "namSanPham";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "giaBan";
+            dc.HeaderText = "Giá đơn hàng";
+            dc.Name = "giaBan";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "thongSoKyThuat";
+            dc.HeaderText = "Thông số kỹ thuật";
+            dc.Name = "thongSoKyThuat";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "moTa";
+            dc.HeaderText = "Mô tả";
+            dc.Name = "moTa";
+            dc.Visible = true;
+            
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maModel";
+            dc.HeaderText = "Mã model";
+            dc.Name = "maModel";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenModel";
+            dc.HeaderText = "Tên model";
+            dc.Name = "tenModel";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
         }
 
+        private void addLuoiModel(DataGridView dgr)
+        {
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maModel";
+            dc.HeaderText = "Mã model";
+            dc.Name = "maModel";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenModel";
+            dc.HeaderText = "Tên model";
+            dc.Name = "tenModel";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+        }
         private void loadModel()
         {
             bsPHModel.DataSource = sanPhamBUS.getDSModel();
             dgvModel.DataSource = bsPHModel;
-            formatLuoiModel(dgvModel);
         }
 
-        private void formatLuoiModel(DataGridView dgr)
-        {
-            dgr.Columns["maModel"].HeaderText = "Mã model";
-            dgr.Columns["tenModel"].HeaderText = "Tên model";
-            dgr.Columns["tenModel"].Width = 200;
-            dgr.Columns["trangThai"].HeaderText = "Trạng Thái";
-        }
 
         private void hienThongTin()
         {

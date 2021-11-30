@@ -58,7 +58,8 @@ namespace QuanLyLuongSanPham_GUI
             btnHuyDonHang.Enabled = false;
             btnXuatDonHang.Enabled = false;
             this.dgvDSDonHang.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvDSDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold);
+            this.dgvDSDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11F, FontStyle.Bold);
+            this.dgvDSDonHang.DefaultCellStyle.Font = new Font("Tahoma", 11.25F, FontStyle.Bold);
             if (lstTimKiemToDataGrid != null)
             {
                 loadDonHangToDataGridView(lstTimKiemToDataGrid);
