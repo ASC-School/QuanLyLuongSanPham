@@ -38,6 +38,12 @@ namespace QuanLyLuongSanPham_GUI
                 cbbLuongThang.Items.Add(i);
             }
         }
+
+        private void loadCBBNam()
+        {
+            ccbNam.Items.Add("2020");
+            ccbNam.Items.Add("2021");
+        }
         private void loadAutoComplete()
         {
             txtTimKiemMaNV.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -54,13 +60,17 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void AppliedFilter()
         {
-            if (ccbTimKiemTheoLoai.Text == "Lương Công Nhân" && cbbLuongThang.Text != "")
+            if (ccbTimKiemTheoLoai.Text == "Lương Công Nhân" && cbbLuongThang.Text != "" && ccbNam.Text != "")
             {
-                dtgvDanhSachTimKiem.DataSource = busNV.serchNhanVienLuong(txtTimKiemMaNV.Text, txtTimKiemTenNV.Text, cbbLuongThang.Text);
+                dtgvDanhSachTimKiem.DataSource = busNV.serchNhanVienLuongCNhan(txtTimKiemMaNV.Text, txtTimKiemTenNV.Text, cbbLuongThang.Text, ccbNam.Text);
             }
-            else if (ccbTimKiemTheoLoai.Text == "Lương Nhân viên Hành Chánh" && cbbLuongThang.Text != "")
+            else if (ccbTimKiemTheoLoai.Text == "Lương Nhân viên Hành Chánh" && cbbLuongThang.Text != "" && ccbNam.Text != "")
             {
-                
+                dtgvDanhSachTimKiem.Columns[5].HeaderText = "Lương Cơ Bản";
+                dtgvDanhSachTimKiem.Columns[5].DataPropertyName = "luongCoBan";
+                dtgvDanhSachTimKiem.Columns[6].HeaderText = "Số Ngày Công TT";
+                dtgvDanhSachTimKiem.Columns[6].DataPropertyName = "soNgayCongTT";
+                dtgvDanhSachTimKiem.DataSource = busNV.serchNhanVienLuongHChanh(txtTimKiemMaNV.Text, txtTimKiemTenNV.Text, cbbLuongThang.Text, ccbNam.Text);
             }
             else
             {
@@ -96,6 +106,7 @@ namespace QuanLyLuongSanPham_GUI
             Util.Animate(this, Util.Effect.Center, 150, 180);
             loadCBBTimKiemTheo();
             loadCBBThangNam();
+            loadCBBNam();
             loadAutoComplete();
         }
         private void FrmTimKiemNhanVien_MouseDown(object sender, MouseEventArgs e)
@@ -226,6 +237,17 @@ namespace QuanLyLuongSanPham_GUI
             {
                 lblError3.Visible = true;
             }    
+        }
+        private void ccbNam_Leave(object sender, EventArgs e)
+        {
+            if (ccbNam.Text != "")
+            {
+                lblError4.Visible = false;
+            }
+            else
+            {
+                lblError4.Visible = true;
+            }
         }
         #endregion
     }

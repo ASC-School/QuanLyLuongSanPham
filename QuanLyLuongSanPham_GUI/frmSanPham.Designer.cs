@@ -82,19 +82,19 @@ namespace QuanLyLuongSanPham_GUI
             this.txtNamSanXuat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
-            this.bindingSourceModel = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceSanPham = new System.Windows.Forms.BindingSource(this.components);
             this.errorLoi = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTipOpenFrmModel = new System.Windows.Forms.ToolTip(this.components);
+            this.bindingSourceModel = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceSanPham = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorSanPham)).BeginInit();
             this.bindingNavigatorSanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSanPham
@@ -109,7 +109,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvSanPham.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -120,7 +120,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvSanPham.Name = "dgvSanPham";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -149,7 +149,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvModel.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
@@ -158,7 +158,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
@@ -169,7 +169,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvModel.Name = "dgvModel";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 7.8F);
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
@@ -192,7 +192,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(94, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã sản phẩm:";
             // 
@@ -200,7 +200,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtMaSanPham.Location = new System.Drawing.Point(105, 10);
             this.txtMaSanPham.Name = "txtMaSanPham";
-            this.txtMaSanPham.Size = new System.Drawing.Size(229, 21);
+            this.txtMaSanPham.Size = new System.Drawing.Size(229, 23);
             this.txtMaSanPham.TabIndex = 2;
             // 
             // panelControl1
@@ -273,7 +273,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorSanPham.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigatorSanPham.Name = "bindingNavigatorSanPham";
             this.bindingNavigatorSanPham.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigatorSanPham.Size = new System.Drawing.Size(261, 27);
+            this.bindingNavigatorSanPham.Size = new System.Drawing.Size(302, 31);
             this.bindingNavigatorSanPham.TabIndex = 9;
             this.bindingNavigatorSanPham.Text = "bindingNavigator1";
             // 
@@ -283,13 +283,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
             this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
             this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem1.Text = "Add new";
             // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 28);
             this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
             // 
@@ -299,7 +299,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
             this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
             this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItem1.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem1
@@ -308,7 +308,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
             this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
             this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem1.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem1
@@ -317,18 +317,19 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
             this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
             this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
             // 
             // bindingNavigatorSeparator3
             // 
             this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem1
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Position";
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -337,7 +338,7 @@ namespace QuanLyLuongSanPham_GUI
             // bindingNavigatorSeparator4
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem1
             // 
@@ -345,7 +346,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
             this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
             this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem1.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem1
@@ -354,13 +355,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
             this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
             this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem1.Text = "Move last";
             // 
             // bindingNavigatorSeparator5
             // 
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
-            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
             // btnLuuSanPham
             // 
@@ -462,7 +463,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenModel.FormattingEnabled = true;
             this.cboTenModel.Location = new System.Drawing.Point(105, 159);
             this.cboTenModel.Name = "cboTenModel";
-            this.cboTenModel.Size = new System.Drawing.Size(229, 21);
+            this.cboTenModel.Size = new System.Drawing.Size(229, 24);
             this.cboTenModel.TabIndex = 4;
             this.cboTenModel.SelectedIndexChanged += new System.EventHandler(this.cboTenModel_SelectedIndexChanged);
             // 
@@ -471,7 +472,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaModel.FormattingEnabled = true;
             this.cboMaModel.Location = new System.Drawing.Point(105, 134);
             this.cboMaModel.Name = "cboMaModel";
-            this.cboMaModel.Size = new System.Drawing.Size(229, 21);
+            this.cboMaModel.Size = new System.Drawing.Size(229, 24);
             this.cboMaModel.TabIndex = 4;
             this.cboMaModel.SelectedIndexChanged += new System.EventHandler(this.cboMaModel_SelectedIndexChanged);
             // 
@@ -484,7 +485,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.ForeColor = System.Drawing.Color.Crimson;
             this.label11.Location = new System.Drawing.Point(724, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(257, 25);
+            this.label11.Size = new System.Drawing.Size(326, 33);
             this.label11.TabIndex = 3;
             this.label11.Text = "BẢNG THÔNG TIN MODEL";
             // 
@@ -495,7 +496,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.ForeColor = System.Drawing.Color.Crimson;
             this.label8.Location = new System.Drawing.Point(414, 248);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(291, 25);
+            this.label8.Size = new System.Drawing.Size(367, 33);
             this.label8.TabIndex = 3;
             this.label8.Text = "BẢNG THÔNG TIN SẢN PHẨM";
             // 
@@ -505,7 +506,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(6, 188);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 13);
+            this.label10.Size = new System.Drawing.Size(127, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "Thông số kỹ thuật:";
             // 
@@ -515,7 +516,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(6, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.Size = new System.Drawing.Size(75, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Trạng thái:";
             // 
@@ -523,7 +524,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtThongSoKyThuat.Location = new System.Drawing.Point(105, 183);
             this.txtThongSoKyThuat.Name = "txtThongSoKyThuat";
-            this.txtThongSoKyThuat.Size = new System.Drawing.Size(229, 21);
+            this.txtThongSoKyThuat.Size = new System.Drawing.Size(229, 23);
             this.txtThongSoKyThuat.TabIndex = 2;
             // 
             // label9
@@ -532,7 +533,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(6, 163);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.Size = new System.Drawing.Size(77, 17);
             this.label9.TabIndex = 1;
             this.label9.Text = "Tên model:";
             // 
@@ -542,7 +543,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(6, 213);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mô tả:";
             // 
@@ -550,14 +551,14 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtTrangThai.Location = new System.Drawing.Point(105, 110);
             this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(229, 21);
+            this.txtTrangThai.Size = new System.Drawing.Size(229, 23);
             this.txtTrangThai.TabIndex = 2;
             // 
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(105, 208);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(229, 21);
+            this.txtMoTa.Size = new System.Drawing.Size(229, 23);
             this.txtMoTa.TabIndex = 2;
             // 
             // label4
@@ -566,7 +567,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(6, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Giá bán:";
             // 
@@ -576,7 +577,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(6, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(71, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Mã model:";
             // 
@@ -584,7 +585,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(105, 85);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(229, 21);
+            this.txtGiaBan.Size = new System.Drawing.Size(229, 23);
             this.txtGiaBan.TabIndex = 2;
             // 
             // label3
@@ -593,7 +594,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(6, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Năm sản xuất:";
             // 
@@ -601,7 +602,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtNamSanXuat.Location = new System.Drawing.Point(105, 60);
             this.txtNamSanXuat.Name = "txtNamSanXuat";
-            this.txtNamSanXuat.Size = new System.Drawing.Size(229, 21);
+            this.txtNamSanXuat.Size = new System.Drawing.Size(229, 23);
             this.txtNamSanXuat.TabIndex = 2;
             // 
             // label2
@@ -610,7 +611,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(6, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên sản phẩm:";
             // 
@@ -618,7 +619,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.txtTenSanPham.Location = new System.Drawing.Point(105, 35);
             this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(229, 21);
+            this.txtTenSanPham.Size = new System.Drawing.Size(229, 23);
             this.txtTenSanPham.TabIndex = 2;
             // 
             // errorLoi
@@ -630,7 +631,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 451);
             this.Controls.Add(this.panelControl1);
@@ -648,9 +649,9 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorSanPham)).EndInit();
             this.bindingNavigatorSanPham.ResumeLayout(false);
             this.bindingNavigatorSanPham.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).EndInit();
             this.ResumeLayout(false);
 
         }

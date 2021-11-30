@@ -13,6 +13,7 @@ using QuanLyLuongSanPham_DTO;
 using QuanLyLuongSanPham_DAO;
 using System.IO;
 using System.Drawing.Imaging;
+using QuanLyLuongSanPham_GUI.Regular_Expression;
 
 namespace QuanLyLuongSanPham_GUI
 {
@@ -23,7 +24,7 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
         }
 
-
+        regularExpression regex = new regularExpression();
         BUS_NhanVien busNV= new BUS_NhanVien();
         private static string ImageLocation;
         BUS_LoaiNhanVien busLoaiNV = new BUS_LoaiNhanVien();
@@ -34,6 +35,8 @@ namespace QuanLyLuongSanPham_GUI
             loadDSNVtoDTGV();
             DataGridViewRow row = new DataGridViewRow();
             loadDataToCbo();
+            btnSuaTTNV.Enabled = false;
+            btnXoaNV.Enabled = false;
         }
         // Load data từ database lên datagrid view
         private void loadDSNVtoDTGV()
@@ -48,6 +51,8 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (e.RowIndex >= 0)
             {
+                btnSuaTTNV.Enabled = true;
+                btnXoaNV.Enabled = true;
                 DataGridViewRow row = this.dtgvDSNV.Rows[e.RowIndex];
                 txtMaNv.Text = row.Cells[0].Value.ToString();
                 txtTenNv.Text = row.Cells[1].Value.ToString();
@@ -242,6 +247,7 @@ namespace QuanLyLuongSanPham_GUI
                 }
                 btnThemNV.Text = "Thêm nhân viên";
                 offTextbox();
+
             }    
             
         }
@@ -262,7 +268,7 @@ namespace QuanLyLuongSanPham_GUI
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnThemNV.Text = "Sửa thông tin";
+                btnSuaTTNV.Text = "Sửa thông tin";
                 offTextbox();
                 clearText();
             }
@@ -375,6 +381,69 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmTimKiemNhanVien frm = new frmTimKiemNhanVien();
             frm.ShowDialog();
+        }
+        private bool checkAnHienTextBox()
+        {
+            if (txtSDT.Enabled==true&&txtMaNv.Enabled==true)
+                return true;
+            return false;
+        }
+
+        private void txtTenNv_TextChanged(object sender, EventArgs e)
+        {
+            if (checkAnHienTextBox() == true)
+            {
+                //string s = txtTenNv.Text.Trim();
+                //if (!regex.checkName(s))
+                //{
+                //    errorProvider1.SetError(txtTenNv, "Bạn phải nhập đúng định dạng");
+                //}
+                //else
+                //    errorProvider1.Clear();
+            }
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            if(checkAnHienTextBox())
+            {
+                string s = txtSDT.Text.Trim();
+                if (!regex.checkSoDienThoai(s))
+                {
+                    errorProvider1.SetError(txtSDT, "Bạn phải nhập đúng định dạng");
+                    btnThemNV.Enabled = false;
+                    btnSuaTTNV.Enabled = false;
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    btnThemNV.Enabled = true;
+                    btnSuaTTNV.Enabled = true;
+                }
+            }
+            else
+                errorProvider1.Clear();
+
+        }
+
+        private void txtMaNv_TextChanged(object sender, EventArgs e)
+        {
+            if (checkAnHienTextBox())
+            {
+                string s = txtMaNv.Text.Trim();
+                if (!regex.checkMaNhanVien(s))
+                {
+                    errorProvider1.SetError(txtMaNv, "Bạn phải nhập đúng định dạng");
+                    btnThemNV.Enabled = false;
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    btnThemNV.Enabled = true;
+                }
+            }
+            else
+                errorProvider1.Clear();
         }
     }
 }

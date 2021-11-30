@@ -74,7 +74,8 @@ namespace QuanLyLuongSanPham_GUI
             this.tamUng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thucNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBangLuongCN = new DevExpress.XtraEditors.LabelControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ccbNam = new System.Windows.Forms.ComboBox();
+            this.lblError4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -443,32 +444,47 @@ namespace QuanLyLuongSanPham_GUI
             this.lblBangLuongCN.TabIndex = 111;
             this.lblBangLuongCN.Text = "BẢNG LƯƠNG CÔNG NHÂN";
             // 
-            // textBox1
+            // ccbNam
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(646, 150);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 29);
-            this.textBox1.TabIndex = 113;
-            this.textBox1.Text = "2021";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ccbNam.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccbNam.FormattingEnabled = true;
+            this.ccbNam.Location = new System.Drawing.Point(643, 147);
+            this.ccbNam.Name = "ccbNam";
+            this.ccbNam.Size = new System.Drawing.Size(128, 29);
+            this.ccbNam.TabIndex = 80;
+            this.ccbNam.Text = "2021";
+            this.ccbNam.Leave += new System.EventHandler(this.ccbNam_Leave);
+            // 
+            // lblError4
+            // 
+            this.lblError4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError4.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblError4.Appearance.Options.UseFont = true;
+            this.lblError4.Appearance.Options.UseForeColor = true;
+            this.lblError4.Location = new System.Drawing.Point(776, 150);
+            this.lblError4.Margin = new System.Windows.Forms.Padding(4);
+            this.lblError4.Name = "lblError4";
+            this.lblError4.Size = new System.Drawing.Size(13, 24);
+            this.lblError4.TabIndex = 85;
+            this.lblError4.Text = "*";
+            this.lblError4.ToolTip = "Bắt buộc";
+            this.lblError4.Visible = false;
             // 
             // frmTimKiemLuongTheoLoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 682);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtgvDanhSachTimKiem);
             this.Controls.Add(this.lblBangLuongCN);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblError4);
             this.Controls.Add(this.lblError1);
             this.Controls.Add(this.lblError3);
             this.Controls.Add(this.txtTimKiemTenNV);
             this.Controls.Add(this.txtTimKiemMaNV);
             this.Controls.Add(this.ccbTimKiemTheoLoai);
+            this.Controls.Add(this.ccbNam);
             this.Controls.Add(this.cbbLuongThang);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnTimKiem);
@@ -507,7 +523,6 @@ namespace QuanLyLuongSanPham_GUI
         private DevExpress.XtraEditors.LabelControl lblError1;
         private System.Windows.Forms.DataGridView dtgvDanhSachTimKiem;
         private DevExpress.XtraEditors.LabelControl lblBangLuongCN;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn donVi;
@@ -521,5 +536,7 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn tongLuongTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamUng;
         private System.Windows.Forms.DataGridViewTextBoxColumn thucNhan;
+        private System.Windows.Forms.ComboBox ccbNam;
+        private DevExpress.XtraEditors.LabelControl lblError4;
     }
 }

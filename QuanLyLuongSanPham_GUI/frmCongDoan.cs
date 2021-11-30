@@ -46,6 +46,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void loadDataSanPham()
         {
+            dtgvDSSanPham.Rows.Clear();
             IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
             foreach(var item in listSP)
             {

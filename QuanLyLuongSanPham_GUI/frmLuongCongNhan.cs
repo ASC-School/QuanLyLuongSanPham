@@ -22,55 +22,101 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
         }
 
+        #region
+        Point LastPoint;
         BUS_LuongCongNhan busLuongCongNhan = new BUS_LuongCongNhan();
         BUS_DonViQuanLy busDVQL = new BUS_DonViQuanLy();
         BUS_NhanVien busNV = new BUS_NhanVien();
 
         bool bCheckNVTimKiem = false;
-        private void button1_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Methos
+        private void statusTextBox(bool bStatus)
         {
-            Util.EndAnimate(this, Util.Effect.Center, 150, 30);
-            this.Close();
+            txtMaNV.Enabled = bStatus;
+            txtHoTen.Enabled = bStatus;
+            txtCongDoan.Enabled = bStatus;
+            txtDonVi.Enabled = bStatus;
+            txtPhuCap.Enabled = bStatus;
+            txtSLSPLamDuoc.Enabled = bStatus;
+            txtTienPhat.Enabled = bStatus;
+            txtThue.Enabled = bStatus;
+            txtTongLuongTT.Enabled = bStatus;
+            txtTamUng.Enabled = bStatus;
         }
 
-        Point LastPoint;
-        private void FrmLuongCongNhan_Load(object sender, EventArgs e)
+        private void clearTextBox()
         {
-            Util.Animate(this, Util.Effect.Center, 150, 180);
-            anTextBox();
-            loadCBBThangNam();
-            loadLuongCongNhan();
+            txtMaNV.Text = "";
+            txtHoTen.Text = "";
+            txtCongDoan.Text = "";
+            txtDonVi.Text = "";
+            txtPhuCap.Text = "";
+            txtSLSPLamDuoc.Text = "";
+            txtTienPhat.Text = "";
+            txtThue.Text = "";
+            txtTongLuongTT.Text = "";
+            txtTamUng.Text = "";
+            txtThucNhan.Text = "";
         }
-
-
-         void loadNVTimKiem(bool bCheck, string maNVTK, string strThang, string strNam)
+        private void moTextBox()
+        {
+            txtSLSPLamDuoc.Enabled = true;
+        }
+        void loadNVTimKiem(bool bCheck, string maNVTK, string strThang, string strNam)
         {
             bCheckNVTimKiem = bCheck;
-            if(bCheckNVTimKiem)
+            if (bCheckNVTimKiem)
             {
                 dtgvLuongCongNhan.DataSource = busLuongCongNhan.layNVTheoTimKiem(maNVTK);
                 this.dtgvLuongCongNhan.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 ccbThang.Text = strThang;
                 ccbNam.Text = strNam;
-            }    
+            }
         }
         private void loadCBBThangNam()
         {
-            for(int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 _ = ccbThang.Items.Add(i);
             }
             ccbNam.Items.Add(2021);
-            ccbNam.Items.Add(2022);
+            ccbNam.Items.Add(2020);
         }
 
         private void loadLuongCongNhan()
         {
             btnHuy.Enabled = false;
             this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLuongCongNhan.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
         }
+        #endregion
 
+        #region
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Util.EndAnimate(this, Util.Effect.Center, 150, 30);
+            this.Close();
+        }
+
+        private void toolTip()
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnChiTietLuong, "Xem chi tiết lương");
+            ToolTip2.SetToolTip(this.btnReLoad, "Tải lại trang");
+        }
+        private void FrmLuongCongNhan_Load(object sender, EventArgs e)
+        {
+            Util.Animate(this, Util.Effect.Center, 150, 180);
+            statusTextBox(false);
+            toolTip();
+            loadCBBThangNam();
+            loadLuongCongNhan();
+        }
         private void FrmLuongCongNhan_MouseDown(object sender, MouseEventArgs e)
         {
             LastPoint = new Point(e.X, e.Y);
@@ -103,26 +149,6 @@ namespace QuanLyLuongSanPham_GUI
                 txtThucNhan.Text = row.Cells[10].Value.ToString();
             }
         }
-
-        private void anTextBox()
-        {
-            txtMaNV.Enabled = false;
-            txtHoTen.Enabled = false;   
-            txtCongDoan.Enabled = false;
-            txtDonVi.Enabled = false;
-            txtPhuCap.Enabled = false;
-            txtSLSPLamDuoc.Enabled = false;
-            txtTienPhat.Enabled = false;
-            txtThue.Enabled = false;
-            txtTongLuongTT.Enabled = false;
-            txtTamUng.Enabled = false;
-        }
-
-        private void moTextBox()
-        { 
-            txtSLSPLamDuoc.Enabled = true;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             moTextBox();
@@ -149,7 +175,7 @@ namespace QuanLyLuongSanPham_GUI
                         if(dtgvLuongCongNhan.Rows.Count == 1)
                         {
                             string strMaNV = txtMaNV.Text.Trim();
-                            dtgvLuongCongNhan.DataSource = busNV.serchNhanVienLuong(strMaNV, "dataSearchOne", "dataSearchSecond");
+                            dtgvLuongCongNhan.DataSource = busNV.serchNhanVienLuongCNhan(strMaNV, "dataSearchOne", "dataSearchSecond", "dataSearchThirst");
                         }   
                         else
                         {
@@ -171,19 +197,21 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_TextChanged(object sender, EventArgs e)
         {
+            clearTextBox();
             int iMonth = Convert.ToInt32(ccbThang.Text);
             int iYear = Convert.ToInt32(ccbNam.Text);
             this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThang(iMonth, iYear);         
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
                 frmTimKiemLuongTheoLoai fTimKiemNV = new frmTimKiemLuongTheoLoai();
                 fTimKiemNV.nvTimKiemLuongCN = loadNVTimKiem;
-                fTimKiemNV.ShowDialog();
+            try
+            {
+                    fTimKiemNV.ShowDialog();
             }
             catch (Exception) {}
         }
@@ -194,9 +222,17 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void btnChiTietLuong_Click(object sender, EventArgs e)
         {
-            frmPhieuLuongCongNhan fPhieuLuong = new frmPhieuLuongCongNhan();
-            fPhieuLuong.phieuLuongCN(txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text,txtThue.Text, ccbThang.Text, ccbNam.Text);
-            fPhieuLuong.ShowDialog();
+            if(txtMaNV.Text != "")
+            {
+                frmPhieuLuongNhanVien fPhieuLuong = new frmPhieuLuongNhanVien();
+                fPhieuLuong.phieuLuongCN(2, txtMaNV.Text, txtHoTen.Text, txtDonVi.Text, "", "", txtCongDoan.Text, txtSLSPLamDuoc.Text, txtPhuCap.Text, txtTienPhat.Text, txtTamUng.Text, txtThue.Text, ccbThang.Text, ccbNam.Text, txtThucNhan.Text);
+                fPhieuLuong.ShowDialog();
+            }   
+            else
+            {
+                MessageBox.Show("Bạn cần phải chọn một nhân viên để xem chi tiết lương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
+            
         }
 
         private void btnImportExcel_Click(object sender, EventArgs e)
@@ -258,6 +294,8 @@ namespace QuanLyLuongSanPham_GUI
             //        }
             //    }
             //}
+
+            #endregion
         }
     }
 }

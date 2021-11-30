@@ -20,5 +20,14 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhatNV.laySoLuongViPhamNV(strMaNV, iMaPhat);
         }
+
+        public IEnumerable<PhatNhanVien> laySoLuongViPhamNghiKhongPhep(string strMaNV, int iPhatNghiKhongPhep)
+        {
+            return daoPhatNV.laySoLuongViPhamNVNghiKhongPhep(strMaNV, iPhatNghiKhongPhep);
+        }
+        public IEnumerable<PhatNhanVien> layThongTinPhat(string maNhanVien)
+        {
+            return daoPhatNV.layThongTinPhat(maNhanVien);
+        }
     }
 }
