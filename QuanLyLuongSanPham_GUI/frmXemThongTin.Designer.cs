@@ -34,6 +34,8 @@ namespace QuanLyLuongSanPham_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,18 +43,22 @@ namespace QuanLyLuongSanPham_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblThucNhan = new System.Windows.Forms.Label();
+            this.lblTongTru = new System.Windows.Forms.Label();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.lblLuongUng = new System.Windows.Forms.Label();
             this.dtgvTienUng = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.lblTienPhat = new System.Windows.Forms.Label();
             this.dtgvTienPhat = new System.Windows.Forms.DataGridView();
+            this.DatePenaltyCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.lblTongNhan = new System.Windows.Forms.Label();
@@ -76,13 +82,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DatePenaltyCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonCustom1 = new QuanLyLuongSanPham_GUI.ButtonCustom();
-            this.lblLuongUng = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -125,9 +124,8 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.Appearance.Options.UseBorderColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl2.Controls.Add(this.buttonCustom1);
-            this.panelControl2.Controls.Add(this.label19);
-            this.panelControl2.Controls.Add(this.label18);
+            this.panelControl2.Controls.Add(this.lblThucNhan);
+            this.panelControl2.Controls.Add(this.lblTongTru);
             this.panelControl2.Controls.Add(this.panelControl7);
             this.panelControl2.Controls.Add(this.panelControl6);
             this.panelControl2.Controls.Add(this.panelControl5);
@@ -142,25 +140,27 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Size = new System.Drawing.Size(1241, 663);
             this.panelControl2.TabIndex = 12;
             // 
-            // label19
+            // lblThucNhan
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(898, 451);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(170, 23);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "Thực nhận:";
+            this.lblThucNhan.AutoSize = true;
+            this.lblThucNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThucNhan.ForeColor = System.Drawing.Color.Black;
+            this.lblThucNhan.Location = new System.Drawing.Point(898, 470);
+            this.lblThucNhan.Name = "lblThucNhan";
+            this.lblThucNhan.Size = new System.Drawing.Size(117, 24);
+            this.lblThucNhan.TabIndex = 28;
+            this.lblThucNhan.Text = "Thực nhận:";
             // 
-            // label18
+            // lblTongTru
             // 
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(898, 381);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(170, 23);
-            this.label18.TabIndex = 28;
-            this.label18.Text = "Tổng trừ:";
+            this.lblTongTru.AutoSize = true;
+            this.lblTongTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTru.ForeColor = System.Drawing.Color.Black;
+            this.lblTongTru.Location = new System.Drawing.Point(898, 401);
+            this.lblTongTru.Name = "lblTongTru";
+            this.lblTongTru.Size = new System.Drawing.Size(95, 24);
+            this.lblTongTru.TabIndex = 28;
+            this.lblTongTru.Text = "Tổng trừ:";
             // 
             // panelControl7
             // 
@@ -181,6 +181,17 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(432, 360);
             this.panelControl7.TabIndex = 120;
+            // 
+            // lblLuongUng
+            // 
+            this.lblLuongUng.AutoSize = true;
+            this.lblLuongUng.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLuongUng.ForeColor = System.Drawing.Color.Black;
+            this.lblLuongUng.Location = new System.Drawing.Point(11, 322);
+            this.lblLuongUng.Name = "lblLuongUng";
+            this.lblLuongUng.Size = new System.Drawing.Size(95, 24);
+            this.lblLuongUng.TabIndex = 121;
+            this.lblLuongUng.Text = "Tổng trừ:";
             // 
             // dtgvTienUng
             // 
@@ -228,6 +239,29 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvTienUng.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgvTienUng.Size = new System.Drawing.Size(403, 266);
             this.dtgvTienUng.TabIndex = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DateAdvance";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Ngày ứng";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ValueAdvance";
+            dataGridViewCellStyle4.Format = "#,##0 vnđ";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Tiền ứng";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label17
             // 
@@ -317,6 +351,39 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvTienPhat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgvTienPhat.Size = new System.Drawing.Size(397, 266);
             this.dtgvTienPhat.TabIndex = 119;
+            // 
+            // DatePenaltyCL
+            // 
+            this.DatePenaltyCL.DataPropertyName = "ngayPhat";
+            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle10.NullValue = null;
+            this.DatePenaltyCL.DefaultCellStyle = dataGridViewCellStyle10;
+            this.DatePenaltyCL.HeaderText = "Ngày phạt";
+            this.DatePenaltyCL.MinimumWidth = 6;
+            this.DatePenaltyCL.Name = "DatePenaltyCL";
+            this.DatePenaltyCL.ReadOnly = true;
+            this.DatePenaltyCL.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "mucPhat";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mức phạt";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 138;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "tienPhat";
+            dataGridViewCellStyle11.Format = "#,##0 vnđ";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tiền phạt";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 138;
             // 
             // label23
             // 
@@ -609,92 +676,6 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // DatePenaltyCL
-            // 
-            this.DatePenaltyCL.DataPropertyName = "ngayPhat";
-            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle10.NullValue = null;
-            this.DatePenaltyCL.DefaultCellStyle = dataGridViewCellStyle10;
-            this.DatePenaltyCL.HeaderText = "Ngày phạt";
-            this.DatePenaltyCL.MinimumWidth = 6;
-            this.DatePenaltyCL.Name = "DatePenaltyCL";
-            this.DatePenaltyCL.ReadOnly = true;
-            this.DatePenaltyCL.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "mucPhat";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mức phạt";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 138;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "tienPhat";
-            dataGridViewCellStyle11.Format = "#,##0 vnđ";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tiền phạt";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 138;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DateAdvance";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Ngày ứng";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ValueAdvance";
-            dataGridViewCellStyle4.Format = "#,##0 vnđ";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Tiền ứng";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // buttonCustom1
-            // 
-            this.buttonCustom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.buttonCustom1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-            this.buttonCustom1.BorderColor = System.Drawing.Color.Crimson;
-            this.buttonCustom1.BorderRadius = 10;
-            this.buttonCustom1.BorderSize = 2;
-            this.buttonCustom1.FlatAppearance.BorderSize = 0;
-            this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCustom1.ForeColor = System.Drawing.Color.Black;
-            this.buttonCustom1.Location = new System.Drawing.Point(958, 535);
-            this.buttonCustom1.Name = "buttonCustom1";
-            this.buttonCustom1.Size = new System.Drawing.Size(156, 52);
-            this.buttonCustom1.TabIndex = 121;
-            this.buttonCustom1.Text = "Xuất báo cáo";
-            this.buttonCustom1.TextColor = System.Drawing.Color.Black;
-            this.buttonCustom1.UseVisualStyleBackColor = false;
-            // 
-            // lblLuongUng
-            // 
-            this.lblLuongUng.AutoSize = true;
-            this.lblLuongUng.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLuongUng.ForeColor = System.Drawing.Color.Black;
-            this.lblLuongUng.Location = new System.Drawing.Point(11, 322);
-            this.lblLuongUng.Name = "lblLuongUng";
-            this.lblLuongUng.Size = new System.Drawing.Size(95, 24);
-            this.lblLuongUng.TabIndex = 121;
-            this.lblLuongUng.Text = "Tổng trừ:";
-            // 
             // frmXemThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -710,6 +691,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
@@ -763,9 +745,8 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label lblMaNV;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private System.Windows.Forms.PictureBox Avata;
-        private ButtonCustom buttonCustom1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblThucNhan;
+        private System.Windows.Forms.Label lblTongTru;
         private System.Windows.Forms.DataGridView dtgvTienUng;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Label lblTienPhat;

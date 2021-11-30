@@ -16,6 +16,9 @@ namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmXemThongTin : DevExpress.XtraEditors.XtraForm
     {
+        double tongTru = 0;
+        double tongNhan = 0;
+        double thucNhan = 0;
         BUS_NhanVien busNv = new BUS_NhanVien();
         BUS_LoaiNhanVien busLNV = new BUS_LoaiNhanVien();
         BUS_DonViQuanLy busDV = new BUS_DonViQuanLy();
@@ -39,6 +42,10 @@ namespace QuanLyLuongSanPham_GUI
             dtgvTienPhat.DefaultCellStyle.ForeColor = Color.Black;
             dtgvTienUng.DefaultCellStyle.ForeColor = Color.Black;
             loadData();
+            thucNhan = tongNhan - tongTru;
+            lblTongTru.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongTru).ToString() + " VNĐ";
+            lblThucNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucNhan).ToString() + " VNĐ";
+
         }
         private void loadData()
         {
@@ -67,7 +74,7 @@ namespace QuanLyLuongSanPham_GUI
                 tongUng = tongUng + Convert.ToDouble(item.tienUng);
             }
             lblLuongUng.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongUng).ToString() + " VNĐ";
-
+            tongTru = tongPhat + tongUng;
         }
         public void loadThongTinNhanVien()
         {
@@ -138,6 +145,7 @@ namespace QuanLyLuongSanPham_GUI
                         lblThue.Text = "Thuế: " + (m.thue * 100).ToString() + " %";
                         double lUongCoBan = Convert.ToDouble((m.luongCoBan/26)*m.soNgayLamDuoc);
                         double thucNhan =Convert.ToDouble((lUongCoBan * (1 - m.thue) + m.phuCap));
+                        tongNhan = thucNhan;
                         lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucNhan).ToString() + " VNĐ";
                     }
                 }
@@ -161,6 +169,7 @@ namespace QuanLyLuongSanPham_GUI
                         lblTienThuong.Text = "Tiền thưởng: 0 VNĐ";
                         lblSoNgayCong.Text = "Số lượng sản phẩm: " + m.soLuongSanPham.ToString() + " cái";
                         lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucnhan).ToString() + " VNĐ";
+                        tongNhan = thucNhan;
                     }
                 }
             }
