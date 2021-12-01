@@ -23,6 +23,14 @@ namespace QuanLyLuongSanPham_DAO
             }
             return false;
         }
+        public IEnumerable<ChiTietDonHang> layChiTietDonHangTheoSanPham(string strMaSanPham)
+        {
+            IEnumerable<ChiTietDonHang> q = from ctdh in dataBase.ChiTietDonHangs 
+                                            join dh in dataBase.DonHangs on ctdh.maDonHang equals dh.maDonHang
+                                            where ctdh.maSanPham.Equals(strMaSanPham) && dh.trangThai==false
+                                            select ctdh;
+            return q;
+        }
 
         public List<DTO_ChiTietDonHang> lstCTDH(string maDonHang)
         {

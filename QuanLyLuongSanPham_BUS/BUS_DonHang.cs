@@ -789,5 +789,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return donHangDAO.thongKeDonHangTheoDonGia(donGia);
         }
+        public IEnumerable<ChiTietDonHang> layCTDHTheoSanPham(string strMaSanPham)
+        {
+            return chiTietDHDAO.layChiTietDonHangTheoSanPham(strMaSanPham);
+        }
     }
 }
