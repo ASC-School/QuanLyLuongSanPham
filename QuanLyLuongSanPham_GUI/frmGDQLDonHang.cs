@@ -159,6 +159,14 @@ namespace QuanLyLuongSanPham_GUI
             dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgr.Columns.Add(dc);
 
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
         }
 
         public void formatTextBox()

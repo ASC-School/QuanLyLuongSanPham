@@ -78,7 +78,8 @@ namespace QuanLyLuongSanPham_DAO
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
                                                 tenNhanVien = nhanVien.tenNhanVien,
-                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang),
+                                                trangThai = donHang.trangThai
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -98,6 +99,7 @@ namespace QuanLyLuongSanPham_DAO
                 donHang.NoiDung = item.noiDung;
                 donHang.SoDienThoaiKhachHang = item.soDienThoaiKhachHang;
                 donHang.TenKhachHang = item.tenKhachHang;
+                donHang.TrangThai = item.trangThai.Value;
                 lstDonHang.Add(donHang);
             }
             return lstDonHang;
@@ -114,6 +116,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
+            donHang.TrangThai = tmp.trangThai.Value;
             return donHang;
         }
         public bool suaDonhang(DTO_DonHang newDonHang)
@@ -189,6 +192,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
+            donHang.TrangThai = tmp.trangThai.Value;
             return donHang.TenKhachHang;
         }
         //================== loc tim don hang
