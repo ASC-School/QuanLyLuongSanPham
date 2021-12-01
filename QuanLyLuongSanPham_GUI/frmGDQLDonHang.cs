@@ -207,6 +207,10 @@ namespace QuanLyLuongSanPham_GUI
             donHang.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
             donHang.NoiDung = txtNoiDung.Text;
             donHang.MaNhanVien = cboMaNhanVien.Text;
+            if (cboTrangThai.SelectedIndex == 0)
+                donHang.TrangThai = true;
+            else
+                donHang.TrangThai = false;
             return donHang;
         }
 
@@ -369,6 +373,10 @@ namespace QuanLyLuongSanPham_GUI
             txtNoiDung.Text = row.Cells[5].Value.ToString();
             cboMaNhanVien.Text = row.Cells[6].Value.ToString();
             cboTenNhanVien.Text = row.Cells[7].Value.ToString();
+            if(row.Cells[8].Value.ToString()=="True")
+                cboTrangThai.SelectedIndex = 0;
+            else
+                cboTrangThai.SelectedIndex = 1;
         }
 
         private void btnLoadDSDonHang_Click(object sender, EventArgs e)

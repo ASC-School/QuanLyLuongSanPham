@@ -58,7 +58,8 @@ namespace QuanLyLuongSanPham_DAO
                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                noiDung = donHang.noiDung,
                                maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               trangThai = donHang.trangThai
                            }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -126,6 +127,7 @@ namespace QuanLyLuongSanPham_DAO
                 donHang.First().soDienThoaiKhachHang = newDonHang.SoDienThoaiKhachHang;
                 donHang.First().noiDung = newDonHang.NoiDung;
                 donHang.First().maNhanVien = newDonHang.MaNhanVien;
+                donHang.First().trangThai = newDonHang.TrangThai;
                 dataBase.SubmitChanges();
                 return true;
             }
@@ -145,6 +147,7 @@ namespace QuanLyLuongSanPham_DAO
             donHangTMP.soDienThoaiKhachHang = donHang.SoDienThoaiKhachHang;
             donHangTMP.noiDung = donHang.NoiDung;
             donHangTMP.maNhanVien = donHang.MaNhanVien;
+            donHangTMP.trangThai = donHang.TrangThai;
 
             dataBase.DonHangs.InsertOnSubmit(donHangTMP);
             dataBase.SubmitChanges();

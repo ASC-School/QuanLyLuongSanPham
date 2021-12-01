@@ -22,6 +22,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         BUS_SanPham busSanPHam = new BUS_SanPham();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
+        BUS_DonHang busDonHang = new BUS_DonHang();
         private void frmCongDoan_Load(object sender, EventArgs e)
         {
             offControlInput();
@@ -32,6 +33,18 @@ namespace QuanLyLuongSanPham_GUI
             loadDataSanPham();
             dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
         }
+        public void loadSoLuongSanPhamXS(string maSanPham)
+        {
+            int tongSanPham = 0;
+            IEnumerable<SanPham> listSanPham = busSanPHam.GetSanPhams();
+            IEnumerable<ChiTietDonHang> listCTDH = busDonHang.layCTDHTheoSanPham(maSanPham);
+            foreach (var n in listCTDH)
+            {
+                tongSanPham = tongSanPham + Convert.ToInt32(n.soLuongBan);
+            }
+            txtSoLuongSanXuat.Text = tongSanPham.ToString();
+        }
+
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -78,6 +91,7 @@ namespace QuanLyLuongSanPham_GUI
                 txtDonGia.Text = row.Cells[2].Value.ToString();
                 cboMaSanPham.Text = row.Cells[3].Value.ToString();
                 cboTenSanPhamm.Text = row.Cells[4].Value.ToString();
+                txtSoLuongSanXuat.Text = row.Cells[5].Value.ToString();
             }
         }
         private void offControlInput()
@@ -98,6 +112,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void clearControlInput()
         {
+            txtSoLuongSanXuat.Text = "";
             txtMaCongDoan.Text = "";
             txtTenCongDoan.Text = "";
             txtDonGia.Text = "";
@@ -122,8 +137,14 @@ namespace QuanLyLuongSanPham_GUI
                 if (cboMaSanPham.Text.Equals(n.maSanPham))
                 {
                     cboTenSanPhamm.Text = n.tenSanPham;
+                    loadSoLuongSanPhamXS(cboMaSanPham.Text);
                 }
             }
+            if(txtSoLuongSanXuat.Text=="0")
+            {
+                MessageBox.Show("Sản phẩm này không cần sản xuất", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }    
+            
         }
         private void cboTenSanPhamm_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -147,7 +168,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnThemCongDoan_Click(object sender, EventArgs e)
         {
-            if(btnThemCongDoan.Text.Equals("Thêm công đoạn"))
+            if(btnThemCongDoan.Text.Equals("Thêm"))
             {
                 onControlInput();
                 clearControlInput();
@@ -157,7 +178,7 @@ namespace QuanLyLuongSanPham_GUI
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnThemCongDoan.Text = "Thêm công đoạn";
+                btnThemCongDoan.Text = "Thêm";
                 offControlInput();
             }
             else
@@ -167,6 +188,7 @@ namespace QuanLyLuongSanPham_GUI
                 cd.TenCongDoan = txtTenCongDoan.Text;
                 cd.DonGia =Convert.ToInt32( txtDonGia.Text);
                 cd.MaSanPham = cboMaSanPham.Text;
+                cd.SoLuongSanPhamSanXuat = Convert.ToInt32(txtSoLuongSanXuat.Text);
                 if (busCongDoan.addCongDoan(cd) == true)
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -177,14 +199,14 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     MessageBox.Show("Thêm thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
-                btnThemCongDoan.Text = "Thêm công đoạn";
+                btnThemCongDoan.Text = "Thêm";
                 offControlInput();
             }
         }
 
         private void btnSuaCongDoan_Click(object sender, EventArgs e)
         {
-            if (btnSuaCongDoan.Text.Equals("Sửa công đoạn"))
+            if (btnSuaCongDoan.Text.Equals("Sửa"))
             {
                 onControlInput();
                 txtMaCongDoan.Enabled = false;
@@ -193,7 +215,7 @@ namespace QuanLyLuongSanPham_GUI
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnThemCongDoan.Text = "Sửa công đoạn";
+                btnThemCongDoan.Text = "Sửa";
                 offControlInput();
             }
             else
@@ -203,6 +225,7 @@ namespace QuanLyLuongSanPham_GUI
                 cd.TenCongDoan = txtTenCongDoan.Text;
                 cd.DonGia = Convert.ToInt32(txtDonGia.Text);
                 cd.MaSanPham = cboMaSanPham.Text;
+                cd.SoLuongSanPhamSanXuat = Convert.ToInt32(txtSoLuongSanXuat.Text);
                 if (busCongDoan.upDateCongDoan(cd) == true)
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -215,7 +238,7 @@ namespace QuanLyLuongSanPham_GUI
                     Close();
                 }
                 offControlInput();
-                btnSuaCongDoan.Text = "Thêm công đoạn";
+                btnSuaCongDoan.Text = "Thêm";
             }
 
         }

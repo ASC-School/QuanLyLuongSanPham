@@ -424,7 +424,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lblTongNhan.AutoSize = true;
             this.lblTongNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongNhan.ForeColor = System.Drawing.Color.Black;
-            this.lblTongNhan.Location = new System.Drawing.Point(55, 196);
+            this.lblTongNhan.Location = new System.Drawing.Point(56, 196);
             this.lblTongNhan.Name = "lblTongNhan";
             this.lblTongNhan.Size = new System.Drawing.Size(118, 24);
             this.lblTongNhan.TabIndex = 27;
@@ -493,7 +493,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(170, 23);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Chi tiết làm việc";
+            this.label10.Text = "Chi tiết lương";
             // 
             // panelControl3
             // 
