@@ -35,5 +35,18 @@ namespace QuanLyLuongSanPham_DAO
                                              select n;
             return phat;
         }
+        public IEnumerable<dynamic> layDSPhat()
+        {
+            IEnumerable<dynamic> list = from p in dataBase.PhatNhanViens
+                                        join mp in dataBase.MucTienPhats on p.maMucPhat equals mp.soThuTu
+                                        join nv in dataBase.NhanViens on p.maNhanVien equals nv.maNhanVien
+                                        select new { maNhanVien = nv.maNhanVien, tenNhanVien = nv.tenNhanVien, maMucPhat = mp.soThuTu, tenMucPhat = mp.tenKhoanPhat, tienPhat = mp.mucTienPhat1, ngayPhat = p.ngayPhat, donVi = p.maDonVi };
+            return list;
+        }
+        public IEnumerable<PhatNhanVien> layAllDS()
+        {
+            IEnumerable<PhatNhanVien> q = from n in dataBase.PhatNhanViens select n;
+            return q;
+        }
     }
 }
