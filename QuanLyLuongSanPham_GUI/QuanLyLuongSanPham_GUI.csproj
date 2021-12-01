@@ -333,6 +333,7 @@
     <None Include="Resources\8bc19fffaacd62933bdc.jpg" />
     <None Include="Resources\b5bd7edf44ed8cb3d5fc.jpg" />
     <None Include="Resources\ec607bb2418089ded091.jpg" />
+    <None Include="Resources\Image1.bmp" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\User-Interface-Menu-icon1.png" />
     <None Include="Resources\logo1.png" />
