@@ -238,7 +238,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayBatDau + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + tenSanPham";
+                                            //lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + tenSanPham";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_SanPham(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboSanPham.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -248,7 +248,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayBatDau + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + maDonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + maDonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -258,7 +258,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else // tim kiem theo nhanvien + tenKhachHang + ngayBatDau + tenSanPham + madonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + tenSanPham + madonHang";
+                                          // lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + tenSanPham + madonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_SanPham_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text,cboSanPham.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -269,7 +269,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + tenKhachHang + ngayBatDau 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau";
+                                        //lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -287,7 +287,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayKetThuc + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayKetThuc + tenSanPham";
+                                          //  lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayKetThuc + tenSanPham";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayKetThuc_SanPham(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayKetThuc.Text,cboSanPham.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -298,7 +298,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayKetThuc + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayKetThuc + maDonHang";
+                                          //  lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayKetThuc + maDonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayKetThuc_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -308,7 +308,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else // tim kiem theo nhanvien + tenKhachHang + ngayKetThuc + tenSanPham + madonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayKetThuc + tenSanPham + madonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayKetThuc + tenSanPham + madonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayKetThuc_SanPham_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayKetThuc.Text,cboSanPham.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -319,7 +319,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + tenKhachHang + ngayKetThuc 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayKetThuc";
+                                       // lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayKetThuc";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayKetThuc(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayKetThuc.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -336,7 +336,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayBatDau + ngayKetThuc + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + ngayKetThuc + tenSanPham";
+                                           // lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + ngayKetThuc + tenSanPham";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_NgayKetThuc_SanPham(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text,cboNgayKetThuc.Text,cboSanPham.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -346,7 +346,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + ngayBatDau + ngayKetThuc + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + ngayKetThuc + maDonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + ngayKetThuc + maDonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_NgayKetThuc_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -355,8 +355,7 @@ namespace QuanLyLuongSanPham_GUI
                                             }
                                         }
                                         else // tim kiem theo nhanvien + tenKhachHang+ ngayBatDau + ngayKetThuc + tenSanPham + madonHang
-                                        {
-                                            lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + ngayBatDau + ngayKetThuc + tenSanPham + madonHang";
+                                        {//lblLoi.Text = "Tim theo nhanvien + tenKhachHang + ngayBatDau + ngayBatDau + ngayKetThuc + tenSanPham + madonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_NgayKetThuc_SanPham_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text,cboSanPham.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -367,7 +366,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + tenKhachHang + ngayBatDau + ngayKetThuc 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + ngayKetThuc";
+                                       // lblLoi.Text = "Tim theo nhanvien + ten khach hang + ngayBatDau + ngayKetThuc";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_NgayBatDau_NgayKetThuc(cboMaNhanVien.Text, txtTenKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -380,7 +379,7 @@ namespace QuanLyLuongSanPham_GUI
                             }
                             else if (!cboSanPham.Text.Equals("None")) // tim kiem theo nhanvien + tenKhachHang + sanPham
                             {
-                                lblLoi.Text = "Tim theo nhanvien + ten khach hang + sanPham";
+                               // lblLoi.Text = "Tim theo nhanvien + ten khach hang + sanPham";
                                 lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_SanPham(cboMaNhanVien.Text, txtTenKhachHang.Text,cboSanPham.Text);
                                 if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                 else
@@ -390,7 +389,7 @@ namespace QuanLyLuongSanPham_GUI
                             }
                             else if (!cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + tenKhachHang + maDonhang
                             {
-                                lblLoi.Text = "Tim theo nhanvien + ten khach hang + maDonHang";
+                               // lblLoi.Text = "Tim theo nhanvien + ten khach hang + maDonHang";
                                 lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH_MaDonHang(cboMaNhanVien.Text, txtTenKhachHang.Text, cboSanPham.Text);
                                 if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                 else
@@ -400,7 +399,7 @@ namespace QuanLyLuongSanPham_GUI
                             }
                             else // tim kiem theo nhanVien + tenKhachHang
                             {
-                                lblLoi.Text = "Tim theo nhanvien + ten khach hang";
+                               // lblLoi.Text = "Tim theo nhanvien + ten khach hang";
                                 lstTimKiem = donHangBUS.getDHTheoNhanVien_TenKH(cboMaNhanVien.Text, txtTenKhachHang.Text);
                                 if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                 else
@@ -411,10 +410,10 @@ namespace QuanLyLuongSanPham_GUI
                         }
                         else if (!txtSoDienThoaiKhachHang.Text.Equals("") && txtTenKhachHang.Text.Equals("")) // tim kiem theo nhanVien + so dienThoaiKhachHang
                         {
-                            lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang";
+                           // lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang";
                             if (!cboNgayBatDau.Text.Equals("None") || !cboNgayKetThuc.Text.Equals("None")) // tim kiem theo nhanvien + tenKhachHang + thoiGian
                             {
-                                lblLoi.Text = "Tim theo nhanvien + ten khach hang + thoiGian";
+                              //  lblLoi.Text = "Tim theo nhanvien + ten khach hang + thoiGian";
                                 // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau
                                 if (!cboNgayBatDau.Text.Equals("None") && cboNgayKetThuc.Text.Equals("None"))
                                 {
@@ -423,7 +422,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham";
+                                        //    lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_SanPham(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboSanPham.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -433,7 +432,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + maDonHang";
+                                            //lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + maDonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_soDienThoaiKH_NgayBatDau_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -443,7 +442,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham + madonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham + madonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + tenSanPham + madonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_SanPham_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboSanPham.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -454,7 +453,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau";
+                                       // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -472,7 +471,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang + ngayKetThuc + tenSanPham";
+//lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang + ngayKetThuc + tenSanPham";
                                             IEnumerable<dynamic> lst = donHangBUS.getDHTheoNhanVien_SODienThoaiKH_NgayKetThuc_SanPham(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayKetThuc.Text,cboSanPham.Text);
                                             if (lst == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -482,7 +481,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + maDonHang";
+                                            //lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + maDonHang";
                                             IEnumerable<dynamic> lst = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayKetThuc_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayKetThuc.Text, cboMaDonHang.Text);
                                             if (lst == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -492,7 +491,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + tenSanPham + madonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + tenSanPham + madonHang";
+                                            //lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc + tenSanPham + madonHang";
                                             IEnumerable<dynamic> lst = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayKetThuc_SanPham_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayKetThuc.Text,cboSanPham.Text, cboMaDonHang.Text);
                                             if (lst == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -503,7 +502,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayKetThuc 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc";
+                                       // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayKetThuc";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_SODienThoaiKH_NgayKetThuc(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayKetThuc.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -520,7 +519,7 @@ namespace QuanLyLuongSanPham_GUI
                                     {
                                         if (!cboSanPham.Text.Equals("None") && cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + tenSanPham
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + tenSanPham";
+                                          //  lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + tenSanPham";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_NgayKetThuc_SanPham(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text, cboSanPham.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -530,7 +529,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else if (cboSanPham.Text.Equals("None") && !cboMaDonHang.Text.Equals("None"))// tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + maDonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + maDonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc + maDonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_NgayKetThuc_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -540,7 +539,7 @@ namespace QuanLyLuongSanPham_GUI
                                         }
                                         else // tim kiem theo nhanvien + soDienThoaiKhachHang+ ngayBatDau + ngayKetThuc + tenSanPham + madonHang
                                         {
-                                            lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayBatDau + ngayKetThuc + tenSanPham + madonHang";
+                                           // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayBatDau + ngayKetThuc + tenSanPham + madonHang";
                                             lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_NgayKetThuc_SanPham_MaDonHang(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text,cboSanPham.Text, cboMaDonHang.Text);
                                             if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                             else
@@ -551,7 +550,7 @@ namespace QuanLyLuongSanPham_GUI
                                     }
                                     else // tim kiem theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc 
                                     {
-                                        lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc";
+                                       // lblLoi.Text = "Tim theo nhanvien + soDienThoaiKhachHang + ngayBatDau + ngayKetThuc";
                                         lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_NgayBatDau_NgayKetThuc(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboNgayBatDau.Text, cboNgayKetThuc.Text);
                                         if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                         else
@@ -564,7 +563,7 @@ namespace QuanLyLuongSanPham_GUI
                             }
                             else if (!cboSanPham.Text.Equals("None")) // tim kiem theo nhanvien + soDienThoaiKhachHang + sanPham
                             {
-                                lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang + sanPham";
+                                //lblLoi.Text = "Tim theo nhanvien + so dien thoai khach hang + sanPham";
                                 lstTimKiem = donHangBUS.getDHTheoNhanVien_SoDienThoaiKH_SanPham(cboMaNhanVien.Text, txtSoDienThoaiKhachHang.Text, cboSanPham.Text);
                                 if (lstTimKiem == null) MessageBox.Show("Đơn không tồn tại!");
                                 else

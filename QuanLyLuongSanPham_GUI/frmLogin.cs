@@ -197,5 +197,12 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
         }
+
+        private void lblQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuenMatKhau frm = new frmQuenMatKhau(txtUsername.Text);
+            frm.ShowDialog();
+        }
     }
 }
