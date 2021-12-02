@@ -46,5 +46,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return taiKhoan.suaThongTinTaiKhoan(tkUpload);
         }
+        public IEnumerable<TaiKhoan> layTKTheoMa(string maNv)
+        {
+            return taiKhoan.layTaiKHoanTheoMa(maNv);
+        }
     }
 }

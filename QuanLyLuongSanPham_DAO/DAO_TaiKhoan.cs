@@ -100,5 +100,12 @@ namespace QuanLyLuongSanPham_DAO
                                             select tk;
             return dsTKNV;
         }
+        public IEnumerable<TaiKhoan> layTaiKHoanTheoMa(string maNV)
+        {
+            IEnumerable<TaiKhoan> tk =( from n in dataBase.TaiKhoans
+                                        where n.maNhanVien.Equals(maNV)
+                                        select n);
+            return tk;
+        }
     }
 }

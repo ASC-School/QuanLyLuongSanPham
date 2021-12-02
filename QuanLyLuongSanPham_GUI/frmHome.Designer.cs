@@ -74,6 +74,7 @@ namespace QuanLyLuongSanPham_GUI
             this.msNhanSu_PhanCong = new System.Windows.Forms.ToolStripMenuItem();
             this.msNhanSu_QuanLyNhanSu = new System.Windows.Forms.ToolStripMenuItem();
             this.msNhanSu_DonViQuanLy = new System.Windows.Forms.ToolStripMenuItem();
+            this.msNhanSu_TimKiemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.msDonHang = new System.Windows.Forms.ToolStripMenuItem();
             this.msDonHang_QuanLyDH = new System.Windows.Forms.ToolStripMenuItem();
             this.tHỐNGKÊĐƠNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +107,6 @@ namespace QuanLyLuongSanPham_GUI
             this.tileItem8 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
             this.tileItem6 = new DevExpress.XtraEditors.TileItem();
-            this.msNhanSu_TimKiemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.menuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +142,7 @@ namespace QuanLyLuongSanPham_GUI
             this.tiSlide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tiSlide.BackgroundImage")));
             this.tiSlide.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
             this.tiSlide.ContentAnimation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollLeft;
-            tileItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            this.tiSlide.CurrentFrameIndex = 1;
             this.tiSlide.Elements.Add(tileItemElement1);
             tileItemFrame1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemFrame1.BackgroundImage")));
             tileItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
@@ -274,21 +274,22 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.msTaiKhoan_DangXuat.Name = "msTaiKhoan_DangXuat";
             this.msTaiKhoan_DangXuat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.msTaiKhoan_DangXuat.Size = new System.Drawing.Size(180, 22);
+            this.msTaiKhoan_DangXuat.Size = new System.Drawing.Size(179, 22);
             this.msTaiKhoan_DangXuat.Text = "ĐĂNG XUẤT";
             this.msTaiKhoan_DangXuat.Click += new System.EventHandler(this.msTaiKhoan_DangXuat_Click);
             // 
             // đỔIMẬTKHẨUToolStripMenuItem
             // 
             this.đỔIMẬTKHẨUToolStripMenuItem.Name = "đỔIMẬTKHẨUToolStripMenuItem";
-            this.đỔIMẬTKHẨUToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đỔIMẬTKHẨUToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.đỔIMẬTKHẨUToolStripMenuItem.Text = "ĐỔI MẬT KHẨU";
+            this.đỔIMẬTKHẨUToolStripMenuItem.Click += new System.EventHandler(this.đỔIMẬTKHẨUToolStripMenuItem_Click);
             // 
             // msTaiKhoan_Thoat
             // 
             this.msTaiKhoan_Thoat.Name = "msTaiKhoan_Thoat";
             this.msTaiKhoan_Thoat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.msTaiKhoan_Thoat.Size = new System.Drawing.Size(180, 22);
+            this.msTaiKhoan_Thoat.Size = new System.Drawing.Size(179, 22);
             this.msTaiKhoan_Thoat.Text = "THOÁT";
             this.msTaiKhoan_Thoat.Click += new System.EventHandler(this.msTaiKhoan_Thoat_Click);
             // 
@@ -321,6 +322,13 @@ namespace QuanLyLuongSanPham_GUI
             this.msNhanSu_DonViQuanLy.Name = "msNhanSu_DonViQuanLy";
             this.msNhanSu_DonViQuanLy.Size = new System.Drawing.Size(190, 22);
             this.msNhanSu_DonViQuanLy.Text = "ĐƠN VỊ QUẢN LÝ";
+            // 
+            // msNhanSu_TimKiemNhanVien
+            // 
+            this.msNhanSu_TimKiemNhanVien.Name = "msNhanSu_TimKiemNhanVien";
+            this.msNhanSu_TimKiemNhanVien.Size = new System.Drawing.Size(190, 22);
+            this.msNhanSu_TimKiemNhanVien.Text = "TÌM KIẾM NHÂN VIÊN";
+            this.msNhanSu_TimKiemNhanVien.Click += new System.EventHandler(this.msNhanSu_TimKiemNhanVien_Click);
             // 
             // msDonHang
             // 
@@ -393,7 +401,7 @@ namespace QuanLyLuongSanPham_GUI
             this.msTienLuong_HanhChanh,
             this.msTienLuong_CongNhan});
             this.tÍNHLƯƠNGToolStripMenuItem.Name = "tÍNHLƯƠNGToolStripMenuItem";
-            this.tÍNHLƯƠNGToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tÍNHLƯƠNGToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.tÍNHLƯƠNGToolStripMenuItem.Text = "TÍNH LƯƠNG";
             // 
             // msTienLuong_HanhChanh
@@ -416,7 +424,7 @@ namespace QuanLyLuongSanPham_GUI
             this.msTienLuong_MucTienLuong,
             this.msTienLuong_MucTienPhat});
             this.mỨCToolStripMenuItem.Name = "mỨCToolStripMenuItem";
-            this.mỨCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mỨCToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.mỨCToolStripMenuItem.Text = "MỨC";
             // 
             // msTienLuong_MucTienLuong
@@ -434,14 +442,14 @@ namespace QuanLyLuongSanPham_GUI
             // msTienLuong_Phat
             // 
             this.msTienLuong_Phat.Name = "msTienLuong_Phat";
-            this.msTienLuong_Phat.Size = new System.Drawing.Size(180, 22);
+            this.msTienLuong_Phat.Size = new System.Drawing.Size(144, 22);
             this.msTienLuong_Phat.Text = "PHẠT";
             this.msTienLuong_Phat.Click += new System.EventHandler(this.msTienLuong_Phat_Click);
             // 
             // msTienLuong_UngLuong
             // 
             this.msTienLuong_UngLuong.Name = "msTienLuong_UngLuong";
-            this.msTienLuong_UngLuong.Size = new System.Drawing.Size(180, 22);
+            this.msTienLuong_UngLuong.Size = new System.Drawing.Size(144, 22);
             this.msTienLuong_UngLuong.Text = "ỨNG LƯƠNG";
             // 
             // msChamCong
@@ -474,6 +482,7 @@ namespace QuanLyLuongSanPham_GUI
             this.msTienIch_HoTro.Name = "msTienIch_HoTro";
             this.msTienIch_HoTro.Size = new System.Drawing.Size(239, 22);
             this.msTienIch_HoTro.Text = "HỖ TRỢ";
+            this.msTienIch_HoTro.Click += new System.EventHandler(this.msTienIch_HoTro_Click);
             // 
             // msTienIch_QuyDinh
             // 
@@ -644,13 +653,6 @@ namespace QuanLyLuongSanPham_GUI
             this.tileItem6.Id = 7;
             this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem6.Name = "tileItem6";
-            // 
-            // msNhanSu_TimKiemNhanVien
-            // 
-            this.msNhanSu_TimKiemNhanVien.Name = "msNhanSu_TimKiemNhanVien";
-            this.msNhanSu_TimKiemNhanVien.Size = new System.Drawing.Size(190, 22);
-            this.msNhanSu_TimKiemNhanVien.Text = "TÌM KIẾM NHÂN VIÊN";
-            this.msNhanSu_TimKiemNhanVien.Click += new System.EventHandler(this.msNhanSu_TimKiemNhanVien_Click);
             // 
             // frmHome
             // 

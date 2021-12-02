@@ -31,6 +31,8 @@ namespace QuanLyLuongSanPham_GUI
         string maNhanVien = "";
         bool bTrangThaiDangNhap = false;
         BUS_PhanQuyen busPQNV = new BUS_PhanQuyen();
+        BUS_TaiKhoan busTK = new BUS_TaiKhoan();
+        string taiKhoan;
         #endregion
 
         #region Methods
@@ -216,5 +218,22 @@ namespace QuanLyLuongSanPham_GUI
 
         #endregion
 
+        private void đỔIMẬTKHẨUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<TaiKhoan> tk = busTK.layTKTheoMa(maNhanVien);
+            foreach(var n in tk)
+            {
+                taiKhoan = n.username;
+            }
+            frmDoiMatKhau frm = new frmDoiMatKhau(taiKhoan);
+            _ = frm.ShowDialog();
+
+        }
+
+        private void msTienIch_HoTro_Click(object sender, EventArgs e)
+        {
+            frmHoTro frm = new frmHoTro();
+            _ = frm.ShowDialog();
+        }
     }
 }

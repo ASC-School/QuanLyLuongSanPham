@@ -18,5 +18,6 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+
     }
 }

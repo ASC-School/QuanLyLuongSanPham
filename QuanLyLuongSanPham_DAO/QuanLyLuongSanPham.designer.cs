@@ -93,7 +93,7 @@ namespace QuanLyLuongSanPham_DAO
     #endregion
 		
 		public QuanLyLuongSanPhamDataContext() : 
-				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString5, mappingSource)
+				base(global::QuanLyLuongSanPham_DAO.Properties.Settings.Default.QuanLyLuongSanPhamConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1877,6 +1877,19 @@ namespace QuanLyLuongSanPham_DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonViQuanLy_PhatNhanVien", Storage="_PhatNhanViens", ThisKey="maDonVi", OtherKey="maDonVi")]
+		public EntitySet<PhatNhanVien> PhatNhanViens
+		{
+			get
+			{
+				return this._PhatNhanViens;
+			}
+			set
+			{
+				this._PhatNhanViens.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiNhanVien_DonViQuanLy", Storage="_LoaiNhanVien", ThisKey="maLoai", OtherKey="maLoai", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public LoaiNhanVien LoaiNhanVien
 		{
@@ -3377,6 +3390,19 @@ namespace QuanLyLuongSanPham_DAO
 			set
 			{
 				this._LuongHanhChanhs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MucTienPhat_PhatNhanVien", Storage="_PhatNhanViens", ThisKey="soThuTu", OtherKey="maMucPhat")]
+		public EntitySet<PhatNhanVien> PhatNhanViens
+		{
+			get
+			{
+				return this._PhatNhanViens;
+			}
+			set
+			{
+				this._PhatNhanViens.Assign(value);
 			}
 		}
 		
