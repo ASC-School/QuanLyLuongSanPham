@@ -13,6 +13,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 16/11/2021
+     */
     public partial class frmDoiMatKhau : DevExpress.XtraEditors.XtraForm
     {
         DTO_TaiKhoan taiKhoanDTO;

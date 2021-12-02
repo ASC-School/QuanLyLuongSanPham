@@ -14,6 +14,11 @@ using System.IO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả:Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmXemThongTin : DevExpress.XtraEditors.XtraForm
     {
         double tongTru = 0;

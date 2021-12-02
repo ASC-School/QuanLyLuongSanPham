@@ -15,6 +15,11 @@ using System.Data.OleDb;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmLuongCongNhan : DevExpress.XtraEditors.XtraForm
     {
         public frmLuongCongNhan()

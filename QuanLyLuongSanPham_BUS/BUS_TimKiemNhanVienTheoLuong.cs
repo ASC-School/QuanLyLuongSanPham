@@ -8,6 +8,11 @@ using QuanLyLuongSanPham_DAO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class BUS_TimKiemNhanVienTheoLuong
     {
         DAO_LuongCongNhan luongCN;

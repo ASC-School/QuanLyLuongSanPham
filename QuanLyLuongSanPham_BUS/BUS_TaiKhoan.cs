@@ -9,6 +9,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang,Đinh Quang Huy
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class BUS_TaiKhoan
     {
         DAO_TaiKhoan taiKhoan;

@@ -39,6 +39,8 @@
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -49,11 +51,16 @@
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EPPlus, Version=5.8.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.5.8.3\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
@@ -104,6 +111,12 @@
     <Compile Include="frmDonViQuanLy.Designer.cs">
       <DependentUpon>frmDonViQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHoTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoTro.Designer.cs">
+      <DependentUpon>frmHoTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +141,12 @@
     <Compile Include="frmMucTienPhat.Designer.cs">
       <DependentUpon>frmMucTienPhat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPDF.Designer.cs">
+      <DependentUpon>frmPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,12 +170,6 @@
     </Compile>
     <Compile Include="frmGDQLDonHang.designer.cs">
       <DependentUpon>frmGDQLDonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGiaoDienPhanQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGiaoDienPhanQuyen.designer.cs">
-      <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -241,6 +254,12 @@
     <Compile Include="Regular Expression\checkFrmDonHang.cs" />
     <Compile Include="Regular Expression\regularExpression.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCongDoan.resx">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonViQuanLy.resx">
       <DependentUpon>frmDonViQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoTro.resx">
+      <DependentUpon>frmHoTro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModel.resx">
       <DependentUpon>frmModel.cs</DependentUpon>
@@ -262,6 +284,9 @@
     <EmbeddedResource Include="frmMucTienPhat.resx">
       <DependentUpon>frmMucTienPhat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPDF.resx">
+      <DependentUpon>frmPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhanCong.resx">
       <DependentUpon>frmPhanCong.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGDQLDonHang.resx">
       <DependentUpon>frmGDQLDonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoDienPhanQuyen.resx">
-      <DependentUpon>frmGiaoDienPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -327,6 +349,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmPhanQuyen.resx">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QuanLyLuongSanPham_BUS.BUS_LuongCongNhan.datasource" />
     <None Include="Properties\DataSources\QuanLyLuongSanPham_DAO.DAO_LuongCongNhan.datasource" />
@@ -352,6 +377,7 @@
     <None Include="Resources\b5bd7edf44ed8cb3d5fc.jpg" />
     <None Include="Resources\ec607bb2418089ded091.jpg" />
     <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\2274755.png" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\User-Interface-Menu-icon1.png" />
     <None Include="Resources\logo1.png" />
@@ -372,6 +398,7 @@
     <None Include="Resources\Picture61.png" />
     <Content Include="Resources\statistic-icon.png" />
     <None Include="Resources\statistic-icon1.png" />
+    <None Include="Resources\tải xuống.png" />
     <Content Include="Resources\User-Interface-Menu-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -387,6 +414,25 @@
       <Project>{299caf4b-fcd3-4c3e-839c-23af9ad7b2e2}</Project>
       <Name>QuanLyLuongSanPham_DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

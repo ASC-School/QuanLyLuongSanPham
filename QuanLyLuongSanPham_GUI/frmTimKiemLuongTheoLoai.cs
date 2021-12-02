@@ -13,6 +13,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy,Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 27/11/2021
+     */
     public partial class frmTimKiemLuongTheoLoai : Form
     {
         #region Properties

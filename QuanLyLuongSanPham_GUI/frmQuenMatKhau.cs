@@ -14,7 +14,13 @@ using System.IO;
 using QuanLyLuongSanPham_BUS;
 using QuanLyLuongSanPham_DTO;
 namespace QuanLyLuongSanPham_GUI
+
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 16/11/2021
+     */
     public partial class frmQuenMatKhau : DevExpress.XtraEditors.XtraForm
     {
         //congfig sms 

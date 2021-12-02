@@ -73,6 +73,16 @@ namespace QuanLyLuongSanPham_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2274755 {
+            get {
+                object obj = ResourceManager.GetObject("2274755", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8bc19fffaacd62933bdc {
             get {
                 object obj = ResourceManager.GetObject("8bc19fffaacd62933bdc", resourceCulture);
@@ -216,6 +226,16 @@ namespace QuanLyLuongSanPham_GUI.Properties {
         internal static System.Drawing.Bitmap statistic_icon {
             get {
                 object obj = ResourceManager.GetObject("statistic-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

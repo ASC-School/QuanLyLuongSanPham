@@ -14,6 +14,11 @@ namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmHome : Form
     {
+        /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
         public frmHome()
         {
             InitializeComponent();
@@ -160,7 +165,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void msHeThong_PhanQuyen_Click(object sender, EventArgs e)
         {
-            frmGiaoDienPhanQuyen fPhanQuyen = new frmGiaoDienPhanQuyen();
+            frmPhanQuyen fPhanQuyen = new frmPhanQuyen();
             _ = fPhanQuyen.ShowDialog();
         }
 

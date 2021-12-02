@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class DAO_ChiTietDonHang
     {
         QuanLyLuongSanPhamDataContext dataBase;

@@ -13,6 +13,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public partial class frmSanPham : DevExpress.XtraEditors.XtraForm
     {
         BUS_SanPham sanPhamBUS;

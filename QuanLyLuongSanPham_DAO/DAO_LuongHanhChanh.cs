@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Đinh Quang Huy, Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 13/11/2021
+     */
     public class DAO_LuongHanhChanh
     {
         QuanLyLuongSanPhamDataContext dataBase;

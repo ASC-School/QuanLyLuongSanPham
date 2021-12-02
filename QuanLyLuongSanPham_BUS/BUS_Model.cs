@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DAO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class BUS_Model
     {
         DAO_Model md = new DAO_Model();

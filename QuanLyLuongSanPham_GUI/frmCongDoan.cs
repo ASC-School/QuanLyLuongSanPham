@@ -14,6 +14,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmCongDoan : DevExpress.XtraEditors.XtraForm
     {
         public frmCongDoan()
@@ -263,6 +268,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                 }
             }
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

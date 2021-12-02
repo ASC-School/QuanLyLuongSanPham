@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class DAO_ChiTietModel
     {
         QuanLyLuongSanPhamDataContext dataBase;

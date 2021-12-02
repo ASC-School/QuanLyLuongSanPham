@@ -8,6 +8,11 @@ using QuanLyLuongSanPham_BUS;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class BUS_MucTienPhat
     {
         DAO_MucTienPhat daoPhatNV;

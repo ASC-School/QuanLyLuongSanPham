@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DTO
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang,Đinh Quang Huy
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class DTO_TaiKhoan
     {
         string maNhanVien, tenTaiKhoan, matKhau, quyen;

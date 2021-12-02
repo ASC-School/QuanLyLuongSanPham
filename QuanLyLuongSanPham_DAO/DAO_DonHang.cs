@@ -9,6 +9,11 @@ namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_DonHang
     {
+        /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
         QuanLyLuongSanPhamDataContext dataBase;
         DAO_ChiTietDonHang chiTietDAO;
         public DAO_DonHang()

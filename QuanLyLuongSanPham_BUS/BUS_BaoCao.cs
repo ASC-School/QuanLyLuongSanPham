@@ -22,6 +22,11 @@ using Microsoft.Office.Tools;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class BUS_BaoCao
     {
 

@@ -11,6 +11,11 @@ using QuanLyLuongSanPham_BUS;
 using QuanLyLuongSanPham_DAO;
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy,Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmPhat : Form
     {
         public frmPhat()

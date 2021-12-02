@@ -17,6 +17,11 @@ using QuanLyLuongSanPham_GUI.Regular_Expression;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+        * Tác giả: ,Trần Văn Sỹ
+        * Phiên bản: 1.0
+        * Thời gian tạo: 18/11/2021
+        */
     public partial class frmQLNhanSu : DevExpress.XtraEditors.XtraForm
     {
         public frmQLNhanSu()
@@ -444,6 +449,11 @@ namespace QuanLyLuongSanPham_GUI
             }
             else
                 errorProvider1.Clear();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

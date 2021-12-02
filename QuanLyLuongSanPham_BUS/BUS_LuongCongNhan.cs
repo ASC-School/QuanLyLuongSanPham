@@ -10,6 +10,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Văn Sỹ,Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 27/11/2021
+     */
     public class BUS_LuongCongNhan
     {
         DAO_LuongCongNhan luongCongNhan;

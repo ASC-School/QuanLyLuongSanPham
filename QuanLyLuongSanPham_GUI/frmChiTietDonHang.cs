@@ -17,6 +17,11 @@ using QuanLyLuongSanPham_GUI.Properties;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmChiTietDonHang : DevExpress.XtraEditors.XtraForm
     {
         public frmChiTietDonHang()

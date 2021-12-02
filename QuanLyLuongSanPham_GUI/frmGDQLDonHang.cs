@@ -19,6 +19,11 @@ using System.Globalization;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public partial class frmGDQLDonHang : DevExpress.XtraEditors.XtraForm
     {
         BindingSource bsPH;

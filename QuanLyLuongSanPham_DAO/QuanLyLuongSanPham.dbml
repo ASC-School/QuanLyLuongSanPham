@@ -18,6 +18,18 @@
       <Association Name="PhanQuyen_TaiKhoan" Member="PhanQuyen" ThisKey="quyen" OtherKey="tenPhanQuyen" Type="PhanQuyen" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CongDoanSanXuat" Member="CongDoanSanXuats">
+    <Type Name="CongDoanSanXuat">
+      <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenCongDoan" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="donGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="maSanPham" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="soLuongSanPhamSanXuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CongDoanSanXuat_LuongCongNhan" Member="LuongCongNhans" ThisKey="soThuTu" OtherKey="maCongDoan" Type="LuongCongNhan" />
+      <Association Name="CongDoanSanXuat_PhanCong" Member="PhanCongs" ThisKey="soThuTu" OtherKey="maCongDoan" Type="PhanCong" />
+      <Association Name="SanPham_CongDoanSanXuat" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ChiTietDonHang" Member="ChiTietDonHangs">
     <Type Name="ChiTietDonHang">
       <Column Name="soLuongBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -43,18 +55,6 @@
       <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenChungChi" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="ChungChi_LuongHanhChanh" Member="LuongHanhChanhs" ThisKey="soThuTu" OtherKey="maChungChi" Type="LuongHanhChanh" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CongDoanSanXuat" Member="CongDoanSanXuats">
-    <Type Name="CongDoanSanXuat">
-      <Column Name="soThuTu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenCongDoan" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="donGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="maSanPham" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="soLuongSanPhamSanXuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CongDoanSanXuat_LuongCongNhan" Member="LuongCongNhans" ThisKey="soThuTu" OtherKey="maCongDoan" Type="LuongCongNhan" />
-      <Association Name="CongDoanSanXuat_PhanCong" Member="PhanCongs" ThisKey="soThuTu" OtherKey="maCongDoan" Type="PhanCong" />
-      <Association Name="SanPham_CongDoanSanXuat" Member="SanPham" ThisKey="maSanPham" OtherKey="maSanPham" Type="SanPham" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
@@ -200,6 +200,7 @@
   </Table>
   <Table Name="dbo.PhatNhanVien" Member="PhatNhanViens">
     <Type Name="PhatNhanVien">
+      <Column Name="maPhat" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="maMucPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="maDonVi" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
@@ -242,9 +243,9 @@
       <Column Name="namSanXuat" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="giaBan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="trangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SanPham_CongDoanSanXuat" Member="CongDoanSanXuats" ThisKey="maSanPham" OtherKey="maSanPham" Type="CongDoanSanXuat" />
       <Association Name="SanPham_ChiTietDonHang" Member="ChiTietDonHangs" ThisKey="maSanPham" OtherKey="maSanPham" Type="ChiTietDonHang" />
       <Association Name="SanPham_ChiTietModel" Member="ChiTietModels" ThisKey="maSanPham" OtherKey="maSanPham" Type="ChiTietModel" />
-      <Association Name="SanPham_CongDoanSanXuat" Member="CongDoanSanXuats" ThisKey="maSanPham" OtherKey="maSanPham" Type="CongDoanSanXuat" />
     </Type>
   </Table>
 </Database>
