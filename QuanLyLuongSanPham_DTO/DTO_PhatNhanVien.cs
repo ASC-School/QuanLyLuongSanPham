@@ -8,26 +8,30 @@ namespace QuanLyLuongSanPham_DTO
 {
     public class DTO_PhatNhanVien
     {
+
         string maNhanVien;
         int maMucPhat;
         string maDonVi;
         DateTime ngayPhat;
+        string maPhat;
 
         public DTO_PhatNhanVien()
         {
         }
 
-        public DTO_PhatNhanVien(string maNhanVien, int maMucPhat, string maDonVi, DateTime ngayPhat)
+        public DTO_PhatNhanVien(string maNhanVien, int maMucPhat, string maDonVi, DateTime ngayPhat, string maPhat)
         {
-            this.maNhanVien = maNhanVien;
-            this.maMucPhat = maMucPhat;
-            this.maDonVi = maDonVi;
-            this.ngayPhat = ngayPhat;
+            this.MaNhanVien = maNhanVien;
+            this.MaMucPhat = maMucPhat;
+            this.MaDonVi = maDonVi;
+            this.NgayPhat = ngayPhat;
+            this.MaPhat = maPhat;
         }
 
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
         public int MaMucPhat { get => maMucPhat; set => maMucPhat = value; }
         public string MaDonVi { get => maDonVi; set => maDonVi = value; }
         public DateTime NgayPhat { get => ngayPhat; set => ngayPhat = value; }
+        public string MaPhat { get => maPhat; set => maPhat = value; }
     }
 }

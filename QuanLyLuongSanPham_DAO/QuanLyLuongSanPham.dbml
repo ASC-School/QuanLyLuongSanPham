@@ -200,6 +200,7 @@
   </Table>
   <Table Name="dbo.PhatNhanVien" Member="PhatNhanViens">
     <Type Name="PhatNhanVien">
+      <Column Name="maPhat" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maNhanVien" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="maMucPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="maDonVi" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />

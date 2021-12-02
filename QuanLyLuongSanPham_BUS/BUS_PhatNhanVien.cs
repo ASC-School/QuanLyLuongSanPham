@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DAO;
 using QuanLyLuongSanPham_BUS;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
@@ -36,6 +37,18 @@ namespace QuanLyLuongSanPham_BUS
         public IEnumerable<PhatNhanVien> layAllDS()
         {
             return daoPhatNV.layAllDS();
+        }
+        public bool phatNv(DTO_PhatNhanVien phat)
+        {
+            return daoPhatNV.phatNV(phat);
+        }
+        public bool suaPhat(DTO_PhatNhanVien phat)
+        {
+            return daoPhatNV.suaPhat(phat);
+        }
+        public bool xoaPhat(string strMaPhat)
+        {
+            return daoPhatNV.xoaPhat(strMaPhat);
         }
     }
 }
