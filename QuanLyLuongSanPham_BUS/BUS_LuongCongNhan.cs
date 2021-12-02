@@ -10,6 +10,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Văn Sỹ,Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 27/11/2021
+     */
     public class BUS_LuongCongNhan
     {
         DAO_LuongCongNhan luongCongNhan;
@@ -41,6 +46,10 @@ namespace QuanLyLuongSanPham_BUS
         public IEnumerable<LuongCongNhan> layNVTheoMa(string strMaNV)
         {
             return luongCongNhan.layNVTheoMa(strMaNV);
+        }
+        public IEnumerable<LuongCongNhan> layThongTinLuong(string maNhanVien)
+        {
+            return luongCongNhan.layThongTinLuong(maNhanVien);
         }
     }
 }

@@ -12,6 +12,11 @@ using System.Diagnostics;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 25/11/2021
+     */
     public partial class frmPhieuLuongNhanVien : Form
     {
         public frmPhieuLuongNhanVien()
@@ -450,6 +455,11 @@ namespace QuanLyLuongSanPham_GUI
             {
                 Process.Start(filePath);
             }            
+        }
+
+        private void frmPhieuLuongNhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
     #endregion

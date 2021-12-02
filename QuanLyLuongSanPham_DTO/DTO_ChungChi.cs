@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DTO
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
+     
     public class DTO_ChungChi
     {
         int soThuTu;

@@ -15,6 +15,11 @@ using QuanLyLuongSanPham_DAO;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy,Trần Văn Sỹ,Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 17/11/2021
+     */
     public partial class frmLogin : Form
     {
         public frmLogin()
@@ -196,6 +201,13 @@ namespace QuanLyLuongSanPham_GUI
                     txtPassword.Focus();
                 }
             }
+        }
+
+        private void lblQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQuenMatKhau frm = new frmQuenMatKhau(txtUsername.Text);
+            frm.ShowDialog();
         }
     }
 }

@@ -9,6 +9,11 @@ namespace QuanLyLuongSanPham_DAO
 {
     public class DAO_DonHang
     {
+        /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
         QuanLyLuongSanPhamDataContext dataBase;
         DAO_ChiTietDonHang chiTietDAO;
         public DAO_DonHang()
@@ -58,7 +63,8 @@ namespace QuanLyLuongSanPham_DAO
                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                noiDung = donHang.noiDung,
                                maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               trangThai = donHang.trangThai
                            }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -77,7 +83,8 @@ namespace QuanLyLuongSanPham_DAO
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
                                                 tenNhanVien = nhanVien.tenNhanVien,
-                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang)
+                                                thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang),
+                                                trangThai = donHang.trangThai
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -97,6 +104,7 @@ namespace QuanLyLuongSanPham_DAO
                 donHang.NoiDung = item.noiDung;
                 donHang.SoDienThoaiKhachHang = item.soDienThoaiKhachHang;
                 donHang.TenKhachHang = item.tenKhachHang;
+                donHang.TrangThai = item.trangThai.Value;
                 lstDonHang.Add(donHang);
             }
             return lstDonHang;
@@ -113,6 +121,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
+            donHang.TrangThai = tmp.trangThai.Value;
             return donHang;
         }
         public bool suaDonhang(DTO_DonHang newDonHang)
@@ -126,6 +135,7 @@ namespace QuanLyLuongSanPham_DAO
                 donHang.First().soDienThoaiKhachHang = newDonHang.SoDienThoaiKhachHang;
                 donHang.First().noiDung = newDonHang.NoiDung;
                 donHang.First().maNhanVien = newDonHang.MaNhanVien;
+                donHang.First().trangThai = newDonHang.TrangThai;
                 dataBase.SubmitChanges();
                 return true;
             }
@@ -145,6 +155,7 @@ namespace QuanLyLuongSanPham_DAO
             donHangTMP.soDienThoaiKhachHang = donHang.SoDienThoaiKhachHang;
             donHangTMP.noiDung = donHang.NoiDung;
             donHangTMP.maNhanVien = donHang.MaNhanVien;
+            donHangTMP.trangThai = donHang.TrangThai;
 
             dataBase.DonHangs.InsertOnSubmit(donHangTMP);
             dataBase.SubmitChanges();
@@ -186,6 +197,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.SoDienThoaiKhachHang = tmp.soDienThoaiKhachHang;
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
+            donHang.TrangThai = tmp.trangThai.Value;
             return donHang.TenKhachHang;
         }
         //================== loc tim don hang

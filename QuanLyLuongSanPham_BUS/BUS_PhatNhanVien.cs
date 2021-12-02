@@ -5,9 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DAO;
 using QuanLyLuongSanPham_BUS;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Văn Sỹ, Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class BUS_PhatNhanVien
     {
         DAO_PhatNhanVien daoPhatNV;
@@ -24,6 +30,30 @@ namespace QuanLyLuongSanPham_BUS
         public IEnumerable<PhatNhanVien> laySoLuongViPhamNghiKhongPhep(string strMaNV, int iPhatNghiKhongPhep)
         {
             return daoPhatNV.laySoLuongViPhamNVNghiKhongPhep(strMaNV, iPhatNghiKhongPhep);
+        }
+        public IEnumerable<PhatNhanVien> layThongTinPhat(string maNhanVien)
+        {
+            return daoPhatNV.layThongTinPhat(maNhanVien);
+        }
+        public IEnumerable<dynamic> layDSPhat()
+        {
+            return daoPhatNV.layDSPhat();
+        }
+        public IEnumerable<PhatNhanVien> layAllDS()
+        {
+            return daoPhatNV.layAllDS();
+        }
+        public bool phatNv(DTO_PhatNhanVien phat)
+        {
+            return daoPhatNV.phatNV(phat);
+        }
+        public bool suaPhat(DTO_PhatNhanVien phat)
+        {
+            return daoPhatNV.suaPhat(phat);
+        }
+        public bool xoaPhat(string strMaPhat)
+        {
+            return daoPhatNV.xoaPhat(strMaPhat);
         }
     }
 }

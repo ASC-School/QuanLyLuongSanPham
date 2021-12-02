@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DTO
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class DTO_DonHang
     {
         string maDonHang,tenKhachHang,maNhanVien,noiDung,soDienThoaiKhachHang;
         DateTime ngayBatDau, ngayKetThuc;
+        bool trangThai;
 
         public DTO_DonHang() { }
 
-        public DTO_DonHang(string maDonHang, string tenKhachHang, string maNhanVien, string noiDung, string soDienThoaiKhachHang, DateTime ngayBatDau, DateTime ngayKetThuc)
+        public DTO_DonHang(string maDonHang, string tenKhachHang, string maNhanVien, string noiDung, string soDienThoaiKhachHang, DateTime ngayBatDau, DateTime ngayKetThuc,bool trangThai)
         {
             this.MaDonHang = maDonHang;
             this.TenKhachHang = tenKhachHang;
@@ -22,6 +28,7 @@ namespace QuanLyLuongSanPham_DTO
             this.SoDienThoaiKhachHang = soDienThoaiKhachHang;
             this.ngayBatDau = ngayBatDau;
             this.ngayKetThuc = ngayKetThuc;
+            this.TrangThai = trangThai;
         }
 
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
@@ -31,5 +38,6 @@ namespace QuanLyLuongSanPham_DTO
         public string TenKhachHang { get => tenKhachHang; set => tenKhachHang = value; }
         public string MaDonHang { get => maDonHang; set => maDonHang = value; }
         public string SoDienThoaiKhachHang { get => soDienThoaiKhachHang; set => soDienThoaiKhachHang = value; }
+        public bool TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

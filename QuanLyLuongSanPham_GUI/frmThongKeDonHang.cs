@@ -14,6 +14,11 @@ using QuanLyLuongSanPham_BUS;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public partial class frmThongKeDonHang : DevExpress.XtraEditors.XtraForm
     {
         private string LocationExcel = null;

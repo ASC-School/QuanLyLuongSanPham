@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
     public class DAO_ChiTietDonHang
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -22,6 +27,14 @@ namespace QuanLyLuongSanPham_DAO
                 return true;
             }
             return false;
+        }
+        public IEnumerable<ChiTietDonHang> layChiTietDonHangTheoSanPham(string strMaSanPham)
+        {
+            IEnumerable<ChiTietDonHang> q = from ctdh in dataBase.ChiTietDonHangs 
+                                            join dh in dataBase.DonHangs on ctdh.maDonHang equals dh.maDonHang
+                                            where ctdh.maSanPham.Equals(strMaSanPham) && dh.trangThai==false
+                                            select ctdh;
+            return q;
         }
 
         public List<DTO_ChiTietDonHang> lstCTDH(string maDonHang)

@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 13/11/2021
+     */
     public class DAO_PhanCong
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -22,6 +27,11 @@ namespace QuanLyLuongSanPham_DAO
                  join cd in dataBase.CongDoanSanXuats on pc.maCongDoan equals cd.soThuTu
                  join ca in dataBase.CaLamViecs on pc.maCa equals ca.maCa
                  select new { maPhanCong = pc.maPhanCong, maNhanVien = nv.maNhanVien, tenNhanVien = nv.tenNhanVien, maCongDoan = pc.maCongDoan, tenCongDoan = cd.tenCongDoan,maCa=pc.maCa,tenCa=ca.ca,ngayLam = pc.ngayLam });
+            return q;
+        }
+        public IEnumerable<PhanCong> layAllPhanCong()
+        {
+            IEnumerable<PhanCong> q = from n in dataBase.PhanCongs select n;
             return q;
         }
         public bool phanCong(DTO_PhanCong pc)

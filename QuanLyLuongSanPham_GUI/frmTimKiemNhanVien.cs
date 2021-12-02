@@ -12,6 +12,11 @@ using QuanLyLuongSanPham_BUS;
 using QuanLyLuongSanPham_DTO;
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Đinh Quang Huy,Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 23/11/2021
+     */
     public partial class frmTimKiemNhanVien : Form
     {
         BUS_NhanVien busNV = new BUS_NhanVien();

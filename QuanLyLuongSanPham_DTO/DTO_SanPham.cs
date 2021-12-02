@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DTO
 {
-   public class DTO_SanPham
+    /**
+    * Tác giả: Võ Thị Trà Giang
+    * Phiên bản: 1.0
+    * Thời gian tạo: 25/10/2021
+    */
+    public class DTO_SanPham
     {
         string maSanPham, tenSanPham;
         int namSanXuat;

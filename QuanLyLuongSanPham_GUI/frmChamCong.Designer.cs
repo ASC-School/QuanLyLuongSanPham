@@ -95,7 +95,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.Location = new System.Drawing.Point(1403, 4);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(40, 33);
+            this.btnThoat.Size = new System.Drawing.Size(30, 27);
             this.btnThoat.TabIndex = 31;
             this.btnThoat.Text = "          ";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -104,10 +104,9 @@ namespace QuanLyLuongSanPham_GUI
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(13, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
@@ -132,6 +131,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.TouchUIMode = DevExpress.Utils.DefaultBoolean.False;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1419, 716);
             this.panelControl1.TabIndex = 32;
@@ -386,7 +386,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lblNgayCham.Location = new System.Drawing.Point(176, 103);
             this.lblNgayCham.Margin = new System.Windows.Forms.Padding(4);
             this.lblNgayCham.Name = "lblNgayCham";
-            this.lblNgayCham.Size = new System.Drawing.Size(133, 21);
+            this.lblNgayCham.Size = new System.Drawing.Size(114, 17);
             this.lblNgayCham.TabIndex = 1;
             this.lblNgayCham.Text = "Ngày chấm công :";
             // 
@@ -397,7 +397,7 @@ namespace QuanLyLuongSanPham_GUI
             this.lblDonVi.Location = new System.Drawing.Point(251, 58);
             this.lblDonVi.Margin = new System.Windows.Forms.Padding(4);
             this.lblDonVi.Name = "lblDonVi";
-            this.lblDonVi.Size = new System.Drawing.Size(58, 21);
+            this.lblDonVi.Size = new System.Drawing.Size(49, 17);
             this.lblDonVi.TabIndex = 1;
             this.lblDonVi.Text = "Đơn vị :";
             // 
@@ -459,10 +459,9 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DarkRed;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(81, 17);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(61, 14);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(149, 29);
+            this.labelControl1.Size = new System.Drawing.Size(121, 23);
             this.labelControl1.TabIndex = 34;
             this.labelControl1.Text = "CHẤM CÔNG";
             // 
@@ -549,7 +548,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // frmChamCong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1444, 778);
@@ -558,6 +557,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChamCong";

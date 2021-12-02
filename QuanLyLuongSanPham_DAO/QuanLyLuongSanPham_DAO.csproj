@@ -110,13 +110,13 @@
     <Compile Include="DAO_LuongCongNhan.cs" />
     <Compile Include="DAO_LuongHanhChanh.cs" />
     <Compile Include="DAO_Model.cs" />
+    <Compile Include="DAO_MucTienPhat.cs" />
     <Compile Include="DAO_NhanVien.cs" />
     <Compile Include="DAO_PhanCong.cs" />
     <Compile Include="DAO_PhanQuyen.cs" />
     <Compile Include="DAO_PhatNhanVien.cs" />
     <Compile Include="DAO_PhieuChamCong.cs" />
     <Compile Include="DAO_SanPham.cs" />
-    <Compile Include="DAO_SanPhamSanXuat.cs" />
     <Compile Include="DAO_TaiKhoan.cs" />
     <Compile Include="NhanViens.cs" />
     <Compile Include="Program.cs" />
@@ -136,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="QuanLyLuongSanPham.dbml.layout">
+      <DependentUpon>QuanLyLuongSanPham.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,9 +153,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QuanLyLuongSanPham.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyLuongSanPham.dbml.layout">
-      <DependentUpon>QuanLyLuongSanPham.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

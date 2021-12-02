@@ -80,6 +80,8 @@
     <Compile Include="DTO_NhanVien.cs" />
     <Compile Include="DTO_PhanCong.cs" />
     <Compile Include="DTO_PhanQuyen.cs" />
+    <Compile Include="DTO_PhatNhanVien.cs" />
+    <Compile Include="DTO_PhieuChamCong.cs" />
     <Compile Include="DTO_PhieuChamCongCongNhan.cs" />
     <Compile Include="DTO_PhieuChamCongNhanVienHanhChanh.cs" />
     <Compile Include="DTO_SanPham.cs" />

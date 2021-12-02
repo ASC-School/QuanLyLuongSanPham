@@ -8,6 +8,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả:Đinh Quang Huy, Trần Văn Sỹ, Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class BUS_NhanVien
     {
         DAO_NhanVien nv = new DAO_NhanVien();

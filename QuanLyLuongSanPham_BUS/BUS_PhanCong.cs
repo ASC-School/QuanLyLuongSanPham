@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DAO;
 
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 19/11/2021
+     */
     public class BUS_PhanCong
     {
         DAO_PhanCong daoPhanCong;
@@ -29,6 +34,10 @@ namespace QuanLyLuongSanPham_BUS
         public bool xoaPhanCong(string maPhanCong)
         {
             return daoPhanCong.xoaPhanCong(maPhanCong);
+        }
+        public IEnumerable<PhanCong> layAllPhanCong()
+        {
+            return daoPhanCong.layAllPhanCong();
         }
     }
 }

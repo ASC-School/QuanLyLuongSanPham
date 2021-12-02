@@ -14,6 +14,11 @@ namespace QuanLyLuongSanPham_GUI
 {
     public partial class frmHome : Form
     {
+        /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
         public frmHome()
         {
             InitializeComponent();
@@ -27,6 +32,8 @@ namespace QuanLyLuongSanPham_GUI
         string tenNV = "";
         bool bTrangThaiDangNhap = false;
         BUS_PhanQuyen busPQNV = new BUS_PhanQuyen();
+        BUS_TaiKhoan busTK = new BUS_TaiKhoan();
+        string taiKhoan;
         #endregion
 
         #region Methods
@@ -163,7 +170,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void msHeThong_PhanQuyen_Click(object sender, EventArgs e)
         {
-            frmGiaoDienPhanQuyen fPhanQuyen = new frmGiaoDienPhanQuyen();
+            frmPhanQuyen fPhanQuyen = new frmPhanQuyen();
             _ = fPhanQuyen.ShowDialog();
         }
 
@@ -186,7 +193,51 @@ namespace QuanLyLuongSanPham_GUI
             SetStatusLogin(false, "", "", "","");
             frmHome_Load(sender, e);
         }
+
+        private void tHỐNGKÊĐƠNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKeDonHang frm = new frmThongKeDonHang();
+            _ = frm.ShowDialog();
+        }
+
+        private void tÌMKIẾMĐƠNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemDonHang frm = new frmTimKiemDonHang();
+            _ = frm.ShowDialog();
+        }
+
+        private void msSanPham_QuanLySP_Click(object sender, EventArgs e)
+        {
+            frmSanPham frm = new frmSanPham();
+            _ = frm.ShowDialog();
+        }
+
+
+        private void msNhanSu_TimKiemNhanVien_Click(object sender, EventArgs e)
+        {
+            frmTimKiemNhanVien frm = new frmTimKiemNhanVien();
+            _ = frm.ShowDialog();
+        }
+
         #endregion
+
+        private void đỔIMẬTKHẨUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<TaiKhoan> tk = busTK.layTKTheoMa(maNhanVien);
+            foreach(var n in tk)
+            {
+                taiKhoan = n.username;
+            }
+            frmDoiMatKhau frm = new frmDoiMatKhau(taiKhoan);
+            _ = frm.ShowDialog();
+
+        }
+
+        private void msTienIch_HoTro_Click(object sender, EventArgs e)
+        {
+            frmHoTro frm = new frmHoTro();
+            _ = frm.ShowDialog();
+        }
 
         private void mnsChamCong_CongNhan_Click(object sender, EventArgs e)
         {

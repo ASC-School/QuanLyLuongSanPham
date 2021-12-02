@@ -10,6 +10,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả:Trần Văn Sỹ,Đinh Quang Huy, Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class DAO_NhanVien
     {
         QuanLyLuongSanPhamDataContext dataBase;

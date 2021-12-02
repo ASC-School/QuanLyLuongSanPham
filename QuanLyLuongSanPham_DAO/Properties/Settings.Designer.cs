@@ -79,11 +79,22 @@ namespace QuanLyLuongSanPham_DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-50F1KAT\\Peguin;Initial Catalog=QuanLyLuongSanPham;Integrated " +
-            "Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-27HK0FFM\\SA;Initial Catalog=QuanLyLuongSanPham;Integrated Secu" +
+            "rity=True")]
         public string QuanLyLuongSanPhamConnectionString4 {
             get {
                 return ((string)(this["QuanLyLuongSanPhamConnectionString4"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-50F1KAT\\Peguin;Initial Catalog=QuanLyLuongSanPham;Integrated " +
+            "Security=True")]
+        public string QuanLyLuongSanPhamConnectionString5 {
+            get {
+                return ((string)(this["QuanLyLuongSanPhamConnectionString5"]));
             }
         }
     }

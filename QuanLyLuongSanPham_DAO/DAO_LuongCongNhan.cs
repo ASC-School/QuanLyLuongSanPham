@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Đinh Quang Huy
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class DAO_LuongCongNhan
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -140,6 +145,13 @@ namespace QuanLyLuongSanPham_DAO
                 return true;
             }
             return false;
+        }
+        public IEnumerable<LuongCongNhan> layThongTinLuong(string maNhanVien)
+        {
+            IEnumerable<LuongCongNhan> q = from lcn in dataBase.LuongCongNhans
+                                           where lcn.maNhanVien.Equals(maNhanVien)
+                                           select lcn;
+            return q;
         }
     }
 }

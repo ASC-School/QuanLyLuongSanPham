@@ -8,6 +8,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 25/10/2021
+     */
     public class DAO_TaiKhoan
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -16,7 +21,28 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+        public TaiKhoan checkIfExist(string username)
+        {
+            TaiKhoan temp = (from n in dataBase.TaiKhoans where n.username.Equals(username) select n).FirstOrDefault();
+            if (temp != null)
+                return temp;
+            return null;
+        }
 
+        public bool suaThongTinTaiKhoan(DTO_TaiKhoan tkUpdoate)
+        {
+            IQueryable<TaiKhoan> cd = dataBase.TaiKhoans.Where(x => x.username.Equals(tkUpdoate.TenTaiKhoan));
+            if (cd.Count() > 0)
+            {
+                cd.First().maNhanVien = tkUpdoate.MaNhanVien;
+                cd.First().username = tkUpdoate.TenTaiKhoan;
+                cd.First().passwords = tkUpdoate.MatKhau;
+                cd.First().quyen = tkUpdoate.Quyen;
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
         List<DTO_TaiKhoan> layToanBoDanhSachTaiKhoanNhanvien()
         {
             var dataLst = dataBase.TaiKhoans.Select(p => p).OrderBy(p => p.username);
@@ -33,6 +59,21 @@ namespace QuanLyLuongSanPham_DAO
                 lst.Add(tmp);
             }
             return lst;
+        }
+
+        public DTO_TaiKhoan layTaiKhoanTheoTenTaiKhoan(string tenTaiKhoan)
+        {
+            TaiKhoan dataLst = dataBase.TaiKhoans.Where(p => p.username == tenTaiKhoan).FirstOrDefault();
+            if(dataLst != null)
+            {
+                DTO_TaiKhoan tmp = new DTO_TaiKhoan();
+                tmp.MaNhanVien = dataLst.maNhanVien;
+                tmp.TenTaiKhoan = dataLst.username;
+                tmp.MatKhau = dataLst.passwords;
+                tmp.Quyen = dataLst.quyen;
+                return tmp;
+            }
+            return null;
         }
 
         public IEnumerable<LoaiNhanVien> layLoaiNVTheoMa(string maNV)
@@ -58,6 +99,13 @@ namespace QuanLyLuongSanPham_DAO
             IEnumerable<TaiKhoan> dsTKNV = from tk in dataBase.TaiKhoans
                                             select tk;
             return dsTKNV;
+        }
+        public IEnumerable<TaiKhoan> layTaiKHoanTheoMa(string maNV)
+        {
+            IEnumerable<TaiKhoan> tk =( from n in dataBase.TaiKhoans
+                                        where n.maNhanVien.Equals(maNV)
+                                        select n);
+            return tk;
         }
     }
 }

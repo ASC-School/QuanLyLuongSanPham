@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public class DAO_CongDoanSanXuat
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -20,7 +25,7 @@ namespace QuanLyLuongSanPham_DAO
             q = (
                 from cd in dataBase.CongDoanSanXuats
                 join sp in dataBase.SanPhams on cd.maSanPham equals sp.maSanPham
-                select new { maCongDoan = cd.soThuTu, tenCongDoan = cd.tenCongDoan,donGia=cd.donGia, maSanPham = sp.maSanPham, tenSanPham = sp.tenSanPham });
+                select new { maCongDoan = cd.soThuTu, tenCongDoan = cd.tenCongDoan,donGia=cd.donGia, maSanPham = sp.maSanPham, tenSanPham = sp.tenSanPham, soLuongSanXuat = cd.soLuongSanPhamSanXuat });
             return q;
         }
         public CongDoanSanXuat checkIfExist(string strMaCongDoan)
@@ -55,6 +60,7 @@ namespace QuanLyLuongSanPham_DAO
                 temp.tenCongDoan = cd.TenCongDoan;
                 temp.donGia = cd.DonGia;
                 temp.maSanPham = cd.MaSanPham;
+                temp.soLuongSanPhamSanXuat = cd.SoLuongSanPhamSanXuat;
                 dataBase.CongDoanSanXuats.InsertOnSubmit(temp);
                 dataBase.SubmitChanges();
                 return true;
@@ -68,6 +74,7 @@ namespace QuanLyLuongSanPham_DAO
                 cd.First().tenCongDoan = cdUpdate.TenCongDoan;
                 cd.First().donGia = cdUpdate.DonGia;
                 cd.First().maSanPham = cdUpdate.MaSanPham;
+                cd.First().soLuongSanPhamSanXuat = cdUpdate.SoLuongSanPhamSanXuat;
                 dataBase.SubmitChanges();
                 return true;
 

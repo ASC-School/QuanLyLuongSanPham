@@ -568,6 +568,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvLuongCongNhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLuongCongNhan.Size = new System.Drawing.Size(1289, 486);
             this.dtgvLuongCongNhan.TabIndex = 110;
+            this.dtgvLuongCongNhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLuongCongNhan_CellContentClick);
             this.dtgvLuongCongNhan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLuongCongNhan_CellContentClick);
             // 
             // maNV

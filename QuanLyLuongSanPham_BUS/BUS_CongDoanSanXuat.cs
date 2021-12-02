@@ -7,6 +7,11 @@ using QuanLyLuongSanPham_DAO;
 using QuanLyLuongSanPham_DTO;
 namespace QuanLyLuongSanPham_BUS
 {
+    /**
+     * Tác giả: Trần Vẵn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 13/11/2021
+     */
     public class BUS_CongDoanSanXuat
     {
         DAO_CongDoanSanXuat cd = new DAO_CongDoanSanXuat();

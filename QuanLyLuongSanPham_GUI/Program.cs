@@ -18,9 +18,9 @@ namespace QuanLyLuongSanPham_GUI
             //{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmChamCong());
-           // }
-           // catch (Exception)
+                Application.Run(new frmHome());
+            //}
+            //catch (Exception)
             //{
             //    MessageBox.Show("Server có vấn đề - Nên chạy lại!!!");
             //}

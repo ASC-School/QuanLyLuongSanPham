@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyLuongSanPham_DAO
 {
+    /**
+     * Tác giả: Đinh Quang Huy, Trần Văn Sỹ
+     * Phiên bản: 1.0
+     * Thời gian tạo: 13/11/2021
+     */
     public class DAO_LuongHanhChanh
     {
         QuanLyLuongSanPhamDataContext dataBase;
@@ -111,6 +116,22 @@ namespace QuanLyLuongSanPham_DAO
                                                         thucNhan = (((((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc) + lhc.phuCap)) - (((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc * 10 / 100) + mtp.mucTienPhat1)) - lhc.tienUng
                                                     };
             return luongHCTheoThang;
+        }
+        public IEnumerable<LuongHanhChanh> layThongTinLuongCaNhan(string strMaNhanVien)
+        {
+            IEnumerable<LuongHanhChanh> luongCaNhan = from tt in dataBase.LuongHanhChanhs
+                                                      where tt.maNhanVien.Equals(strMaNhanVien)
+                                                      select tt;
+            return luongCaNhan;
+        }
+
+
+        public IEnumerable<PhieuChamCongNhanVienHanhChanh> layDSCHamCong(string maNhanVien)
+        {
+            IEnumerable<PhieuChamCongNhanVienHanhChanh> q = from n in dataBase.PhieuChamCongNhanVienHanhChanhs
+                                                            where n.maNhanVien.Contains(maNhanVien) 
+                                                            select n;
+            return q;
         }
     }
 }

@@ -19,6 +19,11 @@ using System.Globalization;
 
 namespace QuanLyLuongSanPham_GUI
 {
+    /**
+     * Tác giả: Võ Thị Trà Giang
+     * Phiên bản: 1.0
+     * Thời gian tạo: 10/11/2021
+     */
     public partial class frmGDQLDonHang : DevExpress.XtraEditors.XtraForm
     {
         BindingSource bsPH;
@@ -58,7 +63,8 @@ namespace QuanLyLuongSanPham_GUI
             btnHuyDonHang.Enabled = false;
             btnXuatDonHang.Enabled = false;
             this.dgvDSDonHang.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvDSDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold);
+            this.dgvDSDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11F, FontStyle.Bold);
+            this.dgvDSDonHang.DefaultCellStyle.Font = new Font("Tahoma", 11.25F, FontStyle.Bold);
             if (lstTimKiemToDataGrid != null)
             {
                 loadDonHangToDataGridView(lstTimKiemToDataGrid);
@@ -158,6 +164,14 @@ namespace QuanLyLuongSanPham_GUI
             dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgr.Columns.Add(dc);
 
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
         }
 
         public void formatTextBox()
@@ -206,6 +220,10 @@ namespace QuanLyLuongSanPham_GUI
             donHang.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
             donHang.NoiDung = txtNoiDung.Text;
             donHang.MaNhanVien = cboMaNhanVien.Text;
+            if (cboTrangThai.SelectedIndex == 0)
+                donHang.TrangThai = true;
+            else
+                donHang.TrangThai = false;
             return donHang;
         }
 
@@ -368,6 +386,10 @@ namespace QuanLyLuongSanPham_GUI
             txtNoiDung.Text = row.Cells[5].Value.ToString();
             cboMaNhanVien.Text = row.Cells[6].Value.ToString();
             cboTenNhanVien.Text = row.Cells[7].Value.ToString();
+            if(row.Cells[8].Value.ToString()=="True")
+                cboTrangThai.SelectedIndex = 0;
+            else
+                cboTrangThai.SelectedIndex = 1;
         }
 
         private void btnLoadDSDonHang_Click(object sender, EventArgs e)
