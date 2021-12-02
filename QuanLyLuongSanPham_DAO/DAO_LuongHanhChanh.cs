@@ -119,6 +119,14 @@ namespace QuanLyLuongSanPham_DAO
                                                       select tt;
             return luongCaNhan;
         }
-                
+
+
+        public IEnumerable<PhieuChamCongNhanVienHanhChanh> layDSCHamCong(string maNhanVien)
+        {
+            IEnumerable<PhieuChamCongNhanVienHanhChanh> q = from n in dataBase.PhieuChamCongNhanVienHanhChanhs
+                                                            where n.maNhanVien.Contains(maNhanVien) 
+                                                            select n;
+            return q;
+        }
     }
 }

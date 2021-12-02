@@ -20,6 +20,7 @@ namespace QuanLyLuongSanPham_GUI
             InitializeComponent();
         }
 
+
         #region Propepties
         Point LastPoint;
         BUS_LuongNhanVienHanhChanh bus_LuongNVHC = new BUS_LuongNhanVienHanhChanh();
@@ -37,6 +38,19 @@ namespace QuanLyLuongSanPham_GUI
             }
             ccbNam.Items.Add(2021);
             ccbNam.Items.Add(2020);
+        }
+        private int loadNgayChamCong()
+        {
+            int ngayChamCong = 0;
+            IEnumerable<PhieuChamCongNhanVienHanhChanh> listChamCong = bus_LuongNVHC.layDSChamCong("NV001");
+            foreach(PhieuChamCongNhanVienHanhChanh n in listChamCong)
+            {
+                if (n.diLam == true&&n.ngayChamCong.Value.ToString("MM").Equals("12")&& n.ngayChamCong.Value.ToString("yyyy").Equals("2021"))
+                    ngayChamCong ++;
+                else
+                    ngayChamCong += 0;
+            }
+            return ngayChamCong; 
         }
         private void loadLuongNVHanhChanh()
         {

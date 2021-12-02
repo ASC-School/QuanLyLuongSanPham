@@ -39,5 +39,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongHanhChanh.layThongTinLuongCaNhan(strMaNhanVien);
         }
+        public IEnumerable<PhieuChamCongNhanVienHanhChanh> layDSChamCong(string maNhanVien)
+        {
+            return luongHanhChanh.layDSCHamCong(maNhanVien);
+        }
     }
 }
