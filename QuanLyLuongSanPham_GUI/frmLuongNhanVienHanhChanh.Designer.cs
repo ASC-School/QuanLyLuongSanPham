@@ -451,6 +451,8 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Appearance.Options.UseFont = true;
             this.btnTimKiem.Appearance.Options.UseTextOptions = true;
             this.btnTimKiem.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnTimKiem.AppearanceHovered.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnTimKiem.AppearanceHovered.Options.UseBackColor = true;
             this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
             this.btnTimKiem.Location = new System.Drawing.Point(22, 512);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -466,6 +468,8 @@ namespace QuanLyLuongSanPham_GUI
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseTextOptions = true;
             this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.AppearanceHovered.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.simpleButton2.AppearanceHovered.Options.UseBackColor = true;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.simpleButton2.Location = new System.Drawing.Point(22, 374);
@@ -482,6 +486,8 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXuatBC.Appearance.Options.UseFont = true;
             this.btnXuatBC.Appearance.Options.UseTextOptions = true;
             this.btnXuatBC.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnXuatBC.AppearanceHovered.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnXuatBC.AppearanceHovered.Options.UseBackColor = true;
             this.btnXuatBC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatBC.ImageOptions.Image")));
             this.btnXuatBC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnXuatBC.Location = new System.Drawing.Point(22, 443);
@@ -491,6 +497,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnXuatBC.Size = new System.Drawing.Size(171, 61);
             this.btnXuatBC.TabIndex = 116;
             this.btnXuatBC.Text = "Export Excel";
+            this.btnXuatBC.Click += new System.EventHandler(this.btnXuatBC_Click);
             // 
             // btnHuy
             // 
@@ -498,6 +505,8 @@ namespace QuanLyLuongSanPham_GUI
             this.btnHuy.Appearance.Options.UseFont = true;
             this.btnHuy.Appearance.Options.UseTextOptions = true;
             this.btnHuy.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnHuy.AppearanceHovered.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHuy.AppearanceHovered.Options.UseBackColor = true;
             this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
             this.btnHuy.Location = new System.Drawing.Point(22, 307);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -512,6 +521,8 @@ namespace QuanLyLuongSanPham_GUI
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.Appearance.Options.UseTextOptions = true;
             this.btnSua.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnSua.AppearanceHovered.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSua.AppearanceHovered.Options.UseBackColor = true;
             this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Location = new System.Drawing.Point(22, 237);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

@@ -18,11 +18,11 @@ namespace QuanLyLuongSanPham_GUI
             //{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmLuongNhanVienHanhChanh());
-            //}
-            //catch (Exception)
+                Application.Run(new frmChamCong());
+           // }
+           // catch (Exception)
             //{
-             //   MessageBox.Show("Server có vấn đề - Nên chạy lại!!!");
+            //    MessageBox.Show("Server có vấn đề - Nên chạy lại!!!");
             //}
         }
     }

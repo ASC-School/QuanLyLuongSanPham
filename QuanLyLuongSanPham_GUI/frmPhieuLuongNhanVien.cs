@@ -261,13 +261,6 @@ namespace QuanLyLuongSanPham_GUI
                 // font family mặc định cho cả sheet
                 ws.Cells.Style.Font.Name = "Times New Roman";
 
-                // Tạo danh sách các column header
-                //string[] arrColumnHeader = {
-                //"Họ tên",
-                // "Năm sinh"
-
-                // lấy ra số lượng cột cần dùng dựa vào số lượng header
-                //var countColHeader = arrColumnHeader.Count();
                 DateTime Dtoday = DateTime.Now;
                 // merge các column
                 ws.Cells["A1:C2"].Merge = true;
@@ -447,62 +440,6 @@ namespace QuanLyLuongSanPham_GUI
                 modelTable3.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 modelTable3.AutoFitColumns();
 
-                //ws.Cells["A1,I34"].Style.Border = Border.al
-                //ws.Cells[1, 1, 1, countColHeader].Merge = true;
-                // in đậm
-                //ws.Cells[1, 1, 1, countColHeader].Style.Font.Bold = true;
-                // căn giữa
-                //ws.Cells[1, 1, 1, countColHeader].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-
-                //int colIndex = 1;
-                //int rowIndex = 2;
-
-                ////tạo các header từ column header đã tạo từ bên trên
-                //foreach (var item in arrColumnHeader)
-                //{
-                //    var cell = ws.Cells[rowIndex, colIndex];
-
-                //    //set màu thành gray
-                //    var fill = cell.Style.Fill;
-                //    fill.PatternType = ExcelFillStyle.Solid;
-                //    fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
-
-                //    //căn chỉnh các border
-                //    var border = cell.Style.Border;
-                //    border.Bottom.Style =
-                //        border.Top.Style =
-                //        border.Left.Style =
-                //        border.Right.Style = ExcelBorderStyle.Thin;
-
-                //    //gán giá trị
-                //    cell.Value = item;
-
-                //    colIndex++;
-                //}
-
-                //// lấy ra danh sách UserInfo từ ItemSource của DataGrid
-                //List<UserInfo> userList = dtgExcel.ItemsSource.Cast<UserInfo>().ToList();
-
-                //// với mỗi item trong danh sách sẽ ghi trên 1 dòng
-                //foreach (var item in userList)
-                //{
-                //    // bắt đầu ghi từ cột 1. Excel bắt đầu từ 1 không phải từ 0
-                //    colIndex = 1;
-
-                //    // rowIndex tương ứng từng dòng dữ liệu
-                //    rowIndex++;
-
-                //    //gán giá trị cho từng cell                      
-                //    ws.Cells[rowIndex, colIndex++].Value = item.Name;
-
-                //    // lưu ý phải .ToShortDateString để dữ liệu khi in ra Excel là ngày như ta vẫn thấy.Nếu không sẽ ra tổng số :v
-                //    ws.Cells[rowIndex, colIndex++].Value = item.Birthday.ToShortDateString();
-
-                //}
-
-                //Lưu file lại
-                //Byte[] bin = p.GetAsByteArray();
-                //File.WriteAllBytes(filePath, bin);
                 Stream stream = File.Create(filePath);
                 p.SaveAs(stream);
                 stream.Close();     

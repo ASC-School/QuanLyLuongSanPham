@@ -24,6 +24,7 @@ namespace QuanLyLuongSanPham_GUI
         public delegate void Home(string strMaNhanVien);
         public Home home;
         string maNhanVien = "";
+        string tenNV = "";
         bool bTrangThaiDangNhap = false;
         BUS_PhanQuyen busPQNV = new BUS_PhanQuyen();
         #endregion
@@ -86,6 +87,7 @@ namespace QuanLyLuongSanPham_GUI
             {
                 tiTTNV.Elements[2].Text = strHoTen;
                 tiTTNV.Elements[3].Text = strChucVu;
+                tenNV = strHoTen;
                 phanQuyenNV(strMaLoai);
             }   
             else
@@ -131,6 +133,7 @@ namespace QuanLyLuongSanPham_GUI
         private void msTienLuong_CongNhan_Click(object sender, EventArgs e)
         {
             frmLuongCongNhan frmLuongCN = new frmLuongCongNhan();
+            frmLuongCN.tenNVDN(tenNV);
             _ = frmLuongCN.ShowDialog();
         }
 
@@ -184,5 +187,11 @@ namespace QuanLyLuongSanPham_GUI
             frmHome_Load(sender, e);
         }
         #endregion
+
+        private void mnsChamCong_CongNhan_Click(object sender, EventArgs e)
+        {
+            frmChamCong fChamCong = new frmChamCong();
+            fChamCong.ShowDialog();
+        }
     }
 }
