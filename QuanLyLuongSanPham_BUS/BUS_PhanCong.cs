@@ -30,5 +30,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhanCong.xoaPhanCong(maPhanCong);
         }
+        public IEnumerable<PhanCong> layAllPhanCong()
+        {
+            return daoPhanCong.layAllPhanCong();
+        }
     }
 }

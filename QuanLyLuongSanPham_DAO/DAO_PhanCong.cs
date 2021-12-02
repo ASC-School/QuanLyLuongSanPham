@@ -24,6 +24,11 @@ namespace QuanLyLuongSanPham_DAO
                  select new { maPhanCong = pc.maPhanCong, maNhanVien = nv.maNhanVien, tenNhanVien = nv.tenNhanVien, maCongDoan = pc.maCongDoan, tenCongDoan = cd.tenCongDoan,maCa=pc.maCa,tenCa=ca.ca,ngayLam = pc.ngayLam });
             return q;
         }
+        public IEnumerable<PhanCong> layAllPhanCong()
+        {
+            IEnumerable<PhanCong> q = from n in dataBase.PhanCongs select n;
+            return q;
+        }
         public bool phanCong(DTO_PhanCong pc)
         {
             string str = pc.MaPhanCong;

@@ -29,5 +29,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhatNV.layThongTinPhat(maNhanVien);
         }
+        public IEnumerable<dynamic> layDSPhat()
+        {
+            return daoPhatNV.layDSPhat();
+        }
+        public IEnumerable<PhatNhanVien> layAllDS()
+        {
+            return daoPhatNV.layAllDS();
+        }
     }
 }

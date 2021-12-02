@@ -34,7 +34,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblQuenMatKhau = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCheckViewPass = new System.Windows.Forms.Button();
             this.lblError1 = new DevExpress.XtraEditors.LabelControl();
@@ -63,7 +63,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(14, 123);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(270, 28);
@@ -79,7 +79,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(14, 167);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(270, 28);
@@ -101,17 +101,18 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 3;
             // 
-            // label4
+            // lblQuenMatKhau
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(94, 220);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Quên mật khẩu";
+            this.lblQuenMatKhau.AutoSize = true;
+            this.lblQuenMatKhau.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuenMatKhau.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblQuenMatKhau.Location = new System.Drawing.Point(94, 220);
+            this.lblQuenMatKhau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
+            this.lblQuenMatKhau.Size = new System.Drawing.Size(114, 18);
+            this.lblQuenMatKhau.TabIndex = 4;
+            this.lblQuenMatKhau.Text = "Quên mật khẩu";
+            this.lblQuenMatKhau.Click += new System.EventHandler(this.lblQuenMatKhau_Click);
             // 
             // pictureBox1
             // 
@@ -119,7 +120,7 @@ namespace QuanLyLuongSanPham_GUI
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(50, 45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 41);
             this.pictureBox1.TabIndex = 6;
@@ -132,7 +133,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnCheckViewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckViewPass.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckViewPass.Image")));
             this.btnCheckViewPass.Location = new System.Drawing.Point(255, 200);
-            this.btnCheckViewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckViewPass.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckViewPass.Name = "btnCheckViewPass";
             this.btnCheckViewPass.Size = new System.Drawing.Size(28, 20);
             this.btnCheckViewPass.TabIndex = 29;
@@ -177,7 +178,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Transparent;
             this.btnThoat.Location = new System.Drawing.Point(89, 295);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(126, 37);
             this.btnThoat.TabIndex = 7;
@@ -198,7 +199,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Transparent;
             this.btnLogin.Location = new System.Drawing.Point(89, 253);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(126, 37);
             this.btnLogin.TabIndex = 7;
@@ -219,14 +220,14 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblDangNhap);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -246,7 +247,7 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblQuenMatKhau;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ButtonCustom btnLogin;
         private ButtonCustom btnThoat;

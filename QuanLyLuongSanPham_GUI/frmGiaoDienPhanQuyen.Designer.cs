@@ -115,7 +115,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(455, 723);
+            this.panelControl1.Size = new System.Drawing.Size(321, 723);
             this.panelControl1.TabIndex = 0;
             // 
             // panel3
@@ -133,7 +133,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel3.Location = new System.Drawing.Point(0, 140);
             this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(455, 508);
+            this.panel3.Size = new System.Drawing.Size(320, 506);
             this.panel3.TabIndex = 2;
             // 
             // panel2
@@ -169,7 +169,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnDong.Location = new System.Drawing.Point(0, 396);
             this.btnDong.Margin = new System.Windows.Forms.Padding(5);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(455, 99);
+            this.btnDong.Size = new System.Drawing.Size(320, 90);
             this.btnDong.TabIndex = 5;
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -235,7 +235,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnTimKiem.Location = new System.Drawing.Point(0, 297);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(5);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(455, 99);
+            this.btnTimKiem.Size = new System.Drawing.Size(320, 99);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -252,7 +252,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnHuyPhanQuyen.Location = new System.Drawing.Point(0, 198);
             this.btnHuyPhanQuyen.Margin = new System.Windows.Forms.Padding(5);
             this.btnHuyPhanQuyen.Name = "btnHuyPhanQuyen";
-            this.btnHuyPhanQuyen.Size = new System.Drawing.Size(455, 99);
+            this.btnHuyPhanQuyen.Size = new System.Drawing.Size(320, 99);
             this.btnHuyPhanQuyen.TabIndex = 2;
             this.btnHuyPhanQuyen.Text = "Hủy";
             this.btnHuyPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -269,7 +269,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnLuu.Location = new System.Drawing.Point(0, 99);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(5);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(455, 99);
+            this.btnLuu.Size = new System.Drawing.Size(320, 99);
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,7 +286,7 @@ namespace QuanLyLuongSanPham_GUI
             this.btnPhanQuyen.Location = new System.Drawing.Point(0, 0);
             this.btnPhanQuyen.Margin = new System.Windows.Forms.Padding(5);
             this.btnPhanQuyen.Name = "btnPhanQuyen";
-            this.btnPhanQuyen.Size = new System.Drawing.Size(455, 99);
+            this.btnPhanQuyen.Size = new System.Drawing.Size(320, 99);
             this.btnPhanQuyen.TabIndex = 0;
             this.btnPhanQuyen.Text = "Phân quyền";
             this.btnPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,7 +300,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 89);
+            this.panel1.Size = new System.Drawing.Size(321, 89);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -311,7 +311,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.Location = new System.Drawing.Point(148, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 89);
+            this.label1.Size = new System.Drawing.Size(173, 89);
             this.label1.TabIndex = 1;
             this.label1.Text = "PHÂN QUYỀN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -338,7 +338,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Controls.Add(this.panelControl5);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(455, 0);
+            this.panelControl2.Location = new System.Drawing.Point(321, 0);
             this.panelControl2.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(45)))));
             this.panelControl2.LookAndFeel.SkinName = "Office 2019 Colorful";
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -469,7 +469,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl3.Controls.Add(this.label7);
             this.panelControl3.Controls.Add(this.label13);
             this.panelControl3.Controls.Add(this.label16);
-            this.panelControl3.Location = new System.Drawing.Point(15, 445);
+            this.panelControl3.Location = new System.Drawing.Point(5, 416);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1388, 201);
@@ -589,10 +589,10 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl5.Controls.Add(this.label4);
             this.panelControl5.Controls.Add(this.label11);
             this.panelControl5.Controls.Add(this.label3);
-            this.panelControl5.Location = new System.Drawing.Point(15, 76);
+            this.panelControl5.Location = new System.Drawing.Point(5, 72);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1388, 360);
+            this.panelControl5.Size = new System.Drawing.Size(1398, 328);
             this.panelControl5.TabIndex = 0;
             // 
             // lvwDanhSachTaiKhoan

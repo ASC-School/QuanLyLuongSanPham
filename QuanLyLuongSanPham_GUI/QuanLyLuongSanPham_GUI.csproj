@@ -92,6 +92,12 @@
     <Compile Include="frmCongDoan.Designer.cs">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonViQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     <Compile Include="frmQLNhanSu.Designer.cs">
       <DependentUpon>frmQLNhanSu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuenMatKhau.Designer.cs">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +243,9 @@
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="frmCongDoan.resx">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonViQuanLy.resx">
       <DependentUpon>frmDonViQuanLy.cs</DependentUpon>
@@ -279,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNhanSu.resx">
       <DependentUpon>frmQLNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuenMatKhau.resx">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>

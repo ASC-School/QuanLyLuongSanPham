@@ -31,5 +31,15 @@ namespace QuanLyLuongSanPham_BUS
         {
             return taiKhoan.layLoaiNVTheoMa(maNhanVien);
         }
+
+        public DTO_TaiKhoan getThongTinTaiKhoanTheoTenTaiKhoan(string username)
+        {
+            return taiKhoan.layTaiKhoanTheoTenTaiKhoan(username);
+        }
+
+        public bool suaThongTinTaiKhoan(DTO_TaiKhoan tkUpload)
+        {
+            return taiKhoan.suaThongTinTaiKhoan(tkUpload);
+        }
     }
 }

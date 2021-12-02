@@ -33,6 +33,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDSCN.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvCaLamViec.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDSPhanCong.DefaultCellStyle.ForeColor = Color.Black;
+            IEnumerable<PhanCong> listPC = busPC.layAllPhanCong();
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -42,6 +43,7 @@ namespace QuanLyLuongSanPham_GUI
         {
             IEnumerable<NhanVien> listCongNhan = busNV.layDanhSachCongNhan();
             IEnumerable<CaLamViec> listCa = busCaLamViec.layDSCa();
+
             foreach(var n in listCongNhan)
             {
                 dtgvDSCN.Rows.Add(n.maNhanVien, n.tenNhanVien);
@@ -95,7 +97,7 @@ namespace QuanLyLuongSanPham_GUI
             cboMaCongDoan.Enabled = true;
             cboMaCa.Enabled = true;
             cboTenCa.Enabled = true;
-            //txtMsPhanCong.Enabled = true;
+            txtMsPhanCong.Enabled = true;
             dtpNgayPhanCong.Enabled = true;
         }
         private void onButton()
@@ -206,6 +208,16 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
         }
+        private bool kiemTraPhanCongTrung(string strmaNV,string strMaCa,string ngayLamm)
+        {
+            IEnumerable<PhanCong> listPC = busPC.layAllPhanCong();
+            foreach(var n in listPC)
+            {
+                if (strmaNV.Equals(n.maNhanVien) && strMaCa.Equals(n.maCa) && ngayLamm.Equals(String.Format("{0:dd,MM,yyyy}", n.ngayLam).ToString()))
+                    return true;
+            }
+            return false;
+        }
 
         private void btnPhanCong_Click(object sender, EventArgs e)
         {
@@ -214,6 +226,10 @@ namespace QuanLyLuongSanPham_GUI
                 btnPhanCong.Text = "Lưu";
                 clearInPutControl();
                 onControlInput();
+            }
+            else if (kiemTraPhanCongTrung(cboMaCongNhan.Text, cboMaCa.Text, dtpNgayPhanCong.Text) == true )
+            {
+                MessageBox.Show("Công nhân này đã được phân công trùng lịch!!!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             else if (kiemTraNull() == true)
             {
@@ -237,22 +253,27 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     MessageBox.Show("Thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
+                clearInPutControl();
+                offControlInput();
                 btnPhanCong.Text = "Phân công";
             }
             
         }
         private void btnSuaCong_Click(object sender, EventArgs e)
         {
-            if (btnPhanCong.Text.Equals("Sửa công"))
+            if (btnSuaCong.Text.Equals("Sửa công"))
             {
-                btnPhanCong.Text = "Lưu";
-                clearInPutControl();
+                btnSuaCong.Text = "Lưu";
                 onControlInput();
                 txtMsPhanCong.Enabled = false;
             }
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không được để trống dữ liệu!!!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            else if (kiemTraPhanCongTrung(cboMaCongNhan.Text, cboMaCa.Text, dtpNgayPhanCong.Text) == true)
+            {
+                MessageBox.Show("Công nhân này đã được phân công trùng lịch!!!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             else
             {
@@ -272,6 +293,8 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     MessageBox.Show("Thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
+                clearInPutControl();
+                offControlInput();
                 btnSuaCong.Text = "Sửa công";
             }
             
