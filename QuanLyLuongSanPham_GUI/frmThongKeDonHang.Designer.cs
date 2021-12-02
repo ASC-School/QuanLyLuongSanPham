@@ -204,7 +204,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDonHang.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorDonHang.Name = "bindingNavigatorDonHang";
             this.bindingNavigatorDonHang.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorDonHang.Size = new System.Drawing.Size(302, 27);
+            this.bindingNavigatorDonHang.Size = new System.Drawing.Size(261, 27);
             this.bindingNavigatorDonHang.TabIndex = 9;
             this.bindingNavigatorDonHang.Text = "bindingNavigator1";
             // 
@@ -214,13 +214,13 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -230,7 +230,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -239,7 +239,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -248,7 +248,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -277,7 +277,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -286,7 +286,7 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -300,7 +300,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboDonGiaDonHang.FormattingEnabled = true;
             this.cboDonGiaDonHang.Location = new System.Drawing.Point(1004, 56);
             this.cboDonGiaDonHang.Name = "cboDonGiaDonHang";
-            this.cboDonGiaDonHang.Size = new System.Drawing.Size(229, 27);
+            this.cboDonGiaDonHang.Size = new System.Drawing.Size(229, 24);
             this.cboDonGiaDonHang.TabIndex = 7;
             this.cboDonGiaDonHang.SelectedIndexChanged += new System.EventHandler(this.cboDonGiaDonHang_SelectedIndexChanged);
             // 
@@ -310,7 +310,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboSanPham.FormattingEnabled = true;
             this.cboSanPham.Location = new System.Drawing.Point(1004, 21);
             this.cboSanPham.Name = "cboSanPham";
-            this.cboSanPham.Size = new System.Drawing.Size(229, 27);
+            this.cboSanPham.Size = new System.Drawing.Size(229, 24);
             this.cboSanPham.TabIndex = 7;
             this.cboSanPham.SelectedIndexChanged += new System.EventHandler(this.cboSanPham_SelectedIndexChanged);
             // 
@@ -320,7 +320,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboSoDienThoaiKhachHang.FormattingEnabled = true;
             this.cboSoDienThoaiKhachHang.Location = new System.Drawing.Point(553, 125);
             this.cboSoDienThoaiKhachHang.Name = "cboSoDienThoaiKhachHang";
-            this.cboSoDienThoaiKhachHang.Size = new System.Drawing.Size(229, 27);
+            this.cboSoDienThoaiKhachHang.Size = new System.Drawing.Size(229, 24);
             this.cboSoDienThoaiKhachHang.TabIndex = 7;
             this.cboSoDienThoaiKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboSoDienThoaiKhachHang_SelectedIndexChanged);
             // 
@@ -330,7 +330,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenKhachHang.FormattingEnabled = true;
             this.cboTenKhachHang.Location = new System.Drawing.Point(553, 93);
             this.cboTenKhachHang.Name = "cboTenKhachHang";
-            this.cboTenKhachHang.Size = new System.Drawing.Size(229, 27);
+            this.cboTenKhachHang.Size = new System.Drawing.Size(229, 24);
             this.cboTenKhachHang.TabIndex = 7;
             this.cboTenKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboTenKhachHang_SelectedIndexChanged);
             // 
@@ -340,7 +340,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenNhanVien.FormattingEnabled = true;
             this.cboTenNhanVien.Location = new System.Drawing.Point(555, 54);
             this.cboTenNhanVien.Name = "cboTenNhanVien";
-            this.cboTenNhanVien.Size = new System.Drawing.Size(229, 27);
+            this.cboTenNhanVien.Size = new System.Drawing.Size(229, 24);
             this.cboTenNhanVien.TabIndex = 7;
             this.cboTenNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboTenNhanVien_SelectedIndexChanged);
             // 
@@ -350,7 +350,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaNhanVien.FormattingEnabled = true;
             this.cboMaNhanVien.Location = new System.Drawing.Point(555, 22);
             this.cboMaNhanVien.Name = "cboMaNhanVien";
-            this.cboMaNhanVien.Size = new System.Drawing.Size(229, 27);
+            this.cboMaNhanVien.Size = new System.Drawing.Size(229, 24);
             this.cboMaNhanVien.TabIndex = 7;
             this.cboMaNhanVien.SelectedIndexChanged += new System.EventHandler(this.cboMaNhanVien_SelectedIndexChanged);
             // 
@@ -372,7 +372,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtDuongDanExport.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDuongDanExport.Location = new System.Drawing.Point(29, 19);
             this.txtDuongDanExport.Name = "txtDuongDanExport";
-            this.txtDuongDanExport.Size = new System.Drawing.Size(427, 30);
+            this.txtDuongDanExport.Size = new System.Drawing.Size(427, 26);
             this.txtDuongDanExport.TabIndex = 1;
             // 
             // btnChonDuongDan
@@ -440,7 +440,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayCuoi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayCuoi.Size = new System.Drawing.Size(240, 28);
+            this.dateNgayCuoi.Size = new System.Drawing.Size(240, 24);
             this.dateNgayCuoi.TabIndex = 2;
             // 
             // dateNgayBatDau
@@ -458,7 +458,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(240, 28);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(240, 24);
             this.dateNgayBatDau.TabIndex = 1;
             // 
             // label11
@@ -468,7 +468,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.ForeColor = System.Drawing.Color.Crimson;
             this.label11.Location = new System.Drawing.Point(4, 38);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 23);
+            this.label11.Size = new System.Drawing.Size(76, 18);
             this.label11.TabIndex = 2;
             this.label11.Text = "Đến ngày:";
             // 
@@ -479,7 +479,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.ForeColor = System.Drawing.Color.Crimson;
             this.label10.Location = new System.Drawing.Point(4, 8);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 23);
+            this.label10.Size = new System.Drawing.Size(69, 18);
             this.label10.TabIndex = 2;
             this.label10.Text = "Từ ngày:";
             // 
@@ -490,7 +490,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label13.ForeColor = System.Drawing.Color.Crimson;
             this.label13.Location = new System.Drawing.Point(869, 62);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(169, 23);
+            this.label13.Size = new System.Drawing.Size(129, 18);
             this.label13.TabIndex = 2;
             this.label13.Text = "Đơn giá đơn hàng:";
             // 
@@ -501,7 +501,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label12.ForeColor = System.Drawing.Color.Crimson;
             this.label12.Location = new System.Drawing.Point(869, 27);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 23);
+            this.label12.Size = new System.Drawing.Size(79, 18);
             this.label12.TabIndex = 2;
             this.label12.Text = "Sản phẩm:";
             // 
@@ -512,7 +512,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label9.ForeColor = System.Drawing.Color.Crimson;
             this.label9.Location = new System.Drawing.Point(370, 131);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(232, 23);
+            this.label9.Size = new System.Drawing.Size(177, 18);
             this.label9.TabIndex = 2;
             this.label9.Text = "Số điện thoại khách hàng:";
             // 
@@ -523,7 +523,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label8.ForeColor = System.Drawing.Color.Crimson;
             this.label8.Location = new System.Drawing.Point(370, 97);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 23);
+            this.label8.Size = new System.Drawing.Size(119, 18);
             this.label8.TabIndex = 2;
             this.label8.Text = "Tên khách hàng:";
             // 
@@ -534,7 +534,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.ForeColor = System.Drawing.Color.Crimson;
             this.label7.Location = new System.Drawing.Point(370, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 23);
+            this.label7.Size = new System.Drawing.Size(107, 18);
             this.label7.TabIndex = 2;
             this.label7.Text = "Tên nhân viên:";
             // 
@@ -545,7 +545,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.ForeColor = System.Drawing.Color.Crimson;
             this.label6.Location = new System.Drawing.Point(370, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 23);
+            this.label6.Size = new System.Drawing.Size(101, 18);
             this.label6.TabIndex = 2;
             this.label6.Text = "Mã nhân viên:";
             // 
@@ -589,7 +589,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label5.ForeColor = System.Drawing.Color.Crimson;
             this.label5.Location = new System.Drawing.Point(4, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 23);
+            this.label5.Size = new System.Drawing.Size(142, 18);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tổng tiền đơn hàng:";
             // 
@@ -600,7 +600,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.ForeColor = System.Drawing.Color.Crimson;
             this.label4.Location = new System.Drawing.Point(4, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 23);
+            this.label4.Size = new System.Drawing.Size(134, 18);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tổng số đơn hàng:";
             // 
@@ -620,7 +620,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboDanhMucThongKe.FormattingEnabled = true;
             this.cboDanhMucThongKe.Location = new System.Drawing.Point(3, 22);
             this.cboDanhMucThongKe.Name = "cboDanhMucThongKe";
-            this.cboDanhMucThongKe.Size = new System.Drawing.Size(337, 31);
+            this.cboDanhMucThongKe.Size = new System.Drawing.Size(337, 26);
             this.cboDanhMucThongKe.TabIndex = 0;
             this.cboDanhMucThongKe.SelectedIndexChanged += new System.EventHandler(this.cboDanhMucThongKe_SelectedIndexChanged);
             // 
@@ -660,7 +660,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.dateNgayThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dateNgayThongKe.EditValue = null;
-            this.dateNgayThongKe.Location = new System.Drawing.Point(100, 1);
+            this.dateNgayThongKe.Location = new System.Drawing.Point(100, 7);
             this.dateNgayThongKe.Name = "dateNgayThongKe";
             this.dateNgayThongKe.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.dateNgayThongKe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -670,7 +670,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayThongKe.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayThongKe.Size = new System.Drawing.Size(310, 30);
+            this.dateNgayThongKe.Size = new System.Drawing.Size(310, 24);
             this.dateNgayThongKe.TabIndex = 1;
             // 
             // label2
@@ -723,7 +723,7 @@ namespace QuanLyLuongSanPham_GUI
             // frmThongKeDonHang
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1254, 601);
