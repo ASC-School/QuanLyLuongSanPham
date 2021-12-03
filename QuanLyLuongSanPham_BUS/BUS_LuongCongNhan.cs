@@ -51,5 +51,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongCongNhan.layThongTinLuong(maNhanVien);
         }
+
+        public object luongCNTheoThangMoi(int iMonth, int iYear)
+        {
+            return luongCongNhan.loadLuongCNTheoThangMoi(iMonth, iYear);
+        }
     }
 }

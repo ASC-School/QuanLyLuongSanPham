@@ -100,6 +100,7 @@ namespace QuanLyLuongSanPham_GUI
             }
             ccbNam.Items.Add(2021);
             ccbNam.Items.Add(2020);
+            ccbNam.Items.Add(2022);
         }
 
         private void loadLuongCongNhan()
@@ -513,6 +514,34 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
             #endregion
+        }
+
+        private void ccbThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime today = new DateTime();
+            int iMonth = Convert.ToInt32(ccbThang.Text);
+            int iYear = Convert.ToInt32(ccbNam.Text);
+            if (ccbThang.Text == today.ToString("MM"))
+            {
+                DialogResult rs = MessageBox.Show("Bạn muốn thêm tháng lương mới ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if(rs == DialogResult.Yes)
+                {
+                    //DTO_LuongCongNhan dto_lcn = new DTO_LuongCongNhan();
+                    //for(int i = 0; i < 12; i++)
+                    //{
+                    //    dto_lcn.MaLuong = "LCN" + 
+                    //}    
+                    //busLuongCongNhan.themThangMoi();
+
+                    this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+                    this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+                    dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThangMoi(iMonth, iYear);
+                }    
+            }
+            else if((ccbThang.Text == "1" || ccbThang.Text == "2" || ccbThang.Text == "3") && iYear == 2022)
+            {
+                MessageBox.Show("Hiện tại chưa qua tháng mới ?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
         }
     }
 }
