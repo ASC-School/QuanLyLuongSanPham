@@ -8,12 +8,13 @@ using QuanLyLuongSanPham_DAO;
 namespace QuanLyLuongSanPham_BUS
 {
     /**
-     * Tác giả: Trần Văn Sỹ
+     * Tác giả: Trần Văn Sỹ,VÕ Thị Trà Giang
      * Phiên bản: 1.0
      * Thời gian tạo: 19/11/2021
      */
     public class BUS_PhanCong
     {
+
         DAO_PhanCong daoPhanCong;
         public BUS_PhanCong()
         {
@@ -39,5 +40,16 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhanCong.layAllPhanCong();
         }
+
+        public IEnumerable<dynamic> layAllPhanCongTheoThangTheoCongNhan(string maNhanVien,int thang)
+        {
+            return daoPhanCong.layDSPhanCongTheoThangTheoCongNhan(maNhanVien, thang);
+        }
+
+        public IEnumerable<dynamic> layAllPhanCongTheoNgayTheoCongNhan(string maNhanVien, DateTime ngay)
+        {
+            return daoPhanCong.layDSPhanCongTheoNgayTheoCongNhan(maNhanVien, ngay);
+        }
+
     }
 }

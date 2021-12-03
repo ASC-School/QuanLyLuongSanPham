@@ -33,6 +33,7 @@ namespace QuanLyLuongSanPham_GUI
         bool bTrangThaiDangNhap = false;
         BUS_PhanQuyen busPQNV = new BUS_PhanQuyen();
         BUS_TaiKhoan busTK = new BUS_TaiKhoan();
+        
         string taiKhoan;
         #endregion
 
@@ -243,6 +244,12 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmChamCong fChamCong = new frmChamCong();
             fChamCong.ShowDialog();
+        }
+
+        private void msTienIch_XemPhanCong_Click(object sender, EventArgs e)
+        {
+            frmXemPhanCong frm = new frmXemPhanCong(maNhanVien);
+            _ = frm.ShowDialog();
         }
     }
 }
