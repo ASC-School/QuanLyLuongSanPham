@@ -47,14 +47,15 @@ namespace QuanLyLuongSanPham_GUI
             }
             ccbNam.Items.Add(2021);
             ccbNam.Items.Add(2020);
+            toolTip1.SetToolTip(btnLayNgayCongThucTe, "Tính ngày công thực tế");
         }
-        private int loadNgayChamCong()
+        private int loadNgayChamCong(string maNhanVien,string thang, string nam)
         {
             int ngayChamCong = 0;
             IEnumerable<PhieuChamCongNhanVienHanhChanh> listChamCong = bus_LuongNVHC.layDSChamCong("NV001");
             foreach(PhieuChamCongNhanVienHanhChanh n in listChamCong)
             {
-                if (n.diLam == true&&n.ngayChamCong.Value.ToString("MM").Equals("12")&& n.ngayChamCong.Value.ToString("yyyy").Equals("2021"))
+                if (n.diLam == true&&n.ngayChamCong.Value.ToString("MM").Equals(thang)&& n.ngayChamCong.Value.ToString("yyyy").Equals(nam))
                     ngayChamCong ++;
                 else
                     ngayChamCong += 0;
@@ -211,6 +212,7 @@ namespace QuanLyLuongSanPham_GUI
             {
                 btnSua.Text = "Lưu";
                 btnHuy.Enabled = true;
+                btnLayNgayCongThucTe.Enabled = true;
             }
             else if (btnSua.Text == "Lưu")
             {
@@ -239,6 +241,7 @@ namespace QuanLyLuongSanPham_GUI
                         btnSua.Text = "Sửa";
                         txtSoNgayCongTT.Enabled = false;
                         btnHuy.Enabled = false;
+                        btnLayNgayCongThucTe.Enabled = false;
                     }
                 }
             }
@@ -425,6 +428,11 @@ namespace QuanLyLuongSanPham_GUI
                     MessageBox.Show("File được lưu trong " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnLayNgayCongThucTe_Click(object sender, EventArgs e)
+        {
+            txtSoNgayCongTT.Text =loadNgayChamCong(txtMaNV.Text, ccbThang.Text, ccbNam.Text).ToString();
         }
     }
 }
