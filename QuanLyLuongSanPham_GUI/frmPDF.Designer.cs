@@ -37,25 +37,27 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.pdfViewer1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.pdfViewer1.Appearance.Options.UseFont = true;
-            this.pdfViewer1.DocumentFilePath = "D:\\NAM_III\\phattrienungdung\\PTUD\\QuanLyLuongSanPham\\Nhom06_7_ApplicationDevelopme" +
-    "nt_UserManual.pdf";
-            this.pdfViewer1.Location = new System.Drawing.Point(-56, 3);
+            this.pdfViewer1.DocumentFilePath = "C:\\Users\\Admin\\OneDrive - Industrial University of HoChiMinh City\\Desktop\\ASC\\Qua" +
+    "nLyLuongSanPham\\Nhom06_7_ApplicationDevelopment_UserManual.pdf";
+            this.pdfViewer1.Location = new System.Drawing.Point(-65, 4);
             this.pdfViewer1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.pdfViewer1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.pdfViewer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.Size = new System.Drawing.Size(1021, 469);
+            this.pdfViewer1.Size = new System.Drawing.Size(1191, 577);
             this.pdfViewer1.TabIndex = 1;
             // 
             // frmPDF
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 471);
+            this.ClientSize = new System.Drawing.Size(1128, 580);
             this.Controls.Add(this.pdfViewer1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPDF";

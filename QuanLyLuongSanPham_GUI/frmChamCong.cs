@@ -86,6 +86,7 @@ namespace QuanLyLuongSanPham_GUI
             cbDiLam.Enabled = bStatus;
             cbDiTre.Enabled = bStatus;
             cbDiLamHet.Enabled = false;
+            //txtSoLuong.Enabled = false;
         }
 
         private void cbbDonVi_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,13 +126,13 @@ namespace QuanLyLuongSanPham_GUI
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                         DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking1);
-                        checkWorking1.HeaderText = "Đi Làm";
+                        checkWorking1.HeaderText = "Đi Làm1";
                         checkWorking1.Name = "DiLamTemp";
                         checkWorking1.ReadOnly = false;
 
                         DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking2);
-                        checkWorking2.HeaderText = "Đi Trễ";
+                        checkWorking2.HeaderText = "Đi Trễ1";
                         checkWorking2.Name = "DiTreTemp";
                         checkWorking2.ReadOnly = false;
                     }
@@ -154,7 +155,7 @@ namespace QuanLyLuongSanPham_GUI
                     }
                     else
                     {
-                        dtgvChamCong.Columns["soLuongSP"].Visible = false;
+                        dtgvChamCong.Columns["soLuongSP"].Visible = true;
                         dtgvChamCong.Columns["diLam"].Visible = false;
                         dtgvChamCong.Columns["diTre"].Visible = false;   
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
@@ -495,40 +496,43 @@ namespace QuanLyLuongSanPham_GUI
         private void dtgvChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
-            {              
-                if(cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
+            {
+                if (btnSua.Text == "Lưu Sửa")
                 {
-                    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
-                    txtSoLuong.Text = row.Cells[6].Value.ToString();
-                }    
-                else if(cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
-                {
-                    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
-                }   
-                else if(cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
-                {
-                    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
+                    {
+                        DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
+                        txtMaNV.Text = row.Cells[2].Value.ToString();
+                        txtHoTen.Text = row.Cells[3].Value.ToString();
+                        cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
+                        cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                        txtSoLuong.Text = row.Cells[6].Value.ToString();
+                    }
+                    else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
+                    {
+                        DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
+                        txtMaNV.Text = row.Cells[2].Value.ToString();
+                        txtHoTen.Text = row.Cells[3].Value.ToString();
+                        cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
+                        cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    }
+                    //else if (cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
+                    //{
+                    //    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
+                    //    txtMaNV.Text = row.Cells[2].Value.ToString();
+                    //    txtHoTen.Text = row.Cells[3].Value.ToString();
+                    //    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
+                    //    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    //}
+                    //else if (cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
+                    //{
+                    //    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
+                    //    txtMaNV.Text = row.Cells[2].Value.ToString();
+                    //    txtHoTen.Text = row.Cells[3].Value.ToString();
+                    //    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
+                    //    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    //}
                 }
-                else if(cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
-                {
-                    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
-                }    
             }
         }
         private void btnSua_Click(object sender, EventArgs e)
@@ -536,12 +540,36 @@ namespace QuanLyLuongSanPham_GUI
             statusText(true);
             if (btnSua.Text == "Sửa")
             {
-                btnSua.Text = "Hủy";
-            }
-            else if (btnSua.Text == "Hủy")
-            {
+                btnChamCong.Enabled = false;
+                btnSua.Text = "Lưu Sửa";
                 statusTextClear();
+            }
+            else if (btnSua.Text == "Lưu Sửa")
+            {
                 statusText(false);
+                txtSoLuong.Enabled = true;
+                if (txtSoLuong.Text == "")
+                {
+                    MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    btnSua.Text = "Lưu Sửa";
+                }
+                else
+                {
+                    DTO_PhieuChamCongCongNhan dto_PCCLCN = new DTO_PhieuChamCongCongNhan();
+                    dto_PCCLCN.MaNhanVien = txtMaNV.Text;
+                    dto_PCCLCN.ISoLuongSPLamTrongNgay = Convert.ToInt32(txtSoLuong.Text);
+                    dto_PCCLCN.DiLam = cbDiLam.Checked;
+                    dto_PCCLCN.DiTre = cbDiTre.Checked;    
+                    if (bus_ChamCong.suaThongTin(dto_PCCLCN, date.Value.ToString("yyyy-MM-dd")) == true)
+                    {
+                        bus_ChamCong.suaThongTin(dto_PCCLCN, date.Value.ToString("yyyy-MM-dd"));
+                        MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
+                        btnSua.Text = "Sửa";
+                        txtSoLuong.Enabled = false;
+                        btnChamCong.Enabled = true;
+                    }
+                }
                 btnSua.Text = "Sửa";
             }
         }
@@ -561,203 +589,209 @@ namespace QuanLyLuongSanPham_GUI
             {
                 if (date.Value.ToString("MM/dd/yyyy") == today.ToString("MM/dd/yyyy"))
                 {
-                    if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
+                    try
                     {
-                        string lastRow = bus_ChamCong.layDongCuoiPCCCN().Trim();
-                        string strNumber = lastRow.Substring(5, 3);
-                        int iNumber = Convert.ToInt32(strNumber) + 1;
-                        bool chamCong = false;
-                        bool diLam = false;
-                        bool diTre = false;
-                        DTO_PhieuChamCongCongNhan newPhieuCCCN = new DTO_PhieuChamCongCongNhan();
-                        for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                        if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
                         {
-                            newPhieuCCCN.MaPhieu = "PCCCN" + (iNumber++);
-                            newPhieuCCCN.NgayChamCong = DateTime.Now;
-                            if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                            string lastRow = bus_ChamCong.layDongCuoiPCCCN().Trim(); string strNumber = lastRow.Substring(5, 2);
+                            int iNumber = Convert.ToInt32(strNumber) + 1;
+                            bool chamCong = false;
+                            bool diLam = true;
+                            bool diTre = true;
+                            DTO_PhieuChamCongCongNhan newPhieuCCCN = new DTO_PhieuChamCongCongNhan();
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
                             {
-                                diLam = false;
+                                newPhieuCCCN.MaPhieu = "PCCCN" + (iNumber++);
+                                newPhieuCCCN.NgayChamCong = DateTime.Now;
+                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                {
+                                    diLam = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                {
+                                    diTre = false;
+                                }
+                                newPhieuCCCN.DiLam = (diLam == true) ? true : false;
+                                newPhieuCCCN.DiTre = (diTre == true) ? true : false;
+                                string strSoLuong = (string)dtgvChamCong.Rows[i].Cells["soLuongSP"].Value;
+                                newPhieuCCCN.ISoLuongSPLamTrongNgay = Convert.ToInt32(strSoLuong.Trim());
+                                newPhieuCCCN.TrangThai = true;
+                                newPhieuCCCN.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
+                                newPhieuCCCN.MaCa = "CA001";
+                                bus_ChamCong.themPhieuChamCongCN(newPhieuCCCN);
+                                chamCong = true;
                             }
-                            if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                            if (chamCong == true)
                             {
-                                diTre = false;
+                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                cbDiLamHet.Enabled = false;
+                                statusCheckCN = true;
                             }
-                            //newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                            //newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                            string strSoLuong = (string)dtgvChamCong.Rows[i].Cells["soLuongSP"].Value;
-                            newPhieuCCCN.ISoLuongSPLamTrongNgay = Convert.ToInt32(strSoLuong.Trim());
-                            newPhieuCCCN.TrangThai = true;
-                            newPhieuCCCN.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                            newPhieuCCCN.MaCa = "CA001";
-                            bus_ChamCong.themPhieuChamCongCN(newPhieuCCCN);
-                            chamCong = true;
+                            else
+                            {
+                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
                         }
-                        if (chamCong == true)
+                        else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
                         {
-                            MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            cbDiLamHet.Enabled = false;
-                            statusCheckCN = true;
+                            string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
+                            string strNumber = lastRow.Substring(7, 2);
+                            int iNumber = Convert.ToInt32(strNumber) + 1;
+                            bool chamCong = false;
+                            bool diLam = true;
+                            bool diTre = true;
+                            DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                            {
+                                newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
+                                newPhieuCCHC.NgayChamCong = DateTime.Now;
+                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                {
+                                    diLam = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                {
+                                    diTre = false;
+                                }
+                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
+                                bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
+                                chamCong = true;
+                            }
+                            if (chamCong == true)
+                            {
+                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                cbDiLamHet.Enabled = false;
+                                statusCheckHC = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
                         }
-                        else
+                        else if (cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
                         {
-                            MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
+                            string strNumber = lastRow.Substring(7, 2);
+                            int iNumber = Convert.ToInt32(strNumber) + 10;
+                            bool chamCong = false;
+                            bool diLam = true;
+                            bool diTre = true;
+                            DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                            {
+                                newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
+                                newPhieuCCHC.NgayChamCong = DateTime.Now;
+                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                {
+                                    diLam = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                {
+                                    diTre = false;
+                                }
+                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                            newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
+                                bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
+                                chamCong = true;
+                            }
+                            if (chamCong == true)
+                            {
+                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                cbDiLamHet.Enabled = false;
+                                statusCheck5L = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
+                        }
+                        else if (cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
+                        {
+                            string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
+                            string strNumber = lastRow.Substring(7, 2);
+                            int iNumber = Convert.ToInt32(strNumber) + 1;
+                            bool chamCong = false;
+                            bool diLam = true;
+                            bool diTre = true;
+                            DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                            {
+                                newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
+                                newPhieuCCHC.NgayChamCong = DateTime.Now;
+                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                {
+                                    diLam = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                {
+                                    diTre = false;
+                                }
+                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                            newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
+                                bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
+                                chamCong = true;
+                            }
+                            if (chamCong == true)
+                            {
+                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                cbDiLamHet.Enabled = false;
+                                statusCheckNS = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
+                        }
+                        else if (cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống")
+                        {
+                            string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
+                            string strNumber = lastRow.Substring(7, 2);
+                            int iNumber = Convert.ToInt32(strNumber) + 1;
+                            bool chamCong = false;
+                            bool diLam = true;
+                            bool diTre = true;
+                            DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                            {
+                                newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
+                                newPhieuCCHC.NgayChamCong = DateTime.Now;
+                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                {
+                                    diLam = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                {
+                                    diTre = false;
+                                }
+                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
+                                bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
+                                chamCong = true;
+                            }
+                            if (chamCong == true)
+                            {
+                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                cbDiLamHet.Enabled = false;
+                                statusCheck4HT = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
                         }
                     }
-                    else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
+                    catch(Exception)
                     {
-                        string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
-                        string strNumber = lastRow.Substring(7, 3);
-                        int iNumber = Convert.ToInt32(strNumber) + 1;
-                        bool chamCong = false;
-                        bool diLam = false;
-                        bool diTre = false;
-                        DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
-                        for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                        {
-                            newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
-                            newPhieuCCHC.NgayChamCong = DateTime.Now;
-                            if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
-                            {
-                                diLam = false;
-                            }
-                            if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
-                            {
-                                diTre = false;
-                            }
-                            //newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                            //newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
-                            newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                            bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
-                            chamCong = true;
-                        }
-                        if (chamCong == true)
-                        {
-                            MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            cbDiLamHet.Enabled = false;
-                            statusCheckHC = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
-                    }
-                    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
-                    {
-                        string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
-                        string strNumber = lastRow.Substring(7, 3);
-                        int iNumber = Convert.ToInt32(strNumber) + 1;
-                        bool chamCong = false;
-                        bool diLam = false;
-                        bool diTre = false;
-                        DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
-                        for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                        {
-                            newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
-                            newPhieuCCHC.NgayChamCong = DateTime.Now;
-                            if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
-                            {
-                                diLam = false;
-                            }
-                            if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
-                            {
-                                diTre = false;
-                            }
-                            //newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                            //newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
-                            newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                            bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
-                            chamCong = true;
-                        }
-                        if (chamCong == true)
-                        {
-                            MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            cbDiLamHet.Enabled = false;
-                            statusCheck5L = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
-                    }
-                    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
-                    {
-                        string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
-                        string strNumber = lastRow.Substring(7, 3);
-                        int iNumber = Convert.ToInt32(strNumber) + 1;
-                        bool chamCong = false;
-                        bool diLam = false;
-                        bool diTre = false;
-                        DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
-                        for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                        {
-                            newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
-                            newPhieuCCHC.NgayChamCong = DateTime.Now;
-                            if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
-                            {
-                                diLam = false;
-                            }
-                            if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
-                            {
-                                diTre = false;
-                            }
-                            //newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                            //newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
-                            newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                            bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
-                            chamCong = true;
-                        }
-                        if (chamCong == true)
-                        {
-                            MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            cbDiLamHet.Enabled = false;
-                            statusCheckNS = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
-                    }
-                    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống")
-                    {
-                        string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
-                        string strNumber = lastRow.Substring(7, 3);
-                        int iNumber = Convert.ToInt32(strNumber) + 1;
-                        bool chamCong = false;
-                        bool diLam = false;
-                        bool diTre = false;
-                        DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
-                        for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                        {
-                            newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
-                            newPhieuCCHC.NgayChamCong = DateTime.Now;
-                            if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
-                            {
-                                diLam = false;
-                            }
-                            if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
-                            {
-                                diTre = false;
-                            }
-                            //newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                            //newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
-                            newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                            bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
-                            chamCong = true;
-                        }
-                        if (chamCong == true)
-                        {
-                            MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            cbDiLamHet.Enabled = false;
-                            statusCheck4HT = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        }
+                        MessageBox.Show("Dữ liệu chưa đúng!");
                     }
                 }
                 //    {
@@ -993,69 +1027,70 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-        private void cbDiLamHet_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dtgvChamCong.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không có gì cả !");
-                }
-                else if (cbDiLamHet.Checked == true)
-                {
-                    for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                    {
-                        dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = true;
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                    {
-                        dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = false;
-                    }
-                }
-            }
-            catch (Exception)
-            { };
-        }
-
         private void btnXem_Click(object sender, EventArgs e)
         {
             //if (date.Value.ToString("MM/dd/yyyy") != today.ToString("MM/dd/yyyy"))
             //{
             try
-            {              
-                dtgvChamCong.Columns["DiLamTemp"].Visible = false;
-                dtgvChamCong.Columns["DiTreTemp"].Visible = false;
-                dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
+            {
+                if(dtgvChamCong.Columns.Count > 5)
                 {
-                    dtgvChamCong.Columns["soLuongSP"].Visible = true;
-                }    
-                //if(cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
-                //{
-                //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                //}      
-                //if(cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
-                //{
-                //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                //} 
-                //if(cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống")
-                //{
-                //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                //}    
-                dtgvChamCong.Columns["diLam"].Visible = true;
-                dtgvChamCong.Columns["diTre"].Visible = true;
-                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
+
+                }
+                {
+                    dtgvChamCong.Columns["DiLamTemp"].Visible = false;
+                    dtgvChamCong.Columns["DiTreTemp"].Visible = false;
+                    //dtgvChamCong.Columns["soLuongSP"].Visible = false;
+                    //if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
+                    //{
+                    //    dtgvChamCong.Columns["soLuongSP"].Visible = true;
+                    //}    
+                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
+                    //{
+                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
+                    //}      
+                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
+                    //{
+                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
+                    //} 
+                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống")
+                    //{
+                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
+                    //}    
+                    dtgvChamCong.Columns["diLam"].Visible = true;
+                    dtgvChamCong.Columns["diTre"].Visible = true;
+                    this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
+                    this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+                    this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+                    dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
+                }        
             }
             catch(Exception)
             { }
             //}
+        }
+
+        private void cbDiLamHet_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dtgvChamCong.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có gì cả !");
+            }
+            else if (cbDiLamHet.Checked == true)
+            {
+                for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                {
+                    dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = true;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                {
+                    dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = false;
+                }
+            }
         }
     }
 }

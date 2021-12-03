@@ -75,9 +75,9 @@ namespace QuanLyLuongSanPham_BUS
             return chamCong.layDongCuoiMaPCCHC();
         }
 
-        public IEnumerable<PhieuChamCongCongNhan> checkChamCong(DateTime today, bool v)
+        public bool suaThongTin(DTO_PhieuChamCongCongNhan dto_PCCLCN, string date)
         {
-            throw new NotImplementedException();
+            return chamCong.suaTTChamCong(dto_PCCLCN, date);
         }
     }
 }

@@ -136,9 +136,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="QuanLyLuongSanPham.dbml.layout">
-      <DependentUpon>QuanLyLuongSanPham.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,6 +150,9 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QuanLyLuongSanPham.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyLuongSanPham.dbml.layout">
+      <DependentUpon>QuanLyLuongSanPham.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -172,12 +172,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QuanLyLuongSanPham_DTO\QuanLyLuongSanPham_DTO.csproj">
-      <Project>{299caf4b-fcd3-4c3e-839c-23af9ad7b2e2}</Project>
-      <Name>QuanLyLuongSanPham_DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -210,6 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyLuongSanPham_DTO\QuanLyLuongSanPham_DTO.csproj">
+      <Project>{299caf4b-fcd3-4c3e-839c-23af9ad7b2e2}</Project>
+      <Name>QuanLyLuongSanPham_DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
