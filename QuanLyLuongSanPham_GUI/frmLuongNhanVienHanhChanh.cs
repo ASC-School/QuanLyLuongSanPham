@@ -52,7 +52,7 @@ namespace QuanLyLuongSanPham_GUI
         private int loadNgayChamCong(string maNhanVien,string thang, string nam)
         {
             int ngayChamCong = 0;
-            IEnumerable<PhieuChamCongNhanVienHanhChanh> listChamCong = bus_LuongNVHC.layDSChamCong("NV001");
+            IEnumerable<PhieuChamCongNhanVienHanhChanh> listChamCong = bus_LuongNVHC.layDSChamCong(maNhanVien);
             foreach(PhieuChamCongNhanVienHanhChanh n in listChamCong)
             {
                 if (n.diLam == true&&n.ngayChamCong.Value.ToString("MM").Equals(thang)&& n.ngayChamCong.Value.ToString("yyyy").Equals(nam))
