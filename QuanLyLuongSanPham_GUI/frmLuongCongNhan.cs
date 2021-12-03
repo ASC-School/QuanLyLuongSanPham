@@ -62,6 +62,22 @@ namespace QuanLyLuongSanPham_GUI
             txtTongLuongTT.Enabled = bStatus;
             txtTamUng.Enabled = bStatus;
         }
+        private int loadSoLuongSanPham(string maNhanVien,string thang,string nam)
+        {
+            int soLuongSanPham = 0;
+            IEnumerable<PhieuChamCongCongNhan> listChamCong = busLuongCongNhan.layDSChamCong(maNhanVien);
+            foreach(PhieuChamCongCongNhan n in listChamCong)
+            {
+                if (n.diLam == true && n.ngayChamCong.Value.ToString("MM").Equals(thang) && n.ngayChamCong.Value.ToString("yyyy").Equals(nam))
+                {
+                    soLuongSanPham += Convert.ToInt32(n.soLuongSP);
+                }
+                else
+                    soLuongSanPham += 0;
+            }
+            return soLuongSanPham;
+        }
+
 
         private void clearTextBox()
         {
@@ -174,6 +190,7 @@ namespace QuanLyLuongSanPham_GUI
             {
                 btnSua.Text = "Lưu";
                 btnHuy.Enabled = true;
+                btnLaySanPhamLamDuoc.Enabled = true;
             }
             else if (btnSua.Text == "Lưu")
             {
@@ -202,6 +219,7 @@ namespace QuanLyLuongSanPham_GUI
                         btnSua.Text = "Sửa";
                         txtSLSPLamDuoc.Enabled = false;
                         btnHuy.Enabled = false;
+                        btnLaySanPhamLamDuoc.Enabled = false;
                     }
                 }
             }
@@ -514,6 +532,11 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
             #endregion
+        }
+
+        private void btnLaySanPhamLamDuoc_Click(object sender, EventArgs e)
+        {
+            txtSLSPLamDuoc.Text = loadSoLuongSanPham(txtMaNV.Text, ccbThang.Text, ccbNam.Text).ToString();
         }
 
         private void ccbThang_SelectedIndexChanged(object sender, EventArgs e)

@@ -51,6 +51,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongCongNhan.layThongTinLuong(maNhanVien);
         }
+        public IEnumerable<PhieuChamCongCongNhan> layDSChamCong(string maNhanVien)
+        {
+            return luongCongNhan.layDSChamCong(maNhanVien);
+        }
 
         public object luongCNTheoThangMoi(int iMonth, int iYear)
         {

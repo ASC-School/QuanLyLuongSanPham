@@ -48,9 +48,6 @@ namespace QuanLyLuongSanPham_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtThucNhan = new DevExpress.XtraEditors.TextEdit();
             this.txtDonVi = new DevExpress.XtraEditors.TextEdit();
@@ -75,9 +72,7 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.btnChiTietLuong = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnReLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvLuongCongNhan = new System.Windows.Forms.DataGridView();
             this.maNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,15 +88,20 @@ namespace QuanLyLuongSanPham_GUI
             this.thucNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ccbThang = new System.Windows.Forms.ComboBox();
             this.lblBangLuongCN = new DevExpress.XtraEditors.LabelControl();
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExcelBC = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.ccbNam = new System.Windows.Forms.ComboBox();
             this.pCLuongCNS = new DevExpress.XtraEditors.PanelControl();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChiTietLuong = new System.Windows.Forms.Button();
+            this.btnReLoad = new System.Windows.Forms.Button();
+            this.btnExcelBC = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.dAOLuongCongNhanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnLaySanPhamLamDuoc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtThucNhan.Properties)).BeginInit();
@@ -120,6 +120,7 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLuongCongNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCLuongCNS)).BeginInit();
             this.pCLuongCNS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dAOLuongCongNhanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,43 +137,9 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "LƯƠNG CÔNG NHÂN";
             // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1868, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 52);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "          ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(1511, 3);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(37, 35);
-            this.btnThoat.TabIndex = 12;
-            this.btnThoat.Text = "          ";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnLaySanPhamLamDuoc);
             this.panelControl2.Controls.Add(this.txtThucNhan);
             this.panelControl2.Controls.Add(this.txtDonVi);
             this.panelControl2.Controls.Add(this.txtPhuCap);
@@ -463,17 +430,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl3.Size = new System.Drawing.Size(1290, 534);
             this.panelControl3.TabIndex = 6;
             // 
-            // btnChiTietLuong
-            // 
-            this.btnChiTietLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTietLuong.Image")));
-            this.btnChiTietLuong.Location = new System.Drawing.Point(1005, 0);
-            this.btnChiTietLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnChiTietLuong.Name = "btnChiTietLuong";
-            this.btnChiTietLuong.Size = new System.Drawing.Size(46, 46);
-            this.btnChiTietLuong.TabIndex = 113;
-            this.btnChiTietLuong.UseVisualStyleBackColor = true;
-            this.btnChiTietLuong.Click += new System.EventHandler(this.btnChiTietLuong_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -486,17 +442,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.Size = new System.Drawing.Size(63, 21);
             this.label3.TabIndex = 111;
             this.label3.Text = "Tháng";
-            // 
-            // btnReLoad
-            // 
-            this.btnReLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnReLoad.Image")));
-            this.btnReLoad.Location = new System.Drawing.Point(1059, 0);
-            this.btnReLoad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReLoad.Name = "btnReLoad";
-            this.btnReLoad.Size = new System.Drawing.Size(43, 46);
-            this.btnReLoad.TabIndex = 113;
-            this.btnReLoad.UseVisualStyleBackColor = true;
-            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
             // 
             // label1
             // 
@@ -843,9 +788,156 @@ namespace QuanLyLuongSanPham_GUI
             this.pCLuongCNS.Size = new System.Drawing.Size(1533, 830);
             this.pCLuongCNS.TabIndex = 10;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(1511, 3);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(37, 35);
+            this.btnThoat.TabIndex = 12;
+            this.btnThoat.Text = "          ";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1868, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 52);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "          ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Appearance.Options.UseFont = true;
+            this.btnTimKiem.Appearance.Options.UseTextOptions = true;
+            this.btnTimKiem.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnTimKiem.AppearanceHovered.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnTimKiem.AppearanceHovered.Options.UseBackColor = true;
+            this.btnTimKiem.AppearancePressed.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnTimKiem.AppearancePressed.Options.UseBackColor = true;
+            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(18, 548);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(190, 76);
+            this.btnTimKiem.TabIndex = 8;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnChiTietLuong
+            // 
+            this.btnChiTietLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTietLuong.Image")));
+            this.btnChiTietLuong.Location = new System.Drawing.Point(1005, 0);
+            this.btnChiTietLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChiTietLuong.Name = "btnChiTietLuong";
+            this.btnChiTietLuong.Size = new System.Drawing.Size(46, 46);
+            this.btnChiTietLuong.TabIndex = 113;
+            this.btnChiTietLuong.UseVisualStyleBackColor = true;
+            this.btnChiTietLuong.Click += new System.EventHandler(this.btnChiTietLuong_Click);
+            // 
+            // btnReLoad
+            // 
+            this.btnReLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnReLoad.Image")));
+            this.btnReLoad.Location = new System.Drawing.Point(1059, 0);
+            this.btnReLoad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(43, 46);
+            this.btnReLoad.TabIndex = 113;
+            this.btnReLoad.UseVisualStyleBackColor = true;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
+            // 
+            // btnExcelBC
+            // 
+            this.btnExcelBC.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcelBC.Appearance.Options.UseFont = true;
+            this.btnExcelBC.Appearance.Options.UseTextOptions = true;
+            this.btnExcelBC.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnExcelBC.AppearanceHovered.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnExcelBC.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExcelBC.AppearancePressed.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnExcelBC.AppearancePressed.Options.UseBackColor = true;
+            this.btnExcelBC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelBC.ImageOptions.Image")));
+            this.btnExcelBC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExcelBC.Location = new System.Drawing.Point(22, 458);
+            this.btnExcelBC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnExcelBC.Name = "btnExcelBC";
+            this.btnExcelBC.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnExcelBC.Size = new System.Drawing.Size(186, 78);
+            this.btnExcelBC.TabIndex = 8;
+            this.btnExcelBC.Text = "Export Excel";
+            this.btnExcelBC.Click += new System.EventHandler(this.btnExcelBC_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.Appearance.Options.UseTextOptions = true;
+            this.btnHuy.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnHuy.AppearanceHovered.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnHuy.AppearanceHovered.Options.UseBackColor = true;
+            this.btnHuy.AppearancePressed.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHuy.AppearancePressed.Options.UseBackColor = true;
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(22, 368);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(186, 78);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.Appearance.Options.UseTextOptions = true;
+            this.btnSua.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnSua.AppearanceHovered.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSua.AppearanceHovered.Options.UseBackColor = true;
+            this.btnSua.AppearancePressed.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSua.AppearancePressed.Options.UseBackColor = true;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.Location = new System.Drawing.Point(22, 272);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(186, 84);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // dAOLuongCongNhanBindingSource
             // 
             this.dAOLuongCongNhanBindingSource.DataSource = typeof(QuanLyLuongSanPham_DAO.DAO_LuongCongNhan);
+            // 
+            // btnLaySanPhamLamDuoc
+            // 
+            this.btnLaySanPhamLamDuoc.BackgroundImage = global::QuanLyLuongSanPham_GUI.Properties.Resources.iconXuLi;
+            this.btnLaySanPhamLamDuoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLaySanPhamLamDuoc.Enabled = false;
+            this.btnLaySanPhamLamDuoc.Location = new System.Drawing.Point(746, 53);
+            this.btnLaySanPhamLamDuoc.Name = "btnLaySanPhamLamDuoc";
+            this.btnLaySanPhamLamDuoc.Size = new System.Drawing.Size(35, 29);
+            this.btnLaySanPhamLamDuoc.TabIndex = 13;
+            this.btnLaySanPhamLamDuoc.UseVisualStyleBackColor = true;
+            this.btnLaySanPhamLamDuoc.Click += new System.EventHandler(this.btnLaySanPhamLamDuoc_Click);
             // 
             // frmLuongCongNhan
             // 
@@ -870,7 +962,6 @@ namespace QuanLyLuongSanPham_GUI
             this.Load += new System.EventHandler(this.FrmLuongCongNhan_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLuongCongNhan_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmLuongCongNhan_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -892,6 +983,7 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pCLuongCNS)).EndInit();
             this.pCLuongCNS.ResumeLayout(false);
             this.pCLuongCNS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dAOLuongCongNhanBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -954,5 +1046,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn tamUng;
         private System.Windows.Forms.DataGridViewTextBoxColumn thucNhan;
         private System.Windows.Forms.DataGridView dtgvLuongCongNhan;
+        private System.Windows.Forms.Button btnLaySanPhamLamDuoc;
     }
 }

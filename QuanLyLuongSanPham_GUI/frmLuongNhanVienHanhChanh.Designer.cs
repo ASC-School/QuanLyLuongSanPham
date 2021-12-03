@@ -29,6 +29,7 @@ namespace QuanLyLuongSanPham_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLuongNhanVienHanhChanh));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,6 +48,7 @@ namespace QuanLyLuongSanPham_GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnLayNgayCongThucTe = new System.Windows.Forms.Button();
             this.txtThucNhan = new DevExpress.XtraEditors.TextEdit();
             this.txtDonVi = new DevExpress.XtraEditors.TextEdit();
             this.txtPhuCap = new DevExpress.XtraEditors.TextEdit();
@@ -97,6 +99,7 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnThoat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtThucNhan.Properties)).BeginInit();
@@ -120,6 +123,7 @@ namespace QuanLyLuongSanPham_GUI
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnLayNgayCongThucTe);
             this.panelControl2.Controls.Add(this.txtThucNhan);
             this.panelControl2.Controls.Add(this.txtDonVi);
             this.panelControl2.Controls.Add(this.txtPhuCap);
@@ -147,6 +151,18 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1439, 159);
             this.panelControl2.TabIndex = 5;
+            // 
+            // btnLayNgayCongThucTe
+            // 
+            this.btnLayNgayCongThucTe.BackgroundImage = global::QuanLyLuongSanPham_GUI.Properties.Resources.iconXuLi;
+            this.btnLayNgayCongThucTe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLayNgayCongThucTe.Enabled = false;
+            this.btnLayNgayCongThucTe.Location = new System.Drawing.Point(724, 71);
+            this.btnLayNgayCongThucTe.Name = "btnLayNgayCongThucTe";
+            this.btnLayNgayCongThucTe.Size = new System.Drawing.Size(35, 29);
+            this.btnLayNgayCongThucTe.TabIndex = 2;
+            this.btnLayNgayCongThucTe.UseVisualStyleBackColor = true;
+            this.btnLayNgayCongThucTe.Click += new System.EventHandler(this.btnLayNgayCongThucTe_Click);
             // 
             // txtThucNhan
             // 
@@ -904,5 +920,7 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn tongLuongTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tienUng;
         private System.Windows.Forms.DataGridViewTextBoxColumn thucNhan;
+        private System.Windows.Forms.Button btnLayNgayCongThucTe;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

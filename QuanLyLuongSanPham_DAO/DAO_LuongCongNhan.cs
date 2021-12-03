@@ -50,6 +50,13 @@ namespace QuanLyLuongSanPham_DAO
                                            };
             return luongCN;
         }
+        public IEnumerable<PhieuChamCongCongNhan> layDSChamCong(string maNhanVien)
+        {
+            IEnumerable<PhieuChamCongCongNhan> q = from n in dataBase.PhieuChamCongCongNhans
+                                                   where n.maNhanVien.Contains(maNhanVien)
+                                                   select n;
+            return q;
+        }
 
         public object loadLuongCNTheoThangMoi(int iMonth, int iYear)
         {
