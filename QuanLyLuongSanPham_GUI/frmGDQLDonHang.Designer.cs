@@ -455,7 +455,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -466,7 +465,7 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1198, 778);
+            this.panelControl1.Size = new System.Drawing.Size(1198, 820);
             this.panelControl1.TabIndex = 5;
             // 
             // label1
@@ -984,7 +983,8 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1299, 799);
+            this.ClientSize = new System.Drawing.Size(1299, 841);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
             this.Controls.Add(this.panel1);
@@ -1014,7 +1014,6 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -1030,6 +1029,7 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

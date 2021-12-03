@@ -121,6 +121,23 @@ namespace QuanLyLuongSanPham_DAO
             }
         }
 
+        public bool suaTTChamCong(DTO_PhieuChamCongCongNhan dto_PCCLCN, string date)
+        {
+            //IQueryable<PhieuChamCongCongNhan> lcn = dataBase.PhieuChamCongCongNhans.Where(x => x.maNhanVien.Trim().Equals(dto_PCCLCN.MaNhanVien) && dto_PCCLCN.NgayChamCong.Equals(date));
+            IEnumerable<PhieuChamCongCongNhan> pcn = from pcccn in dataBase.PhieuChamCongCongNhans
+                                                     where pcccn.maNhanVien.Equals(dto_PCCLCN.MaNhanVien) && pcccn.ngayChamCong.Equals(date)
+                                                     select pcccn;
+            if (pcn.Count() > 0)
+            {
+                pcn.First().soLuongSP = dto_PCCLCN.ISoLuongSPLamTrongNgay;
+                pcn.First().diLam = dto_PCCLCN.DiLam;
+                pcn.First().diTre = dto_PCCLCN.DiTre;
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
         public bool themPCCHC(DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC)
         {
             PhieuChamCongNhanVienHanhChanh temp = new PhieuChamCongNhanVienHanhChanh();
