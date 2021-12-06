@@ -48,5 +48,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongHanhChanh.layDSCHamCong(maNhanVien);
         }
+
+        public object luongHCTheoThangMoi(int iMonth, int iYear)
+        {
+            return luongHanhChanh.loadLuongHCTheoThangMoi(iMonth, iYear);
+        }
     }
 }

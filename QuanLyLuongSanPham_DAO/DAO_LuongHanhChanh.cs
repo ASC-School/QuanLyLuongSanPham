@@ -48,6 +48,37 @@ namespace QuanLyLuongSanPham_DAO
             return dsNVHC;
         }
 
+        public object loadLuongHCTheoThangMoi(int iMonth, int iYear)
+        {
+            IEnumerable<dynamic> luongHCTheoThang = from dv in dataBase.DonViQuanLies
+                                                    join lnv in dataBase.LoaiNhanViens
+                                                    on dv.maLoai equals lnv.maLoai
+                                                    join nv in dataBase.NhanViens
+                                                    on lnv.maLoai equals nv.maLoai
+                                                    join lcn in dataBase.LuongCongNhans
+                                                    on nv.maNhanVien equals lcn.maNhanVien
+                                                    join mtp in dataBase.MucTienPhats
+                                                    on lcn.maTienPhat equals mtp.soThuTu
+                                                    join cdsx in dataBase.CongDoanSanXuats
+                                                    on lcn.maCongDoan equals cdsx.soThuTu
+                                                    where lcn.thangLuong.Equals(iMonth) && lcn.namLuong.Equals(iYear) && lnv.maLoai == "LNV002"
+                                                    select new
+                                                    {
+                                                        maNV = nv.maNhanVien,
+                                                        tenNV = nv.tenNhanVien,
+                                                        donVi = dv.tenBoPhan,
+                                                        congDoan = cdsx.tenCongDoan,
+                                                        soLuongSPLamDuoc = 0,
+                                                        phuCap = lcn.phuCap,
+                                                        tienPhat = mtp.mucTienPhat1,
+                                                        thue = lcn.thue,
+                                                        tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
+                                                        tamUng = lcn.tienUng,
+                                                        thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                    };
+            return luongHCTheoThang;
+        }
+
         public object layNVTimKiemTheoMa(string strMaNV)
         {
             IEnumerable<dynamic> luongCNTheoTimkiem = from dv in dataBase.DonViQuanLies
