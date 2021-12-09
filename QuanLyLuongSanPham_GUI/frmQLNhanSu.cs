@@ -92,7 +92,7 @@ namespace QuanLyLuongSanPham_GUI
                             Avata.Image = img;
                         } 
                         }
-                        catch(Exception ex)
+                        catch
                         {
                             Avata.Image = null;
                         }
@@ -150,7 +150,7 @@ namespace QuanLyLuongSanPham_GUI
         // kiểm tra dữ liệu null trong textbox và combo box
         private bool kiemTraNull()
         {
-            if (txtMaNv.Text.Length == 0 | txtTenNv.Text.Length == 0 | cboGioiTinh.SelectedIndex == null | txtSDT.Text.Length == 0 | txtDiaChi.Text.Length == 0 | dateTimeDayofBirth.Value == null | dateTimeNgayVaoLam.Value == null | cboLoaiNhanVien.SelectedIndex == null)
+            if (txtMaNv.Text.Length == 0 | txtTenNv.Text.Length == 0 | cboGioiTinh.SelectedIndex == -1 | txtSDT.Text.Length == 0 | txtDiaChi.Text.Length == 0 | dateTimeDayofBirth.Value == null | dateTimeNgayVaoLam.Value == null | cboLoaiNhanVien.SelectedIndex == -1)
                 return true;
             return false;
         }

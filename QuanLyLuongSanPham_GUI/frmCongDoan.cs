@@ -15,7 +15,7 @@ using QuanLyLuongSanPham_DTO;
 namespace QuanLyLuongSanPham_GUI
 {
     /**
-     * Tác giả: Trần Văn Sỹ
+     * Tác giả: Trần Văn Sỹ,Võ Thị Trà Giang
      * Phiên bản: 1.0
      * Thời gian tạo: 17/11/2021
      */
@@ -24,30 +24,183 @@ namespace QuanLyLuongSanPham_GUI
         public frmCongDoan()
         {
             InitializeComponent();
+            addLuoiSanPhamSanXuat(dtgvDSSanPham);
+            addLuoiCongDoan(dtgvDSCongDoan);
         }
+        BindingSource bsSanPhamSX = new BindingSource();
+        BindingSource bsCongDoan = new BindingSource();
         BUS_SanPham busSanPHam = new BUS_SanPham();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
         BUS_DonHang busDonHang = new BUS_DonHang();
+        int soLuong = 0;
         private void frmCongDoan_Load(object sender, EventArgs e)
         {
             offControlInput();
             this.dtgvDSCongDoan.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDSSanPham.DefaultCellStyle.ForeColor = Color.Black;
+            _ = this.dtgvDSCongDoan.RowHeadersDefaultCellStyle.Font.Bold;
+            _ = this.dtgvDSSanPham.RowHeadersDefaultCellStyle.Font.Bold;
             loadCbo();
-            toolTipOpenFrmModel.SetToolTip(btnOpenFrmSanPham, "Thêm sản phẩm mới");
-            loadDataSanPham();
-            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            loadDSSanPhamXStoDataGridView();
+            loadDSCongDoantoDataGridView();
         }
-        public void loadSoLuongSanPhamXS(string maSanPham)
+
+        private void addLuoiSanPhamSanXuat(DataGridView dgr)
         {
-            int tongSanPham = 0;
-            IEnumerable<SanPham> listSanPham = busSanPHam.GetSanPhams();
-            IEnumerable<ChiTietDonHang> listCTDH = busDonHang.layCTDHTheoSanPham(maSanPham);
-            foreach (var n in listCTDH)
-            {
-                tongSanPham = tongSanPham + Convert.ToInt32(n.soLuongBan);
-            }
-            txtSoLuongSanXuat.Text = tongSanPham.ToString();
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maSanPhamSanXuat";
+            dc.HeaderText = "Mã sản phẩm sản xuất";
+            dc.Name = "maSanPhamSanXuat";
+            dc.Width = 100;
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maDonHang";
+            dc.HeaderText = "Mã đơn hàng";
+            dc.Name = "maDonHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenSanPham";
+            dc.HeaderText = "Tên sản phẩm";
+            dc.Name = "tenSanPham";
+            dc.Visible = true;
+            dc.Width = 200;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soLuongSanXuat";
+            dc.HeaderText = "Số lượng sản xuất";
+            dc.Width = 100;
+            dc.Name = "soLuongSanXuat";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+        }
+
+        private void addLuoiCongDoan(DataGridView dgr)
+        {
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soThuTu";
+            dc.HeaderText = "Mã công đoạn";
+            dc.Name = "soThuTu";
+            dc.Visible = true;
+            dc.Width = 200;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenCongDoan";
+            dc.HeaderText = "Tên công đoạn";
+            dc.Name = "tenCongDoan";
+            dc.Visible = true;
+            dc.Width = 300;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "donGia";
+            dc.HeaderText = "Giá tiền công đoạn";
+            dc.Name = "donGia";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "thuTuCongDoan";
+            dc.HeaderText = "Thứ tự công đoạn";
+            dc.Name = "thuTuCongDoan";
+            dc.Width = 100;
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maSanPhamSanXuat";
+            dc.HeaderText = "Mã sản phẩm sản xuất";
+            dc.Name = "maSanPhamSanXuat";
+            dc.Width = 100;
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenSanPhamSanXuat";
+            dc.HeaderText = "Tên sản phẩm sản xuất";
+            dc.Name = "tenSanPhamSanXuat";
+            dc.Visible = true;
+            dc.Width = 300;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soLuongSanXuat";
+            dc.HeaderText = "Số lượng sản xuất";
+            dc.Name = "soLuongSanXuat";
+            dc.Visible = true;
+            dc.Width = 200;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maRangBuoc";
+            dc.HeaderText = "Mã ràng buộc";
+            dc.Name = "maRangBuoc";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayBatDau";
+            dc.HeaderText = "Ngày bắt đầu";
+            dc.Name = "ngayBatDau";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayKetThuc";
+            dc.HeaderText = "Ngày kêt thúc";
+            dc.Name = "ngayKetThuc";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+        }
+        public void loadDSSanPhamXStoDataGridView()
+        {
+            bsSanPhamSX.DataSource = busCongDoan.layDSSanPhamSanXuat();
+            dtgvDSSanPham.DataSource = bsSanPhamSX;
+            bindingNavigatorDSSanPhamSX.BindingSource = bsSanPhamSX;
+        }
+
+        public void loadDSCongDoantoDataGridView()
+        {
+            bsCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            dtgvDSCongDoan.DataSource = bsCongDoan;
+            bindingNavigatorDSCongDoan.BindingSource = bsCongDoan;
         }
 
 
@@ -56,22 +209,6 @@ namespace QuanLyLuongSanPham_GUI
             this.Close();
         }
 
-        private void btnOpenFrmModel_Click(object sender, EventArgs e)
-        {
-            frmSanPham frm = new frmSanPham();
-            frm.ShowDialog();
-        }
-
-        private void loadDataSanPham()
-        {
-            dtgvDSSanPham.Rows.Clear();
-            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
-            foreach(var item in listSP)
-            {
-                dtgvDSSanPham.Rows.Add(item.maSanPham, item.tenSanPham, item.giaBan);
-                dtgvDSSanPham.Rows[dtgvDSSanPham.RowCount - 1].Tag = item;
-            }
-        }
         private void tatBtn()
         {
             if (dtgvDSCongDoan.SelectedRows.Count > 0)
@@ -94,9 +231,25 @@ namespace QuanLyLuongSanPham_GUI
                 txtMaCongDoan.Text = row.Cells[0].Value.ToString();
                 txtTenCongDoan.Text = row.Cells[1].Value.ToString();
                 txtDonGia.Text = row.Cells[2].Value.ToString();
-                cboMaSanPham.Text = row.Cells[3].Value.ToString();
-                cboTenSanPhamm.Text = row.Cells[4].Value.ToString();
-                txtSoLuongSanXuat.Text = row.Cells[5].Value.ToString();
+                cboThuTuCongDoan.Text = row.Cells[3].Value.ToString();
+                cboMaSanPhamSanXuat.Text = row.Cells[4].Value.ToString();
+                cboTenSanPhamm.Text = row.Cells[5].Value.ToString();
+                txtSoLuongSanXuat.Text = row.Cells[6].Value.ToString();
+                soLuong = Convert.ToInt32(row.Cells[6].Value.ToString());
+                if (row.Cells[7].Value == null)
+                    cboMaRangBuoc.Text = "None";
+                else
+                    cboMaRangBuoc.Text = row.Cells[7].Value.ToString();
+                dateNgayBatDau.Text = row.Cells[8].Value.ToString();
+                dateNgayKetThuc.Text = row.Cells[9].Value.ToString();
+                if (row.Cells[10].Value.ToString().Equals("True"))
+                    txtTrangThai.Text = "Chưa hoàn thành";
+                else
+                {
+                    txtTrangThai.Text = "Hoàn thành";
+                    btnThemCongDoan.Enabled = false;
+                    btnXoaCongDoan.Enabled = true;
+                }    
             }
         }
         private void offControlInput()
@@ -104,16 +257,27 @@ namespace QuanLyLuongSanPham_GUI
             txtMaCongDoan.Enabled = false;
             txtTenCongDoan.Enabled = false;
             txtDonGia.Enabled = false;
-            cboMaSanPham.Enabled = false;
             cboTenSanPhamm.Enabled = false;
+            txtSoLuongSanXuat.Enabled = false;
+            cboMaRangBuoc.Enabled = false;
+            dateNgayBatDau.Enabled = false;
+            dateNgayKetThuc.Enabled = false;
+            txtTrangThai.Enabled = false;
+            cboMaSanPhamSanXuat.Enabled = false;
+            cboThuTuCongDoan.Enabled = false;
         }
         private void onControlInput()
         {
-            txtMaCongDoan.Enabled = true;
             txtTenCongDoan.Enabled = true;
             txtDonGia.Enabled = true;
-            cboMaSanPham.Enabled = true;
             cboTenSanPhamm.Enabled = true;
+            txtSoLuongSanXuat.Enabled = true;
+            cboMaRangBuoc.Enabled = true;
+            dateNgayBatDau.Enabled = true;
+            dateNgayKetThuc.Enabled = true;
+            txtTrangThai.Enabled = true;
+            cboMaSanPhamSanXuat.Enabled = true;
+            cboThuTuCongDoan.Enabled = true;
         }
         private void clearControlInput()
         {
@@ -121,54 +285,59 @@ namespace QuanLyLuongSanPham_GUI
             txtMaCongDoan.Text = "";
             txtTenCongDoan.Text = "";
             txtDonGia.Text = "";
-            cboMaSanPham.Text = "";
-            cboTenSanPhamm.Text = "";
+            cboTenSanPhamm.Text = "None";
+            cboMaSanPhamSanXuat.Text = "None";
+            cboMaRangBuoc.Text = "None";
+            dateNgayBatDau.Text = "";
+            dateNgayKetThuc.Text = "";
+            txtTrangThai.Clear();
+            cboThuTuCongDoan.Text = "";
         }
         private void loadCbo()
         {
-            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
-            foreach(var item in listSP)
+            cboTenSanPhamm.DataSource = busCongDoan.layTenSanPhamSX();
+            cboMaSanPhamSanXuat.DataSource = busCongDoan.layDSMaSanPhamSanXuat();
+            List<string> thuTuCongDoan = new List<string>();
+            thuTuCongDoan.Add("None");
+            for (int i = 1; i < 21; i++)
             {
-                cboMaSanPham.Items.Add(item.maSanPham);
-                cboTenSanPhamm.Items.Add(item.tenSanPham);
+                thuTuCongDoan.Add("Công đoạn " + i);
             }
+            cboThuTuCongDoan.DataSource = thuTuCongDoan;
+            if (cboTenSanPhamm.Text.Equals("") && cboTenSanPhamm.Equals("None"))
+                cboMaRangBuoc.DataSource = busCongDoan.layMaCongDoanTheoSanPhamSanXuat(cboTenSanPhamm.Text);
+            else 
+                cboMaRangBuoc.DataSource = null;
         }
 
-        private void cboMaSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        private bool kiemTraSoLuongSanPham(string soLuongSP)
         {
-            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
-            foreach (SanPham n in listSP)
-            {
-                if (cboMaSanPham.Text.Equals(n.maSanPham))
-                {
-                    cboTenSanPhamm.Text = n.tenSanPham;
-                    loadSoLuongSanPhamXS(cboMaSanPham.Text);
-                }
-            }
-            if(txtSoLuongSanXuat.Text=="0")
-            {
-                MessageBox.Show("Sản phẩm này không cần sản xuất", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            }    
-            
-        }
-        private void cboTenSanPhamm_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            IEnumerable<SanPham> listSP = busSanPHam.GetSanPhams();
-            foreach (SanPham n in listSP)
-            {
-                if (cboTenSanPhamm.Text.Equals(n.tenSanPham))
-                {
-                    cboMaSanPham.Text = n.maSanPham;
-                }
-            }
+            if (Convert.ToInt32(soLuongSP) < soLuong || Convert.ToInt32(soLuongSP) > 10000)
+                return false;
+            else
+                return true;
         }
         private bool kiemTraNull()
         {
-            if (txtMaCongDoan.Text == "" || txtTenCongDoan.Text == "" || txtDonGia.Text == "" || cboMaSanPham.Text == "")
+            if (txtMaCongDoan.Text == "" || txtTenCongDoan.Text == "" || txtDonGia.Text == ""|| txtSoLuongSanXuat.Text == "" || cboTenSanPhamm.Text.Equals("None") || cboTenSanPhamm.Equals("")  || cboThuTuCongDoan.Text.Equals("") || cboThuTuCongDoan.Text.Equals("None") || dateNgayBatDau.Text.Equals("") ||  dateNgayKetThuc.Text.Equals("") || txtTrangThai.Text.Equals("") || cboMaSanPhamSanXuat.Text.Equals("None") || cboMaSanPhamSanXuat.Text.Equals(""))
             {
                 return true;
             }
             return false;
+        }
+
+        private DTO_CongDoanSanXuat taoCongDoanMoi()
+        {
+            DTO_CongDoanSanXuat newCongDoan = new DTO_CongDoanSanXuat();
+            newCongDoan.SoThuTu = Convert.ToInt32(txtMaCongDoan.Text);
+            newCongDoan.TenCongDoan = txtTenCongDoan.Text;
+            newCongDoan.DonGia = decimal.Parse(txtDonGia.Text);
+            newCongDoan.ThuTuCongDoan = cboThuTuCongDoan.Text;
+            newCongDoan.MaSanPhamSanXuat = cboMaSanPhamSanXuat.Text;
+            newCongDoan.MaRangBuoc = cboMaRangBuoc.Text;
+            newCongDoan.NgayBatDau = DateTime.Parse(dateNgayBatDau.Text);
+            newCongDoan.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
+            return newCongDoan;
         }
 
         private void btnThemCongDoan_Click(object sender, EventArgs e)
@@ -176,6 +345,7 @@ namespace QuanLyLuongSanPham_GUI
             if(btnThemCongDoan.Text.Equals("Thêm"))
             {
                 onControlInput();
+                txtMaCongDoan.Enabled = true;
                 clearControlInput();
                 txtMaCongDoan.Focus();
                 btnThemCongDoan.Text = "Lưu";
@@ -183,28 +353,32 @@ namespace QuanLyLuongSanPham_GUI
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnThemCongDoan.Text = "Thêm";
-                offControlInput();
+                //btnThemCongDoan.Text = "Thêm";
+                //offControlInput();
+            }
+            else if(!kiemTraSoLuongSanPham(txtSoLuongSanXuat.Text))
+            {
+                MessageBox.Show("Số lượng sản phẩm không hợp lệ", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             else
             {
-                DTO_CongDoanSanXuat cd = new DTO_CongDoanSanXuat();
-                cd.SoThuTu = Convert.ToInt32(txtMaCongDoan.Text);
-                cd.TenCongDoan = txtTenCongDoan.Text;
-                cd.DonGia =Convert.ToInt32( txtDonGia.Text);
-                cd.MaSanPham = cboMaSanPham.Text;
-                cd.SoLuongSanPhamSanXuat = Convert.ToInt32(txtSoLuongSanXuat.Text);
+                DTO_CongDoanSanXuat cd = taoCongDoanMoi();
+                if(cd == null)
+                {
+                    MessageBox.Show("Tạo công đoạn mới không thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
                 if (busCongDoan.addCongDoan(cd) == true)
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     busCongDoan.addCongDoan(cd);
-                    dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+                    loadDSCongDoantoDataGridView();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Thêm thất bại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 btnThemCongDoan.Text = "Thêm";
+                clearControlInput();
                 offControlInput();
             }
         }
@@ -213,24 +387,33 @@ namespace QuanLyLuongSanPham_GUI
         {
             if (btnSuaCongDoan.Text.Equals("Sửa"))
             {
-                onControlInput();
-                txtMaCongDoan.Enabled = false;
+                offControlInput();
                 btnSuaCongDoan.Text = "Lưu";
+                txtTenCongDoan.Enabled = true;
+                txtDonGia.Enabled = true;
+                cboMaRangBuoc.Enabled = true;
+                dateNgayBatDau.Enabled = true;
+                dateNgayKetThuc.Enabled = true;
+                txtTrangThai.Enabled = true;
+                txtSoLuongSanXuat.Enabled = true;
             }
             else if (kiemTraNull() == true)
             {
                 MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                btnThemCongDoan.Text = "Sửa";
-                offControlInput();
+                //btnThemCongDoan.Text = "Sửa";
+                //offControlInput();
+            }
+            else if(!kiemTraSoLuongSanPham(txtSoLuongSanXuat.Text))
+            {
+                MessageBox.Show("Số lượng sản phẩm không hợp lệ!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             else
             {
-                DTO_CongDoanSanXuat cd = new DTO_CongDoanSanXuat();
-                cd.SoThuTu = Convert.ToInt32(txtMaCongDoan.Text);
-                cd.TenCongDoan = txtTenCongDoan.Text;
-                cd.DonGia = Convert.ToInt32(txtDonGia.Text);
-                cd.MaSanPham = cboMaSanPham.Text;
-                cd.SoLuongSanPhamSanXuat = Convert.ToInt32(txtSoLuongSanXuat.Text);
+                DTO_CongDoanSanXuat cd = taoCongDoanMoi();
+                if (cd == null)
+                {
+                    MessageBox.Show("Tạo công đoạn mới không thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
                 if (busCongDoan.upDateCongDoan(cd) == true)
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -259,12 +442,12 @@ namespace QuanLyLuongSanPham_GUI
                     bool cd = busCongDoan.delCongDoan(Convert.ToInt32(txtMaCongDoan.Text));
                     if (cd == true)
                     {
-                        MessageBox.Show("successful!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Xóa thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
                     }
                     else
                     {
-                        MessageBox.Show("fail", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Xóa thất bại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     }
                 }
             }
@@ -275,24 +458,36 @@ namespace QuanLyLuongSanPham_GUI
 
         }
 
+        private void btnLoadDSCongDoan_Click(object sender, EventArgs e)
+        {
+            loadDSCongDoantoDataGridView();
+        }
 
+        private void dtgvDSSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSSanPham.Rows[e.RowIndex];
+                cboMaSanPhamSanXuat.Text = row.Cells[0].Value.ToString();
+                cboTenSanPhamm.Text = row.Cells[2].Value.ToString();
+                txtSoLuongSanXuat.Text = row.Cells[3].Value.ToString();
+                soLuong = Convert.ToInt32(txtSoLuongSanXuat.Text);
+            }
+        }
 
+        private void cboMaSanPhamSanXuat_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        //private void loadModel()
-        //{
-        //    bsPHModel.DataSource = sanPhamBUS.getDSModel();
-        //    dgvModel.DataSource = bsPHModel;
-        //    formatLuoiModel(dgvModel);
-        //}
-
-        //private void formatLuoiModel(DataGridView dgr)
-        //{
-        //    dgr.Columns["maModel"].HeaderText = "Mã model";
-        //    dgr.Columns["tenModel"].HeaderText = "Tên model";
-        //    dgr.Columns["tenModel"].Width = 120;
-        //    dgr.Columns["trangThai"].HeaderText = "Trạng Thái";
-        //}
-
-
+            if (cboMaSanPhamSanXuat.SelectedIndex == -1)
+                return;
+            else
+            {
+                string tenSanPham = busCongDoan.timTenSanPhamSXTheoMa(cboMaSanPhamSanXuat.SelectedItem.ToString());
+                List<string> maConDoan = busCongDoan.layMaCongDoanTheoSanPhamSanXuat(cboMaSanPhamSanXuat.SelectedItem.ToString());
+                cboMaRangBuoc.DataSource = maConDoan;
+                cboTenSanPhamm.Text = tenSanPham;
+                soLuong = busCongDoan.laySoLuongSanPhamTheoSanPhamSanXuat(cboMaSanPhamSanXuat.SelectedItem.ToString());
+            }
+        }
     }
 }

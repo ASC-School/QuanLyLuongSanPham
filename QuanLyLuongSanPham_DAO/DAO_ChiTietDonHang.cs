@@ -56,7 +56,9 @@ namespace QuanLyLuongSanPham_DAO
                                    soLuong = chiTietDonHang.soLuongBan,
                                    donGiaSanPham = sanPham.giaBan,
                                    thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
-                                   maNhanVien = nhanVien.maNhanVien
+                                   maNhanVien = nhanVien.maNhanVien,
+                                   trangThai = donHang.trangThai,
+                                   tinhTrangDonHanf = donHang.tinhTrangDonHang
                                }
                 ).OrderBy(p => p.maDonHang);
                 List<DTO_ChiTietDonHang> lst = new List<DTO_ChiTietDonHang>();
@@ -99,7 +101,9 @@ namespace QuanLyLuongSanPham_DAO
                               soLuong = chiTietDonHang.soLuongBan,
                               donGiaSanPham = sanPham.giaBan,
                               thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
-                              maNhanVien = nhanVien.maNhanVien
+                              maNhanVien = nhanVien.maNhanVien,
+                              trangThai = donHang.trangThai,
+                              tinhTrangDonHanf = donHang.tinhTrangDonHang
                           }
                 ).OrderBy(p => p.maDonHang);
                 List<object> lst = new List<object>();
@@ -135,7 +139,9 @@ namespace QuanLyLuongSanPham_DAO
                                    soLuong = chiTietDonHang.soLuongBan,
                                    donGiaSanPham = sanPham.giaBan,
                                    thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
-                                   maNhanVien = nhanVien.maNhanVien
+                                   maNhanVien = nhanVien.maNhanVien,
+                                   trangThai = donHang.trangThai,
+                                   tinhTrangDonHanf = donHang.tinhTrangDonHang
                                }
                  ).OrderBy(p => p.maDonHang);
                 List<object> lst = new List<object>();
@@ -165,7 +171,9 @@ namespace QuanLyLuongSanPham_DAO
                                    soLuong = chiTietDonHang.soLuongBan,
                                    donGiaSanPham = sanPham.giaBan,
                                    thanhTien = (chiTietDonHang.soLuongBan * chiTietDonHang.donGia),
-                                   maNhanVien = nhanVien.maNhanVien
+                                   maNhanVien = nhanVien.maNhanVien,
+                                   trangThai = donHang.trangThai,
+                                   tinhTrangDonHanf = donHang.tinhTrangDonHang
                                }
                  ).OrderBy(p => p.maDonHang);
                 List<object> lst = new List<object>();

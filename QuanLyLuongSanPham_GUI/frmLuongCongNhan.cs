@@ -336,7 +336,7 @@ namespace QuanLyLuongSanPham_GUI
                     }
                 }
             }
-            catch (Exception ee)
+            catch
             {
                 MessageBox.Show("Error!");
             }

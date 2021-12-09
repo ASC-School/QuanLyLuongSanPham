@@ -197,7 +197,6 @@ namespace QuanLyLuongSanPham_BUS
                 // Export data 
                 for (int i = 0; i < dgv.Rows.Count; i++)
                 {
-                    int j = 0;
                     worksheet.Cells["B" + (i + 13)].Value = index;
                     worksheet.Cells["C" + (i + 13)].Value = dgv[0, i].Value;
                     worksheet.Cells["D" + (i + 13)].Value = ((DateTime)dgv[1, i].Value).ToString("dd/MM/yyyy");// ngaybd

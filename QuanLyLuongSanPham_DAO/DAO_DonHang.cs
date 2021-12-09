@@ -35,7 +35,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                tinhTrang = donHang.tinhTrangDonHang.Value,
+                                                trangThai = donHang.trangThai.Value
                                             }).OrderByDescending(p => p.ngayBatDau);
 
             string ngay = dataLst.First().ngayBatDau;
@@ -54,18 +56,21 @@ namespace QuanLyLuongSanPham_DAO
         public IEnumerable<dynamic> layDSDonHang()
         {
             IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
-                           join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                           select new {
-                               maDonHang = donHang.maDonHang,
-                               ngayBatDau = donHang.ngayBatDau,
-                               ngayKetThuc = donHang.ngayKetThuc,
-                               tenKhachHang = donHang.tenKhachHang,
-                               soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
-                               noiDung = donHang.noiDung,
-                               maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien,
-                               trangThai = donHang.trangThai
-                           }).OrderBy(p => p.maDonHang);
+                                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            //where donHang.trangThai == true
+                                            select new
+                                            {
+                                                maDonHang = donHang.maDonHang,
+                                                ngayBatDau = donHang.ngayBatDau,
+                                                ngayKetThuc = donHang.ngayKetThuc,
+                                                tenKhachHang = donHang.tenKhachHang,
+                                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
+                                                noiDung = donHang.noiDung,
+                                                maNhanVien = donHang.maNhanVien,
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang.Value
+                                            }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
 
@@ -73,6 +78,7 @@ namespace QuanLyLuongSanPham_DAO
         {
             IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
                                             join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
+                                            where donHang.trangThai == true
                                             select new
                                             {
                                                 maDonHang = donHang.maDonHang,
@@ -84,7 +90,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 maNhanVien = donHang.maNhanVien,
                                                 tenNhanVien = nhanVien.tenNhanVien,
                                                 thanhTien = chiTietDAO.tongTienDonHang(donHang.maDonHang),
-                                                trangThai = donHang.trangThai
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang.Value
+
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -122,6 +130,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
             donHang.TrangThai = tmp.trangThai.Value;
+            donHang.TinhTrangDonHang = tmp.tinhTrangDonHang.Value;
             return donHang;
         }
         public bool suaDonhang(DTO_DonHang newDonHang)
@@ -136,6 +145,7 @@ namespace QuanLyLuongSanPham_DAO
                 donHang.First().noiDung = newDonHang.NoiDung;
                 donHang.First().maNhanVien = newDonHang.MaNhanVien;
                 donHang.First().trangThai = newDonHang.TrangThai;
+                donHang.First().tinhTrangDonHang = newDonHang.TinhTrangDonHang;
                 dataBase.SubmitChanges();
                 return true;
             }
@@ -156,6 +166,7 @@ namespace QuanLyLuongSanPham_DAO
             donHangTMP.noiDung = donHang.NoiDung;
             donHangTMP.maNhanVien = donHang.MaNhanVien;
             donHangTMP.trangThai = donHang.TrangThai;
+            donHangTMP.tinhTrangDonHang = donHang.TinhTrangDonHang;
 
             dataBase.DonHangs.InsertOnSubmit(donHangTMP);
             dataBase.SubmitChanges();
@@ -198,6 +209,7 @@ namespace QuanLyLuongSanPham_DAO
             donHang.NoiDung = tmp.noiDung;
             donHang.MaNhanVien = tmp.maNhanVien;
             donHang.TrangThai = tmp.trangThai.Value;
+            donHang.TinhTrangDonHang = tmp.tinhTrangDonHang.Value;
             return donHang.TenKhachHang;
         }
         //================== loc tim don hang
@@ -220,7 +232,9 @@ namespace QuanLyLuongSanPham_DAO
                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                noiDung = donHang.noiDung,
                                maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               trangThai = donHang.trangThai,
+                               tinhTrangDonHang = donHang.tinhTrangDonHang
                            }).OrderBy(p => p.maDonHang);
 
             }else if (soDienThoaiKhachHang.Equals(""))
@@ -237,7 +251,9 @@ namespace QuanLyLuongSanPham_DAO
                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                noiDung = donHang.noiDung,
                                maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien
+                               tenNhanVien = nhanVien.tenNhanVien,
+                                trangThai = donHang.trangThai,
+                               tinhTrangDonHang = donHang.tinhTrangDonHang
                            }).OrderBy(p => p.maDonHang);
             }
             else
@@ -254,7 +270,9 @@ namespace QuanLyLuongSanPham_DAO
                                soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                noiDung = donHang.noiDung,
                                maNhanVien = donHang.maNhanVien,
-                               tenNhanVien = nhanVien.tenNhanVien
+                               tenNhanVien = nhanVien.tenNhanVien,
+                               trangThai = donHang.trangThai,
+                               tinhTrangDonHang = donHang.tinhTrangDonHang
                            }).OrderBy(p => p.maDonHang);
             }
             return dataLst;

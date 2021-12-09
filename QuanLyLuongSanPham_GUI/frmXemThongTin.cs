@@ -129,7 +129,7 @@ namespace QuanLyLuongSanPham_GUI
                             Avata.Image = img;
                         }
                     }
-                    catch (Exception ex)
+                    catch 
                     {
                         Avata.Image = null;
                     }

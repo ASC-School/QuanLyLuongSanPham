@@ -172,6 +172,14 @@ namespace QuanLyLuongSanPham_GUI
             dc.Visible = true;
             dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tinhTrangDonHang";
+            dc.HeaderText = "Tình trạng đơn hàng";
+            dc.Name = "tinhTrangDonHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
         }
 
         public void formatTextBox()
@@ -240,6 +248,10 @@ namespace QuanLyLuongSanPham_GUI
             cboMaNhanVien.DataSource = maNhanVien;
             cboTenNhanVien.DataSource = tenNhanVien;
 
+            List<string> tinhTrang = new List<string>();
+            tinhTrang.Add("Đơn đặt hàng");
+            tinhTrang.Add("Đơn hàng");
+            cboTinhTrangDonHang.DataSource = tinhTrang;
         }
 
         private bool chechEmptyDonHang()
@@ -313,6 +325,26 @@ namespace QuanLyLuongSanPham_GUI
                                             txtSoDienKhachHang.Focus();
                                             return false;
                                         }
+                                        else
+                                        {
+                                            errLoi.Clear();
+                                            if(cboTrangThai.Text.Equals(""))
+                                            {
+                                                errLoi.SetError(cboTrangThai, "Bạn phải chọn trạng thái đơn hàng!!");
+                                                cboTrangThai.Focus();
+                                                return false;
+                                            }
+                                            else
+                                            {
+                                                errLoi.Clear();
+                                                if(cboTinhTrangDonHang.Text.Equals(""))
+                                                {
+                                                    errLoi.SetError(cboTinhTrangDonHang, "Bạn phải chọn tình trạng đơn hàng!!");
+                                                    cboTinhTrangDonHang.Focus();
+                                                    return false;
+                                                }    
+                                            }    
+                                        }
                                     }
 
                                 }
@@ -377,19 +409,33 @@ namespace QuanLyLuongSanPham_GUI
             btnHuyDonHang.Enabled = true;
             btnXuatDonHang.Enabled = true;
             hienThongTin();
-            DataGridViewRow row = this.dgvDSDonHang.Rows[e.RowIndex];
-            txtMaDonHang.Text = row.Cells[0].Value.ToString();
-            dateNgayBatDau.Text = row.Cells[1].Value.ToString();
-            dateNgayKetThuc.Text = row.Cells[2].Value.ToString();
-            txtTenKhachHang.Text = row.Cells[3].Value.ToString();
-            txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();
-            txtNoiDung.Text = row.Cells[5].Value.ToString();
-            cboMaNhanVien.Text = row.Cells[6].Value.ToString();
-            cboTenNhanVien.Text = row.Cells[7].Value.ToString();
-            if(row.Cells[8].Value.ToString()=="True")
-                cboTrangThai.SelectedIndex = 0;
-            else
-                cboTrangThai.SelectedIndex = 1;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvDSDonHang.Rows[e.RowIndex];
+                txtMaDonHang.Text = row.Cells[0].Value.ToString();
+                dateNgayBatDau.Text = row.Cells[1].Value.ToString();
+                dateNgayKetThuc.Text = row.Cells[2].Value.ToString();
+                txtTenKhachHang.Text = row.Cells[3].Value.ToString();
+                txtSoDienKhachHang.Text = row.Cells[4].Value.ToString();
+                txtNoiDung.Text = row.Cells[5].Value.ToString();
+                cboMaNhanVien.Text = row.Cells[6].Value.ToString();
+                cboTenNhanVien.Text = row.Cells[7].Value.ToString();
+                if (row.Cells[8].Value.ToString() == "True")
+                    cboTrangThai.SelectedIndex = 0;
+                else
+                    cboTrangThai.SelectedIndex = 1;
+                if (row.Cells[9].Value.ToString() == "True")
+                    cboTinhTrangDonHang.SelectedIndex = 0;
+                else
+                {
+                    cboTinhTrangDonHang.SelectedIndex = 1;
+                    btnThemDonHang.Enabled = false;
+                    btnSuaDonHang.Enabled = false;
+                    btnLuuDonHang.Enabled = false;
+                    btnHuyDonHang.Enabled = false;
+                }    
+            }
+
         }
 
         private void btnLoadDSDonHang_Click(object sender, EventArgs e)
@@ -651,7 +697,6 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void XuLyHoTroAutocomletTenKH()
         {
-            string buffer;
             List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
             txtTenKhachHang.AutoCompleteCustomSource.Clear();
             foreach (DTO_DonHang item in lstDonHang)
@@ -678,6 +723,114 @@ namespace QuanLyLuongSanPham_GUI
         private void txtSoDienKhachHang_TextChanged(object sender, EventArgs e)
         {
             XuLyHoTroAutocomletoDienThoaiKH();
+        }
+        private bool kiemTraRong()
+        {
+            if (txtMaDonHang.Text.Equals("") || dateNgayBatDau.Text.Equals("") || dateNgayKetThuc.Text.Equals("") || txtTenKhachHang.Text.Equals("") || cboTrangThai.Text.Equals("") || cboMaNhanVien.Text.Equals("") || cboTenNhanVien.Text.Equals("") || txtNoiDung.Text.Equals("") || txtSoDienKhachHang.Text.Equals("") || cboTinhTrangDonHang.Text.Equals(""))
+                return true;
+            else
+                return false;
+        }
+
+        private string taoMaSanPhamSanXuat()
+        {
+            string Digits = "1234567890";
+            string allCharacters = Digits;
+            //Random will give random charactors for given length  
+            Random r = new Random();
+            String maSanPhamSanXuat = "SPSX";
+            for (int i = 0; i < 3; i++)
+            {
+                double rand = r.NextDouble();
+                if (i == 0)
+                {
+                    maSanPhamSanXuat += Digits.ToCharArray()[(int)Math.Floor(rand * Digits.Length)];
+                }
+                else
+                {
+                    maSanPhamSanXuat += allCharacters.ToCharArray()[(int)Math.Floor(rand * allCharacters.Length)];
+                }
+            }
+            return maSanPhamSanXuat;
+        }
+
+      
+        private List<DTO_SanPhamSanXuat> taoSanPhamSanXuat(string maDonHang)
+        {
+            List<DTO_ChiTietDonHang> lstChiTietDonHang = donHangBUS.getCTDH(maDonHang);
+            List<DTO_SanPhamSanXuat> lstSPSX = new List<DTO_SanPhamSanXuat>();
+            if(lstChiTietDonHang != null)
+            {
+                foreach (DTO_ChiTietDonHang item in lstChiTietDonHang)
+                {
+                    DTO_SanPhamSanXuat sanPham = new DTO_SanPhamSanXuat();
+                    DTO_SanPham sp = donHangBUS.getMotSanPham(item.MaSanPham);
+                    sanPham.MaSanPhamSanXuat = taoMaSanPhamSanXuat();
+                    sanPham.MaDonHang = maDonHang;
+                    sanPham.TenSanPham = sp.TenSanPham;
+                    sanPham.SoLuongSanXuat = item.SoLuong;
+                    sanPham.TrangThai = false;
+                    lstSPSX.Add(sanPham);
+                }
+                return lstSPSX;
+            }
+            return null;
+        }
+
+        private void btnHoanThanhDatHang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!kiemTraRong())
+                {
+                    newDonHang = taoDonHang();
+                    newDonHang.TinhTrangDonHang = false;
+                    DialogResult hoiThem;
+                    hoiThem = MessageBox.Show("Bạn có muốn hoàn thành đặt đơn hàng?", "Hoàn thành đơn đặt hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (hoiThem == DialogResult.Yes)
+                    {
+                        List<DTO_SanPhamSanXuat> lstSPSX = taoSanPhamSanXuat(newDonHang.MaDonHang);
+                        if(lstSPSX == null)
+                        {
+                            MessageBox.Show("Cần thêm sản phẩm vào đơn hàng!!");
+                        }
+                        else
+                        {
+                            donHangBUS.suaDonHang(newDonHang);
+                            foreach(DTO_SanPhamSanXuat item in lstSPSX)
+                            {
+                                donHangBUS.themSanPhamSanXuat(item);
+                            }
+                            newDonHang = null;
+                            formatTextBox();
+                            khoaThongTin();
+                            MessageBox.Show("Đặt hàng thành công!!");
+                            loadDonHangToDataGridView();
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đặt hàng không thành công!!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!!");
+                }
+
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            frmCongDoan frm = new frmCongDoan();
+            _ = frm.ShowDialog();
         }
     }
 }

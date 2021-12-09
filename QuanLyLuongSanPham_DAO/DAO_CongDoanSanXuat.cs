@@ -8,7 +8,7 @@ using QuanLyLuongSanPham_DTO;
 namespace QuanLyLuongSanPham_DAO
 {
     /**
-     * Tác giả: Trần Văn Sỹ
+     * Tác giả: Trần Văn Sỹ,Võ Thị Trà Giang
      * Phiên bản: 1.0
      * Thời gian tạo: 10/11/2021
      */
@@ -19,14 +19,29 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
+
         public IEnumerable<dynamic> layDSCongDoan()
         {
-            IEnumerable<dynamic> q;
-            q = (
-                from cd in dataBase.CongDoanSanXuats
-                join sp in dataBase.SanPhams on cd.maSanPham equals sp.maSanPham
-                select new { maCongDoan = cd.soThuTu, tenCongDoan = cd.tenCongDoan,donGia=cd.donGia, maSanPham = sp.maSanPham, tenSanPham = sp.tenSanPham, soLuongSanXuat = cd.soLuongSanPhamSanXuat });
-            return q;
+            IEnumerable<dynamic> data;
+            data = from congDoan in dataBase.CongDoanSanXuats
+                   join sanPhamSX in dataBase.SanPhamSanXuats on congDoan.maSanPhamSanXuat equals sanPhamSX.maSanPhamSanXuat
+                   
+                   select new
+                   {
+                       soThuTu = congDoan.soThuTu,
+                       tenCongDoan = congDoan.tenCongDoan,
+                       donGia = congDoan.donGia,
+                       thuTuCongDoan = congDoan.thuTuCongDoan,
+                       maSanPhamSanXuat = sanPhamSX.maSanPhamSanXuat,
+                       tenSanPhamSanXuat = sanPhamSX.tenSanPham,
+                       soLuongSanXuat = sanPhamSX.soLuongSanXuat,
+                       maRangBuoc = congDoan.maRangBuoc,
+                       ngayBatDau = congDoan.ngayBatDau,
+                       ngayKetThuc = congDoan.ngayKetThuc,
+                       trangThai = congDoan.trangThai
+                   };
+
+            return data;
         }
         public CongDoanSanXuat checkIfExist(string strMaCongDoan)
         {
@@ -46,6 +61,31 @@ namespace QuanLyLuongSanPham_DAO
             return cdsx;
         }
 
+        public List<DTO_CongDoanSanXuat> layCongDoanSanXuatTheoSanPham(string maSanPhamSanXuat)
+        {
+            IEnumerable<CongDoanSanXuat> cdsx = dataBase.CongDoanSanXuats.Where(p => p.maSanPhamSanXuat.Equals(maSanPhamSanXuat));
+            if(cdsx != null)
+            {
+                List<DTO_CongDoanSanXuat> lstCongDoan = new List<DTO_CongDoanSanXuat>();
+                foreach (var item in cdsx)
+                {
+                    DTO_CongDoanSanXuat temp = new DTO_CongDoanSanXuat();
+                    temp.SoThuTu = item.soThuTu;
+                    temp.TenCongDoan = item.tenCongDoan;
+                    temp.DonGia = item.donGia.Value;
+                    temp.ThuTuCongDoan = item.thuTuCongDoan;
+                    temp.MaSanPhamSanXuat = item.maSanPhamSanXuat;
+                    temp.MaRangBuoc = item.maRangBuoc;
+                    temp.NgayBatDau = item.ngayBatDau.Value;
+                    temp.NgayKetThuc = item.ngayKetThuc.Value;
+                    temp.TrangThai = item.trangThai.Value;
+                    lstCongDoan.Add(temp);
+                    
+                }
+                return lstCongDoan;
+            }
+            return null;
+        }
         public bool themCongDoan(DTO_CongDoanSanXuat cd)
         {
             string str = cd.SoThuTu.ToString();
@@ -59,8 +99,11 @@ namespace QuanLyLuongSanPham_DAO
                 temp.soThuTu = cd.SoThuTu;
                 temp.tenCongDoan = cd.TenCongDoan;
                 temp.donGia = cd.DonGia;
-                temp.maSanPham = cd.MaSanPham;
-                temp.soLuongSanPhamSanXuat = cd.SoLuongSanPhamSanXuat;
+                temp.maSanPhamSanXuat = cd.MaSanPhamSanXuat;
+                temp.maRangBuoc = cd.MaRangBuoc;
+                temp.ngayBatDau = cd.NgayBatDau;
+                temp.ngayKetThuc = cd.NgayKetThuc;
+                temp.trangThai = cd.TrangThai;
                 dataBase.CongDoanSanXuats.InsertOnSubmit(temp);
                 dataBase.SubmitChanges();
                 return true;
@@ -73,8 +116,11 @@ namespace QuanLyLuongSanPham_DAO
             {
                 cd.First().tenCongDoan = cdUpdate.TenCongDoan;
                 cd.First().donGia = cdUpdate.DonGia;
-                cd.First().maSanPham = cdUpdate.MaSanPham;
-                cd.First().soLuongSanPhamSanXuat = cdUpdate.SoLuongSanPhamSanXuat;
+                cd.First().maSanPhamSanXuat = cdUpdate.MaSanPhamSanXuat;
+                cd.First().maRangBuoc = cdUpdate.MaRangBuoc;
+                cd.First().ngayBatDau = cdUpdate.NgayBatDau;
+                cd.First().ngayKetThuc = cdUpdate.NgayKetThuc;
+                cd.First().trangThai = cdUpdate.TrangThai;
                 dataBase.SubmitChanges();
                 return true;
 

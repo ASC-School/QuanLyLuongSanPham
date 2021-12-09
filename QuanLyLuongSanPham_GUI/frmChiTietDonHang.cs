@@ -179,7 +179,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         private DTO_SanPham getSanPham(string tenSanPham)
         {
-            int i = 0;
+            
             foreach(DTO_SanPham sp in lstSanPham)
             {
                 if (sp.TenSanPham.Equals(tenSanPham))
@@ -405,10 +405,10 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnInDonHang_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printDocument1;//                                chieu rong,chieucao
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Hợp đồng sản xuất", 900, 1700);
-            printDocument1.DefaultPageSettings.Landscape = true;
-            printPreviewDialog1.ShowDialog();
+            //printPreviewDialog1.Document = printDocument1;//                                chieu rong,chieucao
+            //printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Hợp đồng sản xuất", 900, 1700);
+            //printDocument1.DefaultPageSettings.Landscape = true;
+            //printPreviewDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -484,6 +484,98 @@ namespace QuanLyLuongSanPham_GUI
 
             }
 
+
+        }
+
+       
+        private string taoMaSanPhamSanXuat()
+        {
+            string Digits = "1234567890";
+            string allCharacters = Digits;
+            //Random will give random charactors for given length  
+            Random r = new Random();
+            String maSanPhamSanXuat = "SPSX";
+            for (int i = 0; i < 3; i++)
+            {
+                double rand = r.NextDouble();
+                if (i == 0)
+                {
+                    maSanPhamSanXuat += Digits.ToCharArray()[(int)Math.Floor(rand * Digits.Length)];
+                }
+                else
+                {
+                    maSanPhamSanXuat += allCharacters.ToCharArray()[(int)Math.Floor(rand * allCharacters.Length)];
+                }
+            }
+            return maSanPhamSanXuat;
+        }
+
+
+        private List<DTO_SanPhamSanXuat> taoSanPhamSanXuat(string maDonHang)
+        {
+            List<DTO_ChiTietDonHang> lstChiTietDonHang = donHangBUS.getCTDH(maDonHang);
+            List<DTO_SanPhamSanXuat> lstSPSX = new List<DTO_SanPhamSanXuat>();
+            if (lstChiTietDonHang != null)
+            {
+                foreach (DTO_ChiTietDonHang item in lstChiTietDonHang)
+                {
+                    DTO_SanPhamSanXuat sanPham = new DTO_SanPhamSanXuat();
+                    DTO_SanPham sp = donHangBUS.getMotSanPham(item.MaSanPham);
+                    sanPham.MaSanPhamSanXuat = taoMaSanPhamSanXuat();
+                    sanPham.MaDonHang = maDonHang;
+                    sanPham.TenSanPham = sp.TenSanPham;
+                    sanPham.SoLuongSanXuat = item.SoLuong;
+                    sanPham.TrangThai = false;
+                    lstSPSX.Add(sanPham);
+                }
+                return lstSPSX;
+            }
+            return null;
+        }
+
+
+        private void btnHoanTatDonHang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //donHangDTO = taoDonHang();
+                donHangDTO.TinhTrangDonHang = false;
+                DialogResult hoiThem;
+                hoiThem = MessageBox.Show("Bạn có muốn hoàn thành đặt đơn hàng?", "Hoàn thành đơn đặt hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (hoiThem == DialogResult.Yes)
+                {
+                    List<DTO_SanPhamSanXuat> lstSPSX = taoSanPhamSanXuat(donHangDTO.MaDonHang);
+                    if (lstSPSX == null)
+                    {
+                        MessageBox.Show("Cần thêm sản phẩm vào đơn hàng!!");
+                    }
+                    else
+                    {
+                        donHangBUS.suaDonHang(donHangDTO);
+                        foreach (DTO_SanPhamSanXuat item in lstSPSX)
+                        {
+                            donHangBUS.themSanPhamSanXuat(item);
+                        }
+                        formatTextBox();
+                        anThongTin();
+                        MessageBox.Show("Đặt hàng thành công!!");
+                        frmGDQLDonHang frm = new frmGDQLDonHang();
+                        this.Hide();
+                        _ = frm.ShowDialog();
+                    }
+
+                        MessageBox.Show("Đặt hàng không thành công!!");
+                }
+                else
+                {
+                    MessageBox.Show("Đặt hàng không thành công!!");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Đặt hàng không thành công!!");
+            }
 
         }
     }

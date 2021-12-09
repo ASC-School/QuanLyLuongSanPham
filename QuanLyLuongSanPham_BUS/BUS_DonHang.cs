@@ -18,16 +18,23 @@ namespace QuanLyLuongSanPham_BUS
         DAO_DonHang donHangDAO;
         DAO_ChiTietDonHang chiTietDHDAO;
         DAO_SanPham sanPhamDAO;
+        DAO_SanPhamSanXuat sanPhamSanXuatDAO;
         public BUS_DonHang()
         {
             donHangDAO = new DAO_DonHang();
             chiTietDHDAO = new DAO_ChiTietDonHang();
             sanPhamDAO = new DAO_SanPham();
+            sanPhamSanXuatDAO = new DAO_SanPhamSanXuat();
         }
 
         public string layNgayLonNhat()
         {
             return donHangDAO.ngayLonNhat();
+        }
+
+        public bool themSanPhamSanXuat(DTO_SanPhamSanXuat spSanXuat)
+        {
+            return sanPhamSanXuatDAO.themSanPhamSanXuat(spSanXuat);
         }
         public IEnumerable<dynamic> getAllDonHang()
         {

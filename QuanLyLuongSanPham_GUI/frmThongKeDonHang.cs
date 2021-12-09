@@ -81,7 +81,6 @@ namespace QuanLyLuongSanPham_GUI
             decimal tongTien = 0;
             for (int i = 0; i < dgv.Rows.Count; i++)
             {
-                int j = 0;
                 tongTien += (decimal)dgv[8, i].Value;
             }
             lblTongTatCaDonHang.Text = string.Format("{0:N0}", tongTien) + " VNĐ";

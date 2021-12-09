@@ -203,7 +203,6 @@ namespace QuanLyLuongSanPham_GUI
 
         private void XuLyHoTroAutocomletTenKH()
         {
-            string buffer;
             List<DTO_DonHang> lstDonHang = donHangBUS.getDSDonHang();
             txtTenKhachHang.AutoCompleteCustomSource.Clear();
             foreach (DTO_DonHang item in lstDonHang)

@@ -15,11 +15,11 @@ namespace QuanLyLuongSanPham_DTO
     {
         string maDonHang,tenKhachHang,maNhanVien,noiDung,soDienThoaiKhachHang;
         DateTime ngayBatDau, ngayKetThuc;
-        bool trangThai;
+        bool trangThai, tinhTrangDonHang;
 
         public DTO_DonHang() { }
 
-        public DTO_DonHang(string maDonHang, string tenKhachHang, string maNhanVien, string noiDung, string soDienThoaiKhachHang, DateTime ngayBatDau, DateTime ngayKetThuc,bool trangThai)
+        public DTO_DonHang(string maDonHang, string tenKhachHang, string maNhanVien, string noiDung, string soDienThoaiKhachHang, DateTime ngayBatDau, DateTime ngayKetThuc,bool trangThai,bool tinhTrangDonHang)
         {
             this.MaDonHang = maDonHang;
             this.TenKhachHang = tenKhachHang;
@@ -29,6 +29,7 @@ namespace QuanLyLuongSanPham_DTO
             this.ngayBatDau = ngayBatDau;
             this.ngayKetThuc = ngayKetThuc;
             this.TrangThai = trangThai;
+            this.TinhTrangDonHang = tinhTrangDonHang;
         }
 
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
@@ -39,5 +40,6 @@ namespace QuanLyLuongSanPham_DTO
         public string MaDonHang { get => maDonHang; set => maDonHang = value; }
         public string SoDienThoaiKhachHang { get => soDienThoaiKhachHang; set => soDienThoaiKhachHang = value; }
         public bool TrangThai { get => trangThai; set => trangThai = value; }
+        public bool TinhTrangDonHang { get => tinhTrangDonHang; set => tinhTrangDonHang = value; }
     }
 }

@@ -117,6 +117,7 @@
     <Compile Include="DAO_PhatNhanVien.cs" />
     <Compile Include="DAO_PhieuChamCong.cs" />
     <Compile Include="DAO_SanPham.cs" />
+    <Compile Include="DAO_SanPhamSanXuat.cs" />
     <Compile Include="DAO_TaiKhoan.cs" />
     <Compile Include="NhanViens.cs" />
     <Compile Include="Program.cs" />

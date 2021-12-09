@@ -35,7 +35,7 @@ namespace QuanLyLuongSanPham_GUI
         BUS_LuongNhanVienHanhChanh bus_LuongNVHC = new BUS_LuongNhanVienHanhChanh();
         BUS_DonViQuanLy busDVQL = new BUS_DonViQuanLy();
         BUS_NhanVien busNV = new BUS_NhanVien();
-        bool bCheckNVTimKiem = false;
+        //bool bCheckNVTimKiem = false;
         #endregion
 
         #region Methos
