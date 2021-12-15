@@ -34,6 +34,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.layDSCongDoan();
         }
+        public IEnumerable<dynamic> layDSCongDoanChuaHoanThanh()
+        {
+            return cd.layDSCongDoanChuaHoanThanh();
+        }
         public bool addCongDoan(QuanLyLuongSanPham_DTO.DTO_CongDoanSanXuat cdnew)
         {
             if (kiemTraTrungCongDoan(cdnew.MaSanPhamSanXuat, cdnew.ThuTuCongDoan))
@@ -48,9 +52,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.xoaCongDoan(maCongDoan);
         }
+        public IEnumerable<CongDoanSanXuat> layAllCDCHT()
+        {
+            return cd.layALLDsCongDoanChuaHoanThanh();
+        }
         public IEnumerable<CongDoanSanXuat> layAllDsCD()
         {
-            return cd.layAllDsCongDoan();
+            return cd.layALLDsCD();
         }
         public bool kiemTraTrungCongDoan(string maSanPhamSanXuat,string congDoan)
         {

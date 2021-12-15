@@ -62,6 +62,12 @@ namespace QuanLyLuongSanPham_DAO
                  select nv);
             return q;
         }
+        public IEnumerable<NhanVien> layNhanVienQLNS()
+        {
+            IEnumerable<NhanVien> q;
+            q = from nv in dataBase.NhanViens where nv.maLoai.Contains("LNV004") select nv;
+            return q;      
+        }
         public List<DTO_NhanVien> layToanBoDanhSachNhanVien()
         {
             var dataLst = (from nv in dataBase.NhanViens where (nv.maLoai.Equals("LNV001")) select nv);

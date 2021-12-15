@@ -13,7 +13,7 @@ namespace QuanLyLuongSanPham_DTO
      */
     public class DTO_PhanCong
     {
-        string maPhanCong, maNhanVien, maCa;
+        string maPhanCong, maNhanVien, maCa,maNVPhanCong;
         int maCongDoan;
         DateTime ngayLam;
 
@@ -21,18 +21,21 @@ namespace QuanLyLuongSanPham_DTO
         {
         }
 
-        public DTO_PhanCong(string maPhanCong, string maNhanVien, string maCa, int maCongDoan, DateTime ngayLam)
+
+        public DTO_PhanCong(string maPhanCong, string maNhanVien, string maCa, string maNVPhanCong, int maCongDoan, DateTime ngayLam)
         {
-            this.maPhanCong = maPhanCong;
-            this.maNhanVien = maNhanVien;
-            this.maCa = maCa;
-            this.maCongDoan = maCongDoan;
-            this.ngayLam = ngayLam;
+            this.MaPhanCong = maPhanCong;
+            this.MaNhanVien = maNhanVien;
+            this.MaCa = maCa;
+            this.MaNVPhanCong = maNVPhanCong;
+            this.MaCongDoan = maCongDoan;
+            this.NgayLam = ngayLam;
         }
 
         public string MaPhanCong { get => maPhanCong; set => maPhanCong = value; }
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
         public string MaCa { get => maCa; set => maCa = value; }
+        public string MaNVPhanCong { get => maNVPhanCong; set => maNVPhanCong = value; }
         public int MaCongDoan { get => maCongDoan; set => maCongDoan = value; }
         public DateTime NgayLam { get => ngayLam; set => ngayLam = value; }
     }
