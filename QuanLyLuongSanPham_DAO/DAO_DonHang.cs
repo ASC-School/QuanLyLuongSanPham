@@ -57,7 +57,7 @@ namespace QuanLyLuongSanPham_DAO
         {
             IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
                                             join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                                            //where donHang.trangThai == true
+                                            where donHang.tinhTrangDonHang == true // trạng thái đơn đặt hàng
                                             select new
                                             {
                                                 maDonHang = donHang.maDonHang,
@@ -78,7 +78,7 @@ namespace QuanLyLuongSanPham_DAO
         {
             IEnumerable<dynamic> dataLst = (from donHang in dataBase.DonHangs
                                             join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                                            where donHang.trangThai == true
+                                            where donHang.tinhTrangDonHang == true 
                                             select new
                                             {
                                                 maDonHang = donHang.maDonHang,
@@ -222,7 +222,7 @@ namespace QuanLyLuongSanPham_DAO
             {
                 dataLst = (from donHang in dataBase.DonHangs
                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                           where donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang) && donHang.maNhanVien.Equals(maNhanVien)
+                           where donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang) && donHang.maNhanVien.Equals(maNhanVien) 
                            select new
                            {
                                maDonHang = donHang.maDonHang,
@@ -241,7 +241,7 @@ namespace QuanLyLuongSanPham_DAO
             {
                 dataLst = (from donHang in dataBase.DonHangs
                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                           where donHang.tenKhachHang.Equals(tenKhachHang) && donHang.maNhanVien.Equals(maNhanVien)
+                           where donHang.tenKhachHang.Equals(tenKhachHang) && donHang.maNhanVien.Equals(maNhanVien) 
                            select new
                            {
                                maDonHang = donHang.maDonHang,
@@ -260,7 +260,7 @@ namespace QuanLyLuongSanPham_DAO
             {
                 dataLst = (from donHang in dataBase.DonHangs
                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                           where donHang.tenKhachHang.Equals(tenKhachHang) && donHang.maNhanVien.Equals(maNhanVien) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang)
+                           where donHang.tenKhachHang.Equals(tenKhachHang) && donHang.maNhanVien.Equals(maNhanVien) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang) 
                            select new
                            {
                                maDonHang = donHang.maDonHang,
@@ -302,7 +302,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -325,7 +327,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -348,7 +352,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -371,7 +377,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -394,7 +402,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -417,7 +427,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -440,7 +452,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -463,7 +477,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -507,7 +523,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -528,7 +546,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -549,7 +569,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -570,7 +592,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -591,7 +615,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -612,7 +638,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -633,7 +661,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -654,7 +684,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -675,7 +707,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -696,7 +730,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -717,7 +753,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -739,7 +777,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -760,7 +800,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -781,7 +823,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -802,7 +846,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -825,7 +871,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -848,7 +896,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -871,7 +921,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -894,7 +946,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -917,7 +971,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -940,7 +996,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -963,7 +1021,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -986,7 +1046,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1009,7 +1071,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1032,7 +1096,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1055,7 +1121,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1078,7 +1146,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1101,7 +1171,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1124,7 +1196,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1147,7 +1221,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1170,7 +1246,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1193,7 +1271,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1216,7 +1296,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1239,7 +1321,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1263,7 +1347,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1286,7 +1372,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1309,7 +1397,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1330,7 +1420,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1351,7 +1443,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1372,7 +1466,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1395,7 +1491,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1418,7 +1516,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1441,7 +1541,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1464,7 +1566,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1487,7 +1591,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1510,7 +1616,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1534,7 +1642,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1556,7 +1666,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1580,7 +1692,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1606,7 +1720,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1627,7 +1743,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1650,7 +1768,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1673,7 +1793,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1697,7 +1819,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1718,7 +1842,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1741,7 +1867,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1764,7 +1892,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1787,7 +1917,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1810,7 +1942,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1833,7 +1967,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1856,7 +1992,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1880,7 +2018,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1902,7 +2042,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1923,6 +2065,8 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang,
                                                 tenNhanVien = nhanVien.tenNhanVien
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
@@ -1966,7 +2110,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -1987,7 +2133,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2010,7 +2158,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2033,7 +2183,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2057,7 +2209,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2078,7 +2232,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2101,7 +2257,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2124,7 +2282,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2147,7 +2307,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2170,7 +2332,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2193,7 +2357,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2216,7 +2382,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2240,7 +2408,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2262,7 +2432,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2283,7 +2455,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -2306,7 +2480,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2327,7 +2503,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2350,7 +2528,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2373,7 +2553,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2397,7 +2579,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2418,7 +2602,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2441,7 +2627,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2464,7 +2652,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2487,7 +2677,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2510,7 +2702,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2533,7 +2727,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2556,7 +2752,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2580,7 +2778,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2602,7 +2802,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2623,7 +2825,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -2663,7 +2867,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }).OrderBy(p => p.maDonHang);
             return dataLst;
         }
@@ -2706,7 +2912,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2727,7 +2935,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2750,7 +2960,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2773,7 +2985,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2797,7 +3011,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2818,7 +3034,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2841,7 +3059,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2864,7 +3084,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2887,7 +3109,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2910,7 +3134,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2933,7 +3159,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2956,7 +3184,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -2979,7 +3209,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                ).OrderBy(p => p.maDonHang);
 
@@ -3024,7 +3256,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -3047,7 +3281,9 @@ namespace QuanLyLuongSanPham_DAO
                                                 soDienThoaiKhachHang = donHang.soDienThoaiKhachHang,
                                                 noiDung = donHang.noiDung,
                                                 maNhanVien = donHang.maNhanVien,
-                                                tenNhanVien = nhanVien.tenNhanVien
+                                                tenNhanVien = nhanVien.tenNhanVien,
+                                                trangThai = donHang.trangThai,
+                                                tinhTrangDonHang = donHang.tinhTrangDonHang
                                             }
                 ).OrderBy(p => p.maDonHang);
             if (dataLst == null) return null;
@@ -3064,7 +3300,7 @@ namespace QuanLyLuongSanPham_DAO
                     DateTime ngayBD = DateTime.Parse(ngayBatDau);
                     dataLst = (from donHang in dataBase.DonHangs
                                join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                               where donHang.ngayBatDau >= ngayBD && donHang.maNhanVien.Equals(maNhanVien)
+                               where donHang.ngayBatDau >= ngayBD && donHang.maNhanVien.Equals(maNhanVien) && donHang.tinhTrangDonHang == false
                                select new
                                {
                                    maDonHang = donHang.maDonHang,
@@ -3090,7 +3326,7 @@ namespace QuanLyLuongSanPham_DAO
                 DateTime ngayKT = DateTime.Parse(ngayCuoi);
                 dataLst = (from donHang in dataBase.DonHangs
                            join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                           where donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien)
+                           where donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien) && donHang.tinhTrangDonHang == false
                            select new
                            {
                                maDonHang = donHang.maDonHang,
@@ -3114,7 +3350,7 @@ namespace QuanLyLuongSanPham_DAO
                     if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
                     dataLst = (from donHang in dataBase.DonHangs
                                join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                               where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien)
+                               where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.maNhanVien.Equals(maNhanVien) && donHang.tinhTrangDonHang == false
                                select new
                                {
                                    maDonHang = donHang.maDonHang,
@@ -3151,7 +3387,7 @@ namespace QuanLyLuongSanPham_DAO
                         DateTime ngayBD = DateTime.Parse(ngayBatDau);
                         dataLst = (from donHang in dataBase.DonHangs
                                    join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang)
+                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.tinhTrangDonHang == false
                                    select new
                                    {
                                        maDonHang = donHang.maDonHang,
@@ -3177,7 +3413,7 @@ namespace QuanLyLuongSanPham_DAO
                     DateTime ngayKT = DateTime.Parse(ngayCuoi);
                     dataLst = (from donHang in dataBase.DonHangs
                                join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                               where donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang)
+                               where donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.tinhTrangDonHang == false
                                select new
                                {
                                    maDonHang = donHang.maDonHang,
@@ -3201,7 +3437,7 @@ namespace QuanLyLuongSanPham_DAO
                         if (DateTime.Compare(ngayBD, ngayKT) < 0) return null;
                         dataLst = (from donHang in dataBase.DonHangs
                                    join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang)
+                                   where donHang.ngayBatDau >= ngayBD && donHang.ngayBatDau <= ngayKT && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.tinhTrangDonHang == false
                                    select new
                                    {
                                        maDonHang = donHang.maDonHang,
@@ -3233,7 +3469,7 @@ namespace QuanLyLuongSanPham_DAO
                         DateTime ngayBD = DateTime.Parse(ngayBatDau);
                         dataLst = (from donHang in dataBase.DonHangs
                                    join nhanVien in dataBase.NhanViens on donHang.maNhanVien equals nhanVien.maNhanVien
-                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang)
+                                   where donHang.ngayBatDau >= ngayBD && donHang.tenKhachHang.Equals(tenKhachHang) && donHang.soDienThoaiKhachHang.Equals(soDienThoaiKhachHang) && donHang.tinhTrangDonHang == false
                                    select new
                                    {
                                        maDonHang = donHang.maDonHang,

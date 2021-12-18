@@ -130,7 +130,23 @@ namespace QuanLyLuongSanPham_GUI
             dc.Visible = true;
             dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgr.Columns.Add(dc);
-                 
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tinhTrangDonHang";
+            dc.HeaderText = "Tình trạng đơn hàng";
+            dc.Name = "tinhTrangDonHang";
+            dc.Visible = true;
+            dc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgr.Columns.Add(dc);
+
         }
         private void loadCbo()
         {

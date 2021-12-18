@@ -75,15 +75,15 @@ namespace QuanLyLuongSanPham_GUI
             }
             else
             {
-
+                lblTongSoDonHang.Text = dgv.Rows.Count.ToString();
+                decimal tongTien = 0;
+                for (int i = 0; i < dgv.Rows.Count; i++)
+                {
+                    tongTien += (decimal)dgv[8, i].Value;
+                }
+                lblTongTatCaDonHang.Text = string.Format("{0:N0}", tongTien) + " VNĐ";
             }    
-            lblTongSoDonHang.Text = dgv.Rows.Count.ToString();
-            decimal tongTien = 0;
-            for (int i = 0; i < dgv.Rows.Count; i++)
-            {
-                tongTien += (decimal)dgv[8, i].Value;
-            }
-            lblTongTatCaDonHang.Text = string.Format("{0:N0}", tongTien) + " VNĐ";
+           
         }
         private void frmThongKeDonHang_Load(object sender, EventArgs e)
         {

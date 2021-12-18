@@ -76,7 +76,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label10 = new System.Windows.Forms.Label();
             this.dateNgayKetThuc = new DevExpress.XtraEditors.DateEdit();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -98,6 +97,9 @@ namespace QuanLyLuongSanPham_GUI
             this.cboThuTuCongDoan = new System.Windows.Forms.ComboBox();
             this.cboMaRangBuoc = new System.Windows.Forms.ComboBox();
             this.errLoi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.errorLoi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -118,6 +120,8 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorDSCongDoan)).BeginInit();
             this.bindingNavigatorDSCongDoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errLoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -338,7 +342,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(6, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 20);
+            this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 44;
             this.label1.Text = "Thông tin sản phẩm sản xuất:";
             // 
@@ -564,6 +568,10 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgayBatDau.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayBatDau.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateNgayBatDau.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayBatDau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateNgayBatDau.Size = new System.Drawing.Size(405, 26);
             this.dateNgayBatDau.TabIndex = 63;
             // 
@@ -588,6 +596,10 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgayKetThuc.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayKetThuc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateNgayKetThuc.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayKetThuc.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateNgayKetThuc.Size = new System.Drawing.Size(405, 26);
             this.dateNgayKetThuc.TabIndex = 63;
             // 
@@ -600,16 +612,6 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.Size = new System.Drawing.Size(122, 19);
             this.label11.TabIndex = 49;
             this.label11.Text = "Trạng thái:";
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Enabled = false;
-            this.txtTrangThai.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTrangThai.Location = new System.Drawing.Point(226, 364);
-            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(405, 26);
-            this.txtTrangThai.TabIndex = 62;
             // 
             // label12
             // 
@@ -790,6 +792,24 @@ namespace QuanLyLuongSanPham_GUI
             // 
             this.errLoi.ContainerControl = this;
             // 
+            // cboTrangThai
+            // 
+            this.cboTrangThai.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboTrangThai.FormattingEnabled = true;
+            this.cboTrangThai.Location = new System.Drawing.Point(226, 367);
+            this.cboTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(405, 26);
+            this.cboTrangThai.TabIndex = 4;
+            // 
+            // errorLoi
+            // 
+            this.errorLoi.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmCongDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -801,7 +821,6 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.bindingNavigatorDSCongDoan);
             this.Controls.Add(this.dateNgayKetThuc);
             this.Controls.Add(this.dateNgayBatDau);
-            this.Controls.Add(this.txtTrangThai);
             this.Controls.Add(this.txtSoLuongSanXuat);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label8);
@@ -809,6 +828,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Controls.Add(this.btnSuaCongDoan);
             this.Controls.Add(this.btnThemCongDoan);
             this.Controls.Add(this.cboMaSanPhamSanXuat);
+            this.Controls.Add(this.cboTrangThai);
             this.Controls.Add(this.cboThuTuCongDoan);
             this.Controls.Add(this.cboMaRangBuoc);
             this.Controls.Add(this.cboTenSanPhamm);
@@ -859,6 +879,8 @@ namespace QuanLyLuongSanPham_GUI
             this.bindingNavigatorDSCongDoan.ResumeLayout(false);
             this.bindingNavigatorDSCongDoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errLoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -896,7 +918,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label10;
         private DevExpress.XtraEditors.DateEdit dateNgayKetThuc;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.BindingNavigator bindingNavigatorDSSanPhamSX;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -930,5 +951,8 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.ComboBox cboThuTuCongDoan;
         private System.Windows.Forms.ComboBox cboMaRangBuoc;
         private System.Windows.Forms.ErrorProvider errLoi;
+        private System.Windows.Forms.ComboBox cboTrangThai;
+        private System.Windows.Forms.ErrorProvider errorLoi;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

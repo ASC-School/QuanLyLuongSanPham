@@ -19,7 +19,7 @@ namespace QuanLyLuongSanPham_DAO
         {
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
-
+        
         public IEnumerable<dynamic> layDSCongDoan()
         {
             IEnumerable<dynamic> data;
@@ -101,6 +101,7 @@ namespace QuanLyLuongSanPham_DAO
                 temp.donGia = cd.DonGia;
                 temp.maSanPhamSanXuat = cd.MaSanPhamSanXuat;
                 temp.maRangBuoc = cd.MaRangBuoc;
+                temp.thuTuCongDoan = cd.ThuTuCongDoan;
                 temp.ngayBatDau = cd.NgayBatDau;
                 temp.ngayKetThuc = cd.NgayKetThuc;
                 temp.trangThai = cd.TrangThai;

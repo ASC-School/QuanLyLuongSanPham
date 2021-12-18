@@ -29,9 +29,7 @@ namespace QuanLyLuongSanPham_GUI
         }
         BindingSource bsSanPhamSX = new BindingSource();
         BindingSource bsCongDoan = new BindingSource();
-        BUS_SanPham busSanPHam = new BUS_SanPham();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
-        BUS_DonHang busDonHang = new BUS_DonHang();
         int soLuong = 0;
         private void frmCongDoan_Load(object sender, EventArgs e)
         {
@@ -231,7 +229,7 @@ namespace QuanLyLuongSanPham_GUI
                 txtMaCongDoan.Text = row.Cells[0].Value.ToString();
                 txtTenCongDoan.Text = row.Cells[1].Value.ToString();
                 txtDonGia.Text = row.Cells[2].Value.ToString();
-                cboThuTuCongDoan.Text = row.Cells[3].Value.ToString();
+                //cboThuTuCongDoan.Text = row.Cells[3].Value.ToString();
                 cboMaSanPhamSanXuat.Text = row.Cells[4].Value.ToString();
                 cboTenSanPhamm.Text = row.Cells[5].Value.ToString();
                 txtSoLuongSanXuat.Text = row.Cells[6].Value.ToString();
@@ -243,12 +241,16 @@ namespace QuanLyLuongSanPham_GUI
                 dateNgayBatDau.Text = row.Cells[8].Value.ToString();
                 dateNgayKetThuc.Text = row.Cells[9].Value.ToString();
                 if (row.Cells[10].Value.ToString().Equals("True"))
-                    txtTrangThai.Text = "Chưa hoàn thành";
+                {
+                    cboTrangThai.Text = "Chưa hoàn thành";
+                    row.Cells[10].Style.BackColor = Color.Green;
+                }    
                 else
                 {
-                    txtTrangThai.Text = "Hoàn thành";
+                    cboTrangThai.Text = "Hoàn thành";
                     btnThemCongDoan.Enabled = false;
                     btnXoaCongDoan.Enabled = true;
+                    row.Cells[10].Style.BackColor = Color.Red;
                 }    
             }
         }
@@ -262,7 +264,7 @@ namespace QuanLyLuongSanPham_GUI
             cboMaRangBuoc.Enabled = false;
             dateNgayBatDau.Enabled = false;
             dateNgayKetThuc.Enabled = false;
-            txtTrangThai.Enabled = false;
+            cboTrangThai.Enabled = false;
             cboMaSanPhamSanXuat.Enabled = false;
             cboThuTuCongDoan.Enabled = false;
         }
@@ -275,7 +277,7 @@ namespace QuanLyLuongSanPham_GUI
             cboMaRangBuoc.Enabled = true;
             dateNgayBatDau.Enabled = true;
             dateNgayKetThuc.Enabled = true;
-            txtTrangThai.Enabled = true;
+            cboTrangThai.Enabled = true;
             cboMaSanPhamSanXuat.Enabled = true;
             cboThuTuCongDoan.Enabled = true;
         }
@@ -290,7 +292,7 @@ namespace QuanLyLuongSanPham_GUI
             cboMaRangBuoc.Text = "None";
             dateNgayBatDau.Text = "";
             dateNgayKetThuc.Text = "";
-            txtTrangThai.Clear();
+            cboTrangThai.Text = "";
             cboThuTuCongDoan.Text = "";
         }
         private void loadCbo()
@@ -308,6 +310,12 @@ namespace QuanLyLuongSanPham_GUI
                 cboMaRangBuoc.DataSource = busCongDoan.layMaCongDoanTheoSanPhamSanXuat(cboTenSanPhamm.Text);
             else 
                 cboMaRangBuoc.DataSource = null;
+
+            List<string> lstTrangThaiCongDoan = new List<string>();
+            lstTrangThaiCongDoan.Add("Chưa hoàn thành");
+            lstTrangThaiCongDoan.Add("Hoàn thành");
+            cboTrangThai.DataSource = lstTrangThaiCongDoan;
+            cboTrangThai.SelectedIndex = 0;
         }
 
         private bool kiemTraSoLuongSanPham(string soLuongSP)
@@ -319,12 +327,37 @@ namespace QuanLyLuongSanPham_GUI
         }
         private bool kiemTraNull()
         {
-            if (txtMaCongDoan.Text == "" || txtTenCongDoan.Text == "" || txtDonGia.Text == ""|| txtSoLuongSanXuat.Text == "" || cboTenSanPhamm.Text.Equals("None") || cboTenSanPhamm.Equals("")  || cboThuTuCongDoan.Text.Equals("") || cboThuTuCongDoan.Text.Equals("None") || dateNgayBatDau.Text.Equals("") ||  dateNgayKetThuc.Text.Equals("") || txtTrangThai.Text.Equals("") || cboMaSanPhamSanXuat.Text.Equals("None") || cboMaSanPhamSanXuat.Text.Equals(""))
+            if (txtMaCongDoan.Text == "" || txtTenCongDoan.Text == "" || txtDonGia.Text == ""|| txtSoLuongSanXuat.Text == "" || cboTenSanPhamm.Text.Equals("None") || cboTenSanPhamm.Equals("")  || cboThuTuCongDoan.Text.Equals("") || cboThuTuCongDoan.Text.Equals("None") || dateNgayBatDau.Text.Equals("") ||  dateNgayKetThuc.Text.Equals("") || cboTrangThai.Text.Equals("") || cboMaSanPhamSanXuat.Text.Equals("None") || cboMaSanPhamSanXuat.Text.Equals(""))
             {
                 return true;
             }
             return false;
         }
+
+        private bool kiemTraNgayThang()
+        {
+            DTO_DonHang donHang = busCongDoan.layThongTinDonHang(cboMaSanPhamSanXuat.Text);
+            DateTime ngayBD = DateTime.Parse(dateNgayBatDau.Text);
+            DateTime ngayKT = DateTime.Parse(dateNgayKetThuc.Text);
+            // nếu ngày bd công đoạn trươc
+            errorLoi.Clear();
+            if (ngayBD < donHang.NgayBatDau || ngayBD > donHang.NgayKetThuc)
+            {
+                errorLoi.SetError(dateNgayBatDau, "Ngày bắt đầu không hợp lệ");
+                return false;
+            }
+            else
+            {
+                errorLoi.Clear();
+                if (ngayKT < ngayBD || ngayKT > donHang.NgayKetThuc)
+                {
+                    errorLoi.SetError(dateNgayKetThuc, "Ngày kết thúc không hợp lệ");
+                    return false;
+                }
+            }
+
+            return true;
+        } 
 
         private DTO_CongDoanSanXuat taoCongDoanMoi()
         {
@@ -337,6 +370,7 @@ namespace QuanLyLuongSanPham_GUI
             newCongDoan.MaRangBuoc = cboMaRangBuoc.Text;
             newCongDoan.NgayBatDau = DateTime.Parse(dateNgayBatDau.Text);
             newCongDoan.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
+            newCongDoan.TrangThai = true;// chưa honaf thành
             return newCongDoan;
         }
 
@@ -349,6 +383,8 @@ namespace QuanLyLuongSanPham_GUI
                 clearControlInput();
                 txtMaCongDoan.Focus();
                 btnThemCongDoan.Text = "Lưu";
+                cboTrangThai.Text = "Chưa hoàn thành";
+                cboTrangThai.Enabled = false;
             }
             else if (kiemTraNull() == true)
             {
@@ -357,8 +393,11 @@ namespace QuanLyLuongSanPham_GUI
                 //offControlInput();
             }
             else if(!kiemTraSoLuongSanPham(txtSoLuongSanXuat.Text))
-            {
+            {           
                 MessageBox.Show("Số lượng sản phẩm không hợp lệ", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }else if(!kiemTraNgayThang())
+            {
+               // MessageBox.Show("Số lượng sản phẩm không hợp lệ", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             else
             {
@@ -394,7 +433,7 @@ namespace QuanLyLuongSanPham_GUI
                 cboMaRangBuoc.Enabled = true;
                 dateNgayBatDau.Enabled = true;
                 dateNgayKetThuc.Enabled = true;
-                txtTrangThai.Enabled = true;
+                cboTrangThai.Enabled = true;
                 txtSoLuongSanXuat.Enabled = true;
             }
             else if (kiemTraNull() == true)

@@ -42,6 +42,26 @@ namespace QuanLyLuongSanPham_DAO
             }
             return null;
         }
+        public DTO_DonHang layThongTinDonHangTheoMaSPSX(string maSanPhamSanXuat)
+        {
+            SanPhamSanXuat dateLst = dataBase.SanPhamSanXuats.Where(p => p.maSanPhamSanXuat == maSanPhamSanXuat).OrderBy(p => p.maSanPhamSanXuat).FirstOrDefault();
+            DonHang donHang = dataBase.DonHangs.Where(p => p.maDonHang == dateLst.maDonHang).FirstOrDefault();
+            if(donHang != null)
+            {
+                DTO_DonHang tmp = new DTO_DonHang();
+                tmp.MaDonHang = donHang.maDonHang;
+                tmp.MaNhanVien = donHang.maNhanVien;
+                tmp.NgayBatDau = donHang.ngayBatDau.Value;
+                tmp.NgayKetThuc = donHang.ngayKetThuc.Value;
+                tmp.NoiDung = donHang.noiDung;
+                tmp.TenKhachHang = donHang.tenKhachHang;
+                tmp.SoDienThoaiKhachHang = donHang.soDienThoaiKhachHang;
+                tmp.TrangThai = donHang.trangThai.Value;
+                tmp.TinhTrangDonHang = donHang.tinhTrangDonHang.Value;
+                return tmp;
+            }
+            return null;
+        }
         public bool checkExist(string maSanPham)
         {
             SanPhamSanXuat sanPham = dataBase.SanPhamSanXuats.Where(p => p.maSanPhamSanXuat == maSanPham).FirstOrDefault();

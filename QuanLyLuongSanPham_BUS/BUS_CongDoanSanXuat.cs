@@ -26,6 +26,19 @@ namespace QuanLyLuongSanPham_BUS
             }
             return false;
         }
+
+        public bool kiemTraTonTaiCongDoanSanXuat(string maSanPhamSanXuat)
+        {
+            if (cd.layCongDoanSanXuatTheoSanPham(maSanPhamSanXuat) != null)
+                return true;
+            return false;
+        }
+        public DTO_DonHang layThongTinDonHang(string maSanPhamSanXuat)
+        {
+            return sanPhamSXDAO.layThongTinDonHangTheoMaSPSX(maSanPhamSanXuat);
+        }
+
+        
         public BUS_CongDoanSanXuat()
         {
             this.cd = new DAO_CongDoanSanXuat();
@@ -34,11 +47,25 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.layDSCongDoan();
         }
+
+        public bool checkNgayThangCongDoan()
+        {
+            return true;
+        }
         public bool addCongDoan(QuanLyLuongSanPham_DTO.DTO_CongDoanSanXuat cdnew)
         {
-            if (kiemTraTrungCongDoan(cdnew.MaSanPhamSanXuat, cdnew.ThuTuCongDoan))
+            try
+            {
+                if (kiemTraTrungCongDoan(cdnew.MaSanPhamSanXuat, cdnew.ThuTuCongDoan))
+                    return false;
+                return cd.themCongDoan(cdnew);
+            }
+            catch
+            {
+                
                 return false;
-            return cd.themCongDoan(cdnew);
+            }
+            
         }
         public bool upDateCongDoan(DTO_CongDoanSanXuat cdUpdate)
         {
@@ -52,12 +79,13 @@ namespace QuanLyLuongSanPham_BUS
         {
             return cd.layAllDsCongDoan();
         }
-        public bool kiemTraTrungCongDoan(string maSanPhamSanXuat,string congDoan)
+        public bool kiemTraTrungCongDoan(string maSanPhamSanXuat, string congDoan)
         {
             List<DTO_CongDoanSanXuat> lst = cd.layCongDoanSanXuatTheoSanPham(maSanPhamSanXuat);
-            foreach(DTO_CongDoanSanXuat item in lst)
+            if (lst == null) return false;
+            foreach (DTO_CongDoanSanXuat item in lst)
             {
-                if(item.ThuTuCongDoan.Equals(congDoan))
+                if (item.ThuTuCongDoan.Equals(congDoan))
                 {
                     return true;
                 }

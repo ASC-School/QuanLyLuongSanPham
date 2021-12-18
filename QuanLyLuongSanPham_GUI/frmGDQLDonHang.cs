@@ -228,10 +228,8 @@ namespace QuanLyLuongSanPham_GUI
             donHang.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
             donHang.NoiDung = txtNoiDung.Text;
             donHang.MaNhanVien = cboMaNhanVien.Text;
-            if (cboTrangThai.SelectedIndex == 0)
-                donHang.TrangThai = true;
-            else
-                donHang.TrangThai = false;
+            donHang.TrangThai = false;
+            donHang.TinhTrangDonHang = true; // đơn đặt hàng
             return donHang;
         }
 
@@ -390,6 +388,10 @@ namespace QuanLyLuongSanPham_GUI
                 formatTextBox();
                 hienThongTin();
                 txtMaDonHang.Enabled = true;
+                cboTrangThai.SelectedIndex = 1;
+                cboTinhTrangDonHang.SelectedIndex = 0;
+                cboTinhTrangDonHang.Enabled = false;
+                cboTrangThai.Enabled = false;
             }
             else
             {
@@ -429,7 +431,6 @@ namespace QuanLyLuongSanPham_GUI
                 else
                 {
                     cboTinhTrangDonHang.SelectedIndex = 1;
-                    btnThemDonHang.Enabled = false;
                     btnSuaDonHang.Enabled = false;
                     btnLuuDonHang.Enabled = false;
                     btnHuyDonHang.Enabled = false;
@@ -469,7 +470,27 @@ namespace QuanLyLuongSanPham_GUI
             }
         }
 
-
+        private bool kiemTraNgayThang()
+        {
+            DateTime ngayBD = DateTime.Parse(dateNgayBatDau.Text);
+            DateTime ngayKT = DateTime.Parse(dateNgayKetThuc.Text);
+            errLoi.Clear();
+            if(ngayBD < DateTime.Today )
+            {
+                errLoi.SetError(dateNgayBatDau, "Ngày bắt đầu không hợp lệ");
+                return false;
+            }
+            else
+            {
+                errLoi.Clear();
+                if(ngayKT < ngayBD.AddMonths(1) ||  ngayBD > ngayKT)
+                {
+                    errLoi.SetError(dateNgayKetThuc, "Ngày kết thúc không hợp lệ");
+                    return false;
+                }    
+            }
+            return true;
+        }
 
         private void btnLuuDonHang_Click(object sender, EventArgs e)
         {
@@ -481,20 +502,28 @@ namespace QuanLyLuongSanPham_GUI
                     hoiThem = MessageBox.Show("Bạn có muốn thêm?", "Hỏi thêm đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (hoiThem == DialogResult.Yes)
                     {
-                        newDonHang = taoDonHang();
-                        if (donHangBUS.checkTonTaiDonHang(newDonHang.MaDonHang)) MessageBox.Show("Đơn hàng đã tồn tại!!");
+                        if(!kiemTraNgayThang())
+                        {
+
+                        }
                         else
                         {
-                            donHangBUS.themDonHang(newDonHang);
-                            newDonHang = null;
-                            formatTextBox();
-                            btnLuuDonHang.Enabled = false;
-                            btnThemDonHang.Text = "Thêm đơn hàng";
-                            khoaThongTin();
-                            loadDonHangToDataGridView();
-                            MessageBox.Show("Thêm đơn hàng thành công!!");
-                        }
+                            newDonHang = taoDonHang();
+                            if (donHangBUS.checkTonTaiDonHang(newDonHang.MaDonHang)) MessageBox.Show("Đơn hàng đã tồn tại!!");
+                            else
+                            {
+                                donHangBUS.themDonHang(newDonHang);
+                                newDonHang = null;
+                                formatTextBox();
+                                btnLuuDonHang.Enabled = false;
+                                btnThemDonHang.Text = "Thêm đơn hàng";
+                                khoaThongTin();
+                                btnSuaDonHang.Enabled = true;
+                                loadDonHangToDataGridView();
+                                MessageBox.Show("Thêm đơn hàng thành công!!");
+                            }
 
+                        }
 
                     }
                     else

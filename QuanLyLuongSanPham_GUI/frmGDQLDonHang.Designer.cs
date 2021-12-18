@@ -59,8 +59,8 @@ namespace QuanLyLuongSanPham_GUI
             this.btnThemDonHang = new System.Windows.Forms.Button();
             this.btnSuaDonHang = new System.Windows.Forms.Button();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label2 = new System.Windows.Forms.Label();
             this.cboTinhTrangDonHang = new System.Windows.Forms.ComboBox();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -438,7 +438,6 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(220, 0);
             this.panelControl1.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
@@ -450,22 +449,12 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl1.Size = new System.Drawing.Size(1074, 740);
             this.panelControl1.TabIndex = 5;
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(504, 22);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ĐƠN HÀNG";
-            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.panelControl2.Appearance.Options.UseBorderColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Controls.Add(this.cboTinhTrangDonHang);
             this.panelControl2.Controls.Add(this.cboTrangThai);
             this.panelControl2.Controls.Add(this.label10);
@@ -499,6 +488,18 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Size = new System.Drawing.Size(1063, 736);
             this.panelControl2.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Crimson;
+            this.label2.Location = new System.Drawing.Point(379, 343);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(481, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "DANH SÁCH ĐƠN ĐẶT HÀNG";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cboTinhTrangDonHang
             // 
             this.cboTinhTrangDonHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -509,7 +510,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTinhTrangDonHang.Location = new System.Drawing.Point(756, 214);
             this.cboTinhTrangDonHang.Margin = new System.Windows.Forms.Padding(4);
             this.cboTinhTrangDonHang.Name = "cboTinhTrangDonHang";
-            this.cboTinhTrangDonHang.Size = new System.Drawing.Size(295, 27);
+            this.cboTinhTrangDonHang.Size = new System.Drawing.Size(288, 27);
             this.cboTinhTrangDonHang.TabIndex = 10;
             // 
             // cboTrangThai
@@ -781,6 +782,10 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgayKetThuc.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayKetThuc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateNgayKetThuc.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayKetThuc.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateNgayKetThuc.Size = new System.Drawing.Size(295, 28);
             this.dateNgayKetThuc.TabIndex = 3;
             // 
@@ -796,6 +801,10 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgayBatDau.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayBatDau.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateNgayBatDau.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateNgayBatDau.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateNgayBatDau.Size = new System.Drawing.Size(295, 28);
             this.dateNgayBatDau.TabIndex = 3;
             // 
@@ -965,7 +974,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 97);
+            this.label1.Size = new System.Drawing.Size(196, 97);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ ĐƠN ĐẶT HÀNG";
             // 
@@ -1007,7 +1016,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1339, 674);
+            this.ClientSize = new System.Drawing.Size(1385, 674);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);
@@ -1071,7 +1080,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -1124,5 +1132,6 @@ namespace QuanLyLuongSanPham_GUI
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.ComboBox cboTinhTrangDonHang;
         private System.Windows.Forms.Button btnHoanThanhDatHang;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -33,6 +33,14 @@ namespace QuanLyLuongSanPham_DAO
             return q;
         }
 
+        public string layLoaiNhanVienTheoMaLoai(string maloai)
+        {
+            LoaiNhanVien loainv = dataBase.LoaiNhanViens.Where(p => p.maLoai == maloai).FirstOrDefault();
+            if (loainv != null)
+                return loainv.loaiNhanVien1;
+            return "";
+        }
+
         public DTO_NhanVien layMotNhanVien(string maNhanVien)
         {
             NhanVien nvTemp = dataBase.NhanViens.Where(p => p.maNhanVien == maNhanVien).FirstOrDefault();
@@ -48,7 +56,7 @@ namespace QuanLyLuongSanPham_DAO
                 nhanVien.DiaChi = nvTemp.diaChi;
                 nhanVien.NgaySinh = nvTemp.ngaySinh;
                 nhanVien.TrangThai = nvTemp.trangThai.Value;
-                
+                nhanVien.LoaiNhanVien = layLoaiNhanVienTheoMaLoai(nhanVien.MaLoai);
                 return nhanVien;
             }
             return null;
@@ -77,7 +85,30 @@ namespace QuanLyLuongSanPham_DAO
                 tmp.NgaySinh = nv.ngaySinh;
                 tmp.GioiTinh = nv.gioiTinh;
                 tmp.TrangThai = (bool)nv.trangThai;
-                tmp.LoaiNhanVien = nv.LoaiNhanVien.ToString();
+                tmp.LoaiNhanVien = layLoaiNhanVienTheoMaLoai(nv.maLoai);
+                lst.Add(tmp);
+            }
+            return lst;
+        }
+
+
+        public List<DTO_NhanVien> layDSAllNhanVien()
+        {
+            var dataLst = (from nv in dataBase.NhanViens select nv);
+            List<DTO_NhanVien> lst = new List<DTO_NhanVien>();
+            foreach (NhanVien nv in dataLst)
+            {
+                DTO_NhanVien tmp = new DTO_NhanVien();
+                tmp.MaNhanVien = nv.maNhanVien;
+                tmp.TenNhanVien = nv.tenNhanVien;
+                tmp.DiaChi = nv.diaChi;
+                tmp.SoDienThoai = nv.soDienThoai;
+                tmp.NgayBatDauCongTac = nv.ngayBatDauCongTac;
+                tmp.NgaySinh = nv.ngaySinh;
+                tmp.GioiTinh = nv.gioiTinh;
+                tmp.TrangThai = (bool)nv.trangThai;
+                tmp.LoaiNhanVien = layLoaiNhanVienTheoMaLoai(nv.maLoai);
+                tmp.MaLoai = nv.maLoai;
                 lst.Add(tmp);
             }
             return lst;
