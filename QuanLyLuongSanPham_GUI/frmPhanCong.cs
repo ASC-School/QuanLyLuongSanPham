@@ -55,13 +55,14 @@ namespace QuanLyLuongSanPham_GUI
                 dtgvCaLamViec.Rows[dtgvCaLamViec.RowCount - 1].Tag = n;
             }
             dtgvDSPhanCong.DataSource = busPC.layDSPhanCong();
-            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoanChuaHoanThanh();
         }
         private void loadCbo()
         {
+            IEnumerable<NhanVien> listQLNS = busNV.layDSQLNS();
             IEnumerable<NhanVien> listCongNhan = busNV.layDanhSachCongNhan();
             IEnumerable<CaLamViec> listCa = busCaLamViec.layDSCa();
-            IEnumerable<CongDoanSanXuat> listCD = busCongDoan.layAllDsCD();
+            IEnumerable<CongDoanSanXuat> listCD = busCongDoan.layAllCDCHT();
             foreach (var n in listCongNhan)
             {
                 cboMaCongNhan.Items.Add(n.maNhanVien);
@@ -77,6 +78,11 @@ namespace QuanLyLuongSanPham_GUI
                 cboMaCongDoan.Items.Add(n.soThuTu);
                 cboTenCongDoan.Items.Add(n.tenCongDoan);
             }
+            foreach(var n in listQLNS)
+            {
+                cboMaNhanVien.Items.Add(n.maNhanVien);
+                cboTenNhanVien.Items.Add(n.tenNhanVien);
+            }
         }
         private void offControlInput()
         {
@@ -88,6 +94,8 @@ namespace QuanLyLuongSanPham_GUI
             cboTenCa.Enabled = false;
             txtMsPhanCong.Enabled = false;
             dtpNgayPhanCong.Enabled = false;
+            cboMaNhanVien.Enabled = false;
+            cboTenNhanVien.Enabled = false;
         }
         private void onControlInput()
         {
@@ -99,6 +107,8 @@ namespace QuanLyLuongSanPham_GUI
             cboTenCa.Enabled = true;
             txtMsPhanCong.Enabled = true;
             dtpNgayPhanCong.Enabled = true;
+            cboMaNhanVien.Enabled = true;
+            cboTenNhanVien.Enabled = true;
         }
         private void onButton()
         {
@@ -115,10 +125,12 @@ namespace QuanLyLuongSanPham_GUI
             cboTenCa.Text= "";
             txtMsPhanCong.Text = "";
             dtpNgayPhanCong.Text = "";
+            cboMaNhanVien.Text = "";
+            cboTenNhanVien.Text = "";
         }
         private bool kiemTraNull()
         {
-            if (cboMaCa.Text == "" || cboMaCongDoan.Text == "" || cboMaCongNhan.Text == "" || txtMsPhanCong.Text == "")
+            if (cboMaCa.Text == "" || cboMaCongDoan.Text == "" || cboMaCongNhan.Text == "" || txtMsPhanCong.Text == ""||cboMaNhanVien.Text=="")
             {
                 return true;
             }
@@ -138,7 +150,17 @@ namespace QuanLyLuongSanPham_GUI
                 cboMaCa.Text = row.Cells[5].Value.ToString();
                 cboTenCa.Text = row.Cells[6].Value.ToString();
                 dtpNgayPhanCong.Text = row.Cells[7].Value.ToString();
+                cboMaNhanVien.Text = row.Cells[8].Value.ToString();
                 onButton();
+            }
+        }
+        private void dtgvDSCongDoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSCongDoan.Rows[e.RowIndex];
+                cboMaCongDoan.Text = row.Cells[0].Value.ToString();
+                cboTenCongDoan.Text = row.Cells[1].Value.ToString();
             }
         }
         private void cboMaCongDoan_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,6 +218,15 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
         }
+        private void cboMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<NhanVien> listQLNS = busNV.layDSQLNS();
+            foreach (var n in listQLNS)
+            {
+                if (cboMaNhanVien.Text.Equals(n.maNhanVien))
+                    cboTenNhanVien.Text = n.tenNhanVien;
+            }
+        }
 
         private void cboTenCongNhan_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -243,6 +274,7 @@ namespace QuanLyLuongSanPham_GUI
                 pc.MaCongDoan = Convert.ToInt32(cboMaCongDoan.Text);
                 pc.MaCa = cboMaCa.Text;
                 pc.NgayLam = dtpNgayPhanCong.Value;
+                pc.MaNVPhanCong = cboMaNhanVien.Text;
                 if (busPC.phanCong(pc) == true)
                 {
                     MessageBox.Show("Thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -283,6 +315,7 @@ namespace QuanLyLuongSanPham_GUI
                 pc.MaCongDoan = Convert.ToInt32(cboMaCongDoan.Text);
                 pc.MaCa = cboMaCa.Text;
                 pc.NgayLam = dtpNgayPhanCong.Value;
+                pc.MaNVPhanCong = cboMaNhanVien.Text;
                 if (busPC.suaPhanCong(pc) == true)
                 {
                     MessageBox.Show("Thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);

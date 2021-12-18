@@ -43,6 +43,30 @@ namespace QuanLyLuongSanPham_DAO
 
             return data;
         }
+        public IEnumerable<dynamic> layDSCongDoanChuaHoanThanh()
+        {
+            IEnumerable<dynamic> data;
+            data = from congDoan in dataBase.CongDoanSanXuats
+                   join sanPhamSX in dataBase.SanPhamSanXuats on congDoan.maSanPhamSanXuat equals sanPhamSX.maSanPhamSanXuat
+                   where congDoan.trangThai == false
+                   select new
+                   {
+                       soThuTu = congDoan.soThuTu,
+                       tenCongDoan = congDoan.tenCongDoan,
+                       donGia = congDoan.donGia,
+                       thuTuCongDoan = congDoan.thuTuCongDoan,
+                       maSanPhamSanXuat = sanPhamSX.maSanPhamSanXuat,
+                       tenSanPhamSanXuat = sanPhamSX.tenSanPham,
+                       soLuongSanXuat = sanPhamSX.soLuongSanXuat,
+                       maRangBuoc = congDoan.maRangBuoc,
+                       ngayBatDau = congDoan.ngayBatDau,
+                       ngayKetThuc = congDoan.ngayKetThuc,
+                       trangThai = congDoan.trangThai
+                   };
+
+            return data;
+        }
+
         public CongDoanSanXuat checkIfExist(string strMaCongDoan)
         {
             CongDoanSanXuat temp = (from n in dataBase.CongDoanSanXuats where n.soThuTu.Equals(strMaCongDoan) select n).FirstOrDefault();
@@ -139,9 +163,14 @@ namespace QuanLyLuongSanPham_DAO
             }
             return false;
         }
-        public IEnumerable<CongDoanSanXuat> layAllDsCongDoan()
+        public IEnumerable<CongDoanSanXuat> layALLDsCD()
         {
             IEnumerable<CongDoanSanXuat> q = from n in dataBase.CongDoanSanXuats select n;
+            return q;
+        }
+        public IEnumerable<CongDoanSanXuat> layALLDsCongDoanChuaHoanThanh()
+        {
+            IEnumerable<CongDoanSanXuat> q = from n in dataBase.CongDoanSanXuats where n.trangThai==false select n;
             return q;
         }
     }

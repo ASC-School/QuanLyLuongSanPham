@@ -251,5 +251,17 @@ namespace QuanLyLuongSanPham_GUI
             frmXemPhanCong frm = new frmXemPhanCong(maNhanVien);
             _ = frm.ShowDialog();
         }
+
+        private void pHÂNCÔNGĐOẠNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCongDoan fCongDOan = new frmCongDoan();
+            fCongDOan.ShowDialog();
+        }
+
+        private void msNhanSu_PhanCong_Click(object sender, EventArgs e)
+        {
+            frmPhanCong fPhanCong = new frmPhanCong();
+            fPhanCong.ShowDialog();
+        }
     }
 }

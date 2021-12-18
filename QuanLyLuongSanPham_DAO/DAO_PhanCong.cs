@@ -26,7 +26,7 @@ namespace QuanLyLuongSanPham_DAO
                  join pc in dataBase.PhanCongs on nv.maNhanVien equals pc.maNhanVien
                  join cd in dataBase.CongDoanSanXuats on pc.maCongDoan equals cd.soThuTu
                  join ca in dataBase.CaLamViecs on pc.maCa equals ca.maCa
-                 select new { maPhanCong = pc.maPhanCong, maNhanVien = nv.maNhanVien, tenNhanVien = nv.tenNhanVien, maCongDoan = pc.maCongDoan, tenCongDoan = cd.tenCongDoan,maCa=pc.maCa,tenCa=ca.ca,ngayLam = pc.ngayLam });
+                 select new { maPhanCong = pc.maPhanCong, maNhanVien = nv.maNhanVien, tenNhanVien = nv.tenNhanVien, maCongDoan = pc.maCongDoan, tenCongDoan = cd.tenCongDoan,maCa=pc.maCa,tenCa=ca.ca,ngayLam = pc.ngayLam,maNhanVienPhanCong = pc.maNhanVienPhanCong });
             return q;
         }
 
@@ -95,6 +95,7 @@ namespace QuanLyLuongSanPham_DAO
                 temp.maCongDoan = pc.MaCongDoan;
                 temp.maCa = pc.MaCa;
                 temp.ngayLam = pc.NgayLam;
+                temp.maNhanVienPhanCong = pc.MaNVPhanCong;
                 dataBase.PhanCongs.InsertOnSubmit(temp);
                 dataBase.SubmitChanges();
                 return true;
@@ -110,6 +111,7 @@ namespace QuanLyLuongSanPham_DAO
                 pc.First().maCongDoan = pcUpdate.MaCongDoan;
                 pc.First().maCa = pcUpdate.MaCa;
                 pc.First().ngayLam = pcUpdate.NgayLam;
+                pc.First().maNhanVienPhanCong = pcUpdate.MaNVPhanCong;
                 dataBase.SubmitChanges();
                 return true;
             }
