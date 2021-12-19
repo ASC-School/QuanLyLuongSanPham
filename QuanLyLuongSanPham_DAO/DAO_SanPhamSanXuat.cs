@@ -42,6 +42,15 @@ namespace QuanLyLuongSanPham_DAO
             }
             return null;
         }
+
+        public DTO_SanPhamSanXuat laySanPhamSanXuatTheoMaCongDoan(string strMaCongDoan)
+        {
+            CongDoanSanXuat temp = (from n in dataBase.CongDoanSanXuats where n.soThuTu.Equals(strMaCongDoan) select n).FirstOrDefault();
+            DTO_SanPhamSanXuat sanPham = layMotSanPhamSanXuat(temp.maSanPhamSanXuat);
+            if (sanPham != null)
+                return sanPham;
+            return null;
+        }
         public DTO_DonHang layThongTinDonHangTheoMaSPSX(string maSanPhamSanXuat)
         {
             SanPhamSanXuat dateLst = dataBase.SanPhamSanXuats.Where(p => p.maSanPhamSanXuat == maSanPhamSanXuat).OrderBy(p => p.maSanPhamSanXuat).FirstOrDefault();

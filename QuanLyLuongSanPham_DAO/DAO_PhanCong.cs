@@ -30,6 +30,36 @@ namespace QuanLyLuongSanPham_DAO
             return q;
         }
 
+        public List<DTO_PhanCong> layDSPhanCongTheoCongDoan(string maCongDoan)
+        {
+            IEnumerable<PhanCong> dataLst = from nv in dataBase.NhanViens
+                          join pc in dataBase.PhanCongs on nv.maNhanVien equals pc.maNhanVien
+                          join cd in dataBase.CongDoanSanXuats on pc.maCongDoan equals cd.soThuTu
+                          join ca in dataBase.CaLamViecs on pc.maCa equals ca.maCa
+                          where pc.maCongDoan.Equals(maCongDoan)
+                          select pc;
+
+            if(dataLst != null)
+            {
+                List<DTO_PhanCong> lstPhanCongTrongCongDoan = new List<DTO_PhanCong>();
+                foreach (var item in dataLst)
+                {
+                    DTO_PhanCong phanCong = new DTO_PhanCong();
+                    phanCong.MaPhanCong = item.maPhanCong;
+                    phanCong.MaNhanVien = item.maNhanVien;
+                    phanCong.MaCongDoan = item.maCongDoan;
+                    phanCong.MaCa = item.maCa;
+                    phanCong.NgayLam = item.ngayLam.Value;
+                    phanCong.MaNVPhanCong = item.maNhanVienPhanCong;
+                    lstPhanCongTrongCongDoan.Add(phanCong);
+                }
+                return lstPhanCongTrongCongDoan;
+            }
+            return null;
+        }
+
+
+
         public IEnumerable<dynamic> layDSPhanCongTheoThangTheoCongNhan(string maNhanVien,int thang)
         {
             IEnumerable<dynamic> q;

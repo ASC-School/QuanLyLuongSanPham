@@ -19,11 +19,13 @@ namespace QuanLyLuongSanPham_GUI
         public frmPhanCong()
         {
             InitializeComponent();
+            addLuoiCongDoan(dtgvDSCongDoan);
         }
         BUS_PhanCong busPC = new BUS_PhanCong();
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_CongDoanSanXuat busCongDoan = new BUS_CongDoanSanXuat();
         BUS_CaLamViec busCaLamViec = new BUS_CaLamViec();
+        BindingSource bsCongDoan = new BindingSource();
         private void frmPhanCong_Load(object sender, EventArgs e)
         {
             loadDataToDataGrid();
@@ -34,16 +36,100 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvCaLamViec.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDSPhanCong.DefaultCellStyle.ForeColor = Color.Black;
             IEnumerable<PhanCong> listPC = busPC.layAllPhanCong();
+            loadCongDoanToDataGrid();
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void addLuoiCongDoan(DataGridView dgr)
+        {
+            DataGridViewTextBoxColumn dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soThuTu";
+            dc.HeaderText = "Mã công đoạn";
+            dc.Name = "soThuTu";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenCongDoan";
+            dc.HeaderText = "Tên công đoạn";
+            dc.Name = "tenCongDoan";
+            dc.Visible = true;
+            dc.Width = 200;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "donGia";
+            dc.HeaderText = "Đơn giá";
+            dc.Name = "donGia";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "thuTuCongDoan";
+            dc.HeaderText = "Giai đoạn của công đoạn";
+            dc.Name = "thuTuCongDoan";
+            dc.Width = 120;
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maSanPhamSanXuat";
+            dc.HeaderText = "Mã sản phẩm sản xuất";
+            dc.Name = "maSanPhamSanXuat";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "tenSanPhamSanXuat";
+            dc.HeaderText = "Tên sản phẩm sản xuất";
+            dc.Name = "tenSanPhamSanXuat";
+            dc.Width = 200;
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "soLuongSanXuat";
+            dc.HeaderText = "Số lượng sản xuất";
+            dc.Name = "soLuongSanXuat";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "maRangBuoc";
+            dc.HeaderText = "Mã ràng buộc";
+            dc.Name = "maRangBuoc";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayBatDau";
+            dc.HeaderText = "Ngày bắt đầu";
+            dc.Name = "ngayBatDau";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "ngayKetThuc";
+            dc.HeaderText = "Ngày kết thúc";
+            dc.Name = "ngayKetThuc";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+            dc = new DataGridViewTextBoxColumn();
+            dc.DataPropertyName = "trangThai";
+            dc.HeaderText = "Trạng thái";
+            dc.Name = "trangThai";
+            dc.Visible = true;
+            dgr.Columns.Add(dc);
+
+        }
         private void loadDataToDataGrid()
         {
             IEnumerable<NhanVien> listCongNhan = busNV.layDanhSachCongNhan();
             IEnumerable<CaLamViec> listCa = busCaLamViec.layDSCa();
-
             foreach(var n in listCongNhan)
             {
                 dtgvDSCN.Rows.Add(n.maNhanVien, n.tenNhanVien);
@@ -54,8 +140,16 @@ namespace QuanLyLuongSanPham_GUI
                 dtgvCaLamViec.Rows.Add(n.maCa, n.ca);
                 dtgvCaLamViec.Rows[dtgvCaLamViec.RowCount - 1].Tag = n;
             }
+
+           
             dtgvDSPhanCong.DataSource = busPC.layDSPhanCong();
             dtgvDSCongDoan.DataSource = busCongDoan.layDSCongDoanChuaHoanThanh();
+        }
+
+        private void loadCongDoanToDataGrid()
+        {
+            bsCongDoan.DataSource = busCongDoan.layDSCongDoan();
+            dtgvDSCongDoan.DataSource = bsCongDoan;
         }
         private void loadCbo()
         {
@@ -63,6 +157,7 @@ namespace QuanLyLuongSanPham_GUI
             IEnumerable<NhanVien> listCongNhan = busNV.layDanhSachCongNhan();
             IEnumerable<CaLamViec> listCa = busCaLamViec.layDSCa();
             IEnumerable<CongDoanSanXuat> listCD = busCongDoan.layAllCDCHT();
+
             foreach (var n in listCongNhan)
             {
                 cboMaCongNhan.Items.Add(n.maNhanVien);
@@ -151,6 +246,16 @@ namespace QuanLyLuongSanPham_GUI
                 cboTenCa.Text = row.Cells[6].Value.ToString();
                 dtpNgayPhanCong.Text = row.Cells[7].Value.ToString();
                 cboMaNhanVien.Text = row.Cells[8].Value.ToString();
+                if (cboMaCongDoan.Equals(""))
+                {
+                    txtSoLuongCongNhanTrongCongDoan.Text = "";
+                    txtSoLuongCongNhanToiDa.Text = "";
+                }
+                else
+                {
+                    txtSoLuongCongNhanTrongCongDoan.Text = busPC.getSoLuongNhanVienCoTrongCongDoan(cboMaCongDoan.Text).ToString();
+                    txtSoLuongCongNhanToiDa.Text = busCongDoan.getSoLuongNhanVienToiDaCoTrongCongDoan(cboMaCongDoan.Text).ToString();
+                }
                 onButton();
             }
         }
@@ -161,6 +266,16 @@ namespace QuanLyLuongSanPham_GUI
                 DataGridViewRow row = this.dtgvDSCongDoan.Rows[e.RowIndex];
                 cboMaCongDoan.Text = row.Cells[0].Value.ToString();
                 cboTenCongDoan.Text = row.Cells[1].Value.ToString();
+                if (cboMaCongDoan.Equals(""))
+                {
+                    txtSoLuongCongNhanTrongCongDoan.Text = "";
+                    txtSoLuongCongNhanToiDa.Text = "";
+                }
+                else
+                {
+                    txtSoLuongCongNhanTrongCongDoan.Text = busPC.getSoLuongNhanVienCoTrongCongDoan(cboMaCongDoan.Text).ToString();
+                    txtSoLuongCongNhanToiDa.Text = busCongDoan.getSoLuongNhanVienToiDaCoTrongCongDoan(cboMaCongDoan.Text).ToString();
+                }
             }
         }
         private void cboMaCongDoan_SelectedIndexChanged(object sender, EventArgs e)

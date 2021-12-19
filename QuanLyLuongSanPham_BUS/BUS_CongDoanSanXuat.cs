@@ -27,6 +27,15 @@ namespace QuanLyLuongSanPham_BUS
             return false;
         }
 
+        public int getSoLuongNhanVienToiDaCoTrongCongDoan(string maCongDoan)
+        {
+            int soLuongNhanVien = 0;
+            DTO_SanPhamSanXuat sanPham = sanPhamSXDAO.laySanPhamSanXuatTheoMaCongDoan(maCongDoan);
+            if (sanPham == null) return 0;
+            soLuongNhanVien =Convert.ToInt32(sanPham.SoLuongSanXuat / 150);
+            return soLuongNhanVien;
+        }
+
         public bool kiemTraTonTaiCongDoanSanXuat(string maSanPhamSanXuat)
         {
             if (cd.layCongDoanSanXuatTheoSanPham(maSanPhamSanXuat) != null)

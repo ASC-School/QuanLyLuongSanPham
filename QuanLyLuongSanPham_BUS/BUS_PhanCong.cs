@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyLuongSanPham_DAO;
+using QuanLyLuongSanPham_DTO;
 
 namespace QuanLyLuongSanPham_BUS
 {
@@ -50,6 +51,32 @@ namespace QuanLyLuongSanPham_BUS
         {
             return daoPhanCong.layDSPhanCongTheoNgayTheoCongNhan(maNhanVien, ngay);
         }
+
+        public bool checkExist(List<string> lst, string maNhanVien)
+        {
+            foreach(string item in lst)
+            {
+                if (item.Equals(maNhanVien))
+                    return true;
+            }
+            return false;
+        }
+        public int getSoLuongNhanVienCoTrongCongDoan(string  maCongDoan)
+        {
+            int soLuongNhanVien = 0;
+            List<DTO_PhanCong> lstPhanCongThuocCongDoan = daoPhanCong.layDSPhanCongTheoCongDoan(maCongDoan);
+            if (lstPhanCongThuocCongDoan == null) return 0;
+            List<string> maNhanVien = new List<string>();
+            foreach(var item in lstPhanCongThuocCongDoan)
+            {
+                if (!checkExist(maNhanVien, item.MaNhanVien))
+                    maNhanVien.Add(item.MaNhanVien);
+            }
+            soLuongNhanVien = maNhanVien.Count();
+            return soLuongNhanVien;
+        }
+
+        
 
     }
 }
