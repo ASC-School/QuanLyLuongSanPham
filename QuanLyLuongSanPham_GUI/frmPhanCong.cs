@@ -36,7 +36,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvCaLamViec.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDSPhanCong.DefaultCellStyle.ForeColor = Color.Black;
             IEnumerable<PhanCong> listPC = busPC.layAllPhanCong();
-            loadCongDoanToDataGrid();
+            //loadCongDoanToDataGrid();
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -259,6 +259,14 @@ namespace QuanLyLuongSanPham_GUI
                 onButton();
             }
         }
+        private void dtgvDSCN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSCN.Rows[e.RowIndex];
+                cboMaCongNhan.Text = row.Cells[0].Value.ToString();
+            }
+        }
         private void dtgvDSCongDoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -278,6 +286,14 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
         }
+        private void dtgvCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvDSCongDoan.Rows[e.RowIndex];
+                cboMaCa.Text = row.Cells[0].Value.ToString();
+            }
+        }
         private void cboMaCongDoan_SelectedIndexChanged(object sender, EventArgs e)
         {
             IEnumerable<CongDoanSanXuat> listCD = busCongDoan.layAllDsCD();
@@ -288,6 +304,8 @@ namespace QuanLyLuongSanPham_GUI
                     cboTenCongDoan.Text = n.tenCongDoan;
                 }
             }
+            txtSoLuongCongNhanTrongCongDoan.Text = busPC.getSoLuongNhanVienCoTrongCongDoan(cboMaCongDoan.Text).ToString();
+            txtSoLuongCongNhanToiDa.Text = busCongDoan.getSoLuongNhanVienToiDaCoTrongCongDoan(cboMaCongDoan.Text).ToString();
         }
         private void cboTenCongDoan_SelectedIndexChanged(object sender, EventArgs e)
         {
