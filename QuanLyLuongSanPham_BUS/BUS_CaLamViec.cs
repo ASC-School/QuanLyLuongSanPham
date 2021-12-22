@@ -18,5 +18,17 @@ namespace QuanLyLuongSanPham_BUS
         {
             return caLamViec.layCaLamViec();
         }
+        public bool themCa (QuanLyLuongSanPham_DTO.DTO_CaLamViec ca)
+        {
+            return caLamViec.themCa(ca);
+        }
+        public bool suaCa(QuanLyLuongSanPham_DTO.DTO_CaLamViec ca)
+        {
+            return caLamViec.suaThongTin(ca);
+        }
+        public bool xoaCa(string strMaCa)
+        {
+            return caLamViec.xoaCa(strMaCa);
+        }
     }
 }

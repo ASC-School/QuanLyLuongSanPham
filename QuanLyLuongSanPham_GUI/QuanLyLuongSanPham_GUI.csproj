@@ -96,6 +96,12 @@
     <Compile Include="ButtonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frmCaLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaLamViec.Designer.cs">
+      <DependentUpon>frmCaLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCongDoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     <Compile Include="frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCaLamViec.resx">
+      <DependentUpon>frmCaLamViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCongDoan.resx">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
     </EmbeddedResource>

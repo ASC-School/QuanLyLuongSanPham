@@ -271,7 +271,7 @@ namespace QuanLyLuongSanPham_GUI
                 btnXoaSanPham.Enabled = false;
                 btnThemSanPham.Text = "Lưu";
                 hienThongTin();
-                btnHoanTat.Enabled = false;
+                //btnHoanTat.Enabled = false;
             }
             else
             {
@@ -329,7 +329,6 @@ namespace QuanLyLuongSanPham_GUI
                 btnThemSanPham.Enabled = true;
                 btnXoaSanPham.Enabled = true;
                 DialogResult hoiThem;
-                btnHoanTat.Enabled = false;
                 hoiThem = MessageBox.Show("Bạn có muốn sửa?", "Hỏi sửa chi tiết đơn hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (hoiThem == DialogResult.Yes)
                 {
@@ -559,9 +558,10 @@ namespace QuanLyLuongSanPham_GUI
                         formatTextBox();
                         anThongTin();
                         MessageBox.Show("Đặt hàng thành công!!");
-                        frmGDQLDonHang frm = new frmGDQLDonHang();
-                        this.Hide();
-                        _ = frm.ShowDialog();
+                        //frmGDQLDonHang frm = new frmGDQLDonHang();
+                        //this.Hide();
+                        //_ = frm.ShowDialog();
+                        this.Close();
                     }
 
                         MessageBox.Show("Đặt hàng không thành công!!");

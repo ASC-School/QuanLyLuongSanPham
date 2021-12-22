@@ -248,7 +248,7 @@ namespace QuanLyLuongSanPham_GUI
                 else
                 {
                     cboTrangThai.Text = "Hoàn thành";
-                    btnThemCongDoan.Enabled = false;
+                    //btnThemCongDoan.Enabled = false;
                     btnXoaCongDoan.Enabled = true;
                     row.Cells[10].Style.BackColor = Color.Red;
                 }    
@@ -337,8 +337,8 @@ namespace QuanLyLuongSanPham_GUI
         private bool kiemTraNgayThang()
         {
             DTO_DonHang donHang = busCongDoan.layThongTinDonHang(cboMaSanPhamSanXuat.Text);
-            DateTime ngayBD = DateTime.Parse(dateNgayBatDau.Text);
-            DateTime ngayKT = DateTime.Parse(dateNgayKetThuc.Text);
+            DateTime ngayBD = Convert.ToDateTime(dateNgayBatDau.Text);
+            DateTime ngayKT = Convert.ToDateTime(dateNgayKetThuc.Text);
             // nếu ngày bd công đoạn trươc
             errorLoi.Clear();
             if (ngayBD < donHang.NgayBatDau || ngayBD > donHang.NgayKetThuc)
