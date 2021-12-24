@@ -18,9 +18,9 @@ namespace QuanLyLuongSanPham_GUI
      * Phiên bản: 1.0
      * Thời gian tạo: 17/11/2021
      */
-    public partial class frmChamCong : Form
+    public partial class frmChamCongHanhChanh : Form
     {
-        public frmChamCong()
+        public frmChamCongHanhChanh()
         {
             InitializeComponent();
         }
@@ -29,7 +29,6 @@ namespace QuanLyLuongSanPham_GUI
         BUS_DonViQuanLy bus_DVQL = new BUS_DonViQuanLy();
         BUS_ChamCong bus_ChamCong = new BUS_ChamCong();
         DateTime today = DateTime.Now;
-        bool statusCheckCN = false;
         bool statusCheckHC = false;
         bool statusCheckNS = false;
         bool statusCheck4HT = false;
@@ -37,14 +36,6 @@ namespace QuanLyLuongSanPham_GUI
         #endregion
 
         #region Methos
-        private void loadDSDonVi()
-        {
-            IEnumerable<DonViQuanLy> dsdv = bus_DVQL.getDSDonVi();
-            foreach (DonViQuanLy dv in dsdv)
-            {
-                cbbDonVi.Items.Add(dv.tenBoPhan);
-            }
-        }
         #endregion
 
         #region Event
@@ -54,10 +45,13 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void frmChamCong_Load(object sender, EventArgs e)
         {
-            loadDSDonVi();
+            cbbDonVi.Items.Add("Bộ Phận Nhân Viên Văn Phòng");
+            cbbDonVi.Items.Add("Bộ Phận Quản Lý Lương");
+            cbbDonVi.Items.Add("Bộ Phận Quản Lý Nhân Sự");
+            cbbDonVi.Items.Add("Bộ Phận Quản Lý Hệ Thống");
             statusText(false);
             date.Value = DateTime.Now;
-            loadColumn();
+            //loadColumn();
         }
 
         private void loadColumn()
@@ -88,56 +82,14 @@ namespace QuanLyLuongSanPham_GUI
             cbDiLamHet.Enabled = false;
             //txtSoLuong.Enabled = false;
         }
-
-        private void cbbDonVi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-        }
         private void btnChamCong_Click(object sender, EventArgs e)
         {
             DateTime today = DateTime.Now;
+            cbDiLamHet.Checked = false;
             if (date.Value.ToString("MM/dd/yyyy") == today.ToString("MM/dd/yyyy"))
-            {    
+            {
                 cbDiLamHet.Enabled = true;
-                if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
-                {
-                    if (statusCheckCN)
-                    {
-                        MessageBox.Show("Ngày hôm nay đã được chấm công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    dtgvChamCong.Columns["soLuongSP"].Visible = true;
-                    this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-                    this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-                    this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                    this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                    dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongCN();
-                    if (dtgvChamCong.Columns.Count > 5)
-                    {
-
-                    }
-                    else
-                    {
-                        dtgvChamCong.Columns["diLam"].Visible = false;
-                        dtgvChamCong.Columns["diTre"].Visible = false;
-                        this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-                        DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-                        dtgvChamCong.Columns.Add(checkWorking1);
-                        checkWorking1.HeaderText = "Đi Làm1";
-                        checkWorking1.Name = "DiLamTemp";
-                        checkWorking1.ReadOnly = false;
-
-                        DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-                        dtgvChamCong.Columns.Add(checkWorking2);
-                        checkWorking2.HeaderText = "Đi Trễ1";
-                        checkWorking2.Name = "DiTreTemp";
-                        checkWorking2.ReadOnly = false;
-                    }
-                }
-                else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
+                if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
                 {
                     if (statusCheckHC)
                     {
@@ -155,9 +107,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                     else
                     {
-                        dtgvChamCong.Columns["soLuongSP"].Visible = true;
-                        dtgvChamCong.Columns["diLam"].Visible = false;
-                        dtgvChamCong.Columns["diTre"].Visible = false;   
+                        if (dtgvChamCong.Columns["diLam"] != null)
+                        {
+                            dtgvChamCong.Columns["diLam"].Visible = false;
+                            dtgvChamCong.Columns["diTre"].Visible = false;
+                        }
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                         DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking1);
@@ -179,7 +133,6 @@ namespace QuanLyLuongSanPham_GUI
                         MessageBox.Show("Ngày hôm nay đã được chấm công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    dtgvChamCong.Columns["soLuongSP"].Visible = false;
                     this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                     this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
                     this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
@@ -191,8 +144,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                     else
                     {
-                        dtgvChamCong.Columns["diLam"].Visible = false;
-                        dtgvChamCong.Columns["diTre"].Visible = false;
+                        if (dtgvChamCong.Columns["diLam"] != null)
+                        {
+                            dtgvChamCong.Columns["diLam"].Visible = false;
+                            dtgvChamCong.Columns["diTre"].Visible = false;
+                        }
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                         DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking1);
@@ -214,7 +170,6 @@ namespace QuanLyLuongSanPham_GUI
                         MessageBox.Show("Ngày hôm nay đã được chấm công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    dtgvChamCong.Columns["soLuongSP"].Visible = false;
                     this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                     this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
                     this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
@@ -226,8 +181,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                     else
                     {
-                        dtgvChamCong.Columns["diLam"].Visible = false;
-                        dtgvChamCong.Columns["diTre"].Visible = false;
+                        if (dtgvChamCong.Columns["diLam"] != null)
+                        {
+                            dtgvChamCong.Columns["diLam"].Visible = false;
+                            dtgvChamCong.Columns["diTre"].Visible = false;
+                        }
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                         DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking1);
@@ -249,7 +207,6 @@ namespace QuanLyLuongSanPham_GUI
                         MessageBox.Show("Ngày hôm nay đã được chấm công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    dtgvChamCong.Columns["soLuongSP"].Visible = false;
                     this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                     this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
                     this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
@@ -261,8 +218,11 @@ namespace QuanLyLuongSanPham_GUI
                     }
                     else
                     {
-                        dtgvChamCong.Columns["diLam"].Visible = false;
-                        dtgvChamCong.Columns["diTre"].Visible = false;
+                        if (dtgvChamCong.Columns["diLam"] != null)
+                        {
+                            dtgvChamCong.Columns["diLam"].Visible = false;
+                            dtgvChamCong.Columns["diTre"].Visible = false;
+                        }
                         this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
                         DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
                         dtgvChamCong.Columns.Add(checkWorking1);
@@ -282,255 +242,26 @@ namespace QuanLyLuongSanPham_GUI
             {
                 MessageBox.Show("Vui lòng chọn ngày hiện tại để chấm công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            //int iTemp = 0;
-            //DateTime today = DateTime.Now;
-            //if (date.Value.ToString("MM/dd/yyyy") == today.ToString("MM/dd/yyyy"))
-            //{
-            //    cbDiLamHet.Enabled = true;
-            //    if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất" && statusChamCongCNNow == false)
-            //    {
-            //        cbDiLamHet.Enabled = true;
-            //        dtgvChamCong.AutoGenerateColumns = false;
-            //        dtgvChamCong.Columns["diLam"].Visible = false;
-            //        dtgvChamCong.Columns["diTre"].Visible = false;
-            //        //Tạo 2 cột   
-            //        if (iTemp == 0)
-            //        {
-            //            if (dtgvChamCong.Columns.Count > 4)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            //                DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking1);
-            //                checkWorking1.HeaderText = "Đi Làm1";
-            //                checkWorking1.Name = "DiLamTemp";
-            //                checkWorking1.ReadOnly = false;
-            //                DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking2);
-            //                checkWorking2.HeaderText = "Đi Trễ1";
-            //                checkWorking2.Name = "DiTreTemp";
-            //                checkWorking2.ReadOnly = false;
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongNow(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //            }
-            //        }
-            //    }
-            //    else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng" && statusChamCongHCNow == false)
-            //    {
-            //        cbDiLamHet.Enabled = true;
-            //        dtgvChamCong.AutoGenerateColumns = false;
-            //        dtgvChamCong.Columns["diLam"].Visible = false;
-            //        dtgvChamCong.Columns["diTre"].Visible = false;
-            //        //Tạo 2 cột   
-            //        if (iTemp == 0)
-            //        {
-            //            if (dtgvChamCong.Columns.Count > 4)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            //                DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking1);
-            //                checkWorking1.HeaderText = "Đi Làm1";
-            //                checkWorking1.Name = "DiLamTemp";
-            //                checkWorking1.ReadOnly = false;
-            //                DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking2);
-            //                checkWorking2.HeaderText = "Đi Trễ1";
-            //                checkWorking2.Name = "DiTreTemp";
-            //                checkWorking2.ReadOnly = false;
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongNow(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //                iTemp = 1;
-            //            }
-            //        }
-            //    }
-            //    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Lương" && statusChamCongLuongNow == false)
-            //    {
-            //        cbDiLamHet.Enabled = true;
-            //        dtgvChamCong.AutoGenerateColumns = false;
-            //        dtgvChamCong.Columns["diLam"].Visible = false;
-            //        dtgvChamCong.Columns["diTre"].Visible = false;
-            //        //Tạo 2 cột   
-            //        if (iTemp == 0)
-            //        {
-            //            if (dtgvChamCong.Columns.Count > 4)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            //                DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking1);
-            //                checkWorking1.HeaderText = "Đi Làm1";
-            //                checkWorking1.Name = "DiLamTemp";
-            //                checkWorking1.ReadOnly = false;
-            //                DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking2);
-            //                checkWorking2.HeaderText = "Đi Trễ1";
-            //                checkWorking2.Name = "DiTreTemp";
-            //                checkWorking2.ReadOnly = false;
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongNow(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //                iTemp = 1;
-            //            }
-            //        }
-            //    }
-            //    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự" && statusChamCongNhanSuNow == false)
-            //    {
-            //        cbDiLamHet.Enabled = true;
-            //        dtgvChamCong.AutoGenerateColumns = false;
-            //        dtgvChamCong.Columns["diLam"].Visible = false;
-            //        dtgvChamCong.Columns["diTre"].Visible = false;
-            //        //Tạo 2 cột   
-            //        if (iTemp == 0)
-            //        {
-            //            if (dtgvChamCong.Columns.Count > 4)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            //                DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking1);
-            //                checkWorking1.HeaderText = "Đi Làm1";
-            //                checkWorking1.Name = "DiLamTemp";
-            //                checkWorking1.ReadOnly = false;
-            //                DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking2);
-            //                checkWorking2.HeaderText = "Đi Trễ1";
-            //                checkWorking2.Name = "DiTreTemp";
-            //                checkWorking2.ReadOnly = false;
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongNow(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //                iTemp = 1;
-            //            }
-            //        }
-            //    }
-            //    else if (cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống" && statusChamCongHeThongNow == false)
-            //    {
-            //        cbDiLamHet.Enabled = true;
-            //        dtgvChamCong.AutoGenerateColumns = false;
-            //        dtgvChamCong.Columns["diLam"].Visible = false;
-            //        dtgvChamCong.Columns["diTre"].Visible = false;
-            //        //Tạo 2 cột   
-            //        if (iTemp == 0)
-            //        {
-            //            if (dtgvChamCong.Columns.Count > 4)
-            //            {
-
-            //            }
-            //            else
-            //            {
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            //                DataGridViewCheckBoxColumn checkWorking1 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking1);
-            //                checkWorking1.HeaderText = "Đi Làm1";
-            //                checkWorking1.Name = "DiLamTemp";
-            //                checkWorking1.ReadOnly = false;
-            //                DataGridViewCheckBoxColumn checkWorking2 = new DataGridViewCheckBoxColumn();
-            //                dtgvChamCong.Columns.Add(checkWorking2);
-            //                checkWorking2.HeaderText = "Đi Trễ1";
-            //                checkWorking2.Name = "DiTreTemp";
-            //                checkWorking2.ReadOnly = false;
-            //                this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //                this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //                this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //                dtgvChamCong.DataSource = bus_ChamCong.layDSChamCongNow(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //                iTemp = 1;
-            //            }
-            //        }
-            //    }
-            //}
-            //else if (date.Value.ToString("MM/dd/yyyy") != today.ToString("MM/dd/yyyy"))
-            //{
-            //    if (dtgvChamCong.Columns["diLam"].Visible == false)
-            //    {
-            //        dtgvChamCong.Columns.Remove("DiLamTemp");
-            //        dtgvChamCong.Columns.Remove("DiTreTemp");
-            //    }
-            //    dtgvChamCong.Columns["diLam"].Visible = true;
-            //    dtgvChamCong.Columns["diTre"].Visible = true;
-            //    this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //    this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //    this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //    this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //    dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //}
-            //else if(date.Value.ToString("MM/dd/yyyy") == today.ToString("MM/dd/yyyy") && (statusChamCongCNNow || statusChamCongLuongNow || statusChamCongNhanSuNow || statusChamCongHeThongNow || statusChamCongHCNow))
-            //{
-            //    dtgvChamCong.Columns["diLam"].Visible = true;
-            //    dtgvChamCong.Columns["diTre"].Visible = true;
-            //    if (dtgvChamCong.Columns.Count == 6)
-            //    {
-            //        dtgvChamCong.Columns.Remove("DiLamTemp");
-            //        dtgvChamCong.Columns.Remove("DiTreTemp");
-            //    }
-            //    this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //    this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
-            //    this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //    this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            //    dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-            //}
         }
         private void dtgvChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (btnSua.Text == "Lưu Sửa")
             {
-                if (btnSua.Text == "Lưu Sửa")
+                if (e.RowIndex >= 0)
                 {
-                    if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
-                    {
-                        DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                        txtMaNV.Text = row.Cells[2].Value.ToString();
-                        txtHoTen.Text = row.Cells[3].Value.ToString();
-                        cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                        cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
-                        txtSoLuong.Text = row.Cells[6].Value.ToString();
-                    }
-                    else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
-                    {
-                        DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                        txtMaNV.Text = row.Cells[2].Value.ToString();
-                        txtHoTen.Text = row.Cells[3].Value.ToString();
-                        cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                        cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
-                    }
-                    //else if (cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
+                    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
+                    //if (row.Cells[2].Value != null)
                     //{
-                    //    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    //    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    //    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    //    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    //    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    txtMaNV.Text = row.Cells[2].Value.ToString();
                     //}
-                    //else if (cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
+                    //if (row.Cells[3].Value != null)
                     //{
-                    //    DataGridViewRow row = this.dtgvChamCong.Rows[e.RowIndex];
-                    //    txtMaNV.Text = row.Cells[2].Value.ToString();
-                    //    txtHoTen.Text = row.Cells[3].Value.ToString();
-                    //    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
-                    //    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
+                    txtHoTen.Text = row.Cells[3].Value.ToString();
+                    //}
+                    //if (row.Cells[4].Value.ToString() != null)
+                    //{
+                    cbDiLam.Checked = (row.Cells[4].Value.ToString() == "True") ? true : false;
+                    cbDiTre.Checked = (row.Cells[5].Value.ToString() == "True") ? true : false;
                     //}
                 }
             }
@@ -542,33 +273,24 @@ namespace QuanLyLuongSanPham_GUI
             {
                 btnChamCong.Enabled = false;
                 btnSua.Text = "Lưu Sửa";
+                btnLuu.Enabled = false;
                 statusTextClear();
             }
             else if (btnSua.Text == "Lưu Sửa")
             {
                 statusText(false);
-                txtSoLuong.Enabled = true;
-                if (txtSoLuong.Text == "")
+                DTO_PhieuChamCongNhanVienHanhChanh dto_PCCLHC = new DTO_PhieuChamCongNhanVienHanhChanh();
+                dto_PCCLHC.MaNhanVien = txtMaNV.Text;
+                dto_PCCLHC.DiLam = cbDiLam.Checked;
+                dto_PCCLHC.DiTre = cbDiTre.Checked;
+                if (bus_ChamCong.suaThongTinHC(dto_PCCLHC, date.Value.ToString("yyyy-MM-dd")) == true)
                 {
-                    MessageBox.Show("Không để trống dữ liệu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    btnSua.Text = "Lưu Sửa";
-                }
-                else
-                {
-                    DTO_PhieuChamCongCongNhan dto_PCCLCN = new DTO_PhieuChamCongCongNhan();
-                    dto_PCCLCN.MaNhanVien = txtMaNV.Text;
-                    dto_PCCLCN.ISoLuongSPLamTrongNgay = Convert.ToInt32(txtSoLuong.Text);
-                    dto_PCCLCN.DiLam = cbDiLam.Checked;
-                    dto_PCCLCN.DiTre = cbDiTre.Checked;    
-                    if (bus_ChamCong.suaThongTin(dto_PCCLCN, date.Value.ToString("yyyy-MM-dd")) == true)
-                    {
-                        bus_ChamCong.suaThongTin(dto_PCCLCN, date.Value.ToString("yyyy-MM-dd"));
-                        MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-                        btnSua.Text = "Sửa";
-                        txtSoLuong.Enabled = false;
-                        btnChamCong.Enabled = true;
-                    }
+                    bus_ChamCong.suaThongTinHC(dto_PCCLHC, date.Value.ToString("yyyy-MM-dd"));
+                    MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
+                    btnSua.Text = "Sửa";
+                    btnLuu.Enabled = true;
+                    btnChamCong.Enabled = true;
                 }
                 btnSua.Text = "Sửa";
             }
@@ -591,70 +313,51 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     try
                     {
-                        if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
-                        {
-                            string lastRow = bus_ChamCong.layDongCuoiPCCCN().Trim(); string strNumber = lastRow.Substring(5, 2);
-                            int iNumber = Convert.ToInt32(strNumber) + 1;
-                            bool chamCong = false;
-                            bool diLam = true;
-                            bool diTre = true;
-                            DTO_PhieuChamCongCongNhan newPhieuCCCN = new DTO_PhieuChamCongCongNhan();
-                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
-                            {
-                                newPhieuCCCN.MaPhieu = "PCCCN" + (iNumber++);
-                                newPhieuCCCN.NgayChamCong = DateTime.Now;
-                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
-                                {
-                                    diLam = false;
-                                }
-                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
-                                {
-                                    diTre = false;
-                                }
-                                newPhieuCCCN.DiLam = (diLam == true) ? true : false;
-                                newPhieuCCCN.DiTre = (diTre == true) ? true : false;
-                                string strSoLuong = (string)dtgvChamCong.Rows[i].Cells["soLuongSP"].Value;
-                                newPhieuCCCN.ISoLuongSPLamTrongNgay = Convert.ToInt32(strSoLuong.Trim());
-                                newPhieuCCCN.TrangThai = true;
-                                newPhieuCCCN.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
-                                newPhieuCCCN.MaCa = "CA001";
-                                bus_ChamCong.themPhieuChamCongCN(newPhieuCCCN);
-                                chamCong = true;
-                            }
-                            if (chamCong == true)
-                            {
-                                MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                                cbDiLamHet.Enabled = false;
-                                statusCheckCN = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Chấm công thất bại. Thử lại !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            }
-                        }
-                        else if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
+                        if (cbbDonVi.Text == "Bộ Phận Nhân Viên Văn Phòng")
                         {
                             string lastRow = bus_ChamCong.layDongCuoiPCCHC().Trim();
                             string strNumber = lastRow.Substring(7, 2);
                             int iNumber = Convert.ToInt32(strNumber) + 1;
                             bool chamCong = false;
-                            bool diLam = true;
-                            bool diTre = true;
+                            bool diLam;
+                            bool diTre;
+                            bool diLamTemp;
+                            bool diTreTemp;
                             DTO_PhieuChamCongNhanVienHanhChanh newPhieuCCHC = new DTO_PhieuChamCongNhanVienHanhChanh();
                             for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
                             {
+                                diLamTemp = true;
+                                diTreTemp = true;
+                                if ((bool)dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == false)
+                                {
+                                    diLamTemp = false;
+                                }
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null || (bool)dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == false)
+                                {
+                                    diTreTemp = false;
+                                }
+                                if ((diLamTemp == false && diTreTemp == true))
+                                {
+                                    MessageBox.Show("Thông tin chấm công không hợp lệ, Vui lòng kiểm tra lại.Tham khảo mục \"Lưu ý\"'!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                    return;
+                                }
+                            }
+                            for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                            {
+                                diLam = true;
+                                diTre = true;
                                 newPhieuCCHC.MaPhieu = "PCCNVHC" + (iNumber++);
                                 newPhieuCCHC.NgayChamCong = DateTime.Now;
-                                if (dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == null)
+                                if ((bool)dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value == false)
                                 {
                                     diLam = false;
                                 }
-                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null)
+                                if (dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == null || (bool)dtgvChamCong.Rows[i].Cells["DiTreTemp"].Value == false)
                                 {
                                     diTre = false;
                                 }
-                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
-                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.DiLam = diLam;
+                                newPhieuCCHC.DiTre = diTre;
                                 newPhieuCCHC.TrangThai = true;
                                 newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
                                 bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
@@ -664,6 +367,7 @@ namespace QuanLyLuongSanPham_GUI
                             {
                                 MessageBox.Show("Đã chấm công xong .", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 cbDiLamHet.Enabled = false;
+                                //btnChamCong.Enabled = false;
                                 statusCheckHC = true;
                             }
                             else
@@ -692,9 +396,9 @@ namespace QuanLyLuongSanPham_GUI
                                 {
                                     diTre = false;
                                 }
-                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
-                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                                newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.TrangThai = true;
                                 newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
                                 bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
                                 chamCong = true;
@@ -731,9 +435,9 @@ namespace QuanLyLuongSanPham_GUI
                                 {
                                     diTre = false;
                                 }
-                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
-                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
-                            newPhieuCCHC.TrangThai = true;
+                                newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                                newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.TrangThai = true;
                                 newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
                                 bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
                                 chamCong = true;
@@ -770,8 +474,8 @@ namespace QuanLyLuongSanPham_GUI
                                 {
                                     diTre = false;
                                 }
-                            newPhieuCCHC.DiLam = (diLam == true) ? true : false;
-                            newPhieuCCHC.DiTre = (diTre == true) ? true : false;
+                                newPhieuCCHC.DiLam = (diLam == true) ? true : false;
+                                newPhieuCCHC.DiTre = (diTre == true) ? true : false;
                                 newPhieuCCHC.TrangThai = true;
                                 newPhieuCCHC.MaNhanVien = (string)dtgvChamCong.Rows[i].Cells["maNV"].Value;
                                 bus_ChamCong.themPhieuChamCongHC(newPhieuCCHC);
@@ -789,7 +493,7 @@ namespace QuanLyLuongSanPham_GUI
                             }
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         MessageBox.Show("Dữ liệu chưa đúng!");
                     }
@@ -1029,49 +733,67 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            //if (date.Value.ToString("MM/dd/yyyy") != today.ToString("MM/dd/yyyy"))
-            //{
+            btnSua.Text = "Sửa";
+            if (date.Value.ToString("MM/dd/yyyy") == today.ToString("MM/dd/yyyy"))
+            {
+                btnSua.Enabled = true;
+            }
+            else
+            {
+                btnSua.Enabled = false;
+            }
             try
             {
-                if(dtgvChamCong.Columns.Count > 5)
+                if (dtgvChamCong.Columns.Count > 5)
                 {
 
                 }
                 {
-                    dtgvChamCong.Columns["DiLamTemp"].Visible = false;
-                    dtgvChamCong.Columns["DiTreTemp"].Visible = false;
-                    //dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                    //if (cbbDonVi.Text == "Bộ Phận Gia Công Sản Xuất")
-                    //{
-                    //    dtgvChamCong.Columns["soLuongSP"].Visible = true;
-                    //}    
-                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Lương")
-                    //{
-                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                    //}      
-                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Nhân Sự")
-                    //{
-                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                    //} 
-                    //if(cbbDonVi.Text == "Bộ Phận Quản Lý Hệ Thống")
-                    //{
-                    //    dtgvChamCong.Columns["soLuongSP"].Visible = false;
-                    //}    
-                    dtgvChamCong.Columns["diLam"].Visible = true;
-                    dtgvChamCong.Columns["diTre"].Visible = true;
+                    if (dtgvChamCong.Columns["DiLamTemp"] != null)
+                    {
+                        dtgvChamCong.Columns["DiLamTemp"].Visible = false;
+                        dtgvChamCong.Columns["DiTreTemp"].Visible = false;
+                    }
+                    if (dtgvChamCong.Columns["diLam"] != null)
+                    {
+                        dtgvChamCong.Columns["diLam"].Visible = true;
+                        dtgvChamCong.Columns["diTre"].Visible = true;
+                    }
                     this.dtgvChamCong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     this.dtgvChamCong.DefaultCellStyle.ForeColor = Color.Black;
                     this.dtgvChamCong.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
                     this.dtgvChamCong.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
                     dtgvChamCong.DataSource = bus_ChamCong.layDSTheoCBB(cbbDonVi.Text, date.Value.ToString("yyyy-MM-dd"));
-                }        
+                }
             }
-            catch(Exception)
+            catch (Exception)
             { }
             //}
         }
 
         private void cbDiLamHet_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dtgvChamCong.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có gì cả !");
+            }
+            else if (cbDiLamHet.Checked == true)
+            {
+                for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                {
+                    dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = true;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dtgvChamCong.Rows.Count; i++)
+                {
+                    dtgvChamCong.Rows[i].Cells["DiLamTemp"].Value = false;
+                }
+            }
+        }
+
+        private void cbDiLamHet_CheckedChanged_1(object sender, EventArgs e)
         {
             if (dtgvChamCong.Rows.Count == 0)
             {

@@ -96,6 +96,12 @@
     <Compile Include="ButtonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frmChamCongHanhChanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChamCongHanhChanh.Designer.cs">
+      <DependentUpon>frmChamCongHanhChanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCongDoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,11 +132,11 @@
     <Compile Include="frmModel.Designer.cs">
       <DependentUpon>frmModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChamCong.cs">
+    <Compile Include="frmChamCongCongNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChamCong.Designer.cs">
-      <DependentUpon>frmChamCong.cs</DependentUpon>
+    <Compile Include="frmChamCongCongNhan.Designer.cs">
+      <DependentUpon>frmChamCongCongNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMucTienLuong.cs">
       <SubType>Form</SubType>
@@ -269,6 +275,9 @@
     <Compile Include="frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmChamCongHanhChanh.resx">
+      <DependentUpon>frmChamCongHanhChanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCongDoan.resx">
       <DependentUpon>frmCongDoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,8 +293,8 @@
     <EmbeddedResource Include="frmModel.resx">
       <DependentUpon>frmModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChamCong.resx">
-      <DependentUpon>frmChamCong.cs</DependentUpon>
+    <EmbeddedResource Include="frmChamCongCongNhan.resx">
+      <DependentUpon>frmChamCongCongNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMucTienLuong.resx">
       <DependentUpon>frmMucTienLuong.cs</DependentUpon>

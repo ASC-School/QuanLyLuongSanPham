@@ -153,7 +153,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void msChamCong_Click(object sender, EventArgs e)
         {
-            frmChamCong fChamCong = new frmChamCong();
+            frmChamCongCongNhan fChamCong = new frmChamCongCongNhan();
             _ = fChamCong.ShowDialog();
         }
 
@@ -242,7 +242,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void mnsChamCong_CongNhan_Click(object sender, EventArgs e)
         {
-            frmChamCong fChamCong = new frmChamCong();
+            frmChamCongCongNhan fChamCong = new frmChamCongCongNhan();
             fChamCong.ShowDialog();
         }
 

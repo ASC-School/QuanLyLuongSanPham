@@ -79,5 +79,10 @@ namespace QuanLyLuongSanPham_BUS
         {
             return chamCong.suaTTChamCong(dto_PCCLCN, date);
         }
+
+        public bool suaThongTinHC(DTO_PhieuChamCongNhanVienHanhChanh dto_PCCLHC, string date)
+        {
+            return chamCong.suaTTChamCongHC(dto_PCCLHC, date);
+        }
     }
 }

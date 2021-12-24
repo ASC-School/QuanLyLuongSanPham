@@ -121,6 +121,21 @@ namespace QuanLyLuongSanPham_DAO
             }
         }
 
+        public bool suaTTChamCongHC(DTO_PhieuChamCongNhanVienHanhChanh dto_PCCLHC, string date)
+        {
+            IEnumerable<PhieuChamCongNhanVienHanhChanh> pcn = (IEnumerable<PhieuChamCongNhanVienHanhChanh>)(from pcccn in dataBase.PhieuChamCongNhanVienHanhChanhs
+                                                     where pcccn.maNhanVien.Equals(dto_PCCLHC.MaNhanVien) && pcccn.ngayChamCong.Equals(date)
+                                                     select pcccn);
+            if (pcn.Count() > 0)
+            {
+                pcn.First().diLam = dto_PCCLHC.DiLam;
+                pcn.First().diTre = dto_PCCLHC.DiTre;
+                dataBase.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
         public bool suaTTChamCong(DTO_PhieuChamCongCongNhan dto_PCCLCN, string date)
         {
             //IQueryable<PhieuChamCongCongNhan> lcn = dataBase.PhieuChamCongCongNhans.Where(x => x.maNhanVien.Trim().Equals(dto_PCCLCN.MaNhanVien) && dto_PCCLCN.NgayChamCong.Equals(date));
@@ -217,8 +232,6 @@ namespace QuanLyLuongSanPham_DAO
                                             on dv.maLoai equals lnv.maLoai
                                             join nv in dataBase.NhanViens
                                             on lnv.maLoai equals nv.maLoai
-                                            join pcchc in dataBase.PhieuChamCongNhanVienHanhChanhs
-                                            on nv.maNhanVien equals pcchc.maNhanVien
                                             where dv.tenBoPhan.Equals(strDonVi)
                                             select new
                                             {
