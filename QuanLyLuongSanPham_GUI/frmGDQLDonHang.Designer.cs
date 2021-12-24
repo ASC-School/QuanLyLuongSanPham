@@ -725,6 +725,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSDonHang.Size = new System.Drawing.Size(1024, 228);
             this.dgvDSDonHang.TabIndex = 6;
             this.dgvDSDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDonHang_CellClick);
+            this.dgvDSDonHang.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDonHang_CellContentDoubleClick);
             // 
             // btnLoadDSDonHang
             // 
@@ -782,7 +783,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayKetThuc.Size = new System.Drawing.Size(295, 28);
+            this.dateNgayKetThuc.Size = new System.Drawing.Size(295, 32);
             this.dateNgayKetThuc.TabIndex = 3;
             // 
             // dateNgayBatDau
@@ -797,7 +798,7 @@ namespace QuanLyLuongSanPham_GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayBatDau.Size = new System.Drawing.Size(295, 28);
+            this.dateNgayBatDau.Size = new System.Drawing.Size(295, 32);
             this.dateNgayBatDau.TabIndex = 3;
             // 
             // txtNoiDung
@@ -966,7 +967,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label1.ForeColor = System.Drawing.Color.Crimson;
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 97);
+            this.label1.Size = new System.Drawing.Size(222, 97);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ ĐƠN ĐẶT HÀNG";
             // 
@@ -1008,7 +1009,7 @@ namespace QuanLyLuongSanPham_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1339, 674);
+            this.ClientSize = new System.Drawing.Size(1381, 674);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.sidePanel1);

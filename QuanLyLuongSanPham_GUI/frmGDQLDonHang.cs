@@ -410,6 +410,7 @@ namespace QuanLyLuongSanPham_GUI
             btnLuuDonHang.Enabled = true;
             btnHuyDonHang.Enabled = true;
             btnXuatDonHang.Enabled = true;
+            btnChiTietDonHang.Enabled = true;
             hienThongTin();
             if (e.RowIndex >= 0)
             {
@@ -860,6 +861,11 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmCongDoan frm = new frmCongDoan();
             _ = frm.ShowDialog();
+        }
+
+        private void dgvDSDonHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
