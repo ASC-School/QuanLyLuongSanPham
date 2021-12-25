@@ -52,13 +52,13 @@ namespace QuanLyLuongSanPham_GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnLoadDSTK = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.cboTenTaiKhoan = new System.Windows.Forms.ComboBox();
             this.dgvTK = new System.Windows.Forms.DataGridView();
             this.cboQuyen = new System.Windows.Forms.ComboBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnLoadDSTK = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnLoadDSTKChuaPhanQuen = new System.Windows.Forms.Button();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
@@ -84,9 +84,9 @@ namespace QuanLyLuongSanPham_GUI
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).BeginInit();
-            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTkChuaPhanQuyen)).BeginInit();
@@ -192,7 +192,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboLoaiNhanVien.FormattingEnabled = true;
             this.cboLoaiNhanVien.Location = new System.Drawing.Point(144, 127);
             this.cboLoaiNhanVien.Name = "cboLoaiNhanVien";
-            this.cboLoaiNhanVien.Size = new System.Drawing.Size(214, 26);
+            this.cboLoaiNhanVien.Size = new System.Drawing.Size(214, 31);
             this.cboLoaiNhanVien.TabIndex = 9;
             // 
             // cboTenNhanVien
@@ -201,7 +201,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenNhanVien.FormattingEnabled = true;
             this.cboTenNhanVien.Location = new System.Drawing.Point(144, 86);
             this.cboTenNhanVien.Name = "cboTenNhanVien";
-            this.cboTenNhanVien.Size = new System.Drawing.Size(214, 26);
+            this.cboTenNhanVien.Size = new System.Drawing.Size(214, 31);
             this.cboTenNhanVien.TabIndex = 9;
             // 
             // cboMaNhanVien
@@ -210,7 +210,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboMaNhanVien.FormattingEnabled = true;
             this.cboMaNhanVien.Location = new System.Drawing.Point(144, 39);
             this.cboMaNhanVien.Name = "cboMaNhanVien";
-            this.cboMaNhanVien.Size = new System.Drawing.Size(214, 26);
+            this.cboMaNhanVien.Size = new System.Drawing.Size(214, 31);
             this.cboMaNhanVien.TabIndex = 9;
             // 
             // panel3
@@ -239,6 +239,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvDSNhanVienChuaCoTaiKhoan.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvDSNhanVienChuaCoTaiKhoan.Location = new System.Drawing.Point(388, 39);
             this.dgvDSNhanVienChuaCoTaiKhoan.Name = "dgvDSNhanVienChuaCoTaiKhoan";
+            this.dgvDSNhanVienChuaCoTaiKhoan.RowHeadersWidth = 51;
             this.dgvDSNhanVienChuaCoTaiKhoan.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvDSNhanVienChuaCoTaiKhoan.Size = new System.Drawing.Size(743, 155);
             this.dgvDSNhanVienChuaCoTaiKhoan.TabIndex = 2;
@@ -249,7 +250,7 @@ namespace QuanLyLuongSanPham_GUI
             this.txtTenTaiKhoan.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(144, 171);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(214, 26);
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(214, 30);
             this.txtTenTaiKhoan.TabIndex = 1;
             // 
             // label4
@@ -258,7 +259,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(24, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 18);
+            this.label4.Size = new System.Drawing.Size(132, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tên tài khoản:";
             // 
@@ -268,7 +269,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(22, 135);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 18);
+            this.label7.Size = new System.Drawing.Size(139, 23);
             this.label7.TabIndex = 0;
             this.label7.Text = "Loại nhân viên:";
             // 
@@ -278,7 +279,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(21, 94);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 18);
+            this.label6.Size = new System.Drawing.Size(138, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Tên nhân viên:";
             // 
@@ -288,7 +289,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(24, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 18);
+            this.label3.Size = new System.Drawing.Size(131, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã nhân viên:";
             // 
@@ -334,6 +335,26 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Size = new System.Drawing.Size(1155, 250);
             this.panelControl2.TabIndex = 10;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnLoadDSTK);
+            this.panel7.Location = new System.Drawing.Point(1114, 11);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(35, 31);
+            this.panel7.TabIndex = 8;
+            // 
+            // btnLoadDSTK
+            // 
+            this.btnLoadDSTK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSTK.BackgroundImage")));
+            this.btnLoadDSTK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadDSTK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoadDSTK.Location = new System.Drawing.Point(0, 0);
+            this.btnLoadDSTK.Name = "btnLoadDSTK";
+            this.btnLoadDSTK.Size = new System.Drawing.Size(35, 31);
+            this.btnLoadDSTK.TabIndex = 7;
+            this.btnLoadDSTK.UseVisualStyleBackColor = true;
+            this.btnLoadDSTK.Click += new System.EventHandler(this.btnLoadDSTK_Click);
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.label12);
@@ -359,7 +380,7 @@ namespace QuanLyLuongSanPham_GUI
             this.cboTenTaiKhoan.FormattingEnabled = true;
             this.cboTenTaiKhoan.Location = new System.Drawing.Point(144, 47);
             this.cboTenTaiKhoan.Name = "cboTenTaiKhoan";
-            this.cboTenTaiKhoan.Size = new System.Drawing.Size(214, 26);
+            this.cboTenTaiKhoan.Size = new System.Drawing.Size(214, 31);
             this.cboTenTaiKhoan.TabIndex = 9;
             // 
             // dgvTK
@@ -368,6 +389,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTK.Location = new System.Drawing.Point(765, 45);
             this.dgvTK.Name = "dgvTK";
+            this.dgvTK.RowHeadersWidth = 51;
             this.dgvTK.Size = new System.Drawing.Size(384, 135);
             this.dgvTK.TabIndex = 10;
             this.dgvTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTK_CellClick);
@@ -378,28 +400,8 @@ namespace QuanLyLuongSanPham_GUI
             this.cboQuyen.FormattingEnabled = true;
             this.cboQuyen.Location = new System.Drawing.Point(144, 84);
             this.cboQuyen.Name = "cboQuyen";
-            this.cboQuyen.Size = new System.Drawing.Size(214, 26);
+            this.cboQuyen.Size = new System.Drawing.Size(214, 31);
             this.cboQuyen.TabIndex = 9;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnLoadDSTK);
-            this.panel7.Location = new System.Drawing.Point(1114, 11);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(35, 31);
-            this.panel7.TabIndex = 8;
-            // 
-            // btnLoadDSTK
-            // 
-            this.btnLoadDSTK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadDSTK.BackgroundImage")));
-            this.btnLoadDSTK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadDSTK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoadDSTK.Location = new System.Drawing.Point(0, 0);
-            this.btnLoadDSTK.Name = "btnLoadDSTK";
-            this.btnLoadDSTK.Size = new System.Drawing.Size(35, 31);
-            this.btnLoadDSTK.TabIndex = 7;
-            this.btnLoadDSTK.UseVisualStyleBackColor = true;
-            this.btnLoadDSTK.Click += new System.EventHandler(this.btnLoadDSTK_Click);
             // 
             // panel5
             // 
@@ -492,6 +494,7 @@ namespace QuanLyLuongSanPham_GUI
             this.dgvTkChuaPhanQuyen.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvTkChuaPhanQuyen.Location = new System.Drawing.Point(388, 45);
             this.dgvTkChuaPhanQuyen.Name = "dgvTkChuaPhanQuyen";
+            this.dgvTkChuaPhanQuyen.RowHeadersWidth = 51;
             this.dgvTkChuaPhanQuyen.Size = new System.Drawing.Size(363, 135);
             this.dgvTkChuaPhanQuyen.TabIndex = 2;
             this.dgvTkChuaPhanQuyen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTkChuaPhanQuyen_CellClick);
@@ -502,7 +505,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label10.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(22, 87);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 18);
+            this.label10.Size = new System.Drawing.Size(71, 23);
             this.label10.TabIndex = 0;
             this.label10.Text = "Quyền:";
             // 
@@ -512,7 +515,7 @@ namespace QuanLyLuongSanPham_GUI
             this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.Location = new System.Drawing.Point(19, 55);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 18);
+            this.label11.Size = new System.Drawing.Size(132, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Tên tài khoản:";
             // 
@@ -543,7 +546,7 @@ namespace QuanLyLuongSanPham_GUI
             this.Appearance.Options.UseBorderColor = true;
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 606);
             this.Controls.Add(this.panel9);
@@ -557,6 +560,7 @@ namespace QuanLyLuongSanPham_GUI
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhanQuyen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao Diện Phân Quyền";
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             this.panel1.ResumeLayout(false);
@@ -571,9 +575,9 @@ namespace QuanLyLuongSanPham_GUI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTkChuaPhanQuyen)).EndInit();

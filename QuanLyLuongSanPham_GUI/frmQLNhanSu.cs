@@ -450,10 +450,5 @@ namespace QuanLyLuongSanPham_GUI
             else
                 errorProvider1.Clear();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

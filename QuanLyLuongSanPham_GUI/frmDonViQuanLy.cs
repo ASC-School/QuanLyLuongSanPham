@@ -29,6 +29,10 @@ namespace QuanLyLuongSanPham_GUI
         BUS_DonViQuanLy busDVQL = new BUS_DonViQuanLy();
         private void frmDonViQuanLy_Load(object sender, EventArgs e)
         {
+            this.dtgvDonVi.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvDonVi.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+            this.dtgvLoaiNhanVien.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLoaiNhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             this.dtgvLoaiNhanVien.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvDonVi.DefaultCellStyle.ForeColor = Color.Black;
             loadData();
@@ -128,6 +132,11 @@ namespace QuanLyLuongSanPham_GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtgvDonVi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

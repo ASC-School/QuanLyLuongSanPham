@@ -35,6 +35,8 @@ namespace QuanLyLuongSanPham_GUI
             this.lblMaNV = new DevExpress.XtraEditors.LabelControl();
             this.lblTTDonVi = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txtMaPhat = new System.Windows.Forms.TextBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cboMucPhat = new System.Windows.Forms.ComboBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.cboMaDonVi = new System.Windows.Forms.ComboBox();
@@ -54,10 +56,6 @@ namespace QuanLyLuongSanPham_GUI
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dtgvDsPhat = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMaPhat = new System.Windows.Forms.TextBox();
             this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maMucPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +64,8 @@ namespace QuanLyLuongSanPham_GUI
             this.ngayPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -134,6 +134,24 @@ namespace QuanLyLuongSanPham_GUI
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(465, 437);
             this.panelControl2.TabIndex = 8;
+            // 
+            // txtMaPhat
+            // 
+            this.txtMaPhat.Location = new System.Drawing.Point(158, 27);
+            this.txtMaPhat.Name = "txtMaPhat";
+            this.txtMaPhat.Size = new System.Drawing.Size(295, 23);
+            this.txtMaPhat.TabIndex = 16;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(57, 26);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(71, 21);
+            this.labelControl5.TabIndex = 15;
+            this.labelControl5.Text = "Mã phạt :";
             // 
             // cboMucPhat
             // 
@@ -228,12 +246,12 @@ namespace QuanLyLuongSanPham_GUI
             // btnXoa
             // 
             this.btnXoa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Appearance.Options.UseBackColor = true;
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(332, 373);
+            this.btnXoa.Location = new System.Drawing.Point(338, 373);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(121, 40);
             this.btnXoa.TabIndex = 4;
@@ -243,14 +261,14 @@ namespace QuanLyLuongSanPham_GUI
             // btnHuy
             // 
             this.btnHuy.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Appearance.Options.UseBackColor = true;
             this.btnHuy.Appearance.Options.UseFont = true;
             this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnHuy.Location = new System.Drawing.Point(183, 373);
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(170, 373);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(126, 40);
+            this.btnHuy.Size = new System.Drawing.Size(156, 40);
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy thêm";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -258,7 +276,7 @@ namespace QuanLyLuongSanPham_GUI
             // btnThem
             // 
             this.btnThem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(123)))), ((int)(((byte)(137)))));
-            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Appearance.Options.UseBackColor = true;
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -342,47 +360,6 @@ namespace QuanLyLuongSanPham_GUI
             this.dtgvDsPhat.TabIndex = 9;
             this.dtgvDsPhat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsPhat_CellClick);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(1216, 13);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(40, 33);
-            this.btnThoat.TabIndex = 31;
-            this.btnThoat.Text = "          ";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 42);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(57, 26);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(71, 21);
-            this.labelControl5.TabIndex = 15;
-            this.labelControl5.Text = "Mã phạt :";
-            // 
-            // txtMaPhat
-            // 
-            this.txtMaPhat.Location = new System.Drawing.Point(158, 27);
-            this.txtMaPhat.Name = "txtMaPhat";
-            this.txtMaPhat.Size = new System.Drawing.Size(295, 23);
-            this.txtMaPhat.TabIndex = 16;
-            // 
             // maNhanVien
             // 
             this.maNhanVien.DataPropertyName = "maNhanVien";
@@ -446,6 +423,29 @@ namespace QuanLyLuongSanPham_GUI
             this.maPhat.MinimumWidth = 6;
             this.maPhat.Name = "maPhat";
             this.maPhat.Width = 125;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(1216, 13);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(40, 33);
+            this.btnThoat.TabIndex = 31;
+            this.btnThoat.Text = "          ";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(7, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
             // 
             // frmPhat
             // 

@@ -685,6 +685,7 @@ namespace QuanLyLuongSanPham_GUI
             this.IconOptions.Image = global::QuanLyLuongSanPham_GUI.Properties.Resources.logo;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmXemThongTin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XemThongTin";
             this.Load += new System.EventHandler(this.frmXemThongTin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

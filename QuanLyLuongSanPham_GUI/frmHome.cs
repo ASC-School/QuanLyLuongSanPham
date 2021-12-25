@@ -78,14 +78,7 @@ namespace QuanLyLuongSanPham_GUI
                 msHeThong.Enabled = false;
                 msTienLuong.Enabled = false;
             }    
-            else if (strMaLoai.Trim().Equals("LNV005"))
-            {
-                msNhanSu.Enabled = false;
-                msSanPham.Enabled = false;
-                msDonHang.Enabled = false;
-                msTienLuong.Enabled = false;
-                msChamCong.Enabled = false;
-            }    
+               
         }
 
         void SetStatusLogin(bool BStatus, string strHoTen, string strChucVu, string strMaLoai,string strMaNhanVien)
@@ -149,12 +142,6 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmPhat fPhat = new frmPhat();
             _ = fPhat.ShowDialog();
-        }
-
-        private void msChamCong_Click(object sender, EventArgs e)
-        {
-            frmChamCongCongNhan fChamCong = new frmChamCongCongNhan();
-            _ = fChamCong.ShowDialog();
         }
 
         private void msTienIch_TTNV_Click(object sender, EventArgs e)
@@ -262,6 +249,18 @@ namespace QuanLyLuongSanPham_GUI
         {
             frmPhanCong fPhanCong = new frmPhanCong();
             fPhanCong.ShowDialog();
+        }
+
+        private void mnsChamCongHanhChanh_Click(object sender, EventArgs e)
+        {
+            frmChamCongHanhChanh fChamCong = new frmChamCongHanhChanh();
+            fChamCong.ShowDialog();
+        }
+
+        private void msNhanSu_DonViQuanLy_Click(object sender, EventArgs e)
+        {
+            frmDonViQuanLy frmDV = new frmDonViQuanLy();
+            frmDV.ShowDialog();
         }
     }
 }
