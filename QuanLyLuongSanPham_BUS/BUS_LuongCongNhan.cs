@@ -23,9 +23,9 @@ namespace QuanLyLuongSanPham_BUS
             luongCongNhan = new DAO_LuongCongNhan();
         }
 
-        public IEnumerable<dynamic> loadLuongCN()
+        public IEnumerable<dynamic> loadLuongCN(int iMonth)
         {
-            return luongCongNhan.loadLuongCN();
+            return luongCongNhan.loadLuongCN(iMonth);
         }
 
         public bool suaThongTin(DTO_LuongCongNhan LCN)
@@ -38,9 +38,9 @@ namespace QuanLyLuongSanPham_BUS
             return luongCongNhan.loadLuongCNTheoThang(iMonth, iYear);
         }
 
-        public object layNVTheoTimKiem(string maNVTK)
+        public object layNVTheoTimKiem(string maNVTK, string strThang, string strNam)
         {
-            return luongCongNhan.layLuongNVTheoTimKiem(maNVTK);
+            return luongCongNhan.layLuongNVTheoTimKiem(maNVTK, strThang, strNam);
         }
 
         public IEnumerable<LuongCongNhan> layNVTheoMa(string strMaNV)

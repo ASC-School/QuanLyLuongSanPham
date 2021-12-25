@@ -14,7 +14,8 @@ namespace QuanLyLuongSanPham_DTO
     public class DTO_LuongHanhChanh
     {
         string maLuong, maNhanVien, maChungChi, maPhieuChamCong;
-        int phuCap, tienUng,tienPhat, soNgayLamDuoc;
+        int phuCap, tienUng, tienPhat, soNgayLamDuoc;
+        int thangLuong, namLuong;
         float thue;
         decimal luongCoBan;
         public DTO_LuongHanhChanh() { }
@@ -43,5 +44,7 @@ namespace QuanLyLuongSanPham_DTO
         public decimal LuongCoBan { get => luongCoBan; set => luongCoBan = value; }
         public int TienPhat { get => tienPhat; set => tienPhat = value; }
         public int SoNgayLamDuoc { get => soNgayLamDuoc; set => soNgayLamDuoc = value; }
+        public int ThangLuong { get => thangLuong; set => thangLuong = value; }
+        public int NamLuong { get => namLuong; set => namLuong = value; }
     }
 }

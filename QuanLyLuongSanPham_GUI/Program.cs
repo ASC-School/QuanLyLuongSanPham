@@ -18,7 +18,7 @@ namespace QuanLyLuongSanPham_GUI
             //{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmChamCongCongNhan());
+                Application.Run(new frmLuongCongNhan());
             //}
             //catch (Exception)
             //{

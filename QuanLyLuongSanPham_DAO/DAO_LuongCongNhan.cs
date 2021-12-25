@@ -20,7 +20,7 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-        public IEnumerable<dynamic> loadLuongCN()
+        public IEnumerable<dynamic> loadLuongCN(int iMonth)
         {
             IEnumerable<dynamic> luongCN = from dv in dataBase.DonViQuanLies
                                            join lnv in dataBase.LoaiNhanViens
@@ -33,7 +33,7 @@ namespace QuanLyLuongSanPham_DAO
                                            on lcn.maTienPhat equals mtp.soThuTu
                                            join cdsx in dataBase.CongDoanSanXuats
                                            on lcn.maCongDoan equals cdsx.soThuTu
-                                           where lnv.maLoai == "LNV002"
+                                           where lnv.maLoai == "LNV002" && lcn.thangLuong.Equals(iMonth)
                                            select new
                                            {
                                                maNV = nv.maNhanVien,
@@ -111,7 +111,7 @@ namespace QuanLyLuongSanPham_DAO
             return maNVLCN;
         }
 
-        public object layLuongNVTheoTimKiem(string maNVTK)
+        public object layLuongNVTheoTimKiem(string maNVTK, string strThang, string strNam)
         {
             IEnumerable<dynamic> luongCNTheoTimkiem = from dv in dataBase.DonViQuanLies
                                                       join lnv in dataBase.LoaiNhanViens
@@ -124,7 +124,7 @@ namespace QuanLyLuongSanPham_DAO
                                                       on lcn.maTienPhat equals mtp.soThuTu
                                                       join cdsx in dataBase.CongDoanSanXuats
                                                       on lcn.maCongDoan equals cdsx.soThuTu
-                                                      where lcn.maNhanVien.Equals(maNVTK) && lnv.maLoai == "LNV002"
+                                                      where lcn.maNhanVien.Equals(maNVTK) && lnv.maLoai == "LNV002" && lcn.thangLuong.Equals(strThang) && lcn.namLuong.Equals(strNam)
                                                       select new
                                                       {
                                                           maNV = nv.maNhanVien,
@@ -175,7 +175,7 @@ namespace QuanLyLuongSanPham_DAO
 
         public bool suaTTNV(DTO_LuongCongNhan updateLCN)
         {
-            IQueryable<LuongCongNhan> lcn = dataBase.LuongCongNhans.Where(x => x.maNhanVien.Trim().Equals(updateLCN.MaNhanVien));
+            IQueryable<LuongCongNhan> lcn = dataBase.LuongCongNhans.Where(x => x.maNhanVien.Trim().Equals(updateLCN.MaNhanVien) && x.thangLuong.Equals(updateLCN.ThangLuong) && x.namLuong.Equals(updateLCN.NamLuong));
             if (lcn.Count() > 0)
             {
                 lcn.First().soLuongSanPham = updateLCN.SoLuongSanPhamLamDuoc;

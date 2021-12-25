@@ -65,10 +65,17 @@ namespace QuanLyLuongSanPham_GUI
         }
         private void loadLuongNVHanhChanh()
         {
+            int iMonth = Convert.ToInt32(ccbThang.Text);
+            int iYear = Convert.ToInt32(ccbNam.Text);
+            lblNgayChot.Text = "03-" + iMonth + "-" + iYear;
             btnHuy.Enabled = false;
             this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvLuongHanhChanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC();
+            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC(iMonth);
+            if (iMonth == 11)
+            {
+                btnSua.Enabled = false;
+            }
         }
 
         private void clearTextBox()
@@ -183,10 +190,11 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
+            int iMonth = Convert.ToInt32(ccbThang.Text);
             this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvLuongHanhChanh.DefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             this.dtgvLuongHanhChanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC();
+            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC(iMonth);
         }
 
         private void btnChiTietLuong_Click(object sender, EventArgs e)
@@ -198,34 +206,60 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clearTextBox();
+            DateTime today = DateTime.Now;
+            int iTemp = 0;
             int iMonth = Convert.ToInt32(ccbThang.Text);
+            int iMonthNext = 0;
+            if (iMonth == 12)
+            {
+                iMonthNext = 1;
+            }
+            else
+            {
+                iMonthNext = iMonth + 1;
+            }
             int iYear = Convert.ToInt32(ccbNam.Text);
+            int iMonthNow = Convert.ToInt32(today.ToString("MM"));
+            if (today.ToString("dd") == "25" && iYear == 2021 && iMonth == iMonthNow)
+            {
+                this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;
+                this.dtgvLuongHanhChanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+                dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.luongHCTheoThangMoi(iMonth, iYear);
+                iTemp = 1;
+            }
+            else if (iMonthNow < iMonthNext || iMonthNext == 1)
+            {
+                if (iMonth == 12)
+                {
+                    iYear += 1;
+                }
+                MessageBox.Show("Chưa tới ngày tất toán lương công nhân, Vui lòng quay lại vào ngày 1-" + iMonthNext + "-" + iYear, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ccbThang.Text = "11";
+                return;
+            }
+            if ((ccbThang.Text == "1" || ccbThang.Text == "2" || ccbThang.Text == "3") && iYear == 2022)
+            {
+                MessageBox.Show("Hiện tại chưa qua tháng mới ?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            clearTextBox();
+            if (iTemp == 1)
+            {
+                lblNgayChot.Text = "Chưa chốt";
+                lblDaHoanTat.Text = "Chưa hoàn tất";
+                btnSua.Enabled = true;
+            }
+            else
+            {
+                lblDaHoanTat.Text = "Đã hoàn tất";
+                lblNgayChot.Text = "03-" + iMonth + "-" + iYear;
+            }
             this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvLuongHanhChanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.luongHCTheoThang(iMonth, iYear);
-
-            DateTime today = new DateTime();
-            if (ccbThang.Text == today.ToString("MM"))
+            if (iMonth == 9 || iMonth == 10 || iMonth == 11)
             {
-                DialogResult rs = MessageBox.Show("Bạn muốn thêm tháng lương mới ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (rs == DialogResult.Yes)
-                {
-                    //DTO_LuongCongNhan dto_lcn = new DTO_LuongCongNhan();
-                    //for(int i = 0; i < 12; i++)
-                    //{
-                    //    dto_lcn.MaLuong = "LCN" + 
-                    //}    
-                    //busLuongCongNhan.themThangMoi();
-
-                    this.dtgvLuongHanhChanh.DefaultCellStyle.ForeColor = Color.Black;
-                    this.dtgvLuongHanhChanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                    dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.luongHCTheoThangMoi(iMonth, iYear);
-                }
-            }
-            else if (ccbThang.Text == "1" || ccbThang.Text == "2" || ccbThang.Text == "3" && iYear == 2022)
-            {
-                MessageBox.Show("Hiện tại chưa qua tháng mới ?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSua.Enabled = false;
             }
         }
 
@@ -248,6 +282,8 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     DTO_LuongHanhChanh dto_LHC = new DTO_LuongHanhChanh();
                     dto_LHC.MaNhanVien = txtMaNV.Text;
+                    dto_LHC.ThangLuong = Convert.ToInt32(ccbThang.Text);
+                    dto_LHC.NamLuong = Convert.ToInt32(ccbNam.Text);
                     dto_LHC.SoNgayLamDuoc = Convert.ToInt32(txtSoNgayCongTT.Text);
                     if (bus_LuongNVHC.suaThongTin(dto_LHC) == true)
                     {
@@ -260,7 +296,8 @@ namespace QuanLyLuongSanPham_GUI
                         }
                         else
                         {
-                            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC();
+                            int iMonth = Convert.ToInt32(ccbThang.Text);
+                            dtgvLuongHanhChanh.DataSource = bus_LuongNVHC.loadLuongHC(iMonth);
                         }
                         btnSua.Text = "Sửa";
                         txtSoNgayCongTT.Enabled = false;

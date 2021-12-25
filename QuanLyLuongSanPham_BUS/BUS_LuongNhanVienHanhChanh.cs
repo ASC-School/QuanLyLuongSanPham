@@ -21,9 +21,9 @@ namespace QuanLyLuongSanPham_BUS
             luongHanhChanh = new DAO_LuongHanhChanh();
         }
 
-        public IEnumerable<dynamic> loadLuongHC()
+        public IEnumerable<dynamic> loadLuongHC(int iMonth)
         {
-            return luongHanhChanh.layDSNVHanhChanh();
+            return luongHanhChanh.layDSNVHanhChanh(iMonth);
         }
 
         public object luongHCTheoThang(int iMonth, int iYear)

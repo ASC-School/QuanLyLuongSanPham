@@ -62,11 +62,11 @@ namespace QuanLyLuongSanPham_GUI
             txtTongLuongTT.Enabled = bStatus;
             txtTamUng.Enabled = bStatus;
         }
-        private int loadSoLuongSanPham(string maNhanVien,string thang,string nam)
+        private int loadSoLuongSanPham(string maNhanVien, string thang, string nam)
         {
             int soLuongSanPham = 0;
             IEnumerable<PhieuChamCongCongNhan> listChamCong = busLuongCongNhan.layDSChamCong(maNhanVien);
-            foreach(PhieuChamCongCongNhan n in listChamCong)
+            foreach (PhieuChamCongCongNhan n in listChamCong)
             {
                 if (n.diLam == true && n.ngayChamCong.Value.ToString("MM").Equals(thang) && n.ngayChamCong.Value.ToString("yyyy").Equals(nam))
                 {
@@ -102,7 +102,7 @@ namespace QuanLyLuongSanPham_GUI
             bCheckNVTimKiem = bCheck;
             if (bCheckNVTimKiem)
             {
-                dtgvLuongCongNhan.DataSource = busLuongCongNhan.layNVTheoTimKiem(maNVTK);
+                this.dtgvLuongCongNhan.DataSource = busLuongCongNhan.layNVTheoTimKiem(maNVTK, strThang, strNam);
                 this.dtgvLuongCongNhan.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 ccbThang.Text = strThang;
                 ccbNam.Text = strNam;
@@ -115,17 +115,19 @@ namespace QuanLyLuongSanPham_GUI
                 _ = ccbThang.Items.Add(i);
             }
             ccbNam.Items.Add(2021);
-            ccbNam.Items.Add(2020);
             ccbNam.Items.Add(2022);
         }
 
         private void loadLuongCongNhan()
         {
+            int iMonth = Convert.ToInt32(ccbThang.Text);
+            int iYear = Convert.ToInt32(ccbNam.Text);
+            lblNgayChot.Text = "03-" + iMonth + "-" + iYear;
             btnHuy.Enabled = false;
             this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
             this.dtgvLuongCongNhan.DefaultCellStyle.Font = new Font("Tahoma", 10);
             this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
+            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN(iMonth);
         }
         #endregion
 
@@ -140,8 +142,10 @@ namespace QuanLyLuongSanPham_GUI
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            //System.Windows.Forms.ToolTip ToolTip3 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.btnChiTietLuong, "Xem chi tiết lương");
             ToolTip2.SetToolTip(this.btnReLoad, "Tải lại trang");
+            //ToolTip3.SetToolTip(this.btnLoadSLSPLamDuoc, "Đồng bộ SLSP Làm Được");
         }
         private void FrmLuongCongNhan_Load(object sender, EventArgs e)
         {
@@ -150,6 +154,11 @@ namespace QuanLyLuongSanPham_GUI
             toolTip();
             loadCBBThangNam();
             loadLuongCongNhan();
+            int iMonth = Convert.ToInt32(ccbThang.Text);
+            if (iMonth == 11)
+            {
+                btnSua.Enabled = false;
+            }
         }
         private void FrmLuongCongNhan_MouseDown(object sender, MouseEventArgs e)
         {
@@ -202,6 +211,8 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     DTO_LuongCongNhan dto_LCN = new DTO_LuongCongNhan();
                     dto_LCN.MaNhanVien = txtMaNV.Text;
+                    dto_LCN.ThangLuong = Convert.ToInt32(ccbThang.Text);
+                    dto_LCN.NamLuong = Convert.ToInt32(ccbNam.Text);
                     dto_LCN.SoLuongSanPhamLamDuoc = Convert.ToInt32(txtSLSPLamDuoc.Text);
                     if (busLuongCongNhan.suaThongTin(dto_LCN) == true)
                     {
@@ -214,7 +225,8 @@ namespace QuanLyLuongSanPham_GUI
                         }
                         else
                         {
-                            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
+                            int iMonth = Convert.ToInt32(ccbThang.Text);
+                            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN(iMonth);
                         }
                         btnSua.Text = "Sửa";
                         txtSLSPLamDuoc.Enabled = false;
@@ -233,12 +245,7 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_TextChanged(object sender, EventArgs e)
         {
-            clearTextBox();
-            int iMonth = Convert.ToInt32(ccbThang.Text);
-            int iYear = Convert.ToInt32(ccbNam.Text);
-            this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
-            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThang(iMonth, iYear);
+            
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -254,7 +261,8 @@ namespace QuanLyLuongSanPham_GUI
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
-            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN();
+            int iMonth = Convert.ToInt32(ccbThang.Text);
+            dtgvLuongCongNhan.DataSource = busLuongCongNhan.loadLuongCN(iMonth);
         }
         private void btnChiTietLuong_Click(object sender, EventArgs e)
         {
@@ -327,7 +335,7 @@ namespace QuanLyLuongSanPham_GUI
                         //};
 
                         // add UserInfo vào danh sách userList
-                       // userList.Add(user);
+                        // userList.Add(user);
 
                     }
                     catch (Exception)
@@ -518,7 +526,7 @@ namespace QuanLyLuongSanPham_GUI
 
                     Stream stream = File.Create(filePath);
                     package.SaveAs(stream);
-                    stream.Close();  
+                    stream.Close();
                 }
                 MessageBox.Show("Xuất excel thành công!");
                 DialogResult dResult = MessageBox.Show("Bạn có muốn mở file excel vừa rồi không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -541,30 +549,68 @@ namespace QuanLyLuongSanPham_GUI
 
         private void ccbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime today = new DateTime();
-            int iMonth = Convert.ToInt32(ccbThang.Text);
-            int iYear = Convert.ToInt32(ccbNam.Text);
-            if (ccbThang.Text == today.ToString("MM"))
+            DateTime today = DateTime.Now;
+            int iTemp = 0;
+            int iMonth = Convert.ToInt32(ccbThang.Text);    
+            int iMonthNext = 0;
+            if (iMonth == 12)
             {
-                DialogResult rs = MessageBox.Show("Bạn muốn thêm tháng lương mới ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if(rs == DialogResult.Yes)
-                {
-                    //DTO_LuongCongNhan dto_lcn = new DTO_LuongCongNhan();
-                    //for(int i = 0; i < 12; i++)
-                    //{
-                    //    dto_lcn.MaLuong = "LCN" + 
-                    //}    
-                    //busLuongCongNhan.themThangMoi();
-
-                    this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
-                    this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-                    dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThangMoi(iMonth, iYear);
-                }    
+                iMonthNext = 1;
             }
-            else if((ccbThang.Text == "1" || ccbThang.Text == "2" || ccbThang.Text == "3") && iYear == 2022)
+            else
+            {
+                iMonthNext = iMonth + 1;
+            }
+            int iYear = Convert.ToInt32(ccbNam.Text);   
+            int iMonthNow = Convert.ToInt32(today.ToString("MM"));
+            if (today.ToString("dd") == "25" && iYear == 2021 && iMonth == iMonthNow)
+            {
+                this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+                this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+                dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThangMoi(iMonth, iYear);
+                iTemp = 1;
+            }
+            else if(iMonthNow < iMonthNext || iMonthNext == 1)
+            {
+                if(iMonth == 12)
+                {
+                    iYear += 1;
+                }    
+                MessageBox.Show("Chưa tới ngày tất toán lương công nhân, Vui lòng quay lại vào ngày 1-" + iMonthNext + "-" + iYear, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ccbThang.Text = "11";
+                return;
+            }
+            if ((ccbThang.Text == "1" || ccbThang.Text == "2" || ccbThang.Text == "3") && iYear == 2022)
             {
                 MessageBox.Show("Hiện tại chưa qua tháng mới ?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            clearTextBox();  
+            if (iTemp == 1)
+            {
+                lblNgayChot.Text = "Chưa chốt";
+                lblDaHoanTat.Text = "Chưa hoàn tất";
+                btnSua.Enabled = true;
+            }  
+            else
+            {
+                lblDaHoanTat.Text = "Đã hoàn tất";
+                lblNgayChot.Text = "03-" + iMonth + "-" + iYear;
             }    
+            this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
+            this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
+            dtgvLuongCongNhan.DataSource = busLuongCongNhan.luongCNTheoThang(iMonth, iYear);
+            if(iMonth == 9 || iMonth == 10 || iMonth == 11)
+            {
+                btnSua.Enabled = false;
+            }          
+        }
+
+        private void ccbNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ccbNam.Text == "2022")
+            {
+                MessageBox.Show("Hiện tại chưa qua năm mới, vui lòng quay lại sau ?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

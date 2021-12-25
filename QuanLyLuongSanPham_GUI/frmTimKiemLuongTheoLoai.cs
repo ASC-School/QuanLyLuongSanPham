@@ -172,36 +172,36 @@ namespace QuanLyLuongSanPham_GUI
 
         private void txtTimKiemMaNV_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (ccbTimKiemTheoLoai.Text == "Lương Công Nhân")
-                {
-                    IEnumerable<LuongCongNhan> lstlcn = bus_TimKiemNVTheoLuong.layMNVLuongCN();
-                    txtTimKiemMaNV.AutoCompleteCustomSource.Clear();
-                    foreach (LuongCongNhan lcn in lstlcn)
-                    {
-                        try
-                        {
-                            txtTimKiemMaNV.AutoCompleteCustomSource.Add(lcn.maNhanVien.ToString().Trim());
-                        }
-                        catch (Exception) { }
-                    }
-                }
-                else
-                {
-                    IEnumerable<LuongHanhChanh> lstlcn = bus_TimKiemNVTheoLuong.layMNVLuongHC();
-                    txtTimKiemMaNV.AutoCompleteCustomSource.Clear();
-                    foreach (LuongHanhChanh lcn in lstlcn)
-                    {
-                        try
-                        {
-                            txtTimKiemMaNV.AutoCompleteCustomSource.Add(lcn.maNhanVien.ToString().Trim());
-                        }
-                        catch (Exception) { }
-                    }
-                }    
-            }
-            catch (Exception) { }
+            //try
+            //{
+            //    if (ccbTimKiemTheoLoai.Text == "Lương Công Nhân")
+            //    {
+            //        IEnumerable<LuongCongNhan> lstlcn = bus_TimKiemNVTheoLuong.layMNVLuongCN();
+            //        txtTimKiemMaNV.AutoCompleteCustomSource.Clear();
+            //        foreach (LuongCongNhan lcn in lstlcn)
+            //        {
+            //            try
+            //            {
+            //                txtTimKiemMaNV.AutoCompleteCustomSource.Add(lcn.maNhanVien.ToString().Trim());
+            //            }
+            //            catch (Exception) { }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        IEnumerable<LuongHanhChanh> lstlcn = bus_TimKiemNVTheoLuong.layMNVLuongHC();
+            //        txtTimKiemMaNV.AutoCompleteCustomSource.Clear();
+            //        foreach (LuongHanhChanh lcn in lstlcn)
+            //        {
+            //            try
+            //            {
+            //                txtTimKiemMaNV.AutoCompleteCustomSource.Add(lcn.maNhanVien.ToString().Trim());
+            //            }
+            //            catch (Exception) { }
+            //        }
+            //    }    
+            //}
+            //catch (Exception) { }
         }
         private void ccbTimKiemTheoLoai_Leave(object sender, EventArgs e)
         {

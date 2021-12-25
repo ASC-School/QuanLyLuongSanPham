@@ -11,7 +11,7 @@ namespace QuanLyLuongSanPham_DAO
      * Phiên bản: 1.0
      * Thời gian tạo: 10/11/2021
      */
-    public class DAO_KetNoi
+    public class DAO_KetNoi 
     {
         QuanLyLuongSanPhamDataContext dt;
         public QuanLyLuongSanPhamDataContext getQuanLyLuongSanPham()

@@ -20,7 +20,7 @@ namespace QuanLyLuongSanPham_DAO
             dataBase = new QuanLyLuongSanPhamDataContext();
         }
 
-        public IEnumerable<dynamic> layDSNVHanhChanh()
+        public IEnumerable<dynamic> layDSNVHanhChanh(int iMonth)
         {
             IEnumerable<dynamic> dsNVHC = from dv in dataBase.DonViQuanLies
                                           join lnv in dataBase.LoaiNhanViens
@@ -31,6 +31,7 @@ namespace QuanLyLuongSanPham_DAO
                                           on nv.maNhanVien equals lhc.maNhanVien
                                           join mtp in dataBase.MucTienPhats
                                           on lhc.maTienPhat equals mtp.soThuTu
+                                          where lhc.thangLuong.Equals(iMonth)
                                           select new
                                           {
                                               maNV = nv.maNhanVien,
@@ -55,26 +56,24 @@ namespace QuanLyLuongSanPham_DAO
                                                     on dv.maLoai equals lnv.maLoai
                                                     join nv in dataBase.NhanViens
                                                     on lnv.maLoai equals nv.maLoai
-                                                    join lcn in dataBase.LuongCongNhans
-                                                    on nv.maNhanVien equals lcn.maNhanVien
+                                                    join lhc in dataBase.LuongHanhChanhs
+                                                    on nv.maNhanVien equals lhc.maNhanVien
                                                     join mtp in dataBase.MucTienPhats
-                                                    on lcn.maTienPhat equals mtp.soThuTu
-                                                    join cdsx in dataBase.CongDoanSanXuats
-                                                    on lcn.maCongDoan equals cdsx.soThuTu
-                                                    where lcn.thangLuong.Equals(iMonth) && lcn.namLuong.Equals(iYear) && lnv.maLoai == "LNV002"
+                                                    on lhc.maTienPhat equals mtp.soThuTu
+                                                    where lhc.thangLuong.Equals(iMonth)
                                                     select new
                                                     {
                                                         maNV = nv.maNhanVien,
                                                         tenNV = nv.tenNhanVien,
                                                         donVi = dv.tenBoPhan,
-                                                        congDoan = cdsx.tenCongDoan,
-                                                        soLuongSPLamDuoc = 0,
-                                                        phuCap = lcn.phuCap,
+                                                        luongCoBan = lhc.luongCoBan,
+                                                        soNgayCongTT = lhc.soNgayLamDuoc,
+                                                        phuCap = lhc.phuCap,
                                                         tienPhat = mtp.mucTienPhat1,
-                                                        thue = lcn.thue,
-                                                        tongLuongTT = ((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100) - mtp.mucTienPhat1),
-                                                        tamUng = lcn.tienUng,
-                                                        thucNhan = (((cdsx.donGia * lcn.soLuongSanPham + lcn.phuCap) - mtp.mucTienPhat1 - (cdsx.donGia * lcn.soLuongSanPham * 10 / 100)) - lcn.tienUng)
+                                                        thue = lhc.thue,
+                                                        tongLuongTT = ((((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc) + lhc.phuCap) - (((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc * 10 / 100) + mtp.mucTienPhat1)),
+                                                        tienUng = lhc.tienUng,
+                                                        thucNhan = (((((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc) + lhc.phuCap)) - (((lhc.luongCoBan / 26) * lhc.soNgayLamDuoc * 10 / 100) + mtp.mucTienPhat1)) - lhc.tienUng
                                                     };
             return luongHCTheoThang;
         }
@@ -110,7 +109,7 @@ namespace QuanLyLuongSanPham_DAO
 
         public bool suaTTNVHC(DTO_LuongHanhChanh lCN)
         {
-            IQueryable<LuongHanhChanh> lhc = dataBase.LuongHanhChanhs.Where(x => x.maNhanVien.Trim().Equals(lCN.MaNhanVien));
+            IQueryable<LuongHanhChanh> lhc = dataBase.LuongHanhChanhs.Where(x => x.maNhanVien.Trim().Equals(lCN.MaNhanVien) && x.thangLuong.Equals(lCN.ThangLuong) && x.namLuong.Equals(lCN.NamLuong));
             if (lhc.Count() > 0)
             {
                 lhc.First().soNgayLamDuoc = lCN.SoNgayLamDuoc;
