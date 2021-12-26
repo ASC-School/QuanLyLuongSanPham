@@ -244,8 +244,9 @@ namespace QuanLyLuongSanPham_DAO
         public IEnumerable<dynamic> danhSachChamCongCN()
         {
             IEnumerable<dynamic> chamCong = from nv in dataBase.NhanViens
-                                            join lcn in dataBase.LuongCongNhans
-                                            on nv.maNhanVien equals lcn.maNhanVien
+                                            //join lnv in dataBase.LoaiNhanViens
+                                            //on nv.LoaiNhanVien equals lnv.loaiNhanVien1
+                                            where nv.maLoai.Equals("LNV002    ")
                                             select new
                                             {
                                                 maNV = nv.maNhanVien,

@@ -563,7 +563,7 @@ namespace QuanLyLuongSanPham_GUI
             }
             int iYear = Convert.ToInt32(ccbNam.Text);   
             int iMonthNow = Convert.ToInt32(today.ToString("MM"));
-            if (today.ToString("dd") == "25" && iYear == 2021 && iMonth == iMonthNow)
+            if (today.ToString("dd") == "26" && iYear == 2021 && iMonth == iMonthNow)
             {
                 this.dtgvLuongCongNhan.DefaultCellStyle.ForeColor = Color.Black;
                 this.dtgvLuongCongNhan.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
