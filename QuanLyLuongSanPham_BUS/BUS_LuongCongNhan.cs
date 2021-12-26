@@ -60,5 +60,9 @@ namespace QuanLyLuongSanPham_BUS
         {
             return luongCongNhan.loadLuongCNTheoThangMoi(iMonth, iYear);
         }
+        public IEnumerable<LuongCongNhan> layThongTinCaNhan(string maNV)
+        {
+            return luongCongNhan.layThongTinLuongCaNhan(maNV);
+        }
     }
 }

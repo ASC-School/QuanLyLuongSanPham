@@ -21,6 +21,7 @@ namespace QuanLyLuongSanPham_GUI
      */
     public partial class frmXemThongTin : DevExpress.XtraEditors.XtraForm
     {
+        DateTime toDay = DateTime.Now;
         double tongTru = 0;
         double tongNhan = 0;
         double thucNhan = 0;
@@ -58,13 +59,14 @@ namespace QuanLyLuongSanPham_GUI
             IEnumerable<PhatNhanVien> listP = busPhat.layThongTinPhat(maNhanVien);
             IEnumerable<MucTienPhat> listMP = busMucPhat.layThongTinPhat();
             IEnumerable<LuongHanhChanh> lhc = busLuongHC.layThongTinLuongCaNhan(maNhanVien);
+            IEnumerable<LuongCongNhan> lcn = busLuongCN.layThongTinCaNhan(maNhanVien);
             double tongPhat = 0;
             double tongUng = 0;
             foreach (var item in listP)
             {
                 foreach (var n in listMP)
                 {
-                    if (n.soThuTu == item.maMucPhat)
+                    if (n.soThuTu == item.maMucPhat&&item.ngayPhat.Value.ToString("MM").Equals(toDay.ToString("MM")))
                     {
                         dtgvTienPhat.Rows.Add(item.ngayPhat,n.tenKhoanPhat,Convert.ToDouble( n.mucTienPhat1));
                         tongPhat = tongPhat + Convert.ToDouble(n.mucTienPhat1);
@@ -72,12 +74,31 @@ namespace QuanLyLuongSanPham_GUI
                 }
             }
             lblTienPhat.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongPhat).ToString() + " VNĐ";
-            foreach(var item in lhc)
+            if(maNhanVien.Equals("LNV002    "))
             {
-                string ngayUng = "25/" + item.thangLuong.ToString() + "/" + item.namLuong.ToString();
-                dtgvTienUng.Rows.Add(ngayUng, item.tienUng);
-                tongUng = tongUng + Convert.ToDouble(item.tienUng);
+                foreach(var item in lcn)
+                {
+                    if (item.thangLuong.Value == (toDay.Month - 1))
+                    {
+                        string ngayUng = "25/" + item.thangLuong.ToString() + "/" + item.namLuong.ToString();
+                        dtgvTienUng.Rows.Add(ngayUng, item.tienUng);
+                        tongUng = tongUng + Convert.ToDouble(item.tienUng);
+                    }
+                }
             }
+            else
+            {
+                foreach (var item in lhc)
+                {
+                    if (item.thangLuong.Value == (toDay.Month - 1))
+                    {
+                        string ngayUng = "25/" + item.thangLuong.ToString() + "/" + item.namLuong.ToString();
+                        dtgvTienUng.Rows.Add(ngayUng, item.tienUng);
+                        tongUng = tongUng + Convert.ToDouble(item.tienUng);
+                    }
+                }
+            }    
+
             lblLuongUng.Text = "Tổng trừ: " + String.Format("{0:#,##0.0}", tongUng).ToString() + " VNĐ";
             tongTru = tongPhat + tongUng;
         }
@@ -139,42 +160,47 @@ namespace QuanLyLuongSanPham_GUI
                 {
                     foreach (var m in lhc)
                     {
-
-                        lblLuong.Text = "Lương cơ bản: " + String.Format("{0:#,##0.0}", m.luongCoBan).ToString() + " VNĐ";
-                        lblPhuCap.Text = "Phụ cấp: " + String.Format("{0:#,##0.0}", m.phuCap).ToString() + " VNĐ";
-                        if (m.tienTangCa == null)
-                            lblTienThuong.Text = "Tiền tăng ca: 0 VNĐ";
-                        else
-                            lblTienThuong.Text = "Tiền tăng ca: " + String.Format("{0:#,##0.0}", m.tienTangCa).ToString() + " VNĐ";
-                        lblSoNgayCong.Text = "Số ngày công: " + m.soNgayLamDuoc.ToString() + " ngày";
-                        lblThue.Text = "Thuế: " + (m.thue * 100).ToString() + " %";
-                        double lUongCoBan = Convert.ToDouble((m.luongCoBan/26)*m.soNgayLamDuoc);
-                        double thucNhan =Convert.ToDouble((lUongCoBan * (1 - m.thue) + m.phuCap));
-                        tongNhan = thucNhan;
-                        lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucNhan).ToString() + " VNĐ";
+                        if (m.thangLuong.Value == (toDay.Month - 1) && m.namLuong == toDay.Year)
+                        {
+                            lblLuong.Text = "Lương cơ bản: " + String.Format("{0:#,##0.0}", m.luongCoBan).ToString() + " VNĐ";
+                            lblPhuCap.Text = "Phụ cấp: " + String.Format("{0:#,##0.0}", m.phuCap).ToString() + " VNĐ";
+                            if (m.tienTangCa == null)
+                                lblTienThuong.Text = "Tiền tăng ca: 0 VNĐ";
+                            else
+                                lblTienThuong.Text = "Tiền tăng ca: " + String.Format("{0:#,##0.0}", m.tienTangCa).ToString() + " VNĐ";
+                            lblSoNgayCong.Text = "Số ngày công: " + m.soNgayLamDuoc.ToString() + " ngày";
+                            lblThue.Text = "Thuế: " + (m.thue * 100).ToString() + " %";
+                            double lUongCoBan = Convert.ToDouble((m.luongCoBan / 26) * m.soNgayLamDuoc);
+                            double thucNhan = Convert.ToDouble((lUongCoBan * (1 - m.thue) + m.phuCap));
+                            tongNhan = thucNhan;
+                            lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucNhan).ToString() + " VNĐ";
+                        }              
                     }
                 }
                 else
                 {
                     foreach(var m in lcn)
                     {
-                        double LuongCoBan = 0;
-                        double thucnhan = 0;
-                        foreach(var k in cd)
+                        if (m.thangLuong.Value == (toDay.Month - 1) && m.namLuong == toDay.Year)
                         {
-                            if (m.maCongDoan == k.soThuTu)
+                            double LuongCoBan = 0;
+                            double thucnhan = 0;
+                            foreach (var k in cd)
                             {
-                                lblLuong.Text = "Lương: " + k.donGia.ToString() + "VNĐ/1 sản phảm";
-                                LuongCoBan = Convert.ToDouble(k.donGia * m.soLuongSanPham);
-                                thucnhan = Convert.ToDouble(LuongCoBan * (1.0 - m.thue) + m.phuCap);
+                                if (m.maCongDoan == k.soThuTu)
+                                {
+                                    lblLuong.Text = "Lương: " + k.donGia.ToString() + "VNĐ/1 sản phảm";
+                                    LuongCoBan = Convert.ToDouble(k.donGia * m.soLuongSanPham);
+                                    thucnhan = Convert.ToDouble(LuongCoBan * (1.0 - m.thue) + m.phuCap);
+                                }
                             }
+                            lblPhuCap.Text = "Phụ cấp: " + String.Format("{0:#,##0.0}", m.phuCap).ToString() + " VNĐ";
+                            lblThue.Text = "Thuế: " + (m.thue * 100).ToString() + " %";
+                            lblTienThuong.Text = "Tiền thưởng: 0 VNĐ";
+                            lblSoNgayCong.Text = "Số lượng sản phẩm: " + m.soLuongSanPham.ToString() + " cái";
+                            lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucnhan).ToString() + " VNĐ";
+                            tongNhan = thucNhan;
                         }
-                        lblPhuCap.Text= "Phụ cấp: " + String.Format("{0:#,##0.0}", m.phuCap).ToString() + " VNĐ";
-                        lblThue.Text= "Thuế: " + (m.thue * 100).ToString() + " %";
-                        lblTienThuong.Text = "Tiền thưởng: 0 VNĐ";
-                        lblSoNgayCong.Text = "Số lượng sản phẩm: " + m.soLuongSanPham.ToString() + " cái";
-                        lblTongNhan.Text = "Thực nhận: " + String.Format("{0:#,##0.0}", thucnhan).ToString() + " VNĐ";
-                        tongNhan = thucNhan;
                     }
                 }
             }
