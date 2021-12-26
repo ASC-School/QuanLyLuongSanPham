@@ -16,7 +16,7 @@ namespace QuanLyLuongSanPham_DAO
         QuanLyLuongSanPhamDataContext dt;
         public QuanLyLuongSanPhamDataContext getQuanLyLuongSanPham()
         {
-            string str = @"Data Source=HUYDINH;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True";
+            string str = @"Data Source=LAPTOP-27HK0FFM\SA;Initial Catalog=QuanLyLuongSanPham;Integrated Security=True";
             dt = new QuanLyLuongSanPhamDataContext(str);
             dt.Connection.Open();
             return dt;

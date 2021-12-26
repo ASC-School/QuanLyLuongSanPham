@@ -242,12 +242,12 @@ namespace QuanLyLuongSanPham_GUI
                 dateNgayKetThuc.Text = row.Cells[9].Value.ToString();
                 if (row.Cells[10].Value.ToString().Equals("True"))
                 {
-                    cboTrangThai.Text = "Chưa hoàn thành";
+                    cboTrangThai.Text = "Hoàn thành";
                     row.Cells[10].Style.BackColor = Color.Green;
                 }    
                 else
                 {
-                    cboTrangThai.Text = "Hoàn thành";
+                    cboTrangThai.Text = "Chưa hoàn thành";
                     //btnThemCongDoan.Enabled = false;
                     btnXoaCongDoan.Enabled = true;
                     row.Cells[10].Style.BackColor = Color.Red;
@@ -370,7 +370,7 @@ namespace QuanLyLuongSanPham_GUI
             newCongDoan.MaRangBuoc = cboMaRangBuoc.Text;
             newCongDoan.NgayBatDau = DateTime.Parse(dateNgayBatDau.Text);
             newCongDoan.NgayKetThuc = DateTime.Parse(dateNgayKetThuc.Text);
-            newCongDoan.TrangThai = true;// chưa honaf thành
+            newCongDoan.TrangThai = false;// chưa honaf thành
             return newCongDoan;
         }
 

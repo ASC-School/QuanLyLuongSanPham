@@ -57,6 +57,13 @@ namespace QuanLyLuongSanPham_DAO
                                                    select n;
             return q;
         }
+        public IEnumerable<LuongCongNhan> layThongTinLuongCaNhan(string strMaNhanVien)
+        {
+            IEnumerable<LuongCongNhan> luongCaNhan = from tt in dataBase.LuongCongNhans
+                                                      where tt.maNhanVien.Equals(strMaNhanVien)
+                                                      select tt;
+            return luongCaNhan;
+        }
 
         public object loadLuongCNTheoThangMoi(int iMonth, int iYear)
         {
