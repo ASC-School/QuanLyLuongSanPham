@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace QuanLyLuongSanPham_DTO
 {
     /**
-     * Tác giả: Trần Văn Sỹ
+     * Tác giả: Trần Văn Sỹ ( XYSs )
      * Phiên bản: 1.0
      * Thời gian tạo: 10/11/2021
      */
